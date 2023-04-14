@@ -1,6 +1,8 @@
 # Website refactor with GPT4
 
-The [website](https://safetygraphics.github.io/) for my main open source project is waaaay overdue for a refactor. Development on the project is still pretty active, but the content on the site is pretty out of date and just uses a basic jekyll template from GitHub pages that looks pretty meh. So I spent about an hour trying to refactor using ChatGPT - like my [first experiment making a shiny app]([https://github.com/jwildfire/shiny-gpt-demo](https://jwildfire.github.io/2023/03/29/shiny-gpt.html)) results were mixed. You can see the current site is [here](https://safetygraphics.github.io/), and the ChatGPT refactor ended up looking like this ([PR](https://github.com/SafetyGraphics/SafetyGraphics.github.io/pull/12) with code): 
+The [website](https://safetygraphics.github.io/) for my [main open source project](https://github.com/SafetyGraphics/safetyGraphics) is waaaay overdue for a refactor. Development on the project is still pretty active, but the content on the site is pretty out of date and just uses a basic jekyll template from GitHub pages that looks pretty meh. 
+
+I spent about an hour trying to refactor using ChatGPT - like my [first experiment making a shiny app]([https://github.com/jwildfire/shiny-gpt-demo](https://jwildfire.github.io/2023/03/29/shiny-gpt.html)) results were mixed. You can see the current site is [here](https://safetygraphics.github.io/), and the ChatGPT refactor ended up looking like this ([PR with code](https://github.com/SafetyGraphics/SafetyGraphics.github.io/pull/12)): 
 
 <img width="1149" alt="Screen Shot 2023-04-14 at 10 22 50 AM" src="https://user-images.githubusercontent.com/3680095/232071669-8dcdac5c-ead5-4b14-a572-1ae675d97c8e.png">
 
