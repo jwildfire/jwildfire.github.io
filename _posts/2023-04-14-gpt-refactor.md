@@ -6,11 +6,11 @@ I spent about an hour trying to refactor using ChatGPT - like my [first experime
 
 <img width="1149" alt="Screen Shot 2023-04-14 at 10 22 50 AM" src="https://user-images.githubusercontent.com/3680095/232071669-8dcdac5c-ead5-4b14-a572-1ae675d97c8e.png">
 
-Definitely not good enough to merge and deploy, but I do think it's a step in a decent direction. My html/css skills are rusty so might've taken me twice as long to do this manually.  I think the most successful part of this experient was going from this version using boostrap that still looks a bit clunky and dated to the version below using [tailwind](https://tailwindcss.com/):
+Definitely not good enough to merge and deploy, but I do think it's a step in a decent direction. My html/css skills are rusty so might've taken me twice as long to do this manually.  I think the most successful part of this experient was going from the (slightly clunky) version above using boostrap to the version below using [tailwind](https://tailwindcss.com/):
 
 ![image](https://user-images.githubusercontent.com/3680095/232130801-f3765e45-9b20-4fcc-a616-5e83b9370df7.png)
 
-I actually think this looks pretty good! This change just took 5 minutes and 2 queries to GPT4 ('I'm not happy with the look and feel. lets use tailwind instead of bootstrap for the index page' and 'regenerate the content for the main section') I honestly hadn't even heard of tailwind before today (again, rusty css), so this would've taken me hours (basically, it never would've happened). 
+I actually think this looks pretty good! This change just took 5 minutes and 2 queries to GPT4 ('I'm not happy with the look and feel. lets use tailwind instead of bootstrap for the index page' and 'regenerate the content for the main section'). Honestly, I hadn't even heard of tailwind before today (again, rusty css) so this would've taken me hours (In other words, it never would've happened). 
 
 I'll try to add the rest of the content from the original site and merge the tailwind version in the next few weeks. Here's a [PR with code](https://github.com/SafetyGraphics/SafetyGraphics.github.io/pull/12) if want to see the details.
 
@@ -26,3 +26,9 @@ I'll try to add the rest of the content from the original site and merge the tai
 # Conclusion
  
 I'm more convinced than ever that this is X months away from being game changing (for me at least). I *really* want a way to say: "convert all the markdown files in this folder to html and apply the template at this URL: [xxx.com](http://xxx.com/)" I think that will happen soon, but I don't think there's a way to do it yet without devoting significant time investment to setup a custom framework.
+
+# PS
+
+Last but not least, I pasted this post into GPT and asked for it's feedback. Since it really did all the work here, I'll give it the final word.
+
+<img width="777" alt="image" src="https://user-images.githubusercontent.com/3680095/232132782-a92c302a-fac4-4995-be8b-165a84651f5a.png">
