@@ -1,0 +1,74 @@
+# Making a Gallery of Charts with ChatGPT
+
+Today, I'm goign to see if ChatGPT can help me make a "Chart Gallery" vignette for the [safetyCharts](https://github.com/SafetyGraphics/safetyCharts) R pacakge I've made a few chart galleries of these over the years ([Here's one from my previous job](https://rhoinc.github.io/viz-library/)) and it's always a bit of a pain. I'm going to see how  Here's my first prompt for ChatGPT:
+
+# Prompt #1 - Reading a directory of YAML 
+
+Hi! I want to make an R Package vignette that summarizes the charts stored in an R package. There are YAML chart specifications stored in the `inst/config` folder for the package. See [here](https://github.com/SafetyGraphics/safetyCharts/tree/dev/inst/config). Each YAML file in that directory contains a specification for a single chart, here's a sample for `aeExplorer.yaml`: 
+
+```
+env: safetyGraphics
+label: Adverse Event Explorer
+type: htmlwidget
+package: safetyCharts  
+export: true
+order: 2
+domain: 
+  - dm
+  - aes
+dataSpec:
+  dm:
+    - id_col
+    - treatment_col
+  aes:
+    - id_col
+    - term_col
+    - bodsys_col
+workflow:
+  init: init_aeExplorer
+  widget: aeExplorer
+links:
+  Homepage: https://github.com/RhoInc/aeexplorer
+  Wiki: https://github.com/RhoInc/aeexplorer/wiki 
+  Issues: https://github.com/RhoInc/aeexplorer/issues
+  Demo: https://rhoinc.github.io/aeexplorer/test-page/
+  safetyCharts: https://github.com/SafetyGraphics/safetycharts
+```
+
+First, please provide an R function that will read the YAML for each chart and return a list in R. 
+
+# Reponse #1 - `read_charts_yaml()`
+
+This pretty much got the job done. After asking GPT to add a Roxygen header and debug an error with a call to `basename()`, I got this working function that returns a list of YAML: 
+
+```
+#' Read YAML chart specifications for a package
+#'
+#' This function reads the YAML chart specifications for a package from the \code{inst/config} directory and returns a list containing the parsed YAML for each chart.
+#'
+#' @param package_name The name of the package (as a character string) for which to read the YAML chart specifications.
+#' @return A list containing the parsed YAML for each chart.
+#' @importFrom yaml read_yaml
+#' @export
+#'
+#' @examples
+#' charts <- read_charts_yaml("safetyCharts")
+#' aeExplorer_yaml <- charts$aeExplorer
+read_charts_yaml <- function(package_name) {
+  config_dir <- system.file("config", package = package_name)
+  config_files <- list.files(config_dir, pattern = ".yaml$", full.names = TRUE)
+  charts <- list()
+  for (file in config_files) {
+    chart <- yaml::read_yaml(file)
+    chart_name <- sub(".yaml$", "", basename(file))
+    charts[[chart_name]] <- chart
+  }
+  return(charts)
+}
+``` 
+
+# Prompt #2 - Create a list of charts as markdown
+
+Now write another function that will take the `charts` object returned in `read_charts_yaml` and create an html file summarizing each chart. 
+
+# Prompt #3 - Using publically available information about the charts, add a quick description of each chart as part of the home page. 
