@@ -42,7 +42,7 @@ So people (e.g. me) pay for “agents” instead of SaaS. That’s the revenue.
 
 And SaaS is nothing close to reasonably priced now, IMHO. So there’s a relatively low bar for Anthropic / GPT and friends to replace it. That’s the bar they have to cross — and they’re doing it easily now. The next batches of use cases, though, get more and more complex.
 
-Ryan’s counter: *the revenue implied just by OpenAI and Anthropic investments is an order of magnitude higher than basically all SaaS combined.*
+My friends’s counter: *the revenue implied just by OpenAI and Anthropic investments is an order of magnitude higher than basically all SaaS combined.*
 
 Yeah. Which is why there still might be a bubble. But…
 
