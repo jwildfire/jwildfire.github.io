@@ -19,7 +19,15 @@ First, some articles on newly released (or not) models:
 
 ## Best Practices 
 
-Quick hits around best practices: 
+- **[Your CEO is suffering from AI psychosis](https://handyai.substack.com/p/your-ceo-is-suffering-from-ai-psychosis)** - Probably my favorite article of the week. I think the "AI Psychosis" label is clickbait, and this applies to everyone, not just CEOs. Headline aside, the article is great, especially "Your sprints still matter more than your agents": 
+
+  > I spend a lot of time thinking about how to make agents productive. Maybe it's the product manager in me, but the thing I keep coming back to is boring and unsexy: requirements documents, sprint planning, acceptance criteria, and measurement.
+
+  > If I'm going to use Claude Code to build a feature, I won't fire off a vague prompt and see what comes back. I'll write a specification. I'll define the acceptance criteria. I'll set up the test cases. Only then will I let the agent execute against those constraints. When it's done, I review the output against the spec, not my token counts.
+
+  My takeaway is that AI is an amplifier for both good and bad habits, so focus on reinforcing the good ones!
+
+More quick hits around best practices: 
 
 - **[Agent Skills](https://github.com/addyosmani/agent-skills)** - Skill Library #1
 - **[Agent Skills Specification](https://github.com/agentskills/agentskills)** - Skills framework/best practices
