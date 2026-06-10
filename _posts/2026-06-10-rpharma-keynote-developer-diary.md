@@ -5,7 +5,7 @@ excerpt: "Kicking off a developer diary for my R/Pharma keynote on using agentic
 tags: RPharma AI ClinicalTrials DeveloperDiary
 series: "R/Pharma 2026 developer diary"
 series_part: 1
-status: draft
+date: "2026-06-10"
 ---
 
 I'm giving a keynote at [R/Pharma](https://rinpharma.com/) in October! I'll be talking about open-source tools and agentic AI in clinical trials. It still feels a little wild to type that. I'm excited, and slightly terrified. Expand the section below to see the abstract I submitted.
