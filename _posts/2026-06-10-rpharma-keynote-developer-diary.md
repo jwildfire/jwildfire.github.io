@@ -10,8 +10,8 @@ date: "2026-06-10"
 
 I'm giving a keynote at [R/Pharma](https://rinpharma.com/) in October! I'll be talking about open-source tools and agentic AI in clinical trials. It's wild. I'm excited, and slightly terrified. Expand the section below to see the abstract I submitted.
 
-<details>
-<summary>Abstract</summary>
+<details markdown="1">
+<summary><strong>Abstract</strong></summary>
 
 **AI in the Loop: How Agentic Workflows Are Reshaping Clinical Trial Analytics**
 
@@ -51,10 +51,6 @@ OpenAI hired OpenClaw's creator, [Peter Steinberger](https://www.computerworld.c
 
 What can we actually do with more advanced AI harnesses right now? How can they fit into clinical trial workflows in the coming months and years? I'm not comfortable using those highly autonomous tools for GxP use cases right now, but the capabilities are coming, and I want to understand them.
 
-The next few posts will talk about what I've done so far. My plan has changed at least three times since I found out about the keynote last month, and I'm figuring this out as I go - just like everyone else. I'll try to post regularly right up until the keynote. My next post will introduce `obot`: a semi-autonomous, open-source coding agent created with OpenClaw!
+The next few posts will talk about what I've done so far. My plan has changed at least three times since I found out about the keynote last month, and I'm figuring this out as I go - just like everyone else. I'll try to post regularly right up until the keynote. My next post will introduce `obot`: a semi-autonomous, open-source coding agent created with OpenClaw![^ai]
 
----
-
-## AI collaboration note
-
-I use AI all the time now, but I'll always try to tell you how I use it. I wrote the original draft of this post myself. AI provided feedback on the initial outline, did a final copy edit, and helped identify a few places where the framing needed to be clearer. I reviewed and edited the result before publication.
+[^ai]: **AI collaboration note** — I use AI all the time now, but I'll always try to tell you how I use it. I wrote the original draft of this post myself. AI provided feedback on the initial outline, did a final copy edit, and helped identify a few places where the framing needed to be clearer. I reviewed and edited the result before publication.
