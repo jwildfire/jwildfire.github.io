@@ -1,0 +1,161 @@
+/* ---------------------------------------------------------------------------
+   Keynote look & feel for jwildfire.github.io
+   Matches the R/Pharma 2026 keynote site (/keynote/):
+   espresso #271810 · paper #faf6f1 · orange #f97316 accent
+   Instrument Serif (headings) · Instrument Sans (body) · IBM Plex Mono (meta)
+   Loaded after minima's main.css; overrides by cascade order.
+--------------------------------------------------------------------------- */
+
+:root {
+  --kn-side-bg: #271810;
+  --kn-side-ink: #f5ede4;
+  --kn-side-soft: #c4a995;
+  --kn-bg: #faf6f1;
+  --kn-ink: #2a211b;
+  --kn-soft: #6b5d52;
+  --kn-faint: #a3958a;
+  --kn-accent: #f97316;
+  --kn-accent-deep: #c2410c;
+  --kn-card: #ffffff;
+  --kn-rule: #ece2d7;
+  --kn-sans: "Instrument Sans", system-ui, sans-serif;
+  --kn-serif: "Instrument Serif", Georgia, serif;
+  --kn-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+/* Base ----------------------------------------------------------------------*/
+
+body {
+  background: var(--kn-bg);
+  color: var(--kn-ink);
+  font-family: var(--kn-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--kn-serif);
+  font-weight: 400;
+  color: var(--kn-ink);
+  line-height: 1.15;
+}
+
+a, a:visited { color: var(--kn-accent-deep); }
+a:hover { color: var(--kn-accent); text-decoration: underline; text-underline-offset: 0.2em; }
+
+hr { border: 0; border-top: 1px solid var(--kn-rule); }
+
+/* Header --------------------------------------------------------------------*/
+
+.site-header {
+  background: var(--kn-side-bg);
+  border-top: 4px solid var(--kn-accent);
+  border-bottom: none;
+}
+.site-title, .site-title:visited, .site-title:hover {
+  color: var(--kn-side-ink);
+  font-family: var(--kn-serif);
+  font-size: 1.5rem;
+  letter-spacing: 0;
+}
+.site-nav { background: transparent; border: none; }
+.site-nav .page-link {
+  color: var(--kn-side-soft);
+  font-family: var(--kn-mono);
+  font-size: 0.84rem;
+}
+.site-nav .page-link:hover { color: var(--kn-accent); text-decoration: none; }
+@media screen and (max-width: 600px) {
+  .site-nav { background: var(--kn-side-bg); border: 1px solid rgba(249, 115, 22, 0.3); }
+  .site-nav .menu-icon > svg { fill: var(--kn-side-ink); }
+  .site-nav .menu-icon > svg path { fill: var(--kn-side-ink); }
+}
+
+/* Post list (home & archive) --------------------------------------------------*/
+
+.post-meta {
+  color: var(--kn-accent-deep);
+  font-family: var(--kn-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.post-list > li { margin-bottom: 2.2rem; }
+.post-link {
+  font-family: var(--kn-serif);
+  font-size: 1.7rem;
+  line-height: 1.15;
+  color: var(--kn-ink);
+}
+.post-link:visited { color: var(--kn-ink); }
+.post-link:hover { color: var(--kn-accent-deep); text-decoration: none; }
+.post-list-heading { font-family: var(--kn-serif); }
+
+/* Posts ------------------------------------------------------------------------*/
+
+.post-title { font-family: var(--kn-serif); font-weight: 400; letter-spacing: -0.01em; }
+.post-content { color: var(--kn-ink); }
+.post-content h2, .post-content h3 { margin-top: 2rem; }
+
+blockquote {
+  color: var(--kn-soft);
+  border-left: 4px solid var(--kn-accent);
+  font-style: normal;
+  letter-spacing: 0;
+}
+
+pre, code {
+  border: 1px solid var(--kn-rule);
+  background-color: #f5efe7;
+  border-radius: 6px;
+}
+code { font-family: var(--kn-mono); font-size: 0.86em; }
+.hljs, pre code { background: #f5efe7 !important; }
+
+/* Collapsible sections (e.g. abstract details) ------------------------------------*/
+
+.post-content details {
+  background: var(--kn-card);
+  border: 1px solid var(--kn-rule);
+  border-radius: 14px;
+  padding: 1rem 1.3rem;
+  margin: 0 0 1.4rem;
+}
+.post-content details[open] { border-color: var(--kn-accent); }
+.post-content summary {
+  font-family: var(--kn-mono);
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.post-content summary:hover { color: var(--kn-accent-deep); }
+
+/* Footnotes --------------------------------------------------------------------*/
+
+.footnotes {
+  margin-top: 3rem;
+  border-top: 1px solid var(--kn-rule);
+  padding-top: 1.2rem;
+  font-size: 0.92rem;
+  color: var(--kn-soft);
+}
+
+/* Footer ------------------------------------------------------------------------*/
+
+.site-footer {
+  background: var(--kn-side-bg);
+  color: var(--kn-side-soft);
+  border-top: none;
+}
+.site-footer a, .site-footer a:visited { color: var(--kn-side-ink); }
+.site-footer a:hover { color: var(--kn-accent); }
+.footer-heading { font-family: var(--kn-serif); color: var(--kn-side-ink); }
+.site-footer .username, .contact-list, .social-media-list { color: var(--kn-side-soft); }
+.social-media-list .icon path, .site-footer svg path { fill: var(--kn-side-soft); }
+
+/* Post navigation (override.css companions) ----------------------------------------*/
+
+.post_navi-label { font-family: var(--kn-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; opacity: 1; color: var(--kn-faint); }
+.post_navi .post_navi-arrow { color: var(--kn-accent); opacity: 0.55; }
+.share-links { font-family: var(--kn-mono); font-size: 0.8rem; }
