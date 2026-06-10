@@ -8,7 +8,7 @@ series_part: 1
 status: draft
 ---
 
-I'm giving a keynote at [R/Pharma](https://rinpharma.com/) in October! I'll be talking about open-source tools and agentic AI in clinical trials. It's truly wild. I am excited and slightly terrified. Expand the section below to see the abstract I submitted.
+I'm giving a keynote at [R/Pharma](https://rinpharma.com/) in October! I'll be talking about open-source tools and agentic AI in clinical trials. It still feels a little wild to type that. I'm excited, and slightly terrified. Expand the section below to see the abstract I submitted.
 
 <details>
 <summary>Abstract</summary>
@@ -27,32 +27,34 @@ We close by looking forward, from package development into clinical operations, 
 
 </details>
 
-That's the official version. Honestly, the reality is messier. I wrote that almost two months ago and [Fable 5](https://www.anthropic.com/news/claude-fable-5-mythos-5) came out today, so who knows what things will look like in October. So, here's the plan. Over the next few months I'm going to put my open-source experimentation hat on and try to figure out what these agents are good at today. I'm not going to be on the absolute cutting edge, but I'll try to stay close behind. In the spirit of Open Source, I'll do the work in public and do my best to write about it here in the coming months. Then I'll talk about it as part of the keynote.
+That's the official version. Honestly, the reality is messier. I wrote that abstract almost two months ago, and [Fable 5](https://www.anthropic.com/news/claude-fable-5-mythos-5) came out today, so who knows what things will look like in October.
+
+So here's the plan: over the next few months, I'm going to put on my open-source experimentation hat and try to figure out what these agents are good at right now. I'm not going to be on the absolute cutting edge, but I'll try to stay close behind. In the spirit of open source, I'll do the work in public and write about it here. Then I'll talk about what I learn in the keynote.
 
 ## Today: AI in the Loop
 
-To start the talk, I'll introduce the two biggest open-source projects I've worked on — [`{safetyGraphics}`](https://github.com/SafetyGraphics/safetyGraphics) and [`{gsm}`](https://gilead-biostats.github.io/gsm.core/). I've still got a million ideas for these projects — some big, some small — so I'm going to try some things out. Mostly, I want to figure out what agentic AI is good at right now. How can we use these tools to create medicines faster and more efficiently? It's a hard question to pin down when the tools keep changing this quickly.
+To start the talk, I'll introduce the two biggest open-source projects I've worked on: [`{safetyGraphics}`](https://github.com/SafetyGraphics/safetyGraphics) and [`{gsm}`](https://gilead-biostats.github.io/gsm.core/). I've still got a million ideas for these projects — some big, some small — so I'm going to try some things out. Mostly, I want to answer the recurring question for this series: what can we do with these tools right now? How can we use them to create medicines faster and more efficiently? It's a hard question to pin down when the tools keep changing this quickly.
 
-As I write this on June 10, 2026, my team uses agentic AI, mostly via [GitHub Copilot](https://github.com/features/copilot), to create open-source R packages for use in GxP processes related to risk-based quality monitoring. I'd say we're using an "AI-in-the-loop" model with extensive gates for human review in all aspects of the work. Our main package is called [`{gsm.core}`](https://gilead-biostats.github.io/gsm.core/) and we lead a PHUSE working group called [OpenRBQM](https://openrbqm.github.io/).
+As I write this on June 10, 2026, my team uses agentic AI, mostly via [GitHub Copilot](https://github.com/features/copilot), to create open-source R packages for GxP processes related to risk-based quality monitoring. I'd describe our current approach as "AI in the loop": the tools help throughout the work, but human review gates are everywhere. Our main package is [`{gsm.core}`](https://gilead-biostats.github.io/gsm.core/), and we lead a PHUSE working group called [OpenRBQM](https://openrbqm.github.io/).
 
-We use the `{gsm}` tools to monitor actual studies. We wrote a [paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC11335794/) and have done a [bunch](https://gilead-biostats.github.io/workr/slides/#/title-slide) of [presentations](https://gilead-biostats.github.io/qcthat/slides/introduction.html#/title-slide) about our work. We need a better home page.
+We use the `{gsm}` tools to monitor actual studies. We wrote a [paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC11335794/) and have given a [bunch](https://gilead-biostats.github.io/workr/slides/#/title-slide) of [presentations](https://gilead-biostats.github.io/qcthat/slides/introduction.html#/title-slide) about our work. We need a better home page.
 
-I've been following LLMs for years. It's widely agreed that their programming capabilities took a [huge step forward](https://simonwillison.net/2026/Jan/4/inflection/) with the release of Opus 4.5 and ChatGPT 5.2 in late 2025. My team officially started adopting agentic AI in January 2026 ("Everyone should be playing as part of your job to see what works.") and started formalizing in the following months ("Everyone should be using this every day. Who knows how skills work?") — a process that is still very much ongoing today.
+I've been following LLMs for years. It's widely agreed that their programming capabilities took a [huge step forward](https://simonwillison.net/2026/Jan/4/inflection/) with the release of Opus 4.5 and ChatGPT 5.2 in late 2025. My team officially started adopting agentic AI in January 2026 ("Everyone should be playing with this as part of your job, just to see what works.") and started formalizing our approach in the following months ("Everyone should be using this every day. Who knows how skills work?") — a process that is still very much ongoing.
 
-Our rate of releases has gone up by roughly 50% compared to last year. The number of issues, both opened and closed, has roughly doubled this year. Same with PRs. That's not a controlled productivity study — lots of other things changed too — but the activity pattern is real. Humans still own every step of the process — PM, design, coding, code review, qualification, etc. — but we use AI as a power tool in all aspects of our work. I'll share as much as I can about our best practices and lessons learned here and as part of the talk.
+Our rate of releases has gone up by roughly 50% compared to last year. The number of issues, both opened and closed, has roughly doubled. Same with PRs. That's not a controlled productivity study — lots of other things changed too — but the activity pattern is real. Humans still own every step of the process: product management, design, coding, code review, qualification, and everything else. But we use AI as a power tool throughout the work. I'll share as much as I can about our best practices and lessons learned here and as part of the talk.
 
 ## What's Next?
 
-I also want to talk about what's next. GitHub Copilot is powerful, but it's not cutting edge. Agents' ability to work autonomously continues to [improve exponentially](https://theaidigest.org/time-horizons). What happens when we have "agentic workers"? What does that even mean? Highly autonomous agents via [OpenClaw](https://openclaw.ai/) and other platforms already exist.
+I also want to talk about what's next. GitHub Copilot is powerful, but it's not the cutting edge. Agents' ability to work autonomously continues to [improve exponentially](https://theaidigest.org/time-horizons). What happens when we have "agentic workers"? What does that even mean? Highly autonomous agents via [OpenClaw](https://openclaw.ai/) and other platforms already exist.
 
 OpenAI hired OpenClaw's creator, [Peter Steinberger](https://www.computerworld.com/article/4132725/openai-hires-openclaw-founder-as-ai-agent-race-intensifies.html), and Anthropic CEO Dario Amodei talks about a ["country of geniuses in a datacenter"](https://darioamodei.com/essay/machines-of-loving-grace).
 
-What can we actually do with AI agents right now? How will they fit into a GxP framework in the coming months and years? I'm not at all comfortable using those tools for GxP use cases right now, but the capabilities are coming, and I want to understand them.
+What can we actually do with AI agents right now? How will they fit into a GxP framework in the coming months and years? I'm not comfortable using those highly autonomous tools for GxP use cases right now, but the capabilities are coming, and I want to understand them.
 
-The next few posts will talk about what I've done so far — my plan has changed about four times since I found out about the keynote last month. I'm figuring this out as I go along with everyone else. I'll try to post regularly right up until the keynote happens. My next post will introduce `obot`: a semi-autonomous, open-source coding agent created with OpenClaw!
+The next few posts will talk about what I've done so far. My plan has changed about four times since I found out about the keynote last month, and I'm figuring this out as I go along with everyone else. I'll try to post regularly right up until the keynote. My next post will introduce `obot`: a semi-autonomous, open-source coding agent created with OpenClaw!
 
 ---
 
 ## AI collaboration note
 
-I use AI all the time now, but I'll always try to tell you how I use it. I actually pretty much wrote this whole post! AI provided feedback on both my initial outline and the near-final draft. Most of the time, I'll probably dictate a draft/outline and then have AI write the post, which I'll heavily edit.
+I use AI all the time now, but I'll always try to tell you how I use it. I wrote the original draft of this post myself. AI provided feedback on the initial outline, did a final copy edit, and helped identify a few places where the framing needed to be clearer. I reviewed and edited the result before publication.
