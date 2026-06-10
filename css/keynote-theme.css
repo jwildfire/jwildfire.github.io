@@ -154,6 +154,50 @@ code { font-family: var(--kn-mono); font-size: 0.86em; }
 .site-footer .username, .contact-list, .social-media-list { color: var(--kn-side-soft); }
 .social-media-list .icon path, .site-footer svg path { fill: var(--kn-side-soft); }
 
+/* Keynote banner (homepage) ---------------------------------------------------------*/
+
+.keynote-banner {
+  display: block;
+  background: var(--kn-side-bg);
+  border-radius: 16px;
+  border-left: 5px solid var(--kn-accent);
+  padding: 1.4rem 1.6rem;
+  margin: 0.5rem 0 2.4rem;
+  text-decoration: none;
+  transition: box-shadow 140ms ease, transform 140ms ease;
+}
+.keynote-banner:hover {
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(39, 24, 16, 0.25);
+}
+.keynote-banner-kicker {
+  display: block;
+  font-family: var(--kn-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--kn-accent);
+  margin-bottom: 0.45rem;
+}
+.keynote-banner-headline {
+  display: block;
+  font-family: var(--kn-serif);
+  font-size: 1.45rem;
+  line-height: 1.2;
+  color: var(--kn-side-ink);
+  margin-bottom: 0.55rem;
+}
+.keynote-banner-headline em { color: var(--kn-accent); font-style: italic; }
+.keynote-banner-cta {
+  display: block;
+  font-family: var(--kn-mono);
+  font-size: 0.8rem;
+  color: var(--kn-side-soft);
+}
+.keynote-banner:hover .keynote-banner-cta { color: var(--kn-accent); }
+
 /* Post navigation (override.css companions) ----------------------------------------*/
 
 .post_navi-label { font-family: var(--kn-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; opacity: 1; color: var(--kn-faint); }
