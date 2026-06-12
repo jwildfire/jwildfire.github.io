@@ -4,7 +4,7 @@ author: "Jeremy Wildfire"
 excerpt: "The first OBot setup was exciting, but useful autonomy turned out to require supervision, heartbeats, agent roles, and a control plane."
 tags: RPharma AI Agents Autonomy Paperclip OBot DeveloperDiary
 series: "R/Pharma 2026 developer diary"
-series_part: 4
+series_part: 3
 status: outline
 ---
 
