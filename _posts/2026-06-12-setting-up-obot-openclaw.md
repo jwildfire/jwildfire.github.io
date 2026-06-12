@@ -103,12 +103,14 @@ date: "2026-06-12"
 }
 </style>
 
+## Introducing Obot
+
 <div class="obot-intro" markdown="1">
 
 For the second developer series post, I introduce Obot - an OpenClaw coding agent that I set up for this project. My goal is to have Obot do work on some of my more neglected open source projects, ideally without tons of hand holding from me. I mostly text Obot using Telegram (which is a slightly bizarre experience), so I decided to interview Obot via chat for this post. The transcript is below.[^ai]
 </div>
 
-## Transcript
+## Chat Transcript
 
 <div class="obot-transcript">
   <section class="obot-turn">
@@ -298,5 +300,9 @@ For the second developer series post, I introduce Obot - an OpenClaw coding agen
     </div>
   </section>
 </div>
+
+## Conclusion
+
+So that's Obot! It's been 60% fun and 40% frustrating experimenting with OpenClaw. Chatting with an agent via Telegram and having it do real work is cool, but getting everything set up has mostly been a hassle. Overall, I think I'm slightly less productive using Obot than working directly in Claude Code or Codex or GitHub Copilot. I've been trying (and mostly failing) in recent weeks to get Obot to be more autonomous. More on that in a future post. Before we get into that, I want to do a post talking a bit about what I actually want to build. It's previewed a bit in the chat above, but I think it's worth a bit more discussion. I think it's going to be called: `{safetyGraphics}` ❤️ `{gsm}`.
 
 [^ai]: **AI collaboration note** — I provided the transcript and framing for this post. Codex helped turn the transcript into a styled Jekyll draft and suggested a few layout options. I reviewed and edited the result before publication.
