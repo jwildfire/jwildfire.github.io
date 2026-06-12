@@ -51,7 +51,7 @@ OpenAI hired OpenClaw's creator, [Peter Steinberger](https://www.computerworld.c
 
 What can we actually do with more advanced AI harnesses right now? How can they fit into clinical trial workflows in the coming months and years? I'm not comfortable using those highly autonomous tools for GxP use cases right now, but the capabilities are coming, and I want to understand them.
 
-The next few posts will talk about what I've done so far. My plan has changed at least three times since I found out about the keynote last month, and I'm figuring this out as I go - just like everyone else. I'll try to post regularly right up until the keynote. My next post will introduce `obot`: a semi-autonomous, open-source coding agent created with OpenClaw![^ai]
+The next few posts will talk about what I've done so far. My plan has changed at least three times since I found out about the keynote last month, and I'm figuring this out as I go — just like everyone else. I'll try to post regularly right up until the keynote. My next post will introduce `obot`: a semi-autonomous, open-source coding agent created with OpenClaw![^ai]
 
 [^sw]: My thinking on this topic is very much influenced by [Simon Willison](https://simonwillison.net/), who writes my favorite blog about AI. He does an excellent job providing concrete examples and use cases. His series on [Agentic Engineering](https://simonwillison.net/tags/agentic-engineering/) in particular is worth a read. I hope that this series and the associated talk can provide a similar perspective for AI usage in clinical trials.
 
