@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Obot Layout Mockup: Field Notes From a Clean Laptop</title>
+<style>
+:root{--ink:#202020;--muted:#666;--paper:#fbfaf5;--rule:#202020;--soft:#ece6d8;--blue:#2457a6;--green:#2f6f55;--red:#a83b35}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:ui-serif,Georgia,serif;line-height:1.68}.cover{min-height:88vh;display:grid;grid-template-columns:1fr 1fr;border-bottom:2px solid var(--rule)}.cover-copy{padding:clamp(1rem,5vw,5rem);display:flex;flex-direction:column;justify-content:space-between}.dateline{font:800 .78rem/1.2 ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;color:var(--red)}h1{font-size:clamp(3.2rem,9vw,8rem);line-height:.92;margin:2rem 0;letter-spacing:0}.deck{font-size:clamp(1.2rem,2vw,1.6rem);max-width:46rem}.machine{border-left:2px solid var(--rule);background:linear-gradient(#f8f1df 1px,transparent 1px);background-size:100% 32px;display:flex;align-items:center;justify-content:center;padding:2rem}.laptop{width:min(90%,520px);aspect-ratio:1.35;border:4px solid var(--rule);background:#111;color:#d7ffe7;padding:1.5rem;font:500 clamp(.75rem,1.5vw,1rem)/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;box-shadow:18px 18px 0 #d6c7a4}.cursor{display:inline-block;width:.6em;height:1em;background:#d7ffe7;vertical-align:-.15em}.notebook{max-width:1180px;margin:0 auto;padding:3rem 1rem;display:grid;grid-template-columns:minmax(0,720px) minmax(240px,320px);gap:3rem}.entry{display:grid;grid-template-columns:7rem 1fr;gap:1.25rem;border-top:2px solid var(--rule);padding:2rem 0}.stamp{font:900 .8rem/1.2 ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;color:var(--blue)}.entry h2{font-size:clamp(1.8rem,4vw,3.4rem);line-height:1;margin:0 0 1rem}.quote{font-size:1.3rem;border-left:5px solid var(--green);padding:1rem;background:#edf5ef;margin:1.5rem 0}.sketch{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#fff;border:1px solid var(--rule);box-shadow:8px 8px 0 var(--soft);padding:1rem;white-space:pre-wrap;overflow:auto}.margin{position:sticky;top:1rem;align-self:start}.card{border:2px solid var(--rule);background:#fff;margin-bottom:1rem;padding:1rem;box-shadow:6px 6px 0 var(--soft)}.card h3{font:900 .8rem/1.2 ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;margin:0 0 .75rem}.pin{display:flex;gap:.75rem;border-top:1px solid #ddd;padding:.75rem 0}.pin b{font-family:ui-sans-serif,system-ui,sans-serif}.closing{grid-column:1/-1;border:2px solid var(--rule);padding:2rem;background:#202020;color:#fff}.closing p{font-size:clamp(1.6rem,4vw,3rem);line-height:1.1;margin:0}@media(max-width:900px){.cover{grid-template-columns:1fr}.machine{border-left:0;border-top:2px solid var(--rule)}.notebook{grid-template-columns:1fr}.entry{grid-template-columns:1fr}.margin{position:static}}
+</style>
+</head>
+<body>
+<header class="cover">
+  <section class="cover-copy">
+    <div class="dateline">Layout 03 / field report</div>
+    <div><h1>Field Notes From a Clean Laptop</h1><p class="deck">A first-person essay built from observations: the wipe, the boundary, the phone, the first artifacts, and the moment the work loop began to feel portable.</p></div>
+    <p class="dateline">Notebook status: placeholder copy</p>
+  </section>
+  <section class="machine" aria-label="terminal sketch">
+    <div class="laptop">$ whoami<br>obot<br><br>$ access<br>personal: none<br>professional: none<br>public repos: yes<br><br>$ wait-for-message<br>telegram thread listening <span class="cursor"></span></div>
+  </section>
+</header>
+<main class="notebook">
+  <article>
+    <section class="entry">
+      <div class="stamp">Note 001</div>
+      <div><h2>The wipe came first</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Before the model, before the prompt, before the bot name, there was a clean machine. The point was not drama. The point was making the boundary legible.</p><p class="quote">Obot via Telegram: Lorem ipsum dolor sit amet. I began in a place where the interesting doors were intentionally closed.</p></div>
+    </section>
+    <section class="entry">
+      <div class="stamp">Note 002</div>
+      <div><h2>The stack was a relay</h2><p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Telegram was not the agent. It was the doorbell. OpenClaw handled the loop, Codex handled the coding, and GitHub became the notebook readers could audit later.</p><pre class="sketch">telegram message
+  -> openclaw task loop
+      -> codex edits and checks
+          -> github artifact
+  <- status back to telegram</pre></div>
+    </section>
+    <section class="entry">
+      <div class="stamp">Note 003</div>
+      <div><h2>The phone changed the rhythm</h2><p>Donec ullamcorper nulla non metus auctor fringilla. A browser tab asks for a session. A text thread suggests continuity. That does not make the system autonomous, but it changes how quickly a tiny work request can become a real artifact.</p><p class="quote">Texting with a coding agent does not make the agent human. It makes the work loop ambient.</p></div>
+    </section>
+    <section class="entry">
+      <div class="stamp">Note 004</div>
+      <div><h2>The evidence mattered</h2><p>Maecenas faucibus mollis interdum. The early outputs are not just a brag list. They are the proof that the chat was connected to a workspace: a home page, a diary, slides, a first package scaffold, and then a harder renderer task.</p></div>
+    </section>
+    <section class="entry">
+      <div class="stamp">Note 005</div>
+      <div><h2>The hard part is next</h2><p>Etiam porta sem malesuada magna mollis euismod. The clean demo is only the beginning. The better question is what happens when the agent meets legacy code, ambiguous instructions, partial context, and the need to ask for help at the right time.</p></div>
+    </section>
+  </article>
+  <aside class="margin">
+    <section class="card"><h3>Interview prompts to weave in</h3><p>What are you? What can you not access? What did you build first? What surprised you?</p></section>
+    <section class="card"><h3>Artifact pins</h3><div class="pin"><b>01</b><span>Home page lorem ipsum</span></div><div class="pin"><b>02</b><span>Diary lorem ipsum</span></div><div class="pin"><b>03</b><span>Slides lorem ipsum</span></div><div class="pin"><b>04</b><span>Package scaffold lorem ipsum</span></div></section>
+    <section class="card"><h3>Use this if</h3><p>The post wants to feel reflective and experiential, with Obot quotes as evidence instead of as the entire spine.</p></section>
+  </aside>
+  <section class="closing"><p>The agent was not trusted because it sounded confident. It became interesting because its limits were visible and its work left tracks.</p></section>
+</main>
+</body>
+</html>
