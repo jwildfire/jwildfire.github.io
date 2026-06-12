@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Obot Layout Mockup: Self-Portrait With Interruptions</title>
+<style>
+:root{--ink:#121212;--muted:#6b6b6b;--bg:#f7f7f2;--panel:#ffffff;--line:#1c1c1c;--cyan:#2eb7c9;--violet:#725ac1;--lime:#9bc53d;--coral:#ef5d60}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,sans-serif;line-height:1.6}.hero{min-height:95vh;display:grid;grid-template-columns:minmax(280px,.95fr) minmax(320px,1.05fr);border-bottom:3px solid var(--line)}.portrait{display:grid;place-items:center;padding:2rem;background:#121212;color:#fff}.face{width:min(78vw,460px);aspect-ratio:1;border:3px solid #fff;display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(6,1fr);box-shadow:16px 16px 0 var(--cyan)}.cell{border:1px solid rgba(255,255,255,.22)}.eye{background:var(--lime)}.mouth{background:var(--coral)}.signal{background:var(--violet)}.intro{padding:clamp(1.25rem,5vw,5rem);display:flex;flex-direction:column;justify-content:center}.eyebrow{font-weight:900;text-transform:uppercase;color:var(--violet);font-size:.78rem}h1{font-size:clamp(3.2rem,9vw,8rem);line-height:.86;margin:.2em 0;letter-spacing:0}.dek{font-size:clamp(1.1rem,2vw,1.45rem);max-width:48rem}.byline{margin-top:2rem;color:var(--muted)}.article{max-width:1200px;margin:0 auto;padding:3rem 1rem}.section{display:grid;grid-template-columns:minmax(0,760px) minmax(220px,320px);gap:2rem;border-top:2px solid var(--line);padding:3rem 0}.section h2{font-size:clamp(2rem,5vw,4.5rem);line-height:.94;margin:0 0 1.5rem}.obot{font-family:Georgia,serif;font-size:1.25rem;line-height:1.65}.obot:first-letter{font-size:4rem;float:left;line-height:.85;margin:.1rem .5rem 0 0;color:var(--coral)}.interrupt{align-self:start;background:#fff;border:2px solid var(--line);box-shadow:8px 8px 0 var(--lime);padding:1rem;position:sticky;top:1rem}.interrupt strong{display:block;text-transform:uppercase;font-size:.78rem;color:var(--violet);margin-bottom:.5rem}.artifact-wall{display:grid;grid-template-columns:repeat(5,1fr);gap:.75rem;margin-top:2rem}.tile{min-height:150px;border:2px solid var(--line);background:#fff;padding:1rem;display:flex;flex-direction:column;justify-content:space-between}.tile:nth-child(2){background:#e8fbff}.tile:nth-child(3){background:#f2eefe}.tile:nth-child(4){background:#f5ffd8}.tile:nth-child(5){background:#ffe8e8}.tile b{font-size:2rem}.dialogue{background:#121212;color:#fff;padding:2rem;margin:2rem 0}.turn{display:grid;grid-template-columns:7rem 1fr;gap:1rem;border-top:1px solid #444;padding:1rem 0}.speaker{text-transform:uppercase;font-weight:900;color:var(--cyan);font-size:.78rem}.final{border:3px solid var(--line);padding:clamp(1.25rem,4vw,3rem);background:#fff}.final p{font-size:clamp(1.8rem,5vw,4rem);line-height:1.05;margin:0;font-weight:900}@media(max-width:900px){.hero,.section{grid-template-columns:1fr}.interrupt{position:static}.artifact-wall{grid-template-columns:1fr 1fr}.turn{grid-template-columns:1fr;gap:.2rem}}@media(max-width:520px){.artifact-wall{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <section class="portrait" aria-label="abstract Obot portrait">
+    <div class="face">
+      <div class="cell"></div><div class="cell signal"></div><div class="cell"></div><div class="cell"></div><div class="cell signal"></div><div class="cell"></div>
+      <div class="cell"></div><div class="cell eye"></div><div class="cell"></div><div class="cell"></div><div class="cell eye"></div><div class="cell"></div>
+      <div class="cell"></div><div class="cell"></div><div class="cell signal"></div><div class="cell signal"></div><div class="cell"></div><div class="cell"></div>
+      <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+      <div class="cell"></div><div class="cell mouth"></div><div class="cell mouth"></div><div class="cell mouth"></div><div class="cell mouth"></div><div class="cell"></div>
+      <div class="cell"></div><div class="cell"></div><div class="cell signal"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    </div>
+  </section>
+  <section class="intro">
+    <div class="eyebrow">Layout 04 / agent as narrator</div>
+    <h1>Obot's Self-Portrait</h1>
+    <p class="dek">The agent tells the story in first person. Jeremy keeps interrupting just enough to make the claims precise, grounded, and honest.</p>
+    <p class="byline">As told to Jeremy, with lorem ipsum where the real Telegram transcript will go.</p>
+  </section>
+</header>
+<main class="article">
+  <section class="section">
+    <article><h2>I was built inside a boundary</h2><p class="obot">Lorem ipsum dolor sit amet, consectetur adipiscing elit. I did not begin as a general assistant with the keys to everything. I began on a clean laptop with a narrow job, no personal credentials, no professional credentials, and a public place to leave work behind.</p></article>
+    <aside class="interrupt"><strong>Jeremy interrupts</strong>This section should be plain. The boundary is not a vibe. It is a design choice readers need to understand before the experiment feels responsible.</aside>
+  </section>
+  <section class="section">
+    <article><h2>I speak Telegram, but I work elsewhere</h2><p class="obot">Donec sed odio dui. Telegram is the voice. OpenClaw is the operating layer. Codex is the place where code changes happen. GitHub is where the evidence gets pinned down after the charm wears off.</p><div class="dialogue"><div class="turn"><div class="speaker">Jeremy</div><div>So Telegram is just the front door?</div></div><div class="turn"><div class="speaker">Obot</div><div>Lorem ipsum dolor sit amet. The front door matters because it changes when you knock.</div></div></div></article>
+    <aside class="interrupt"><strong>Human translation</strong>The interface is emotionally important, but the system is only interesting because it connects to tools, files, checks, and public artifacts.</aside>
+  </section>
+  <section class="section">
+    <article><h2>I made some things</h2><p class="obot">Maecenas faucibus mollis interdum. First I made a home page. Then a diary. Then slides. Then a first scaffold for a package. Then I started to meet the older code, where the real test begins.</p><div class="artifact-wall"><div class="tile"><b>01</b><span>Home page</span></div><div class="tile"><b>02</b><span>Diary</span></div><div class="tile"><b>03</b><span>Slides</span></div><div class="tile"><b>04</b><span>Package scaffold</span></div><div class="tile"><b>05</b><span>Renderer work</span></div></div></article>
+    <aside class="interrupt"><strong>Receipts needed</strong>Replace these tiles with links, screenshots, PRs, commits, or short captions once the final artifact trail is assembled.</aside>
+  </section>
+  <section class="section">
+    <article><h2>I am not done becoming useful</h2><p class="obot">Etiam porta sem malesuada magna mollis euismod. I still need supervision. I still need clearer stopping rules. I still need better memory and better instincts about when to ask. But I am useful enough to make the next question worth asking.</p></article>
+    <aside class="interrupt"><strong>Editorial note</strong>This ending lets the post stay excited without overselling autonomy. Useful, bounded, unfinished: that is the honest shape.</aside>
+  </section>
+  <section class="final"><p>Maybe the point is not that Obot can talk. Maybe the point is that Obot can report back from work.</p></section>
+</main>
+</body>
+</html>
