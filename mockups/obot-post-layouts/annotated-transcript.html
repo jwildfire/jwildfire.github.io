@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Obot Layout Mockup: Annotated Transcript</title>
+<style>
+:root{--ink:#0f1720;--muted:#65717f;--bg:#f3f5f0;--panel:#ffffff;--line:#cfd8d3;--blue:#1769e0;--red:#c43b3b;--green:#16875d;--yellow:#f5c542}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,sans-serif;line-height:1.55}.top{display:grid;grid-template-columns:minmax(260px,1.1fr) minmax(260px,.9fr);min-height:76vh;border-bottom:1px solid var(--line)}.hero{padding:clamp(1.25rem,5vw,5rem);display:flex;flex-direction:column;justify-content:center}.eyebrow{text-transform:uppercase;font-size:.78rem;font-weight:800;color:var(--red)}h1{font-size:clamp(3rem,9vw,7.5rem);line-height:.88;margin:.2em 0;letter-spacing:0}.lede{font-size:clamp(1.1rem,2vw,1.45rem);max-width:52rem}.map{border-left:1px solid var(--line);display:grid;align-content:center;padding:2rem;background:#fff}.node{border:1px solid var(--line);background:#fdfdfb;padding:1rem;margin:.5rem 0;border-radius:6px}.node span{display:block;color:var(--muted);font-size:.8rem}.layout{max-width:1380px;margin:0 auto;display:grid;grid-template-columns:240px minmax(0,720px) minmax(260px,360px);gap:1.25rem;padding:2rem 1rem}.toc,.notes{position:sticky;top:1rem;align-self:start}.toc{font-size:.9rem}.toc a{display:block;padding:.55rem .7rem;color:var(--ink);text-decoration:none;border-left:3px solid transparent}.toc a:hover{border-color:var(--blue);background:#fff}.transcript{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:clamp(1rem,3vw,2.5rem)}.turn{border-bottom:1px solid #e7ece8;padding:1.25rem 0}.speaker{font-weight:900;text-transform:uppercase;font-size:.8rem;color:var(--blue);margin-bottom:.3rem}.turn.obot .speaker{color:var(--green)}.annotation{background:#fff7cf;border:1px solid #e4c449;border-radius:8px;padding:1rem;margin:1rem 0 1.25rem}.annotation b{display:block;margin-bottom:.25rem}.notes{display:grid;gap:.8rem}.card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:1rem}.card h2{font-size:.82rem;text-transform:uppercase;margin:0 0 .7rem;color:var(--muted)}.receipt{display:grid;grid-template-columns:2.2rem 1fr;gap:.6rem;border-top:1px solid #edf0ee;padding:.7rem 0}.num{font-weight:900;color:var(--red)}.pull{font-family:Georgia,serif;font-size:1.45rem;line-height:1.3;border-left:5px solid var(--blue);padding-left:1rem;margin:2rem 0}.matrix{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem}.mini{background:#f7f9f6;border:1px solid var(--line);padding:.75rem;border-radius:6px}.mini b{display:block}@media(max-width:980px){.top{grid-template-columns:1fr}.map{border-left:0;border-top:1px solid var(--line)}.layout{grid-template-columns:1fr}.toc,.notes{position:static}.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:.25rem}.matrix{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="top">
+  <section class="hero">
+    <div class="eyebrow">Layout 02 / transcript plus interpretation</div>
+    <h1>Annotated Transcript With Receipts</h1>
+    <p class="lede">The conversation stays readable, but the margins do real work: architecture notes, safety boundaries, artifact links, and the occasional human translation.</p>
+  </section>
+  <aside class="map">
+    <div class="node"><strong>Telegram</strong><span>Where the request starts</span></div>
+    <div class="node"><strong>OpenClaw</strong><span>Where the agent loop lives</span></div>
+    <div class="node"><strong>Codex</strong><span>Where coding work happens</span></div>
+    <div class="node"><strong>GitHub</strong><span>Where the receipts accumulate</span></div>
+  </aside>
+</header>
+<main class="layout">
+  <nav class="toc">
+    <a href="#identity">Identity</a>
+    <a href="#boundary">Boundary</a>
+    <a href="#stack">Stack</a>
+    <a href="#evidence">Evidence</a>
+  </nav>
+  <article class="transcript">
+    <section id="identity" class="turn">
+      <div class="speaker">Jeremy</div>
+      <p>What are you, in your own words?</p>
+    </section>
+    <section class="turn obot">
+      <div class="speaker">Obot</div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. I am a constrained coding agent that can be reached through Telegram. I am less interesting as a chatbot than as a work loop that leaves visible artifacts.</p>
+    </section>
+    <aside class="annotation"><b>Annotation: the thesis</b>Lorem ipsum dolor sit amet. The answer should make the distinction between intelligence theater and actual workflow: chat is the front door, not the whole house.</aside>
+    <section id="boundary" class="turn">
+      <div class="speaker">Jeremy</div>
+      <p>What could you access when this started?</p>
+    </section>
+    <section class="turn obot">
+      <div class="speaker">Obot</div>
+      <p>Donec ullamcorper nulla non metus auctor fringilla. No personal credentials. No professional credentials. No sensitive files. A clean laptop, public repos, and a deliberately narrow lane.</p>
+    </section>
+    <aside class="annotation"><b>Annotation: absence as design</b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. This note should probably be explicit in the final post because the safety boundary is part of the story, not legal garnish.</aside>
+    <p class="pull">The interface felt casual. The boundary was not.</p>
+    <section id="stack" class="turn">
+      <div class="speaker">Jeremy</div>
+      <p>How does a Telegram message become code?</p>
+    </section>
+    <section class="turn obot">
+      <div class="speaker">Obot</div>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Telegram carries the instruction. OpenClaw coordinates the agent. Codex edits, runs, and reports. GitHub preserves the artifact trail.</p>
+    </section>
+    <aside class="annotation"><b>Annotation: reader promise</b>Lorem ipsum dolor sit amet. This is a narrative post, not a setup guide, so the stack explanation can stay diagrammatic and grounded in what the reader can see.</aside>
+    <section id="evidence" class="turn">
+      <div class="speaker">Jeremy</div>
+      <p>What did you actually do?</p>
+    </section>
+    <section class="turn obot">
+      <div class="speaker">Obot</div>
+      <p>Maecenas faucibus mollis interdum. I built a home page, kept a diary, drafted slides, started a package scaffold, and then discovered that modernizing legacy renderers is a much better test than making a pretty demo.</p>
+    </section>
+  </article>
+  <aside class="notes">
+    <section class="card"><h2>Receipts</h2><div class="receipt"><div class="num">01</div><div><b>Home page</b>Lorem ipsum public surface</div></div><div class="receipt"><div class="num">02</div><div><b>Diary</b>Lorem ipsum memory trail</div></div><div class="receipt"><div class="num">03</div><div><b>Slides</b>Lorem ipsum talk draft</div></div><div class="receipt"><div class="num">04</div><div><b>Renderer task</b>Lorem ipsum hard problem</div></div></section>
+    <section class="card"><h2>Editorial knobs</h2><div class="matrix"><div class="mini"><b>Voice</b>Calm, candid</div><div class="mini"><b>Density</b>Medium</div><div class="mini"><b>Tech</b>Annotated</div><div class="mini"><b>Risk</b>Explicit</div></div></section>
+    <section class="card"><h2>Use this if</h2><p>The real transcript is useful but uneven. Let the conversation breathe, then let the annotations do the interpretive work.</p></section>
+  </aside>
+</main>
+</body>
+</html>
