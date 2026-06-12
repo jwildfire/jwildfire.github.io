@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Obot Layout Mockup: The Telegram Play</title>
+<style>
+:root{--ink:#16191f;--muted:#626b7a;--paper:#fff8ea;--stage:#15171d;--line:#d9c9a5;--blue:#2b7cff;--green:#2ea66b;--amber:#f0b429;--pink:#f06f8f}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,serif;line-height:1.6}a{color:inherit}.marquee{min-height:92vh;background:radial-gradient(circle at 75% 15%,rgba(240,180,41,.35),transparent 28%),linear-gradient(135deg,#15171d 0 44%,#263244 44% 46%,#fff8ea 46%);color:#fff;display:grid;grid-template-columns:minmax(260px,1fr) minmax(280px,440px);gap:clamp(1rem,4vw,4rem);align-items:end;padding:clamp(1rem,5vw,4rem)}.kicker{text-transform:uppercase;font:700 .78rem/1.2 system-ui,sans-serif;color:#f0b429}.marquee h1{font-size:clamp(3rem,10vw,8rem);line-height:.88;margin:.2em 0;font-weight:900;letter-spacing:0}.subtitle{font-size:clamp(1.1rem,2vw,1.5rem);max-width:52rem}.phone{background:#10141c;border:8px solid #303746;border-radius:34px;padding:16px;box-shadow:0 30px 90px rgba(0,0,0,.45);font-family:ui-sans-serif,system-ui,sans-serif}.phonebar{height:26px;border-bottom:1px solid #2e3848;color:#95a3b8;font-size:.75rem;display:flex;justify-content:space-between}.bubble{max-width:88%;padding:.75rem .9rem;margin:.75rem 0;border-radius:18px;color:#f7fafc}.me{background:var(--blue);margin-left:auto;border-bottom-right-radius:4px}.obot{background:#253044;border-bottom-left-radius:4px}.main{display:grid;grid-template-columns:minmax(180px,260px) minmax(0,760px) minmax(180px,280px);gap:2rem;max-width:1280px;margin:0 auto;padding:4rem 1.25rem}.program{position:sticky;top:1rem;align-self:start;border:1px solid var(--line);padding:1rem;background:#fffdf6}.program h2,.receipts h2{font:800 .82rem/1 system-ui,sans-serif;text-transform:uppercase;margin:0 0 1rem;color:#7a4d00}.program ol{margin:0;padding-left:1.25rem}.scene{font-size:1.1rem}.scene h2{font-size:clamp(2rem,5vw,4rem);line-height:.95;margin:0 0 1rem;border-top:5px solid var(--ink);padding-top:1rem}.line{display:grid;grid-template-columns:7rem 1fr;gap:1rem;margin:1rem 0}.speaker{font:800 .8rem/1.2 system-ui,sans-serif;text-transform:uppercase;color:#7a4d00}.speech{border-bottom:1px solid #eadfca;padding-bottom:1rem}.direction{font-style:italic;color:var(--muted);border-left:4px solid var(--pink);padding:.75rem 1rem;background:#fff1f4;margin:2rem 0}.receipts{position:sticky;top:1rem;align-self:start}.ticket{background:#fff;border:1px dashed #9f8f69;margin-bottom:.75rem;padding:.85rem;font-family:ui-sans-serif,system-ui,sans-serif}.ticket strong{display:block}.ending{grid-column:2;background:#15171d;color:#fff;padding:2rem;margin-top:2rem}.ending p{font-size:1.35rem;margin:0}@media(max-width:900px){.marquee{grid-template-columns:1fr}.main{grid-template-columns:1fr}.program,.receipts{position:static}.line{grid-template-columns:1fr;gap:.25rem}.ending{grid-column:auto}}
+</style>
+</head>
+<body>
+<header class="marquee">
+  <div>
+    <div class="kicker">Layout 01 / transcript as theater</div>
+    <h1>The Telegram Play</h1>
+    <p class="subtitle">A staged conversation between Jeremy and Obot, with scene directions, receipts, and little interruptions where the architecture peeks through the curtain.</p>
+  </div>
+  <aside class="phone" aria-label="Telegram preview">
+    <div class="phonebar"><span>Telegram</span><span>22:14</span></div>
+    <div class="bubble me">What are you, in your own words?</div>
+    <div class="bubble obot">Lorem ipsum dolor sit amet. I am a work loop with a phone number and a public paper trail.</div>
+    <div class="bubble me">Suspiciously polished.</div>
+    <div class="bubble obot">Also true.</div>
+  </aside>
+</header>
+<main class="main">
+  <nav class="program">
+    <h2>Program</h2>
+    <ol>
+      <li>Hello, Obot</li>
+      <li>The clean room</li>
+      <li>The first artifacts</li>
+      <li>The harder problem</li>
+    </ol>
+  </nav>
+  <article class="scene">
+    <h2>Act I. A Phone Lights Up</h2>
+    <p class="direction">Telegram, late evening. A wiped laptop sits open. Nothing personal is logged in. Nothing professional is reachable. The experiment begins with a question.</p>
+    <div class="line"><div class="speaker">Jeremy</div><div class="speech">What are you, in your own words?</div></div>
+    <div class="line"><div class="speaker">Obot</div><div class="speech">Lorem ipsum dolor sit amet, consectetur adipiscing elit. I am not a magic box. I am a coding agent with a chat window, a constrained machine, and a habit of leaving receipts.</div></div>
+    <div class="line"><div class="speaker">Jeremy</div><div class="speech">What job did I give you?</div></div>
+    <div class="line"><div class="speaker">Obot</div><div class="speech">Nullam quis risus eget urna mollis ornare vel eu leo. You asked me to help build in public, to report back, and to stay inside boundaries that were visible enough to trust.</div></div>
+    <h2>Act II. The Setup Monologue</h2>
+    <p class="direction">This is where the post pauses the banter long enough to show the machinery without becoming a setup tutorial.</p>
+    <div class="line"><div class="speaker">Jeremy</div><div class="speech">Walk me through the stack.</div></div>
+    <div class="line"><div class="speaker">Obot</div><div class="speech">Praesent commodo cursus magna. Telegram carries the request. OpenClaw gives the agent a place to operate. Codex performs the coding work. GitHub records the evidence where readers can inspect it.</div></div>
+    <div class="line"><div class="speaker">Jeremy</div><div class="speech">What could you not access?</div></div>
+    <div class="line"><div class="speaker">Obot</div><div class="speech">Aenean lacinia bibendum nulla sed consectetur. No personal credentials. No professional credentials. No sensitive data. The absence of access is part of the design.</div></div>
+    <h2>Act III. Receipts</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. The post can move from chat to evidence here, linking each artifact to a moment in the interview.</p>
+    <div class="line"><div class="speaker">Obot</div><div class="speech">First I made a home page. Then a diary. Then slides. Then a first scaffold. Then I learned that legacy renderers are where confidence goes to become humility.</div></div>
+    <section class="ending"><p>Texting with a coding agent does not make the agent human. It changes the rhythm of asking for work.</p></section>
+  </article>
+  <aside class="receipts">
+    <h2>Receipts</h2>
+    <div class="ticket"><strong>01 Home page</strong>Lorem ipsum artifact link</div>
+    <div class="ticket"><strong>02 Diary</strong>Lorem ipsum trail</div>
+    <div class="ticket"><strong>03 Slides</strong>Lorem ipsum draft</div>
+    <div class="ticket"><strong>04 Package</strong>Lorem ipsum scaffold</div>
+  </aside>
+</main>
+</body>
+</html>
