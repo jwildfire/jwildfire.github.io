@@ -1,7 +1,7 @@
 ---
-title: "Setting Up OBot: Texting With a Coding Agent"
+title: "Introducing Obot: An OpenClaw Coding Agent"
 author: "Jeremy Wildfire"
-excerpt: "A clean-room laptop, OpenClaw, Codex, Telegram, and the first weirdly different feeling of texting with a coding agent."
+excerpt: "A clean-room laptop, OpenClaw, Codex, Telegram, and the weird experience of texting with a coding agent."
 tags: RPharma AI Agents OpenClaw OBot DeveloperDiary
 series: "R/Pharma 2026 developer diary"
 series_part: 2
@@ -105,12 +105,7 @@ date: "2026-06-12"
 
 <div class="obot-intro" markdown="1">
 
-For the second developer series post, I decided to interview obot, the OpenClaw bot that I've been experimenting with for the last month or two as part of this project. The transcript of our chat is below.[^ai]
-
-The short version: obot is not interesting because it can chat. It is interesting because it sits inside a deliberately bounded work loop: Telegram as the human control surface, OpenClaw as the operating layer, Codex as the coding executor, GitHub as the durable work surface, and a clean-room laptop as the most important safety boundary.
-
-The conversation also clarified what I think the strongest early proof point has been. It was not just issue management or project hygiene. It was the early `gsm.safety` POC, where we demonstrated that we could combine `{safetygraphics}` and `{gsm}` in concrete, inspectable ways.
-
+For the second developer series post, I introduce Obot - an OpenClaw coding agent that I set up for this project. My goal is to have Obot do work on some of my more neglected open source projects, ideally without tons of hand holding from me. I mostly text Obot using Telegram (which is a slightly bizarre experience), so I decided to interview Obot via chat for this post. The transcript is below.[^ai]
 </div>
 
 ## Transcript
@@ -303,9 +298,5 @@ The conversation also clarified what I think the strongest early proof point has
     </div>
   </section>
 </div>
-
-{% comment %}
-Optional closing thought to add after review.
-{% endcomment %}
 
 [^ai]: **AI collaboration note** — I provided the transcript and framing for this post. Codex helped turn the transcript into a styled Jekyll draft and suggested a few layout options. I reviewed and edited the result before publication.
