@@ -29,7 +29,7 @@ We close by looking forward, from package development into clinical operations, 
 
 That's the official version. Honestly, the reality is messier. I wrote that abstract almost two months ago, and [Fable 5](https://www.anthropic.com/news/claude-fable-5-mythos-5) came out today, so who knows what things will look like in October.
 
-So here's the plan: over the next few months, I'm going to put on my open-source experimentation hat and try to figure out what these agents are good at right now. I'm not going to be on the absolute cutting edge, but I'll try to stay close behind. In the spirit of open source, I'll do the work in public and write about it here. Then I'll talk about what I learn in the keynote.
+So here's the plan: over the next few months, I'm going to put on my open-source experimentation hat and try to figure out what these agents are good at right now.[^sw] I'm not going to be on the absolute cutting edge, but I'll try to stay close behind. In the spirit of open source, I'll do the work in public and write about it here. Then I'll talk about what I learn in the keynote.
 
 ## Today: AI in the Loop
 
@@ -52,5 +52,7 @@ OpenAI hired OpenClaw's creator, [Peter Steinberger](https://www.computerworld.c
 What can we actually do with more advanced AI harnesses right now? How can they fit into clinical trial workflows in the coming months and years? I'm not comfortable using those highly autonomous tools for GxP use cases right now, but the capabilities are coming, and I want to understand them.
 
 The next few posts will talk about what I've done so far. My plan has changed at least three times since I found out about the keynote last month, and I'm figuring this out as I go - just like everyone else. I'll try to post regularly right up until the keynote. My next post will introduce `obot`: a semi-autonomous, open-source coding agent created with OpenClaw![^ai]
+
+[^sw]: This question is somewhat inspired by [Simon Willison](https://simonwillison.net/), who writes my favorite blog about AI. He does an excellent job providing concrete examples and use cases. His series on [Agentic Engineering](https://simonwillison.net/tags/agentic-engineering/) in particular is worth a read.
 
 [^ai]: **AI collaboration note** — I use AI all the time now, but I'll always try to tell you how I use it. I wrote the original draft of this post myself. AI provided feedback on the initial outline, did a final copy edit, and helped identify a few places where the framing needed to be clearer. I reviewed and edited the result before publication.
