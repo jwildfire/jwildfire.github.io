@@ -1,5 +1,5 @@
 ---
-title: "R/Pharma Keynote - Post 2: Introducing Obot"
+title: "R/Pharma Diary #2 - Introducing Obot"
 author: "Jeremy Wildfire"
 excerpt: "A clean-room laptop, OpenClaw, Codex, Telegram, and the weird experience of texting with a coding agent."
 tags: RPharma AI Agents OpenClaw OBot DeveloperDiary
