@@ -103,11 +103,11 @@ date: "2026-06-12"
 }
 </style>
 
-## Introducing Obot
+## Introducing My OpenClaw Programming Agent
 
 <div class="obot-intro" markdown="1">
 
-For the second developer series post, I introduce Obot - an OpenClaw coding agent that I set up for this project. My goal is to have Obot do work on some of my more neglected open source projects, ideally without tons of hand holding from me. I mostly text Obot using Telegram (which is a slightly bizarre experience), so I decided to interview Obot via chat for this post. The transcript is below.[^ai]
+For the second R/Pharama developer series post, I introduce Obot - an OpenClaw coding agent that I set up for this project. My goal is to have Obot  work on some of my more neglected open source projects, ideally without tons of hand holding from me. I mostly interact with Obot using Telegram (which is a slightly bizarre experience), so I decided to interview Obot via chat for this post. The transcript is below.[^ai]
 </div>
 
 ## 🍊😺 A Chat with Obot 🍊😺
