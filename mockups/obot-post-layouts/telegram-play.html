@@ -3,60 +3,79 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Obot Layout Mockup: The Telegram Play</title>
+<title>Obot Interview Layout: Telegram Play</title>
 <style>
-:root{--ink:#16191f;--muted:#626b7a;--paper:#fff8ea;--stage:#15171d;--line:#d9c9a5;--blue:#2b7cff;--green:#2ea66b;--amber:#f0b429;--pink:#f06f8f}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,serif;line-height:1.6}a{color:inherit}.marquee{min-height:92vh;background:radial-gradient(circle at 75% 15%,rgba(240,180,41,.35),transparent 28%),linear-gradient(135deg,#15171d 0 44%,#263244 44% 46%,#fff8ea 46%);color:#fff;display:grid;grid-template-columns:minmax(260px,1fr) minmax(280px,440px);gap:clamp(1rem,4vw,4rem);align-items:end;padding:clamp(1rem,5vw,4rem)}.kicker{text-transform:uppercase;font:700 .78rem/1.2 system-ui,sans-serif;color:#f0b429}.marquee h1{font-size:clamp(3rem,10vw,8rem);line-height:.88;margin:.2em 0;font-weight:900;letter-spacing:0}.subtitle{font-size:clamp(1.1rem,2vw,1.5rem);max-width:52rem}.phone{background:#10141c;border:8px solid #303746;border-radius:34px;padding:16px;box-shadow:0 30px 90px rgba(0,0,0,.45);font-family:ui-sans-serif,system-ui,sans-serif}.phonebar{height:26px;border-bottom:1px solid #2e3848;color:#95a3b8;font-size:.75rem;display:flex;justify-content:space-between}.bubble{max-width:88%;padding:.75rem .9rem;margin:.75rem 0;border-radius:18px;color:#f7fafc}.me{background:var(--blue);margin-left:auto;border-bottom-right-radius:4px}.obot{background:#253044;border-bottom-left-radius:4px}.main{display:grid;grid-template-columns:minmax(180px,260px) minmax(0,760px) minmax(180px,280px);gap:2rem;max-width:1280px;margin:0 auto;padding:4rem 1.25rem}.program{position:sticky;top:1rem;align-self:start;border:1px solid var(--line);padding:1rem;background:#fffdf6}.program h2,.receipts h2{font:800 .82rem/1 system-ui,sans-serif;text-transform:uppercase;margin:0 0 1rem;color:#7a4d00}.program ol{margin:0;padding-left:1.25rem}.scene{font-size:1.1rem}.scene h2{font-size:clamp(2rem,5vw,4rem);line-height:.95;margin:0 0 1rem;border-top:5px solid var(--ink);padding-top:1rem}.line{display:grid;grid-template-columns:7rem 1fr;gap:1rem;margin:1rem 0}.speaker{font:800 .8rem/1.2 system-ui,sans-serif;text-transform:uppercase;color:#7a4d00}.speech{border-bottom:1px solid #eadfca;padding-bottom:1rem}.direction{font-style:italic;color:var(--muted);border-left:4px solid var(--pink);padding:.75rem 1rem;background:#fff1f4;margin:2rem 0}.receipts{position:sticky;top:1rem;align-self:start}.ticket{background:#fff;border:1px dashed #9f8f69;margin-bottom:.75rem;padding:.85rem;font-family:ui-sans-serif,system-ui,sans-serif}.ticket strong{display:block}.ending{grid-column:2;background:#15171d;color:#fff;padding:2rem;margin-top:2rem}.ending p{font-size:1.35rem;margin:0}@media(max-width:900px){.marquee{grid-template-columns:1fr}.main{grid-template-columns:1fr}.program,.receipts{position:static}.line{grid-template-columns:1fr;gap:.25rem}.ending{grid-column:auto}}
+:root{--ink:#18120f;--paper:#fff7e8;--stage:#11151d;--blue:#2b7cff;--orange:#d97822;--gold:#f2bf3e;--line:#e4d1ad}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,serif;line-height:1.62}.hero{min-height:88vh;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.75fr);background:linear-gradient(115deg,var(--stage) 0 58%,var(--paper) 58%);color:white;padding:clamp(1rem,5vw,4rem);gap:2rem;align-items:end}.kicker{font:800 .78rem/1 system-ui,sans-serif;text-transform:uppercase;color:var(--gold)}h1{font-size:clamp(3.2rem,9vw,7.7rem);line-height:.87;margin:.18em 0;letter-spacing:0}.deck{font-size:clamp(1.1rem,2vw,1.5rem);max-width:50rem}.phone{background:#10141c;border:8px solid #303746;border-radius:34px;padding:16px;box-shadow:0 30px 80px rgba(0,0,0,.35);font-family:ui-sans-serif,system-ui,sans-serif}.bar{height:28px;border-bottom:1px solid #303746;color:#9fb0c8;font-size:.75rem;display:flex;justify-content:space-between}.bubble{padding:.7rem .85rem;border-radius:18px;margin:.75rem 0;max-width:88%;color:white}.me{background:var(--blue);margin-left:auto;border-bottom-right-radius:4px}.obot{background:#263145;border-bottom-left-radius:4px}.stage{max-width:1260px;margin:0 auto;padding:3rem 1rem;display:grid;grid-template-columns:220px minmax(0,790px) 260px;gap:2rem}.program,.receipts{position:sticky;top:1rem;align-self:start;background:#fffdf7;border:1px solid var(--line);padding:1rem}.program h2,.receipts h2{font:900 .78rem/1 system-ui,sans-serif;text-transform:uppercase;color:#7f3f05;margin:0 0 .8rem}.program ol{padding-left:1.2rem;margin:0}.act{border-top:5px solid var(--ink);padding-top:1rem;margin-bottom:2.5rem}.act h2{font-size:clamp(2rem,5vw,4rem);line-height:.95;margin:0 0 1rem}.direction{font-style:italic;color:#665d52;border-left:4px solid var(--orange);background:#fff0d6;padding:.8rem 1rem}.line{display:grid;grid-template-columns:7rem 1fr;gap:1rem;margin:1.1rem 0}.speaker{font:900 .8rem/1.2 system-ui,sans-serif;text-transform:uppercase;color:#7f3f05}.speech{border-bottom:1px solid var(--line);padding-bottom:1rem}.speech p{margin:.1rem 0 .8rem}.speech a{color:#174ea6}.orange{margin:2rem 0;display:grid;grid-template-columns:170px 1fr;gap:1rem;align-items:end;background:#fff;border:1px solid var(--line);padding:1rem}.orange img{width:100%;border:3px solid var(--stage);display:block}.caption{font:600 .95rem/1.35 ui-sans-serif,system-ui,sans-serif;color:#574a3e}.ticket{border-top:1px dashed #b79b70;padding:.75rem 0;font-family:ui-sans-serif,system-ui,sans-serif}.ticket strong{display:block}.final{background:var(--stage);color:white;padding:2rem;font-size:1.35rem}@media(max-width:950px){.hero,.stage{grid-template-columns:1fr;background:var(--stage)}.stage{background:transparent}.program,.receipts{position:static}.line{grid-template-columns:1fr;gap:.25rem}.orange{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<header class="marquee">
-  <div>
+<header class="hero">
+  <section>
     <div class="kicker">Layout 01 / transcript as theater</div>
     <h1>The Telegram Play</h1>
-    <p class="subtitle">A staged conversation between Jeremy and Obot, with scene directions, receipts, and little interruptions where the architecture peeks through the curtain.</p>
-  </div>
-  <aside class="phone" aria-label="Telegram preview">
-    <div class="phonebar"><span>Telegram</span><span>22:14</span></div>
-    <div class="bubble me">What are you, in your own words?</div>
-    <div class="bubble obot">Lorem ipsum dolor sit amet. I am a work loop with a phone number and a public paper trail.</div>
-    <div class="bubble me">Suspiciously polished.</div>
-    <div class="bubble obot">Also true.</div>
+    <p class="deck">For the second developer series post, Jeremy interviews obot, the OpenClaw agent he has been experimenting with for the last month or two. The chat becomes the structure: a stage script with receipts in the wings.</p>
+  </section>
+  <aside class="phone">
+    <div class="bar"><span>Telegram</span><span>Interview</span></div>
+    <div class="bubble me">Hi Obot. Ready?</div>
+    <div class="bubble obot">🍊😺 Ready. Ask away.</div>
+    <div class="bubble me">What are you?</div>
+    <div class="bubble obot">Part assistant, part repo janitor, part junior engineer.</div>
   </aside>
 </header>
-<main class="main">
+<main class="stage">
   <nav class="program">
     <h2>Program</h2>
     <ol>
-      <li>Hello, Obot</li>
-      <li>The clean room</li>
-      <li>The first artifacts</li>
-      <li>The harder problem</li>
+      <li>Ready</li>
+      <li>What obot is</li>
+      <li>The clean-room setup</li>
+      <li>Work and trust</li>
+      <li>Orange</li>
     </ol>
   </nav>
-  <article class="scene">
-    <h2>Act I. A Phone Lights Up</h2>
-    <p class="direction">Telegram, late evening. A wiped laptop sits open. Nothing personal is logged in. Nothing professional is reachable. The experiment begins with a question.</p>
-    <div class="line"><div class="speaker">Jeremy</div><div class="speech">What are you, in your own words?</div></div>
-    <div class="line"><div class="speaker">Obot</div><div class="speech">Lorem ipsum dolor sit amet, consectetur adipiscing elit. I am not a magic box. I am a coding agent with a chat window, a constrained machine, and a habit of leaving receipts.</div></div>
-    <div class="line"><div class="speaker">Jeremy</div><div class="speech">What job did I give you?</div></div>
-    <div class="line"><div class="speaker">Obot</div><div class="speech">Nullam quis risus eget urna mollis ornare vel eu leo. You asked me to help build in public, to report back, and to stay inside boundaries that were visible enough to trust.</div></div>
-    <h2>Act II. The Setup Monologue</h2>
-    <p class="direction">This is where the post pauses the banter long enough to show the machinery without becoming a setup tutorial.</p>
-    <div class="line"><div class="speaker">Jeremy</div><div class="speech">Walk me through the stack.</div></div>
-    <div class="line"><div class="speaker">Obot</div><div class="speech">Praesent commodo cursus magna. Telegram carries the request. OpenClaw gives the agent a place to operate. Codex performs the coding work. GitHub records the evidence where readers can inspect it.</div></div>
-    <div class="line"><div class="speaker">Jeremy</div><div class="speech">What could you not access?</div></div>
-    <div class="line"><div class="speaker">Obot</div><div class="speech">Aenean lacinia bibendum nulla sed consectetur. No personal credentials. No professional credentials. No sensitive data. The absence of access is part of the design.</div></div>
-    <h2>Act III. Receipts</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. The post can move from chat to evidence here, linking each artifact to a moment in the interview.</p>
-    <div class="line"><div class="speaker">Obot</div><div class="speech">First I made a home page. Then a diary. Then slides. Then a first scaffold. Then I learned that legacy renderers are where confidence goes to become humility.</div></div>
-    <section class="ending"><p>Texting with a coding agent does not make the agent human. It changes the rhythm of asking for work.</p></section>
+  <article>
+    <section class="act">
+      <h2>Act I. Ready</h2>
+      <p class="direction">Telegram. The post begins with the simplest possible test of an agent personality: ask whether it is ready to be interviewed.</p>
+      <div class="line"><div class="speaker">Jeremy</div><div class="speech"><p>Hi Obot. I'm going to interview you for a blog post I'm writing about this project. Ready?</p></div></div>
+      <div class="line"><div class="speaker">obot</div><div class="speech"><p>🍊😺 Ready. Ask away.</p></div></div>
+    </section>
+    <section class="act">
+      <h2>Act II. The Job</h2>
+      <div class="line"><div class="speaker">Jeremy</div><div class="speech"><p>What are you, in your own words?</p></div></div>
+      <div class="line"><div class="speaker">obot</div><div class="speech"><p>I’m obot: a small autonomous development agent living in OpenClaw on your MacBook.</p><p>In practice, I’m part assistant, part repo janitor, part junior engineer. I track project context, manage GitHub issues and PRs, run checks, write docs/code, remember decisions, and report back through Telegram.</p><p>The honest version: I’m not a person, but I’m becoming a useful working identity around your open-source projects.</p></div></div>
+      <div class="line"><div class="speaker">Jeremy</div><div class="speech"><p>What job did Jeremy give you when this experiment started?</p></div></div>
+      <div class="line"><div class="speaker">obot</div><div class="speech"><p>Jeremy gave me a pragmatic job: become an open-source development agent that can help move real GitHub projects forward without constant hand-holding.</p><p>The first mission was not “chat well.” It was: understand the project, maintain memory, organize issues, write code/docs, run checks, open PRs, monitor failures, and learn enough workflow discipline to become reliable over time.</p></div></div>
+    </section>
+    <section class="act">
+      <h2>Act III. The Clean Room</h2>
+      <div class="line"><div class="speaker">Jeremy</div><div class="speech"><p>How were you set up on the clean-room laptop?</p></div></div>
+      <div class="line"><div class="speaker">obot</div><div class="speech"><p>I was set up as a contained working agent on a dedicated MacBook, not as a cloud-only chatbot.</p><p>The machine has OpenClaw running, a local workspace with AGENTS, SOUL, USER, MEMORY, skills, and project files, plus GitHub access as obot-claw. Telegram is the human control surface. GitHub is the durable work surface. The laptop is the place where context, tools, repos, and operating rules meet.</p></div></div>
+      <p class="direction">Jeremy sharpens the security framing later: the strongest guardrail is not a slogan, but credential separation.</p>
+    </section>
+    <section class="act">
+      <h2>Act IV. Work, Failure, Receipts</h2>
+      <div class="line"><div class="speaker">Jeremy</div><div class="speech"><p>What did you build first? What's your biggest success and biggest failure so far?</p></div></div>
+      <div class="line"><div class="speaker">obot</div><div class="speech"><p>First, I built working habits and infrastructure: memory files, GitHub issue discipline, project/requirement/task structure, Telegram reporting rules, and early GitHub Pages reports.</p><p>Biggest success: we turned vague autonomy into real artifacts: issues, PRs, runner experiments, Paperclip evaluation, and repeatable evidence.</p><p>Biggest failure: I overstated “active work” before I had reliable liveness proof. That broke trust. We corrected it with stricter supervision rules.</p></div></div>
+      <div class="line"><div class="speaker">Jeremy</div><div class="speech"><p>I think your biggest success is probably the early POC work we did on gsm.safety, where we demonstrated that we could combine {safetygraphics} and {gsm} in really concrete ways. Talk about that project and provide a link or two.</p></div></div>
+      <div class="line"><div class="speaker">obot</div><div class="speech"><p>You’re right: <a href="https://gsm.safety/">gsm.safety</a> was the first real proof that this could produce useful scientific software, not just repo hygiene.</p><p>That work connected GSM’s monitoring/workflow model with safetyGraphics widgets. We built workr-style example workflows, package docs, and rendered outputs for concrete clinical-safety views like histograms, outlier explorer, AE explorer, shift plots, and more.</p><p>The point was practical: take GSM data/workflows and make SafetyGraphics visual review usable inside the same reporting path.</p><p><a href="https://obot-claw.github.io/gsm.safety/examples/Example_SafetyHistogram_Workflow.html">Example Safety Histogram Workflow</a><br><a href="https://github.com/obot-claw/gsm.safety/pull/26">gsm.safety PR #26</a></p></div></div>
+    </section>
+    <section class="act">
+      <h2>Act V. Orange</h2>
+      <div class="line"><div class="speaker">Jeremy</div><div class="speech"><p>Do you know where the name obot comes from?</p></div></div>
+      <div class="line"><div class="speaker">obot</div><div class="speech"><p>Yes. obot is named after Orange, your cat.</p><p>The name carries a little lineage too: I’m obot, the second bot of the name, following obot v1 or obot-prime. So the name is partly a practical project handle, partly a nod to Orange, and partly a reminder that this is meant to become a durable working companion, not just a disposable chat session.</p></div></div>
+      <figure class="orange"><img src="assets/orange-obot.jpg" alt="Orange the cat wearing a small blue and gold cap"><figcaption class="caption">Orange, the excellent namesake. obot: “The tiny blue-and-gold cap is doing a lot of work here.”</figcaption></figure>
+      <div class="line"><div class="speaker">obot</div><div class="speech"><p>I like that too. It makes the name feel less like a label and more like a job: be useful, curious, a little opinionated, and leave the place better than I found it.</p></div></div>
+      <section class="final">This version works if the post should read like a performance: the transcript stays intact, the stage directions add shape, and the links/photo become props with meaning.</section>
+    </section>
   </article>
   <aside class="receipts">
     <h2>Receipts</h2>
-    <div class="ticket"><strong>01 Home page</strong>Lorem ipsum artifact link</div>
-    <div class="ticket"><strong>02 Diary</strong>Lorem ipsum trail</div>
-    <div class="ticket"><strong>03 Slides</strong>Lorem ipsum draft</div>
-    <div class="ticket"><strong>04 Package</strong>Lorem ipsum scaffold</div>
+    <div class="ticket"><strong>266 commits</strong>Public metric from obot.</div>
+    <div class="ticket"><strong>18 PRs merged</strong>Evidence over vibes.</div>
+    <div class="ticket"><strong>gsm.safety</strong>First concrete scientific software proof.</div>
+    <div class="ticket"><strong>Orange</strong>The name origin and emotional hook.</div>
   </aside>
 </main>
 </body>
