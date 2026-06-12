@@ -1,5 +1,5 @@
 ---
-title: "R/Pharma Keynote — What Can We Actually Do With AI Agents Right Now?"
+title: "R/Pharma Diary #1 — What Can We Actually Do With AI Agents Right Now?"
 author: "Jeremy Wildfire"
 excerpt: "Kicking off a developer diary for my R/Pharma keynote on using agentic AI to build open-source tools for clinical trials."
 tags: RPharma AI ClinicalTrials DeveloperDiary
