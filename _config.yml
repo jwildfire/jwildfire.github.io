@@ -9,6 +9,10 @@ twitter_username: "jwildfire"
 github_username: "jwildfire"
 linkedin_username: "jeremy-wildfire"
 
+# Cloudflare Web Analytics beacon token (dash.cloudflare.com > Web Analytics >
+# add site > copy the token from the JS snippet). Leave empty to disable.
+cloudflare_web_analytics: "467f55bd2cc54185b9027ed877e09d22"
+
 
 #########################################################################################
 ######### Nothing below needs to be changed (unless you know what you're doing) #########
