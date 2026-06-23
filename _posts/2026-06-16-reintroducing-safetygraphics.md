@@ -5,7 +5,7 @@ excerpt: "Why do the acknowledgements always come at the end? Before I try to mo
 tags: RPharma AI ClinicalTrials SafetyGraphics DeveloperDiary
 series: "R/Pharma 2026 developer diary"
 series_part: 3
-date: "2026-06-23"
+date: "2026-06-16"
 ---
 
 As part of the keynote, I want to see if AI can update and modernize [`{safetyGraphics}`](https://github.com/SafetyGraphics/safetyGraphics). `{safetyGraphics}` was the first big open-source project I worked on, so I also want to talk a bit more generally about open source in clinical trials. I'll mention a bunch of projects, but mostly I want to give credit to a bunch of great people that I've worked with over the years[^sappy]. Usually acknowledgements go at the end of a talk, but let's just get started on that now.[^alexa]
@@ -42,7 +42,7 @@ One thing we all agreed on was that the status quo was painful. I'd worked on se
 
 So what is `{safetyGraphics}`, exactly? All those scattered prototypes — the Adverse Event Explorer, the eDISH hepatic explorer, and a bunch of others — eventually came together into a single open-source R package: a Shiny app that lets a clinical team explore a trial's safety data interactively in the browser, instead of paging through hundreds of static tables. The best way to understand `{safetyGraphics}` is to play with the tool. The full demo app is [here](https://jwildfire.shinyapps.io/safetyGraphics/).
 
-People across dozens of companies met regularly for 5 years. We wrote papers, presented at a bunch of conferences and at the FDA. We met with the world's leading experts on clinical trial safety and did our best to create easy-to-use free tools based on thier expertise that allowed anyone to leverage that knowledge.
+People across dozens of companies met regularly for 5 years. We wrote papers, presented at a bunch of conferences and at the FDA. We met with the world's leading experts on clinical trial safety and did our best to create easy-to-use free tools based on their expertise that allowed anyone to leverage that knowledge.
 
 <figure>
   <img src="/assets/img/fig3_hepexplorer.gif" alt="The eDISH hepatic safety explorer">
