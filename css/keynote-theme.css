@@ -141,6 +141,34 @@ code { font-family: var(--kn-mono); font-size: 0.86em; }
   color: var(--kn-soft);
 }
 
+/* Footnote markers + hover/focus tooltip (see /js/footnotes.js) */
+a.footnote {
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0 0.1em;
+}
+a.footnote:hover { color: var(--kn-accent); }
+
+.fn-tooltip {
+  position: absolute;
+  z-index: 60;
+  max-width: min(360px, calc(100vw - 24px));
+  background: var(--kn-card);
+  color: var(--kn-ink);
+  border: 1px solid var(--kn-rule);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(39, 24, 16, 0.16);
+  padding: 0.7rem 0.9rem;
+  font-family: var(--kn-sans);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+.fn-tooltip[hidden] { display: none; }
+.fn-tooltip p { margin: 0; }
+.fn-tooltip p + p { margin-top: 0.5rem; }
+.fn-tooltip a, .fn-tooltip a:visited { color: var(--kn-accent-deep); }
+.fn-tooltip a:hover { color: var(--kn-accent); }
+
 /* Footer ------------------------------------------------------------------------*/
 
 .site-footer {
