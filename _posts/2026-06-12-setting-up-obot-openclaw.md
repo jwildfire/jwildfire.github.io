@@ -305,6 +305,6 @@ For the second R/Pharma developer diary post, I introduce Obot — an OpenClaw c
 
 So that's Obot! It's been 51% fun and 49% frustrating experimenting with OpenClaw. Chatting with an agent via Telegram and having it do real work is cool, but getting everything set up has mostly been a time-consuming hassle. Overall, I think I'm slightly less productive using Obot than working directly in Claude Code or Codex or GitHub Copilot, and it's *a lot* more work to configure. I've been trying (and mostly failing) in recent weeks to get Obot to be more autonomous. At this point, I'm strongly leaning towards moving on to experiment with other tools. More on that in a future post.
 
-Next, I want to do a post talking a bit about what I actually want to build. It's previewed in the chat above, but I think it's worth a bit more discussion. Up next: `{safetyGraphics}` ❤️ `{gsm}`.
+Before getting into the plan, I want to step back and give some context on `{safetyGraphics}` — what it is and where it came from. Up next: Re-introducing `{safetyGraphics}`.
 
 [^ai]: **AI collaboration note** — I provided the transcript and framing for this post. Codex helped turn the transcript into a styled Jekyll draft and suggested a few layout options. I reviewed and edited the result before publication.
