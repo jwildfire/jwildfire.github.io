@@ -5,7 +5,7 @@ excerpt: "The plan for safetyGraphics v2: keep what worked, modernize toward GxP
 tags: RPharma AI ClinicalTrials SafetyGraphics GSM DeveloperDiary
 series: "R/Pharma 2026 developer diary"
 series_part: 4
-status: draft
+date: "2026-07-02"
 ---
 
 So, here's the plan for [`{safetyGraphics}`](https://github.com/SafetyGraphics/safetyGraphics) v2.[^ai]
