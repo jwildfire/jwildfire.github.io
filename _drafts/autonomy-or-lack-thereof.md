@@ -1,13 +1,13 @@
 ---
-title: "R/Pharma Diary #5 — Autonomy, or Lack Thereof"
+title: "R/Pharma Diary #6 — Autonomy, or Lack Thereof"
 author: "Jeremy Wildfire"
 excerpt: "The dream: hand an agent a goal at bedtime and wake up to useful progress. The reality: autonomy is a supervision problem — heartbeats, review gates, a control plane — and one night in July the loop finally closed while I slept."
 tags: RPharma AI Agents Autonomy Paperclip OBot DeveloperDiary
 series: "R/Pharma 2026 developer diary"
-series_part: 5
+series_part: 6
 ---
 
-{% comment %} date: set on publish — proposed slot is ahead of the ultracode post, which becomes #6 {% endcomment %}
+{% comment %} date: set on publish. REFRAME PLANNED (Jeremy, 07-12): this becomes post #6, the obot-claw -> Claude Code transition post — intro of the new scaffold (obot.roadmap as the public plan, obot.agent as the playbook), publishing after "safety.viz is Live" (#5). Much of this draft carries over (the dream/reality arc, OBot v2, the retirement paragraph); the overnight-run material likely moves to #7, the obot.agent work-patterns case study. {% endcomment %}
 
 Back in June, I closed [the Obot post]({% post_url 2026-06-12-setting-up-obot-openclaw %}) with a scorecard — 51% fun, 49% frustrating — and a promise: I was "strongly leaning towards moving on to experiment with other tools. More on that in a future post."[^ai]
 

@@ -1,10 +1,10 @@
 ---
-title: "R/Pharma Diary #6 — Ultracode: Five Renderers Before Lunch"
+title: "R/Pharma Diary #7 — Ultracode: Five Renderers Before Lunch"
 author: "Jeremy Wildfire"
 excerpt: "One morning, twelve agents, two workstreams, one session-limit outage — an honest accounting of the multi-agent session that built the safety.viz v1.0 release candidate, including the bill."
 tags: RPharma AI Agents SafetyGraphics DeveloperDiary Ultracode
 series: "R/Pharma 2026 developer diary"
-series_part: 6  # proposed slot: after #5 "Autonomy, or Lack Thereof" (now drafted) — Jeremy's call
+series_part: 7  # per Jeremy 07-12: slots third as the obot.agent work-patterns case study (may absorb the overnight-run example)
 date: "2026-07-11"  # set to the actual publish date (and match the _posts/ filename) when publishing
 ---
 
