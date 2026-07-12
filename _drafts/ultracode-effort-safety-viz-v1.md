@@ -1,14 +1,14 @@
 ---
-title: "Ultracode: Five Renderers Before Lunch"
+title: "R/Pharma Diary #6 — Ultracode: Five Renderers Before Lunch"
 author: "Jeremy Wildfire"
 excerpt: "One morning, twelve agents, two workstreams, one session-limit outage — an honest accounting of the multi-agent session that built the safety.viz v1.0 release candidate, including the bill."
 tags: RPharma AI Agents SafetyGraphics DeveloperDiary Ultracode
 series: "R/Pharma 2026 developer diary"
-series_part: TBD  # slots in after #5, "Autonomy, or Lack Thereof" (not yet published)
-date: "2026-07-11"
+series_part: 6  # proposed slot: after #5 "Autonomy, or Lack Thereof" (now drafted) — Jeremy's call
+date: "2026-07-11"  # set to the actual publish date (and match the _posts/ filename) when publishing
 ---
 
-At 9:17 this morning, [`safety.viz`](https://github.com/jwildfire/safety.viz) — the Chart.js library that's replacing the old `{safetyGraphics}` renderers — had one working chart. By 11:40, a release-candidate PR was open with six: histogram, four new lab renderers, and a stretch-goal adverse-event timeline that needed a whole new data domain. 247 unit tests and 92 browser tests, all green. I sent about six messages the entire time.[^ai]
+At 9:17 on the morning of July 11th, [`safety.viz`](https://github.com/jwildfire/safety.viz) — the Chart.js library that's replacing the old `{safetyGraphics}` renderers — had one working chart. By 11:40, a release-candidate PR was open with six: histogram, four new lab renderers, and a stretch-goal adverse-event timeline that needed a whole new data domain. 247 unit tests and 92 browser tests, all green. I sent about six messages the entire time.[^ai]
 
 This series has promised an honest accounting of what agentic development actually costs, so this post is that: what ran, what broke, what I actually did, and the bill.
 
@@ -77,19 +77,22 @@ The numbers, as promised.
 
 **Cost, two ways:**
 
-*Plan-adjusted:* I run this on a subscription plan, so today's marginal dollar cost was **$0**. The real cost was hitting the session ceiling 13 minutes in and spending 15 minutes waiting and recovering. On a subscription, the scarce resource isn't dollars — it's the rolling limit, and multi-agent fan-out eats it fast.
+*Plan-adjusted:* I run this on a subscription plan, so the day's marginal dollar cost was **$0**. The real cost was hitting the session ceiling 13 minutes in and spending 15 minutes waiting and recovering. On a subscription, the scarce resource isn't dollars — it's the rolling limit, and multi-agent fan-out eats it fast.
 
-*Raw API-equivalent (rough estimate):* at current list prices — Fable 5 at $50 per million output tokens, Opus 4.8 at $25 — the ~2.37M reported tokens would be somewhere around **$60–$120 in output tokens** depending on how the Fable/Opus split shakes out (my best guess with today's allocation: roughly $90). Big caveat: these counters are output-weighted and don't capture input or cache-read traffic, which on agentic work is substantial. A defensible order-of-magnitude for the full morning is **low hundreds of dollars** — call it $150–$400 — and I wouldn't quote it tighter than that.[^pricing]
+*Raw API-equivalent (rough estimate):* at current list prices — Fable 5 at $50 per million output tokens, Opus 4.8 at $25 — the ~2.37M reported tokens would be somewhere around **$60–$120 in output tokens** depending on how the Fable/Opus split shakes out (my best guess with the day's allocation: roughly $90). Big caveat: these counters are output-weighted and don't capture input or cache-read traffic, which on agentic work is substantial. A defensible order-of-magnitude for the full morning is **low hundreds of dollars** — call it $150–$400 — and I wouldn't quote it tighter than that.[^pricing]
 
 For a morning that produced a six-renderer release candidate with 339 passing tests and full evidence trails, either framing seems like a bargain. For a morning that produced the *wrong* six renderers, it would be an expensive way to generate review work. The gates are what keep it the first thing.
 
 ## What This Means for October
 
-The keynote thesis this diary keeps circling: the interesting question isn't whether agents can write the code — today confirmed, again, that they can — it's whether the surrounding system makes the work observable, reviewable, and recoverable. Today's evidence, point by point: the scripted workflow was recoverable (journal, run ID, resume) where the improvising agent was not; the work was observable (evidence sets, provenance, authorship audit); and the review gates were real PRs a human could approve between coffee refills.
+The keynote thesis this diary keeps circling: the interesting question isn't whether agents can write the code — the morning confirmed, again, that they can — it's whether the surrounding system makes the work observable, reviewable, and recoverable. The morning's evidence, point by point: the scripted workflow was recoverable (journal, run ID, resume) where the improvising agent was not; the work was observable (evidence sets, provenance, authorship audit); and the review gates were real PRs a human could approve between coffee refills.
 
 The failures all landed in the same place, too. Nothing broke because a model wasn't smart enough. Things broke where state lived in the wrong place (a transcript instead of a file), where infrastructure hiccupped (HTTP/2), and where parallel workers lacked a shared view (four identical fixes). The bottleneck still isn't intelligence. It's plumbing.
 
 Next up: getting these renderers wired into `{gsm.safety}` as htmlwidgets, so R users can actually call them.
+
+{% comment %} OPTIONAL postscript — keep or cut, Jeremy's call. Facts: RC landed; v1.0.0 + v1.1.0 both released 2026-07-12; hep-explorer/eDISH port opened as safety.viz PR #44 from the first overnight ultracode run. {% endcomment %}
+*Postscript (July 12): The release candidate landed, and [v1.0.0](https://github.com/jwildfire/safety.viz/releases/tag/v1.0.0) and [v1.1.0](https://github.com/jwildfire/safety.viz/releases/tag/v1.1.0) both shipped within a day. A seventh chart — a port of the hep-explorer eDISH display — is already in review as [PR #44](https://github.com/jwildfire/safety.viz/pull/44), from an overnight run.*
 
 ---
 
