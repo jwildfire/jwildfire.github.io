@@ -10,11 +10,17 @@ status: draft
 
 ### Opening
 
-I introduced Obot 🍊😺 [a few posts back]({% post_url 2026-06-12-setting-up-obot-openclaw %}) and described how I set it up with OpenClaw and Telegram.[^paperclip] My original readout — "51% fun / 49% frustrating" — still stands. That's clearly not good enough, and I wasn't making progress on the things I actually wanted to build, like [safety.viz]({% post_url 2026-07-12-introducing-safety-viz %}). So when [Fable 5](https://www.anthropic.com/news/claude-fable-5-mythos-5) was announced, I decided to give it a try. My goal remains the same — answer the questions: "What are these tools good at right now? How much can they do autonomously?" The answer: quite a lot.
+I introduced Obot 🍊😺 [a few posts back]({% post_url 2026-06-12-setting-up-obot-openclaw %}) and described how I set it up with OpenClaw and Telegram.[^paperclip] My original readout — "51% fun / 49% frustrating" — still stands. That's clearly not good enough, and I wasn't making progress on the things I actually wanted to build, like [safety.viz](https://github.com/jwildfire/safety.viz). So when [Fable 5](https://www.anthropic.com/news/claude-fable-5-mythos-5) was announced, I decided to give it a try. My goal remains the same — answer the questions: "What are these tools good at right now? How much can they do autonomously?" The answer: quite a lot.
 
 ### One weekend, one billion tokens
 
-I used Claude Code to take `safety.viz` from a single-renderer prototype to a seven-renderer framework this weekend. Several prompts each triggered multiple hours of work and delivered outputs that were ready to ship after a short review. For example, "/spawn an ultracode session to add the safetyGraphics/hep-explorer to safety.viz" worked for just under two hours, used roughly 80 million tokens (estimated API cost of ~$140), and the result was [this renderer](https://jwildfire.github.io/safety.viz/hep-explorer/) along with [robust test evidence](https://jwildfire.github.io/safety.viz/hep-explorer/evidence.html) and a list of follow-up tasks. All told, I spent roughly 10 hours[^hours] working on this across 5 sessions. All of the work was done on a $200/month Claude Max plan. I used just over 1 billion tokens. The equivalent API cost was roughly $1,270. Slightly more detailed metrics below:
+I used Claude Code to take [safety.viz]({% post_url 2026-07-12-introducing-safety-viz %}) from a single-renderer prototype to a seven-renderer framework this weekend. Several prompts each triggered multiple hours of work and delivered outputs that were ready to ship after a short review. For example, "/spawn an ultracode session to add the safetyGraphics/hep-explorer to safety.viz" worked for just under two hours, used roughly 50 million tokens (estimated API cost of ~$55), and the result was [this renderer](https://jwildfire.github.io/safety.viz/hep-explorer/) along with [robust test evidence](https://jwildfire.github.io/safety.viz/hep-explorer/evidence.html) and a list of follow-up tasks.
+
+[![The rebuilt Hepatic Safety Explorer (eDISH) in safety.viz](/assets/img/hep-explorer-edish.png)](https://jwildfire.github.io/safety.viz/hep-explorer/)
+
+That overnight port wasn't a pixel-for-pixel copy — it's a rebuild on the new framework: the eDISH scatter with editable Hy's-Law quadrants, eDISH/mDISH display modes, R-Ratio and timing controls, and a coordinated participant drill-down, running against real pharmaverse ADaM data. Compare it with [the original hep-explorer](https://safetygraphics.github.io/hep-explorer/test-page/) to see how far the chart moved in one night. The job even filed its own roadmap on the way out: [a stack of follow-up issues](https://github.com/jwildfire/safety.viz/issues?q=is%3Aissue+is%3Aopen+hepExplorer) covering draggable Hy's-Law cut-lines, study-day animation with a play control, marginal distributions, and an exposure track.
+
+All told, I spent roughly 10 hours[^hours] working on this across 5 sessions. All of the work was done on a $200/month Claude Max plan. I used just over 1 billion tokens. The equivalent API cost was roughly $1,270. Slightly more detailed metrics below:
 
 <div style="display:flex; gap:12px; flex-wrap:wrap; margin:1.5em 0;">
   <div style="flex:1 1 170px; border:1px solid rgba(128,128,128,0.35); border-radius:8px; padding:14px 16px;">
@@ -70,28 +76,28 @@ Each session I run several different agents — basically Claude Code tabs — a
 
 This weekend I ran 5 primary sessions which initialized 16 named agents (plus dozens of throwaway subagents). Here's a summary of the work:
 
-- 😺🤖 7/10 Friday night — safety.viz v0.1.0 released end to end: docs site, three-tier Pages publishing, staging-review fixes — [diary](https://jwildfire.github.io/obot.roadmap/diary/2026-07-10.html)
-- 😺🤖 7/11 Session 1 — obot.agent renamed, audited, designed, and implemented to the review gate — [diary](https://jwildfire.github.io/obot.roadmap/diary/2026-07-11.html)
-  — 👯🤖 ultraplan — the entire safety.viz v1.0 push: binning fix, five new renderers, docs-site rebuild, all delivered as draft PRs
-- 😺🤖 7/11 Session 2 — three releases shipped in one evening, orchestrating four siblings — [diary](https://jwildfire.github.io/obot.roadmap/diary/2026-07-11-2.html)
-  — 👯🤖 sv-v1 — safety.viz [v1.0.0](https://github.com/jwildfire/safety.viz/releases/tag/v1.0.0) release train (three stacked merges, each approved live), then [v1.1.0](https://github.com/jwildfire/safety.viz/releases/tag/v1.1.0) with real pharmaverse demo data
-  — 👯🤖 oa-v0.1 — [obot.agent v0.1.0](https://github.com/jwildfire/obot.agent/releases/tag/v0.1.0): the session framework itself, released
-  — 👯🤖 session-hub — the live agent dashboard designed and prototyped
-  — 👯🤖 audit — a roadmap-usage audit that caught the public roadmap flatlining on shipping day; corrections applied the same night
-- 😺🤖 7/11 → 7/12 Overnight — the lead session watched two autonomous stretch jobs run while I slept; both landed clean with zero intervention, and a morning digest was waiting when I woke up — [diary](https://jwildfire.github.io/obot.roadmap/diary/2026-07-12.html)
-  — ⚡️🤖 hep-explorer — the eDISH port described above ([draft PR](https://github.com/jwildfire/safety.viz/pull/44) by morning)
-  — ⚡️🤖 open.gismo — a v1.0 plan plus a working Phase-0 prototype ([draft PR](https://github.com/jwildfire/open.gismo/pull/1) + [deployed design report](https://jwildfire.github.io/obot.roadmap/reports/open-gismo-v1-plan-2026-07-12/))
-- 😺🤖 7/12 Session 2 — release day: five lanes converged — [diary](https://jwildfire.github.io/obot.roadmap/diary/2026-07-12-2.html)
-  — 👯🤖 edish — [safety.viz v1.2.0](https://github.com/jwildfire/safety.viz/releases/tag/v1.2.0) shipped: eDISH merged with its done-gate evidence verified live
-  — 👯🤖 guide-port — a 19-figure clinical eDISH guide adapted from the DIA-ASA working group's workflow manual
-  — 👯🤖 blog — [R/Pharma Diary #5]({% post_url 2026-07-12-introducing-safety-viz %}) published
-  — ⚡️🤖 RC1 — gsm.safety v1.0.0 release candidate staged with full qualification evidence ([draft PR](https://github.com/jwildfire/gsm.safety/pull/39))
+- 😺🤖 7/10 Friday night — safety.viz v0.1.0 released end to end: docs site, three-tier Pages publishing, staging-review fixes (12M/$20) — [diary](https://jwildfire.github.io/obot.roadmap/diary/2026-07-10.html)
+- 😺🤖 7/11 Session 1 — obot.agent renamed, audited, designed, and implemented to the review gate (280M/$370) — [diary](https://jwildfire.github.io/obot.roadmap/diary/2026-07-11.html)
+  - 👯🤖 ultraplan — the entire safety.viz v1.0 push: binning fix, five new renderers, docs-site rebuild, all delivered as draft PRs (175M/$190)
+- 😺🤖 7/11 Session 2 — three releases shipped in one evening, orchestrating four siblings (320M/$410) — [diary](https://jwildfire.github.io/obot.roadmap/diary/2026-07-11-2.html)
+  - 👯🤖 sv-v1 — safety.viz [v1.0.0](https://github.com/jwildfire/safety.viz/releases/tag/v1.0.0) release train (three stacked merges, each approved live), then [v1.1.0](https://github.com/jwildfire/safety.viz/releases/tag/v1.1.0) with real pharmaverse demo data
+  - 👯🤖 oa-v0.1 — [obot.agent v0.1.0](https://github.com/jwildfire/obot.agent/releases/tag/v0.1.0): the session framework itself, released
+  - 👯🤖 session-hub — the live agent dashboard designed and prototyped
+  - 👯🤖 audit — a roadmap-usage audit that caught the public roadmap flatlining on shipping day; corrections applied the same night
+- 😺🤖 7/11 → 7/12 Overnight — the lead session watched two autonomous stretch jobs run while I slept; both landed clean with zero intervention, and a morning digest was waiting when I woke up (140M/$200) — [diary](https://jwildfire.github.io/obot.roadmap/diary/2026-07-12.html)
+  - ⚡️🤖 hep-explorer — the eDISH port described above ([draft PR](https://github.com/jwildfire/safety.viz/pull/44) by morning) (50M/$55)
+  - ⚡️🤖 open.gismo — a v1.0 plan plus a working Phase-0 prototype ([draft PR](https://github.com/jwildfire/open.gismo/pull/1) + [deployed design report](https://jwildfire.github.io/obot.roadmap/reports/open-gismo-v1-plan-2026-07-12/)) (80M/$120)
+- 😺🤖 7/12 Session 2 — release day: five lanes converged (250M/$275) — [diary](https://jwildfire.github.io/obot.roadmap/diary/2026-07-12-2.html)
+  - 👯🤖 edish — [safety.viz v1.2.0](https://github.com/jwildfire/safety.viz/releases/tag/v1.2.0) shipped: eDISH merged with its done-gate evidence verified live
+  - 👯🤖 guide-port — a 19-figure clinical eDISH guide adapted from the DIA-ASA working group's workflow manual
+  - 👯🤖 blog — [R/Pharma Diary #5]({% post_url 2026-07-12-introducing-safety-viz %}) published
+  - ⚡️🤖 RC1 — gsm.safety v1.0.0 release candidate staged with full qualification evidence ([draft PR](https://github.com/jwildfire/gsm.safety/pull/39))
 
 ### Wrapup
 
 This weekend was fairly eye-opening. I'd heard about developers with six-figure token budgets, but I didn't really understand how that worked until now. Using the process above under API billing rules for 8 hours a day would almost certainly cost thousands of dollars per person per month. So, was it worth it? That depends on the framing. I think the work I did this weekend would've taken a team of experts several months without AI — let's say 6 months for 3 people. So while spending a thousand dollars[^cost] on a side project in a weekend seems crazy, delivering a 6-month project for less than $2k seems like an amazing deal. To be clear, this isn't ready for production use, but I'm not sure it's that far off. The next step is to get feedback on the charts from the safetyGraphics team (if you have thoughts, let me know!) and to work on the R package that makes this easier to use in practice. More on that in the next post.
 
-[^paperclip]: Before the full reboot there was an "Obot 2.5" that never shipped: a much more structured framework with a PM agent to own issues, scope, and handoffs, a Dev agent for implementation and PRs, and a Testing agent for browser checks and regression evidence — OpenClaw heartbeats for liveness, all tied together by a local control-plane layer I called Paperclip. I spent a few days working the problem with GPT-5.5 and it genuinely felt close: the roles made sense, the heartbeats beat, and I could squint and see the loop closing. Then the frontier moved, as it always does, and it suddenly made more sense to try the whole problem inside Claude Code than on my own scaffolding. Paperclip never got a proper retirement — it was simply abandoned mid-prototype. {% comment %} Jeremy: optional line of day-to-day color on what Paperclip actually did while it lived; per 07-13 decision, no v2 artifacts linked. {% endcomment %}
+[^paperclip]: Before the full reboot there was an "Obot 2.5" that never shipped: a much more structured framework with a PM agent to own issues, scope, and handoffs, a Dev agent for implementation and PRs, and a Testing agent for browser checks and regression evidence — OpenClaw heartbeats for liveness, all tied together with [Paperclip](https://paperclip.ing/) as the control plane. I spent a few days working the problem with GPT-5.5 and it genuinely felt close: the roles made sense, the heartbeats beat, and I could squint and see the loop closing. Then the frontier moved, as it always does, and it suddenly made more sense to try the whole problem inside Claude Code than on my own scaffolding. Obot 2.5 never got a proper retirement — the prototype was simply abandoned. {% comment %} Jeremy: optional line of day-to-day color on the Obot 2.5 setup. {% endcomment %}
 
 [^hours]: It wasn't all active work — three of those hours overlapped with watching Argentina in the World Cup.
 
