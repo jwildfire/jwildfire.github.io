@@ -10,15 +10,26 @@ status: draft
 
 ### Opening
 
-I introduced Obot 🍊😺 [a few posts back]({% post_url 2026-06-12-setting-up-obot-openclaw %}) and described how I set it up with OpenClaw and Telegram.[^paperclip] My original readout — "51% fun / 49% frustrating" — still stands. That's clearly not good enough, and I wasn't making progress on the things I actually wanted to build, like [safety.viz](https://github.com/jwildfire/safety.viz). So when [Fable 5](https://www.anthropic.com/news/claude-fable-5-mythos-5) was announced, I decided to give it a try. My goal remains the same — answer the questions: "What are these tools good at right now? How much can they do autonomously?" The answer: quite a lot.
+I introduced Obot 🍊😺 [a few posts back]({% post_url 2026-06-12-setting-up-obot-openclaw %}) and described how I set it up with OpenClaw and Telegram.[^paperclip] My original readout — "51% fun / 49% frustrating" — still stands. That's clearly not good enough, and I wasn't making progress on the things I actually wanted to build, like [safety.viz](https://github.com/jwildfire/safety.viz). So when [Fable 5](https://www.anthropic.com/news/claude-fable-5-mythos-5) was announced, I decided to give it a try. [My goal remains the same]({% post_url 2026-06-10-rpharma-keynote-developer-diary %}) — answer the questions: "What are these tools good at right now? How much can they do autonomously?" The answer: quite a lot.
 
 ### One weekend, one billion tokens
 
-I used Claude Code to take [safety.viz]({% post_url 2026-07-12-introducing-safety-viz %}) from a single-renderer prototype to a seven-renderer framework this weekend. Several prompts each triggered multiple hours of work and delivered outputs that were ready to ship after a short review. For example, "/spawn an ultracode session to add the safetyGraphics/hep-explorer to safety.viz" worked for just under two hours, used roughly 50 million tokens (estimated API cost of ~$55), and the result was [this renderer](https://jwildfire.github.io/safety.viz/hep-explorer/) along with [robust test evidence](https://jwildfire.github.io/safety.viz/hep-explorer/evidence.html) and a list of follow-up tasks.
+[My last post]({% post_url 2026-07-12-introducing-safety-viz %}) introduced safety.viz — this post explains how I used Claude Code to take safety.viz from a single-renderer prototype to a seven-renderer framework this past weekend. Several prompts each triggered multiple hours of work and delivered outputs that were ready to ship after a short review. For example, "/spawn an ultracode session to add the safetyGraphics/hep-explorer to safety.viz" worked for just under two hours, used roughly 50 million tokens (estimated API cost of ~$55), and the result was [this renderer](https://jwildfire.github.io/safety.viz/hep-explorer/) along with [robust test evidence](https://jwildfire.github.io/safety.viz/hep-explorer/evidence.html) and a list of follow-up tasks.
 
-[![The rebuilt Hepatic Safety Explorer (eDISH) in safety.viz](/assets/img/hep-explorer-edish.png)](https://jwildfire.github.io/safety.viz/hep-explorer/)
+A follow-up session ported the PDF clinical guide for eDISH evaluation to HTML (44M/$33), giving the renderer a step-by-step companion:
 
-That overnight port wasn't a pixel-for-pixel copy — it's a rebuild on the new framework: the eDISH scatter with editable Hy's-Law quadrants, eDISH/mDISH display modes, R-Ratio and timing controls, and a coordinated participant drill-down, running against real pharmaverse ADaM data. Compare it with [the original hep-explorer](https://safetygraphics.github.io/hep-explorer/test-page/) to see how far the chart moved in one night. The job even filed its own roadmap on the way out: [a stack of follow-up issues](https://github.com/jwildfire/safety.viz/issues?q=is%3Aissue+is%3Aopen+hepExplorer) covering draggable Hy's-Law cut-lines, study-day animation with a play control, marginal distributions, and an exposure track.
+<div style="display:flex; gap:12px; flex-wrap:wrap; margin:1.5em 0;">
+  <figure style="flex:1 1 300px; margin:0;">
+    <a href="https://jwildfire.github.io/safety.viz/hep-explorer/"><img src="/assets/img/hep-explorer-edish.png" alt="The rebuilt Hepatic Safety Explorer (eDISH) in safety.viz" style="width:100%; border:1px solid rgba(128,128,128,0.35); border-radius:8px;"></a>
+    <figcaption style="font-size:0.8em; opacity:0.7; margin-top:4px;">The hep-explorer example — eDISH scatter with editable Hy's-Law quadrants and participant drill-down (<a href="https://safetygraphics.github.io/hep-explorer/test-page/">original for comparison</a>).</figcaption>
+  </figure>
+  <figure style="flex:1 1 300px; margin:0;">
+    <a href="https://jwildfire.github.io/safety.viz/hep-explorer/guide.html"><img src="/assets/img/hep-explorer-guide.png" alt="The eDISH clinical guide, ported from PDF to HTML" style="width:100%; border:1px solid rgba(128,128,128,0.35); border-radius:8px;"></a>
+    <figcaption style="font-size:0.8em; opacity:0.7; margin-top:4px;">The clinical guide — the 19-figure DIA-ASA eDISH workflow manual, now a live Guide tab with embedded charts.</figcaption>
+  </figure>
+</div>
+
+That overnight port wasn't a pixel-for-pixel copy — it's a rebuild on the new framework: the eDISH scatter with editable Hy's-Law quadrants, eDISH/mDISH display modes, R-Ratio and timing controls, and a coordinated participant drill-down, running against real pharmaverse ADaM data. The job even filed its own roadmap on the way out: [a stack of follow-up issues](https://github.com/jwildfire/safety.viz/issues?q=is%3Aissue+is%3Aopen+hepExplorer) covering draggable Hy's-Law cut-lines, study-day animation with a play control, marginal distributions, and an exposure track.
 
 All told, I spent roughly 10 hours[^hours] working on this across 5 sessions. All of the work was done on a $200/month Claude Max plan. I used just over 1 billion tokens. The equivalent API cost was roughly $1,270. Slightly more detailed metrics below:
 
@@ -89,7 +100,7 @@ This weekend I ran 5 primary sessions which initialized 16 named agents (plus do
   - ⚡️🤖 open.gismo — a v1.0 plan plus a working Phase-0 prototype ([draft PR](https://github.com/jwildfire/open.gismo/pull/1) + [deployed design report](https://jwildfire.github.io/obot.roadmap/reports/open-gismo-v1-plan-2026-07-12/)) (80M/$120)
 - 😺🤖 7/12 Session 2 — release day: five lanes converged (250M/$275) — [diary](https://jwildfire.github.io/obot.roadmap/diary/2026-07-12-2.html)
   - 👯🤖 edish — [safety.viz v1.2.0](https://github.com/jwildfire/safety.viz/releases/tag/v1.2.0) shipped: eDISH merged with its done-gate evidence verified live
-  - 👯🤖 guide-port — a 19-figure clinical eDISH guide adapted from the DIA-ASA working group's workflow manual
+  - 👯🤖 guide-port — a 19-figure clinical eDISH guide adapted from the DIA-ASA working group's workflow manual (44M/$33)
   - 👯🤖 blog — [R/Pharma Diary #5]({% post_url 2026-07-12-introducing-safety-viz %}) published
   - ⚡️🤖 RC1 — gsm.safety v1.0.0 release candidate staged with full qualification evidence ([draft PR](https://github.com/jwildfire/gsm.safety/pull/39))
 
