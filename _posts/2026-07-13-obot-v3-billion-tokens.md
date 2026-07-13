@@ -5,12 +5,12 @@ excerpt: "The dream: hand an agent a goal and come back to useful progress. Obot
 tags: RPharma AI Agents Autonomy OBot ClaudeCode DeveloperDiary
 series: "R/Pharma 2026 developer diary"
 series_part: 6
-status: draft
+date: "2026-07-13"
 ---
 
 ### Opening
 
-I introduced Obot 🍊😺 [a few posts back]({% post_url 2026-06-12-setting-up-obot-openclaw %}) and described how I set it up with OpenClaw and Telegram.[^paperclip] My original readout — "51% fun / 49% frustrating" — still stands. That's clearly not good enough, and I wasn't making progress on the things I actually wanted to build, like [safety.viz](https://github.com/jwildfire/safety.viz). So when [Fable 5](https://www.anthropic.com/news/claude-fable-5-mythos-5) was announced, I decided to give it a try. [My goal remains the same]({% post_url 2026-06-10-rpharma-keynote-developer-diary %}) — answer the questions: "What are these tools good at right now? How much can they do autonomously?" The answer: quite a lot.
+I introduced Obot 🍊😺 [a few posts back]({% post_url 2026-06-12-setting-up-obot-openclaw %}) and described how I set it up with OpenClaw and Telegram.[^paperclip] My original readout — "51% fun / 49% frustrating" — still stands. That's clearly not good enough, and I wasn't making enough progress on [the things I actually wanted to build]({% post_url 2026-07-02-safetygraphics-heart-gsm %}), like [safety.viz](https://github.com/jwildfire/safety.viz). So when [Fable 5](https://www.anthropic.com/news/claude-fable-5-mythos-5) was announced, I decided to give it a try. [My goal remains the same]({% post_url 2026-06-10-rpharma-keynote-developer-diary %}) — answer the questions: "What are these tools good at right now? How much can they do autonomously?" The answer: quite a lot.[^ai]
 
 ### One weekend, one billion tokens
 
@@ -72,20 +72,22 @@ Feel free to poke around. The obot.roadmap news feed in particular gives tons of
 
 #### The Session Framework
 
-I tend to work on this project in "sessions" — a session starts when I sit down to work and ends when I close Claude. `obot.agent` provides several skills and commands to support this:
+I tend to work on this project in "sessions", and am attempting to teach Obot how this works to reduce friction and increase automation. Eventually, I could see Obot running a whole session independently, but we're not there yet. For now, I'd call the process semi-autonomous; a session starts when I sit down to work and ends when I close Claude. 
+
+`obot.agent` provides several skills and commands to support this:
 
 - **`/session-init`** opens a session: subagents sweep the roadmap issues, open PRs, the project board, and recent diary entries, and I get back a prioritized todo list split into "agent can start now" vs "waiting on me".
 - **`/session-note`**, **`/session-update`**, and **`/session-todo`** maintain a running scratchpad during the session — observations worth remembering, new tasks as they surface, and the live checklist.
 - **`/session-dashboard`** opens a live HTML dashboard in Chrome showing every running agent and what it's doing.
 - **`/session-wrapup`** closes the loop: it inventories what actually happened across all agents, files loose ends back onto the roadmap as issues, updates the project board, and writes the public [diary entry](https://jwildfire.github.io/obot.roadmap/) — which is exactly what the next session's `/session-init` reads.
 
-Each session I run several different agents — basically Claude Code tabs — and I've started to differentiate between roles:
+Each session runs several different agents — basically Claude Code tabs — and obot and I have started to differentiate between roles:
 
 - 😺🤖 — The session manager: opens and closes the session, keeps the todo list honest, spawns and monitors the other agents, and packages their work up for my review. Exactly one per session.
 - 👯🤖 — A sibling agent working on a specific, well-defined task — generally scoped by an `obot.roadmap` requirement. Runs in its own git worktree and typically ends by opening a draft PR for my review.
 - ⚡️🤖 — Autonomous workers: long-running ultracode agents that orchestrate whole fleets of subagents through a scripted workflow. These are the ones I leave running overnight.
 
-This weekend I ran 5 primary sessions which initialized 16 named agents (plus dozens of throwaway subagents). Here's a summary of the work:
+This weekend I ran 5 primary sessions which initialized 16 named agents (I tend to call these sibling agents) plus dozens of throwaway sub-agents. Here's a summary of the work (with token/$ costs):
 
 - 😺🤖 7/10 Friday night — safety.viz v0.1.0 released end to end: docs site, three-tier Pages publishing, staging-review fixes (12M/$20) — [diary](https://jwildfire.github.io/obot.roadmap/diary/2026-07-10.html)
 - 😺🤖 7/11 Session 1 — obot.agent renamed, audited, designed, and implemented to the review gate (280M/$370) — [diary](https://jwildfire.github.io/obot.roadmap/diary/2026-07-11.html)
@@ -108,7 +110,7 @@ This weekend I ran 5 primary sessions which initialized 16 named agents (plus do
 
 This weekend was fairly eye-opening. I'd heard about developers with six-figure token budgets, but I didn't really understand how that worked until now. Using the process above under API billing rules for 8 hours a day would almost certainly cost thousands of dollars per person per month. So, was it worth it? That depends on the framing. I think the work I did this weekend would've taken a team of experts several months without AI — let's say 6 months for 3 people. So while spending a thousand dollars[^cost] on a side project in a weekend seems crazy, delivering a 6-month project for less than $2k seems like an amazing deal. To be clear, this isn't ready for production use, but I'm not sure it's that far off. The next step is to get feedback on the charts from the safetyGraphics team (if you have thoughts, let me know!) and to work on the R package that makes this easier to use in practice. More on that in the next post.
 
-[^paperclip]: Before the full reboot there was an "Obot 2.5" that never shipped: a much more structured framework with a PM agent to own issues, scope, and handoffs, a Dev agent for implementation and PRs, and a Testing agent for browser checks and regression evidence — OpenClaw heartbeats for liveness, all tied together with [Paperclip](https://paperclip.ing/) as the control plane. I spent a few days working the problem with GPT-5.5 and it genuinely felt close: the roles made sense, the heartbeats beat, and I could squint and see the loop closing. Then the frontier moved, as it always does, and it suddenly made more sense to try the whole problem inside Claude Code than on my own scaffolding. Obot 2.5 never got a proper retirement — the prototype was simply abandoned. {% comment %} Jeremy: optional line of day-to-day color on the Obot 2.5 setup. {% endcomment %}
+[^paperclip]: Before the full reboot there was an "Obot 2.5" that never shipped: a much more structured framework with a PM agent to own issues, scope, and handoffs, a Dev agent for implementation and PRs, and a Testing agent for browser checks and regression evidence — OpenClaw heartbeats for liveness, all tied together with [Paperclip](https://paperclip.ing/) as the control plane. I spent a few days working the problem with GPT-5.5 and it genuinely felt close: the roles made sense, the heartbeats beat, and I could squint and see the loop closing. Then the frontier moved, as it always does, and it suddenly made more sense to try the whole problem inside Claude Code than on my own scaffolding. Obot 2.5 never got a proper retirement — the prototype was simply abandoned.
 
 [^hours]: It wasn't all active work — three of those hours overlapped with watching Argentina in the World Cup.
 
@@ -117,3 +119,5 @@ This weekend was fairly eye-opening. I'd heard about developers with six-figure 
 [^identity]: This helps separate the work the bot does autonomously from the work I do myself.
 
 [^cost]: Again, theoretically — I actually spent some fraction of my $200/month Max plan.
+
+[^ai]: **AI collaboration note** — this post was built the opposite way from [#5]({% post_url 2026-07-12-introducing-safety-viz %}): I wrote the prose; Claude Code (using Fable 5) assembled the source outline from my notes and the [project diary](https://jwildfire.github.io/obot.roadmap/), verified the token and cost figures against local session logs, took the screenshots, and did a final copy-edit pass before publication.
