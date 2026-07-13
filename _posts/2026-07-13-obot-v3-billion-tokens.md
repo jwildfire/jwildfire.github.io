@@ -8,8 +8,6 @@ series_part: 6
 date: "2026-07-13"
 ---
 
-### Opening
-
 I introduced Obot 🍊😺 [a few posts back]({% post_url 2026-06-12-setting-up-obot-openclaw %}) and described how I set it up with OpenClaw and Telegram.[^paperclip] My original readout — "51% fun / 49% frustrating" — still stands. That's clearly not good enough, and I wasn't making enough progress on [the things I actually wanted to build]({% post_url 2026-07-02-safetygraphics-heart-gsm %}), like [safety.viz](https://github.com/jwildfire/safety.viz). So when [Fable 5](https://www.anthropic.com/news/claude-fable-5-mythos-5) was announced, I decided to give it a try. [My goal remains the same]({% post_url 2026-06-10-rpharma-keynote-developer-diary %}) — answer the questions: "What are these tools good at right now? How much can they do autonomously?" The answer: quite a lot.[^ai]
 
 ### One weekend, one billion tokens
