@@ -112,7 +112,7 @@ This weekend was fairly eye-opening, I'd heard about developers with 6-figure to
 
 ## Open questions for Jeremy
 
-- Paperclip footnote: an optional line of day-to-day color — a {% comment %} gap is waiting inside the footnote.
+- Paperclip footnote: an optional line of day-to-day color — a hidden comment gap is waiting inside the footnote.
 - Version-numbering nit: post #2's interview has obot calling itself "the second bot of the name, following obot v1 / obot-prime" — reconcile (footnote?) with the v2/v2.5/v3 framing here.
 - Include a roadmap-site screenshot, or keep this one image-free?
 - Candidate closer, if wanted here rather than #7: "It took two frameworks, three agent roles, a control plane, and a model release to get one good night of sleep. Worth it."
