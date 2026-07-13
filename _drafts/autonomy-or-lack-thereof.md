@@ -1,83 +1,120 @@
 ---
 title: "R/Pharma Diary #6 — Autonomy, or Lack Thereof"
 author: "Jeremy Wildfire"
-excerpt: "The dream: hand an agent a goal at bedtime and wake up to useful progress. The reality: autonomy is a supervision problem — heartbeats, review gates, a control plane — and one night in July the loop finally closed while I slept."
-tags: RPharma AI Agents Autonomy Paperclip OBot DeveloperDiary
+excerpt: "The dream: hand an agent a goal and come back to useful progress. Obot v2 tried to get there with heartbeats, agent roles, and a control plane. Obot v3 threw most of that out — and kept the parts that were actually load-bearing."
+tags: RPharma AI Agents Autonomy OBot ClaudeCode DeveloperDiary
 series: "R/Pharma 2026 developer diary"
 series_part: 6
+status: outline
 ---
 
-{% comment %} date: set on publish. REFRAME PLANNED (Jeremy, 07-12): this becomes post #6, the obot-claw -> Claude Code transition post — intro of the new scaffold (obot.roadmap as the public plan, obot.agent as the playbook), publishing after "safety.viz is Live" (#5). Much of this draft carries over (the dream/reality arc, OBot v2, the retirement paragraph); the overnight-run material likely moves to #7, the obot.agent work-patterns case study. {% endcomment %}
+{% comment %}
+OUTLINE ONLY — Jeremy writes the prose. date: set on publish.
+This is the "Obot v3" transition post: OpenClaw/obot-claw era → the Claude Code scaffold.
+Per the 07-12 reframe: publishes after #5 ("Introducing safety.viz"); the overnight-run
+deep dive moves to #7 (the obot.agent work-patterns case study) — only teased here.
+Every date/number below was verified against the hub diary
+(https://jwildfire.github.io/obot.roadmap/) on 2026-07-13.
+{% endcomment %}
 
-Back in June, I closed [the Obot post]({% post_url 2026-06-12-setting-up-obot-openclaw %}) with a scorecard — 51% fun, 49% frustrating — and a promise: I was "strongly leaning towards moving on to experiment with other tools. More on that in a future post."[^ai]
+## Title options
 
-This is that post. It took a month to write, and the reason it took a month is the story.
+- Autonomy, or Lack Thereof *(current front-matter title; carried from the original outline)*
+- Obot v3: The Great Simplification
+- Build the Robot, Then Retire It
 
-A quick note on sequencing: [the last post]({% post_url 2026-07-02-safetygraphics-heart-gsm %}) promised an introduction to `{gsm.safety}` next. That post is still coming — this one jumped the queue.
+## Purpose / framing
 
-## The Dream
+- The obot-claw → Claude Code transition story: v2's supervision machinery, the Fable 5 pivot, the July 2 simplification, and the three-part scaffold that replaced the runtime.
+- Fulfills two standing promises: post #2's "More on that in a future post" and post #5's closer ("The next post describes how I moved… to Obot v3 — a Claude Code scaffold built around a public roadmap and an agent playbook").
+- Core thesis: autonomy is a supervision problem, not a model-capability problem — and the durable supervision parts (requirements, review gates, audit trail) turn out to be things GitHub already does.
+- Keep it diary-like and concrete; results stay light (post #5 covered them), mechanics deep-dive deferred to #7.
 
-What I wanted from Obot was always simple to state:
+## Section beats
 
-> Give the agent a goal, go do the day job, and come back to useful progress.
+### Opening
 
-That's the whole dream. Not a chatbot, not fancy autocomplete — a coworker that keeps moving while I'm in meetings.
+- Callback to [diary #2]({% post_url 2026-06-12-setting-up-obot-openclaw %}) (published 06-12): the 51% fun / 49% frustrating scorecard, and "strongly leaning towards moving on to experiment with other tools. More on that in a future post."
+- "This is that post" beat — it took a month, and the month is the story.
+- Hook from [#5]({% post_url 2026-07-12-introducing-safety-viz %}): how did safety.viz go from one modernized chart to seven in a weekend? Answer: Obot got rebuilt. Twice.
+- AI-collaboration footnote marker goes on this paragraph (see bottom).
 
-## The Reality
+### The Dream
 
-It didn't happen. Work got busy, my attention drifted, and Obot did not magically keep advancing the project in the background. Every time I checked in, it was right where I'd left it: perfectly capable, patiently idle. The project moved exactly as fast as my attention did — which was the one thing the whole setup was supposed to fix.
+- The one-liner (keep as a blockquote): "Give the agent a goal, go do the day job, and come back to useful progress."
+- Not a chatbot, not autocomplete — a coworker that keeps moving while I'm in meetings.
 
-The humbling part is that the agent was never the problem. Give it a bounded task — fix this bug, draft this doc, clean up these issues — and it did fine. Autonomy is different. Autonomy is a systems problem, not a model capability. For "come back to useful progress" to work, the system around the agent needs:
+### The Reality
 
-- durable memory, so context survives between sessions
-- scoped permissions, so it can act without me hovering
-- a task queue, so it always knows what's next
-- heartbeat/liveness checks, so silence means "working," not "dead"
-- status reporting, so I can see progress without interrogating it
-- review gates, so nothing ships without a human
-- recovery paths, so stuck work gets unstuck instead of quietly dying
+- It didn't happen: work got busy, attention drifted, the project moved exactly as fast as my attention did — the one thing the setup was supposed to fix.
+- The agent was never the problem — bounded tasks were fine; autonomy is a *systems* problem.
+- The supervision checklist (load-bearing — the Checklist Revisited section maps back to it item by item): durable memory · task queue · scoped permissions · heartbeat/liveness · status reporting · review gates · recovery paths.
+- Candidate line: "The boring stuff *is* the autonomy."
 
-None of that is glamorous. All of it, I now think, is the actual product. The boring stuff *is* the autonomy.
+### Obot v2
 
-## OBot v2
+- The structured framework layered on the June OpenClaw setup: PM agent (issues/scope/handoffs), Dev agent (implementation/PRs), Testing agent (browser checks, visual validation, regression evidence).
+- OpenClaw heartbeats for liveness; Paperclip as the local control-plane layer tying it together.
+- A few days working the problem with GPT-5.5; it genuinely felt close — roles made sense, heartbeats beat, the loop looked like it was closing. *(Jeremy: personal color needed here — what those sessions were like, what Paperclip did day-to-day, whether any artifact is safe to link. Not covered in the hub diaries.)*
 
-So I started building the boring stuff. OBot v2 was a much more structured framework: a PM agent to own issues, scope, prioritization, and handoffs; a Dev agent for implementation and PRs; a Testing agent for browser checks, visual validation, and regression evidence. OpenClaw heartbeats gave me liveness — a pulse I could check instead of wondering whether anything was actually happening. And a local control-plane layer, Paperclip, to tie the pieces together.
+### Then Fable 5 Happened
 
-I spent a few days working the problem with GPT-5.5, and it genuinely felt like it was getting close. The roles made sense, the heartbeats beat, and I could squint and see the loop closing.
+- The frontier moved, as it always does: Anthropic shipped Fable 5 just as the homegrown stack felt close — suddenly worth trying the whole problem inside Claude Code instead of on my own scaffolding.
+- Keep playful, not exhaustive (per original outline note).
 
-{% comment %} TODO (Jeremy): a sentence or two of color here — what the GPT-5.5 sessions were like, what Paperclip actually did day-to-day, and whether any of it (repo, report, heartbeat logs) is safe to link. {% endcomment %}
+### Obot v3: the July 2 migration (verified facts)
 
-## Then Fable 5 Happened
+- 2026-07-02: OpenClaw always-on runtime shut down; obot-claw machine account retired, its repos archived read-only; active projects consolidated under `jwildfire/`.
+- Same day: `obot.roadmap` scaffolded as the new hub; the open requirements migrated as issues [#1](https://github.com/jwildfire/obot.roadmap/issues/1) (consolidated safety.viz library), #2 (histogram pilot), #3 (GitHub App); 32 hub diary entries migrated in ([diary 07-02](https://jwildfire.github.io/obot.roadmap/diary/2026-07-02.html)).
+- 2026-07-03: hub site live at [jwildfire.github.io/obot.roadmap](https://jwildfire.github.io/obot.roadmap/) + [v0.1 release](https://github.com/jwildfire/obot.roadmap/releases/tag/v0.1) "Roadmap hub established" ([diary 07-03](https://jwildfire.github.io/obot.roadmap/diary/2026-07-03.html)).
+- Punch: no more heartbeats, because nothing needs to stay alive anymore.
 
-You can guess what happened next, because it's what always happens in this field: the frontier moved. Just as my homegrown supervision stack felt close, Anthropic shipped Fable 5, and it suddenly seemed worth trying the whole problem inside Claude Code instead of on my own scaffolding. So in early July, the Obot of the June post was formally retired: the always-on OpenClaw runtime shut down, the obot-claw machine account archived — and no more heartbeats, because nothing needs to stay alive anymore. The ideas survived the retirement even though the implementation didn't: the public [roadmap repo](https://github.com/jwildfire/obot.roadmap) became the memory and the task queue, sessions report status as they run, and every piece of work lands as a pull request behind a review gate. I didn't abandon the supervision problem — I just stopped hand-building the plumbing and started configuring it.
+### The new scaffold — three parts, none of them a server
 
-## Last Night
+- **[obot.roadmap](https://github.com/jwildfire/obot.roadmap) = the plan and the memory.** Requirement lifecycle borrowed from the gsm ecosystem's [gsm.roadmap](https://github.com/Gilead-BioStats/gsm.roadmap): Backlog → Requirement Gathering → Design → Development → Review → Released, mirrored on a GitHub Project board. Public site with [roadmap](https://jwildfire.github.io/obot.roadmap/roadmap.html), [news feed](https://jwildfire.github.io/obot.roadmap/news.html), design docs, reports, and the continuing dev diary.
+- **[obot.agent](https://github.com/jwildfire/obot.agent) = the playbook.** Conventions + skills every session loads: session bookends (init = read the roadmap, propose a prioritized plan; wrapup = file loose ends, write the diary entry), drafting/review conventions, approval gates. Thin overlay on the gsm.agent harness (hub requirement [#17](https://github.com/jwildfire/obot.roadmap/issues/17)); renamed from safety.agent and shipped as [v0.1.0 on 07-11](https://github.com/jwildfire/obot.agent/releases/tag/v0.1.0).
+- **obotclaw = the identity.** GitHub App instead of a machine account + PAT ([requirement #3](https://github.com/jwildfire/obot.roadmap/issues/3), [design doc](https://jwildfire.github.io/obot.roadmap/requirements/design/3_design.html)); registered 07-04, installed on exactly five whitelisted repos; agents mint one-hour installation tokens; agent commits/PRs authored by obotclaw[bot], keeping my work and the agent's distinguishable in the audit trail ([diary 07-04](https://jwildfire.github.io/obot.roadmap/diary/2026-07-04.html)).
 
-Which brings me to why I can finally finish this post.
+### The Checklist, Revisited
 
-On the night of July 11–12, I ran the first honest test of the dream. A little after midnight, I launched two overnight agent jobs, both deliberately ambitious stretch goals, with a monitor watching each one for stalls — a direct descendant of those OpenClaw heartbeats, checking job state on a timer and flagging anything silent for more than forty minutes. Then I went to sleep.
+- Map each Reality-section item to its v3 home (the satisfying symmetry — every item survived, the implementations got boring in the good way):
+  - durable memory → the roadmap repo (requirements, designs, decisions, diary — versioned on GitHub, not memory files on a dedicated laptop)
+  - task queue → the lifecycle + project board (sessions open by reading it, close by updating it)
+  - scoped permissions → one-hour app tokens on five repos
+  - heartbeats → exist only while something runs (background jobs get a stall monitor; nothing stays alive between sessions)
+  - status reporting → the diary + a live session dashboard when multiple agents run at once
+  - review gates → everything lands as a draft PR; nothing merges without explicit approval
+  - recovery → session wrapup files loose ends back onto the roadmap (stuck work becomes a tracked issue, not a dead chat thread)
+- Candidate lines: "Obot v2 tried to supervise a robot employee. Obot v3 admits the durable parts were never the runtime — they were the requirements, the review gates, and the audit trail. GitHub already does those." / "I didn't abandon the supervision problem. I stopped hand-building the plumbing and started configuring it." / "The bottleneck was never intelligence. The bottleneck was supervision."
 
-Both jobs landed clean in about two and a quarter hours — roughly 1.4 million tokens between them, zero human intervention — and the morning digest was waiting when I woke up:
+### Did It Work? (light — #5 covered results; verified numbers)
 
-- A full port of hep-explorer — `{safetyGraphics}`'s [eDISH](https://safetygraphics.github.io/hep-explorer/) liver-safety chart, coordinated participant drill-down and all — to [`safety.viz`](https://github.com/jwildfire/safety.viz), as [draft PR #44](https://github.com/jwildfire/safety.viz/pull/44): +8,487/−32 across 41 files, 307 unit tests and 15 end-to-end tests, CI green, with a [live preview](https://jwildfire.github.io/safety.viz/pr/44/hep-explorer/) I could click around in the browser.
-- A v1.0 plan for `{open.gismo}` with a working Phase-0 prototype, as [draft PR #1](https://github.com/jwildfire/open.gismo/pull/1): +7,243/−69 across 103 files, 640 passing R tests, plus a [deployed design report](https://jwildfire.github.io/obot.roadmap/reports/open-gismo-v1-plan-2026-07-12/) laying out the plan and its open decisions.
+- Ten days from migration to: safety.viz one chart → seven; three releases in one evening on 07-11 ([safety.viz v1.0.0](https://github.com/jwildfire/safety.viz/releases/tag/v1.0.0), [v1.1.0](https://github.com/jwildfire/safety.viz/releases/tag/v1.1.0), [obot.agent v0.1.0](https://github.com/jwildfire/obot.agent/releases/tag/v0.1.0) — [diary 07-11 session 2](https://jwildfire.github.io/obot.roadmap/diary/2026-07-11-2.html)); [v1.2.0 the next evening](https://github.com/jwildfire/safety.viz/releases/tag/v1.2.0) with eDISH + the 19-figure clinical guide; `{gsm.safety}` v1.0.0 RC staged at the review gate ([draft PR #39](https://github.com/jwildfire/gsm.safety/pull/39)) ([diary 07-12 session 2](https://jwildfire.github.io/obot.roadmap/diary/2026-07-12-2.html)).
+- Roadmap symmetry: [hub #1](https://github.com/jwildfire/obot.roadmap/issues/1) — the first requirement filed on 07-02 — closed as delivered on 07-12.
+- Tease only (detail moves to #7): the *how* was orchestrated multi-agent sessions — a lead session spawning parallel workers — including two overnight jobs (~2¼ hours, ~1.4M tokens, zero human intervention) that left draft PRs at the review gate by morning ([diary 07-12](https://jwildfire.github.io/obot.roadmap/diary/2026-07-12.html)).
+- Candidate closer: "It took two frameworks, three agent roles, a control plane, and a model release to get one good night of sleep. Worth it." *(or hold for #7 with the overnight story)*
 
-The detail I care about most: both landed as *draft* pull requests. Neither agent merged anything, released anything, or declared victory — they published previews and a plan for me to read, but nothing shipped. The work rolled up to the review gate and stopped there, waiting for a human.
+### Closer / next-post teaser
 
-And the morning review had actual judgment in it. The eDISH port looked great — that one's now the high-priority lane. The `{open.gismo}` plan was thorough, and I disagreed with one of its headline design decisions (roughly: how central GitHub should be to the platform). So that decision is now an [open discussion on the roadmap](https://github.com/jwildfire/obot.roadmap/issues/34) instead of an assumption baked into merged code. That disagreement is the review gate doing its job: autonomy between the gates, judgment at them.
+- Next post (#7): anatomy of one of these multi-agent sessions from the inside — what ran, what broke, and the bill.
 
-## What I Learned
+## Material to pull in
 
-The hard part is not getting an agent to write code. The hard part is making the work observable, reviewable, and recoverable.
+- Prior-post callbacks: [#2 Introducing Obot]({% post_url 2026-06-12-setting-up-obot-openclaw %}) (scorecard + promise), [#4 safetyGraphics ❤️ gsm]({% post_url 2026-07-02-safetygraphics-heart-gsm %}) ("With AI agents, I'm not sure that's true anymore"), [#5 Introducing safety.viz]({% post_url 2026-07-12-introducing-safety-viz %}) (closing teaser names Obot v3).
+- Hub diary entries (published): [07-02](https://jwildfire.github.io/obot.roadmap/diary/2026-07-02.html) hub scaffold + migration · [07-03](https://jwildfire.github.io/obot.roadmap/diary/2026-07-03.html) site live · [07-04](https://jwildfire.github.io/obot.roadmap/diary/2026-07-04.html) obotclaw app live · [07-11](https://jwildfire.github.io/obot.roadmap/diary/2026-07-11.html) + [07-11-2](https://jwildfire.github.io/obot.roadmap/diary/2026-07-11-2.html) rename, v0.1.0, three releases · [07-12](https://jwildfire.github.io/obot.roadmap/diary/2026-07-12.html) + [07-12-2](https://jwildfire.github.io/obot.roadmap/diary/2026-07-12-2.html) overnight jobs, v1.2.0, RC1.
+- Hub issues/docs: [#1](https://github.com/jwildfire/obot.roadmap/issues/1) (closed — bookend), [#3](https://github.com/jwildfire/obot.roadmap/issues/3) + [3_design.html](https://jwildfire.github.io/obot.roadmap/requirements/design/3_design.html) (App), [#7](https://github.com/jwildfire/obot.roadmap/issues/7) (hub migration), [#17](https://github.com/jwildfire/obot.roadmap/issues/17) (obot.agent overlay), [#22](https://github.com/jwildfire/obot.roadmap/issues/22) (this blog series).
+- Releases: safety.viz [v1.0.0](https://github.com/jwildfire/safety.viz/releases/tag/v1.0.0) / [v1.1.0](https://github.com/jwildfire/safety.viz/releases/tag/v1.1.0) / [v1.2.0](https://github.com/jwildfire/safety.viz/releases/tag/v1.2.0); [obot.agent v0.1.0](https://github.com/jwildfire/obot.agent/releases/tag/v0.1.0); [obot.roadmap v0.1](https://github.com/jwildfire/obot.roadmap/releases/tag/v0.1).
+- Candidate figure: screenshot of the roadmap board/site for `/assets/img/` (matching #5's screenshot pattern) — roadmap.html, news feed, or a diary entry.
+- Obot v2 artifacts (Paperclip repo/report, heartbeat logs, PM/Dev/Testing issue flow) — Jeremy to decide what's safe/worth linking; not in the hub diaries.
 
-Or shorter: the bottleneck was never intelligence. The bottleneck was supervision.
+## Open questions for Jeremy
 
-Look back at the list in The Reality section. That night, every item on it was accounted for: the roadmap was the queue, memory carried context into the jobs, the monitor was the heartbeat, the digest was the status report, scoped permissions let the jobs build, test, and open PRs without waking me, and two draft PRs were the review gates. Recovery was the one item that went untested — the stall alarm was armed but never fired, because nothing stalled. The autonomy that finally worked isn't an agent that never sleeps. It's an agent I can hand a goal at bedtime — because the plumbing around it holds until morning.
+- Title pick (three options above).
+- How much GPT-5.5 / Paperclip color, and which v2 artifacts (if any) to link.
+- Version-numbering nit: post #2's interview has obot calling itself "the second bot of the name, following obot v1 / obot-prime" — reconcile (footnote?) with the v2/v3 framing here.
+- Include a roadmap-site screenshot, or keep this one image-free?
+- Where the "one good night of sleep" closer lives — here or saved for #7.
 
-It took two frameworks, three agent roles, a control plane, and a model release to get one good night of sleep. Worth it.
+## AI collaboration footnote (plan)
 
-Next post: the anatomy of one of these multi-agent sessions from the inside — what ran, what broke, and the bill.
-
----
-
-[^ai]: **AI collaboration note** — I outlined this post; Claude Code (using Fable 5) drafted it from my outline and the overnight session logs, and I reviewed and edited the result before publication.
+- Same pattern as #4/#5: "I outlined this post; Claude Code (using Fable 5) helped assemble the outline from my notes and the [project diary](https://jwildfire.github.io/obot.roadmap/); I wrote and edited the final text." — adjust once prose exists.
