@@ -87,22 +87,58 @@ Each session runs several different agents — basically Claude Code tabs — an
 
 This weekend I ran 5 primary sessions which initialized 16 named agents (I tend to call these sibling agents) plus dozens of throwaway sub-agents. Here's a summary of the work (with token/$ costs):
 
-- 😺🤖 7/10 Friday night — safety.viz v0.1.0 released end to end: docs site, three-tier Pages publishing, staging-review fixes (12M/$20) — [diary](https://jwildfire.github.io/obot.roadmap/diary/2026-07-10.html)
-- 😺🤖 7/11 Session 1 — obot.agent renamed, audited, designed, and implemented to the review gate (280M/$370) — [diary](https://jwildfire.github.io/obot.roadmap/diary/2026-07-11.html)
-  - 👯🤖 ultraplan — the entire safety.viz v1.0 push: binning fix, five new renderers, docs-site rebuild, all delivered as draft PRs (175M/$190)
-- 😺🤖 7/11 Session 2 — three releases shipped in one evening, orchestrating four siblings (320M/$410) — [diary](https://jwildfire.github.io/obot.roadmap/diary/2026-07-11-2.html)
-  - 👯🤖 sv-v1 — safety.viz [v1.0.0](https://github.com/jwildfire/safety.viz/releases/tag/v1.0.0) release train (three stacked merges, each approved live), then [v1.1.0](https://github.com/jwildfire/safety.viz/releases/tag/v1.1.0) with real pharmaverse demo data
-  - 👯🤖 oa-v0.1 — [obot.agent v0.1.0](https://github.com/jwildfire/obot.agent/releases/tag/v0.1.0): the session framework itself, released
-  - 👯🤖 session-hub — the live agent dashboard designed and prototyped
-  - 👯🤖 audit — a roadmap-usage audit that caught the public roadmap flatlining on shipping day; corrections applied the same night
-- 😺🤖 7/11 → 7/12 Overnight — the lead session watched two autonomous stretch jobs run while I slept; both landed clean with zero intervention, and a morning digest was waiting when I woke up (140M/$200) — [diary](https://jwildfire.github.io/obot.roadmap/diary/2026-07-12.html)
-  - ⚡️🤖 hep-explorer — the eDISH port described above ([draft PR](https://github.com/jwildfire/safety.viz/pull/44) by morning) (50M/$55)
-  - ⚡️🤖 open.gismo — a v1.0 plan plus a working Phase-0 prototype ([draft PR](https://github.com/jwildfire/open.gismo/pull/1) + [deployed design report](https://jwildfire.github.io/obot.roadmap/reports/open-gismo-v1-plan-2026-07-12/)) (80M/$120)
-- 😺🤖 7/12 Session 2 — release day: five lanes converged (250M/$275) — [diary](https://jwildfire.github.io/obot.roadmap/diary/2026-07-12-2.html)
-  - 👯🤖 edish — [safety.viz v1.2.0](https://github.com/jwildfire/safety.viz/releases/tag/v1.2.0) shipped: eDISH merged with its done-gate evidence verified live
-  - 👯🤖 guide-port — a 19-figure clinical eDISH guide adapted from the DIA-ASA working group's workflow manual (44M/$33)
-  - 👯🤖 blog — [R/Pharma Diary #5]({% post_url 2026-07-12-introducing-safety-viz %}) published
-  - ⚡️🤖 RC1 — gsm.safety v1.0.0 release candidate staged with full qualification evidence ([draft PR](https://github.com/jwildfire/gsm.safety/pull/39))
+<div id="session-log" style="margin:1em 0;">
+<style>
+  #session-log details { margin: 0.35em 0; }
+  #session-log summary { cursor: pointer; }
+  #session-log summary:hover { opacity: 0.75; }
+  #session-log ul { margin: 0.3em 0 0.6em 1.7em; }
+  #session-log li { margin: 0.3em 0; }
+</style>
+<p><button id="session-toggle" style="font: inherit; font-size: 0.78em; padding: 4px 12px; border: 1px solid rgba(128,128,128,0.45); border-radius: 6px; background: transparent; color: inherit; cursor: pointer;" onclick="(function(b){var ds=document.querySelectorAll('#session-log details');var exp=b.textContent.indexOf('Expand')===0;ds.forEach(function(d){d.open=exp;});b.textContent=exp?'Collapse all':'Expand all';})(this)">Expand all</button></p>
+
+<details>
+  <summary>😺🤖 7/10 Friday night — safety.viz v0.1.0 released end to end: docs site, three-tier Pages publishing, staging-review fixes (12M/$20) — <a href="https://jwildfire.github.io/obot.roadmap/diary/2026-07-10.html">diary</a></summary>
+  <ul>
+    <li>Lead session only — subagent fan-outs, no named siblings.</li>
+  </ul>
+</details>
+
+<details>
+  <summary>😺🤖 7/11 Session 1 — obot.agent renamed, audited, designed, and implemented to the review gate (280M/$370) — <a href="https://jwildfire.github.io/obot.roadmap/diary/2026-07-11.html">diary</a></summary>
+  <ul>
+    <li>👯🤖 ultraplan — the entire safety.viz v1.0 push: binning fix, five new renderers, docs-site rebuild, all delivered as draft PRs (175M/$190)</li>
+  </ul>
+</details>
+
+<details>
+  <summary>😺🤖 7/11 Session 2 — three releases shipped in one evening, orchestrating four siblings (320M/$410) — <a href="https://jwildfire.github.io/obot.roadmap/diary/2026-07-11-2.html">diary</a></summary>
+  <ul>
+    <li>👯🤖 sv-v1 — safety.viz <a href="https://github.com/jwildfire/safety.viz/releases/tag/v1.0.0">v1.0.0</a> release train (three stacked merges, each approved live), then <a href="https://github.com/jwildfire/safety.viz/releases/tag/v1.1.0">v1.1.0</a> with real pharmaverse demo data</li>
+    <li>👯🤖 oa-v0.1 — <a href="https://github.com/jwildfire/obot.agent/releases/tag/v0.1.0">obot.agent v0.1.0</a>: the session framework itself, released</li>
+    <li>👯🤖 session-hub — the live agent dashboard designed and prototyped</li>
+    <li>👯🤖 audit — a roadmap-usage audit that caught the public roadmap flatlining on shipping day; corrections applied the same night</li>
+  </ul>
+</details>
+
+<details>
+  <summary>😺🤖 7/11 → 7/12 Overnight — the lead session watched two autonomous stretch jobs run while I slept; both landed clean with zero intervention, and a morning digest was waiting when I woke up (140M/$200) — <a href="https://jwildfire.github.io/obot.roadmap/diary/2026-07-12.html">diary</a></summary>
+  <ul>
+    <li>⚡️🤖 hep-explorer — the eDISH port described above (<a href="https://github.com/jwildfire/safety.viz/pull/44">draft PR</a> by morning) (50M/$55)</li>
+    <li>⚡️🤖 open.gismo — a v1.0 plan plus a working Phase-0 prototype (<a href="https://github.com/jwildfire/open.gismo/pull/1">draft PR</a> + <a href="https://jwildfire.github.io/obot.roadmap/reports/open-gismo-v1-plan-2026-07-12/">deployed design report</a>) (80M/$120)</li>
+  </ul>
+</details>
+
+<details>
+  <summary>😺🤖 7/12 Session 2 — release day: five lanes converged (250M/$275) — <a href="https://jwildfire.github.io/obot.roadmap/diary/2026-07-12-2.html">diary</a></summary>
+  <ul>
+    <li>👯🤖 edish — <a href="https://github.com/jwildfire/safety.viz/releases/tag/v1.2.0">safety.viz v1.2.0</a> shipped: eDISH merged with its done-gate evidence verified live</li>
+    <li>👯🤖 guide-port — a 19-figure clinical eDISH guide adapted from the DIA-ASA working group's workflow manual (44M/$33)</li>
+    <li>👯🤖 blog — <a href="{% post_url 2026-07-12-introducing-safety-viz %}">R/Pharma Diary #5</a> published</li>
+    <li>⚡️🤖 RC1 — gsm.safety v1.0.0 release candidate staged with full qualification evidence (<a href="https://github.com/jwildfire/gsm.safety/pull/39">draft PR</a>)</li>
+  </ul>
+</details>
+</div>
 
 ### Wrapup
 
