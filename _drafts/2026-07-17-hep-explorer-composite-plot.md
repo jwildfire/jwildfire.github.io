@@ -15,8 +15,8 @@
     (2) added the closing appositive comma after "Jim Buchanan"
   Revert either if you meant something else.
 
-  TOKENS/$ SLOT (Section 4): [tokens/$: TBD — lead to supply from job 758a52fa usage].
-  DO NOT invent numbers.
+  TOKENS/$ (Section 4): FILLED — ~176M tokens (~97% prompt-cache reads), ~$143 API-equivalent, $0 out-of-pocket (Max subscription).
+  MODEL CORRECTION: the build ran on Claude Opus 4.8, NOT Fable 5 — the --model claude-fable-5 spawn was overridden to Opus 4.8 (Fable 5 isn't selectable for background jobs). Verified from the job transcript.
 
   GIF: /assets/img/hep-explorer-composite.gif is recorded from the PR #69
   PREVIEW (https://jwildfire.github.io/safety.viz/pr/69/hep-explorer/index.html),
@@ -90,11 +90,11 @@ I demoed safety.viz for safetyGraphics' clinical lead, Jim Buchanan, this week a
 
 <!-- Goal: the "how it was made" receipts. Beats: -->
 
-- **The pipeline.** Filed implementation issue **safety.viz#67** → **one ultracode session** (Fable 5, `--effort high`: recon → design-locked → red-green TDD → adversarial review) → **draft PR safety.viz#69** (`Closes #67`), CI green, held for the merge+tag gate.
+- **The pipeline.** Filed implementation issue **safety.viz#67** → **one ultracode session** (Claude Opus 4.8, `--effort high`: recon → design-locked → red-green TDD → adversarial review) → **draft PR safety.viz#69** (`Closes #67`), CI green, held for the merge+tag gate.
 - **Roadmap-first.** #67 wasn't a vibe — it was scoped from Initiative 01 of the improvement assessment (the "colleague to-do list," sequenced hep-first because the FDA reference code was already in hand), then written up with the full data contract (ADaM BASE/ABLFL, no new domain), the synthetic-cohort requirement, and the TDD + evidence-baseline mandate before a line of code.
 - **What the repo independently confirms:** issue + PR both attributed to *Claude Code using Fable 5*; the TDD/worktree mandate; the red-green-shaped 22-unit + 5-e2e composite tests; a single squashed feature commit + an evidence-baseline commit; green CI.
 - **What it can't confirm — flag honestly:** the *single-session* framing, the exact `--effort high` setting, and the 6-finding adversarial-review-all-fixed step aren't recorded in the repo (no PR reviews, no findings artifacts). <!-- @jwildfire: these come from the session log, not the PR. Keep them only if the session record backs them; otherwise soften to "an adversarial review pass" without the count. -->
-- **The metrics.** [tokens/$: TBD — lead to supply from job 758a52fa usage.] *(Do not invent — drop a stat-card row here like Diary #6, e.g. tokens · API-equivalent $ · what-I-actually-paid, once the number lands.)*
+- **The metrics.** One ultracode session on **Claude Opus 4.8** (`--effort high`). Roughly **176M tokens** total — but ~**97%** (171M) were prompt-cache *reads*, billed at a tenth of input price; that's just what a long agentic session looks like, re-reading its whole context every turn. **API-equivalent ≈ $143** at list prices (Opus 4.8 is $5 / $25 per million input/output tokens, cache reads $0.50/M; a small slice ran on Fable-5 sub-agents). **What I actually paid: $0 marginal** — it ran inside the Claude Code Max subscription. *(Diary-#6-style stat card: `176M tokens · ~$143 API-equivalent · $0 out-of-pocket`.)*
 - **Still in draft on purpose.** Per the release convention, Jeremy merges and tags. PR #69 is finished and green but deliberately unmerged — shipped-in-draft, awaiting the gate. <!-- Close the post by pointing forward: four more of Jim's ideas are queued behind this one. -->
 
 <!-- REQUIRED before publish (site AGENTS.md): end the post with an [^ai] AI-collaboration footnote stating the REAL split for THIS post. Suggested, edit to match reality:
@@ -121,7 +121,7 @@ I demoed safety.viz for safetyGraphics' clinical lead, Jim Buchanan, this week a
 - Composite feature tests: **22 unit + 5 browser/e2e** (module suite ~400 unit). All green in CI.
 - Synthetic demo cohort: **64 subjects** = 32 "CLD: Study Drug" + 32 "CLD: Placebo"; deterministic/reproducible; injected into `site/data/adbds.csv`.
 - Demo composite view shows **295 of 318** participants (23 excluded for missing usable baseline/on-treatment labs).
-- Attribution on #67 and #69: *Claude Code using Fable 5*.
+- Model for the build: **Claude Opus 4.8** (`--effort high`), verified from the job transcript. NOTE: the #67/#69 attribution lines currently read *using Fable 5* — inaccurate (the background spawn requested Fable 5 but the runner used Opus 4.8); correct before publishing.
 
 ---
 
