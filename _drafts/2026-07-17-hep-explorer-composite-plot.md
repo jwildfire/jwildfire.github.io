@@ -1,127 +1,128 @@
-<!-- STATUS: OUTLINE (not prose) — drafted 2026-07-17 for @jwildfire review. Jeremy writes the final prose; this is a fact-loaded scaffold. Do NOT publish as-is. -->
+<!-- STATUS: OUTLINE (not prose) — REWRITE v2, 2026-07-18, for @jwildfire review. Jeremy writes the final prose; this is a story-shaped, fact-loaded scaffold. Do NOT publish as-is. -->
 <!--
-  ============================ OUTLINE NOTES ============================
-  DELIVERABLE TYPE: outline — title options + verbatim lede + fact-loaded
-  section beats + embedded gif. Jeremy writes the prose.
+  ============================ OUTLINE NOTES (v2 rewrite) ============================
+  WHAT CHANGED FROM v1 (per @jwildfire's 2026-07-17 direction):
+    - Reframed from a technical-spec outline into a FIRST-PERSON DEV-DIARY STORY:
+      the spine is now the Jim Buchanan conversation and the one-session
+      collaboration arc, not the FDA method.
+    - The dense composite-method beats are COMPRESSED to a short, higher-altitude
+      "what the plot does and why it matters" — the full method moved to the
+      Facts & links block as BACKING, not body.
+    - Shorter overall; each section is 3-5 beats, not an exhaustive bullet dump.
+    - PRESERVED unchanged: the verbatim lede (2 typo fixes), the embedded gif,
+      the filled tokens/$ card, and the Opus-4.8 model correction.
+    - Gif figure link RE-POINTED to production (PR #69 merged in v1.4.0;
+      the pr/69 preview is torn down). See the GIF note below.
 
-  TITLE OPTIONS (pick one; front matter below uses A):
-    A. "R/Pharma Diary #7 — Jim's First Ask: A Composite Plot for Messy Baselines"
-    B. "R/Pharma Diary #7 — Reading Liver Safety When the Baseline Is Already Abnormal"
-    C. "R/Pharma Diary #7 — One Paper, One Session: hep-explorer Learns the FDA Composite Plot"
+  DELIVERABLE TYPE: outline — Jeremy writes the prose. Beats + notes only.
 
-  LEDE: Jeremy's hook is reproduced VERBATIM below, with exactly two typo
-  fixes flagged here for your review:
-    (1) "Clinical lead" -> "clinical lead" (mid-sentence capitalization)
-    (2) added the closing appositive comma after "Jim Buchanan"
-  Revert either if you meant something else.
+  TITLE OPTIONS (front matter uses A):
+    A. "R/Pharma Diary — Jim's First Ask: A Composite Plot for Messy Baselines"
+    B. "R/Pharma Diary — I Asked What to Fix. The First Answer Shipped That Week."
+    C. "R/Pharma Diary — One Conversation, One Session, One Feature"
 
-  TOKENS/$ (Section 4): FILLED — ~176M tokens (~97% prompt-cache reads), ~$143 API-equivalent, $0 out-of-pocket (Max subscription).
-  MODEL CORRECTION: the build ran on Claude Opus 4.8, NOT Fable 5 — the --model claude-fable-5 spawn was overridden to Opus 4.8 (Fable 5 isn't selectable for background jobs). Verified from the job transcript.
+  ⚠ NUMBERING DECISION (@jwildfire): "#7" was reserved for the "Anatomy of a
+  Session" post, which isn't written yet. This post IS ready (PR #69 merged,
+  v1.4.0 shipped). RECOMMENDATION: publish this as #7 now and renumber
+  "Anatomy of a Session" to #8 — ship what's ready. Front matter below is left
+  WITHOUT a hard series_part number pending your call (set series_part: 7 to
+  take that slot, or 8 to keep #7 for Anatomy). Your editorial call.
 
-  GIF: /assets/img/hep-explorer-composite.gif is recorded from the PR #69
-  PREVIEW (https://jwildfire.github.io/safety.viz/pr/69/hep-explorer/index.html),
-  which is TORN DOWN when the PR merges. Before publishing, re-point the figure
-  link to the PRODUCTION URL: https://jwildfire.github.io/safety.viz/hep-explorer/
-  (and, ideally, re-record the gif against production so it never 404s).
+  LEDE: reproduced VERBATIM below with exactly two typo fixes flagged:
+    (1) "Clinical lead" -> "clinical lead"  (2) closing appositive comma after "Jim Buchanan"
 
-  CROSS-POST TO big.blog: keep front matter byte-identical; rewrite the image
-  path from /assets/img/hep-explorer-composite.gif to
-  /assets/images/2026-07-17/hep-explorer-composite.gif and copy the file into
-  big.blog/assets/images/2026-07-17/. NOTE: big.blog currently only carries
-  diary #1–#3; any {% post_url %} link to #4/#5/#6 will BREAK the big.blog build
-  until those are cross-posted first.
+  TOKENS/$ (receipts): ~176M tokens (~97% prompt-cache reads), ~$143 API-equivalent, $0 out-of-pocket (Max subscription).
+  MODEL: the build ran on Claude Opus 4.8, NOT Fable 5 (the --model claude-fable-5 spawn was overridden — Fable 5 isn't selectable for background jobs). Verified from the job transcript.
+
+  GIF: /assets/img/hep-explorer-composite.gif — the figure link now points to
+  PRODUCTION (https://jwildfire.github.io/safety.viz/hep-explorer/), live as of
+  v1.4.0. The gif itself was recorded from the identical composite view; re-record
+  against production only if you want the address bar in-frame to read the prod URL.
+
+  CROSS-POST TO big.blog: keep front matter byte-identical; rewrite the image path
+  to /assets/images/2026-07-17/hep-explorer-composite.gif and copy the file in.
+  NOTE: big.blog carries diary #1-#3 only; any {% post_url %} to #4/#5/#6 breaks
+  its build until those are back-filled first.
   ======================================================================
 -->
 ---
-title: "R/Pharma Diary #7 — Jim's First Ask: A Composite Plot for Messy Baselines"
+title: "R/Pharma Diary — Jim's First Ask: A Composite Plot for Messy Baselines"
 author: "Jeremy Wildfire"
-excerpt: "I asked safetyGraphics' original clinical lead what he'd change, and his first idea turned into a working feature the same week: an FDA composite plot for reading liver safety in patients whose baseline labs are already abnormal. Here's the method, the build, and the receipts."
+excerpt: "I asked safetyGraphics' original clinical lead what he'd change, and his very first idea was a working feature the same week. This is the story of that one conversation — and how far a single agent session got with it."
 tags: RPharma AI Agents Autonomy OBot ClaudeCode DeveloperDiary
 series: "R/Pharma 2026 developer diary"
-series_part: 7
+# series_part: pending — see NUMBERING DECISION in the outline comment above
 date: "2026-07-17"
 ---
 
-<!-- LEDE — verbatim hook (two typo fixes noted in the outline comment above). Body MUST open with prose, never a heading. -->
+<!-- LEDE — verbatim hook (two typo fixes noted above). Body MUST open with prose, never a heading. -->
 I demoed safety.viz for safetyGraphics' clinical lead, Jim Buchanan, this week and asked if he had any improvements in mind from the last few years, and no surprise, he had several! The first is available now — an additional workflow in hep-explorer based on [this paper from Tesfaldet et al.](https://doi.org/10.1007/s40264-024-01425-5)
 
-<!-- OPTIONAL BRIDGE BEAT (Jeremy's call): one sentence tying this to the running diary thread — "what can these tools do right now, and how much autonomously?" — and noting Jim's list had five ideas; this post is the first. The public roadmap report anonymizes the source as a "colleague to-do list (5 items)," so if you name Jim here keep it to your own first-person recollection, not a citation of the report. -->
+## The ask
 
-## The workflow: an FDA composite plot for abnormal baselines
+<!-- Goal: establish the STORY — a person, a question, and a fast turnaround. Higher altitude, not technical yet. Beats: -->
+- The running thread of this diary has been one question: *what can these agent tools actually do right now, and how much of it without me in the loop?* This week I got to point that question at a real domain expert.
+- Jim Buchanan was the clinical lead on safetyGraphics — he's spent years looking at the plots the field actually uses to catch drug-induced liver injury. So when the demo ended I asked the obvious thing: *what would you change?*
+- He had a **list** — five ideas, none of them small. This post is about the **first** one, because it went from "here's a paper you should read" to a shipped, tested feature in **hep-explorer** inside the same week. The other four are queued behind it.
+- <!-- Jeremy's call on tone: this is the collaboration-arc beat. The point isn't the plot yet — it's that an offhand expert suggestion became working software in days, with the build itself run by an agent. Note for honesty: the public roadmap report anonymizes the source as a "colleague to-do list (5 items)"; naming Jim here is your own first-person recollection, not a citation of that report. -->
 
-<!-- Goal of this section: explain the METHOD (the paper), so a reader gets why it exists before seeing the build. Beats: -->
+## The idea: reading liver safety when the baseline is already a mess
 
-- **The blind spot.** The standard eDISH plot (peak ALT vs. peak total bilirubin, each in multiples of the population upper limit of normal, ×ULN) is the workhorse for spotting drug-induced liver injury (DILI). But it assumes a roughly normal starting point. For patients who begin a trial with **already-abnormal liver tests** — chronic hepatitis, chronic liver disease — ×ULN eDISH does two bad things at once: it raises **false alarms** (people who started high look dangerous) and it **masks real change** (a drug that actually *improved* someone's labs still plots in a scary quadrant).
-- **The fix, in one line.** Show the on-treatment values two ways at once — against the population norm (×ULN) *and* against **each subject's own baseline (×BLN)** — so you can see both absolute risk and the direction/size of change from where that person started.
-- **The authors.** Tesfaldet, Patel, Chen, Pucino, Rosario, **Hayashi** (Paul "Skip" Hayashi), Navarro Almario — an **FDA** author group. *Drug Safety* 2024;47:699–710. DOI [10.1007/s40264-024-01425-5](https://doi.org/10.1007/s40264-024-01425-5). FDA also published **public-domain reference code** ([FDA/Composite-eDISH-Plot](https://github.com/FDA/Composite-eDISH-Plot), MIT / Zenodo DOI 10.5281/zenodo.10892050) — which matters a lot for Section 4.
-- **Step 1 — Pretreatment eDISH (classify the baseline).** Log-log scatter of *baseline* BILI vs. ALT in ×ULN. Two cut-lines — **ALT > 3×ULN** (vertical) and **BILI > 2×ULN** (horizontal) — sort everyone into four quadrants, each given a persistent colored symbol:
-  - Normal & Near-Normal → **green square**
-  - Cholestasis (BILI high, ALT not) → **amber circle**
-  - Temple's Corollary (ALT high, BILI not) → **blue plus/cross**
-  - Hy's Law (both high) → **red triangle**
-- **Step 2 — Peak on-treatment eDISH (show migration).** Same plot, now for *peak on-treatment* values — but every point **keeps its baseline color**. Color = where you started; position = where you ended. Movement between the two scatters *is* the migration. (Paper's example: a subject who was Hy's-Law at baseline migrates to Cholestasis on treatment as only bilirubin stays up.)
-- **Step 3 — Four-panel ×Baseline shift plot (magnitude vs. your own baseline).** Split subjects into four panels by their baseline quadrant and re-plot peak ALT/BILI as multiples of **their own baseline** (×BLN = peak ÷ baseline), with **1× / 3× / 5×** reference lines. Left of 1× = ALT dropped; below 1× = bilirubin dropped. This is where **benefit** becomes visible: a treated patient whose labs fell below their own baseline lands in the "good" corner.
-- **Plus a color-coded migration table.** A 4×4 baseline-vs-on-treatment count matrix, cells colored by level of concern: **red = migration of concern, yellow = potential concern, green = no concern / potential benefit, gray = no migration (the diagonal)**. Compare tables across arms to spot imbalance in harm *or* benefit.
-- <!-- OPTIONAL clinical credibility beat: the paper illustrates on two real trials (a 6-month placebo-controlled chronic-liver-disease study, ~45/arm; and a 12-week chronic hepatitis C study). One vivid number if you want it: in the CHC study, ALT > baseline in 88% of placebo vs. 7% of study-drug subjects — the drug pulled labs *below* baseline, which ×ULN eDISH alone would never surface as benefit. -->
-- **Full method write-up** lives in the roadmap report (Initiative 01) — link in the facts block below.
+<!-- Goal: COMPRESSED method — why the plot exists, in a few sentences. The full mechanics live in Facts & links as backing. Keep this high-altitude. Beats: -->
+- The standard plot for liver safety — **eDISH** — assumes patients start roughly normal. Jim's point: a lot of them don't. In chronic hepatitis or chronic liver disease, the labs are *already* abnormal at day one, and eDISH does two bad things at once — it **cries wolf** on people who started high, and it **hides real change**, including a drug that genuinely made someone *better*.
+- The fix Jim pointed me to is an **FDA composite plot** (Tesfaldet et al., *Drug Safety* 2024): show each on-treatment value against **two** yardsticks at once — the population norm *and* the patient's **own baseline**. Absolute risk and direction-of-change, side by side.
+- One number makes it vivid (from the paper's chronic-hepatitis-C example): labs rose above baseline in **88% of placebo vs. 7% of study-drug** subjects — the drug pulled people *below* their own baseline. Classic eDISH would never show that as a benefit. <!-- optional, but it's the whole argument in one stat. -->
+- That's the altitude for the body. The four-panel mechanics, the exact cut-lines, and the color-coded migration table are in the Facts block — pull them up only if a passage needs them.
 
-## The build: a new view in hep-explorer
+## What shipped
 
-<!-- Goal: what actually shipped, WITH the gif. Beats: -->
-
-- **It's a new *view*, not a new tool.** hep-explorer already shipped in safety.viz (Diary #6). This adds a **View** toggle: `eDISH / mDISH scatter` ⇄ **`Composite plot (baseline-referenced)`**. Same module, same data model (standard ADaM BASE/ABLFL — **no new data domain**), same renderer shell; it just opens on the composite view with a trimmed control set.
-- **Four linked panels on one screen** (the gif walks all four):
-  1. **Pretreatment eDISH** (baseline ×ULN) — classifies each subject, sets the anchor color/shape.
-  2. **Peak on-treatment eDISH** (peak ×ULN) — same points keep their baseline color, so migration reads across the two scatters.
-  3. **Four-panel ×Baseline shift plot** — one panel per on-treatment quadrant, peak-vs-own-baseline with 1×/3×/5× reference lines (drawn by a new `referenceLinePlugin`).
-  4. **Color-coded migration table + by-arm concern/benefit summary** — the 4×4 matrix plus a per-arm rollup of red/yellow/green/gray so you can compare concerning vs. potentially-beneficial change across treatment arms.
+<!-- Goal: the feature, WITH the gif. Higher altitude than v1 — what it is and what it feels like to use, not an implementation inventory. Beats: -->
+- It landed as a **new view inside hep-explorer**, not a separate tool — a **View** toggle between the familiar eDISH scatter and the new **composite (baseline-referenced)** view. Same data you already load (standard ADaM baseline fields, no new domain), one extra way to read it.
+- The composite view puts four linked panels on one screen: the baseline classification, the on-treatment migration (every point keeps its baseline color, so you *watch* people move), a shift plot against each patient's own baseline, and a color-coded migration table with a per-arm concern/benefit summary.
 
 <figure style="margin:1.5em 0;">
-  <a href="https://jwildfire.github.io/safety.viz/pr/69/hep-explorer/index.html"><img src="/assets/img/hep-explorer-composite.gif" alt="The hep-explorer composite plot: two baseline-colored eDISH scatters showing migration, a four-panel ×Baseline shift plot, and a color-coded migration table with a by-arm concern/benefit summary." style="width:100%; border:1px solid rgba(128,128,128,0.35); border-radius:8px;"></a>
-  <figcaption style="font-size:0.8em; opacity:0.7; margin-top:4px;">The composite view, top to bottom: baseline &amp; on-treatment eDISH scatters (color carried from baseline so migration is visible), the four-panel ×Baseline shift plot, and the color-coded migration table + by-arm concern/benefit summary. <!-- PRE-PUBLISH: re-point this link + gif to the production URL https://jwildfire.github.io/safety.viz/hep-explorer/ once PR #69 merges (the pr/69 preview is torn down on merge). --></figcaption>
+  <a href="https://jwildfire.github.io/safety.viz/hep-explorer/"><img src="/assets/img/hep-explorer-composite.gif" alt="The hep-explorer composite plot: two baseline-colored eDISH scatters showing migration, a four-panel ×Baseline shift plot, and a color-coded migration table with a by-arm concern/benefit summary." style="width:100%; border:1px solid rgba(128,128,128,0.35); border-radius:8px;"></a>
+  <figcaption style="font-size:0.8em; opacity:0.7; margin-top:4px;">The composite view, top to bottom: baseline &amp; on-treatment eDISH scatters (color carried from baseline so migration is visible), the four-panel ×Baseline shift plot, and the color-coded migration table + by-arm concern/benefit summary. <a href="https://jwildfire.github.io/safety.viz/hep-explorer/">Try it live →</a></figcaption>
 </figure>
 
-- **It's a faithful port, not a re-derivation.** `src/hep-explorer/composite.js` ports the FDA reference R (`Composite_eDISH_Model.R`) directly — strict `> 3×ULN / > 2×ULN` cuts, peak taken as the max over **on-treatment records only** (baseline/screening excluded), per-analyte; the authoritative 4×4 concern matrix (5 red / 2 yellow / 5 green / 4 gray) copied from the source. Kept as pure, unit-testable functions.
-- **New synthetic demo cohort.** Real pharmaverse ADaM data (xanomeline) has almost no abnormal baselines, so the composite view would look empty. A generator (`scripts/build-hep-composite-cohort.mjs`) injects a **deterministic, byte-reproducible** synthetic **chronic-liver-disease cohort — 64 subjects (32 "CLD: Study Drug" + 32 "CLD: Placebo")** with abnormal baselines, clearly labeled synthetic (USUBJID `CLD-*`, site "Hepatology Research Unit"), provenance in `docs/DATA_SOURCES.md`. In the live demo you can see the payoff: the CLD study-drug arm skews toward green (benefit) migrations vs. its placebo arm.
-- **Tested, and green.** The composite feature adds **22 unit tests** (`composite.test.js`, hand-computed cases) **+ 5 browser/e2e tests** (opens on composite view; draws the panels, shift plot, legend, migration table, by-arm summary; View toggles; degrades gracefully to a note when no subject has usable baseline + on-treatment labs) — on top of hep-explorer's ~400-test suite. All green in CI. Coverage IDs `HEP-COMP-001..006`; a clinician-facing guide (`docs/guides/hep-explorer.md`) documents the DILI workflow the view completes.
-- <!-- HONESTY BEAT (optional, on-brand): worth a footnote — the demo excludes 23 of 318 participants who lack a usable baseline + on-treatment ALT/bilirubin, and the view says so on screen ("295 of 318 shown"). The port also deliberately mirrors the paper's known limitation (no ALP-based cholestasis refinement) rather than papering over it. -->
+- It's a **faithful port, not a re-derivation** — the logic follows the FDA's own public-domain reference code, kept as small unit-tested functions rather than reinvented.
+- Because real demo data (xanomeline) has almost no abnormal baselines, the view would look empty — so the build injects a clearly-labeled **synthetic chronic-liver-disease cohort** (64 subjects, study-drug vs. placebo) so you can actually see the payoff: the treated arm skews toward the "benefit" corner. <!-- honesty beat, optional: the demo also says on screen "295 of 318 shown" — it excludes participants lacking usable baseline+on-treatment labs rather than hiding the gap. -->
 
-## The process: one issue, one session, one PR
+## The receipts: one conversation, one session, one PR
 
-<!-- Goal: the "how it was made" receipts. Beats: -->
+<!-- Goal: the "how it was made" proof, tightened. Beats: -->
+- The pipeline, end to end: **one implementation issue** (safety.viz#67, scoped from the roadmap assessment, not a vibe) → **one agent session** (Claude Opus 4.8, `--effort high`: recon → design → red-green TDD → adversarial review) → **one draft PR** (#69, `Closes #67`), green in CI, shipped in **v1.4.0**.
+- What the repo independently backs: the issue and PR, the TDD/worktree discipline, the red-green-shaped composite tests (22 unit + 5 browser) on top of hep-explorer's ~400-test suite, green CI. <!-- @jwildfire: the "single session" and "adversarial-review-all-fixed" framing come from the session log, not the PR — keep them because you have the log; soften if you'd rather cite only what a reader can verify in the repo. -->
+- **The metrics.** One Opus 4.8 session, roughly **176M tokens** — but ~**97%** of that was prompt-cache *reads* (a tenth of input price), which is just what a long agentic session looks like re-reading its own context every turn. **API-equivalent ≈ $143** at list prices; **actual marginal cost: $0**, inside the Max subscription. *(Stat card, Diary-#6 style: `176M tokens · ~$143 API-equivalent · $0 out-of-pocket`.)*
+- **Still shipped-in-draft on purpose** until the merge+tag gate — the human stays on the release button even when the agent does the build. <!-- Close forward: this was idea #1 of Jim's five. -->
 
-- **The pipeline.** Filed implementation issue **safety.viz#67** → **one ultracode session** (Claude Opus 4.8, `--effort high`: recon → design-locked → red-green TDD → adversarial review) → **draft PR safety.viz#69** (`Closes #67`), CI green, held for the merge+tag gate.
-- **Roadmap-first.** #67 wasn't a vibe — it was scoped from Initiative 01 of the improvement assessment (the "colleague to-do list," sequenced hep-first because the FDA reference code was already in hand), then written up with the full data contract (ADaM BASE/ABLFL, no new domain), the synthetic-cohort requirement, and the TDD + evidence-baseline mandate before a line of code.
-- **What the repo independently confirms:** issue + PR both attributed to *Claude Code using Fable 5*; the TDD/worktree mandate; the red-green-shaped 22-unit + 5-e2e composite tests; a single squashed feature commit + an evidence-baseline commit; green CI.
-- **What it can't confirm — flag honestly:** the *single-session* framing, the exact `--effort high` setting, and the 6-finding adversarial-review-all-fixed step aren't recorded in the repo (no PR reviews, no findings artifacts). <!-- @jwildfire: these come from the session log, not the PR. Keep them only if the session record backs them; otherwise soften to "an adversarial review pass" without the count. -->
-- **The metrics.** One ultracode session on **Claude Opus 4.8** (`--effort high`). Roughly **176M tokens** total — but ~**97%** (171M) were prompt-cache *reads*, billed at a tenth of input price; that's just what a long agentic session looks like, re-reading its whole context every turn. **API-equivalent ≈ $143** at list prices (Opus 4.8 is $5 / $25 per million input/output tokens, cache reads $0.50/M; a small slice ran on Fable-5 sub-agents). **What I actually paid: $0 marginal** — it ran inside the Claude Code Max subscription. *(Diary-#6-style stat card: `176M tokens · ~$143 API-equivalent · $0 out-of-pocket`.)*
-- **Still in draft on purpose.** Per the release convention, Jeremy merges and tags. PR #69 is finished and green but deliberately unmerged — shipped-in-draft, awaiting the gate. <!-- Close the post by pointing forward: four more of Jim's ideas are queued behind this one. -->
-
-<!-- REQUIRED before publish (site AGENTS.md): end the post with an [^ai] AI-collaboration footnote stating the REAL split for THIS post. Suggested, edit to match reality:
-[^ai]: I wrote the prose. A background Claude session drafted this outline — reading the Tesfaldet paper, verifying the PR/issue/test facts against the repo, recording the demo gif, and matching the diary's format. The feature itself (issue #67 → PR #69) was built in a separate Fable 5 ultracode session. -->
+<!-- REQUIRED before publish (site AGENTS.md): end with an [^ai] AI-collaboration footnote stating the REAL split for THIS post. Suggested:
+[^ai]: I wrote the prose. A background Claude session drafted this outline — reading the Tesfaldet paper, verifying the PR/issue/test facts against the repo, and matching the diary format. The feature itself (issue #67 → PR #69) was built in a separate Opus 4.8 agent session. -->
 
 ---
 
-## Facts & links (for drafting — not for publication)
+## Facts & links (BACKING for drafting — not for publication)
 
-**Paper (Section 2 source):** Tesfaldet B, Patel T, Chen M, Pucino F, Rosario L, Hayashi P, Navarro Almario E. "Composite Plot for Visualizing Aminotransferase and Bilirubin Changes in Clinical Trials of Subjects with Abnormal Baseline Values." *Drug Safety* 2024;47:699–710. DOI 10.1007/s40264-024-01425-5. FDA author group; Paul "Skip" Hayashi a co-author.
+**Paper (the method):** Tesfaldet B, Patel T, Chen M, Pucino F, Rosario L, Hayashi P, Navarro Almario E. "Composite Plot for Visualizing Aminotransferase and Bilirubin Changes in Clinical Trials of Subjects with Abnormal Baseline Values." *Drug Safety* 2024;47:699–710. DOI 10.1007/s40264-024-01425-5. FDA author group; Paul "Skip" Hayashi a co-author.
 **FDA reference code:** https://github.com/FDA/Composite-eDISH-Plot (MIT; Zenodo DOI 10.5281/zenodo.10892050).
-**Roadmap report (Initiative 01, full method write-up):** https://jwildfire.github.io/obot.roadmap/reports/safety-graphics-improvement-assessment-2026-07-17/ — "Safety Graphics — Improvement Requirements & Feasibility." Covers 5 ideas; hep-composite sequenced first. NOTE: report anonymizes the source as "colleague to-do list (5 items)"; it does **not** name Jim Buchanan.
+**Roadmap report (Initiative 01, full method write-up):** https://jwildfire.github.io/obot.roadmap/reports/safety-graphics-improvement-assessment-2026-07-17/ — anonymizes the source as "colleague to-do list (5 items)"; does **not** name Jim Buchanan.
 **Implementation issue:** https://github.com/jwildfire/safety.viz/issues/67
-**Pull request (draft, green, Closes #67, awaiting merge):** https://github.com/jwildfire/safety.viz/pull/69 — title "hepExplorer: composite plot for subjects with abnormal baseline liver tests (#67)".
-**Live PR preview (source of the gif; torn down on merge):** https://jwildfire.github.io/safety.viz/pr/69/hep-explorer/index.html
-**Production URL (use after merge):** https://jwildfire.github.io/safety.viz/hep-explorer/
+**Pull request (merged in v1.4.0, Closes #67):** https://github.com/jwildfire/safety.viz/pull/69
+**Production view (live):** https://jwildfire.github.io/safety.viz/hep-explorer/
+**Release:** https://github.com/jwildfire/safety.viz/releases/tag/v1.4.0
 **Prior diary posts to cross-link (Liquid):** hep-explorer intro — `{% post_url 2026-07-13-obot-v3-billion-tokens %}`; safety.viz intro — `{% post_url 2026-07-12-introducing-safety-viz %}`.
 
-**Key numbers (verified against repo/paper — safe to cite):**
-- eDISH cut-lines: ALT > 3×ULN, BILI > 2×ULN.
-- Baseline-quadrant symbols: Normal & NN = green square; Cholestasis = amber circle; Temple's Corollary = blue plus; Hy's Law = red triangle.
-- ×BLN shift-plot reference lines: 1× / 3× / 5×.
-- Migration-table color code: red = concern, yellow = potential concern, green = no concern / potential benefit, gray = no migration (diagonal).
-- Composite feature tests: **22 unit + 5 browser/e2e** (module suite ~400 unit). All green in CI.
+**The full method (compressed out of the body — pull up only as needed):**
+- eDISH cut-lines: ALT > 3×ULN, BILI > 2×ULN. Baseline-quadrant symbols: Normal/Near-Normal = green square; Cholestasis = amber circle; Temple's Corollary = blue plus; Hy's Law = red triangle.
+- Step 1 pretreatment eDISH classifies baseline; Step 2 peak on-treatment eDISH shows migration (points keep baseline color); Step 3 four-panel ×Baseline shift plot (peak ÷ own baseline, 1×/3×/5× reference lines) makes benefit visible.
+- Migration table: 4×4 baseline-vs-on-treatment counts; red = concern, yellow = potential concern, green = no concern / potential benefit, gray = no migration (diagonal). Compare across arms for imbalance in harm *or* benefit.
+
+**Key numbers (verified — safe to cite):**
+- Composite feature tests: **22 unit + 5 browser/e2e** (module suite ~400 unit). All green in CI; coverage IDs HEP-COMP-001..006 (007 added for participant cross-linking).
 - Synthetic demo cohort: **64 subjects** = 32 "CLD: Study Drug" + 32 "CLD: Placebo"; deterministic/reproducible; injected into `site/data/adbds.csv`.
 - Demo composite view shows **295 of 318** participants (23 excluded for missing usable baseline/on-treatment labs).
-- Model for the build: **Claude Opus 4.8** (`--effort high`), verified from the job transcript. NOTE: the #67/#69 attribution lines currently read *using Fable 5* — inaccurate (the background spawn requested Fable 5 but the runner used Opus 4.8); correct before publishing.
+- CHC benefit stat (paper): ALT > baseline in **88% placebo vs. 7% study-drug**.
+- Model for the build: **Claude Opus 4.8** (`--effort high`), verified from the transcript. (The #67/#69 attribution lines were corrected from "Fable 5" to Opus 4.8 on 2026-07-17.)
 
 ---
 
