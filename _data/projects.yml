@@ -1,6 +1,8 @@
-# Key projects featured on the homepage. Order here is the order on the page.
+# Key projects. `stub` is the one-line version used on the homepage list;
+# `blurb` is the long version used on /projects/. Order here is page order.
 - name: "{gsm}"
   role: "Creator · Technical lead, Gilead RBQM · 2022 – present"
+  stub: "Open-source R framework for risk-based quality monitoring, approved for GxP use."
   blurb: >-
     An open-source R framework for risk-based quality monitoring, designed for GxP
     from the first commit. Approved for GxP use and running monitoring oversight on
@@ -16,6 +18,7 @@
 
 - name: "safety.viz"
   role: "Creator · 2026 · JavaScript"
+  stub: "Seven interactive clinical safety charts, with published test evidence."
   blurb: >-
     A charting library for monitoring clinical trial safety: seven interactive charts,
     from safety histograms to the eDISH hepatic explorer. Every chart traces to a
@@ -31,6 +34,7 @@
 
 - name: "{safetyGraphics}"
   role: "Founding technical lead · ASA-DIA Interactive Safety Graphics"
+  stub: "Interactive safety review for clinical trials, in R and Shiny."
   blurb: >-
     The open-source R/Shiny app that replaced the impenetrable safety appendix with
     charts a clinician can actually click. Built over five years by clinicians and
@@ -46,6 +50,7 @@
 
 - name: "OpenRBQM"
   role: "Co-lead · PHUSE working group · 20+ organizations"
+  stub: "Shared open-source RBQM standards and tooling across 20+ organizations."
   blurb: >-
     A pre-competitive PHUSE working group with members from more than twenty pharma
     companies, CROs and regulators, building shared open-source standards, tooling and

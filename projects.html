@@ -1,0 +1,29 @@
+---
+layout: page
+title: Projects
+permalink: /projects/
+description: "Open-source projects for clinical trials: gsm, safety.viz, safetyGraphics and OpenRBQM — what each one is, and what Jeremy Wildfire did on it."
+---
+
+<p class="projects-intro">Open-source tools for running and monitoring clinical trials. Most of this work is still active — the links go to live docs, demos and source.</p>
+
+<div class="projects-list">
+  {%- for project in site.data.projects -%}
+  <article class="projects-row" id="{{ project.name | slugify }}">
+    <div class="projects-id">
+      <h2>{{ project.name }}</h2>
+      <p class="projects-role">{{ project.role }}</p>
+    </div>
+    <div class="projects-detail">
+      <p>{{ project.blurb }}</p>
+      <p class="projects-links">
+        {%- for link in project.links -%}
+        <a href="{{ link.url }}" rel="noopener">{{ link.label }} <span aria-hidden="true">&rarr;</span></a>
+        {%- endfor -%}
+      </p>
+    </div>
+  </article>
+  {%- endfor -%}
+</div>
+
+<p class="projects-more">More repositories, including the R/Pharma keynote experiments, on <a href="https://github.com/{{ site.github_username }}" rel="noopener">GitHub</a>. Publication list on <a href="{{ site.scholar_url }}" rel="noopener">Google Scholar</a>.</p>

@@ -5,7 +5,7 @@
 
   <body class="wf-home-body">
 
-    <a class="wf-skip" href="#projects">Skip to content</a>
+    <a class="wf-skip" href="#writing">Skip to content</a>
 
     <div class="wf-home">
 
@@ -13,12 +13,11 @@
         <div class="wf-rail-top">
           <a class="wf-wordmark" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
           <p class="wf-name">{{ site.author | escape }}</p>
-          <p class="wf-pitch">{{ site.pitch }}</p>
+          <p class="wf-pitch">{{ site.tagline }}</p>
 
           <nav class="wf-nav" aria-label="Site sections">
-            <a href="#projects">Key projects <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
             <a href="#writing">Writing <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
-            <a href="{{ "/about/" | relative_url }}">About <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
+            <a href="#projects">Key projects <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
             <a href="{{ "/keynote/" | relative_url }}">R/Pharma keynote <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
             <a href="{{ "/archive.html" | relative_url }}">Archive <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
           </nav>
@@ -28,47 +27,16 @@
           {%- endif -%}
         </div>
 
-        <div class="wf-rail-bottom">
-          <ul class="wf-contact">
-            {%- if site.email -%}<li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>{%- endif -%}
-            {%- if site.github_username -%}<li><a href="https://github.com/{{ site.github_username }}" rel="noopener">github.com/{{ site.github_username }}</a></li>{%- endif -%}
-            {%- if site.linkedin_username -%}<li><a href="https://www.linkedin.com/in/{{ site.linkedin_username }}/" rel="noopener">linkedin.com/in/{{ site.linkedin_username }}</a></li>{%- endif -%}
-            {%- if site.scholar_url -%}<li><a href="{{ site.scholar_url }}" rel="noopener">Google Scholar</a></li>{%- endif -%}
-            <li><a href="{{ "/feed.xml" | relative_url }}">Subscribe via RSS</a></li>
-          </ul>
-          <p class="wf-strap">{{ site.tagline }}</p>
-        </div>
+        <ul class="wf-contact">
+          {%- if site.email -%}<li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>{%- endif -%}
+          {%- if site.github_username -%}<li><a href="https://github.com/{{ site.github_username }}" rel="noopener">github.com/{{ site.github_username }}</a></li>{%- endif -%}
+          {%- if site.linkedin_username -%}<li><a href="https://www.linkedin.com/in/{{ site.linkedin_username }}/" rel="noopener">linkedin.com/in/{{ site.linkedin_username }}</a></li>{%- endif -%}
+          {%- if site.scholar_url -%}<li><a href="{{ site.scholar_url }}" rel="noopener">Google Scholar</a></li>{%- endif -%}
+          <li><a href="{{ "/feed.xml" | relative_url }}">Subscribe via RSS</a></li>
+        </ul>
       </aside>
 
       <main class="wf-main" aria-label="Content">
-
-        <section class="wf-sec" id="projects">
-          <div class="wf-sechead">
-            <h2>Key projects</h2>
-            <span class="wf-count">{{ site.data.projects | size }} featured &middot; <a href="https://github.com/{{ site.github_username }}" rel="noopener">more on GitHub</a></span>
-          </div>
-
-          <div class="wf-cards">
-            {%- for project in site.data.projects -%}
-            <article class="wf-card">
-              <p class="wf-card-role">{{ project.role }}</p>
-              <h3>{{ project.name }}</h3>
-              <p class="wf-card-blurb">{{ project.blurb }}</p>
-              <p class="wf-card-links">
-                {%- for link in project.links -%}
-                <a href="{{ link.url }}" rel="noopener">{{ link.label }} <span aria-hidden="true">&rarr;</span></a>
-                {%- endfor -%}
-              </p>
-            </article>
-            {%- endfor -%}
-          </div>
-
-          <a class="wf-keynote" href="{{ "/keynote/" | relative_url }}">
-            <span class="wf-keynote-kicker">R/Pharma 2026 &middot; Keynote &middot; October</span>
-            <span class="wf-keynote-headline">Building open-source clinical trial tools with <em>agentic AI</em></span>
-            <span class="wf-keynote-cta">Prepared in the open &mdash; follow the developer diary &rarr;</span>
-          </a>
-        </section>
 
         <section class="wf-sec" id="writing">
           <div class="wf-sechead">
@@ -77,6 +45,12 @@
           </div>
 
           {{ content }}
+
+          <a class="wf-keynote" href="{{ "/keynote/" | relative_url }}">
+            <span class="wf-keynote-kicker">R/Pharma 2026 &middot; Keynote &middot; October</span>
+            <span class="wf-keynote-headline">Building open-source clinical trial tools with <em>agentic AI</em></span>
+            <span class="wf-keynote-cta">Prepared in the open &mdash; follow the developer diary &rarr;</span>
+          </a>
 
           <ul class="wf-posts">
             {%- for post in site.posts limit: 8 -%}
@@ -93,10 +67,35 @@
           <p class="wf-more"><a href="{{ "/archive.html" | relative_url }}">All {{ site.posts | size }} posts in the archive &rarr;</a></p>
         </section>
 
+        <section class="wf-sec" id="projects">
+          <div class="wf-sechead">
+            <h2>Key projects</h2>
+            <span class="wf-count"><a href="{{ "/projects/" | relative_url }}">all projects</a></span>
+          </div>
+
+          <ul class="wf-projlist">
+            {%- for project in site.data.projects -%}
+            <li>
+              <a class="wf-proj-name" href="{{ "/projects/" | relative_url }}#{{ project.name | slugify }}">{{ project.name }}</a>
+              <span class="wf-proj-body">
+                <span class="wf-proj-stub">{{ project.stub }}</span>
+                <span class="wf-proj-links">
+                  {%- for link in project.links -%}
+                  <a href="{{ link.url }}" rel="noopener">{{ link.label }}</a>
+                  {%- endfor -%}
+                </span>
+              </span>
+            </li>
+            {%- endfor -%}
+          </ul>
+
+          <p class="wf-more"><a href="{{ "/projects/" | relative_url }}">What each project is and what I did on it &rarr;</a></p>
+        </section>
+
         <footer class="wf-foot">
-          <!-- The strapline lives in the rail on this page, so the footer is just links. -->
+          <!-- The tagline sits in the rail on this page, so the footer is just links. -->
           <p class="wf-foot-links">
-            <a href="{{ "/about/" | relative_url }}">About</a>
+            <a href="{{ "/projects/" | relative_url }}">Projects</a>
             {%- if site.cv_url -%}<a href="{{ site.cv_url }}" rel="noopener">CV</a>{%- endif -%}
             <a href="mailto:{{ site.email }}">Email</a>
             <a href="https://github.com/{{ site.github_username }}" rel="noopener">GitHub</a>

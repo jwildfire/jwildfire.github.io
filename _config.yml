@@ -2,8 +2,7 @@ title: "Wildfiring"
 author: "Jeremy Wildfire"
 description: "Jeremy Wildfire builds open-source software for clinical trials. Modernizing clinical trials with AI and open source." # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
 
-# Homepage rail: one-line positioning statement and the footer strapline.
-pitch: "I build open-source software that makes clinical trials faster to run and easier to trust."
+# Shown under the wordmark in the homepage rail and in the footer on other pages.
 tagline: "Modernizing clinical trials with AI and open source."
 
 # Linked from the rail, the site footer, and post pages.
@@ -12,7 +11,7 @@ scholar_url: "https://scholar.google.com/citations?user=Hn0AnpIAAAAJ"
 
 # Pages listed in the header nav on posts and interior pages (order matters).
 header_pages:
-  - about.md
+  - projects.html
   - archive.md
 
 # Email / Social media user names used by the minima theme:

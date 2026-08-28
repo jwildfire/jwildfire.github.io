@@ -6,7 +6,7 @@
 
     <ul class="footer-links">
       <li class="p-name">{{ site.author | escape }}</li>
-      <li><a href="{{ "/about/" | relative_url }}">About</a></li>
+      <li><a href="{{ "/projects/" | relative_url }}">Projects</a></li>
       {%- if site.cv_url -%}<li><a href="{{ site.cv_url }}" rel="noopener">CV</a></li>{%- endif -%}
       {%- if site.email -%}<li><a class="u-email" href="mailto:{{ site.email }}">Email</a></li>{%- endif -%}
       {%- if site.github_username -%}<li><a href="https://github.com/{{ site.github_username }}" rel="noopener">GitHub</a></li>{%- endif -%}
