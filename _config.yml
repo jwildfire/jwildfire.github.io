@@ -1,6 +1,19 @@
-title: "Tech Stuff"
+title: "Wildfiring"
 author: "Jeremy Wildfire"
-description: "Blog for my work stuff" # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
+description: "Jeremy Wildfire builds open-source software for clinical trials. Modernizing clinical trials with AI and open source." # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
+
+# Homepage rail: one-line positioning statement and the footer strapline.
+pitch: "I build open-source software that makes clinical trials faster to run and easier to trust."
+tagline: "Modernizing clinical trials with AI and open source."
+
+# Linked from the rail, the site footer, and post pages.
+cv_url: "https://github.com/jwildfire/cv"
+scholar_url: "https://scholar.google.com/citations?user=Hn0AnpIAAAAJ"
+
+# Pages listed in the header nav on posts and interior pages (order matters).
+header_pages:
+  - about.md
+  - archive.md
 
 # Email / Social media user names used by the minima theme:
 # All of these are optional and can be removed or commented out

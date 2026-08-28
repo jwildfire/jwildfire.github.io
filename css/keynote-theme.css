@@ -252,3 +252,226 @@ a.footnote:hover { color: var(--kn-accent); }
 .post_navi-label { font-family: var(--kn-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; opacity: 1; color: var(--kn-faint); }
 .post_navi .post_navi-arrow { color: var(--kn-accent); opacity: 0.55; }
 .share-links { font-family: var(--kn-mono); font-size: 0.8rem; }
+
+/* ==================================================================================
+   Homepage: split-rail layout (_layouts/home.html)
+   Dark sticky rail (identity + nav + CV) beside a scrolling column of projects,
+   then writing. Mirrors the /keynote/ page so the two read as one site.
+   ================================================================================== */
+
+.wf-skip { position: absolute; left: -200vw; top: 0; background: var(--kn-side-bg); color: var(--kn-side-ink); padding: 0.6rem 1rem; z-index: 10; }
+.wf-skip:focus { left: 1rem; top: 1rem; }
+
+.wf-home, .wf-home *, .wf-home *::before, .wf-home *::after { box-sizing: border-box; }
+
+.wf-home {
+  display: grid;
+  grid-template-columns: minmax(300px, 380px) 1fr;
+  min-height: 100vh;
+}
+
+/* Rail ------------------------------------------------------------------------------*/
+
+.wf-rail {
+  background: var(--kn-side-bg);
+  color: var(--kn-side-ink);
+  padding: clamp(1.6rem, 3vw, 2.8rem);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+.wf-wordmark, .wf-wordmark:visited {
+  display: block;
+  font-family: var(--kn-serif);
+  font-size: clamp(2.2rem, 3.4vw, 2.7rem);
+  line-height: 1;
+  color: var(--kn-side-ink);
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+}
+.wf-wordmark:hover { color: var(--kn-accent); text-decoration: none; }
+.wf-name {
+  font-family: var(--kn-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--kn-accent);
+  margin: 0 0 1rem;
+}
+.wf-pitch { color: #e6d8c9; font-size: 1rem; margin: 0 0 1.4rem; }
+
+.wf-nav { display: flex; flex-direction: column; gap: 0.15rem; font-family: var(--kn-mono); font-size: 0.84rem; }
+.wf-nav a, .wf-nav a:visited {
+  color: var(--kn-side-ink);
+  text-decoration: none;
+  padding: 0.45rem 0.7rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+.wf-nav a:hover { background: rgba(249, 115, 22, 0.14); color: #fff; text-decoration: none; }
+.wf-nav .wf-arr { color: var(--kn-accent); }
+
+.wf-cv, .wf-cv:visited {
+  margin-top: 1.1rem;
+  display: block;
+  text-align: center;
+  font-family: var(--kn-mono);
+  font-size: 0.84rem;
+  font-weight: 500;
+  text-decoration: none;
+  background: var(--kn-accent);
+  color: #fff;
+  padding: 0.75rem 1.2rem;
+  border-radius: 10px;
+  transition: background 120ms ease;
+}
+.wf-cv:hover { background: var(--kn-accent-deep); color: #fff; text-decoration: none; }
+
+.wf-contact { list-style: none; margin: 0 0 1.1rem; padding: 0; font-family: var(--kn-mono); font-size: 0.74rem; display: flex; flex-direction: column; gap: 0.4rem; }
+.wf-contact a, .wf-contact a:visited { color: var(--kn-side-soft); text-decoration: none; }
+.wf-contact a:hover { color: var(--kn-accent); }
+.wf-strap {
+  font-family: var(--kn-serif);
+  font-size: 1.05rem;
+  line-height: 1.25;
+  color: var(--kn-side-ink);
+  border-top: 1px solid rgba(249, 115, 22, 0.3);
+  padding-top: 0.9rem;
+  margin: 0;
+}
+
+/* Main column -----------------------------------------------------------------------*/
+
+.wf-main { padding: clamp(2rem, 4vw, 3.2rem); max-width: 60rem; }
+.wf-sec + .wf-sec { margin-top: 3rem; }
+.wf-sechead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1rem;
+  border-bottom: 1px solid var(--kn-rule);
+  padding-bottom: 0.7rem;
+  margin-bottom: 1.4rem;
+}
+.wf-sechead h2 { font-family: var(--kn-serif); font-weight: 400; font-size: clamp(1.6rem, 3vw, 2rem); margin: 0; }
+.wf-count { font-family: var(--kn-mono); font-size: 0.74rem; color: var(--kn-faint); margin-left: auto; }
+.wf-count a, .wf-count a:visited { color: var(--kn-faint); }
+.wf-count a:hover { color: var(--kn-accent-deep); }
+
+.wf-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.wf-card {
+  background: var(--kn-card);
+  border: 1px solid var(--kn-rule);
+  border-radius: 16px;
+  padding: 1.4rem 1.5rem;
+  transition: border-color 140ms ease, box-shadow 140ms ease;
+}
+.wf-card:hover { border-color: var(--kn-accent); box-shadow: 0 10px 30px rgba(42, 33, 27, 0.07); }
+.wf-card-role {
+  font-family: var(--kn-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--kn-faint);
+  margin: 0 0 0.4rem;
+}
+.wf-card h3 { font-family: var(--kn-serif); font-weight: 400; font-size: 1.5rem; line-height: 1.1; margin: 0 0 0.5rem; }
+.wf-card-blurb { color: var(--kn-soft); font-size: 0.94rem; margin: 0 0 1rem; }
+.wf-card-links { font-family: var(--kn-mono); font-size: 0.76rem; display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; margin: 0; }
+.wf-card-links a { text-decoration: none; }
+.wf-card-links a:hover { text-decoration: underline; }
+
+.wf-keynote {
+  display: block;
+  background: var(--kn-side-bg);
+  border-radius: 16px;
+  border-left: 5px solid var(--kn-accent);
+  padding: 1.4rem 1.6rem;
+  margin-top: 1rem;
+  text-decoration: none;
+  transition: box-shadow 140ms ease, transform 140ms ease;
+}
+.wf-keynote:hover { text-decoration: none; transform: translateY(-2px); box-shadow: 0 12px 30px rgba(39, 24, 16, 0.25); }
+.wf-keynote-kicker {
+  display: block;
+  font-family: var(--kn-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--kn-accent);
+  margin-bottom: 0.45rem;
+}
+.wf-keynote-headline { display: block; font-family: var(--kn-serif); font-size: 1.45rem; line-height: 1.2; color: var(--kn-side-ink); margin-bottom: 0.55rem; }
+.wf-keynote-headline em { color: var(--kn-accent); font-style: italic; }
+.wf-keynote-cta { display: block; font-family: var(--kn-mono); font-size: 0.8rem; color: var(--kn-side-soft); }
+.wf-keynote:hover .wf-keynote-cta { color: var(--kn-accent); }
+
+/* Writing list ----------------------------------------------------------------------*/
+
+.wf-posts { list-style: none; margin: 0; padding: 0; }
+.wf-posts li {
+  display: grid;
+  grid-template-columns: 8rem minmax(0, 1fr);
+  gap: 0.2rem 1.2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--kn-rule);
+  align-items: baseline;
+}
+.wf-post-date {
+  font-family: var(--kn-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--kn-accent-deep);
+}
+.wf-post-body { display: block; }
+.wf-post-title, .wf-post-title:visited {
+  display: block;
+  font-family: var(--kn-serif);
+  font-size: 1.35rem;
+  line-height: 1.15;
+  color: var(--kn-ink);
+  text-decoration: none;
+}
+.wf-post-title:hover { color: var(--kn-accent-deep); text-decoration: none; }
+.wf-post-excerpt { display: block; color: var(--kn-soft); font-size: 0.92rem; margin-top: 0.3rem; }
+.wf-more { font-family: var(--kn-mono); font-size: 0.78rem; margin-top: 1.2rem; }
+
+/* Homepage footer -------------------------------------------------------------------*/
+
+.wf-foot { margin-top: 3rem; border-top: 1px solid var(--kn-rule); padding-top: 1.4rem; }
+.wf-foot-strap { font-family: var(--kn-serif); font-size: 1.4rem; color: var(--kn-ink); margin: 0 0 0.6rem; }
+.wf-foot-links { font-family: var(--kn-mono); font-size: 0.78rem; display: flex; flex-wrap: wrap; gap: 0.4rem 1.3rem; margin: 0; color: var(--kn-faint); }
+
+@media screen and (max-width: 900px) {
+  .wf-home { grid-template-columns: 1fr; }
+  .wf-rail { position: static; height: auto; }
+  .wf-cards { grid-template-columns: 1fr; }
+  .wf-posts li { grid-template-columns: 1fr; }
+}
+
+/* Shared footer on posts and interior pages (_includes/footer.html) ------------------*/
+
+.site-footer .footer-strap { font-family: var(--kn-serif); font-size: 1.5rem; color: var(--kn-side-ink); margin: 0 0 0.8rem; }
+.site-footer .footer-links { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; font-family: var(--kn-mono); font-size: 0.78rem; }
+.site-footer .footer-links a, .site-footer .footer-links a:visited { color: var(--kn-side-soft); text-decoration: none; }
+.site-footer .footer-links a:hover { color: var(--kn-accent); }
+.site-footer .footer-links .p-name { color: var(--kn-side-ink); }
+
+/* CV link in the header nav on interior pages ---------------------------------------*/
+
+.site-nav .cv-link, .site-nav .cv-link:visited {
+  color: var(--kn-accent);
+  border: 1px solid rgba(249, 115, 22, 0.5);
+  border-radius: 7px;
+  padding: 0.2rem 0.6rem;
+}
+.site-nav .cv-link:hover { background: var(--kn-accent); color: #fff; text-decoration: none; }

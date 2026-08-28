@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body class="wf-home-body">
+
+    <a class="wf-skip" href="#projects">Skip to content</a>
+
+    <div class="wf-home">
+
+      <aside class="wf-rail">
+        <div class="wf-rail-top">
+          <a class="wf-wordmark" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+          <p class="wf-name">{{ site.author | escape }}</p>
+          <p class="wf-pitch">{{ site.pitch }}</p>
+
+          <nav class="wf-nav" aria-label="Site sections">
+            <a href="#projects">Key projects <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
+            <a href="#writing">Writing <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
+            <a href="{{ "/about/" | relative_url }}">About <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
+            <a href="{{ "/keynote/" | relative_url }}">R/Pharma keynote <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
+            <a href="{{ "/archive.html" | relative_url }}">Archive <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
+          </nav>
+
+          {%- if site.cv_url -%}
+          <a class="wf-cv" href="{{ site.cv_url }}" rel="noopener">Read my CV <span aria-hidden="true">&rarr;</span></a>
+          {%- endif -%}
+        </div>
+
+        <div class="wf-rail-bottom">
+          <ul class="wf-contact">
+            {%- if site.email -%}<li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>{%- endif -%}
+            {%- if site.github_username -%}<li><a href="https://github.com/{{ site.github_username }}" rel="noopener">github.com/{{ site.github_username }}</a></li>{%- endif -%}
+            {%- if site.linkedin_username -%}<li><a href="https://www.linkedin.com/in/{{ site.linkedin_username }}/" rel="noopener">linkedin.com/in/{{ site.linkedin_username }}</a></li>{%- endif -%}
+            {%- if site.scholar_url -%}<li><a href="{{ site.scholar_url }}" rel="noopener">Google Scholar</a></li>{%- endif -%}
+            <li><a href="{{ "/feed.xml" | relative_url }}">Subscribe via RSS</a></li>
+          </ul>
+          <p class="wf-strap">{{ site.tagline }}</p>
+        </div>
+      </aside>
+
+      <main class="wf-main" aria-label="Content">
+
+        <section class="wf-sec" id="projects">
+          <div class="wf-sechead">
+            <h2>Key projects</h2>
+            <span class="wf-count">{{ site.data.projects | size }} featured &middot; <a href="https://github.com/{{ site.github_username }}" rel="noopener">more on GitHub</a></span>
+          </div>
+
+          <div class="wf-cards">
+            {%- for project in site.data.projects -%}
+            <article class="wf-card">
+              <p class="wf-card-role">{{ project.role }}</p>
+              <h3>{{ project.name }}</h3>
+              <p class="wf-card-blurb">{{ project.blurb }}</p>
+              <p class="wf-card-links">
+                {%- for link in project.links -%}
+                <a href="{{ link.url }}" rel="noopener">{{ link.label }} <span aria-hidden="true">&rarr;</span></a>
+                {%- endfor -%}
+              </p>
+            </article>
+            {%- endfor -%}
+          </div>
+
+          <a class="wf-keynote" href="{{ "/keynote/" | relative_url }}">
+            <span class="wf-keynote-kicker">R/Pharma 2026 &middot; Keynote &middot; October</span>
+            <span class="wf-keynote-headline">Building open-source clinical trial tools with <em>agentic AI</em></span>
+            <span class="wf-keynote-cta">Prepared in the open &mdash; follow the developer diary &rarr;</span>
+          </a>
+        </section>
+
+        <section class="wf-sec" id="writing">
+          <div class="wf-sechead">
+            <h2>Writing</h2>
+            <span class="wf-count">{{ site.posts | size }} posts &middot; <a href="{{ "/archive.html" | relative_url }}">archive</a></span>
+          </div>
+
+          {{ content }}
+
+          <ul class="wf-posts">
+            {%- for post in site.posts limit: 8 -%}
+            <li>
+              <span class="wf-post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+              <span class="wf-post-body">
+                <a class="wf-post-title" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+                {%- if post.excerpt -%}<span class="wf-post-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 180 }}</span>{%- endif -%}
+              </span>
+            </li>
+            {%- endfor -%}
+          </ul>
+
+          <p class="wf-more"><a href="{{ "/archive.html" | relative_url }}">All {{ site.posts | size }} posts in the archive &rarr;</a></p>
+        </section>
+
+        <footer class="wf-foot">
+          <!-- The strapline lives in the rail on this page, so the footer is just links. -->
+          <p class="wf-foot-links">
+            <a href="{{ "/about/" | relative_url }}">About</a>
+            {%- if site.cv_url -%}<a href="{{ site.cv_url }}" rel="noopener">CV</a>{%- endif -%}
+            <a href="mailto:{{ site.email }}">Email</a>
+            <a href="https://github.com/{{ site.github_username }}" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}/" rel="noopener">LinkedIn</a>
+            <a href="{{ "/feed.xml" | relative_url }}">RSS</a>
+          </p>
+        </footer>
+
+      </main>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,58 @@
+# Key projects featured on the homepage. Order here is the order on the page.
+- name: "{gsm}"
+  role: "Creator · Technical lead, Gilead RBQM · 2022 – present"
+  blurb: >-
+    An open-source R framework for risk-based quality monitoring, designed for GxP
+    from the first commit. Approved for GxP use and running monitoring oversight on
+    more than 15 active studies, with a surrounding toolchain that turns validation
+    evidence into a build artifact instead of a document nobody reads.
+  links:
+    - label: "Docs"
+      url: "https://gilead-biostats.github.io/gsm.core/"
+    - label: "GitHub"
+      url: "https://github.com/Gilead-BioStats/gsm"
+    - label: "Paper"
+      url: "https://link.springer.com/article/10.1007/s43441-024-00651-4"
+
+- name: "safety.viz"
+  role: "Creator · 2026 · JavaScript"
+  blurb: >-
+    A charting library for monitoring clinical trial safety: seven interactive charts,
+    from safety histograms to the eDISH hepatic explorer. Every chart traces to a
+    reviewed requirement matrix, with 249 unit tests and 94 browser tests published as
+    audit-style evidence — so "is it validated?" is now a link.
+  links:
+    - label: "Live demos"
+      url: "https://jwildfire.github.io/safety.viz/"
+    - label: "GitHub"
+      url: "https://github.com/jwildfire/safety.viz"
+    - label: "Evidence"
+      url: "https://jwildfire.github.io/safety.viz/histogram/evidence.html"
+
+- name: "{safetyGraphics}"
+  role: "Founding technical lead · ASA-DIA Interactive Safety Graphics"
+  blurb: >-
+    The open-source R/Shiny app that replaced the impenetrable safety appendix with
+    charts a clinician can actually click. Built over five years by clinicians and
+    technical contributors from more than two dozen organizations, and presented at the
+    FDA Innovation Forum in 2019.
+  links:
+    - label: "Website"
+      url: "https://safetygraphics.github.io/safetyGraphics/"
+    - label: "Demo app"
+      url: "https://jwildfire.shinyapps.io/safetyGraphics/"
+    - label: "GitHub"
+      url: "https://github.com/SafetyGraphics/safetyGraphics"
+
+- name: "OpenRBQM"
+  role: "Co-lead · PHUSE working group · 20+ organizations"
+  blurb: >-
+    A pre-competitive PHUSE working group with members from more than twenty pharma
+    companies, CROs and regulators, building shared open-source standards, tooling and
+    training for risk-based quality monitoring — so every sponsor doesn't rebuild the
+    same pipeline in private.
+  links:
+    - label: "Website"
+      url: "https://openrbqm.github.io/"
+    - label: "GitHub"
+      url: "https://github.com/OpenRBQM"
