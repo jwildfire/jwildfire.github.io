@@ -1,0 +1,669 @@
+<title>Wildfiring Homepage Options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap">
+
+<style>
+/* ============================================================
+   WRAPPER — the review document layer.
+   Cool graphite + teal, IBM Plex, so it reads as annotation
+   around the warm mockups rather than competing with them.
+   ============================================================ */
+:root {
+  --w-bg: #f3f1ee;
+  --w-panel: #ffffff;
+  --w-ink: #1b1a18;
+  --w-soft: #63605a;
+  --w-faint: #8f8a82;
+  --w-rule: #ded9d2;
+  --w-accent: #10635a;
+  --w-accent-soft: #e2efec;
+  --w-shadow: 0 18px 44px rgba(28, 24, 20, 0.10);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --w-bg: #161513;
+    --w-panel: #201f1c;
+    --w-ink: #ece8e1;
+    --w-soft: #a8a29a;
+    --w-faint: #7d7871;
+    --w-rule: #322f2b;
+    --w-accent: #5fbfae;
+    --w-accent-soft: #1c2b28;
+    --w-shadow: 0 18px 44px rgba(0, 0, 0, 0.45);
+  }
+}
+:root[data-theme="dark"] {
+  --w-bg: #161513;
+  --w-panel: #201f1c;
+  --w-ink: #ece8e1;
+  --w-soft: #a8a29a;
+  --w-faint: #7d7871;
+  --w-rule: #322f2b;
+  --w-accent: #5fbfae;
+  --w-accent-soft: #1c2b28;
+  --w-shadow: 0 18px 44px rgba(0, 0, 0, 0.45);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--w-bg);
+  color: var(--w-ink);
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.page { max-width: 1120px; margin: 0 auto; padding: clamp(1.5rem, 4vw, 3.5rem) clamp(1rem, 3vw, 2rem) 5rem; }
+
+.label {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--w-accent);
+}
+.doc-head { border-bottom: 2px solid var(--w-ink); padding-bottom: 1.4rem; margin-bottom: 2rem; }
+.doc-head h1 {
+  font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 600; letter-spacing: -0.02em;
+  margin: 0.5rem 0 0.6rem; text-wrap: balance;
+}
+.doc-head p { color: var(--w-soft); max-width: 62ch; margin: 0; }
+
+.brief { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1px; background: var(--w-rule); border: 1px solid var(--w-rule); border-radius: 10px; overflow: hidden; margin-bottom: 3.5rem; }
+.brief div { background: var(--w-panel); padding: 1rem 1.1rem; }
+.brief dt { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--w-faint); margin-bottom: 0.35rem; }
+.brief dd { margin: 0; font-size: 0.94rem; }
+.brief dd em { font-style: normal; font-family: "Instrument Serif", Georgia, serif; font-size: 1.2rem; }
+
+.option { margin: 0 0 4.5rem; }
+.option-head { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 0.5rem 1rem; border-bottom: 1px solid var(--w-rule); padding-bottom: 0.8rem; margin-bottom: 1.1rem; }
+.option-head h2 { font-size: 1.5rem; font-weight: 600; margin: 0; letter-spacing: -0.01em; }
+.option-head .tag { margin-left: auto; font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; color: var(--w-soft); background: var(--w-accent-soft); border-radius: 999px; padding: 0.25rem 0.7rem; }
+.option > p.pitch { color: var(--w-soft); max-width: 68ch; margin: 0 0 1.4rem; }
+
+.frame { position: relative; overflow: hidden; border: 1px solid var(--w-rule); border-radius: 12px; box-shadow: var(--w-shadow); background: #faf6f1; }
+.frame-inner { width: 1280px; transform-origin: top left; }
+
+.notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem 2rem; margin-top: 1.3rem; }
+.notes h3 { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--w-faint); margin: 0 0 0.45rem; font-weight: 600; }
+.notes ul { margin: 0; padding-left: 1.1rem; font-size: 0.92rem; color: var(--w-soft); }
+.notes li { margin-bottom: 0.3rem; }
+
+.copy-section { border-top: 2px solid var(--w-ink); padding-top: 1.6rem; margin-top: 1rem; }
+.copy-section > h2 { font-size: 1.7rem; font-weight: 600; margin: 0.4rem 0 0.6rem; letter-spacing: -0.02em; }
+.copy-section > p.intro { color: var(--w-soft); max-width: 66ch; margin: 0 0 2rem; }
+
+.draft { background: var(--w-panel); border: 1px solid var(--w-rule); border-radius: 12px; padding: 1.4rem 1.6rem; margin-bottom: 1.2rem; }
+.draft h3 { margin: 0 0 0.2rem; font-size: 1.05rem; font-weight: 600; }
+.draft .meta { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; color: var(--w-faint); letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 0.9rem; }
+.draft p { margin: 0 0 0.8rem; }
+.draft p:last-child { margin-bottom: 0; }
+.draft code { font-family: "IBM Plex Mono", monospace; font-size: 0.88em; background: var(--w-accent-soft); padding: 0.1em 0.35em; border-radius: 4px; }
+
+.proj-grid { display: grid; gap: 1rem; }
+.proj { background: var(--w-panel); border: 1px solid var(--w-rule); border-left: 3px solid var(--w-accent); border-radius: 10px; padding: 1.2rem 1.4rem; }
+.proj h4 { margin: 0 0 0.15rem; font-size: 1.05rem; font-weight: 600; }
+.proj .role { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--w-faint); margin: 0 0 0.7rem; }
+.proj p { margin: 0 0 0.6rem; font-size: 0.94rem; color: var(--w-soft); }
+.proj .lines { font-family: "IBM Plex Mono", monospace; font-size: 0.76rem; color: var(--w-accent); }
+
+.q { background: var(--w-panel); border: 1px dashed var(--w-rule); border-radius: 12px; padding: 1.4rem 1.6rem; }
+.q ol { margin: 0.6rem 0 0; padding-left: 1.3rem; }
+.q li { margin-bottom: 0.7rem; color: var(--w-soft); }
+.q li strong { color: var(--w-ink); font-weight: 600; }
+
+/* ============================================================
+   MOCKUPS — each committed to the site's own palette.
+   espresso #271810 · paper #faf6f1 · orange #f97316
+   ============================================================ */
+.mk { font-family: "Instrument Sans", system-ui, sans-serif; color: #2a211b; background: #faf6f1; line-height: 1.6; }
+.mk a { text-decoration: none; }
+.mk h1, .mk h2, .mk h3, .mk h4 { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; line-height: 1.13; margin: 0; }
+.mk .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; }
+
+/* ---------- A. Masthead ---------- */
+.mk-a .a-bar { background: #271810; border-top: 4px solid #f97316; display: flex; align-items: center; justify-content: space-between; padding: 1rem 3.5rem; }
+.mk-a .a-wordmark { font-family: "Instrument Serif", Georgia, serif; font-size: 1.6rem; color: #f5ede4; letter-spacing: 0.01em; }
+.mk-a .a-nav { display: flex; align-items: center; gap: 1.8rem; font-family: "IBM Plex Mono", monospace; font-size: 0.8rem; color: #c4a995; }
+.mk-a .a-nav .cv { background: #f97316; color: #fff; padding: 0.45rem 0.95rem; border-radius: 8px; font-weight: 500; }
+.mk-a .a-hero { padding: 3.6rem 3.5rem 2.8rem; max-width: 60rem; }
+.mk-a .a-kicker { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: #c2410c; margin: 0 0 1rem; }
+.mk-a .a-hero h1 { font-size: 3.15rem; letter-spacing: -0.015em; margin-bottom: 1.1rem; }
+.mk-a .a-hero h1 em { font-style: italic; color: #c2410c; }
+.mk-a .a-lede { font-size: 1.1rem; color: #6b5d52; max-width: 46rem; margin: 0 0 1.6rem; }
+.mk-a .a-actions { display: flex; gap: 0.8rem; font-family: "IBM Plex Mono", monospace; font-size: 0.82rem; }
+.mk-a .a-actions a { border: 1px solid #d9cec2; color: #2a211b; padding: 0.6rem 1.1rem; border-radius: 8px; }
+.mk-a .a-actions a.primary { background: #271810; color: #f5ede4; border-color: #271810; }
+.mk-a .a-band { padding: 2.6rem 3.5rem; border-top: 1px solid #ece2d7; }
+.mk-a .a-band-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1.4rem; }
+.mk-a .a-band-head h2 { font-size: 1.9rem; }
+.mk-a .a-band-head .more { font-family: "IBM Plex Mono", monospace; font-size: 0.76rem; color: #c2410c; }
+.mk-a .a-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+.mk-a .a-card { background: #fff; border: 1px solid #ece2d7; border-radius: 14px; padding: 1.4rem 1.5rem; }
+.mk-a .a-card .role { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: #a3958a; margin: 0 0 0.45rem; }
+.mk-a .a-card h3 { font-size: 1.5rem; margin-bottom: 0.4rem; }
+.mk-a .a-card p { font-size: 0.93rem; color: #6b5d52; margin: 0 0 0.9rem; }
+.mk-a .a-card .links { font-family: "IBM Plex Mono", monospace; font-size: 0.76rem; color: #c2410c; display: flex; gap: 1.1rem; }
+.mk-a .a-split { display: grid; grid-template-columns: 1.25fr 1fr; gap: 3rem; }
+.mk-a .a-posts li { list-style: none; padding: 0.9rem 0; border-top: 1px solid #ece2d7; }
+.mk-a .a-posts { margin: 0; padding: 0; }
+.mk-a .a-posts .date { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: #c2410c; }
+.mk-a .a-posts h4 { font-size: 1.28rem; margin-top: 0.2rem; }
+.mk-a .a-about p { color: #6b5d52; font-size: 0.97rem; }
+.mk-a .a-keynote { background: #271810; border-left: 5px solid #f97316; border-radius: 14px; padding: 1.3rem 1.5rem; margin-top: 1.2rem; }
+.mk-a .a-keynote .k { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: #f97316; }
+.mk-a .a-keynote h4 { color: #f5ede4; font-size: 1.35rem; margin: 0.4rem 0 0.4rem; }
+.mk-a .a-keynote span.cta { font-family: "IBM Plex Mono", monospace; font-size: 0.76rem; color: #c4a995; }
+.mk-a .a-foot { background: #271810; color: #c4a995; padding: 2.2rem 3.5rem; display: flex; align-items: baseline; justify-content: space-between; }
+.mk-a .a-foot .strap { font-family: "Instrument Serif", Georgia, serif; font-size: 1.5rem; color: #f5ede4; }
+.mk-a .a-foot .links { font-family: "IBM Plex Mono", monospace; font-size: 0.78rem; display: flex; gap: 1.3rem; }
+
+/* ---------- B. Split rail ---------- */
+.mk-b { display: grid; grid-template-columns: 360px 1fr; min-height: 900px; }
+.mk-b .b-rail { background: #271810; color: #f5ede4; padding: 3rem 2.4rem; display: flex; flex-direction: column; justify-content: space-between; }
+.mk-b .b-wordmark { font-family: "Instrument Serif", Georgia, serif; font-size: 2.6rem; line-height: 1; margin-bottom: 0.5rem; }
+.mk-b .b-name { font-family: "IBM Plex Mono", monospace; font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; color: #f97316; margin: 0 0 1.6rem; }
+.mk-b .b-pitch { color: #e6d8c9; font-size: 1.02rem; margin: 0 0 2rem; }
+.mk-b .b-nav { display: flex; flex-direction: column; gap: 0.1rem; font-family: "IBM Plex Mono", monospace; font-size: 0.84rem; }
+.mk-b .b-nav a { color: #f5ede4; padding: 0.55rem 0.7rem; border-radius: 8px; display: flex; justify-content: space-between; }
+.mk-b .b-nav a.active { background: rgba(249,115,22,0.16); }
+.mk-b .b-nav .arr { color: #f97316; }
+.mk-b .b-cv { margin-top: 1.5rem; background: #f97316; color: #fff; font-family: "IBM Plex Mono", monospace; font-size: 0.84rem; text-align: center; padding: 0.8rem; border-radius: 10px; display: block; }
+.mk-b .b-contact { font-family: "IBM Plex Mono", monospace; font-size: 0.74rem; color: #c4a995; display: flex; flex-direction: column; gap: 0.35rem; }
+.mk-b .b-strap { font-family: "Instrument Serif", Georgia, serif; font-size: 1.15rem; color: #f5ede4; border-top: 1px solid rgba(249,115,22,0.3); padding-top: 1rem; margin-top: 2rem; }
+.mk-b .b-main { padding: 3rem 3.2rem; }
+.mk-b .b-sec + .b-sec { margin-top: 2.8rem; }
+.mk-b .b-sechead { display: flex; align-items: baseline; gap: 0.9rem; border-bottom: 1px solid #ece2d7; padding-bottom: 0.7rem; margin-bottom: 1.3rem; }
+.mk-b .b-sechead h2 { font-size: 1.75rem; }
+.mk-b .b-sechead .count { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; color: #a3958a; margin-left: auto; }
+.mk-b .b-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.9rem; }
+.mk-b .b-card { background: #fff; border: 1px solid #ece2d7; border-radius: 14px; padding: 1.25rem 1.35rem; }
+.mk-b .b-card .role { font-family: "IBM Plex Mono", monospace; font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: #a3958a; }
+.mk-b .b-card h3 { font-size: 1.35rem; margin: 0.35rem 0 0.35rem; }
+.mk-b .b-card p { font-size: 0.9rem; color: #6b5d52; margin: 0 0 0.8rem; }
+.mk-b .b-card .links { font-family: "IBM Plex Mono", monospace; font-size: 0.74rem; color: #c2410c; display: flex; gap: 1rem; }
+.mk-b .b-about { display: grid; grid-template-columns: 1fr 200px; gap: 2rem; align-items: start; }
+.mk-b .b-about p { color: #6b5d52; font-size: 0.97rem; margin: 0 0 0.8rem; }
+.mk-b .b-facts { border-left: 2px solid #f97316; padding-left: 1rem; font-family: "IBM Plex Mono", monospace; font-size: 0.74rem; color: #6b5d52; display: flex; flex-direction: column; gap: 0.6rem; }
+.mk-b .b-facts b { display: block; color: #2a211b; font-size: 0.8rem; }
+.mk-b .b-posts { margin: 0; padding: 0; }
+.mk-b .b-posts li { list-style: none; display: grid; grid-template-columns: 130px 1fr; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid #ece2d7; align-items: baseline; }
+.mk-b .b-posts .date { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; color: #c2410c; text-transform: uppercase; letter-spacing: 0.06em; }
+.mk-b .b-posts .t { font-family: "Instrument Serif", Georgia, serif; font-size: 1.2rem; }
+
+/* ---------- C. Ledger ---------- */
+.mk-c .c-top { background: #271810; color: #f5ede4; padding: 2.6rem 4rem 3rem; }
+.mk-c .c-topbar { display: flex; justify-content: space-between; align-items: center; font-family: "IBM Plex Mono", monospace; font-size: 0.76rem; color: #c4a995; margin-bottom: 3.2rem; }
+.mk-c .c-topbar .nav { display: flex; gap: 1.6rem; }
+.mk-c .c-topbar .cv { color: #271810; background: #f5ede4; padding: 0.4rem 0.9rem; border-radius: 6px; }
+.mk-c .c-wordmark { font-family: "Instrument Serif", Georgia, serif; font-size: 6rem; line-height: 0.92; letter-spacing: -0.02em; margin: 0; }
+.mk-c .c-wordmark span { color: #f97316; }
+.mk-c .c-under { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 1.6rem; align-items: end; }
+.mk-c .c-under .who { font-family: "IBM Plex Mono", monospace; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: #f97316; }
+.mk-c .c-under p { color: #e6d8c9; font-size: 1.05rem; margin: 0.7rem 0 0; }
+.mk-c .c-body { padding: 0 4rem 3rem; }
+.mk-c .c-seclabel { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: #c2410c; padding: 2.4rem 0 0.8rem; border-bottom: 2px solid #2a211b; display: flex; justify-content: space-between; }
+.mk-c .c-row { display: grid; grid-template-columns: 260px 1fr 150px; gap: 2rem; padding: 1.4rem 0; border-bottom: 1px solid #ece2d7; align-items: start; }
+.mk-c .c-row h3 { font-size: 1.5rem; }
+.mk-c .c-row .role { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: #a3958a; margin-top: 0.3rem; }
+.mk-c .c-row p { margin: 0; color: #4a3f37; font-size: 0.97rem; }
+.mk-c .c-row .stat { font-family: "IBM Plex Mono", monospace; font-size: 0.74rem; color: #6b5d52; text-align: right; }
+.mk-c .c-row .stat a { color: #c2410c; display: block; margin-top: 0.4rem; }
+.mk-c .c-two { display: grid; grid-template-columns: 1.3fr 1fr; gap: 3.5rem; padding-top: 1.4rem; }
+.mk-c .c-two p { color: #4a3f37; font-size: 0.99rem; margin: 0 0 0.9rem; }
+.mk-c .c-two h3 { font-size: 1.9rem; margin-bottom: 0.7rem; }
+.mk-c .c-list { margin: 0; padding: 0; }
+.mk-c .c-list li { list-style: none; display: grid; grid-template-columns: 120px 1fr; gap: 1rem; padding: 0.6rem 0; border-bottom: 1px solid #ece2d7; }
+.mk-c .c-list .d { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; color: #c2410c; }
+.mk-c .c-list .t { font-family: "Instrument Serif", Georgia, serif; font-size: 1.15rem; }
+.mk-c .c-foot { background: #271810; padding: 2.6rem 4rem; display: flex; justify-content: space-between; align-items: baseline; }
+.mk-c .c-foot .strap { font-family: "Instrument Serif", Georgia, serif; font-size: 1.9rem; color: #f5ede4; max-width: 30rem; line-height: 1.15; }
+.mk-c .c-foot .strap span { color: #f97316; font-style: italic; }
+.mk-c .c-foot .links { font-family: "IBM Plex Mono", monospace; font-size: 0.78rem; color: #c4a995; display: flex; flex-direction: column; gap: 0.4rem; text-align: right; }
+
+@media (max-width: 640px) {
+  .brief { grid-template-columns: 1fr; }
+}
+</style>
+
+<div class="page">
+
+  <header class="doc-head">
+    <p class="label">Design review · homepage redesign</p>
+    <h1>Wildfiring — three directions</h1>
+    <p>Same content, three structures. Every option renames the site to <strong>Wildfiring</strong>, adds a CV link in the top bar, a key-projects section, an about section, and the footer line “Modernizing clinical trials with AI and open source.” What differs is how a hiring manager travels through the page. Draft copy for the projects and about sections follows the mockups — it's shared across all three.</p>
+  </header>
+
+  <dl class="brief">
+    <div><dt>Site title</dt><dd><em>Wildfiring</em></dd></div>
+    <div><dt>Footer strapline</dt><dd>Modernizing clinical trials with AI and open source.</dd></div>
+    <div><dt>New sections</dt><dd>Key projects · About · CV link</dd></div>
+    <div><dt>Job of the page</dt><dd>A hiring manager gets what you build and what you've shipped in 20 seconds.</dd></div>
+  </dl>
+
+  <!-- ===================== OPTION A ===================== -->
+  <section class="option">
+    <div class="option-head">
+      <p class="label" style="width:100%;margin:0">Option A</p>
+      <h2>The Masthead</h2>
+      <span class="tag">closest to today's site</span>
+    </div>
+    <p class="pitch">Keeps the current top bar and adds everything above the blog: a statement hero, a two-by-two project grid, then writing and about side by side. Lowest-risk evolution — the blog still feels like the point, the portfolio sits in front of it.</p>
+
+    <div class="frame"><div class="frame-inner">
+      <div class="mk mk-a">
+        <div class="a-bar">
+          <span class="a-wordmark">Wildfiring</span>
+          <nav class="a-nav"><span>Projects</span><span>Writing</span><span>About</span><span>Archive</span><a class="cv">CV ↗</a></nav>
+        </div>
+
+        <div class="a-hero">
+          <p class="a-kicker">Jeremy Wildfire · Data science for clinical trials</p>
+          <h1>I build open-source software that makes clinical trials <em>faster to run</em> and easier to trust.</h1>
+          <p class="a-lede">Twenty years of interactive tools for trial safety and quality monitoring — safetyGraphics, gsm, safety.viz — and a year of finding out what agentic AI can actually do inside a regulated process.</p>
+          <div class="a-actions"><a class="primary">Download CV ↓</a><a>See the projects</a><a>Email me</a></div>
+        </div>
+
+        <div class="a-band">
+          <div class="a-band-head"><h2>Key projects</h2><span class="more">All repositories on GitHub →</span></div>
+          <div class="a-cards">
+            <div class="a-card">
+              <p class="role">Creator · Team lead · 2021–present</p>
+              <h3>{gsm}</h3>
+              <p>Open-source R framework for risk-based quality monitoring, designed for GxP from the first commit and used to monitor live studies.</p>
+              <p class="links"><span>Docs →</span><span>GitHub →</span><span>Paper →</span></p>
+            </div>
+            <div class="a-card">
+              <p class="role">Creator · 2026</p>
+              <h3>safety.viz</h3>
+              <p>A JavaScript charting library for clinical safety review. Seven interactive charts, each traced to a reviewed requirement matrix with published test evidence.</p>
+              <p class="links"><span>Live demos →</span><span>GitHub →</span></p>
+            </div>
+            <div class="a-card">
+              <p class="role">Creator · Working-group co-lead</p>
+              <h3>{safetyGraphics}</h3>
+              <p>The R/Shiny app that replaced the 200-page safety appendix with charts a clinician can click. Built with the ASA-DIA safety working group; presented at the FDA.</p>
+              <p class="links"><span>Website →</span><span>Demo app →</span></p>
+            </div>
+            <div class="a-card">
+              <p class="role">Co-lead · PHUSE working group</p>
+              <h3>OpenRBQM</h3>
+              <p>A cross-company working group building shared open-source standards and tooling for risk-based quality monitoring.</p>
+              <p class="links"><span>Website →</span><span>GitHub →</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="a-band">
+          <div class="a-split">
+            <div>
+              <div class="a-band-head"><h2>Writing</h2><span class="more">Archive →</span></div>
+              <ul class="a-posts">
+                <li><span class="date">August 20, 2026</span><h4>A Second Interview with Obot</h4></li>
+                <li><span class="date">July 17, 2026</span><h4>Papers → Prompts → Prototypes</h4></li>
+                <li><span class="date">July 12, 2026</span><h4>Introducing safety.viz</h4></li>
+              </ul>
+              <div class="a-keynote">
+                <span class="k">R/Pharma 2026 · Keynote · October</span>
+                <h4>Building open-source clinical trial tools with agentic AI</h4>
+                <span class="cta">Follow the developer diary →</span>
+              </div>
+            </div>
+            <div class="a-about">
+              <div class="a-band-head"><h2>About</h2></div>
+              <p>I'm a data scientist who has spent twenty years building tools for clinical trials, most of it on one idea: the people responsible for patient safety deserve better than a 200-page PDF.</p>
+              <p>These days I lead a team building open-source R packages for risk-based quality monitoring, and I'm spending a lot of time on what agentic AI can really do in a GxP process.</p>
+              <p class="links" style="font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:#c2410c">Read the full story →</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="a-foot">
+          <span class="strap">Modernizing clinical trials with AI and open source.</span>
+          <span class="links"><span>GitHub</span><span>LinkedIn</span><span>Email</span><span>RSS</span></span>
+        </div>
+      </div>
+    </div></div>
+
+    <div class="notes">
+      <div><h3>Strengths</h3><ul><li>Smallest change to the existing Jekyll layout and CSS.</li><li>Blog stays prominent — good if writing is the main signal.</li><li>Project grid scales to 6 cards without redesign.</li></ul></div>
+      <div><h3>Trade-offs</h3><ul><li>Reads as “a blog with a portfolio bolted on,” not a personal site.</li><li>Hero + grid + list is a familiar shape; least distinctive of the three.</li></ul></div>
+      <div><h3>Best if</h3><ul><li>You want this live in an afternoon and want to keep posting as the main act.</li></ul></div>
+    </div>
+  </section>
+
+  <!-- ===================== OPTION B ===================== -->
+  <section class="option">
+    <div class="option-head">
+      <p class="label" style="width:100%;margin:0">Option B</p>
+      <h2>The Split Rail</h2>
+      <span class="tag">matches the keynote page</span>
+    </div>
+    <p class="pitch">Borrows the layout you already built for <code>/keynote/</code>: a dark rail that stays put with your name, your one-line pitch, the nav and the CV button, while projects, about and writing scroll past on the right. Your positioning and the CV are on screen the entire visit.</p>
+
+    <div class="frame"><div class="frame-inner">
+      <div class="mk mk-b">
+        <aside class="b-rail">
+          <div>
+            <p class="b-wordmark">Wildfiring</p>
+            <p class="b-name">Jeremy Wildfire</p>
+            <p class="b-pitch">I build open-source software that makes clinical trials faster to run and easier to trust.</p>
+            <nav class="b-nav">
+              <a class="active">Key projects <span class="arr">→</span></a>
+              <a>About <span class="arr">→</span></a>
+              <a>Writing <span class="arr">→</span></a>
+              <a>R/Pharma keynote <span class="arr">→</span></a>
+              <a>Archive <span class="arr">→</span></a>
+            </nav>
+            <a class="b-cv">Download CV ↓</a>
+          </div>
+          <div>
+            <div class="b-contact">
+              <span>jwildfire@gmail.com</span>
+              <span>github.com/jwildfire</span>
+              <span>linkedin.com/in/jeremy-wildfire</span>
+            </div>
+            <p class="b-strap">Modernizing clinical trials with AI and open source.</p>
+          </div>
+        </aside>
+
+        <main class="b-main">
+          <section class="b-sec">
+            <div class="b-sechead"><h2>Key projects</h2><span class="count">4 featured · more on GitHub</span></div>
+            <div class="b-cards">
+              <div class="b-card">
+                <p class="role">Creator · Team lead · 2021–present</p>
+                <h3>{gsm}</h3>
+                <p>Open-source R framework for risk-based quality monitoring — GxP-ready by design, running against live studies.</p>
+                <p class="links"><span>Docs →</span><span>GitHub →</span><span>Paper →</span></p>
+              </div>
+              <div class="b-card">
+                <p class="role">Creator · 2026</p>
+                <h3>safety.viz</h3>
+                <p>Seven interactive safety charts in JavaScript, each traced to a requirement matrix with published test evidence.</p>
+                <p class="links"><span>Demos →</span><span>GitHub →</span></p>
+              </div>
+              <div class="b-card">
+                <p class="role">Creator · Working-group co-lead</p>
+                <h3>{safetyGraphics}</h3>
+                <p>The R/Shiny app that turned the safety appendix into something a clinician can click. Presented at the FDA.</p>
+                <p class="links"><span>Website →</span><span>Demo →</span></p>
+              </div>
+              <div class="b-card">
+                <p class="role">Co-lead · PHUSE working group</p>
+                <h3>OpenRBQM</h3>
+                <p>Cross-company working group building shared standards and tooling for risk-based quality monitoring.</p>
+                <p class="links"><span>Website →</span><span>GitHub →</span></p>
+              </div>
+            </div>
+          </section>
+
+          <section class="b-sec">
+            <div class="b-sechead"><h2>About</h2></div>
+            <div class="b-about">
+              <div>
+                <p>I'm a data scientist who has spent twenty years building tools for clinical trials, most of it on one idea: the people responsible for patient safety deserve better than a 200-page PDF.</p>
+                <p>I started as a study statistician on NIH asthma and allergy trials. Then I saw the <em>New York Times</em>' interactive graphics, talked my boss into two weeks to learn JavaScript, and never really went back.</p>
+                <p>Since 2021 I've worked on risk-based quality monitoring, where my team builds open-source R packages designed for GxP from the start. Right now I'm most interested in what agentic AI can actually do inside a regulated process — I'm giving the R/Pharma 2026 keynote on it in October.</p>
+              </div>
+              <div class="b-facts">
+                <span><b>Now</b>Data science lead, RBQM</span>
+                <span><b>Speaking</b>R/Pharma 2026 keynote</span>
+                <span><b>Leading</b>PHUSE OpenRBQM</span>
+                <span><b>Writing</b>Developer diary, weekly</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="b-sec">
+            <div class="b-sechead"><h2>Writing</h2><span class="count">17 posts · archive →</span></div>
+            <ul class="b-posts">
+              <li><span class="date">Aug 20, 2026</span><span class="t">A Second Interview with Obot</span></li>
+              <li><span class="date">Jul 17, 2026</span><span class="t">Papers → Prompts → Prototypes</span></li>
+              <li><span class="date">Jul 13, 2026</span><span class="t">Obot v3: How I Used a Billion Tokens in a Weekend</span></li>
+              <li><span class="date">Jul 12, 2026</span><span class="t">Introducing safety.viz</span></li>
+            </ul>
+          </section>
+        </main>
+      </div>
+    </div></div>
+
+    <div class="notes">
+      <div><h3>Strengths</h3><ul><li>Name, pitch and CV never leave the screen.</li><li>Visually consistent with the keynote page you already ship.</li><li>Clearly a personal site, not a blog theme.</li></ul></div>
+      <div><h3>Trade-offs</h3><ul><li>Needs a new Jekyll layout and a mobile stacking pass.</li><li>The rail eats horizontal room on laptops.</li><li>Post pages probably keep the old header — two shapes to maintain.</li></ul></div>
+      <div><h3>Best if</h3><ul><li>The homepage's main job is job applications, and the blog is the evidence behind it.</li></ul></div>
+    </div>
+  </section>
+
+  <!-- ===================== OPTION C ===================== -->
+  <section class="option">
+    <div class="option-head">
+      <p class="label" style="width:100%;margin:0">Option C</p>
+      <h2>The Ledger</h2>
+      <span class="tag">most distinctive</span>
+    </div>
+    <p class="pitch">An espresso title block with the wordmark set large, then the whole page as a record: projects as ruled rows rather than cards, each with role, dates and hard numbers in the right-hand column. It reads like a well-set technical document — which is exactly the thing you make.</p>
+
+    <div class="frame"><div class="frame-inner">
+      <div class="mk mk-c">
+        <div class="c-top">
+          <div class="c-topbar">
+            <span>Jeremy Wildfire</span>
+            <span class="nav"><span>Projects</span><span>About</span><span>Writing</span><span>Keynote</span><a class="cv">CV ↓</a></span>
+          </div>
+          <h1 class="c-wordmark">Wild<span>firing</span></h1>
+          <div class="c-under">
+            <p class="who">Open-source software for clinical trials</p>
+            <p>Twenty years of tools for trial safety and quality monitoring — and a year spent finding out what agentic AI can really do inside a regulated process.</p>
+          </div>
+        </div>
+
+        <div class="c-body">
+          <div class="c-seclabel"><span>Key projects</span><span>Selected · full list on GitHub →</span></div>
+
+          <div class="c-row">
+            <div><h3>{gsm}</h3><p class="role">Creator · Team lead</p></div>
+            <p>An open-source R framework for risk-based quality monitoring, designed for GxP from the first commit. My team uses it to monitor live studies; the surrounding tooling — <em>workr</em>, <em>qcthat</em>, <em>gsm.datasim</em> — turns validation evidence into a build artifact instead of a document.</p>
+            <div class="stat">2021 — present<a>Docs · Paper →</a></div>
+          </div>
+
+          <div class="c-row">
+            <div><h3>safety.viz</h3><p class="role">Creator</p></div>
+            <p>A JavaScript charting library for clinical safety review: seven interactive charts, from safety histograms to the eDISH hepatic explorer. Every chart traces to a reviewed requirement matrix, with 249 unit tests and 94 browser tests published as audit-style evidence.</p>
+            <div class="stat">2026<a>Live demos →</a></div>
+          </div>
+
+          <div class="c-row">
+            <div><h3>{safetyGraphics}</h3><p class="role">Creator · Co-lead, ASA-DIA working group</p></div>
+            <p>The R/Shiny app that replaced the impenetrable safety appendix with charts a clinician can actually click. Built over five years with clinicians and data scientists from dozens of companies, and presented at conferences and at the FDA.</p>
+            <div class="stat">2017 — 2021<a>Website · Demo →</a></div>
+          </div>
+
+          <div class="c-row">
+            <div><h3>OpenRBQM</h3><p class="role">Co-lead · PHUSE working group</p></div>
+            <p>A cross-company working group building shared open-source standards, tooling and training for risk-based quality monitoring — so every sponsor doesn't rebuild the same pipeline in private.</p>
+            <div class="stat">2023 — present<a>Website →</a></div>
+          </div>
+
+          <div class="c-row">
+            <div><h3>Obot</h3><p class="role">Experiment in public</p></div>
+            <p>An autonomous coding agent set up on a clean-room laptop to work on neglected open-source projects — and the honest record of where it excelled, where it was quietly wrong, and what that means for regulated software.</p>
+            <div class="stat">2026<a>The diary →</a></div>
+          </div>
+
+          <div class="c-seclabel"><span>About &amp; recent writing</span><span>R/Pharma 2026 keynote, October →</span></div>
+          <div class="c-two">
+            <div>
+              <h3>About</h3>
+              <p>I'm a data scientist who has spent twenty years building tools for clinical trials, most of it on one idea: the people responsible for patient safety deserve better than a 200-page PDF.</p>
+              <p>I started as a study statistician on NIH asthma and allergy trials, saw the <em>New York Times</em>' interactive graphics, and talked my boss into two weeks to learn JavaScript. I've been building interactive tools for trial data ever since — first at Rho, where I built and led the Graphics Group, and since 2021 on risk-based quality monitoring.</p>
+              <p>Right now I'm most interested in what agentic AI can actually do in a regulated environment — not the demos, the daily work.</p>
+            </div>
+            <div>
+              <ul class="c-list">
+                <li><span class="d">Aug 20 2026</span><span class="t">A Second Interview with Obot</span></li>
+                <li><span class="d">Jul 17 2026</span><span class="t">Papers → Prompts → Prototypes</span></li>
+                <li><span class="d">Jul 13 2026</span><span class="t">A Billion Tokens in a Weekend</span></li>
+                <li><span class="d">Jul 12 2026</span><span class="t">Introducing safety.viz</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="c-foot">
+          <span class="strap">Modernizing clinical trials with <span>AI and open source</span>.</span>
+          <span class="links"><span>jwildfire@gmail.com</span><span>github.com/jwildfire</span><span>linkedin.com/in/jeremy-wildfire</span></span>
+        </div>
+      </div>
+    </div></div>
+
+    <div class="notes">
+      <div><h3>Strengths</h3><ul><li>Rows hold far more detail per project than cards, and stay scannable.</li><li>The big wordmark makes “Wildfiring” the brand, not just a title.</li><li>Numbers (tests, years, scope) get a column of their own — strong for hiring.</li></ul></div>
+      <div><h3>Trade-offs</h3><ul><li>Three-column rows need a real mobile plan (stack to name → text → links).</li><li>Denser copy to write and keep current.</li><li>Furthest from the current templates, so the most CSS work.</li></ul></div>
+      <div><h3>Best if</h3><ul><li>You want the site itself to be a work sample.</li></ul></div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTENT DRAFTS ===================== -->
+  <section class="copy-section">
+    <p class="label">Draft copy</p>
+    <h2>About</h2>
+    <p class="intro">Three lengths, same voice. The long version becomes <code>/about/</code>; the medium sits on the homepage; the one-liner is the hero and the meta description.</p>
+
+    <div class="draft">
+      <h3>One-liner (hero + meta description)</h3>
+      <p class="meta">~20 words</p>
+      <p>I build open-source software that makes clinical trials faster to run and easier to trust.</p>
+      <p style="color:var(--w-faint);font-size:0.9rem">Alternates: “Twenty years of open-source tools for clinical trials — and a year of finding out what AI agents can really do.” · “Data scientist. I build the tools clinical teams use to watch a trial's safety and quality.”</p>
+    </div>
+
+    <div class="draft">
+      <h3>Homepage about (medium)</h3>
+      <p class="meta">~90 words</p>
+      <p>I'm a data scientist who has spent twenty years building tools for clinical trials, most of it on one idea: the people responsible for patient safety deserve better than a 200-page PDF.</p>
+      <p>I created <code>{safetyGraphics}</code> and co-led the ASA-DIA working group behind it. Since 2021 I've worked on risk-based quality monitoring, where my team builds <code>{gsm}</code> — open-source R packages designed for GxP from the start and used on live studies.</p>
+      <p>Right now I'm most interested in what agentic AI can actually do inside a regulated process. I'm giving the R/Pharma 2026 keynote on it in October, and writing the whole thing up as it happens.</p>
+    </div>
+
+    <div class="draft">
+      <h3>Full about page (long)</h3>
+      <p class="meta">~260 words · /about/</p>
+      <p>I'm a data scientist who has spent twenty years building tools for clinical trials, most of it on one idea: the people responsible for patient safety deserve better than a 200-page PDF.</p>
+      <p>I got here sideways. I liked building things more than I liked algorithms, taught middle school for a year, then went back to school for biostatistics. I wrote a lot of SAS, discovered R at my first job, and worked as a study statistician on NIH-funded asthma and allergy trials, where I co-authored a stack of papers.</p>
+      <p>Around 2012 I saw the <em>New York Times</em>' interactive election graphics and asked why clinical trials couldn't have that. My boss gave me two weeks to learn JavaScript. The first chart was terrible and I've been building interactive tools for trial data ever since — eventually building and leading the Graphics Group at Rho, hiring people who still do great open-source work.</p>
+      <p>That work became <code>{safetyGraphics}</code>: an open-source R/Shiny app for interactive safety review, built with the ASA-DIA safety working group I co-led. For five years, clinicians and data scientists from dozens of companies met, wrote papers, and presented to conferences and to the FDA — because the doctors knew how to monitor trials and we knew how to build the tools.</p>
+      <p>Since 2021 I've worked on risk-based quality monitoring, where my team builds <code>{gsm}</code>: open-source R packages designed for GxP from the first commit and used to monitor real studies. We co-lead the PHUSE OpenRBQM working group.</p>
+      <p>Lately the question that won't leave me alone is what agentic AI can actually do in a regulated environment — not the demos, the daily work. I'm giving the R/Pharma 2026 keynote on it this October and publishing the whole build as a developer diary, dead ends included.</p>
+    </div>
+  </section>
+
+  <section class="copy-section">
+    <p class="label">Draft copy</p>
+    <h2>Key projects</h2>
+    <p class="intro">Six drafted; feature four on the homepage and let the rest live on a <code>/projects/</code> page. Each has a role line (what you actually did), a one-line definition, and the reason it mattered.</p>
+
+    <div class="proj-grid">
+      <div class="proj">
+        <h4>{gsm} — Good Statistical Monitoring</h4>
+        <p class="role">Creator · Team lead · 2021 – present · R</p>
+        <p><strong>An open-source R framework for risk-based quality monitoring, designed for GxP from the first commit.</strong> My team uses it to monitor live studies, and the surrounding tooling — <code>{workr}</code> for workflows, <code>{qcthat}</code> for test and traceability matrices, <code>{gsm.datasim}</code> for simulated data — turns validation evidence into a build artifact instead of a document nobody reads.</p>
+        <p class="lines">gsm.core docs · GitHub · peer-reviewed paper</p>
+      </div>
+
+      <div class="proj">
+        <h4>safety.viz</h4>
+        <p class="role">Creator · 2026 · JavaScript</p>
+        <p><strong>A charting library for monitoring clinical trial safety.</strong> Seven interactive charts — safety histogram, outlier explorer, results over time, shift plot, delta-delta, AE timelines, and the eDISH hepatic explorer — modernized from the original <code>{safetyGraphics}</code> renderers. Every chart traces to a reviewed requirement matrix, with 249 unit tests and 94 browser tests published as audit-style evidence reports: the answer to “is it validated?” is now a link.</p>
+        <p class="lines">Live gallery · GitHub · evidence reports</p>
+      </div>
+
+      <div class="proj">
+        <h4>{safetyGraphics}</h4>
+        <p class="role">Creator · Co-lead, ASA-DIA safety working group · 2017 – 2021 · R, Shiny, D3</p>
+        <p><strong>The open-source app that replaced the safety appendix with charts a clinician can click.</strong> Scattered prototypes — the Adverse Event Explorer, the eDISH hepatic explorer — pulled into one Shiny app for interactive review of a trial's safety data. Built by clinicians and data scientists together across dozens of companies over five years, with papers, conference talks, and a presentation at the FDA.</p>
+        <p class="lines">Website · demo app · hepatic explorer workflow (PDF)</p>
+      </div>
+
+      <div class="proj">
+        <h4>OpenRBQM</h4>
+        <p class="role">Co-lead · PHUSE working group</p>
+        <p><strong>A cross-company working group building shared open-source standards and tooling for risk-based quality monitoring.</strong> The point is the same as it was with safetyGraphics: the hard parts — what to monitor, how to prove the pipeline works — shouldn't be rebuilt in private at every sponsor.</p>
+        <p class="lines">openrbqm.github.io · GitHub</p>
+      </div>
+
+      <div class="proj">
+        <h4>Obot — an agent working in public</h4>
+        <p class="role">Experiment · 2026</p>
+        <p><strong>An autonomous coding agent on a clean-room laptop, pointed at neglected open-source projects.</strong> Thirteen renderers, a local-first app, a billion tokens in one weekend — and a week spent finding out where it had been quietly wrong. Published as interviews with the agent, because the failures are the interesting part for anyone shipping regulated software.</p>
+        <p class="lines">Developer diary posts</p>
+      </div>
+
+      <div class="proj">
+        <h4>R/Pharma 2026 keynote</h4>
+        <p class="role">Keynote speaker · October 2026</p>
+        <p><strong>“Building open-source clinical trial tools with agentic AI.”</strong> Prepared entirely in the open: a running developer diary of experiments, lessons and honest dead ends, posted right up to the talk. The recurring question — what can we actually do with these tools right now?</p>
+        <p class="lines">Keynote page · diary index</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="copy-section">
+    <p class="label">Draft copy</p>
+    <h2>Small pieces</h2>
+
+    <div class="draft">
+      <h3>Footer</h3>
+      <p class="meta">Every page</p>
+      <p><strong>Modernizing clinical trials with AI and open source.</strong><br>
+      Jeremy Wildfire · <span style="color:var(--w-soft)">GitHub · LinkedIn · Email · RSS · CV</span></p>
+    </div>
+
+    <div class="draft">
+      <h3>Site title &amp; tagline</h3>
+      <p class="meta">_config.yml</p>
+      <p><code>title: "Wildfiring"</code> — with <code>description: "Jeremy Wildfire — open-source software for clinical trials. Modernizing clinical trials with AI and open source."</code> for the LinkedIn and Twitter cards.</p>
+      <p style="color:var(--w-faint);font-size:0.9rem">Worth a line somewhere on the about page explaining the callback to the old site — it's a good story and people will wonder.</p>
+    </div>
+
+    <div class="draft">
+      <h3>Navigation</h3>
+      <p class="meta">Top bar, all options</p>
+      <p>Projects · Writing · About · <strong>CV</strong> · GitHub icon. “Archive” moves under Writing. The CV gets button treatment so it reads as the one action on the page.</p>
+    </div>
+  </section>
+
+  <section class="copy-section">
+    <p class="label">Before we build</p>
+    <h2>Open questions</h2>
+    <div class="q">
+      <ol>
+        <li><strong>The CV itself.</strong> Do you have a PDF to drop into <code>/assets/cv/</code>, or should the link go to LinkedIn for now? I'd also suggest a plain <code>/cv/</code> HTML page so it's linkable and indexable, with the PDF as a download next to it.</li>
+        <li><strong>Titles and dates.</strong> I've written the role lines from what's in your posts — “Creator · Team lead,” “2021 – present,” “co-lead.” Send me your actual titles and I'll make them exact. Same for whether you want your employer named on the page.</li>
+        <li><strong>Which four projects lead.</strong> I've put gsm, safety.viz, safetyGraphics and OpenRBQM up front, with Obot and the keynote below. Swap Obot in if the AI work is the story you're selling.</li>
+        <li><strong>Numbers.</strong> The safety.viz test counts and the “five years / dozens of companies” line come straight from your posts; anything else you'd like quantified, tell me and I'll pull it.</li>
+        <li><strong>The keynote banner.</strong> Keep it as a highlighted block (Option A), fold it into the nav (B), or list it as a project (C)?</li>
+        <li><strong>A photo.</strong> There's no headshot in the repo. Worth adding one to the about section for a job-search site — send one and I'll place it.</li>
+      </ol>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function () {
+  var frames = document.querySelectorAll('.frame');
+  function fit() {
+    frames.forEach(function (frame) {
+      var inner = frame.querySelector('.frame-inner');
+      var scale = frame.clientWidth / 1280;
+      inner.style.transform = 'scale(' + scale + ')';
+      frame.style.height = (inner.offsetHeight * scale) + 'px';
+    });
+  }
+  window.addEventListener('resize', fit);
+  window.addEventListener('load', fit);
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(fit); }
+  fit();
+})();
+</script>
