@@ -18,11 +18,12 @@
 
 - name: "safety.viz"
   role: "Creator · 2026 · JavaScript"
-  stub: "Seven interactive clinical safety charts, with published test evidence."
+  stub: "Thirteen interactive clinical safety charts, with published test evidence."
   blurb: >-
-    A charting library for monitoring clinical trial safety: seven interactive charts,
-    from safety histograms to the eDISH hepatic explorer. Every chart traces to a
-    reviewed requirement matrix, with 249 unit tests and 94 browser tests published as
+    A charting library for monitoring clinical trial safety: thirteen interactive
+    charts, from safety histograms to the eDISH hepatic explorer, the nephrotoxicity
+    explorer and the QT safety explorer. Every chart traces to a reviewed requirement
+    matrix, with more than 1,400 unit tests and 260 browser tests published as
     audit-style evidence — so "is it validated?" is now a link.
   links:
     - label: "Live demos"
