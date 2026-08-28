@@ -12,7 +12,7 @@
     - label: "Docs"
       url: "https://gilead-biostats.github.io/gsm.core/"
     - label: "GitHub"
-      url: "https://github.com/Gilead-BioStats/gsm"
+      url: "https://github.com/Gilead-BioStats/gsm.core"
     - label: "Paper"
       url: "https://link.springer.com/article/10.1007/s43441-024-00651-4"
 
@@ -47,17 +47,3 @@
       url: "https://jwildfire.shinyapps.io/safetyGraphics/"
     - label: "GitHub"
       url: "https://github.com/SafetyGraphics/safetyGraphics"
-
-- name: "OpenRBQM"
-  role: "Co-lead · PHUSE working group · 20+ organizations"
-  stub: "Shared open-source RBQM standards and tooling across 20+ organizations."
-  blurb: >-
-    A pre-competitive PHUSE working group with members from more than twenty pharma
-    companies, CROs and regulators, building shared open-source standards, tooling and
-    training for risk-based quality monitoring — so every sponsor doesn't rebuild the
-    same pipeline in private.
-  links:
-    - label: "Website"
-      url: "https://openrbqm.github.io/"
-    - label: "GitHub"
-      url: "https://github.com/OpenRBQM"

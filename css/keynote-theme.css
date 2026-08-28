@@ -351,7 +351,7 @@ a.footnote:hover { color: var(--kn-accent); }
   padding-bottom: 0.7rem;
   margin-bottom: 1.4rem;
 }
-.wf-sechead h2 { font-family: var(--kn-serif); font-weight: 400; font-size: clamp(1.6rem, 3vw, 2rem); margin: 0; }
+.wf-sechead h2 { font-family: var(--kn-serif); font-weight: 400; font-size: clamp(1.25rem, 2vw, 1.45rem); margin: 0; }
 .wf-count { font-family: var(--kn-mono); font-size: 0.74rem; color: var(--kn-faint); margin-left: auto; }
 .wf-count a, .wf-count a:visited { color: var(--kn-faint); }
 .wf-count a:hover { color: var(--kn-accent-deep); }
