@@ -19,7 +19,6 @@
             <a href="#writing">Writing <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
             <a href="#projects">Key projects <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
             <a href="{{ "/keynote/" | relative_url }}">R/Pharma keynote <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
-            <a href="{{ "/archive.html" | relative_url }}">Archive <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
           </nav>
 
           {%- if site.cv_url -%}
@@ -41,7 +40,7 @@
         <section class="wf-sec" id="writing">
           <div class="wf-sechead">
             <h2>Writing</h2>
-            <span class="wf-count">{{ site.posts | size }} posts &middot; <a href="{{ "/archive.html" | relative_url }}">archive</a></span>
+            <span class="wf-count">{{ site.posts | size }} posts</span>
           </div>
 
           {{ content }}
@@ -52,19 +51,59 @@
             <span class="wf-keynote-cta">Prepared in the open &mdash; follow the developer diary &rarr;</span>
           </a>
 
-          <ul class="wf-posts">
-            {%- for post in site.posts limit: 4 -%}
-            <li>
-              <span class="wf-post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-              <span class="wf-post-body">
-                <a class="wf-post-title" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-                {%- if post.excerpt -%}<span class="wf-post-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 180 }}</span>{%- endif -%}
-              </span>
-            </li>
-            {%- endfor -%}
-          </ul>
+          {%- comment -%}
+            Every post, grouped by month. site.posts is newest-first, and group_by_exp
+            keeps first-seen order, so the months come out newest-first too.
+          {%- endcomment -%}
+          {%- assign months = site.posts | group_by_exp: "post", "post.date | date: '%Y-%m'" -%}
 
-          <p class="wf-more"><a href="{{ "/archive.html" | relative_url }}">All {{ site.posts | size }} posts in the archive &rarr;</a></p>
+          <div class="wf-writing">
+
+            <div class="wf-writing-list">
+              {%- for month in months -%}
+              {%- assign first = month.items | first -%}
+              <section class="wf-month" id="m-{{ month.name }}" aria-labelledby="mh-{{ month.name }}">
+                <h3 class="wf-month-head" id="mh-{{ month.name }}">
+                  {{ first.date | date: "%B %Y" }}
+                  <span class="wf-month-n">{{ month.items | size }} post{% if month.items.size != 1 %}s{% endif %}</span>
+                </h3>
+                <ul class="wf-posts">
+                  {%- for post in month.items -%}
+                  <li>
+                    <span class="wf-post-date">{{ post.date | date: "%b %-d" }}</span>
+                    <span class="wf-post-body">
+                      <a class="wf-post-title" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+                      {%- if post.excerpt -%}<span class="wf-post-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 180 }}</span>{%- endif -%}
+                    </span>
+                  </li>
+                  {%- endfor -%}
+                </ul>
+              </section>
+              {%- endfor -%}
+            </div>
+
+            <nav class="wf-months" aria-label="Posts by month">
+              <p class="wf-months-head">By month</p>
+              <ul>
+                {%- assign prev_year = "" -%}
+                {%- for month in months -%}
+                {%- assign first = month.items | first -%}
+                {%- assign year = first.date | date: "%Y" -%}
+                {%- if year != prev_year -%}
+                <li class="wf-months-year" aria-hidden="true">{{ year }}</li>
+                {%- assign prev_year = year -%}
+                {%- endif -%}
+                <li>
+                  <a href="#m-{{ month.name }}">
+                    <span class="wf-months-m">{{ first.date | date: "%B" }}<span class="wf-months-yr"> {{ year }}</span></span>
+                    <span class="wf-months-n">{{ month.items | size }}</span>
+                  </a>
+                </li>
+                {%- endfor -%}
+              </ul>
+            </nav>
+
+          </div>
         </section>
 
         <section class="wf-sec" id="projects">
