@@ -406,11 +406,77 @@ a.footnote:hover { color: var(--kn-accent); }
 .wf-keynote:hover .wf-keynote-cta { color: var(--kn-accent); }
 
 /* Writing list ----------------------------------------------------------------------*/
+/* Every post, grouped by month, with a sticky "By month" rail on the right that jumps
+   to the matching month heading. On narrow screens the rail becomes a chip row above
+   the list. */
+
+.wf-writing {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 10rem;
+  gap: 0 2.5rem;
+  align-items: start;
+}
+
+.wf-month { scroll-margin-top: 1.5rem; }
+.wf-month + .wf-month { margin-top: 2.4rem; }
+.wf-month-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  font-family: var(--kn-mono);
+  font-weight: 500;
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--kn-ink);
+  margin: 0;
+  padding-bottom: 0.45rem;
+  border-bottom: 2px solid var(--kn-ink);
+}
+.wf-month-n { font-weight: 400; letter-spacing: 0.04em; text-transform: none; color: var(--kn-faint); }
+
+.wf-months {
+  position: sticky;
+  top: 1.5rem;
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+  font-family: var(--kn-mono);
+}
+.wf-months-head {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--kn-faint);
+  margin: 0 0 0.5rem;
+}
+.wf-months ul { list-style: none; margin: 0; padding: 0; }
+.wf-months-year {
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: var(--kn-ink);
+  margin: 0.7rem 0 0.15rem;
+  padding-left: 0.65rem;
+}
+.wf-months-year:first-child { margin-top: 0; }
+.wf-months a, .wf-months a:visited {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  color: var(--kn-soft);
+  text-decoration: none;
+  padding: 0.22rem 0.5rem 0.22rem 0.65rem;
+  border-left: 2px solid var(--kn-rule);
+}
+.wf-months a:hover { color: var(--kn-accent-deep); border-left-color: var(--kn-accent); text-decoration: none; }
+.wf-months-yr { display: none; }
+.wf-months-n { color: var(--kn-faint); }
+.wf-months a:hover .wf-months-n { color: var(--kn-accent-deep); }
 
 .wf-posts { list-style: none; margin: 0; padding: 0; }
 .wf-posts li {
   display: grid;
-  grid-template-columns: 8rem minmax(0, 1fr);
+  grid-template-columns: 5rem minmax(0, 1fr);
   gap: 0.2rem 1.2rem;
   padding: 1rem 0;
   border-bottom: 1px solid var(--kn-rule);
@@ -446,6 +512,21 @@ a.footnote:hover { color: var(--kn-accent); }
   .wf-home { grid-template-columns: 1fr; }
   .wf-rail { position: static; height: auto; }
   .wf-posts li, .wf-projlist li { grid-template-columns: 1fr; }
+
+  /* Month rail becomes a wrapping chip row above the list. */
+  .wf-writing { grid-template-columns: 1fr; }
+  .wf-months { position: static; max-height: none; order: -1; margin-bottom: 1.6rem; }
+  .wf-months ul { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .wf-months-year { display: none; }
+  .wf-months-yr { display: inline; }
+  .wf-months a, .wf-months a:visited {
+    border: 1px solid var(--kn-rule);
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+    background: var(--kn-card);
+  }
+  .wf-months a:hover { border-color: var(--kn-accent); }
+  .wf-month { scroll-margin-top: 1rem; }
 }
 
 /* Shared footer on posts and interior pages (_includes/footer.html) ------------------*/
