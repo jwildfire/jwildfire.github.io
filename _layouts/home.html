@@ -5,7 +5,7 @@
 
   <body class="wf-home-body">
 
-    <a class="wf-skip" href="#writing">Skip to content</a>
+    <a class="wf-skip" href="#news">Skip to content</a>
 
     <div class="wf-home">
 
@@ -16,7 +16,7 @@
           <p class="wf-pitch">{{ site.tagline }}</p>
 
           <nav class="wf-nav" aria-label="Site sections">
-            <a href="#writing">Writing <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
+            <a href="#news">News <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
             <a href="#projects">Key projects <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
             <a href="{{ "/keynote/" | relative_url }}">R/Pharma keynote <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
           </nav>
@@ -37,10 +37,14 @@
 
       <main class="wf-main" aria-label="Content">
 
-        <section class="wf-sec" id="writing">
+        <section class="wf-sec" id="news">
           <div class="wf-sechead">
-            <h2>Writing</h2>
-            <span class="wf-count">{{ site.posts | size }} posts</span>
+            <h2>News</h2>
+            <div class="wf-toggle" role="group" aria-label="Show in the news feed">
+              <button type="button" class="wf-tog" data-kind="posts" aria-pressed="true">Writing</button>
+              <button type="button" class="wf-tog" data-kind="releases" aria-pressed="true">Releases</button>
+            </div>
+            <span class="wf-count">{{ site.posts | size }} posts &middot; {{ site.data.releases | size }} releases</span>
           </div>
 
           {{ content }}
@@ -52,56 +56,109 @@
           </a>
 
           {%- comment -%}
-            Every post, grouped by month. site.posts is newest-first, and group_by_exp
-            keeps first-seen order, so the months come out newest-first too. Each month
-            gets a wf-hue-N class (N = position mod 7) that colours its hex marker; the
-            same index is used in the "By month" rail so the two stay in step.
+            One timeline of posts and package releases (_data/releases.yml), grouped by
+            month. Liquid cannot sort a mixed array of posts and data rows, so each item
+            is reduced to a sortable key, "YYYY-MM-DD|kind|rindex": kind is p (post) or
+            r (release) and rindex counts from the end of the source list, so that after
+            the descending sort newer entries sort first within a day. The keys are
+            sorted, grouped by their first seven characters (the month), and each is
+            decoded back to its post or release when rendered. Each month gets a
+            wf-hue-N class (N = position mod 7) that colours its hex marker; the same
+            index is used in the "By month" rail so the two stay in step. The Writing /
+            Releases buttons above filter the list client-side (js/news-filter.js).
           {%- endcomment -%}
-          {%- assign months = site.posts | group_by_exp: "post", "post.date | date: '%Y-%m'" -%}
+          {%- assign n_posts = site.posts | size -%}
+          {%- assign n_releases = site.data.releases | size -%}
+          {%- assign keys = "" -%}
+          {%- for post in site.posts -%}
+            {%- assign ri = forloop.rindex0 | prepend: "000" | slice: -3, 3 -%}
+            {%- assign key = post.date | date: "%Y-%m-%d" | append: "|p|" | append: ri -%}
+            {%- assign keys = keys | append: key | append: "," -%}
+          {%- endfor -%}
+          {%- for rel in site.data.releases -%}
+            {%- assign ri = forloop.rindex0 | prepend: "000" | slice: -3, 3 -%}
+            {%- assign key = rel.date | date: "%Y-%m-%d" | append: "|r|" | append: ri -%}
+            {%- assign keys = keys | append: key | append: "," -%}
+          {%- endfor -%}
+          {%- assign keys = keys | split: "," | sort | reverse -%}
+          {%- assign months = keys | group_by_exp: "k", "k | slice: 0, 7" -%}
 
-          <div class="wf-writing">
+          <div class="wf-writing" id="writing" data-show="all">
 
             <div class="wf-writing-list">
               {%- for month in months -%}
-              {%- assign first = month.items | first -%}
+              {%- assign first_day = month.items | first | slice: 0, 10 -%}
               {%- assign hue = forloop.index0 | modulo: 7 -%}
-              <section class="wf-month wf-hue-{{ hue }}" id="m-{{ month.name }}" aria-labelledby="mh-{{ month.name }}">
+              {%- assign np = 0 -%}{%- assign nr = 0 -%}
+              {%- for k in month.items -%}
+                {%- if k contains "|p|" -%}{%- assign np = np | plus: 1 -%}{%- else -%}{%- assign nr = nr | plus: 1 -%}{%- endif -%}
+              {%- endfor -%}
+              <section class="wf-month wf-hue-{{ hue }}" id="m-{{ month.name }}" aria-labelledby="mh-{{ month.name }}" data-posts="{{ np }}" data-releases="{{ nr }}">
                 <h3 class="wf-month-head" id="mh-{{ month.name }}">
                   <span class="wf-hex" aria-hidden="true"></span>
-                  {{ first.date | date: "%B %Y" }}
-                  <span class="wf-month-n">{{ month.items | size }} post{% if month.items.size != 1 %}s{% endif %}</span>
+                  {{ first_day | date: "%B %Y" }}
+                  <span class="wf-month-n">
+                    {%- if np > 0 %}<span class="wf-n-posts">{{ np }} post{% if np != 1 %}s{% endif %}</span>{% endif -%}
+                    {%- if np > 0 and nr > 0 %}<span class="wf-n-sep"> &middot; </span>{% endif -%}
+                    {%- if nr > 0 %}<span class="wf-n-releases">{{ nr }} release{% if nr != 1 %}s{% endif %}</span>{% endif -%}
+                  </span>
                 </h3>
                 <ul class="wf-posts">
-                  {%- for post in month.items -%}
-                  <li>
+                  {%- for k in month.items -%}
+                  {%- assign parts = k | split: "|" -%}
+                  {%- if parts[1] == "p" -%}
+                  {%- assign pi = n_posts | minus: 1 | minus: parts[2] -%}
+                  {%- assign post = site.posts[pi] -%}
+                  <li class="wf-item-post">
                     <span class="wf-post-date">{{ post.date | date: "%b %-d" }}</span>
                     <span class="wf-post-body">
                       <a class="wf-post-title" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
                       {%- if post.excerpt -%}<span class="wf-post-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 180 }}</span>{%- endif -%}
                     </span>
                   </li>
+                  {%- else -%}
+                  {%- assign ri = n_releases | minus: 1 | minus: parts[2] -%}
+                  {%- assign rel = site.data.releases[ri] -%}
+                  <li class="wf-item-rel">
+                    <span class="wf-post-date">{{ rel.date | date: "%b %-d" }}</span>
+                    <span class="wf-rel-body">
+                      <span class="wf-rel-pkg">{{ rel.package }} <span class="wf-rel-ver">{{ rel.version }}</span></span>
+                      <span class="wf-rel-blurb">{{ rel.blurb }}
+                        {%- if rel.links %} <span class="wf-rel-links">
+                          {%- for link in rel.links -%}
+                          <a href="{{ link.url }}" rel="noopener">{{ link.label }}</a>
+                          {%- endfor -%}
+                        </span>{% endif -%}
+                      </span>
+                    </span>
+                  </li>
+                  {%- endif -%}
                   {%- endfor -%}
                 </ul>
               </section>
               {%- endfor -%}
             </div>
 
-            <nav class="wf-months" aria-label="Posts by month">
+            <nav class="wf-months" aria-label="News by month">
               <p class="wf-months-head">By month</p>
               <ul>
                 {%- assign prev_year = "" -%}
                 {%- for month in months -%}
-                {%- assign first = month.items | first -%}
-                {%- assign year = first.date | date: "%Y" -%}
+                {%- assign first_day = month.items | first | slice: 0, 10 -%}
+                {%- assign year = first_day | slice: 0, 4 -%}
                 {%- assign hue = forloop.index0 | modulo: 7 -%}
+                {%- assign np = 0 -%}{%- assign nr = 0 -%}
+                {%- for k in month.items -%}
+                  {%- if k contains "|p|" -%}{%- assign np = np | plus: 1 -%}{%- else -%}{%- assign nr = nr | plus: 1 -%}{%- endif -%}
+                {%- endfor -%}
                 {%- if year != prev_year -%}
                 <li class="wf-months-year" aria-hidden="true">{{ year }}</li>
                 {%- assign prev_year = year -%}
                 {%- endif -%}
-                <li>
+                <li data-month="m-{{ month.name }}" data-posts="{{ np }}" data-releases="{{ nr }}">
                   <a class="wf-hue-{{ hue }}" href="#m-{{ month.name }}">
                     <span class="wf-hex" aria-hidden="true"></span>
-                    <span class="wf-months-m">{{ first.date | date: "%B" }}<span class="wf-months-yr"> {{ year }}</span></span>
+                    <span class="wf-months-m">{{ first_day | date: "%B" }}<span class="wf-months-yr"> {{ year }}</span></span>
                     <span class="wf-months-n">{{ month.items | size }}</span>
                   </a>
                 </li>
@@ -151,6 +208,8 @@
 
       </main>
     </div>
+
+    <script src="{{ "/js/news-filter.js" | relative_url }}" defer></script>
 
   </body>
 </html>

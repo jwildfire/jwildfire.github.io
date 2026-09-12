@@ -17,3 +17,9 @@ These notes apply to this repository unless a more-specific `AGENTS.md` override
 - Prefer concrete stories and artifacts over polished thought-leadership framing.
 - Keep the recurring question visible: "What can we do with these tools right now?"
 - Later posts can go deeper on current best practices for agentic engineering, validation, review, and GxP-ready workflows.
+
+## Homepage release feed
+
+- `_data/releases.yml` drives the release entries in the homepage News timeline (`_layouts/home.html`), interleaved with posts by date and filterable with the Writing / Releases toggles (`js/news-filter.js`).
+- When a tracked package publishes a release, add one entry: package, version (with the leading `v`), date, a one-sentence blurb that says what a user can now do, and links to the GitHub release notes and a live demo page. Keep blurbs under about 90 characters so a row stays close to one line.
+- Currently tracks safety.viz and gsm.safety only. Adding another package needs no layout change.
