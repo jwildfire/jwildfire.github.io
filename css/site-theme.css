@@ -14,6 +14,7 @@
   --kn-ink: #1f2328;
   --kn-soft: #5b6470;
   --kn-faint: #98a0aa;
+  --kn-softer: #7a838e;        /* between soft and faint: release blurbs */
   --kn-accent: #6c3270;        /* plum: links, dates, active states */
   --kn-accent-deep: #522456;
   --kn-accent-soft: rgba(108, 50, 112, 0.12);
@@ -32,6 +33,10 @@
   --spec-5: #988bdd;
   --spec-6: #c67bb6;
   --spec-gradient: linear-gradient(90deg, var(--spec-0), var(--spec-1), var(--spec-2), var(--spec-3), var(--spec-4), var(--spec-5), var(--spec-6));
+  --spec-gradient-diag: linear-gradient(135deg, var(--spec-0), var(--spec-1), var(--spec-2), var(--spec-3), var(--spec-4), var(--spec-5), var(--spec-6));
+
+  /* Release marker: a small tag outline, used as a mask so it takes any colour. */
+  --tag-mask: url("data:image/svg+xml;utf8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 24 24' fill%3D'none' stroke%3D'%23000' stroke-width%3D'2.6' stroke-linecap%3D'round' stroke-linejoin%3D'round'%3E%3Cpath d%3D'M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z'%2F%3E%3Ccircle cx%3D'7.5' cy%3D'7.5' r%3D'1.2' fill%3D'%23000'%2F%3E%3C%2Fsvg%3E");
 
   /* Honeycomb outline tile, used as a mask so a colour shows through the strokes. */
   --hex-mask: url("data:image/svg+xml;utf8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' width%3D'5.543' height%3D'9.600' viewBox%3D'0 0 5.543 9.600'%3E%3Cg fill%3D'none' stroke%3D'%23000' stroke-width%3D'0.9'%3E%3Cpolygon points%3D'2.77%2C0.00 5.54%2C1.60 5.54%2C4.80 2.77%2C6.40 -0.00%2C4.80 0.00%2C1.60'%2F%3E%3Cpolygon points%3D'0.00%2C4.80 2.77%2C6.40 2.77%2C9.60 0.00%2C11.20 -2.77%2C9.60 -2.77%2C6.40'%2F%3E%3Cpolygon points%3D'5.54%2C4.80 8.31%2C6.40 8.31%2C9.60 5.54%2C11.20 2.77%2C9.60 2.77%2C6.40'%2F%3E%3Cpolygon points%3D'2.77%2C9.60 5.54%2C11.20 5.54%2C14.40 2.77%2C16.00 -0.00%2C14.40 0.00%2C11.20'%2F%3E%3Cpolygon points%3D'0.00%2C-4.80 2.77%2C-3.20 2.77%2C-0.00 0.00%2C1.60 -2.77%2C-0.00 -2.77%2C-3.20'%2F%3E%3Cpolygon points%3D'5.54%2C-4.80 8.31%2C-3.20 8.31%2C-0.00 5.54%2C1.60 2.77%2C-0.00 2.77%2C-3.20'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
@@ -419,6 +424,53 @@ a.footnote:hover { color: var(--kn-accent-deep); }
 .wf-count a, .wf-count a:visited { color: var(--kn-faint); }
 .wf-count a:hover { color: var(--kn-accent); }
 
+/* Writing / Releases toggles in the News section head (js/news-filter.js). Both are
+   pressed by default; pressing the only active one swaps to the other, so the list
+   is never empty. */
+.wf-toggle { display: inline-flex; gap: 0.3rem; margin-left: 0.4rem; align-self: center; }
+.wf-tog {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  font: 500 0.72rem/1 var(--kn-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--kn-faint);
+  background: transparent;
+  border: 1px solid var(--kn-rule);
+  border-radius: 999px;
+  padding: 0.38rem 0.75rem 0.38rem 0.6rem;
+  cursor: pointer;
+  transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
+}
+.wf-tog .wf-ico { margin-right: 0.45em; opacity: 0.35; filter: grayscale(1); transition: opacity 120ms ease, filter 120ms ease; }
+.wf-tog:hover { color: var(--kn-accent); border-color: var(--kn-accent); }
+.wf-tog[aria-pressed="true"] { background: var(--kn-card); border-color: var(--kn-soft); color: var(--kn-ink); }
+.wf-tog[aria-pressed="true"] .wf-ico { opacity: 1; filter: none; }
+.wf-tog[aria-pressed="true"]:hover { border-color: var(--kn-accent); color: var(--kn-accent); }
+
+/* Item markers: a spectrum-filled hex for a post, a monochrome tag for a release. */
+.wf-ico {
+  display: inline-block;
+  flex: none;
+  width: 0.8em;
+  height: 0.8em;
+  vertical-align: -0.08em;
+  margin-right: 0.5em;
+}
+.wf-ico-post {
+  height: 0.9em;
+  background: var(--spec-gradient-diag);
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+.wf-ico-rel {
+  width: 0.85em;
+  height: 0.85em;
+  background: var(--kn-faint);
+  -webkit-mask: var(--tag-mask) center / contain no-repeat;
+  mask: var(--tag-mask) center / contain no-repeat;
+}
+
 .wf-projlist { list-style: none; margin: 0; padding: 0; }
 .wf-projlist li {
   display: grid;
@@ -469,9 +521,10 @@ a.footnote:hover { color: var(--kn-accent-deep); }
 .wf-keynote-cta { display: block; font-family: var(--kn-mono); font-size: 0.8rem; color: var(--kn-soft); }
 .wf-keynote:hover .wf-keynote-cta { color: var(--kn-event-deep); }
 
-/* Writing list ----------------------------------------------------------------------*/
-/* Every post, grouped by month, with a sticky "By month" rail on the right that jumps
-   to the matching month heading. Each month carries one solid hex; the hue advances
+/* News list -------------------------------------------------------------------------*/
+/* Every post and release, grouped by month, with a sticky "By month" rail on the right
+   that jumps to the matching month heading. Posts are small panels marked with a
+   spectrum hex; releases are plain compact lines marked with a monochrome tag. Each month carries one solid hex; the hue advances
    through the spectrum month by month (wf-hue-0 … wf-hue-6, set in home.html), so
    the month rail reads as a vertical rainbow. On narrow screens the rail becomes a
    chip row above the list. */
@@ -514,7 +567,7 @@ a.footnote:hover { color: var(--kn-accent-deep); }
   color: var(--kn-ink);
   margin: 0;
   padding-bottom: 0.45rem;
-  border-bottom: 1px solid var(--kn-ink);
+  border-bottom: 1px solid var(--kn-rule);
 }
 .wf-month-head .wf-hex { width: 0.95em; height: 1.05em; }
 .wf-month-n { font-weight: 400; letter-spacing: 0.04em; text-transform: none; color: var(--kn-faint); margin-left: 0.2rem; }
@@ -564,22 +617,31 @@ a.footnote:hover { color: var(--kn-accent-deep); }
   display: grid;
   grid-template-columns: 5rem minmax(0, 1fr);
   gap: 0.2rem 1.2rem;
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--kn-rule);
   align-items: baseline;
 }
+/* A post is a small panel; the panel, not a rule, is what separates it from its neighbours. */
+.wf-posts li.wf-item-post {
+  background: var(--kn-card);
+  border: 1px solid var(--kn-rule);
+  border-radius: 10px;
+  padding: 1rem 1.15rem;
+  margin: 0.7rem 0;
+}
 .wf-post-date {
+  display: flex;
+  align-items: center;
   font-family: var(--kn-mono);
   font-size: 0.72rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--kn-accent);
+  white-space: nowrap;
 }
 .wf-post-body { display: block; }
 .wf-post-title, .wf-post-title:visited {
   display: block;
   font-family: var(--kn-serif);
-  font-size: 1.35rem;
+  font-size: 1.45rem;
   line-height: 1.15;
   color: var(--kn-ink);
   text-decoration: none;
@@ -587,6 +649,37 @@ a.footnote:hover { color: var(--kn-accent-deep); }
 .wf-post-title:hover { color: var(--kn-accent); text-decoration: none; }
 .wf-post-excerpt { display: block; color: var(--kn-soft); font-size: 0.92rem; margin-top: 0.3rem; }
 .wf-more { font-family: var(--kn-mono); font-size: 0.78rem; margin-top: 1.2rem; }
+
+/* Release rows: one compact line per package release, in the same date grid as
+   posts but tighter and set in the meta face. Package + version act as the title;
+   the blurb wraps if it must, and the links stay together at the end. */
+.wf-posts li.wf-item-rel { padding: 0.35rem 1.15rem; gap: 0.1rem 1.2rem; }
+.wf-posts li.wf-item-rel + li.wf-item-rel { border-top: 1px dotted var(--kn-rule); }
+.wf-posts li.wf-item-rel .wf-post-date { color: var(--kn-soft); }
+.wf-rel-body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.15rem 0.7rem;
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+.wf-rel-pkg { font-family: var(--kn-mono); font-weight: 500; font-size: 0.74rem; color: var(--kn-ink); white-space: nowrap; }
+.wf-rel-ver { color: var(--kn-accent); font-weight: 400; }
+.wf-rel-blurb { color: var(--kn-softer); flex: 1 1 18rem; min-width: 0; }
+/* Links flow inline after the blurb text, so a short blurb and its links share one line. */
+.wf-rel-links { font-family: var(--kn-mono); font-size: 0.68rem; white-space: nowrap; margin-left: 0.35rem; }
+.wf-rel-links a { text-decoration: none; margin-left: 0.55rem; }
+.wf-rel-links a:hover { text-decoration: underline; }
+.wf-month-n .wf-n-sep { color: var(--kn-rule); }
+
+/* Filter states, set by js/news-filter.js. Empty months are hidden by the script. */
+.wf-writing[data-show="posts"] .wf-item-rel,
+.wf-writing[data-show="posts"] .wf-n-releases,
+.wf-writing[data-show="posts"] .wf-n-sep,
+.wf-writing[data-show="releases"] .wf-item-post,
+.wf-writing[data-show="releases"] .wf-n-posts,
+.wf-writing[data-show="releases"] .wf-n-sep { display: none; }
 
 /* Homepage footer -------------------------------------------------------------------*/
 
@@ -599,6 +692,10 @@ a.footnote:hover { color: var(--kn-accent-deep); }
   .wf-home { grid-template-columns: 1fr; }
   .wf-rail { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--kn-rule); }
   .wf-posts li, .wf-projlist li { grid-template-columns: 1fr; }
+  .wf-sechead { flex-wrap: wrap; row-gap: 0.5rem; }
+  .wf-posts li.wf-item-post { padding: 0.9rem 1rem; }
+  .wf-posts li.wf-item-rel { padding: 0.45rem 0.25rem; }
+  .wf-toggle { margin-left: 0; order: 3; flex-basis: 100%; }
 
   /* Month rail becomes a wrapping chip row above the list. */
   .wf-writing { grid-template-columns: 1fr; }

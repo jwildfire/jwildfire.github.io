@@ -1,0 +1,58 @@
+# Keeps the homepage release feed (_data/releases.yml) in step with GitHub
+# releases of the tracked packages (see scripts/sync-releases.mjs). Runs nightly
+# and on demand; when something is missing it opens (or refreshes) a pull
+# request with the new entries so the draft blurbs can be edited before merge.
+
+name: Sync release feed
+
+on:
+  schedule:
+    - cron: "17 6 * * *" # daily, 06:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: sync-releases
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Add missing releases to the feed
+        id: sync
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SYNC_RELEASES_SUMMARY: ${{ runner.temp }}/sync-releases-summary.md
+        run: node scripts/sync-releases.mjs
+
+      - name: Read the summary for the pull request body
+        if: steps.sync.outputs.count != '0'
+        id: summary
+        run: |
+          {
+            echo "body<<EOF"
+            cat "${{ runner.temp }}/sync-releases-summary.md"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Open or update the pull request
+        if: steps.sync.outputs.count != '0'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: auto/sync-releases
+          delete-branch: true
+          commit-message: "Release feed: add ${{ steps.sync.outputs.count }} new release(s)"
+          title: "Release feed: ${{ steps.sync.outputs.count }} new release(s)"
+          body: ${{ steps.summary.outputs.body }}
+          labels: release-feed
+          add-paths: _data/releases.yml

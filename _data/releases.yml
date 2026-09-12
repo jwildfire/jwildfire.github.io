@@ -1,0 +1,166 @@
+# Release feed for the homepage "News" timeline (_layouts/home.html).
+#
+# One entry per published release, newest first (order here does not matter —
+# the layout sorts by date). Each renders as a single compact line:
+#   package version — blurb · Notes · Demo
+#
+# Fields:
+#   package  short package name as it should read on the page
+#   version  tag, including the leading "v"
+#   date     publication date (YYYY-MM-DD)
+#   blurb    one sentence, functionality first, no trailing period needed
+#   links    label + url; first two are conventionally Notes and Demo, a third
+#            (e.g. an annotated walkthrough) is fine but keep it to three
+#
+# Currently limited to safety.viz and gsm.safety. Other obot packages can be
+# added later without touching the layout.
+
+# safety.viz ------------------------------------------------------------------
+
+- package: safety.viz
+  version: v1.7.0
+  date: 2026-08-15
+  blurb: "Time-to-Event Explorer: Kaplan–Meier curves with CIs and an at-risk table, shipped as Experimental"
+  links:
+    - label: Notes
+      url: https://github.com/jwildfire/safety.viz/releases/tag/v1.7.0
+    - label: Demo
+      url: https://jwildfire.github.io/safety.viz/time-to-event/index.html
+    - label: Walkthrough
+      url: https://jwildfire.github.io/obot.roadmap/reports/sv-v1.7-demo/
+
+- package: safety.viz
+  version: v1.6.0
+  date: 2026-08-14
+  blurb: "Nephrotoxicity Explorer (KDIGO), plus study-day playback for the Hepatic Safety Explorer"
+  links:
+    - label: Notes
+      url: https://github.com/jwildfire/safety.viz/releases/tag/v1.6.0
+    - label: Demo
+      url: https://jwildfire.github.io/safety.viz/nep-explorer/index.html
+    - label: Walkthrough
+      url: https://jwildfire.github.io/obot.roadmap/reports/sv-v1.6-demo/
+
+- package: safety.viz
+  version: v1.5.0
+  date: 2026-07-26
+  blurb: "Participant Profile drill-down on six charts, the Hepatic ALT Waterfall, an eDISH migration Sankey"
+  links:
+    - label: Notes
+      url: https://github.com/jwildfire/safety.viz/releases/tag/v1.5.0
+    - label: Demo
+      url: https://jwildfire.github.io/safety.viz/participant-profile/index.html
+    - label: Walkthrough
+      url: https://jwildfire.github.io/obot.roadmap/reports/sv-v1.5-demo/
+
+- package: safety.viz
+  version: v1.4.1
+  date: 2026-07-22
+  blurb: "Consistent QT demo data; hep-explorer and qt-explorer share one view selector"
+  links:
+    - label: Notes
+      url: https://github.com/jwildfire/safety.viz/releases/tag/v1.4.1
+    - label: Demo
+      url: https://jwildfire.github.io/safety.viz/qt-explorer/index.html
+
+- package: safety.viz
+  version: v1.4.0
+  date: 2026-07-18
+  blurb: "QT Safety Explorer, phase 1: Δ/ΔΔ central tendency with CIs, outlier scatter, categorical table"
+  links:
+    - label: Notes
+      url: https://github.com/jwildfire/safety.viz/releases/tag/v1.4.0
+    - label: Demo
+      url: https://jwildfire.github.io/safety.viz/qt-explorer/index.html
+
+- package: safety.viz
+  version: v1.3.1
+  date: 2026-07-16
+  blurb: "Evidence pages show the reviewed requirement text beside each ID, checked in CI"
+  links:
+    - label: Notes
+      url: https://github.com/jwildfire/safety.viz/releases/tag/v1.3.1
+    - label: Demo
+      url: https://jwildfire.github.io/safety.viz/histogram/evidence.html
+
+- package: safety.viz
+  version: v1.3.0
+  date: 2026-07-16
+  blurb: "Adverse Event Explorer: hierarchical incidence table with per-arm rates and drill-through"
+  links:
+    - label: Notes
+      url: https://github.com/jwildfire/safety.viz/releases/tag/v1.3.0
+    - label: Demo
+      url: https://jwildfire.github.io/safety.viz/ae-explorer/index.html
+
+- package: safety.viz
+  version: v1.2.0
+  date: 2026-07-13
+  blurb: "Hepatic Safety Explorer (eDISH) with participant drill-down, and the first clinical guide"
+  links:
+    - label: Notes
+      url: https://github.com/jwildfire/safety.viz/releases/tag/v1.2.0
+    - label: Demo
+      url: https://jwildfire.github.io/safety.viz/hep-explorer/index.html
+
+- package: safety.viz
+  version: v1.1.0
+  date: 2026-07-12
+  blurb: "All-measures overview for the histogram; demo data from a scripted pharmaverse pipeline"
+  links:
+    - label: Notes
+      url: https://github.com/jwildfire/safety.viz/releases/tag/v1.1.0
+    - label: Demo
+      url: https://jwildfire.github.io/safety.viz/histogram/index.html
+
+- package: safety.viz
+  version: v1.0.0
+  date: 2026-07-12
+  blurb: "First stable release: six interactive charts with data contracts, demos and test evidence"
+  links:
+    - label: Notes
+      url: https://github.com/jwildfire/safety.viz/releases/tag/v1.0.0
+    - label: Demo
+      url: https://jwildfire.github.io/safety.viz/
+
+- package: safety.viz
+  version: v0.1.0
+  date: 2026-07-11
+  blurb: "Safety-histogram pilot as a library module, plus the shared renderer shell"
+  links:
+    - label: Notes
+      url: https://github.com/jwildfire/safety.viz/releases/tag/v0.1.0
+    - label: Demo
+      url: https://jwildfire.github.io/safety.viz/histogram/index.html
+
+# gsm.safety ------------------------------------------------------------------
+
+- package: gsm.safety
+  version: v1.1.0
+  date: 2026-08-17
+  blurb: "Metrics phase: Hy's Law, QTcF prolongation and serious/related AEs scored per participant"
+  links:
+    - label: Notes
+      url: https://github.com/jwildfire/gsm.safety/releases/tag/v1.1.0
+    - label: Demo
+      url: https://jwildfire.github.io/demo-301/#/safety
+    - label: Walkthrough
+      url: https://jwildfire.github.io/obot.roadmap/reports/gs-v1.1-demo/
+
+- package: gsm.safety
+  version: v1.0.0
+  date: 2026-07-23
+  blurb: "First stable release: nine safety.viz charts as htmlwidgets, with demo data and gsm workflows"
+  links:
+    - label: Notes
+      url: https://github.com/jwildfire/gsm.safety/releases/tag/v1.0.0
+    - label: Demo
+      url: https://jwildfire.github.io/gsm.safety/
+
+- package: gsm.safety
+  version: v0.1.0
+  date: 2026-05-15
+  blurb: "Experimental bridge: first proof that {safetyGraphics} charts could run from {gsm} workflows"
+  links:
+    - label: Notes
+      url: https://github.com/jwildfire/gsm.safety/releases/tag/v0.1.0

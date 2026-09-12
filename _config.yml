@@ -41,6 +41,11 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
 
+# Not part of the site: build tooling for the release feed (see .github/workflows).
+exclude:
+  - scripts
+  - AGENTS.md
+
 titles_from_headings:
   strip_title: true
   collections: true
