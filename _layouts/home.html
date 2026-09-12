@@ -41,8 +41,8 @@
           <div class="wf-sechead">
             <h2>News</h2>
             <div class="wf-toggle" role="group" aria-label="Show in the news feed">
-              <button type="button" class="wf-tog" data-kind="posts" aria-pressed="true">Writing</button>
-              <button type="button" class="wf-tog" data-kind="releases" aria-pressed="true">Releases</button>
+              <button type="button" class="wf-tog" data-kind="posts" aria-pressed="true"><span class="wf-ico wf-ico-post" aria-hidden="true"></span>Writing</button>
+              <button type="button" class="wf-tog" data-kind="releases" aria-pressed="true"><span class="wf-ico wf-ico-rel" aria-hidden="true"></span>Releases</button>
             </div>
             <span class="wf-count">{{ site.posts | size }} posts &middot; {{ site.data.releases | size }} releases</span>
           </div>
@@ -110,7 +110,7 @@
                   {%- assign pi = n_posts | minus: 1 | minus: parts[2] -%}
                   {%- assign post = site.posts[pi] -%}
                   <li class="wf-item-post">
-                    <span class="wf-post-date">{{ post.date | date: "%b %-d" }}</span>
+                    <span class="wf-post-date"><span class="wf-ico wf-ico-post" aria-hidden="true"></span>{{ post.date | date: "%b %-d" }}</span>
                     <span class="wf-post-body">
                       <a class="wf-post-title" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
                       {%- if post.excerpt -%}<span class="wf-post-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 180 }}</span>{%- endif -%}
@@ -120,7 +120,7 @@
                   {%- assign ri = n_releases | minus: 1 | minus: parts[2] -%}
                   {%- assign rel = site.data.releases[ri] -%}
                   <li class="wf-item-rel">
-                    <span class="wf-post-date">{{ rel.date | date: "%b %-d" }}</span>
+                    <span class="wf-post-date"><span class="wf-ico wf-ico-rel" aria-hidden="true"></span>{{ rel.date | date: "%b %-d" }}</span>
                     <span class="wf-rel-body">
                       <span class="wf-rel-pkg">{{ rel.package }} <span class="wf-rel-ver">{{ rel.version }}</span></span>
                       <span class="wf-rel-blurb">{{ rel.blurb }}
