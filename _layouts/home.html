@@ -53,7 +53,9 @@
 
           {%- comment -%}
             Every post, grouped by month. site.posts is newest-first, and group_by_exp
-            keeps first-seen order, so the months come out newest-first too.
+            keeps first-seen order, so the months come out newest-first too. Each month
+            gets a wf-hue-N class (N = position mod 7) that colours its hex marker; the
+            same index is used in the "By month" rail so the two stay in step.
           {%- endcomment -%}
           {%- assign months = site.posts | group_by_exp: "post", "post.date | date: '%Y-%m'" -%}
 
@@ -62,8 +64,10 @@
             <div class="wf-writing-list">
               {%- for month in months -%}
               {%- assign first = month.items | first -%}
-              <section class="wf-month" id="m-{{ month.name }}" aria-labelledby="mh-{{ month.name }}">
+              {%- assign hue = forloop.index0 | modulo: 7 -%}
+              <section class="wf-month wf-hue-{{ hue }}" id="m-{{ month.name }}" aria-labelledby="mh-{{ month.name }}">
                 <h3 class="wf-month-head" id="mh-{{ month.name }}">
+                  <span class="wf-hex" aria-hidden="true"></span>
                   {{ first.date | date: "%B %Y" }}
                   <span class="wf-month-n">{{ month.items | size }} post{% if month.items.size != 1 %}s{% endif %}</span>
                 </h3>
@@ -89,12 +93,14 @@
                 {%- for month in months -%}
                 {%- assign first = month.items | first -%}
                 {%- assign year = first.date | date: "%Y" -%}
+                {%- assign hue = forloop.index0 | modulo: 7 -%}
                 {%- if year != prev_year -%}
                 <li class="wf-months-year" aria-hidden="true">{{ year }}</li>
                 {%- assign prev_year = year -%}
                 {%- endif -%}
                 <li>
-                  <a href="#m-{{ month.name }}">
+                  <a class="wf-hue-{{ hue }}" href="#m-{{ month.name }}">
+                    <span class="wf-hex" aria-hidden="true"></span>
                     <span class="wf-months-m">{{ first.date | date: "%B" }}<span class="wf-months-yr"> {{ year }}</span></span>
                     <span class="wf-months-n">{{ month.items | size }}</span>
                   </a>
