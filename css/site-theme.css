@@ -1,23 +1,41 @@
 /* ---------------------------------------------------------------------------
-   Keynote look & feel for jwildfire.github.io
-   Matches the R/Pharma 2026 keynote site (/keynote/):
-   espresso #271810 · paper #faf6f1 · orange #f97316 accent
+   Site theme for jwildfire.github.io
+   All-light: paper #fafaf8 · graphite ink #1f2328 · plum links #6c3270
+   A seven-hue muted spectrum (oklch 0.68 / 0.12) marks the months of the
+   writing list, and a thin honeycomb strip carries it through dividers.
    Instrument Serif (headings) · Instrument Sans (body) · IBM Plex Mono (meta)
    Loaded after minima's main.css; overrides by cascade order.
+   The R/Pharma keynote page (/keynote/) shares the base but keeps its orange.
 --------------------------------------------------------------------------- */
 
 :root {
-  --kn-side-bg: #271810;
-  --kn-side-ink: #f5ede4;
-  --kn-side-soft: #c4a995;
-  --kn-bg: #faf6f1;
-  --kn-ink: #2a211b;
-  --kn-soft: #6b5d52;
-  --kn-faint: #a3958a;
-  --kn-accent: #f97316;
-  --kn-accent-deep: #c2410c;
+  --kn-bg: #fafaf8;
+  --kn-rail-bg: #f3f4f1;
+  --kn-ink: #1f2328;
+  --kn-soft: #5b6470;
+  --kn-faint: #98a0aa;
+  --kn-accent: #6c3270;        /* plum: links, dates, active states */
+  --kn-accent-deep: #522456;
+  --kn-accent-soft: rgba(108, 50, 112, 0.12);
   --kn-card: #ffffff;
-  --kn-rule: #ece2d7;
+  --kn-rule: #e4e6e3;
+  --kn-code-bg: #f3f4f1;
+  --kn-event: #f97316;         /* orange, reserved for the R/Pharma keynote */
+  --kn-event-deep: #c2410c;
+
+  /* Spectrum: equal lightness and chroma, hue steps of ~50 degrees. */
+  --spec-0: #d87972;
+  --spec-1: #c78a3b;
+  --spec-2: #77a95b;
+  --spec-3: #00afa9;
+  --spec-4: #519fdd;
+  --spec-5: #988bdd;
+  --spec-6: #c67bb6;
+  --spec-gradient: linear-gradient(90deg, var(--spec-0), var(--spec-1), var(--spec-2), var(--spec-3), var(--spec-4), var(--spec-5), var(--spec-6));
+
+  /* Honeycomb outline tile, used as a mask so a colour shows through the strokes. */
+  --hex-mask: url("data:image/svg+xml;utf8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' width%3D'5.543' height%3D'9.600' viewBox%3D'0 0 5.543 9.600'%3E%3Cg fill%3D'none' stroke%3D'%23000' stroke-width%3D'0.9'%3E%3Cpolygon points%3D'2.77%2C0.00 5.54%2C1.60 5.54%2C4.80 2.77%2C6.40 -0.00%2C4.80 0.00%2C1.60'%2F%3E%3Cpolygon points%3D'0.00%2C4.80 2.77%2C6.40 2.77%2C9.60 0.00%2C11.20 -2.77%2C9.60 -2.77%2C6.40'%2F%3E%3Cpolygon points%3D'5.54%2C4.80 8.31%2C6.40 8.31%2C9.60 5.54%2C11.20 2.77%2C9.60 2.77%2C6.40'%2F%3E%3Cpolygon points%3D'2.77%2C9.60 5.54%2C11.20 5.54%2C14.40 2.77%2C16.00 -0.00%2C14.40 0.00%2C11.20'%2F%3E%3Cpolygon points%3D'0.00%2C-4.80 2.77%2C-3.20 2.77%2C-0.00 0.00%2C1.60 -2.77%2C-0.00 -2.77%2C-3.20'%2F%3E%3Cpolygon points%3D'5.54%2C-4.80 8.31%2C-3.20 8.31%2C-0.00 5.54%2C1.60 2.77%2C-0.00 2.77%2C-3.20'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+
   --kn-sans: "Instrument Sans", system-ui, sans-serif;
   --kn-serif: "Instrument Serif", Georgia, serif;
   --kn-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
@@ -29,37 +47,61 @@ body {
   background: var(--kn-bg);
   color: var(--kn-ink);
   font-family: var(--kn-sans);
+  font-size: 1.04rem;
+  line-height: 1.62;
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--kn-serif);
-  font-weight: 400;
-  color: var(--kn-ink);
-  line-height: 1.15;
+h1, h2, h3, h4, h5, h6 { font-family: var(--kn-serif); font-weight: 400; letter-spacing: -0.01em; }
+
+a, a:visited { color: var(--kn-accent); }
+a:hover { color: var(--kn-accent-deep); text-decoration: underline; text-underline-offset: 0.2em; }
+:focus-visible { outline: 2px solid var(--kn-accent); outline-offset: 3px; border-radius: 2px; }
+
+/* Honeycomb strip: the spectrum, seen through a band of tiny hex outlines.
+   Applied as a pseudo-element on dividers so the text above is unaffected. */
+hr, .site-header::before, .site-footer::before, .wf-rail::before, .wf-sechead::after, .wf-foot::before {
+  background: var(--spec-gradient);
+  -webkit-mask-image: var(--hex-mask);
+  mask-image: var(--hex-mask);
+  -webkit-mask-repeat: repeat;
+  mask-repeat: repeat;
+  -webkit-mask-size: auto 9.6px;
+  mask-size: auto 9.6px;
+  -webkit-mask-position: left top;
+  mask-position: left top;
 }
 
-a, a:visited { color: var(--kn-accent-deep); }
-a:hover { color: var(--kn-accent); text-decoration: underline; text-underline-offset: 0.2em; }
+hr {
+  border: 0;
+  height: 9px;
+  margin: 2.4rem 0;
+  opacity: 0.9;
+}
 
-hr { border: 0; border-top: 1px solid var(--kn-rule); }
-
-/* Header --------------------------------------------------------------------*/
+/* Header (posts and interior pages) ------------------------------------------*/
 
 .site-header {
-  background: var(--kn-side-bg);
-  border-top: 4px solid var(--kn-accent);
-  border-bottom: none;
+  position: relative;
+  background: var(--kn-bg);
+  border-top: none;
+  border-bottom: 1px solid var(--kn-rule);
+}
+.site-header::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: 9px;
 }
 .site-title, .site-title:visited, .site-title:hover {
-  color: var(--kn-side-ink);
+  color: var(--kn-ink);
   font-family: var(--kn-serif);
   font-size: 1.5rem;
   letter-spacing: 0;
 }
 .site-nav { background: transparent; border: none; }
 .site-nav .page-link {
-  color: var(--kn-side-soft);
+  color: var(--kn-soft);
   font-family: var(--kn-mono);
   font-size: 0.84rem;
 }
@@ -67,15 +109,15 @@ hr { border: 0; border-top: 1px solid var(--kn-rule); }
 .site-nav .github-link { display: inline-flex; align-items: center; }
 .site-nav .github-icon { vertical-align: middle; display: block; }
 @media screen and (max-width: 600px) {
-  .site-nav { background: var(--kn-side-bg); border: 1px solid rgba(249, 115, 22, 0.3); }
-  .site-nav .menu-icon > svg { fill: var(--kn-side-ink); }
-  .site-nav .menu-icon > svg path { fill: var(--kn-side-ink); }
+  .site-nav { background: var(--kn-card); border: 1px solid var(--kn-rule); }
+  .site-nav .menu-icon > svg { fill: var(--kn-ink); }
+  .site-nav .menu-icon > svg path { fill: var(--kn-ink); }
 }
 
-/* Post list (home & archive) --------------------------------------------------*/
+/* Post list (archive) ---------------------------------------------------------*/
 
 .post-meta {
-  color: var(--kn-accent-deep);
+  color: var(--kn-accent);
   font-family: var(--kn-mono);
   font-size: 0.76rem;
   letter-spacing: 0.06em;
@@ -89,7 +131,7 @@ hr { border: 0; border-top: 1px solid var(--kn-rule); }
   color: var(--kn-ink);
 }
 .post-link:visited { color: var(--kn-ink); }
-.post-link:hover { color: var(--kn-accent-deep); text-decoration: none; }
+.post-link:hover { color: var(--kn-accent); text-decoration: none; }
 .post-list-heading { font-family: var(--kn-serif); }
 
 /* Posts ------------------------------------------------------------------------*/
@@ -107,11 +149,11 @@ blockquote {
 
 pre, code {
   border: 1px solid var(--kn-rule);
-  background-color: #f5efe7;
+  background-color: var(--kn-code-bg);
   border-radius: 6px;
 }
 code { font-family: var(--kn-mono); font-size: 0.86em; }
-.hljs, pre code { background: #f5efe7 !important; }
+.hljs, pre code { background: var(--kn-code-bg) !important; }
 
 /* Collapsible sections (e.g. abstract details) ------------------------------------*/
 
@@ -131,7 +173,7 @@ code { font-family: var(--kn-mono); font-size: 0.86em; }
   text-transform: uppercase;
   cursor: pointer;
 }
-.post-content summary:hover { color: var(--kn-accent-deep); }
+.post-content summary:hover { color: var(--kn-accent); }
 
 /* Footnotes --------------------------------------------------------------------*/
 
@@ -149,7 +191,7 @@ a.footnote {
   font-weight: 500;
   padding: 0 0.1em;
 }
-a.footnote:hover { color: var(--kn-accent); }
+a.footnote:hover { color: var(--kn-accent-deep); }
 
 .fn-tooltip {
   position: absolute;
@@ -159,7 +201,7 @@ a.footnote:hover { color: var(--kn-accent); }
   color: var(--kn-ink);
   border: 1px solid var(--kn-rule);
   border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(39, 24, 16, 0.16);
+  box-shadow: 0 10px 30px rgba(31, 35, 40, 0.14);
   padding: 0.7rem 0.9rem;
   font-family: var(--kn-sans);
   font-size: 0.86rem;
@@ -168,8 +210,8 @@ a.footnote:hover { color: var(--kn-accent); }
 .fn-tooltip[hidden] { display: none; }
 .fn-tooltip p { margin: 0; }
 .fn-tooltip p + p { margin-top: 0.5rem; }
-.fn-tooltip a, .fn-tooltip a:visited { color: var(--kn-accent-deep); }
-.fn-tooltip a:hover { color: var(--kn-accent); }
+.fn-tooltip a, .fn-tooltip a:visited { color: var(--kn-accent); }
+.fn-tooltip a:hover { color: var(--kn-accent-deep); }
 
 /* Comments (giscus) ------------------------------------------------------------*/
 
@@ -193,23 +235,31 @@ a.footnote:hover { color: var(--kn-accent); }
 /* Footer ------------------------------------------------------------------------*/
 
 .site-footer {
-  background: var(--kn-side-bg);
-  color: var(--kn-side-soft);
-  border-top: none;
+  position: relative;
+  background: var(--kn-rail-bg);
+  color: var(--kn-soft);
+  border-top: 1px solid var(--kn-rule);
 }
-.site-footer a, .site-footer a:visited { color: var(--kn-side-ink); }
+.site-footer::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: -1px;
+  height: 9px;
+}
+.site-footer a, .site-footer a:visited { color: var(--kn-ink); }
 .site-footer a:hover { color: var(--kn-accent); }
-.footer-heading { font-family: var(--kn-serif); color: var(--kn-side-ink); }
-.site-footer .username, .contact-list, .social-media-list { color: var(--kn-side-soft); }
-.social-media-list .icon path, .site-footer svg path { fill: var(--kn-side-soft); }
+.footer-heading { font-family: var(--kn-serif); color: var(--kn-ink); }
+.site-footer .username, .contact-list, .social-media-list { color: var(--kn-soft); }
+.social-media-list .icon path, .site-footer svg path { fill: var(--kn-soft); }
 
-/* Keynote banner (homepage) ---------------------------------------------------------*/
+/* Keynote banner: the one place the blog uses orange, as an event colour -----------*/
 
 .keynote-banner {
   display: block;
-  background: var(--kn-side-bg);
+  background: var(--kn-card);
+  border: 1px solid var(--kn-rule);
   border-radius: 16px;
-  border-left: 5px solid var(--kn-accent);
+  border-left: 5px solid var(--kn-event);
   padding: 1.4rem 1.6rem;
   margin: 0.5rem 0 2.4rem;
   text-decoration: none;
@@ -218,7 +268,7 @@ a.footnote:hover { color: var(--kn-accent); }
 .keynote-banner:hover {
   text-decoration: none;
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(39, 24, 16, 0.25);
+  box-shadow: 0 12px 30px rgba(31, 35, 40, 0.12);
 }
 .keynote-banner-kicker {
   display: block;
@@ -227,7 +277,7 @@ a.footnote:hover { color: var(--kn-accent); }
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--kn-accent);
+  color: var(--kn-event-deep);
   margin-bottom: 0.45rem;
 }
 .keynote-banner-headline {
@@ -235,17 +285,17 @@ a.footnote:hover { color: var(--kn-accent); }
   font-family: var(--kn-serif);
   font-size: 1.45rem;
   line-height: 1.2;
-  color: var(--kn-side-ink);
+  color: var(--kn-ink);
   margin-bottom: 0.55rem;
 }
-.keynote-banner-headline em { color: var(--kn-accent); font-style: italic; }
+.keynote-banner-headline em { color: var(--kn-event-deep); font-style: italic; }
 .keynote-banner-cta {
   display: block;
   font-family: var(--kn-mono);
   font-size: 0.8rem;
-  color: var(--kn-side-soft);
+  color: var(--kn-soft);
 }
-.keynote-banner:hover .keynote-banner-cta { color: var(--kn-accent); }
+.keynote-banner:hover .keynote-banner-cta { color: var(--kn-event-deep); }
 
 /* Post navigation (override.css companions) ----------------------------------------*/
 
@@ -255,11 +305,11 @@ a.footnote:hover { color: var(--kn-accent); }
 
 /* ==================================================================================
    Homepage: split-rail layout (_layouts/home.html)
-   Dark sticky rail (identity + nav + CV) beside a scrolling column of projects,
-   then writing. Mirrors the /keynote/ page so the two read as one site.
+   Light sticky rail (identity + nav + CV) beside a scrolling column of writing,
+   then projects. The rail carries the honeycomb strip along its top edge.
    ================================================================================== */
 
-.wf-skip { position: absolute; left: -200vw; top: 0; background: var(--kn-side-bg); color: var(--kn-side-ink); padding: 0.6rem 1rem; z-index: 10; }
+.wf-skip { position: absolute; left: -200vw; top: 0; background: var(--kn-ink); color: var(--kn-bg); padding: 0.6rem 1rem; z-index: 10; }
 .wf-skip:focus { left: 1rem; top: 1rem; }
 
 .wf-home, .wf-home *, .wf-home *::before, .wf-home *::after { box-sizing: border-box; }
@@ -273,24 +323,31 @@ a.footnote:hover { color: var(--kn-accent); }
 /* Rail ------------------------------------------------------------------------------*/
 
 .wf-rail {
-  background: var(--kn-side-bg);
-  color: var(--kn-side-ink);
-  padding: clamp(1.6rem, 3vw, 2.8rem);
   position: sticky;
   top: 0;
   height: 100vh;
   overflow-y: auto;
+  background: var(--kn-rail-bg);
+  color: var(--kn-ink);
+  border-right: 1px solid var(--kn-rule);
+  padding: clamp(1.6rem, 3vw, 2.8rem);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 1.5rem;
+}
+.wf-rail::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: 9px;
 }
 .wf-wordmark, .wf-wordmark:visited {
   display: block;
   font-family: var(--kn-serif);
   font-size: clamp(2.2rem, 3.4vw, 2.7rem);
   line-height: 1;
-  color: var(--kn-side-ink);
+  color: var(--kn-ink);
   text-decoration: none;
   margin-bottom: 0.5rem;
 }
@@ -298,44 +355,43 @@ a.footnote:hover { color: var(--kn-accent); }
 .wf-name {
   font-family: var(--kn-mono);
   font-size: 0.74rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--kn-accent);
-  margin: 0 0 1rem;
+  margin: 0 0 0.9rem;
 }
-.wf-pitch { color: #e6d8c9; font-size: 1rem; margin: 0 0 1.4rem; }
+.wf-pitch { color: var(--kn-soft); font-size: 1rem; margin: 0 0 1.4rem; }
 
 .wf-nav { display: flex; flex-direction: column; gap: 0.15rem; font-family: var(--kn-mono); font-size: 0.84rem; }
 .wf-nav a, .wf-nav a:visited {
-  color: var(--kn-side-ink);
+  color: var(--kn-ink);
   text-decoration: none;
-  padding: 0.45rem 0.7rem;
+  padding: 0.5rem 0.7rem;
   border-radius: 8px;
   display: flex;
   justify-content: space-between;
 }
-.wf-nav a:hover { background: rgba(249, 115, 22, 0.14); color: #fff; text-decoration: none; }
+.wf-nav a:hover { background: var(--kn-accent-soft); color: var(--kn-ink); text-decoration: none; }
 .wf-nav .wf-arr { color: var(--kn-accent); }
 
 .wf-cv, .wf-cv:visited {
-  margin-top: 1.1rem;
+  margin-top: 1.4rem;
   display: block;
   text-align: center;
   font-family: var(--kn-mono);
   font-size: 0.84rem;
   font-weight: 500;
   text-decoration: none;
-  background: var(--kn-accent);
+  background: var(--kn-ink);
   color: #fff;
-  padding: 0.75rem 1.2rem;
+  padding: 0.8rem 1.1rem;
   border-radius: 10px;
   transition: background 120ms ease;
 }
-.wf-cv:hover { background: var(--kn-accent-deep); color: #fff; text-decoration: none; }
+.wf-cv:hover { background: var(--kn-accent); color: #fff; text-decoration: none; }
 
 .wf-contact { list-style: none; margin: 0; padding: 0; font-family: var(--kn-mono); font-size: 0.74rem; display: flex; flex-direction: column; gap: 0.4rem; }
-.wf-contact a, .wf-contact a:visited { color: var(--kn-side-soft); text-decoration: none; }
+.wf-contact a, .wf-contact a:visited { color: var(--kn-soft); text-decoration: none; }
 .wf-contact a:hover { color: var(--kn-accent); }
 
 /* Main column -----------------------------------------------------------------------*/
@@ -343,36 +399,43 @@ a.footnote:hover { color: var(--kn-accent); }
 .wf-main { padding: clamp(2rem, 4vw, 3.2rem); max-width: 60rem; }
 .wf-sec + .wf-sec { margin-top: 3rem; }
 .wf-sechead {
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
   align-items: baseline;
-  gap: 0.5rem 1rem;
+  gap: 0.9rem;
   border-bottom: 1px solid var(--kn-rule);
   padding-bottom: 0.7rem;
   margin-bottom: 1.4rem;
 }
+.wf-sechead::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -1px;
+  height: 9px;
+  opacity: 0.9;
+}
 .wf-sechead h2 { font-family: var(--kn-serif); font-weight: 400; font-size: clamp(1.25rem, 2vw, 1.45rem); margin: 0; }
 .wf-count { font-family: var(--kn-mono); font-size: 0.74rem; color: var(--kn-faint); margin-left: auto; }
 .wf-count a, .wf-count a:visited { color: var(--kn-faint); }
-.wf-count a:hover { color: var(--kn-accent-deep); }
+.wf-count a:hover { color: var(--kn-accent); }
 
 .wf-projlist { list-style: none; margin: 0; padding: 0; }
 .wf-projlist li {
   display: grid;
-  grid-template-columns: 12rem minmax(0, 1fr);
-  gap: 0.3rem 1.2rem;
-  padding: 0.85rem 0;
+  grid-template-columns: 11rem minmax(0, 1fr);
+  gap: 0.25rem 1.4rem;
+  padding: 0.9rem 0;
   border-bottom: 1px solid var(--kn-rule);
   align-items: baseline;
 }
 .wf-proj-name, .wf-proj-name:visited {
   font-family: var(--kn-serif);
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   line-height: 1.15;
   color: var(--kn-ink);
   text-decoration: none;
 }
-.wf-proj-name:hover { color: var(--kn-accent-deep); text-decoration: none; }
+.wf-proj-name:hover { color: var(--kn-accent); text-decoration: none; }
 .wf-proj-body { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.3rem 1.2rem; }
 .wf-proj-stub { color: var(--kn-soft); font-size: 0.94rem; flex: 1 1 22rem; }
 .wf-proj-links { font-family: var(--kn-mono); font-size: 0.74rem; display: flex; gap: 0.9rem; }
@@ -381,15 +444,16 @@ a.footnote:hover { color: var(--kn-accent); }
 
 .wf-keynote {
   display: block;
-  background: var(--kn-side-bg);
-  border-radius: 16px;
-  border-left: 5px solid var(--kn-accent);
-  padding: 1.4rem 1.6rem;
-  margin: 0 0 1.6rem;
+  background: var(--kn-card);
+  border: 1px solid var(--kn-rule);
+  border-radius: 14px;
+  border-left: 5px solid var(--kn-event);
+  padding: 1.3rem 1.5rem;
+  margin: 0 0 2rem;
   text-decoration: none;
   transition: box-shadow 140ms ease, transform 140ms ease;
 }
-.wf-keynote:hover { text-decoration: none; transform: translateY(-2px); box-shadow: 0 12px 30px rgba(39, 24, 16, 0.25); }
+.wf-keynote:hover { text-decoration: none; transform: translateY(-2px); box-shadow: 0 12px 30px rgba(31, 35, 40, 0.12); }
 .wf-keynote-kicker {
   display: block;
   font-family: var(--kn-mono);
@@ -397,18 +461,37 @@ a.footnote:hover { color: var(--kn-accent); }
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--kn-accent);
+  color: var(--kn-event-deep);
   margin-bottom: 0.45rem;
 }
-.wf-keynote-headline { display: block; font-family: var(--kn-serif); font-size: 1.45rem; line-height: 1.2; color: var(--kn-side-ink); margin-bottom: 0.55rem; }
-.wf-keynote-headline em { color: var(--kn-accent); font-style: italic; }
-.wf-keynote-cta { display: block; font-family: var(--kn-mono); font-size: 0.8rem; color: var(--kn-side-soft); }
-.wf-keynote:hover .wf-keynote-cta { color: var(--kn-accent); }
+.wf-keynote-headline { display: block; font-family: var(--kn-serif); font-size: 1.45rem; line-height: 1.2; color: var(--kn-ink); margin-bottom: 0.55rem; }
+.wf-keynote-headline em { color: var(--kn-event-deep); font-style: italic; }
+.wf-keynote-cta { display: block; font-family: var(--kn-mono); font-size: 0.8rem; color: var(--kn-soft); }
+.wf-keynote:hover .wf-keynote-cta { color: var(--kn-event-deep); }
 
 /* Writing list ----------------------------------------------------------------------*/
 /* Every post, grouped by month, with a sticky "By month" rail on the right that jumps
-   to the matching month heading. On narrow screens the rail becomes a chip row above
-   the list. */
+   to the matching month heading. Each month carries one solid hex; the hue advances
+   through the spectrum month by month (wf-hue-0 … wf-hue-6, set in home.html), so
+   the month rail reads as a vertical rainbow. On narrow screens the rail becomes a
+   chip row above the list. */
+
+.wf-hue-0 { --hue: var(--spec-0); }
+.wf-hue-1 { --hue: var(--spec-1); }
+.wf-hue-2 { --hue: var(--spec-2); }
+.wf-hue-3 { --hue: var(--spec-3); }
+.wf-hue-4 { --hue: var(--spec-4); }
+.wf-hue-5 { --hue: var(--spec-5); }
+.wf-hue-6 { --hue: var(--spec-6); }
+
+.wf-hex {
+  display: inline-block;
+  flex: none;
+  width: 0.8em;
+  height: 0.9em;
+  background: var(--hue, var(--kn-faint));
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
 
 .wf-writing {
   display: grid;
@@ -421,8 +504,8 @@ a.footnote:hover { color: var(--kn-accent); }
 .wf-month + .wf-month { margin-top: 2.4rem; }
 .wf-month-head {
   display: flex;
-  align-items: baseline;
-  gap: 0.8rem;
+  align-items: center;
+  gap: 0.6rem;
   font-family: var(--kn-mono);
   font-weight: 500;
   font-size: 0.74rem;
@@ -431,9 +514,10 @@ a.footnote:hover { color: var(--kn-accent); }
   color: var(--kn-ink);
   margin: 0;
   padding-bottom: 0.45rem;
-  border-bottom: 2px solid var(--kn-ink);
+  border-bottom: 1px solid var(--kn-ink);
 }
-.wf-month-n { font-weight: 400; letter-spacing: 0.04em; text-transform: none; color: var(--kn-faint); }
+.wf-month-head .wf-hex { width: 0.95em; height: 1.05em; }
+.wf-month-n { font-weight: 400; letter-spacing: 0.04em; text-transform: none; color: var(--kn-faint); margin-left: 0.2rem; }
 
 .wf-months {
   position: sticky;
@@ -453,25 +537,27 @@ a.footnote:hover { color: var(--kn-accent); }
 .wf-months-year {
   font-size: 0.7rem;
   letter-spacing: 0.06em;
-  color: var(--kn-ink);
+  color: var(--kn-faint);
   margin: 0.7rem 0 0.15rem;
   padding-left: 0.65rem;
 }
 .wf-months-year:first-child { margin-top: 0; }
 .wf-months a, .wf-months a:visited {
   display: flex;
-  justify-content: space-between;
-  gap: 0.6rem;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 0.8rem;
   color: var(--kn-soft);
   text-decoration: none;
   padding: 0.22rem 0.5rem 0.22rem 0.65rem;
   border-left: 2px solid var(--kn-rule);
 }
-.wf-months a:hover { color: var(--kn-accent-deep); border-left-color: var(--kn-accent); text-decoration: none; }
+.wf-months a .wf-hex { width: 0.65em; height: 0.75em; }
+.wf-months a:hover { color: var(--kn-accent); border-left-color: var(--hue, var(--kn-accent)); text-decoration: none; }
+.wf-months-m { flex: 1; }
 .wf-months-yr { display: none; }
 .wf-months-n { color: var(--kn-faint); }
-.wf-months a:hover .wf-months-n { color: var(--kn-accent-deep); }
+.wf-months a:hover .wf-months-n { color: var(--kn-accent); }
 
 .wf-posts { list-style: none; margin: 0; padding: 0; }
 .wf-posts li {
@@ -487,7 +573,7 @@ a.footnote:hover { color: var(--kn-accent); }
   font-size: 0.72rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--kn-accent-deep);
+  color: var(--kn-accent);
 }
 .wf-post-body { display: block; }
 .wf-post-title, .wf-post-title:visited {
@@ -498,19 +584,20 @@ a.footnote:hover { color: var(--kn-accent); }
   color: var(--kn-ink);
   text-decoration: none;
 }
-.wf-post-title:hover { color: var(--kn-accent-deep); text-decoration: none; }
+.wf-post-title:hover { color: var(--kn-accent); text-decoration: none; }
 .wf-post-excerpt { display: block; color: var(--kn-soft); font-size: 0.92rem; margin-top: 0.3rem; }
 .wf-more { font-family: var(--kn-mono); font-size: 0.78rem; margin-top: 1.2rem; }
 
 /* Homepage footer -------------------------------------------------------------------*/
 
-.wf-foot { margin-top: 3rem; border-top: 1px solid var(--kn-rule); padding-top: 1.4rem; }
+.wf-foot { position: relative; margin-top: 3rem; border-top: 1px solid var(--kn-rule); padding-top: 1.6rem; }
+.wf-foot::before { content: ""; position: absolute; left: 0; right: 0; top: -1px; height: 9px; opacity: 0.9; }
 .wf-foot-strap { font-family: var(--kn-serif); font-size: 1.4rem; color: var(--kn-ink); margin: 0 0 0.6rem; }
 .wf-foot-links { font-family: var(--kn-mono); font-size: 0.78rem; display: flex; flex-wrap: wrap; gap: 0.4rem 1.3rem; margin: 0; color: var(--kn-faint); }
 
 @media screen and (max-width: 900px) {
   .wf-home { grid-template-columns: 1fr; }
-  .wf-rail { position: static; height: auto; }
+  .wf-rail { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--kn-rule); }
   .wf-posts li, .wf-projlist li { grid-template-columns: 1fr; }
 
   /* Month rail becomes a wrapping chip row above the list. */
@@ -525,23 +612,23 @@ a.footnote:hover { color: var(--kn-accent); }
     padding: 0.2rem 0.65rem;
     background: var(--kn-card);
   }
-  .wf-months a:hover { border-color: var(--kn-accent); }
+  .wf-months a:hover { border-color: var(--hue, var(--kn-accent)); }
   .wf-month { scroll-margin-top: 1rem; }
 }
 
 /* Shared footer on posts and interior pages (_includes/footer.html) ------------------*/
 
-.site-footer .footer-strap { font-family: var(--kn-serif); font-size: 1.5rem; color: var(--kn-side-ink); margin: 0 0 0.8rem; }
+.site-footer .footer-strap { font-family: var(--kn-serif); font-size: 1.5rem; color: var(--kn-ink); margin: 0 0 0.8rem; }
 .site-footer .footer-links { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; font-family: var(--kn-mono); font-size: 0.78rem; }
-.site-footer .footer-links a, .site-footer .footer-links a:visited { color: var(--kn-side-soft); text-decoration: none; }
+.site-footer .footer-links a, .site-footer .footer-links a:visited { color: var(--kn-soft); text-decoration: none; }
 .site-footer .footer-links a:hover { color: var(--kn-accent); }
-.site-footer .footer-links .p-name { color: var(--kn-side-ink); }
+.site-footer .footer-links .p-name { color: var(--kn-ink); }
 
 /* CV link in the header nav on interior pages ---------------------------------------*/
 
 .site-nav .cv-link, .site-nav .cv-link:visited {
   color: var(--kn-accent);
-  border: 1px solid rgba(249, 115, 22, 0.5);
+  border: 1px solid rgba(108, 50, 112, 0.45);
   border-radius: 7px;
   padding: 0.2rem 0.6rem;
 }
