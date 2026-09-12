@@ -24,7 +24,7 @@
       --accent-deep: #c2410c;
       --card: #ffffff;
       --rule: #e4e6e3;
-      --hex-mask: url("data:image/svg+xml;utf8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' width%3D'5.543' height%3D'9.600' viewBox%3D'0 0 5.543 9.600'%3E%3Cg fill%3D'none' stroke%3D'%23000' stroke-width%3D'0.9'%3E%3Cpolygon points%3D'2.77%2C0.00 5.54%2C1.60 5.54%2C4.80 2.77%2C6.40 -0.00%2C4.80 0.00%2C1.60'%2F%3E%3Cpolygon points%3D'0.00%2C4.80 2.77%2C6.40 2.77%2C9.60 0.00%2C11.20 -2.77%2C9.60 -2.77%2C6.40'%2F%3E%3Cpolygon points%3D'5.54%2C4.80 8.31%2C6.40 8.31%2C9.60 5.54%2C11.20 2.77%2C9.60 2.77%2C6.40'%2F%3E%3Cpolygon points%3D'2.77%2C9.60 5.54%2C11.20 5.54%2C14.40 2.77%2C16.00 -0.00%2C14.40 0.00%2C11.20'%2F%3E%3Cpolygon points%3D'0.00%2C-4.80 2.77%2C-3.20 2.77%2C-0.00 0.00%2C1.60 -2.77%2C-0.00 -2.77%2C-3.20'%2F%3E%3Cpolygon points%3D'5.54%2C-4.80 8.31%2C-3.20 8.31%2C-0.00 5.54%2C1.60 2.77%2C-0.00 2.77%2C-3.20'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+      --hex-mask: url("data:image/svg+xml;utf8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' width%3D'6.928' height%3D'9.000' viewBox%3D'0 0 6.928 9.000'%3E%3Cg fill%3D'none' stroke%3D'%23000' stroke-width%3D'0.9'%3E%3Cpolygon points%3D'3.464%2C0.50 6.928%2C2.50 6.928%2C6.50 3.464%2C8.50 0.000%2C6.50 0.000%2C2.50'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
       --sans: "Instrument Sans", system-ui, sans-serif;
       --serif: "Instrument Serif", Georgia, serif;
       --mono: "IBM Plex Mono", ui-monospace, monospace;
@@ -47,13 +47,13 @@
       position: sticky; top: 0; height: 100vh;
       display: flex; flex-direction: column; justify-content: space-between;
     }
-    /* Honeycomb strip along the top edge, the same tile the blog uses, in orange. */
+    /* Single row of hexes along the top edge, the same tile the blog uses, in orange. */
     aside.side::before {
       content: ""; position: absolute; left: 0; right: 0; top: 0; height: 9px;
       background: var(--accent);
       -webkit-mask-image: var(--hex-mask); mask-image: var(--hex-mask);
-      -webkit-mask-repeat: repeat; mask-repeat: repeat;
-      -webkit-mask-size: auto 9.6px; mask-size: auto 9.6px;
+      -webkit-mask-repeat: repeat-x; mask-repeat: repeat-x;
+      -webkit-mask-size: auto 9px; mask-size: auto 9px;
     }
     .side-label { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin: 0 0 1.4rem; }
     aside.side h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.9rem, 2.6vw, 2.5rem); line-height: 1.14; letter-spacing: -0.01em; margin: 0 0 1.1rem; }
