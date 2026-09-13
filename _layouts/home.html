@@ -19,11 +19,10 @@
             <a href="#news">News <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
             <a href="#projects">Key projects <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
             <a href="{{ "/keynote/" | relative_url }}">R/Pharma keynote <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
+            {%- if site.cv_url -%}
+            <a href="{{ site.cv_url }}" rel="noopener">Read my CV <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
+            {%- endif -%}
           </nav>
-
-          {%- if site.cv_url -%}
-          <a class="wf-cv" href="{{ site.cv_url }}" rel="noopener">Read my CV <span aria-hidden="true">&rarr;</span></a>
-          {%- endif -%}
         </div>
 
         <ul class="wf-contact">
