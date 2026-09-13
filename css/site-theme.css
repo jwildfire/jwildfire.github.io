@@ -2,7 +2,7 @@
    Site theme for jwildfire.github.io
    All-light: paper #fafaf8 · graphite ink #1f2328 · plum links #6c3270
    A seven-hue muted spectrum (oklch 0.68 / 0.12) marks the months of the
-   writing list, and a thin honeycomb strip carries it through dividers.
+   writing list, and a thin hex strip carries it through dividers.
    Instrument Serif (headings) · Instrument Sans (body) · IBM Plex Mono (meta)
    Loaded after minima's main.css; overrides by cascade order.
    The R/Pharma keynote page (/keynote/) shares the base but keeps its orange.
@@ -38,8 +38,8 @@
   /* Release marker: a small tag outline, used as a mask so it takes any colour. */
   --tag-mask: url("data:image/svg+xml;utf8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 24 24' fill%3D'none' stroke%3D'%23000' stroke-width%3D'2.6' stroke-linecap%3D'round' stroke-linejoin%3D'round'%3E%3Cpath d%3D'M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z'%2F%3E%3Ccircle cx%3D'7.5' cy%3D'7.5' r%3D'1.2' fill%3D'%23000'%2F%3E%3C%2Fsvg%3E");
 
-  /* Honeycomb outline tile, used as a mask so a colour shows through the strokes. */
-  --hex-mask: url("data:image/svg+xml;utf8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' width%3D'5.543' height%3D'9.600' viewBox%3D'0 0 5.543 9.600'%3E%3Cg fill%3D'none' stroke%3D'%23000' stroke-width%3D'0.9'%3E%3Cpolygon points%3D'2.77%2C0.00 5.54%2C1.60 5.54%2C4.80 2.77%2C6.40 -0.00%2C4.80 0.00%2C1.60'%2F%3E%3Cpolygon points%3D'0.00%2C4.80 2.77%2C6.40 2.77%2C9.60 0.00%2C11.20 -2.77%2C9.60 -2.77%2C6.40'%2F%3E%3Cpolygon points%3D'5.54%2C4.80 8.31%2C6.40 8.31%2C9.60 5.54%2C11.20 2.77%2C9.60 2.77%2C6.40'%2F%3E%3Cpolygon points%3D'2.77%2C9.60 5.54%2C11.20 5.54%2C14.40 2.77%2C16.00 -0.00%2C14.40 0.00%2C11.20'%2F%3E%3Cpolygon points%3D'0.00%2C-4.80 2.77%2C-3.20 2.77%2C-0.00 0.00%2C1.60 -2.77%2C-0.00 -2.77%2C-3.20'%2F%3E%3Cpolygon points%3D'5.54%2C-4.80 8.31%2C-3.20 8.31%2C-0.00 5.54%2C1.60 2.77%2C-0.00 2.77%2C-3.20'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  /* Hex outline tile, one row tall, used as a mask so a colour shows through the strokes. */
+  --hex-mask: url("data:image/svg+xml;utf8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' width%3D'6.928' height%3D'9.000' viewBox%3D'0 0 6.928 9.000'%3E%3Cg fill%3D'none' stroke%3D'%23000' stroke-width%3D'0.9'%3E%3Cpolygon points%3D'3.464%2C0.50 6.928%2C2.50 6.928%2C6.50 3.464%2C8.50 0.000%2C6.50 0.000%2C2.50'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
 
   --kn-sans: "Instrument Sans", system-ui, sans-serif;
   --kn-serif: "Instrument Serif", Georgia, serif;
@@ -63,16 +63,17 @@ a, a:visited { color: var(--kn-accent); }
 a:hover { color: var(--kn-accent-deep); text-decoration: underline; text-underline-offset: 0.2em; }
 :focus-visible { outline: 2px solid var(--kn-accent); outline-offset: 3px; border-radius: 2px; }
 
-/* Honeycomb strip: the spectrum, seen through a band of tiny hex outlines.
+/* Hex strip: the spectrum, seen through a single row of tiny hex outlines.
+   The tile is exactly as tall as the 9px band, so no second row is clipped in.
    Applied as a pseudo-element on dividers so the text above is unaffected. */
 hr, .site-header::before, .site-footer::before, .wf-rail::before, .wf-sechead::after, .wf-foot::before {
   background: var(--spec-gradient);
   -webkit-mask-image: var(--hex-mask);
   mask-image: var(--hex-mask);
-  -webkit-mask-repeat: repeat;
-  mask-repeat: repeat;
-  -webkit-mask-size: auto 9.6px;
-  mask-size: auto 9.6px;
+  -webkit-mask-repeat: repeat-x;
+  mask-repeat: repeat-x;
+  -webkit-mask-size: auto 9px;
+  mask-size: auto 9px;
   -webkit-mask-position: left top;
   mask-position: left top;
 }
