@@ -4,11 +4,11 @@ title: Privacy Policy
 permalink: /sms-privacy/
 ---
 
-**Personal Assistant text messaging service, operated by OrangeBot**
+**Personal Assistant text messaging service, operated by Jeremy Wildfire (doing business as OrangeBot)**
 
 Last updated: September 23, 2026
 
-OrangeBot operates a private text messaging assistant at (984) 401-8690. The service exists for the personal use of its owner and is not offered to the public.
+Jeremy Wildfire (doing business as OrangeBot) operates a private text messaging assistant at (984) 401-8690. The service exists for the personal use of its owner and is not offered to the public.
 
 ## What data we collect
 

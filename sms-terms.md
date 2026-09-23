@@ -4,7 +4,7 @@ title: Terms & Conditions
 permalink: /sms-terms/
 ---
 
-**Personal Assistant text messaging service, operated by OrangeBot**
+**Personal Assistant text messaging service, operated by Jeremy Wildfire (doing business as OrangeBot)**
 
 Last updated: September 23, 2026
 
@@ -24,4 +24,4 @@ See our [Privacy Policy](/sms-privacy/) for how message data is handled.
 
 ## Contact
 
-OrangeBot — jwildfire@gmail.com
+Jeremy Wildfire (OrangeBot) — jwildfire@gmail.com
