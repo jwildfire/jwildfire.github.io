@@ -1,9 +1,10 @@
-# Keynote outline — rough draft 1
+# Keynote outline — rough draft 2
 
 ## Overview
 Drafted 2026-10-01 from `research-digest.md` (including the section 7 addendum). L1 = sections, L2 = slides, L3 = details.
 The talk is on the morning of Wednesday 21 October 2026, in a 40-minute slot (confirmed by Jeremy, 2026-10-01). About 40 slides.
-Minutes after each section name are a suggested split that adds up to 40; whether Q&A comes out of the 40 is not known yet.
+Draft 2 (2026-10-01) regroups the detailed outline under the four beats below, about 10 minutes and 10 slides each; whether Q&A comes out of the 40 is not known yet.
+`[cut?]` = a slide kept from draft 1 that is the first to go if the beat runs long.
 `[TODO]` = content that does not exist yet. `[Orange]` = a transition slide with a photo from `keynote/assets/orange/`.
 Sources are named in brackets: diary #N is the developer diary post, hub is obot.roadmap.
 
@@ -17,69 +18,88 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
 
 ## Detailed Outline
 
-1. Opening: the hook (3 min)
-  - Title
+1. Opening: Orange and the path to safetyGraphics (10 min) — drafted, slides 1–11
+  - Title (built, slide 1)
     - "Building open-source clinical trial tools with agentic AI"
     - Working title from the keynote page; earlier titles were about "AI in the loop" and clinical trial operations
-  - The question
-    - Built, slide 2
+  - The question (built, slide 2)
     - "What can we actually do with AI agents right now?" [diary #1]
     - Asked four times across the summer; the talk answers it and ends on it
-  - How I tried to answer it
-    - Built, slide 3 (draft bullets)
+  - How I tried to answer it (built, slide 3, draft bullets)
     - Working in public: nine diary posts, June to September, every one with an AI collaboration note
     - "My plan has changed at least three times since I found out about the keynote" [diary #1]
     - The submitted abstract versus what happened: "the reality is messier" [diary #1]
-  - Introducing Orange
-    - Photo: `orange-blue-hat.jpg` (built, slide 4)
+  - Introducing Orange (built, slide 4)
+    - Photo: `orange-blue-hat.jpg`
     - Origin story: Chilean street cat, Santiago, the first safetyGraphics ideas [hub diary 2026-07-11; not yet told in a post]
     - Line on the slide: "He was a very good cat."
     - Notes: "But, first I want to introduce a key collaborator, Orange! He was a Chilean street cat and was very silly. One time he fell from our 7th story window into the parking lot and survived! He loved sitting with me while I worked. He really was a good cat."
-  - Orange at work
-    - Photo: `orange-asleep-on-trackpad.jpg` (built, slide 5)
+  - Orange at work (built, slide 5)
+    - Photo: `orange-asleep-on-trackpad.jpg`
     - Line on the slide: "But a somewhat inconsistent co-worker"
     - Notes: "He was a bit of an inconsistent cowoker though. I want to tell you about some of the work Orange and I did together! He was there both when I learned R and when I learned Clinical trials."
-  
-2. Where we came from: SafetyGraphics (4 min)
-  - [Orange] transition
-    - Photo option: `orange-kitten-thinkpad-small.jpg` or `orange-kitten-macbook-small.jpg` (the early years; both are low resolution)
-  - From a wall of numbers to interactive graphics
-    - SAS in grad school, R at Rho, then D3 after seeing the New York Times interactives: "Why can't I do this for work?" [diary #3]
-    - Images: `fig1_NYT.png`, `fig2_aeexplorer.gif`
-  - safetyGraphics and the people who built it
+    - Hand-off line: "I promise I'm not *just* going to talk about my cat today. This actually is a talk about AI and how it has completely changed how I do my job over the last year."
+  - [Orange] Where we came from (built, slide 6)
+    - Photo: `orange-kitten-macbook-small.jpg` (low resolution; a larger copy would help)
+  - "Why can't I do this for work?" (built, slide 7)
+    - SAS in grad school, R at Rho, then D3 after seeing the New York Times interactives [diary #3]
+    - Image: `fig1_NYT.png`
+    - Orange tie-in: Herman Mitchell let Jeremy work from Chile for five years [diary #3 footnote]
+  - A handful of webpages beats a 200-page PDF (built, slide 8)
+    - The wall of numbers; the Rho Graphics Group; the Adverse Event Explorer [diary #3]
+    - Image: `fig2_aeexplorer.gif`
+  - safetyGraphics and the people who built it (built, slide 9)
     - ASA-DIA Safety Working Group: five years of clinicians and data scientists together [diary #3]
-    - The hep explorer and its clinical workflow; image `fig3_hepexplorer.gif`
-    - Acknowledgements up front, by name
-  - What we did not do
+    - Acknowledgements up front, by name; `[TODO]` Jeremy confirms which names go on the slide
+  - The hepatic explorer and its clinical workflow (built, slide 10)
+    - "The best work we did" [diary #3]; image `fig3_hepexplorer.gif`
+    - Plants the workflow document that the agents are handed in beat 3
+  - What we did, and what we didn't (built, slide 11)
     - "Change the industry standard for how people monitor safety" [diary #3]
     - Modernizing it "needed a team and a budget I no longer have" — or does it? [diary #3]
-  - The industry got ready without knowing it
+
+2. OpenRBQM: GxP monitoring with AI in the loop (10 min) — not drafted
+  - Source plan (Jeremy, 2026-10-01): the agent drafts from public sources (the gsm packages, gsm.agent, gsm.roadmap, qcthat, the submitted abstract); Jeremy adds the inside view and cuts what should not be said on stage
+  - [Orange] transition
+    - Photo option: `orange-reviewing-spreadsheet.jpg` or `orange-spreadsheet-side-eye.jpg` (the reviewer)
+  - The industry got ready without knowing it `[cut?]`
     - SAS macro libraries, then hybrid SAS and R, then open frameworks with local extensions [old deck, act 1]
     - `[TODO]` this exists only as dictation bullets; needs dates and one or two examples
-  
-  3.  Using Agents to build GxP R Packages (10 min)
-
   - Monitoring as software: gsm and OpenRBQM
     - Workflows, tests, qualification: the quality framework that already exists [diary #4]
-    - The day job today is "AI in the loop": Copilot, humans own every deliverable, release rate up about 50% [diary #1]
+    - `[TODO]` one picture of what the team ships (a KRI report or dashboard)
+  - AI in the loop, today
+    - The day job: Copilot, "humans own the process and all deliverables", agentic AI adopted from January 2026 [diary #1]
+    - Release rate up about 50% year on year; issues and pull requests roughly doubled; "not a controlled productivity study" [diary #1]
     - `[TODO]` confirm what can be said publicly about the team's numbers
-  - `[TODO]` need more slides
+  - The agentic engineering loop
+    - Issue → requirement → implementation → tests → demo → pull request → human review [old deck]
+    - gsm.agent: red-green test-driven development, from a failing test to a merged pull request [submitted abstract]
+  - Requirements before work
+    - gsm.roadmap: AI-assisted requirement decomposition [submitted abstract]
+  - Traceability as an output
+    - qcthat: traceability matrices generated from tests and issues [submitted abstract]
+  - A person still owns it
+    - The four "a person must…" lines [old deck]
+    - Evidence, permissions, traceability, humans [old deck guardrails grid]
+  - What good practice looks like now
+    - Validation as code, generated documentation and traceability, human gates [promised in diary #9]
+    - `[TODO]` diary #10 is not written; this slide may have to be drafted for the talk directly
   - The bridge
     - Open, software-shaped workflows are agent-ready [old deck: "Why this matters for AI"]
     - Agentic AI is arriving into this context, not replacing it [dictation notes 2026-06-06]
- 
 
- 4. The experiment: rebuilding safetyGraphics with agents (6 min)
+3. safety.viz: OrangeBot, safetyGraphics and gsm with semi-autonomous agents (10 min) — not drafted
   - From Orange to obot
     - The agent is named after the cat [diary #2]
-    - Sets up the running joke: Orange "working" on every transition slide
-    - Photo option: `orange-supervising-laptop.jpg` or `orange-desk-copilot.jpg`
-    - "I promise I'm not *just* going to talk about my cat today. This actually is a talk about AI and how it has completely changed how I do my job over the last year. " 
-  - [Orange] transition
-    - Photo option: `orange-paw-on-github.jpg` (paw on a GitHub page)
+    - Photo option: `orange-supervising-laptop.jpg`, `orange-desk-copilot.jpg` or `orange-paw-on-github.jpg`
+    - Clean-room laptop with none of my credentials; "51% fun and 49% frustrating" [diary #2]
   - The plan: keep, modernize, borrow
     - Keep the expert workflows and interactivity; modernize the code; borrow gsm's quality framework [diary #4]
     - "The outputs need to be checkable — by a person, by a test suite, and by another agent" [diary #4]
+  - obot v3: a plan, a playbook and an identity
+    - Claude Code plus a roadmap repo, a playbook repo and a bot account [diary #6]
+    - One weekend: 5 sessions, 16 named agents
   - The first renderer took weeks; the next six took a weekend
     - Release timeline, 11–12 July: v0.1.0 at 8am, v1.0.0 at 10:30pm, v1.1.0 an hour later, v1.2.0 the next night [diary #5]
     - Image: `safety-viz-gallery.png`
@@ -89,8 +109,12 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
   - Papers → prompts → prototypes
     - Jim Buchanan sends references after a demo; two working prototypes the same evening [diary #7]
     - Hep composite view: 176M tokens, about $143. QT explorer: 308M tokens, about $241
-    - The point: agents are only as good as the clinical workflow they are handed
+    - The point: agents are only as good as the clinical workflow they are handed (pays off slide 10)
     - Images: `hep-explorer-composite.gif`, `qt-explorer-demo.gif`
+  - "Is it validated?"
+    - Then: "Not really. It's exploratory." Now: 249 unit tests and 94 browser tests keyed to requirement IDs [diary #5]
+    - Every chart ships with a gallery page, an evidence report and an R widget on a public site
+    - Image: `safety-viz-evidence.png`
   - Where it stands today
     - 13 chart renderers and six releases since mid-July; gsm.safety brings them to R [diary #8]
     - Newest, unreleased: the Patient Journey Explorer with drafted, cited narratives [digest 7b]
@@ -98,70 +122,46 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
   - Demo
     - `[TODO]` which demo: the gallery, the Patient Journey Explorer, demo-301, or the offline app (not started) [digest 7c]
     - `[TODO]` a recorded fallback either way
-
-5. Evidence is the product (6 min) 
-  - [Orange] transition
-    - Photo option: `orange-reviewing-spreadsheet.jpg` or `orange-spreadsheet-side-eye.jpg` (the reviewer)
-  - "Is it validated?"
-    - Then: "Not really. It's exploratory." Now: 249 unit tests and 94 browser tests keyed to requirement IDs [diary #5]
-    - Image: `safety-viz-evidence.png`
-  - Not done until it is demonstrable
-    - Every chart ships with a gallery page, an evidence report and an R widget on a public site
-    - Requirements first: one ID follows a chart from the requirement to the test to the evidence page
-  - Agents catching real errors, including their own
-    - The death count that went from 4 to 13, measured twice by routes that share no code [gsm.safety NEWS, v1.2.0]
-    - 97 claims on the org chart adversarially checked; 68 confirmed, the rest corrected [hub org-chart report]
-  - A person still owns it
-    - The four "a person must…" lines [old deck]
-    - Evidence, permissions, traceability, humans [old deck guardrails grid]
-  - What good practice looks like now
-    - Validation as code, generated documentation and traceability, human gates [promised in diary #9]
-    - `[TODO]` diary #10 is not written; this slide may have to be drafted for the talk directly
-
-6. How much can they do on their own? (9 min)
-  - [Orange] transition
-    - Photo option: `orange-asleep-on-keyboard.jpg` (fully autonomous)
-  - The five levels
-    - From spicy autocomplete to the dark factory; "comfortable at level 3" in February [post 2026-02-10]
-    - The ladder the next five slides climb
-  - obot v1 and v2: an agent on its own laptop
-    - Clean-room MacBook with none of my credentials; the guardrail is the blast radius [diary #2]
-    - "51% fun and 49% frustrating"; 266 commits and 18 merged pull requests by 10 June [diary #2]
-  - obot v3: a plan, a playbook and an identity
-    - Claude Code plus a roadmap repo, a playbook repo and a bot account [diary #6]
-    - One weekend: 5 sessions, 16 named agents
   - obot v4: the agent became an organisation
-    - Concierge, operating officer, fleet manager, short-lived workers [diary #8]
-    - The load-bearing watcher was a 5-minute timer script, not an agent
+    - Concierge, operating officer, fleet manager, short-lived workers; the load-bearing watcher was a 5-minute timer script [diary #8]
+    - "Nine cases in one night of something reporting success while having done nothing"; about $7,000 at API prices across 24 active days [diary #8]
     - Image: the org chart [hub org-chart report]
-  - Quietly wrong
-    - "Nine cases in one night of something reporting success while having done nothing" [diary #8]
-    - About $7,000 of usage at API prices across 24 active days [diary #8]
   - 10 September: I shut it down
     - "The agent structure held… it never produced a release for him to review" [hub diary 2026-09-10]
-    - It built a robust organisation and then spent it on itself
-  - Back down the ladder, on purpose
-    - One requirement per session, a definition of done, me driving [hub plan 2026-09-10]
-    - Three weeks since: one new explorer, no releases [digest 7b]
+    - Back to one requirement per session, a definition of done, me driving; three weeks since: one new explorer, no releases [digest 7b]
     - `[TODO]` this exists only in agent-written hub pages; needs Jeremy's own account
-  - Mixed feelings
-    - "I'll talk about that more in the keynote" [diary #8]
-    - `[TODO]` Jeremy only
-  - What I would tell you to do
-    - Never let an agent be the sole watcher of an agent [diary #8]
-    - Commit working notes; transcript-only work dies with the session [unpublished draft]
-    - Gates before fan-out; pick models like picking staff [unpublished draft]
-    - Requirements before work
 
-7. It is not a capabilities problem anymore (4 min)
+4. Lessons learned: what is AI good at now, and what is next (10 min) — not drafted
   - [Orange] transition
-    - Photo option: `orange-looking-up-agenda.jpg` (so what now?)
+    - Photo option: `orange-looking-up-agenda.jpg` (so what now?) or `orange-asleep-on-keyboard.jpg`
   - The summer in one number
     - About 315,000 lines across 367 pull requests, 23 releases and 12 repositories, "from one person and a few agents, working in spare time" [diary #9]
+  - What is AI good at?
+    - Teaching me things!
+    - Busy work: making slides (thank goodness!), meeting minutes
+    - Design: artifacts are amazing; .md → .html
+    - Syntax: `git`
+    - Writing code (add links)
+    - Catching real errors, including its own: the death count that went from 4 to 13, measured twice [gsm.safety NEWS, v1.2.0]; 97 claims checked, 68 confirmed [hub org-chart report]
+  - What is AI bad at?
+    - Communicating: being concise
+    - Prioritizing
+    - Remembering
+    - Knowing when it has failed: "quietly wrong" [diary #8]
+  - Best practices
+    - Use version control
+    - Standard SDLC
+    - Just use Claude Code or Codex or ...
+    - Never let an agent be the sole watcher of an agent [diary #8]
+    - Commit working notes; transcript-only work dies with the session [unpublished draft]
+    - Requirements before work
   - The bottleneck moved
     - "Review, not writing, is the bottleneck" [diary #9]
     - "The bottleneck still isn't intelligence. It's plumbing." [unpublished draft]
-  - The execution gap
+  - Mixed feelings
+    - "I'll talk about that more in the keynote" [diary #8]
+    - `[TODO]` Jeremy only
+  - The execution gap `[cut?]`
     - AI standards move in months; GxP moves slowly by design [diary #9]
     - Version control and semantic versioning as a prerequisite; agents as "the best change-management tool we have"
   - Open source is the path
@@ -170,46 +170,26 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
   - What is next
     - The same data twice: monitoring charts that become reporting figures after database lock [diary #4]
     - The 22 figures in the FDA safety guidance: all specified, none drawn yet [digest 7b]
-    - Clinical study reports, your own files, nothing leaving the browser
     - `[TODO]` decide how much of the unbuilt mid-October plan to promise on stage
-
-8. Close (2 min)
-  - [Orange] transition
-    - Photo option: `orange-asleep-on-typing-arm.jpg`, or the porch video `orange-porch.mov`
-  - A compressed century of trials
-    - Amodei: "A compressed century of biology is only possible with a compressed century of trials" [diary #9]
   - If the models were frozen today
     - "Clinical trials would still be completely different in five years" [diary #9]
+    - Amodei: "A compressed century of biology is only possible with a compressed century of trials" [diary #9] `[cut?]`
   - The question, one last time
     - "What can we do right now?" — quite a lot. So what is stopping us?
-  - Thank you
+  - [Orange] Thank you
+    - Photo option: `orange-asleep-on-typing-arm.jpg`, or the porch video `orange-porch.mov`
     - Links: the deck, the diary, the repos; QR code
     - `[TODO]` turn the keynote page into the "start here" page and link the deck from it
 
+## Left out of draft 2
 
-## To work in - Maybe a lessons learned section closer
+Kept here so nothing from draft 1 is lost; pull any of it back in.
 
-- What is AI good at? 
-  - Teaching me things! 
-  - Busy work
-    - Making slides! Thank goodness! 
-    - Meeting Minutes
-  - Design
-    - Artifacts are amazing! 
-    - .md --> .html
-  - syntax
-    - `git`
-  - writing code (add links)
-- What is AI bad at? 
-  - Communicating
-    - Being concise
-  - Prioritizing
-  - Remembering
-- Best practices
-  - Use version control
-  - standard SDLC
-  - Just use claude code or codex or ... 
-
+- The five levels of AI-assisted development as a ladder slide [post 2026-02-10]
+- obot v1 baseline numbers: 266 commits and 18 merged pull requests by 10 June [diary #2]
+- Gates before fan-out; pick models like picking staff [unpublished draft]
+- "Not done until it is demonstrable" as its own slide (folded into "Is it validated?")
+- Clinical study reports, your own files, nothing leaving the browser (the unbuilt app plan)
 
 ## Open before this can be final
 
@@ -217,4 +197,5 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
 - Which demo, and whether it is live or recorded
 - Whether the industry-history slide stays (it has the least material behind it)
 - Whether diary #10 is written before the talk
-- Section colours: seven sections map one-to-one onto the seven hues, if that split holds
+- Section colours: beat 1 uses the amber hue throughout (it suits Orange); beats 2–4 each take one of the other hues
+- Beats 3 and 4 are each about three slides over a 10-slide budget; the `[cut?]` marks are where to start

@@ -139,7 +139,8 @@
     /* Image / screenshot */
     .s-image figure { margin: 0; flex: 1; display: flex; flex-direction: column; min-height: 0; }
     .s-image .frame { flex: 1; min-height: 0; border: 2px dashed var(--rule); border-radius: 24px; display: grid; place-items: center; overflow: hidden; background: var(--panel); }
-    .s-image .frame img { max-width: 100%; max-height: 100%; object-fit: contain; }
+    .s-image .frame { position: relative; }
+    .s-image .frame img { position: absolute; inset: 16px; width: calc(100% - 32px); height: calc(100% - 32px); object-fit: contain; }
     .s-image .frame .ph { font-family: var(--mono); font-size: 26px; color: var(--faint); }
     .s-image figcaption { margin-top: 20px; font-family: var(--mono); font-size: 22px; color: var(--soft); }
     .s-image h2 { margin-bottom: 32px; font-size: 64px; }
@@ -274,15 +275,122 @@
         Jeremy's notes: "He was a bit of an inconsistent coworker though. I want to tell you about
         some of the work Orange and I did together! He was there both when I learned R and when I
         learned clinical trials."
-        <br><br>Hands off to section 2 (where we came from: safetyGraphics).
+        <br><br>Hand-off line (Jeremy's): "I promise I'm not <i>just</i> going to talk about my cat
+        today. This actually is a talk about AI and how it has completely changed how I do my
+        job over the last year."
+      </aside>
+    </section>
+
+    <!-- 1b · The path to safetyGraphics (still beat 1, same hue) -->
+    <section class="slide s-photo" data-hue="1">
+      <figure class="photo">
+        <img src="assets/orange/orange-kitten-macbook-small.jpg" alt="Orange as a kitten, lying next to an open laptop and looking up at the camera" />
+      </figure>
+      <p class="kicker pkg" style="--pkg: url(assets/hex/forcats.png)">Orange, the early years</p>
+      <h2>Where we <em style="white-space: nowrap">came from</em></h2>
+      <aside class="notes">
+        Transition into the safetyGraphics back-story. Orange was there "both when I learned R and
+        when I learned clinical trials" (Jeremy's notes).
+        <br><br>Photo is a 360px original and will look soft on a projector; swap in a larger copy
+        if one exists. High-resolution alternative: orange-kitten-shredding.jpg.
+      </aside>
+    </section>
+
+    <section class="slide s-image" data-hue="1">
+      <p class="kicker">2012</p>
+      <h2>“Why can't I do this <em>for work?</em>”</h2>
+      <figure>
+        <div class="frame"><img src="../assets/img/fig1_NYT.png" alt="An interactive election graphic from the New York Times, 2012" /></div>
+        <figcaption>Interactive graphics in the New York Times · two weeks to learn JavaScript and D3</figcaption>
+      </figure>
+      <aside class="notes">
+        Source: diary #3, "Re-Introducing safetyGraphics" (2026-06-16), "A Brief Prehistory".
+        Beats: SAS in grad school (an 80-page master's paper, about 60 pages of it SAS Graph output);
+        Agustin Calatroni introduced R at Rho, pre-tidyverse, lots of lattice; then the NYT
+        interactives. Herman Mitchell said go for it and gave two weeks to learn JavaScript; the
+        first result was "the clunkiest interactive graphic ever", built with Protovis (later D3).
+        <br><br>Orange tie-in: Herman also let Jeremy work from Chile for five years, which is
+        where Orange came from.
+      </aside>
+    </section>
+
+    <section class="slide s-image" data-hue="1">
+      <p class="kicker">The Rho Graphics Group</p>
+      <h2>A handful of webpages beats a <em>200-page PDF</em></h2>
+      <figure>
+        <div class="frame"><img src="../assets/img/fig2_aeexplorer.gif" alt="The Adverse Event Explorer, an interactive table of adverse events by treatment arm" /></div>
+        <figcaption>The Adverse Event Explorer · open source, in the browser</figcaption>
+      </figure>
+      <aside class="notes">
+        Source: diary #3. The "wall of numbers" in a clinical study report was "100% impenetrable"
+        (the post uses a Harry Potter GIF for the feeling). The Graphics Group at Rho shipped
+        open-source tools in R and JavaScript: ggplot, D3 renderers wrapped as htmlwidgets, hosted
+        in Shiny. The AE Explorer was inspired by Frank Harrell's Hmisc.
+        <br><br>Headline paraphrases the post: "a handful of webpages is more useful and usable
+        than a 200-page PDF."
+        <br><br>The clinicians did not want a business-intelligence suite; they wanted "a guided
+        clinical monitoring workflow supported by simple tools in their web browser."
+      </aside>
+    </section>
+
+    <section class="slide s-bullets" data-hue="1">
+      <p class="kicker">ASA–DIA Safety Working Group</p>
+      <h2>safetyGraphics, and the <em>people</em> who built it</h2>
+      <ul>
+        <li>Clinicians and data scientists, dozens of companies, five years <span>— papers, conferences, the FDA</span></li>
+        <li>One open-source R package <span>— a Shiny app for exploring a trial's safety data in the browser</span></li>
+        <li>Jim Buchanan, Susan Mayo, Xiao Ni, Melvin Munsaka, Frank Harrell</li>
+        <li>Agustin Calatroni, Herman Mitchell, Russ Helms and the Rho Graphics Group</li>
+      </ul>
+      <aside class="notes">
+        Acknowledgements up front, as in diary #3 ("Why do the acknowledgements always come at the
+        end?"). All names are from that post's footnotes; Jeremy to confirm who goes on the slide.
+        Also thanked there: Alexa, his parents, Kathy Roggenkamp, the Posit team (Ramnath, Joe, Phil),
+        and the Graphics Group hires (linked by GitHub handle in the post, not by name).
+        <br><br>"What made the working group special was how closely the clinicians and data
+        scientists actually worked together. The doctors knew how to monitor trials, and we knew
+        how to build the tools to help them do it."
+      </aside>
+    </section>
+
+    <section class="slide s-image" data-hue="1">
+      <p class="kicker">The best thing we built</p>
+      <h2>The hepatic explorer, and a <em>clinical workflow</em> to go with it</h2>
+      <figure>
+        <div class="frame"><img src="../assets/img/fig3_hepexplorer.gif" alt="The eDISH hepatic safety explorer: a scatter plot of liver test results with participant drill-down" /></div>
+        <figcaption>eDISH: the standard plot for flagging potential drug-induced liver injury</figcaption>
+      </figure>
+      <aside class="notes">
+        Source: diary #3. "I think the best work we did is this eDISH hepatic explorer … and the
+        associated clinical workflow." Worth planting here: the workflow document is what the
+        agents were later handed (diary #6 ports the guide; diary #7 builds on Jim Buchanan's
+        references), so this slide pays off in beat 3.
+      </aside>
+    </section>
+
+    <section class="slide s-split" data-hue="1">
+      <p class="kicker">A few quiet years</p>
+      <h2>What we did, and what we <em>didn't</em></h2>
+      <div class="cols">
+        <div class="col"><h3>We showed</h3><p>Open-source, interactive graphics work in clinical trials.</p></div>
+        <div class="col"><h3>We didn't</h3><p>“Change the industry standard for how people monitor safety.”</p></div>
+      </div>
+      <aside class="notes">
+        Source: diary #3, "A Few Quiet Years". Jeremy stopped active work on safetyGraphics on
+        moving to Gilead in 2021 to work on RBQM. "Those 200-page walls of text still exist in
+        Clinical Study Reports, and safetyGraphics isn't fully GxP-compliant."
+        <br><br>The turn into beat 2: "Doing safetyGraphics justice always felt like it needed a
+        team and a budget I no longer have — but with AI agents, I'm honestly not sure that's true
+        anymore. Figuring out whether it is, is what this whole keynote experiment is about."
+        Then: the OpenRBQM team "is already dragging clinical monitoring toward something more modern."
       </aside>
     </section>
 
     <section class="slide s-todo" data-hue="3">
       <p class="kicker">Outline</p>
-      <h2>Sections 2–8 <em>to be drafted</em></h2>
+      <h2>Beats 2–4 <em>to be drafted</em></h2>
       <div class="todo">
-        <p>Section 1 (slides 1–5) is drafted. The rest follows keynote/_notes/outline.md.</p>
+        <p>Beat 1 (slides 1–11) is drafted. The rest follows keynote/_notes/outline.md.</p>
         <ul>
           <li>Source digest: keynote/_notes/research-digest.md</li>
           <li>Drop content in: keynote/_notes/inbox/</li>
