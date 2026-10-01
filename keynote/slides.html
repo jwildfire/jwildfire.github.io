@@ -90,6 +90,8 @@
 
     .kicker { font-family: var(--mono); font-size: 24px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--hue); margin: 0 0 28px; display: flex; align-items: center; gap: 16px; }
     .kicker::before { content: ""; width: 22px; height: 25px; background: var(--hue); clip-path: var(--hex-clip); flex: none; }
+    /* Package hex as the kicker's bullet: class="kicker pkg" style="--pkg: url(assets/hex/NAME.png)". */
+    .kicker.pkg::before { width: 56px; height: 65px; clip-path: none; background: var(--pkg) center / contain no-repeat; }
     h1, h2 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.01em; margin: 0; }
     h1 { font-size: 112px; line-height: 1.02; }
     h2 { font-size: 76px; line-height: 1.06; margin-bottom: 44px; }
@@ -237,7 +239,7 @@
       <figure class="photo" style="--focus: 50% 40%">
         <img src="assets/orange/orange-asleep-on-trackpad.jpg" alt="Orange asleep with his head on a laptop while Jeremy works the trackpad around him" />
       </figure>
-      <p class="kicker">Orange, at work</p>
+      <p class="kicker pkg" style="--pkg: url(assets/hex/forcats.png)">Orange, at work</p>
       <h2>But a somewhat inconsistent <em style="white-space: nowrap">co-worker</em></h2>
       <aside class="notes">
         Second beat of the hook; the line is Jeremy's (2026-10-01). First of the Orange "working"
