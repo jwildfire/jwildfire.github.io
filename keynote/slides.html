@@ -166,12 +166,10 @@
     .s-photo .photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: var(--focus, 50% 50%); }
     .s-photo .num { color: #fff; text-shadow: 0 1px 6px rgba(31, 35, 40, 0.6); }
 
-    /* Plan vs what happened: a straight line over a looping one whose points are the
-       diary posts, each a link (slide 3). */
+    /* Diary timeline: a looping line whose numbered points are the diary posts, each a link (slide 3). */
     .pvr { flex: 1; min-height: 0; }
     .pvr svg { width: 100%; height: 100%; display: block; }
     .pvr text { font-family: var(--sans); }
-    .pvr .h { font-family: var(--mono); font-size: 22px; letter-spacing: .12em; text-transform: uppercase; fill: var(--soft); }
     .pvr .posts circle { fill: var(--ink); }
     .pvr .posts .n { font-family: var(--mono); font-size: 19px; font-weight: 600; fill: #fff; text-anchor: middle; }
     .pvr .posts .d { font-family: var(--mono); font-size: 18px; letter-spacing: .1em; text-transform: uppercase; fill: var(--soft); }
@@ -257,11 +255,8 @@
       <p class="kicker">How I tried to answer it</p>
       <h2>By working <em>in public</em></h2>
       <div class="pvr">
-        <svg viewBox="0 0 1320 490" role="img" aria-label="The plan was a straight line; what happened is a looping line through nine diary posts, each linked.">
+        <svg viewBox="0 105 1320 385" role="img" aria-label="A looping timeline through nine diary posts, June to September, each linked.">
           <defs><linearGradient id="sg" gradientUnits="userSpaceOnUse" x1="20" x2="1300"><stop offset="0" stop-color="#d87972"/><stop offset=".17" stop-color="#c78a3b"/><stop offset=".33" stop-color="#77a95b"/><stop offset=".5" stop-color="#00afa9"/><stop offset=".67" stop-color="#519fdd"/><stop offset=".83" stop-color="#988bdd"/><stop offset="1" stop-color="#c67bb6"/></linearGradient></defs>
-          <text class="h" x="20" y="22">The plan</text>
-          <line x1="20" y1="48" x2="1262" y2="48" stroke="#98a0aa" stroke-width="6" stroke-linecap="round"/><polygon points="1260,32 1300,48 1260,64" fill="#98a0aa"/>
-          <text class="h" x="20" y="100">What happened</text>
           <path d="M20,300 C60,300 40,215 110,215 C200,215 265,300 205,300 C145,300 155,385 245,385 C305,385 320,200 380,200 C590,200 305,400 515,400 C605,400 630,315 560,315 C490,315 560,220 650,220 C740,220 695,380 785,380 C1015,380 690,205 920,205 C1010,205 1075,290 1010,290 C945,290 965,395 1055,395 C1255,395 990,215 1190,215 C1250,215 1215,300 1262,300" fill="none" stroke="url(#sg)" stroke-width="7" stroke-linecap="round"/>
           <polygon points="1260,284 1300,300 1260,316" fill="#c67bb6"/>
           <g class="posts">
