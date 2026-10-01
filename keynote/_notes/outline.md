@@ -13,7 +13,7 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
   - Introducing Orange
     - Photo: `orange-blue-hat.jpg` (built, slide 2)
     - Origin story: Chilean street cat, Santiago, the first safetyGraphics ideas [hub diary 2026-07-11; not yet told in a post]
-    - `[TODO]` Jeremy's line
+    - Line on the slide: "He was a very good cat."
   - From Orange to obot
     - The agent is named after the cat [diary #2]
     - Sets up the running joke: Orange "working" on every transition slide
