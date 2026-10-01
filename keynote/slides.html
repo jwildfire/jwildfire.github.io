@@ -155,6 +155,13 @@
     .s-photo .photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: var(--focus, 50% 50%); }
     .s-photo .num { color: #fff; text-shadow: 0 1px 6px rgba(31, 35, 40, 0.6); }
 
+    /* Plan vs what happened: a straight line over a tangled one (slide 3). */
+    .pvr { flex: 1; display: grid; grid-template-rows: 1fr 2.2fr; gap: 10px; min-height: 0; }
+    .pvr .row { display: grid; grid-template-columns: 200px 1fr; align-items: center; min-height: 0; }
+    .pvr h3 { font-family: var(--mono); font-size: 24px; letter-spacing: .12em; text-transform: uppercase; color: var(--soft); margin: 0; font-weight: 500; }
+    .pvr svg { width: 100%; height: 100%; }
+    .pvr text { font-family: var(--sans); font-size: 22px; fill: var(--ink); }
+
     /* Placeholder slide for the outline stage. */
     .s-todo { background: repeating-linear-gradient(135deg, var(--bg) 0 28px, #f4f5f1 28px 56px); }
     .s-todo .todo { margin-top: 12px; font-family: var(--mono); font-size: 26px; color: var(--soft); border: 2px dashed var(--hue); border-radius: 18px; padding: 28px 36px; background: var(--bg); }
@@ -230,19 +237,40 @@
       </aside>
     </section>
 
-    <section class="slide s-bullets" data-hue="1">
+    <section class="slide" data-hue="1">
       <p class="kicker">How I tried to answer it</p>
-      <h2>By working <em>in public</em></h2>
-      <ul>
-        <li>Nine developer-diary posts, June to September <span>— each with its own AI collaboration note</span></li>
-        <li>“My plan has changed at least three times since I found out about the keynote”</li>
-        <li>The abstract I submitted, and what happened instead <span>— “the reality is messier”</span></li>
-      </ul>
+      <h2>“The reality is <em>messier</em>”</h2>
+      <div class="pvr">
+        <div class="row"><h3>The plan</h3>
+          <svg viewBox="0 0 1100 120" preserveAspectRatio="none"><line x1="20" y1="60" x2="1040" y2="60" stroke="#98a0aa" stroke-width="6" stroke-linecap="round"/><polygon points="1040,44 1080,60 1040,76" fill="#98a0aa"/></svg>
+        </div>
+        <div class="row"><h3>What happened</h3>
+          <svg viewBox="0 0 1100 300">
+            <defs><linearGradient id="sg" x1="0" x2="1"><stop offset="0" stop-color="#d87972"/><stop offset=".17" stop-color="#c78a3b"/><stop offset=".33" stop-color="#77a95b"/><stop offset=".5" stop-color="#00afa9"/><stop offset=".67" stop-color="#519fdd"/><stop offset=".83" stop-color="#988bdd"/><stop offset="1" stop-color="#c67bb6"/></linearGradient></defs>
+            <path d="M20,150 C90,150 110,60 170,70 C250,84 230,220 160,210 C100,200 150,120 260,140 C340,155 330,40 410,50 C500,62 480,240 400,236 C330,232 380,130 500,150 C600,166 560,30 660,60 C760,90 700,260 620,230 C560,208 640,140 740,150 C830,160 800,250 880,240 C960,230 900,90 980,110 C1020,120 1030,150 1050,150" fill="none" stroke="url(#sg)" stroke-width="7" stroke-linecap="round"/>
+            <polygon points="1046,134 1086,150 1046,166" fill="#c67bb6"/>
+            <g>
+              <circle cx="170" cy="70" r="9" fill="#1f2328"/><text x="150" y="42">Obot on its own laptop</text>
+              <circle cx="400" cy="236" r="9" fill="#1f2328"/><text x="330" y="282">v2 abandoned</text>
+              <circle cx="410" cy="50" r="9" fill="#1f2328"/><text x="390" y="24">a billion tokens</text>
+              <circle cx="660" cy="60" r="9" fill="#1f2328"/><text x="640" y="32">the agent becomes an organisation</text>
+              <circle cx="620" cy="230" r="9" fill="#1f2328"/><text x="560" y="280">quietly wrong</text>
+              <circle cx="880" cy="240" r="9" fill="#1f2328"/><text x="820" y="288">I shut it down</text>
+            </g>
+          </svg>
+        </div>
+      </div>
       <aside class="notes">
-        Draft bullets from the outline; Jeremy to reword. Both quotes are from diary #1 (2026-06-10),
-        which reprints the submitted abstract ("AI in the Loop…") and calls it out of date the same day.
-        The nine posts are listed on jwildfire.github.io/keynote. Diary #10 (GxP best practices) is
-        promised in diary #9 but not written; if it publishes before 21 October this becomes ten.
+        Talking points (the slide's earlier bullets; Jeremy to reword):
+        <br>• Working in public: nine developer-diary posts, June to September, each with its own AI collaboration note.
+        <br>• "My plan has changed at least three times since I found out about the keynote."
+        <br>• The abstract I submitted, and what happened instead: "the reality is messier."
+        <br><br>Both quotes are from diary #1 (2026-06-10), which reprints the submitted abstract
+        ("AI in the Loop…") and calls it out of date the same day. The nine posts are listed on
+        jwildfire.github.io/keynote. Diary #10 (GxP best practices) is promised in diary #9 but not written.
+        <br><br>The six labelled turns preview beat 3: Obot on its own laptop (diary #2), v2 abandoned
+        and a billion tokens (diary #6), the agent becomes an organisation and "quietly wrong"
+        (diary #8), the 10 September shutdown (hub diary 2026-09-10). Don't explain them here.
       </aside>
     </section>
 

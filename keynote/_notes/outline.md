@@ -25,7 +25,8 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
   - The question (built, slide 2)
     - "What can we actually do with AI agents right now?" [diary #1]
     - Asked four times across the summer; the talk answers it and ends on it
-  - How I tried to answer it (built, slide 3, draft bullets)
+  - How I tried to answer it (built, slide 3)
+    - Visual: "The reality is messier" — a straight line for the plan over a looping line for what happened (option D, chosen 2026-10-01); the bullets below are speaker notes
     - Working in public: nine diary posts, June to September, every one with an AI collaboration note
     - "My plan has changed at least three times since I found out about the keynote" [diary #1]
     - The submitted abstract versus what happened: "the reality is messier" [diary #1]
