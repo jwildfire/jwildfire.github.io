@@ -22,6 +22,7 @@
        .s-stat, .s-split, .s-image, .s-todo. Speaker notes go in
        <aside class="notes">.
        Keys: ← → / space / PgUp PgDn · Home End · O overview · N notes · F fullscreen.
+       The slide number is top right; the hex strip fills in with progress through the talk.
        ------------------------------------------------------------------ */
     :root {
       --bg: #fafaf8;
@@ -41,6 +42,7 @@
       --spec-gradient: linear-gradient(90deg, var(--spec-0), var(--spec-1), var(--spec-2), var(--spec-3), var(--spec-4), var(--spec-5), var(--spec-6));
       --spec-gradient-diag: linear-gradient(135deg, var(--spec-0), var(--spec-1), var(--spec-2), var(--spec-3), var(--spec-4), var(--spec-5), var(--spec-6));
       --hex-mask: url("data:image/svg+xml;utf8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' width%3D'6.928' height%3D'9.000' viewBox%3D'0 0 6.928 9.000'%3E%3Cg fill%3D'none' stroke%3D'%23000' stroke-width%3D'0.9'%3E%3Cpolygon points%3D'3.464%2C0.50 6.928%2C2.50 6.928%2C6.50 3.464%2C8.50 0.000%2C6.50 0.000%2C2.50'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+      --hex-mask-fill: url("data:image/svg+xml;utf8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' width%3D'6.928' height%3D'9.000' viewBox%3D'0 0 6.928 9.000'%3E%3Cpolygon fill%3D'%23000' points%3D'3.464%2C0.50 6.928%2C2.50 6.928%2C6.50 3.464%2C8.50 0.000%2C6.50 0.000%2C2.50'%2F%3E%3C%2Fsvg%3E");
       --hex-clip: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
       --sans: "Instrument Sans", system-ui, sans-serif;
       --serif: "Instrument Serif", Georgia, serif;
@@ -81,12 +83,21 @@
       -webkit-mask-repeat: repeat-x; mask-repeat: repeat-x;
       -webkit-mask-size: auto 18px; mask-size: auto 18px;
     }
-    /* Footer: talk name left, slide number right (filled by JS). */
+    /* Progress: the hexes of the strip fill in, left to right, as the talk advances.
+       JS sets the width to a whole number of hexes for (slide number / slide count). */
+    .slide .hexfill {
+      position: absolute; left: 0; top: 0; height: 18px; width: 0;
+      background: var(--spec-gradient); background-size: 1600px 100%; background-repeat: no-repeat;
+      -webkit-mask-image: var(--hex-mask-fill); mask-image: var(--hex-mask-fill);
+      -webkit-mask-repeat: repeat-x; mask-repeat: repeat-x;
+      -webkit-mask-size: auto 18px; mask-size: auto 18px;
+    }
+    /* Footer: talk name (filled by JS). The slide number sits in the header, top right. */
     .slide::after {
       content: attr(data-foot); position: absolute; left: 140px; right: 140px; bottom: 44px;
       font-family: var(--mono); font-size: 20px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint);
     }
-    .slide .num { position: absolute; right: 140px; bottom: 44px; font-family: var(--mono); font-size: 20px; color: var(--faint); }
+    .slide .num { position: absolute; right: 140px; top: 48px; font-family: var(--mono); font-size: 20px; color: var(--faint); }
 
     .kicker { font-family: var(--mono); font-size: 24px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--hue); margin: 0 0 28px; display: flex; align-items: center; gap: 16px; }
     .kicker::before { content: ""; width: 22px; height: 25px; background: var(--hue); clip-path: var(--hex-clip); flex: none; }
@@ -176,8 +187,6 @@
     }
     .notes-panel b { font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--spec-3); display: block; margin-bottom: 6px; }
 
-    /* Progress: a spectrum bar along the bottom of the window. */
-    .progress { position: fixed; left: 0; bottom: 0; height: 4px; background: var(--spec-gradient); width: 0; transition: width 160ms ease; z-index: 6; }
 
     .thumb { display: contents; }
     /* Overview grid (O). */
@@ -188,14 +197,14 @@
     body.overview .thumb.current { outline-color: var(--spec-3); }
 
     body.overview .hint { display: none; }
-    .hint { position: fixed; right: 14px; top: 10px; font-family: var(--mono); font-size: 12px; color: var(--faint); z-index: 6; }
+    .hint { position: fixed; right: 14px; bottom: 8px; font-family: var(--mono); font-size: 12px; color: var(--faint); z-index: 6; }
 
     @media print {
       @page { size: 1600px 900px; margin: 0; }
       body { overflow: visible; background: none; }
       .deck { position: static; display: block; }
       .slide { display: flex !important; position: relative; left: 0; top: 0; margin: 0; transform: none; box-shadow: none; page-break-after: always; }
-      .progress, .hint, .notes-panel { display: none !important; }
+      .hint, .notes-panel { display: none !important; }
     }
   </style>
 </head>
@@ -487,14 +496,12 @@
   </div>
 
   <div class="notes-panel" id="notes" aria-live="polite"></div>
-  <div class="progress" id="progress"></div>
   <div class="hint">← → · O overview · N notes · F fullscreen</div>
 
   <script>
     (function () {
       var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
       var notes = document.getElementById('notes');
-      var progress = document.getElementById('progress');
       var i = 0;
       var foot = 'R/Pharma 2026 · Jeremy Wildfire';
 
@@ -504,6 +511,11 @@
         n.className = 'num';
         n.textContent = (k + 1) + ' / ' + slides.length;
         s.appendChild(n);
+        // Fill the hex strip in proportion to progress, snapped to whole hexes.
+        var HEX = 18 * 6.928 / 9, f = document.createElement('span');
+        f.className = 'hexfill';
+        f.style.width = (k === slides.length - 1 ? 1600 : Math.round((k + 1) / slides.length * 1600 / HEX) * HEX) + 'px';
+        s.appendChild(f);
         // Wrap for overview thumbnails.
         var w = document.createElement('div');
         w.className = 'thumb';
@@ -531,7 +543,6 @@
         });
         var a = slides[i].querySelector('.notes');
         notes.innerHTML = '<b>Notes · slide ' + (i + 1) + '</b>' + (a ? a.innerHTML : '<i>No notes.</i>');
-        progress.style.width = ((i + 1) / slides.length * 100) + '%';
         if (location.hash !== '#' + (i + 1)) history.replaceState(null, '', '#' + (i + 1));
       }
 
