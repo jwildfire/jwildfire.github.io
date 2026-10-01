@@ -386,3 +386,66 @@ Atlas K4 argues these should be regenerated on the morning of the talk.
 11. **Public-surface review** (atlas K7) before pointing the audience at the live repos.
 12. **A post-talk landing page** (atlas K8). `[blog]/keynote/index.html` could take that role; it needs a "start here" section and a link to the deck.
 13. **Housekeeping:** `bubble_maybe.md` has no front matter, `[deck]/README.md` has conflict markers, and the "obot: the program" companion is never explained.
+
+---
+
+## 7. Addendum — gaps closed on 2026-10-01 (local session)
+
+Read from GitHub and the local clones on Jeremy's Mac, which the cloud session could not reach.
+Everything here was checked on the morning of 2026-10-01.
+
+### 7a. The four hub issues, as written on GitHub
+
+All four are open and none has moved since 2026-09-11.
+
+**#10 — Requirement: R/Pharma 2026 AI keynote deck** (milestone 2026q4, status backlog)
+- Scope: "open-source safety tooling, GSM, agentic engineering, and autonomous AI workers — the story this portfolio tells."
+- Success: "a finished HTML-first slide deck, developed through the release-per-slide workflow the hub era established."
+- Still points at the old deck repo (RPharma2026-AIKeynote PR #1) as the place the deck lives. That is now out of date: the deck is `keynote/slides.html` in this repo.
+- Design and Tasks sections are empty placeholders. No date or slot length.
+
+**#22 — Requirement: developer-diary blog series** (milestone 2026q4, status backlog)
+- The body is stale: it says six posts are published (nine are) and still lists "write post #5".
+- The Design section, meant to hold the series outline through the keynote, is empty. There is no written plan for diary #10 or anything after it.
+- Cross-post backlog to big.blog: posts #2–#3 sit on an unpushed local branch, #4–#6 were never cross-posted (and by extension #7–#9).
+- States the relationship both ways: "posts are source material for the deck, and the deck's story arc should inform the series outline."
+
+**#72 — Goal: R/Pharma 2026 keynote deck** (milestone backlog)
+- This is the source of the September-vs-October conflict: the goal line reads "the talk this whole roadmap feeds (September 2026)". Every other source says October.
+- Division of labour, in the issue's words: "obot drafts structure, outlines, and supporting assets; @jwildfire owns the prose and the delivery."
+- Names a "stage model" for the story: safety.viz portfolio → autonomy → app arc.
+- Candidate children: the live demo (#74, the only one linked), deck outline / narrative arc, deck build ("format TBD"), rehearsal with timings. The last three were never filed.
+
+**#74 — Requirement: keynote live demo** (milestone backlog, status backlog)
+- The idea as written: share a link at the start, "obot triages and implements during the talk", demo a few results at the end. "The talk's thesis made tangible."
+- Assumes "real code — draft PRs and deployed results", built inside about 30 minutes.
+- Design notes list the risks without resolving them: moderation and rate limiting, a demo-safe selection rule, what is on screen while it works, pre-seeded fallback ideas, which machine and identity run it.
+- Tasks: one empty checkbox.
+- It is not closed, but everything it builds on was retired on 2026-09-10 (the idea queue, ideas triage and the obotclaw identity). Treat it as dead unless Jeremy revives it.
+
+### 7b. What happened between 14 September and 1 October
+
+Short version: one new explorer was built, nothing was released, and the mid-October app plan has not started.
+
+- **The hub has not moved.** `obot.roadmap` main is still at `f0f7a5c` (2026-09-14). The nightly standup was never scheduled; `standup.md` on the `session-state` branch is the 11 September placeholder ("Not yet rendered").
+- **No releases anywhere since August.** safety.viz is at v1.7.0 (15 Aug), gsm.safety at v1.1.0 (17 Aug), open.csr at v0.3.0 (27 Aug), the hub at v0.4 (11 Sep). There is no v2.0.0 of anything.
+- **gsm.safety v1.2.0 is still a release candidate.** gsm.safety PR #88 is open and mergeable, review required, last touched 14 September. The hub's last commit says it was approved and "waits on a ruleset edit".
+- **The one thing built: the Patient Journey Explorer.** Merged to safety.viz `dev` on 18 September in three PRs: the explorer (one participant's whole safety course on one study-day axis, safety.viz #144 and #147) and an AI narrative layer on top of it ("drafted, cited, reviewer-accepted", safety.viz #148). Hub requirements #349 and #351 are at status review; the R widget (#350) is backlog. It is on `dev` only, five commits ahead of v1.7.0, unreleased. This is the first chart in the programme with generated text in it, which makes it a candidate demo.
+- **The five objectives of the mid-October plan:**
+  - Chart coverage, all 22 FDA figures (#78): the requirement matrix on gsm.safety `dev` keys all 22 figures, plus the reference tables and three derivation functions (phase 0, in the v1.2.0 candidate). No figure is drawn yet; the two build phases (#323, #324) are backlog.
+  - Static parity (#328): both requirements backlog, untouched since 11 September.
+  - Portfolio view (#79): all three new requirements backlog.
+  - Data loading and mapping (#329): all three requirements backlog.
+  - Offline single-file app (#330): all three requirements backlog, including "release, guide and demo".
+
+### 7c. What this changes for the deck
+
+- **The offline app demo does not exist.** As of 1 October nothing under objectives 2–5 has a merged pull request. With the 16 October target that is 15 days. The demo choice is now between what already runs (the safety.viz gallery, the Patient Journey Explorer with narratives on `dev`, demo-301) and what would have to be built first.
+- **"22 FDA figures" is a plan, not a result.** The honest number today is 22 figures specified, 0 drawn.
+- **The numbers slides are safe to keep at their 6 September values** (315k lines, 367 PRs, 23 releases, 12 repos): little has merged since. A refresh would add three PRs and no releases.
+- **The story since 10 September is itself a beat.** After the autonomous prototype was shut down, output dropped to one feature in three weeks, built with Jeremy driving. That fits through-line B (autonomy went up, then came back down on purpose) and should be said plainly rather than skipped.
+- **Still only Jeremy can answer:** the exact date and slot length, which demo, whether diary #10 is written before the talk, and what the "mixed feelings" are.
+
+### 7d. Orange photos
+
+`keynote/assets/orange/` holds 18 photos and one short video from Jeremy's download of 2026-10-01, resized to 2000px on the long edge. Orange opens the talk (slide 2, the blue-hat photo) and returns "working" on the transition slides. Five files are 360px originals (suffix `-small`) and will look soft at full slide height. `orange-lap-patio.jpg` shows another person, and `orange-supervising-laptop.jpg`, `orange-desk-copilot.jpg` and `orange-across-the-keyboard-small.jpg` show Jeremy.

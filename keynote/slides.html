@@ -142,6 +142,15 @@
     .s-image figcaption { margin-top: 20px; font-family: var(--mono); font-size: 22px; color: var(--soft); }
     .s-image h2 { margin-bottom: 32px; font-size: 64px; }
 
+    /* Photo: text on the left, a full-height photo on the right (the Orange slides).
+       Set --focus on the <figure> to choose which part of the photo survives the crop. */
+    .s-photo { justify-content: center; padding-right: 880px; }
+    .s-photo h2 { font-size: 104px; margin-bottom: 28px; }
+    .s-photo p { color: var(--soft); }
+    .s-photo .photo { position: absolute; right: 0; top: 18px; bottom: 0; width: 780px; margin: 0; border-left: 10px solid var(--hue); background: var(--rail); }
+    .s-photo .photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: var(--focus, 50% 50%); }
+    .s-photo .num { color: #fff; text-shadow: 0 1px 6px rgba(31, 35, 40, 0.6); }
+
     /* Placeholder slide for the outline stage. */
     .s-todo { background: repeating-linear-gradient(135deg, var(--bg) 0 28px, #f4f5f1 28px 56px); }
     .s-todo .todo { margin-top: 12px; font-family: var(--mono); font-size: 26px; color: var(--soft); border: 2px dashed var(--hue); border-radius: 18px; padding: 28px 36px; background: var(--bg); }
@@ -203,6 +212,24 @@
       <h1>Building open-source clinical trial tools with <em>agentic AI</em></h1>
       <p class="byline"><strong>Jeremy Wildfire</strong> · October 2026 · jwildfire.github.io/keynote</p>
       <aside class="notes">Title slide. Working title from the keynote page — confirm or replace once the outline lands.</aside>
+    </section>
+
+    <!-- The hook: Orange opens the talk, then reappears "working" on the transition
+         slides. Photos live in assets/orange/. -->
+    <section class="slide s-photo" data-hue="1">
+      <figure class="photo" style="--focus: 82% 50%">
+        <img src="assets/orange/orange-blue-hat.jpg" alt="Orange, an orange tabby cat, wearing a blue and gold cap" />
+      </figure>
+      <p class="kicker">First, an introduction</p>
+      <h2>Introducing <em>Orange</em></h2>
+      <p>Placeholder line — Jeremy's words go here.</p>
+      <aside class="notes">
+        The hook. Orange is introduced here and comes back "working" on each transition slide.
+        Slide copy is a placeholder; Jeremy writes the line.
+        Facts on hand: Obot is named after Orange (diary #2, "Introducing Obot", 2026-06-12).
+        The origin story — Chilean street cat, Santiago, the first safetyGraphics ideas — was
+        noted as a candidate opener in the hub diary of 2026-07-11; it has not been told in a post yet.
+      </aside>
     </section>
 
     <section class="slide s-todo" data-hue="3">
