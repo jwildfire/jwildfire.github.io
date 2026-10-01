@@ -166,12 +166,19 @@
     .s-photo .photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: var(--focus, 50% 50%); }
     .s-photo .num { color: #fff; text-shadow: 0 1px 6px rgba(31, 35, 40, 0.6); }
 
-    /* Plan vs what happened: a straight line over a tangled one (slide 3). */
-    .pvr { flex: 1; display: grid; grid-template-rows: 1fr 2.2fr; gap: 10px; min-height: 0; }
-    .pvr .row { display: grid; grid-template-columns: 200px 1fr; align-items: center; min-height: 0; }
-    .pvr h3 { font-family: var(--mono); font-size: 24px; letter-spacing: .12em; text-transform: uppercase; color: var(--soft); margin: 0; font-weight: 500; }
-    .pvr svg { width: 100%; height: 100%; }
-    .pvr text { font-family: var(--sans); font-size: 22px; fill: var(--ink); }
+    /* Plan vs what happened: a straight line over a looping one whose points are the
+       diary posts, each a link (slide 3). */
+    .pvr { flex: 1; min-height: 0; }
+    .pvr svg { width: 100%; height: 100%; display: block; }
+    .pvr text { font-family: var(--sans); }
+    .pvr .h { font-family: var(--mono); font-size: 22px; letter-spacing: .12em; text-transform: uppercase; fill: var(--soft); }
+    .pvr .posts circle { fill: var(--ink); }
+    .pvr .posts .n { font-family: var(--mono); font-size: 19px; font-weight: 600; fill: #fff; text-anchor: middle; }
+    .pvr .posts .d { font-family: var(--mono); font-size: 18px; letter-spacing: .1em; text-transform: uppercase; fill: var(--soft); }
+    .pvr .posts .t { font-size: 24px; fill: var(--ink); }
+    .pvr .posts a { cursor: pointer; }
+    .pvr .posts a:hover circle { fill: var(--hue); }
+    .pvr .posts a:hover .t { text-decoration: underline; }
 
     /* Placeholder slide for the outline stage. */
     .s-todo { background: repeating-linear-gradient(135deg, var(--bg) 0 28px, #f4f5f1 28px 56px); }
@@ -248,26 +255,54 @@
 
     <section class="slide" data-hue="1">
       <p class="kicker">How I tried to answer it</p>
-      <h2>“The reality is <em>messier</em>”</h2>
+      <h2>By working <em>in public</em></h2>
       <div class="pvr">
-        <div class="row"><h3>The plan</h3>
-          <svg viewBox="0 0 1100 120" preserveAspectRatio="none"><line x1="20" y1="60" x2="1040" y2="60" stroke="#98a0aa" stroke-width="6" stroke-linecap="round"/><polygon points="1040,44 1080,60 1040,76" fill="#98a0aa"/></svg>
-        </div>
-        <div class="row"><h3>What happened</h3>
-          <svg viewBox="0 0 1100 300">
-            <defs><linearGradient id="sg" x1="0" x2="1"><stop offset="0" stop-color="#d87972"/><stop offset=".17" stop-color="#c78a3b"/><stop offset=".33" stop-color="#77a95b"/><stop offset=".5" stop-color="#00afa9"/><stop offset=".67" stop-color="#519fdd"/><stop offset=".83" stop-color="#988bdd"/><stop offset="1" stop-color="#c67bb6"/></linearGradient></defs>
-            <path d="M20,150 C90,150 110,60 170,70 C250,84 230,220 160,210 C100,200 150,120 260,140 C340,155 330,40 410,50 C500,62 480,240 400,236 C330,232 380,130 500,150 C600,166 560,30 660,60 C760,90 700,260 620,230 C560,208 640,140 740,150 C830,160 800,250 880,240 C960,230 900,90 980,110 C1020,120 1030,150 1050,150" fill="none" stroke="url(#sg)" stroke-width="7" stroke-linecap="round"/>
-            <polygon points="1046,134 1086,150 1046,166" fill="#c67bb6"/>
-            <g>
-              <circle cx="170" cy="70" r="9" fill="#1f2328"/><text x="150" y="42">Obot on its own laptop</text>
-              <circle cx="400" cy="236" r="9" fill="#1f2328"/><text x="330" y="282">v2 abandoned</text>
-              <circle cx="410" cy="50" r="9" fill="#1f2328"/><text x="390" y="24">a billion tokens</text>
-              <circle cx="660" cy="60" r="9" fill="#1f2328"/><text x="640" y="32">the agent becomes an organisation</text>
-              <circle cx="620" cy="230" r="9" fill="#1f2328"/><text x="560" y="280">quietly wrong</text>
-              <circle cx="880" cy="240" r="9" fill="#1f2328"/><text x="820" y="288">I shut it down</text>
-            </g>
-          </svg>
-        </div>
+        <svg viewBox="0 0 1320 490" role="img" aria-label="The plan was a straight line; what happened is a looping line through nine diary posts, each linked.">
+          <defs><linearGradient id="sg" gradientUnits="userSpaceOnUse" x1="20" x2="1300"><stop offset="0" stop-color="#d87972"/><stop offset=".17" stop-color="#c78a3b"/><stop offset=".33" stop-color="#77a95b"/><stop offset=".5" stop-color="#00afa9"/><stop offset=".67" stop-color="#519fdd"/><stop offset=".83" stop-color="#988bdd"/><stop offset="1" stop-color="#c67bb6"/></linearGradient></defs>
+          <text class="h" x="20" y="22">The plan</text>
+          <line x1="20" y1="48" x2="1262" y2="48" stroke="#98a0aa" stroke-width="6" stroke-linecap="round"/><polygon points="1260,32 1300,48 1260,64" fill="#98a0aa"/>
+          <text class="h" x="20" y="100">What happened</text>
+          <path d="M20,300 C60,300 40,215 110,215 C200,215 265,300 205,300 C145,300 155,385 245,385 C305,385 320,200 380,200 C590,200 305,400 515,400 C605,400 630,315 560,315 C490,315 560,220 650,220 C740,220 695,380 785,380 C1015,380 690,205 920,205 C1010,205 1075,290 1010,290 C945,290 965,395 1055,395 C1255,395 990,215 1190,215 C1250,215 1215,300 1262,300" fill="none" stroke="url(#sg)" stroke-width="7" stroke-linecap="round"/>
+          <polygon points="1260,284 1300,300 1260,316" fill="#c67bb6"/>
+          <g class="posts">
+              <a href="https://jwildfire.github.io/2026/06/10/rpharma-keynote-developer-diary.html" target="_blank" rel="noopener">
+                <circle cx="110" cy="215" r="17"/><text class="n" x="110" y="222">1</text>
+                <text class="d" x="110" y="153" text-anchor="middle">10 Jun</text><text class="t" x="110" y="183" text-anchor="middle">The question</text>
+              </a>
+              <a href="https://jwildfire.github.io/2026/06/12/setting-up-obot-openclaw.html" target="_blank" rel="noopener">
+                <circle cx="245" cy="385" r="17"/><text class="n" x="245" y="392">2</text>
+                <text class="d" x="245" y="433" text-anchor="middle">12 Jun</text><text class="t" x="245" y="463" text-anchor="middle">Introducing Obot</text>
+              </a>
+              <a href="https://jwildfire.github.io/2026/06/16/reintroducing-safetygraphics.html" target="_blank" rel="noopener">
+                <circle cx="380" cy="200" r="17"/><text class="n" x="380" y="207">3</text>
+                <text class="d" x="380" y="138" text-anchor="middle">16 Jun</text><text class="t" x="380" y="168" text-anchor="middle">safetyGraphics, again</text>
+              </a>
+              <a href="https://jwildfire.github.io/2026/07/02/safetygraphics-heart-gsm.html" target="_blank" rel="noopener">
+                <circle cx="515" cy="400" r="17"/><text class="n" x="515" y="407">4</text>
+                <text class="d" x="515" y="448" text-anchor="middle">2 Jul</text><text class="t" x="515" y="478" text-anchor="middle">safetyGraphics ❤ gsm</text>
+              </a>
+              <a href="https://jwildfire.github.io/2026/07/12/introducing-safety-viz.html" target="_blank" rel="noopener">
+                <circle cx="650" cy="220" r="17"/><text class="n" x="650" y="227">5</text>
+                <text class="d" x="650" y="158" text-anchor="middle">12 Jul</text><text class="t" x="650" y="188" text-anchor="middle">Introducing safety.viz</text>
+              </a>
+              <a href="https://jwildfire.github.io/2026/07/13/obot-v3-billion-tokens.html" target="_blank" rel="noopener">
+                <circle cx="785" cy="380" r="17"/><text class="n" x="785" y="387">6</text>
+                <text class="d" x="785" y="428" text-anchor="middle">13 Jul</text><text class="t" x="785" y="458" text-anchor="middle">A billion tokens</text>
+              </a>
+              <a href="https://jwildfire.github.io/2026/07/17/papers-prompts-prototypes.html" target="_blank" rel="noopener">
+                <circle cx="920" cy="205" r="17"/><text class="n" x="920" y="212">7</text>
+                <text class="d" x="920" y="143" text-anchor="middle">17 Jul</text><text class="t" x="920" y="173" text-anchor="middle">Papers → prototypes</text>
+              </a>
+              <a href="https://jwildfire.github.io/2026/08/20/obot-v4-second-interview.html" target="_blank" rel="noopener">
+                <circle cx="1055" cy="395" r="17"/><text class="n" x="1055" y="402">8</text>
+                <text class="d" x="1055" y="443" text-anchor="middle">20 Aug</text><text class="t" x="1055" y="473" text-anchor="middle">Obot, interviewed again</text>
+              </a>
+              <a href="https://jwildfire.github.io/2026/09/06/not-a-capabilities-problem.html" target="_blank" rel="noopener">
+                <circle cx="1190" cy="215" r="17"/><text class="n" x="1190" y="222">9</text>
+                <text class="d" x="1190" y="123" text-anchor="middle">6 Sep</text><text class="t" x="1190" y="153" text-anchor="middle">Not a capabilities</text><text class="t" x="1190" y="181" text-anchor="middle">problem</text>
+              </a>
+          </g>
+        </svg>
       </div>
       <aside class="notes">
         Talking points (the slide's earlier bullets; Jeremy to reword):
@@ -277,9 +312,8 @@
         <br><br>Both quotes are from diary #1 (2026-06-10), which reprints the submitted abstract
         ("AI in the Loop…") and calls it out of date the same day. The nine posts are listed on
         jwildfire.github.io/keynote. Diary #10 (GxP best practices) is promised in diary #9 but not written.
-        <br><br>The six labelled turns preview beat 3: Obot on its own laptop (diary #2), v2 abandoned
-        and a billion tokens (diary #6), the agent becomes an organisation and "quietly wrong"
-        (diary #8), the 10 September shutdown (hub diary 2026-09-10). Don't explain them here.
+        <br><br>Each numbered point is a diary post and links to it (opens in a new tab).
+        "The reality is messier" is the spoken line; the slide title is "By working in public".
       </aside>
     </section>
 
