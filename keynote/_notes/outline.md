@@ -1,0 +1,170 @@
+# Keynote outline — rough draft 1
+
+Drafted 2026-10-01 from `research-digest.md` (including the section 7 addendum). L1 = sections, L2 = slides, L3 = details.
+Assumes about 40 minutes and roughly 40 slides; both are guesses until the slot length is known.
+`[TODO]` = content that does not exist yet. `[Orange]` = a transition slide with a photo from `keynote/assets/orange/`.
+Sources are named in brackets: diary #N is the developer diary post, hub is obot.roadmap.
+
+- Opening: the hook
+  - Title
+    - "Building open-source clinical trial tools with agentic AI"
+    - Working title from the keynote page; earlier titles were about "AI in the loop" and clinical trial operations
+  - Introducing Orange
+    - Photo: `orange-blue-hat.jpg` (built, slide 2)
+    - Origin story: Chilean street cat, Santiago, the first safetyGraphics ideas [hub diary 2026-07-11; not yet told in a post]
+    - `[TODO]` Jeremy's line
+  - From Orange to obot
+    - The agent is named after the cat [diary #2]
+    - Sets up the running joke: Orange "working" on every transition slide
+    - Photo option: `orange-supervising-laptop.jpg` or `orange-desk-copilot.jpg`
+  - The question
+    - "What can we actually do with AI agents right now?" [diary #1]
+    - Asked four times across the summer; the talk answers it and ends on it
+  - How I tried to answer it
+    - Working in public: nine diary posts, June to September, every one with an AI collaboration note
+    - "My plan has changed at least three times since I found out about the keynote" [diary #1]
+    - The submitted abstract versus what happened: "the reality is messier" [diary #1]
+
+- Where we came from
+  - [Orange] transition
+    - Photo option: `orange-kitten-thinkpad-small.jpg` or `orange-kitten-macbook-small.jpg` (the early years; both are low resolution)
+  - From a wall of numbers to interactive graphics
+    - SAS in grad school, R at Rho, then D3 after seeing the New York Times interactives: "Why can't I do this for work?" [diary #3]
+    - Images: `fig1_NYT.png`, `fig2_aeexplorer.gif`
+  - safetyGraphics and the people who built it
+    - ASA-DIA Safety Working Group: five years of clinicians and data scientists together [diary #3]
+    - The hep explorer and its clinical workflow; image `fig3_hepexplorer.gif`
+    - Acknowledgements up front, by name
+  - What we did not do
+    - "Change the industry standard for how people monitor safety" [diary #3]
+    - Modernizing it "needed a team and a budget I no longer have" — or does it? [diary #3]
+  - The industry got ready without knowing it
+    - SAS macro libraries, then hybrid SAS and R, then open frameworks with local extensions [old deck, act 1]
+    - `[TODO]` this exists only as dictation bullets; needs dates and one or two examples
+  - Monitoring as software: gsm and OpenRBQM
+    - Workflows, tests, qualification: the quality framework that already exists [diary #4]
+    - The day job today is "AI in the loop": Copilot, humans own every deliverable, release rate up about 50% [diary #1]
+    - `[TODO]` confirm what can be said publicly about the team's numbers
+  - The bridge
+    - Open, software-shaped workflows are agent-ready [old deck: "Why this matters for AI"]
+    - Agentic AI is arriving into this context, not replacing it [dictation notes 2026-06-06]
+
+- The experiment: rebuilding safetyGraphics with agents
+  - [Orange] transition
+    - Photo option: `orange-paw-on-github.jpg` (paw on a GitHub page)
+  - The plan: keep, modernize, borrow
+    - Keep the expert workflows and interactivity; modernize the code; borrow gsm's quality framework [diary #4]
+    - "The outputs need to be checkable — by a person, by a test suite, and by another agent" [diary #4]
+  - The first renderer took weeks; the next six took a weekend
+    - Release timeline, 11–12 July: v0.1.0 at 8am, v1.0.0 at 10:30pm, v1.1.0 an hour later, v1.2.0 the next night [diary #5]
+    - Image: `safety-viz-gallery.png`
+  - A billion tokens in a weekend
+    - 1.0B tokens, $1,273 at API prices, $200 a month actually paid, about 10 hours of my time [diary #6]
+    - "A 6-month project for less than $2k" [diary #6]
+  - Papers → prompts → prototypes
+    - Jim Buchanan sends references after a demo; two working prototypes the same evening [diary #7]
+    - Hep composite view: 176M tokens, about $143. QT explorer: 308M tokens, about $241
+    - The point: agents are only as good as the clinical workflow they are handed
+    - Images: `hep-explorer-composite.gif`, `qt-explorer-demo.gif`
+  - Where it stands today
+    - 13 chart renderers and six releases since mid-July; gsm.safety brings them to R [diary #8]
+    - Newest, unreleased: the Patient Journey Explorer with drafted, cited narratives [digest 7b]
+    - `[TODO]` refresh the counts on the morning of the talk
+  - Demo
+    - `[TODO]` which demo: the gallery, the Patient Journey Explorer, demo-301, or the offline app (not started) [digest 7c]
+    - `[TODO]` a recorded fallback either way
+
+- Evidence is the product
+  - [Orange] transition
+    - Photo option: `orange-reviewing-spreadsheet.jpg` or `orange-spreadsheet-side-eye.jpg` (the reviewer)
+  - "Is it validated?"
+    - Then: "Not really. It's exploratory." Now: 249 unit tests and 94 browser tests keyed to requirement IDs [diary #5]
+    - Image: `safety-viz-evidence.png`
+  - Not done until it is demonstrable
+    - Every chart ships with a gallery page, an evidence report and an R widget on a public site
+    - Requirements first: one ID follows a chart from the requirement to the test to the evidence page
+  - Agents catching real errors, including their own
+    - The death count that went from 4 to 13, measured twice by routes that share no code [gsm.safety NEWS, v1.2.0]
+    - 97 claims on the org chart adversarially checked; 68 confirmed, the rest corrected [hub org-chart report]
+  - A person still owns it
+    - The four "a person must…" lines [old deck]
+    - Evidence, permissions, traceability, humans [old deck guardrails grid]
+  - What good practice looks like now
+    - Validation as code, generated documentation and traceability, human gates [promised in diary #9]
+    - `[TODO]` diary #10 is not written; this slide may have to be drafted for the talk directly
+
+- How much can they do on their own?
+  - [Orange] transition
+    - Photo option: `orange-asleep-on-keyboard.jpg` (fully autonomous)
+  - The five levels
+    - From spicy autocomplete to the dark factory; "comfortable at level 3" in February [post 2026-02-10]
+    - The ladder the next five slides climb
+  - obot v1 and v2: an agent on its own laptop
+    - Clean-room MacBook with none of my credentials; the guardrail is the blast radius [diary #2]
+    - "51% fun and 49% frustrating"; 266 commits and 18 merged pull requests by 10 June [diary #2]
+  - obot v3: a plan, a playbook and an identity
+    - Claude Code plus a roadmap repo, a playbook repo and a bot account [diary #6]
+    - One weekend: 5 sessions, 16 named agents
+  - obot v4: the agent became an organisation
+    - Concierge, operating officer, fleet manager, short-lived workers [diary #8]
+    - The load-bearing watcher was a 5-minute timer script, not an agent
+    - Image: the org chart [hub org-chart report]
+  - Quietly wrong
+    - "Nine cases in one night of something reporting success while having done nothing" [diary #8]
+    - About $7,000 of usage at API prices across 24 active days [diary #8]
+  - 10 September: I shut it down
+    - "The agent structure held… it never produced a release for him to review" [hub diary 2026-09-10]
+    - It built a robust organisation and then spent it on itself
+  - Back down the ladder, on purpose
+    - One requirement per session, a definition of done, me driving [hub plan 2026-09-10]
+    - Three weeks since: one new explorer, no releases [digest 7b]
+    - `[TODO]` this exists only in agent-written hub pages; needs Jeremy's own account
+  - Mixed feelings
+    - "I'll talk about that more in the keynote" [diary #8]
+    - `[TODO]` Jeremy only
+  - What I would tell you to do
+    - Never let an agent be the sole watcher of an agent [diary #8]
+    - Commit working notes; transcript-only work dies with the session [unpublished draft]
+    - Gates before fan-out; pick models like picking staff [unpublished draft]
+    - Requirements before work
+
+- It is not a capabilities problem anymore
+  - [Orange] transition
+    - Photo option: `orange-looking-up-agenda.jpg` (so what now?)
+  - The summer in one number
+    - About 315,000 lines across 367 pull requests, 23 releases and 12 repositories, "from one person and a few agents, working in spare time" [diary #9]
+  - The bottleneck moved
+    - "Review, not writing, is the bottleneck" [diary #9]
+    - "The bottleneck still isn't intelligence. It's plumbing." [unpublished draft]
+  - The execution gap
+    - AI standards move in months; GxP moves slowly by design [diary #9]
+    - Version control and semantic versioning as a prerequisite; agents as "the best change-management tool we have"
+  - Open source is the path
+    - The precompetitive base: OpenRBQM, safetyGraphics, pharmaverse, R Validation Hub, CDISC [diary #9]
+    - A community opportunity, which is why this talk is at R/Pharma [dictation notes 2026-06-06]
+  - What is next
+    - The same data twice: monitoring charts that become reporting figures after database lock [diary #4]
+    - The 22 figures in the FDA safety guidance: all specified, none drawn yet [digest 7b]
+    - Clinical study reports, your own files, nothing leaving the browser
+    - `[TODO]` decide how much of the unbuilt mid-October plan to promise on stage
+
+- Close
+  - [Orange] transition
+    - Photo option: `orange-asleep-on-typing-arm.jpg`, or the porch video `orange-porch.mov`
+  - A compressed century of trials
+    - Amodei: "A compressed century of biology is only possible with a compressed century of trials" [diary #9]
+  - If the models were frozen today
+    - "Clinical trials would still be completely different in five years" [diary #9]
+  - The question, one last time
+    - "What can we do right now?" — quite a lot. So what is stopping us?
+  - Thank you
+    - Links: the deck, the diary, the repos; QR code
+    - `[TODO]` turn the keynote page into the "start here" page and link the deck from it
+
+## Open before this can be final
+
+- Exact date and slot length; the section weights above assume 40 minutes
+- Which demo, and whether it is live or recorded
+- Whether the industry-history slide stays (it has the least material behind it)
+- Whether diary #10 is written before the talk
+- Section colours: seven sections map one-to-one onto the seven hues, if that split holds
