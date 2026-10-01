@@ -18,7 +18,7 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
 
 ## Detailed Outline
 
-1. Opening: Orange and the path to safetyGraphics (10 min) — drafted, slides 1–11
+1. Opening: Orange and the path to safetyGraphics (10 min) — drafted, slides 1–10
   - Title (built, slide 1)
     - "Building open-source clinical trial tools with agentic AI"
     - Working title from the keynote page; earlier titles were about "AI in the loop" and clinical trial operations
@@ -37,25 +37,23 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - Notes: "But, first I want to introduce a key collaborator, Orange! He was a Chilean street cat and was very silly. One time he fell from our 7th story window into the parking lot and survived! He loved sitting with me while I worked. He really was a good cat."
   - Orange at work (built, slide 5)
     - Photo: `orange-asleep-on-trackpad.jpg`
-    - Line on the slide: "But a somewhat inconsistent co-worker"
+    - Line on the slide: "And *such* a helpful coworker", subtitle "We actually got a lot done!"
     - Notes: "He was a bit of an inconsistent cowoker though. I want to tell you about some of the work Orange and I did together! He was there both when I learned R and when I learned Clinical trials."
     - Hand-off line: "I promise I'm not *just* going to talk about my cat today. This actually is a talk about AI and how it has completely changed how I do my job over the last year."
-  - [Orange] Where we came from (built, slide 6)
-    - Photo: `orange-kitten-macbook-small.jpg` (low resolution; a larger copy would help)
-  - "Why can't I do this for work?" (built, slide 7)
+  - "Why can't I do this for work?" (built, slide 6)
     - SAS in grad school, R at Rho, then D3 after seeing the New York Times interactives [diary #3]
     - Image: `fig1_NYT.png`
     - Orange tie-in: Herman Mitchell let Jeremy work from Chile for five years [diary #3 footnote]
-  - A handful of webpages beats a 200-page PDF (built, slide 8)
+  - A handful of webpages beats a 200-page PDF (built, slide 7)
     - The wall of numbers; the Rho Graphics Group; the Adverse Event Explorer [diary #3]
     - Image: `fig2_aeexplorer.gif`
-  - safetyGraphics and the people who built it (built, slide 9)
+  - safetyGraphics and the people who built it (built, slide 8)
     - ASA-DIA Safety Working Group: five years of clinicians and data scientists together [diary #3]
     - Acknowledgements up front, by name; `[TODO]` Jeremy confirms which names go on the slide
-  - The hepatic explorer and its clinical workflow (built, slide 10)
+  - The hepatic explorer and its clinical workflow (built, slide 9)
     - "The best work we did" [diary #3]; image `fig3_hepexplorer.gif`
     - Plants the workflow document that the agents are handed in beat 3
-  - What we did, and what we didn't (built, slide 11)
+  - What we did, and what we didn't (built, slide 10)
     - "Change the industry standard for how people monitor safety" [diary #3]
     - Modernizing it "needed a team and a budget I no longer have" — or does it? [diary #3]
 
@@ -110,7 +108,7 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
   - Papers → prompts → prototypes
     - Jim Buchanan sends references after a demo; two working prototypes the same evening [diary #7]
     - Hep composite view: 176M tokens, about $143. QT explorer: 308M tokens, about $241
-    - The point: agents are only as good as the clinical workflow they are handed (pays off slide 10)
+    - The point: agents are only as good as the clinical workflow they are handed (pays off slide 9)
     - Images: `hep-explorer-composite.gif`, `qt-explorer-demo.gif`
   - "Is it validated?"
     - Then: "Not really. It's exploratory." Now: 249 unit tests and 94 browser tests keyed to requirement IDs [diary #5]
