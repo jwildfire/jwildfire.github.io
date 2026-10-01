@@ -444,7 +444,8 @@ Short version: one new explorer was built, nothing was released, and the mid-Oct
 - **"22 FDA figures" is a plan, not a result.** The honest number today is 22 figures specified, 0 drawn.
 - **The numbers slides are safe to keep at their 6 September values** (315k lines, 367 PRs, 23 releases, 12 repos): little has merged since. A refresh would add three PRs and no releases.
 - **The story since 10 September is itself a beat.** After the autonomous prototype was shut down, output dropped to one feature in three weeks, built with Jeremy driving. That fits through-line B (autonomy went up, then came back down on purpose) and should be said plainly rather than skipped.
-- **Still only Jeremy can answer:** the exact date and slot length, which demo, whether diary #10 is written before the talk, and what the "mixed feelings" are.
+- **Date and length, confirmed by Jeremy on 2026-10-01:** the morning of Wednesday 21 October 2026, 40 minutes. That is 20 days out, and five days after the hub plan's "ready by Friday 16 October". This settles open question 1 in sections 3f and 6.
+- **Still only Jeremy can answer:** which demo, whether diary #10 is written before the talk, and what the "mixed feelings" are.
 
 ### 7d. Orange photos
 

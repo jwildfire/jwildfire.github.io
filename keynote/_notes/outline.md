@@ -1,11 +1,12 @@
 # Keynote outline — rough draft 1
 
 Drafted 2026-10-01 from `research-digest.md` (including the section 7 addendum). L1 = sections, L2 = slides, L3 = details.
-Assumes about 40 minutes and roughly 40 slides; both are guesses until the slot length is known.
+The talk is on the morning of Wednesday 21 October 2026, in a 40-minute slot (confirmed by Jeremy, 2026-10-01). About 40 slides.
+Minutes after each section name are a suggested split that adds up to 40; whether Q&A comes out of the 40 is not known yet.
 `[TODO]` = content that does not exist yet. `[Orange]` = a transition slide with a photo from `keynote/assets/orange/`.
 Sources are named in brackets: diary #N is the developer diary post, hub is obot.roadmap.
 
-- Opening: the hook
+- Opening: the hook (4 min)
   - Title
     - "Building open-source clinical trial tools with agentic AI"
     - Working title from the keynote page; earlier titles were about "AI in the loop" and clinical trial operations
@@ -25,7 +26,7 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - "My plan has changed at least three times since I found out about the keynote" [diary #1]
     - The submitted abstract versus what happened: "the reality is messier" [diary #1]
 
-- Where we came from
+- Where we came from (6 min)
   - [Orange] transition
     - Photo option: `orange-kitten-thinkpad-small.jpg` or `orange-kitten-macbook-small.jpg` (the early years; both are low resolution)
   - From a wall of numbers to interactive graphics
@@ -49,7 +50,7 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - Open, software-shaped workflows are agent-ready [old deck: "Why this matters for AI"]
     - Agentic AI is arriving into this context, not replacing it [dictation notes 2026-06-06]
 
-- The experiment: rebuilding safetyGraphics with agents
+- The experiment: rebuilding safetyGraphics with agents (9 min)
   - [Orange] transition
     - Photo option: `orange-paw-on-github.jpg` (paw on a GitHub page)
   - The plan: keep, modernize, borrow
@@ -74,7 +75,7 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - `[TODO]` which demo: the gallery, the Patient Journey Explorer, demo-301, or the offline app (not started) [digest 7c]
     - `[TODO]` a recorded fallback either way
 
-- Evidence is the product
+- Evidence is the product (6 min)
   - [Orange] transition
     - Photo option: `orange-reviewing-spreadsheet.jpg` or `orange-spreadsheet-side-eye.jpg` (the reviewer)
   - "Is it validated?"
@@ -93,7 +94,7 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - Validation as code, generated documentation and traceability, human gates [promised in diary #9]
     - `[TODO]` diary #10 is not written; this slide may have to be drafted for the talk directly
 
-- How much can they do on their own?
+- How much can they do on their own? (9 min)
   - [Orange] transition
     - Photo option: `orange-asleep-on-keyboard.jpg` (fully autonomous)
   - The five levels
@@ -128,7 +129,7 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - Gates before fan-out; pick models like picking staff [unpublished draft]
     - Requirements before work
 
-- It is not a capabilities problem anymore
+- It is not a capabilities problem anymore (4 min)
   - [Orange] transition
     - Photo option: `orange-looking-up-agenda.jpg` (so what now?)
   - The summer in one number
@@ -148,7 +149,7 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - Clinical study reports, your own files, nothing leaving the browser
     - `[TODO]` decide how much of the unbuilt mid-October plan to promise on stage
 
-- Close
+- Close (2 min)
   - [Orange] transition
     - Photo option: `orange-asleep-on-typing-arm.jpg`, or the porch video `orange-porch.mov`
   - A compressed century of trials
@@ -163,7 +164,7 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
 
 ## Open before this can be final
 
-- Exact date and slot length; the section weights above assume 40 minutes
+- Whether Q&A comes out of the 40 minutes, and whether the talk is in person or virtual
 - Which demo, and whether it is live or recorded
 - Whether the industry-history slide stays (it has the least material behind it)
 - Whether diary #10 is written before the talk
