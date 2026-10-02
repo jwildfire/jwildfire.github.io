@@ -191,6 +191,21 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - Links: the deck, the diary, the repos; QR code
     - `[TODO]` turn the keynote page into the "start here" page and link the deck from it
 
+## Callouts: "What are agents good at now?"
+
+A recurring callout in the bottom-right corner: Orange's face in an amber hex with a thumbs-up, the question in small capitals, the answer in a speech bubble (design B, chosen 2026-10-02). The close in beat 4 gathers the same answers into one list.
+
+- Placed
+  - Teaching me things — slide 6, "Why can't I do this for work?"
+  - Writing code — slide 16, "We just let the coding agent deal with it"
+  - Drafting documents — slide 18, "Agents draft; people approve"
+- Candidates from the close-out list, not placed yet
+  - Busy work: making slides, meeting minutes
+  - Design: artifacts, .md → .html
+  - Syntax: git
+  - Catching real errors, including its own
+- Possible thumbs-down variant for "What is AI bad at?": being concise, prioritizing, remembering, knowing when it has failed
+
 ## Left out of draft 2
 
 Kept here so nothing from draft 1 is lost; pull any of it back in.

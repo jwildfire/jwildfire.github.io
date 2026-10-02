@@ -201,6 +201,21 @@
     .s-split td.ok { color: var(--spec-2); font-weight: 600; }
     .s-split .col p.small { font-size: 26px; color: var(--soft); margin-top: 20px; }
 
+    /* "What are agents good at now?" callout: Orange says the answer from the bottom-right corner.
+       Always amber, whatever the section hue. Markup:
+       <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p>
+       <p class="a">Writing <em>code!</em></p></div><div class="who"></div></div> */
+    .goodat { position: absolute; right: 140px; bottom: 96px; z-index: 2; display: flex; align-items: center; gap: 26px; }
+    .goodat .bub { position: relative; background: #fbf1e0; border: 3px solid var(--spec-1); border-radius: 26px; padding: 20px 32px 22px; }
+    .goodat .bub::after { content: ""; position: absolute; right: -15px; top: 50%; width: 24px; height: 24px; margin-top: -12px; background: #fbf1e0; border-right: 3px solid var(--spec-1); border-top: 3px solid var(--spec-1); transform: rotate(45deg); }
+    .goodat .q { font-family: var(--mono); font-size: 18px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--soft); margin: 0 0 4px; line-height: 1.3; }
+    .goodat .a { font-family: var(--serif); font-size: 50px; line-height: 1.05; margin: 0; color: var(--ink); }
+    .goodat .a em { font-style: italic; color: var(--spec-1); }
+    .goodat .who { position: relative; flex: none; width: 170px; height: 196px; clip-path: none; }
+    .goodat .who::before { content: ""; position: absolute; inset: 0; clip-path: var(--hex-clip); background: var(--spec-1); }
+    .goodat .who::after { content: ""; position: absolute; inset: 7px 6px; clip-path: var(--hex-clip); background: url(assets/orange/orange-face.jpg) center / cover; }
+    .goodat .who i { position: absolute; right: -22px; bottom: -8px; z-index: 1; width: 62px; height: 72px; clip-path: var(--hex-clip); background: var(--ink); display: grid; place-items: center; font-size: 32px; font-style: normal; }
+
     /* Placeholder slide for the outline stage. */
     .s-todo { background: repeating-linear-gradient(135deg, var(--bg) 0 28px, #f4f5f1 28px 56px); }
     .s-todo .todo { margin-top: 12px; font-family: var(--mono); font-size: 26px; color: var(--soft); border: 2px dashed var(--hue); border-radius: 18px; padding: 28px 36px; background: var(--bg); }
@@ -376,10 +391,11 @@
     <section class="slide s-image" data-hue="1">
       <p class="kicker">2012</p>
       <h2>“Why can't I do this <em>for work?</em>”</h2>
-      <figure>
+      <figure style="padding-bottom: 64px">
         <div class="frame"><img src="../assets/img/fig1_NYT.png" alt="An interactive election graphic from the New York Times, 2012" /></div>
-        <figcaption>Interactive graphics in the New York Times · two weeks to learn JavaScript and D3</figcaption>
+        <figcaption>Interactive graphics in the New York Times</figcaption>
       </figure>
+      <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Teaching me <em>things!</em></p></div><div class="who"><i>👍</i></div></div>
       <aside class="notes">
         Source: diary #3, "Re-Introducing safetyGraphics" (2026-06-16), "A Brief Prehistory".
         Beats: SAS in grad school (an 80-page master's paper, about 60 pages of it SAS Graph output);
@@ -388,6 +404,8 @@
         first result was "the clunkiest interactive graphic ever", built with Protovis (later D3).
         <br><br>Orange tie-in: Herman also let Jeremy work from Chile for five years, which is
         where Orange came from.
+        <br><br>Callout: what are agents good at now? Teaching me things. In 2012 it took two
+        weeks off to learn JavaScript; the first of the recurring callouts, so say the question out loud here.
       </aside>
     </section>
 
@@ -555,14 +573,13 @@
     <section class="slide s-split" data-hue="3">
       <p class="kicker">Build</p>
       <h2>“We just let the coding agent <em>deal with it</em>”</h2>
-      <div class="cols">
+      <div class="cols" style="flex: none">
         <div class="col"><h3>What we stopped building</h3>
-          <p>A coding agent of our own, steered step by step.</p>
-          <p class="small">Vendor coding agents improve every month.</p></div>
+          <p>A coding agent of our own, steered step by step.</p></div>
         <div class="col"><h3>What we maintain</h3>
-          <p>Shared context: one file that maps about 40 repos and sets the conventions, plus three skills.</p>
-          <p class="small">It works in Copilot and in Claude Code. About a third of recent commits in our roadmap repo were co-authored by one of them.</p></div>
+          <p>One shared context file for about 40 repos, plus three skills.</p></div>
       </div>
+      <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Writing <em>code!</em></p></div><div class="who"><i>👍</i></div></div>
       <aside class="notes">
         Title is Jeremy's line (2026-10-02). Source: Q3 deck, "Coding: maintained, not abandoned":
         "Vendor coding agents improve monthly, so we invest in shared context, not a custom agent."
@@ -572,8 +589,12 @@
         <br><br>This replaces the seven-step red/green chain slide from the first draft. The
         abstract promised "{gsm.agent} drives a red-green TDD cycle from failing test to merged
         PR"; the honest update is that the vendors' agents now do that well enough on their own.
+        <br><br>Said, not shown: the vendors' coding agents improve every month; the shared
+        context works in Copilot and in Claude Code; about a third of recent commits in the
+        roadmap repo were co-authored by one of them.
         <br><br>The "about a third" figure is for the roadmap repo's commits since July
         (co-authored by Copilot or Claude), as of late September.
+        <br><br>Callout: what are agents good at now? Writing code.
       </aside>
     </section>
 
@@ -611,6 +632,7 @@
         <div class="st"><div class="hx">5</div><b>Release</b><span>testing, knowledge transfer</span></div>
         <div class="st who"><div class="hx">6</div><b>Done</b><span>every gate signed off by a person</span></div>
       </div>
+      <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Drafting <em>documents!</em></p></div><div class="who"><i>👍</i></div></div>
       <aside class="notes">
         Source: Q3 deck, roadmap scaffold slides, and the gsm.roadmap README. Every requirement
         moves through the same six stages; a person records sign-off at each gate and the stage
@@ -622,6 +644,7 @@
         across 17 repos; 132 pull requests merged since early July; 23 architecture decision records.
         <br><br>The abstract's wording: "{gsm.roadmap} decomposes requirements with AI-assisted
         planning using GitHub workflows." Ties forward to beat 4: requirements before work.
+        <br><br>Callout: what are agents good at now? Drafting documents (specs, designs, plans).
       </aside>
     </section>
 
