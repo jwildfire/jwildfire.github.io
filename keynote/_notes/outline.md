@@ -204,7 +204,9 @@ A recurring callout in the bottom-right corner: Orange's face in an amber hex wi
   - Design: artifacts, .md → .html
   - Syntax: git
   - Catching real errors, including its own
-- Possible thumbs-down variant for "What is AI bad at?": being concise, prioritizing, remembering, knowing when it has failed
+- Thumbs-down version, "What are agents bad at now?": an unimpressed Orange in a muted-red hex, bottom-left corner
+  - Placed: Setting priorities — slide 18, "Agents draft; people approve" (alongside "Drafting documents")
+  - Candidates from the close-out list: being concise, remembering, knowing when it has failed
 
 ## Left out of draft 2
 

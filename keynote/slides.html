@@ -216,6 +216,16 @@
     .goodat .who::after { content: ""; position: absolute; inset: 7px 6px; clip-path: var(--hex-clip); background: url(assets/orange/orange-face.jpg) center / cover; }
     .goodat .who i { position: absolute; right: -22px; bottom: -8px; z-index: 1; width: 62px; height: 72px; clip-path: var(--hex-clip); background: var(--ink); display: grid; place-items: center; font-size: 32px; font-style: normal; }
 
+    /* Thumbs-down version: add class "bad". Muted red, an unimpressed Orange, and it sits in the
+       bottom-left corner facing the other way, so a slide can carry one of each. */
+    .goodat.bad { right: auto; left: 140px; flex-direction: row-reverse; }
+    .goodat.bad .bub { background: #fbeceb; border-color: var(--spec-0); }
+    .goodat.bad .bub::after { right: auto; left: -15px; background: #fbeceb; border: 0; border-left: 3px solid var(--spec-0); border-bottom: 3px solid var(--spec-0); }
+    .goodat.bad .a em { color: var(--spec-0); }
+    .goodat.bad .who::before { background: var(--spec-0); }
+    .goodat.bad .who::after { background-image: url(assets/orange/orange-face-unimpressed.jpg); }
+    .goodat.bad .who i { right: auto; left: -22px; }
+
     /* Placeholder slide for the outline stage. */
     .s-todo { background: repeating-linear-gradient(135deg, var(--bg) 0 28px, #f4f5f1 28px 56px); }
     .s-todo .todo { margin-top: 12px; font-family: var(--mono); font-size: 26px; color: var(--soft); border: 2px dashed var(--hue); border-radius: 18px; padding: 28px 36px; background: var(--bg); }
@@ -633,6 +643,7 @@
         <div class="st who"><div class="hx">6</div><b>Done</b><span>every gate signed off by a person</span></div>
       </div>
       <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Drafting <em>documents!</em></p></div><div class="who"><i>👍</i></div></div>
+      <div class="goodat bad"><div class="bub"><p class="q">What are agents bad at now?</p><p class="a">Setting <em>priorities</em></p></div><div class="who"><i>👎</i></div></div>
       <aside class="notes">
         Source: Q3 deck, roadmap scaffold slides, and the gsm.roadmap README. Every requirement
         moves through the same six stages; a person records sign-off at each gate and the stage
@@ -645,6 +656,8 @@
         <br><br>The abstract's wording: "{gsm.roadmap} decomposes requirements with AI-assisted
         planning using GitHub workflows." Ties forward to beat 4: requirements before work.
         <br><br>Callout: what are agents good at now? Drafting documents (specs, designs, plans).
+        <br><br>Callout: what are agents bad at now? Setting priorities. They will draft any
+        requirement you ask for; deciding which one matters is still a person's job (Jeremy, 2026-10-02).
       </aside>
     </section>
 
