@@ -57,47 +57,47 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - "Change the industry standard for how people monitor safety" [diary #3]
     - Modernizing it "needed a team and a budget I no longer have" — or does it? [diary #3]
 
-2. OpenRBQM: GxP monitoring with AI in the loop (10 min) — drafted from public sources, slides 11–22
-  - Source plan (Jeremy, 2026-10-01): the agent drafts from public sources (the gsm packages, gsm.agent, gsm.roadmap, qcthat, the submitted abstract); Jeremy adds the inside view and cuts what should not be said on stage
+2. OpenRBQM: GxP monitoring with AI in the loop (10 min) — drafted, slides 11–22
+  - Sources: public material (diary #1 and #4, gsm.agent, gsm.roadmap README, the 6 June deck) for slides 11–14 and 21–22; the team's internal Q3 2026 agentic update deck for slides 15–20 (read from Downloads 2026-10-02; the file is not in this repo). `[TODO]` Jeremy vets everything on slides 15–20 before the branch is pushed again
+  - Story (from the Q3 deck): the team moved its effort from coding agents to the two ends of the lifecycle, planning and operations, "where the value was"
   - [Orange] What we do right now (built, slide 11)
     - Photo: `orange-reviewing-spreadsheet.jpg`; line "OpenRBQM, with AI in the loop." (draft wording)
   - Monitoring a trial, as software (built, slide 12)
     - gsm: open-source R packages for risk-based quality monitoring, built for GxP from the start [diary #1, diary #4]
     - Image: the report screenshot from the public gsm.kri README (example data); `[TODO]` Jeremy confirms or supplies a newer one
-  - Every metric is the same six steps (built, slide 13) `[cut?]`
-    - Input → Transform → Analyze → Threshold → Flag → Summarize; plain functions composed into YAML workflows [gsm.agent overview]
-    - `[TODO]` the one-line description under each step is a paraphrase; check the wording
-  - AI in the loop (built, slide 14)
+  - AI in the loop (built, slide 13)
     - "We use AI heavily, but it's not autonomous. Humans own the process and all deliverables." [diary #1]
-    - Notes: Copilot; adopted from January 2026, formalised since
-  - +50% (built, slide 15)
+  - +50% (built, slide 14) `[cut?]`
     - Releases up about 50% on last year; issues and pull requests roughly doubled; "not a controlled productivity study" [diary #1]
-    - `[TODO]` confirm these June figures can go on a slide, and whether to refresh them
-  - "We just let the coding agent deal with it" (provisional, slide 16)
-    - Jeremy, 2026-10-02: the gsm.agent step-by-step slide "has largely been replaced by 'we just let the coding agent deal with it'"; much more focus on operational improvements
-    - Then/now split; replaces the seven-step red/green chain slide
-    - `[TODO]` refine from the Q3 2026 agentic RBQM update deck (not yet readable: macOS blocks the Messages attachments folder)
-  - Operations: studies as repositories (provisional, slide 17)
-    - One repo per study; one central repo for monitoring (Jeremy, 2026-10-02)
-    - `[TODO]` the real structure and a diagram, from the Q3 deck; internal content needs Jeremy's OK before it goes on a public slide
-  - gsm.roadmap: requirements before work (built, slide 18)
-    - A requirement issue with four parts and a six-stage lifecycle; the work is sub-issues in the package repos [gsm.roadmap README]
-    - `[TODO]` how much of the AI-assisted planning to describe
-  - qcthat: traceability as a byproduct (built, slide 19)
-    - The issue number goes in the test name; a traceability matrix comes out [qcthat description, submitted abstract]
-    - The table on the slide is an illustration; `[TODO]` swap in a real qcthat report screenshot if one can be shown
-    - qcthat hex as the bullet
-  - AI-written code still needs a human owner (built, slide 20)
+    - `[TODO]` June figures; the Q3 deck has fresher numbers that could replace them
+  - Plan → build → run: we invest at both ends (built, slide 15)
+    - Plan and run are our own scaffolds; build is vendor coding agents plus our shared context [Q3 deck]
+    - Why: both ends are company-specific process no vendor will build; the middle is commodity and improving monthly
+  - "We just let the coding agent deal with it" (built, slide 16)
+    - Title is Jeremy's line. Stopped building: a coding agent of our own. Maintain: one context file mapping about 40 repos, plus three skills [Q3 deck: "Coding: maintained, not abandoned"]
+    - About a third of recent roadmap-repo commits co-authored by Copilot or Claude
+    - Replaces the seven-step red/green gsm.agent slide
+  - Deterministic tools first, agents on top (built, slide 17) `[cut?]`
+    - Framework → Tools → Skills → Bots; the first three reliable, bots still learning [Q3 deck]
+    - "Agents write prose on top of evidence the tools compute, so the numbers stay right even when an agent fails"
+  - Plan: agents draft; people approve (built, slide 18)
+    - Six stages, Backlog to Done, with an artifact at each and a person signing off every gate [Q3 deck, gsm.roadmap README]
+    - Numbers held in the notes: 13 skills, 82 requirements, 64 artifacts, 132 merged pull requests since July
+  - Run: one repo per study, one hub to run them (built, slide 19)
+    - Study repos (20), central scheduling, intake and a 15-step guide, weekly plan alignment [Q3 deck]
+    - `[TODO]` a diagram or dashboard screenshot would beat bullets; the deck's screenshots are internal
+  - Run: the hub replaced spreadsheets and email (built, slide 20)
+    - Before: Excel trackers, status by email, no live view. Now: merge a schedule and issues open in each study repo, a daily dashboard, an audit trail through pull requests [Q3 deck]
+  - AI-written code still needs a human owner (built, slide 21)
     - The four "a person…" lines, verbatim from the 6 June deck
-  - What good practice looks like now (placeholder, slide 21)
-    - Validation as code, generated documentation and traceability, human gates, monitoring agents [promised in diary #9]
-    - `[TODO]` diary #10 is not written; needs Jeremy's inside view; may belong in beat 4
   - The bridge (built, slide 22)
     - "Open, software-shaped workflows are agent-ready." Then: so what happens when the agent does more of the work?
     - Notes: "I'm not comfortable using those highly autonomous tools for GxP use cases right now" [diary #1], so the experiment runs on safetyGraphics
-  - Not built: The industry got ready without knowing it `[cut?]`
-    - SAS macro libraries, then hybrid SAS and R, then open frameworks with local extensions [old deck, act 1]
-    - `[TODO]` exists only as dictation bullets; needs dates and one or two examples before it can be a slide
+  - Taken out of beat 2 on 2026-10-02 (still in git history)
+    - Every metric is the same six steps (Input → Summarize)
+    - qcthat: traceability as a byproduct; a better fit for beat 3, where gsm.safety borrows it
+    - What good practice looks like now (the diary #10 placeholder); a better fit for beat 4
+    - The industry got ready without knowing it (never built)
 
 3. safety.viz: OrangeBot, safetyGraphics and gsm with semi-autonomous agents (10 min) — not drafted
   - From Orange to obot

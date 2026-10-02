@@ -187,6 +187,8 @@
     .chain .st b { display: block; font-size: 28px; font-weight: 600; margin-bottom: 8px; }
     .chain .st span { display: block; font-size: 22px; line-height: 1.3; color: var(--soft); }
     .chain .st + .st::before { content: "→"; position: absolute; left: -17px; top: 42px; font-size: 38px; color: var(--faint); }
+    .chain .st i.tag { display: inline-block; margin-top: 14px; font-family: var(--mono); font-style: normal; font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--hue); border: 2px solid currentColor; border-radius: 999px; padding: 3px 14px; }
+    .chain .st i.tag.muted { color: var(--faint); }
     .chain-key { font-family: var(--mono); font-size: 20px; color: var(--soft); margin: 0 0 56px; display: flex; gap: 36px; }
     .chain-key i { display: inline-block; width: 18px; height: 21px; clip-path: var(--hex-clip); background: var(--hue); margin-right: 10px; vertical-align: -3px; }
     .chain-key i.who { background: var(--ink); }
@@ -501,28 +503,6 @@
       </aside>
     </section>
 
-    <section class="slide" data-hue="3">
-      <p class="kicker">Why agents can work on it</p>
-      <h2>Every metric is the same <em>six steps</em></h2>
-      <div class="chain">
-        <div class="st"><div class="hx">1</div><b>Input</b><span>study data, mapped to standard domains</span></div>
-        <div class="st"><div class="hx">2</div><b>Transform</b><span>a rate for each site</span></div>
-        <div class="st"><div class="hx">3</div><b>Analyze</b><span>a statistical score</span></div>
-        <div class="st"><div class="hx">4</div><b>Threshold</b><span>the limits for that score</span></div>
-        <div class="st"><div class="hx">5</div><b>Flag</b><span>sites outside the limits</span></div>
-        <div class="st"><div class="hx">6</div><b>Summarize</b><span>one row per site, per metric</span></div>
-      </div>
-      <aside class="notes">
-        Source: the gsm.agent ecosystem overview: "a standardized 6-step data flow: Input →
-        Transform → Analyze → Threshold → Flag → Summarize. Steps are plain functions composed
-        into YAML workflows." The one-line descriptions under each step are my paraphrase;
-        Jeremy to check the wording.
-        <br><br>The point for the talk: the work is already software-shaped. Small functions, a
-        declared workflow, tests and a specification for each step. That is what makes it something
-        an agent can be handed. Cut candidate if beat 2 runs long.
-      </aside>
-    </section>
-
     <section class="slide s-quote" data-hue="3">
       <p class="kicker">AI in the loop</p>
       <blockquote>“We use AI heavily, but it's <em>not autonomous.</em> Humans own the process and all deliverables.”</blockquote>
@@ -553,103 +533,134 @@
       </aside>
     </section>
 
+    <section class="slide" data-hue="3">
+      <p class="kicker">Where we put the effort</p>
+      <h2>Plan → build → run: we invest at <em>both ends</em></h2>
+      <div class="chain">
+        <div class="st"><div class="hx">1</div><b>Plan</b><span>Requirements, designs and phase gates</span><i class="tag">our scaffold</i></div>
+        <div class="st" style="--c: var(--faint)"><div class="hx">2</div><b>Build</b><span>Vendor coding agents, plus our shared context and conventions</span><i class="tag muted">maintained</i></div>
+        <div class="st"><div class="hx">3</div><b>Run</b><span>Study set-up, snapshot schedules, checks against the monitoring plan</span><i class="tag">our scaffold</i></div>
+      </div>
+      <aside class="notes">
+        Source: the team's Q3 2026 agentic update deck (internal), strategy slide. The headline
+        there: "we moved focus from coding agents to the roadmap and operations scaffolds, where
+        the value was." The chain follows the product lifecycle: the roadmap produces the specs
+        and sub-issues that coding consumes; coding produces releases that operations deploys to studies.
+        <br><br>Why both ends: they are company-specific process that no vendor will build. The
+        middle is commodity and improving monthly.
+        <br><br>Vet before publishing: everything on slides 15–20 comes from that internal deck.
+      </aside>
+    </section>
+
     <section class="slide s-split" data-hue="3">
-      <p class="kicker">How we build, now</p>
+      <p class="kicker">Build</p>
       <h2>“We just let the coding agent <em>deal with it</em>”</h2>
       <div class="cols">
-        <div class="col"><h3>Earlier this year</h3>
-          <p>A step-by-step playbook for the agent: failing test, approval, smallest change, check, pull request.</p>
-          <p class="small">gsm.agent’s test-first skill, with a person approving each commit.</p></div>
+        <div class="col"><h3>What we stopped building</h3>
+          <p>A coding agent of our own, steered step by step.</p>
+          <p class="small">Vendor coding agents improve every month.</p></div>
+        <div class="col"><h3>What we maintain</h3>
+          <p>Shared context: one file that maps about 40 repos and sets the conventions, plus three skills.</p>
+          <p class="small">It works in Copilot and in Claude Code. About a third of recent commits in our roadmap repo were co-authored by one of them.</p></div>
+      </div>
+      <aside class="notes">
+        Title is Jeremy's line (2026-10-02). Source: Q3 deck, "Coding: maintained, not abandoned":
+        "Vendor coding agents improve monthly, so we invest in shared context, not a custom agent."
+        gsm.agent is one AGENTS.md (the map of the gsm repos plus conventions: attribution,
+        test-first development, worktrees) and three skills; unchanged since July, by design.
+        A deeper issue-to-pull-request pilot and domain skills are parked until 2027.
+        <br><br>This replaces the seven-step red/green chain slide from the first draft. The
+        abstract promised "{gsm.agent} drives a red-green TDD cycle from failing test to merged
+        PR"; the honest update is that the vendors' agents now do that well enough on their own.
+        <br><br>The "about a third" figure is for the roadmap repo's commits since July
+        (co-authored by Copilot or Claude), as of late September.
+      </aside>
+    </section>
+
+    <section class="slide" data-hue="3">
+      <p class="kicker">How we build the scaffolds</p>
+      <h2>Deterministic tools first, <em>agents on top</em></h2>
+      <div class="chain">
+        <div class="st"><div class="hx">1</div><b>Framework</b><span>GitHub as the system of record: issues, a lifecycle, decision records</span><i class="tag">reliable</i></div>
+        <div class="st"><div class="hx">2</div><b>Tools</b><span>Scripts and Actions that compute the evidence</span><i class="tag">reliable</i></div>
+        <div class="st"><div class="hx">3</div><b>Skills</b><span>Version-controlled procedures an agent loads for a task</span><i class="tag">reliable</i></div>
+        <div class="st" style="--c: var(--faint)"><div class="hx">4</div><b>Bots</b><span>Agents acting on a schedule, under their own identity</span><i class="tag muted">still learning</i></div>
+      </div>
+      <aside class="notes">
+        Source: Q3 deck, "Framework → Tools → Skills → Bots". "Each layer only works once the one
+        below it is solid. Layers 1–3 are reliable today; layer 4 is where we're still learning."
+        <br><br>The line worth saying out loud: "Deterministic tools come before agents on
+        purpose: agents write prose on top of evidence the tools compute, so the numbers stay
+        right even when an agent fails."
+        <br><br>Example for the stage: the weekly check of each study's configuration against its
+        monitoring plan runs with no model at all. An agent wrote the checker and its matching
+        rules; the rules stay marked "inferred" until an engineer confirms them.
+        <br><br>Echo for beat 3: the obot summer learned the same thing the hard way ("never let
+        an agent be the sole watcher of an agent", diary #8). Cut candidate if beat 2 runs long.
+      </aside>
+    </section>
+
+    <section class="slide" data-hue="3">
+      <p class="kicker">Plan · gsm.roadmap</p>
+      <h2>Agents draft; people <em>approve</em></h2>
+      <div class="chain">
+        <div class="st"><div class="hx">1</div><b>Backlog</b><span>business requirement</span></div>
+        <div class="st"><div class="hx">2</div><b>Gathering</b><span>data specification</span></div>
+        <div class="st"><div class="hx">3</div><b>Design</b><span>analytics spec, for business sign-off</span></div>
+        <div class="st"><div class="hx">4</div><b>Development</b><span>implementation plan, sub-issues per repo</span></div>
+        <div class="st"><div class="hx">5</div><b>Release</b><span>testing, knowledge transfer</span></div>
+        <div class="st who"><div class="hx">6</div><b>Done</b><span>every gate signed off by a person</span></div>
+      </div>
+      <aside class="notes">
+        Source: Q3 deck, roadmap scaffold slides, and the gsm.roadmap README. Every requirement
+        moves through the same six stages; a person records sign-off at each gate and the stage
+        only advances when the gate's evidence passes. Agents draft most of the written artifacts
+        (requirements, specs, designs, implementation plans) from templates, through 13 skills;
+        each artifact is published by a validated pull request and indexed on the roadmap site.
+        <br><br>Numbers available if wanted on the slide (late September): 13 skills, up from 7 in
+        July; 82 requirements tracked; 64 artifacts across 29 requirements; 103 linked sub-issues
+        across 17 repos; 132 pull requests merged since early July; 23 architecture decision records.
+        <br><br>The abstract's wording: "{gsm.roadmap} decomposes requirements with AI-assisted
+        planning using GitHub workflows." Ties forward to beat 4: requirements before work.
+      </aside>
+    </section>
+
+    <section class="slide s-bullets" data-hue="3">
+      <p class="kicker">Run · operations</p>
+      <h2>One repo per study, <em>one hub</em> to run them</h2>
+      <ul>
+        <li>Study repos <span>— 20 studies, each with its own configuration and snapshot workflow</span></li>
+        <li>Central scheduling <span>— one schedule opens issues in every study repo; the dashboard updates daily</span></li>
+        <li>Intake and a guide <span>— request forms, and a 15-step study set-up guide</span></li>
+        <li>Plan alignment <span>— a weekly check of each study's configuration against its monitoring plan</span></li>
+      </ul>
+      <aside class="notes">
+        Jeremy's steer (2026-10-02): "One repo per study, central repo for monitoring." Source:
+        Q3 deck, "The operations scaffold at a glance".
+        <br><br>Production workflows run under a bot identity. The plan-alignment check is fully
+        deterministic at runtime; an agent drafted the code and the matching rules.
+        <br><br>A diagram (study repos around one hub) or a screenshot of the dashboard would be
+        stronger than bullets; the deck's screenshots are internal, so that needs Jeremy's call.
+      </aside>
+    </section>
+
+    <section class="slide s-split" data-hue="3">
+      <p class="kicker">Run · what changed</p>
+      <h2>The hub replaced <em>spreadsheets and email</em></h2>
+      <div class="cols">
+        <div class="col"><h3>Before</h3>
+          <p>Schedules in several Excel trackers<br>Status chased by email<br>No live view for leadership</p></div>
         <div class="col"><h3>Now</h3>
-          <p>The coding agent runs the development loop itself. A person still reviews and merges.</p>
-          <p class="small">The effort moved from steering the agent to improving operations.</p></div>
+          <p>Merge a schedule, and issues open in each study repo<br>A live dashboard, updated daily<br>A full audit trail through pull requests</p></div>
       </div>
       <aside class="notes">
-        PROVISIONAL: drafted from Jeremy's one-line steer (2026-10-02): "The gsm.agent slide has
-        largely been replaced by 'we just let the coding agent deal with it'; much more focus on
-        operational improvements." To be refined from the Q3 2026 agentic RBQM update deck, which
-        I have not been able to open yet. The wording in both columns is mine, not the deck's.
-        <br><br>This replaces the seven-step red/green chain slide. For reference, the earlier
-        practice (public gsm.agent repo): requirement → red → approve → green → check → pull
-        request → review, with attribution on every issue and PR and one worktree per branch.
-        The abstract's wording was "{gsm.agent} drives a red-green TDD cycle from failing test to merged PR."
-        <br><br>Check with Jeremy: is "a person still reviews and merges" still true as stated?
-      </aside>
-    </section>
-
-    <section class="slide s-split" data-hue="3">
-      <p class="kicker">Where the effort went</p>
-      <h2>Operations: studies as <em>repositories</em></h2>
-      <div class="cols">
-        <div class="col"><h3>One repo per study</h3>
-          <p>Each study’s configuration, workflows and outputs live in a repository of their own.</p>
-          <p class="small">Details to come from the Q3 scaffold deck.</p></div>
-        <div class="col"><h3>One central repo for monitoring</h3>
-          <p>A single place that watches every study repo.</p>
-          <p class="small">Details to come from the Q3 scaffold deck.</p></div>
-      </div>
-      <aside class="notes">
-        PROVISIONAL: the two headings are Jeremy's words (2026-10-02: "One repo per study, central
-        repo for monitoring"); the sentence under each is my guess at what they mean and must be
-        replaced from the Q3 2026 agentic RBQM update deck. A diagram (study repos feeding one
-        monitoring repo) would suit this slide once the real structure is known.
-        <br><br>Reminder: that deck is an internal document. Nothing from it goes on a public
-        slide until Jeremy has said it can.
-      </aside>
-    </section>
-
-    <section class="slide s-split" data-hue="3">
-      <p class="kicker">gsm.roadmap</p>
-      <h2>Requirements <em>before</em> work</h2>
-      <div class="cols">
-        <div class="col"><h3>A requirement is an issue with four parts</h3>
-          <p>Business requirement<br>Overview<br>Data requirement<br>Design</p>
-          <p class="small">Filled in one stage at a time, with a sign-off from the business user before design.</p></div>
-        <div class="col"><h3>And a lifecycle</h3>
-          <p>Backlog → Gathering → Design → Development → Review → Release</p>
-          <p class="small">The work itself is sub-issues in the package repos, so the requirement keeps the what and the why.</p></div>
-      </div>
-      <aside class="notes">
-        Source: the gsm.roadmap README (requirement template, lifecycle table, sub-issues instead
-        of inline task lists, the weekday status rollup posted on each requirement). The abstract:
-        "{gsm.roadmap} decomposes requirements with AI-assisted planning using GitHub workflows."
-        <br><br>TODO (Jeremy): the README is public but the repo's issues are the team's; say how
-        much of the AI-assisted part (drafting requirements, decomposing into sub-issues) to describe.
-        Ties forward to beat 4: "requirements before work" is one of the lessons from the obot summer.
-      </aside>
-    </section>
-
-    <section class="slide s-split" data-hue="3">
-      <p class="kicker pkg" style="--pkg: url(assets/hex/qcthat.png)">qcthat</p>
-      <h2>Traceability as a <em>byproduct</em></h2>
-      <div class="cols">
-        <div class="col"><h3>What the developer writes</h3>
-          <pre>test_that("Flags sites above
-  the upper limit #19", {
-  ...
-})</pre>
-          <p class="small">The issue number goes in the test name.</p></div>
-        <div class="col"><h3>What comes out</h3>
-          <table>
-            <tr><th>Issue</th><th>Test</th><th>Result</th></tr>
-            <tr><td>#19</td><td>Flags sites above the upper limit</td><td class="ok">Pass</td></tr>
-            <tr><td>#19</td><td>Leaves sites inside the limits</td><td class="ok">Pass</td></tr>
-            <tr><td>#23</td><td>Handles a site with no data</td><td class="ok">Pass</td></tr>
-          </table>
-          <p class="small">An illustration, not a real report.</p></div>
-      </div>
-      <aside class="notes">
-        Source: the qcthat package description: "A lightweight quality control framework for R
-        packages, particularly those used in regulated environments such as clinical trials.
-        Integrates formal quality control reports into package development workflows using
-        testthat and GitHub." The abstract: "{qcthat} generates audit-ready traceability matrices
-        as a byproduct of normal development." The test-naming rule is in the gsm.agent tdd skill:
-        "include the issue number in each test_that description."
-        <br><br>The table on the slide is made up to show the shape. TODO (Jeremy): replace it with
-        a screenshot of a real qcthat report if one can be shown.
-        <br><br>Pays off in beat 3: safety.viz and gsm.safety borrow exactly this (diary #4:
-        "Instead of inventing a new quality framework, we plug the safety graphics into a quality
-        framework that already exists").
+        Source: Q3 deck, "The Central Monitoring hub replaced spreadsheets and email". Also on
+        that slide: self-serve editors with approver sign-off; cadence growing toward weekly;
+        20 study repos managed and 19 production workflows.
+        <br><br>Results are qualitative so far: clinical leadership owns the schedule editor, the
+        email chains are gone, nobody compiles status by hand.
+        <br><br>The talk's point: this is where agentic engineering paid off at work. Not faster
+        code, but operations moved into version control, with an audit trail as a side effect.
       </aside>
     </section>
 
@@ -668,26 +679,6 @@
         "repeatable, auditable, and governed by the humans who remain responsible for every line of code."
         <br><br>Old deck's guardrail grid, if a second slide is wanted: Evidence, Permissions,
         Traceability, Humans.
-      </aside>
-    </section>
-
-    <section class="slide s-todo" data-hue="3">
-      <p class="kicker">Best practice, October 2026</p>
-      <h2>What good practice <em>looks like now</em></h2>
-      <div class="todo">
-        <p>Placeholder: the content promised for diary #10, which is not written yet.</p>
-        <ul>
-          <li>Validation as code</li>
-          <li>Generated documentation and traceability</li>
-          <li>Human gates</li>
-          <li>Monitoring agents, “the hard way”</li>
-        </ul>
-      </div>
-      <aside class="notes">
-        Source: the closing line of diary #9: "GxP best practices for agentic engineering:
-        validation as code, generated documentation and traceability, human gates, and what I
-        learned about monitoring agents the hard way." Needs Jeremy's inside view. It may also
-        belong in beat 4 with the other lessons instead of here.
       </aside>
     </section>
 
