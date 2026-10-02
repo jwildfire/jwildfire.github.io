@@ -57,8 +57,8 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - "Change the industry standard for how people monitor safety" [diary #3]
     - Modernizing it "needed a team and a budget I no longer have" — or does it? [diary #3]
 
-2. OpenRBQM: GxP monitoring with AI in the loop (10 min) — drafted, slides 11–22
-  - Sources: public material (diary #1 and #4, gsm.agent, gsm.roadmap README, the 6 June deck) for slides 11–14 and 21–22; the team's internal Q3 2026 agentic update deck for slides 15–20 (read from Downloads 2026-10-02; the file is not in this repo). `[TODO]` Jeremy vets everything on slides 15–20 before the branch is pushed again
+2. OpenRBQM: GxP monitoring with AI in the loop (10 min) — drafted, slides 11–24
+  - Sources: public material (diary #1 and #4, gsm.agent, gsm.roadmap README, the 6 June deck) for slides 11–16 and 23–24; the team's internal Q3 2026 agentic update deck for slides 17–22 (read from Downloads 2026-10-02; the file is not in this repo). `[TODO]` Jeremy vets everything on the Q3-deck slides (17–22)
   - Story (from the Q3 deck): the team moved its effort from coding agents to the two ends of the lifecycle, planning and operations, "where the value was"
   - [Orange] What we do right now (built, slide 11)
     - Photo: `orange-reviewing-spreadsheet.jpg`; line "OpenRBQM, with AI in the loop." (draft wording)
@@ -67,30 +67,37 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - Image: the report screenshot from the public gsm.kri README (example data); `[TODO]` Jeremy confirms or supplies a newer one
   - AI in the loop (built, slide 13)
     - "We use AI heavily, but it's not autonomous. Humans own the process and all deliverables." [diary #1]
-  - +50% (built, slide 14) `[cut?]`
+  - How much do you hand over? (built, slide 14)
+    - The five levels of AI usage as a ladder, level 5 on top, with "the day job" marked at level 3 [March all-hands deck; post 2026-02-10]
+    - Level names are Dan Shapiro's via Simon Willison; descriptions reworded; credited on the slide
+    - `[TODO]` Jeremy confirms level 3 is still right for October; the ladder can return in beat 3 as obot climbs
+  - Same lifecycle; five steps changed hands (built, slide 15) `[cut?]`
+    - Design, build, publish: each step marked a person, the agent, or automated; merges the all-hands deck's before and after slides into one [March all-hands deck]
+    - Optional (Jeremy: "possibly"); it shows the March state, and slide 18 says how it has moved since
+  - +50% (built, slide 16) `[cut?]`
     - Releases up about 50% on last year; issues and pull requests roughly doubled; "not a controlled productivity study" [diary #1]
     - `[TODO]` June figures; the Q3 deck has fresher numbers that could replace them
-  - Plan → build → run: we invest at both ends (built, slide 15)
+  - Plan → build → run: we invest at both ends (built, slide 17)
     - Plan and run are our own scaffolds; build is vendor coding agents plus our shared context [Q3 deck]
     - Why: both ends are company-specific process no vendor will build; the middle is commodity and improving monthly
-  - "We just let the coding agent deal with it" (built, slide 16)
+  - "We just let the coding agent deal with it" (built, slide 18)
     - Title is Jeremy's line. Stopped building: a coding agent of our own. Maintain: one context file mapping about 40 repos, plus three skills [Q3 deck: "Coding: maintained, not abandoned"]
     - About a third of recent roadmap-repo commits co-authored by Copilot or Claude
     - Replaces the seven-step red/green gsm.agent slide
-  - Deterministic tools first, agents on top (built, slide 17) `[cut?]`
+  - Deterministic tools first, agents on top (built, slide 19) `[cut?]`
     - Framework → Tools → Skills → Bots; the first three reliable, bots still learning [Q3 deck]
     - "Agents write prose on top of evidence the tools compute, so the numbers stay right even when an agent fails"
-  - Plan: agents draft; people approve (built, slide 18)
+  - Plan: agents draft; people approve (built, slide 20)
     - Six stages, Backlog to Done, with an artifact at each and a person signing off every gate [Q3 deck, gsm.roadmap README]
     - Numbers held in the notes: 13 skills, 82 requirements, 64 artifacts, 132 merged pull requests since July
-  - Run: one repo per study, one hub to run them (built, slide 19)
+  - Run: one repo per study, one hub to run them (built, slide 21)
     - Study repos (20), central scheduling, intake and a 15-step guide, weekly plan alignment [Q3 deck]
     - `[TODO]` a diagram or dashboard screenshot would beat bullets; the deck's screenshots are internal
-  - Run: the hub replaced spreadsheets and email (built, slide 20)
+  - Run: the hub replaced spreadsheets and email (built, slide 22)
     - Before: Excel trackers, status by email, no live view. Now: merge a schedule and issues open in each study repo, a daily dashboard, an audit trail through pull requests [Q3 deck]
-  - AI-written code still needs a human owner (built, slide 21)
+  - AI-written code still needs a human owner (built, slide 23)
     - The four "a person…" lines, verbatim from the 6 June deck
-  - The bridge (built, slide 22)
+  - The bridge (built, slide 24)
     - "Open, software-shaped workflows are agent-ready." Then: so what happens when the agent does more of the work?
     - Notes: "I'm not comfortable using those highly autonomous tools for GxP use cases right now" [diary #1], so the experiment runs on safetyGraphics
   - Taken out of beat 2 on 2026-10-02 (still in git history)
@@ -197,15 +204,15 @@ A recurring callout in the bottom-right corner: Orange's face in an amber hex wi
 
 - Placed
   - Teaching me things — slide 6, "Why can't I do this for work?"
-  - Writing code — slide 16, "We just let the coding agent deal with it"
-  - Drafting documents — slide 18, "Agents draft; people approve"
+  - Writing code — slide 18, "We just let the coding agent deal with it"
+  - Drafting documents — slide 20, "Agents draft; people approve"
 - Candidates from the close-out list, not placed yet
   - Busy work: making slides, meeting minutes
   - Design: artifacts, .md → .html
   - Syntax: git
   - Catching real errors, including its own
 - Thumbs-down version, "What are agents bad at now?": an unimpressed Orange in a muted-red hex, bottom-left corner
-  - Placed: Setting priorities — slide 18, "Agents draft; people approve" (alongside "Drafting documents")
+  - Placed: Setting priorities — slide 20, "Agents draft; people approve" (alongside "Drafting documents")
   - Candidates from the close-out list: being concise, remembering, knowing when it has failed
 
 ## Left out of draft 2

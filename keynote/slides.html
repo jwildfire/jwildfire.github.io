@@ -226,6 +226,29 @@
     .goodat.bad .who::after { background-image: url(assets/orange/orange-face-unimpressed.jpg); }
     .goodat.bad .who i { right: auto; left: -22px; }
 
+    /* Levels ladder: six rows, level 5 on top. Put class "here" on the row to mark, with a
+       <i class="tag"> for its label. */
+    .levels { display: flex; flex-direction: column; gap: 8px; flex: 1; justify-content: center; }
+    .levels .lv { display: grid; grid-template-columns: 52px 390px 1fr auto; align-items: center; gap: 22px; padding: 6px 24px 6px 12px; border-radius: 16px; border: 2px solid transparent; }
+    .levels .lv .hx { width: 48px; height: 55px; clip-path: var(--hex-clip); background: var(--c); color: #fff; display: grid; place-items: center; font-family: var(--serif); font-size: 30px; }
+    .levels .lv b { font-size: 29px; font-weight: 600; }
+    .levels .lv span { font-size: 25px; color: var(--soft); }
+    .levels .lv.here { background: var(--panel); border-color: var(--c); box-shadow: 0 8px 24px rgba(31, 35, 40, 0.07); }
+    .levels .lv .tag { font-family: var(--mono); font-style: normal; font-size: 19px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c); white-space: nowrap; }
+    .levels-src { font-family: var(--mono); font-size: 18px; color: var(--faint); margin: 10px 0 0; }
+
+    /* Lifecycle: three columns of steps, each marked by who does it now. */
+    .life { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; flex: 1; align-content: start; }
+    .life h3 { font-family: var(--mono); font-size: 22px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--soft); margin: 0 0 12px; font-weight: 500; }
+    .life .s { display: flex; align-items: center; gap: 14px; font-size: 25px; padding: 8px 16px; border-radius: 12px; margin-bottom: 8px; background: var(--panel); border: 2px solid var(--rule); }
+    .life .s::before { content: ""; flex: none; width: 18px; height: 21px; clip-path: var(--hex-clip); background: var(--ink); }
+    .life .s.ai { background: #e6f6f5; border-color: var(--hue); font-weight: 600; }
+    .life .s.ai::before { background: var(--hue); }
+    .life .s.both::before { background: linear-gradient(90deg, var(--ink) 50%, var(--hue) 50%); }
+    .life .s.auto { background: var(--rail); color: var(--soft); }
+    .life .s.auto::before { background: var(--faint); }
+    .chain-key i.auto { background: var(--faint); }
+
     /* Placeholder slide for the outline stage. */
     .s-todo { background: repeating-linear-gradient(135deg, var(--bg) 0 28px, #f4f5f1 28px 56px); }
     .s-todo .todo { margin-top: 12px; font-family: var(--mono); font-size: 26px; color: var(--soft); border: 2px dashed var(--hue); border-radius: 18px; padding: 28px 36px; background: var(--bg); }
@@ -547,6 +570,72 @@
       </aside>
     </section>
 
+    <section class="slide" data-hue="3">
+      <p class="kicker">Levels of AI usage</p>
+      <h2>How much do you <em>hand over?</em></h2>
+      <div class="levels">
+        <div class="lv" style="--c: var(--spec-5)"><div class="hx">5</div><b>The dark software factory</b><span>Nobody reads the code at all</span></div>
+        <div class="lv" style="--c: var(--spec-4)"><div class="hx">4</div><b>The engineering team</b><span>You write the specs and plans; agents do the work</span></div>
+        <div class="lv here" style="--c: var(--spec-3)"><div class="hx">3</div><b>The developer</b><span>It writes most of the code; you review all of it</span><i class="tag">← the day job</i></div>
+        <div class="lv" style="--c: var(--spec-2)"><div class="hx">2</div><b>The junior developer</b><span>You pair with it and still read every line</span></div>
+        <div class="lv" style="--c: var(--spec-1)"><div class="hx">1</div><b>The coding intern</b><span>It writes the boilerplate; you check everything</span></div>
+        <div class="lv" style="--c: var(--spec-0)"><div class="hx">0</div><b>Spicy autocomplete</b><span>It finishes your line</span></div>
+      </div>
+      <p class="levels-src">Levels: Dan Shapiro, via Simon Willison, January 2026</p>
+      <aside class="notes">
+        From the March all-hands deck ("Levels of AI Usage", with "We are here" at level 3 and,
+        later, "Are we here??" at level 4) and Jeremy's post of 2026-02-10, "Five Levels of
+        AI-Assisted Development": "I'm currently getting comfortable at level 3, which feels
+        'safe' to me for our pre-competitive open-source work."
+        <br><br>The level names are Dan Shapiro's, as summarised by Simon Willison (28 Jan 2026);
+        the one-line descriptions are reworded for the slide. Credit both out loud.
+        <br><br>Check with Jeremy: is level 3 still where the day job sits in October, given
+        "we just let the coding agent deal with it"? The marker is one class on one row, so it
+        can move, and the same ladder can come back in beat 3 as obot climbs to 4 and 5.
+      </aside>
+    </section>
+
+    <section class="slide" data-hue="3">
+      <p class="kicker">What “AI in the loop” looks like</p>
+      <h2>Same lifecycle; <em>five steps</em> changed hands</h2>
+      <p class="chain-key"><span><i class="who"></i>a person</span><span><i></i>the agent, where a person used to be</span><span><i class="auto"></i>automated, as before</span></p>
+      <div class="life">
+        <div><h3>Design</h3>
+          <div class="s">Gather requirements</div>
+          <div class="s">Write the work item</div>
+          <div class="s ai">Draft the technical plan</div>
+          <div class="s">Review the plan, then prompt</div>
+        </div>
+        <div><h3>Build</h3>
+          <div class="s ai">Write the tests</div>
+          <div class="s">Review the tests</div>
+          <div class="s ai both">Implement, with a person steering</div>
+          <div class="s ai">Draft the change summary</div>
+          <div class="s auto">Check code quality</div>
+          <div class="s">Approve</div>
+        </div>
+        <div><h3>Publish</h3>
+          <div class="s auto">Automated gates</div>
+          <div class="s auto">Quality documentation</div>
+          <div class="s ai">Draft the documentation updates</div>
+          <div class="s">Finalize and release</div>
+          <div class="s auto">Publish</div>
+        </div>
+      </div>
+      <aside class="notes">
+        From the March all-hands deck, which showed this as two slides: "Standard Development
+        Lifecycle" (every step a person or automated) and "AI in the Loop Life Cycle" (the same
+        steps, some handed to the agent). This slide merges them: the teal steps are the ones
+        that moved. Four went to the agent (technical plan, tests, change summary, documentation
+        updates) and one is shared (implementation). One step is new: a person reviews the plan
+        and prompts.
+        <br><br>The line from that deck: "Focus still on automation and quality in clinical
+        pipelines." Requirements, test review, approval and release stay with a person.
+        <br><br>Optional slide (Jeremy: "possibly"). It shows the March state; slide 18 then says
+        how it has moved since ("we just let the coding agent deal with it").
+      </aside>
+    </section>
+
     <section class="slide s-stat" data-hue="3">
       <p class="kicker">What changed</p>
       <div class="big">+50%</div>
@@ -737,7 +826,7 @@
       <p class="kicker">Outline</p>
       <h2>Beats 3–4 <em>to be drafted</em></h2>
       <div class="todo">
-        <p>Beats 1 and 2 (slides 1–22) are drafted. The rest follows keynote/_notes/outline.md.</p>
+        <p>Beats 1 and 2 (slides 1–24) are drafted. The rest follows keynote/_notes/outline.md.</p>
         <ul>
           <li>Source digest: keynote/_notes/research-digest.md</li>
           <li>Drop content in: keynote/_notes/inbox/</li>
