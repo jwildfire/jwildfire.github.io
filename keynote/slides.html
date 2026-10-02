@@ -178,6 +178,27 @@
     .pvr .posts a:hover circle { fill: var(--hue); }
     .pvr .posts a:hover .t { text-decoration: underline; }
 
+    /* Chain: a row of hex steps joined by arrows (pipelines and loops). --c sets a step's colour;
+       .who marks a step a person owns. */
+    .chain { display: flex; align-items: flex-start; flex: 1; margin-top: 28px; }
+    .chain .st { flex: 1; text-align: center; position: relative; padding: 0 10px; }
+    .chain .st .hx { width: 116px; height: 134px; margin: 0 auto 20px; clip-path: var(--hex-clip); background: var(--c, var(--hue)); color: #fff; display: grid; place-items: center; font-family: var(--serif); font-size: 58px; }
+    .chain .st.who .hx { background: var(--ink); }
+    .chain .st b { display: block; font-size: 28px; font-weight: 600; margin-bottom: 8px; }
+    .chain .st span { display: block; font-size: 22px; line-height: 1.3; color: var(--soft); }
+    .chain .st + .st::before { content: "→"; position: absolute; left: -17px; top: 42px; font-size: 38px; color: var(--faint); }
+    .chain-key { font-family: var(--mono); font-size: 20px; color: var(--soft); margin: 0 0 56px; display: flex; gap: 36px; }
+    .chain-key i { display: inline-block; width: 18px; height: 21px; clip-path: var(--hex-clip); background: var(--hue); margin-right: 10px; vertical-align: -3px; }
+    .chain-key i.who { background: var(--ink); }
+
+    /* Code and a small table inside a two-column card. */
+    .s-split pre { font-family: var(--mono); font-size: 25px; line-height: 1.5; margin: 0; white-space: pre-wrap; background: var(--rail); border-radius: 14px; padding: 22px 26px; }
+    .s-split table { border-collapse: collapse; width: 100%; font-size: 25px; }
+    .s-split th { font-family: var(--mono); font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--soft); text-align: left; font-weight: 500; padding: 0 12px 10px 0; border-bottom: 2px solid var(--rule); }
+    .s-split td { padding: 12px 12px 12px 0; border-bottom: 2px solid var(--rule); }
+    .s-split td.ok { color: var(--spec-2); font-weight: 600; }
+    .s-split .col p.small { font-size: 26px; color: var(--soft); margin-top: 20px; }
+
     /* Placeholder slide for the outline stage. */
     .s-todo { background: repeating-linear-gradient(135deg, var(--bg) 0 28px, #f4f5f1 28px 56px); }
     .s-todo .todo { margin-top: 12px; font-family: var(--mono); font-size: 26px; color: var(--soft); border: 2px dashed var(--hue); border-radius: 18px; padding: 28px 36px; background: var(--bg); }
@@ -440,11 +461,239 @@
       </aside>
     </section>
 
+    <!-- ============================================================
+         2 · OpenRBQM: GxP monitoring with AI in the loop
+         Drafted from public sources (diary #1 and #4, gsm.agent, gsm.roadmap, qcthat,
+         the old deck). Jeremy adds the inside view and cuts what should not be said.
+         ============================================================ -->
+    <section class="slide s-photo" data-hue="3">
+      <figure class="photo" style="--focus: 60% 40%">
+        <img src="assets/orange/orange-reviewing-spreadsheet.jpg" alt="Orange, seen from behind, watching a colour-coded spreadsheet on a laptop" />
+      </figure>
+      <p class="kicker pkg" style="--pkg: url(assets/hex/forcats.png)">Orange, reviewing</p>
+      <h2>What we do <em style="white-space: nowrap">right now</em></h2>
+      <p class="line">OpenRBQM, with AI in the loop.</p>
+      <aside class="notes">
+        Transition into beat 2: the actual current state. This is the day job, not the experiment:
+        GxP risk-based quality monitoring at a large pharma, built in the open as the gsm packages
+        and the PHUSE OpenRBQM working group (diary #1).
+        <br><br>Draft headline and line; Jeremy to reword. Alternative photo: orange-spreadsheet-side-eye.jpg.
+      </aside>
+    </section>
+
+    <section class="slide s-image" data-hue="3">
+      <p class="kicker">gsm · Good Statistical Monitoring</p>
+      <h2>Monitoring a trial, <em>as software</em></h2>
+      <figure>
+        <div class="frame"><img src="assets/gsm-report.png" alt="A gsm study overview report: a table of sites by key risk indicator, with red and amber flags" /></div>
+        <figcaption>A {gsm} site-risk report on example data · open-source R packages, built for GxP from the start</figcaption>
+      </figure>
+      <aside class="notes">
+        Sources: diary #1 ("We use the {gsm} tools to monitor actual studies. We wrote a paper and
+        have given a bunch of presentations") and diary #4 ("Unlike {safetyGraphics}, {gsm} was
+        designed for GxP from the start").
+        <br><br>What it is: a family of open-source R packages for risk-based quality monitoring:
+        key risk indicators and quality tolerance limits by site, reported as HTML. gsm.core is the
+        analytics engine; workr runs the workflows; qcthat produces the quality-control evidence.
+        The team leads the PHUSE OpenRBQM working group.
+        <br><br>Image: the report screenshot from the public gsm.kri README (example study
+        AA-AA-000-0000, not real data). Jeremy to confirm it is the picture he wants, or supply a newer one.
+      </aside>
+    </section>
+
+    <section class="slide" data-hue="3">
+      <p class="kicker">Why agents can work on it</p>
+      <h2>Every metric is the same <em>six steps</em></h2>
+      <div class="chain">
+        <div class="st"><div class="hx">1</div><b>Input</b><span>study data, mapped to standard domains</span></div>
+        <div class="st"><div class="hx">2</div><b>Transform</b><span>a rate for each site</span></div>
+        <div class="st"><div class="hx">3</div><b>Analyze</b><span>a statistical score</span></div>
+        <div class="st"><div class="hx">4</div><b>Threshold</b><span>the limits for that score</span></div>
+        <div class="st"><div class="hx">5</div><b>Flag</b><span>sites outside the limits</span></div>
+        <div class="st"><div class="hx">6</div><b>Summarize</b><span>one row per site, per metric</span></div>
+      </div>
+      <aside class="notes">
+        Source: the gsm.agent ecosystem overview: "a standardized 6-step data flow: Input →
+        Transform → Analyze → Threshold → Flag → Summarize. Steps are plain functions composed
+        into YAML workflows." The one-line descriptions under each step are my paraphrase;
+        Jeremy to check the wording.
+        <br><br>The point for the talk: the work is already software-shaped. Small functions, a
+        declared workflow, tests and a specification for each step. That is what makes it something
+        an agent can be handed. Cut candidate if beat 2 runs long.
+      </aside>
+    </section>
+
+    <section class="slide s-quote" data-hue="3">
+      <p class="kicker">AI in the loop</p>
+      <blockquote>“We use AI heavily, but it's <em>not autonomous.</em> Humans own the process and all deliverables.”</blockquote>
+      <cite>— developer diary #1, 10 June 2026</cite>
+      <aside class="notes">
+        Source: diary #1. The team "uses agentic AI, mostly via GitHub Copilot, to create
+        open-source R packages for GxP processes related to risk-based quality monitoring."
+        Adoption timeline from the same post: capabilities jumped in late 2025; the team started
+        adopting agentic AI in January 2026 ("Everyone should be experimenting with this as part
+        of your job, just to see what works") and formalised it in the following months
+        ("Everyone should be using this every day. Who knows how skills work?").
+        <br><br>"Humans still own every step of the process: product management, design, coding,
+        code review, qualification, and everything else. But we use AI as a power tool throughout."
+      </aside>
+    </section>
+
+    <section class="slide s-stat" data-hue="3">
+      <p class="kicker">What changed</p>
+      <div class="big">+50%</div>
+      <p>releases compared with last year. Issues and pull requests roughly doubled. <span class="soft">Not a controlled productivity study.</span></p>
+      <aside class="notes">
+        Source: diary #1 (2026-06-10): "Our rate of releases has gone up by roughly 50% compared
+        to last year. The number of issues, both opened and closed, has roughly doubled. Same with
+        PRs. That's not a controlled productivity study — lots of other things changed too — but
+        the activity pattern is real."
+        <br><br>TODO (Jeremy): these are June figures from a public post. Confirm they can go on a
+        slide, and whether to refresh them for October.
+      </aside>
+    </section>
+
+    <section class="slide" data-hue="3">
+      <p class="kicker pkg" style="--pkg: url(assets/hex/testthat.png)">gsm.agent</p>
+      <h2>From a failing test to a <em>reviewed pull request</em></h2>
+      <p class="chain-key"><span><i></i>the agent does it</span><span><i class="who"></i>a person decides</span></p>
+      <div class="chain">
+        <div class="st who"><div class="hx">1</div><b>Requirement</b><span>a GitHub issue, read and clarified</span></div>
+        <div class="st" style="--c: var(--spec-0)"><div class="hx">2</div><b>Red</b><span>write the tests, watch them fail</span></div>
+        <div class="st who"><div class="hx">3</div><b>Approve</b><span>the tests and the commit</span></div>
+        <div class="st" style="--c: var(--spec-2)"><div class="hx">4</div><b>Green</b><span>the smallest change that passes</span></div>
+        <div class="st"><div class="hx">5</div><b>Check</b><span>the full package check, clean</span></div>
+        <div class="st"><div class="hx">6</div><b>Pull request</b><span>drafted, linked to the issue</span></div>
+        <div class="st who"><div class="hx">7</div><b>Review</b><span>a person reviews and merges</span></div>
+      </div>
+      <aside class="notes">
+        Source: the public gsm.agent repo: its tdd skill ("Red-Green TDD: write tests first,
+        confirm they fail (red), then implement the minimal change until they pass (green)") and
+        its conventions: approval prompts before each commit, attribution on every issue, PR and
+        comment ("drafted by {agent} using {model} and reviewed by {user}"), one isolated worktree
+        per branch, and a clean devtools::check() as the gate before an implementation commit.
+        The abstract's wording: "{gsm.agent} drives a red-green TDD cycle from failing test to merged PR."
+        <br><br>gsm.agent is "the shared context layer for AI coding agents working anywhere in
+        the gsm / OpenRBQM ecosystem": one repo of ecosystem context, conventions and skills that
+        every session inherits, whichever tool is used.
+        <br><br>The testthat hex is the bullet. Old deck's version of this loop: "Issue →
+        requirement → implementation → tests → rendered demo → PR → human review."
+      </aside>
+    </section>
+
+    <section class="slide s-split" data-hue="3">
+      <p class="kicker">gsm.roadmap</p>
+      <h2>Requirements <em>before</em> work</h2>
+      <div class="cols">
+        <div class="col"><h3>A requirement is an issue with four parts</h3>
+          <p>Business requirement<br>Overview<br>Data requirement<br>Design</p>
+          <p class="small">Filled in one stage at a time, with a sign-off from the business user before design.</p></div>
+        <div class="col"><h3>And a lifecycle</h3>
+          <p>Backlog → Gathering → Design → Development → Review → Release</p>
+          <p class="small">The work itself is sub-issues in the package repos, so the requirement keeps the what and the why.</p></div>
+      </div>
+      <aside class="notes">
+        Source: the gsm.roadmap README (requirement template, lifecycle table, sub-issues instead
+        of inline task lists, the weekday status rollup posted on each requirement). The abstract:
+        "{gsm.roadmap} decomposes requirements with AI-assisted planning using GitHub workflows."
+        <br><br>TODO (Jeremy): the README is public but the repo's issues are the team's; say how
+        much of the AI-assisted part (drafting requirements, decomposing into sub-issues) to describe.
+        Ties forward to beat 4: "requirements before work" is one of the lessons from the obot summer.
+      </aside>
+    </section>
+
+    <section class="slide s-split" data-hue="3">
+      <p class="kicker pkg" style="--pkg: url(assets/hex/qcthat.png)">qcthat</p>
+      <h2>Traceability as a <em>byproduct</em></h2>
+      <div class="cols">
+        <div class="col"><h3>What the developer writes</h3>
+          <pre>test_that("Flags sites above
+  the upper limit #19", {
+  ...
+})</pre>
+          <p class="small">The issue number goes in the test name.</p></div>
+        <div class="col"><h3>What comes out</h3>
+          <table>
+            <tr><th>Issue</th><th>Test</th><th>Result</th></tr>
+            <tr><td>#19</td><td>Flags sites above the upper limit</td><td class="ok">Pass</td></tr>
+            <tr><td>#19</td><td>Leaves sites inside the limits</td><td class="ok">Pass</td></tr>
+            <tr><td>#23</td><td>Handles a site with no data</td><td class="ok">Pass</td></tr>
+          </table>
+          <p class="small">An illustration, not a real report.</p></div>
+      </div>
+      <aside class="notes">
+        Source: the qcthat package description: "A lightweight quality control framework for R
+        packages, particularly those used in regulated environments such as clinical trials.
+        Integrates formal quality control reports into package development workflows using
+        testthat and GitHub." The abstract: "{qcthat} generates audit-ready traceability matrices
+        as a byproduct of normal development." The test-naming rule is in the gsm.agent tdd skill:
+        "include the issue number in each test_that description."
+        <br><br>The table on the slide is made up to show the shape. TODO (Jeremy): replace it with
+        a screenshot of a real qcthat report if one can be shown.
+        <br><br>Pays off in beat 3: safety.viz and gsm.safety borrow exactly this (diary #4:
+        "Instead of inventing a new quality framework, we plug the safety graphics into a quality
+        framework that already exists").
+      </aside>
+    </section>
+
+    <section class="slide s-bullets" data-hue="3">
+      <p class="kicker">The rule that doesn't change</p>
+      <h2>AI-written code still needs a <em>human owner</em></h2>
+      <ul>
+        <li>A person owns the requirements.</li>
+        <li>A person owns the risk decision.</li>
+        <li>A person must be able to explain why the code works.</li>
+        <li>A person must be able to explain why it is safe enough for medical research.</li>
+      </ul>
+      <aside class="notes">
+        The four lines are verbatim from the 6 June deck draft (RPharma2026-AIKeynote), which came
+        from Jeremy's dictation. Same idea in the abstract: scaffolding that keeps AI behaviour
+        "repeatable, auditable, and governed by the humans who remain responsible for every line of code."
+        <br><br>Old deck's guardrail grid, if a second slide is wanted: Evidence, Permissions,
+        Traceability, Humans.
+      </aside>
+    </section>
+
+    <section class="slide s-todo" data-hue="3">
+      <p class="kicker">Best practice, October 2026</p>
+      <h2>What good practice <em>looks like now</em></h2>
+      <div class="todo">
+        <p>Placeholder: the content promised for diary #10, which is not written yet.</p>
+        <ul>
+          <li>Validation as code</li>
+          <li>Generated documentation and traceability</li>
+          <li>Human gates</li>
+          <li>Monitoring agents, “the hard way”</li>
+        </ul>
+      </div>
+      <aside class="notes">
+        Source: the closing line of diary #9: "GxP best practices for agentic engineering:
+        validation as code, generated documentation and traceability, human gates, and what I
+        learned about monitoring agents the hard way." Needs Jeremy's inside view. It may also
+        belong in beat 4 with the other lessons instead of here.
+      </aside>
+    </section>
+
+    <section class="slide s-quote" data-hue="3">
+      <p class="kicker">The bridge</p>
+      <blockquote>Open, software-shaped workflows are <em>agent-ready.</em></blockquote>
+      <cite>So what happens when the agent does more of the work?</cite>
+      <aside class="notes">
+        Hand-off into beat 3. The claim is from the 6 June deck ("Once the workflow is open and
+        software-shaped… AI can do more than autocomplete code") and the dictation notes
+        ("Agentic AI is arriving into that context, not replacing it from scratch").
+        <br><br>The honest set-up for the experiment, from diary #1: "I'm not comfortable using
+        those highly autonomous tools for GxP use cases right now, but the capabilities are
+        coming, and I want to understand them." So the experiment runs on something that is not
+        GxP yet: safetyGraphics.
+      </aside>
+    </section>
+
     <section class="slide s-todo" data-hue="3">
       <p class="kicker">Outline</p>
-      <h2>Beats 2–4 <em>to be drafted</em></h2>
+      <h2>Beats 3–4 <em>to be drafted</em></h2>
       <div class="todo">
-        <p>Beat 1 (slides 1–10) is drafted. The rest follows keynote/_notes/outline.md.</p>
+        <p>Beats 1 and 2 (slides 1–21) are drafted. The rest follows keynote/_notes/outline.md.</p>
         <ul>
           <li>Source digest: keynote/_notes/research-digest.md</li>
           <li>Drop content in: keynote/_notes/inbox/</li>

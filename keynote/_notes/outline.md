@@ -57,36 +57,43 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - "Change the industry standard for how people monitor safety" [diary #3]
     - Modernizing it "needed a team and a budget I no longer have" — or does it? [diary #3]
 
-2. OpenRBQM: GxP monitoring with AI in the loop (10 min) — not drafted
+2. OpenRBQM: GxP monitoring with AI in the loop (10 min) — drafted from public sources, slides 11–21
   - Source plan (Jeremy, 2026-10-01): the agent drafts from public sources (the gsm packages, gsm.agent, gsm.roadmap, qcthat, the submitted abstract); Jeremy adds the inside view and cuts what should not be said on stage
-  - [Orange] transition
-    - Photo option: `orange-reviewing-spreadsheet.jpg` or `orange-spreadsheet-side-eye.jpg` (the reviewer)
-  - The industry got ready without knowing it `[cut?]`
+  - [Orange] What we do right now (built, slide 11)
+    - Photo: `orange-reviewing-spreadsheet.jpg`; line "OpenRBQM, with AI in the loop." (draft wording)
+  - Monitoring a trial, as software (built, slide 12)
+    - gsm: open-source R packages for risk-based quality monitoring, built for GxP from the start [diary #1, diary #4]
+    - Image: the report screenshot from the public gsm.kri README (example data); `[TODO]` Jeremy confirms or supplies a newer one
+  - Every metric is the same six steps (built, slide 13) `[cut?]`
+    - Input → Transform → Analyze → Threshold → Flag → Summarize; plain functions composed into YAML workflows [gsm.agent overview]
+    - `[TODO]` the one-line description under each step is a paraphrase; check the wording
+  - AI in the loop (built, slide 14)
+    - "We use AI heavily, but it's not autonomous. Humans own the process and all deliverables." [diary #1]
+    - Notes: Copilot; adopted from January 2026, formalised since
+  - +50% (built, slide 15)
+    - Releases up about 50% on last year; issues and pull requests roughly doubled; "not a controlled productivity study" [diary #1]
+    - `[TODO]` confirm these June figures can go on a slide, and whether to refresh them
+  - gsm.agent: from a failing test to a reviewed pull request (built, slide 16)
+    - Seven steps, coloured by who does them: requirement, red, approve, green, check, pull request, review [gsm.agent tdd skill]
+    - testthat hex as the bullet
+  - gsm.roadmap: requirements before work (built, slide 17)
+    - A requirement issue with four parts and a six-stage lifecycle; the work is sub-issues in the package repos [gsm.roadmap README]
+    - `[TODO]` how much of the AI-assisted planning to describe
+  - qcthat: traceability as a byproduct (built, slide 18)
+    - The issue number goes in the test name; a traceability matrix comes out [qcthat description, submitted abstract]
+    - The table on the slide is an illustration; `[TODO]` swap in a real qcthat report screenshot if one can be shown
+    - qcthat hex as the bullet
+  - AI-written code still needs a human owner (built, slide 19)
+    - The four "a person…" lines, verbatim from the 6 June deck
+  - What good practice looks like now (placeholder, slide 20)
+    - Validation as code, generated documentation and traceability, human gates, monitoring agents [promised in diary #9]
+    - `[TODO]` diary #10 is not written; needs Jeremy's inside view; may belong in beat 4
+  - The bridge (built, slide 21)
+    - "Open, software-shaped workflows are agent-ready." Then: so what happens when the agent does more of the work?
+    - Notes: "I'm not comfortable using those highly autonomous tools for GxP use cases right now" [diary #1], so the experiment runs on safetyGraphics
+  - Not built: The industry got ready without knowing it `[cut?]`
     - SAS macro libraries, then hybrid SAS and R, then open frameworks with local extensions [old deck, act 1]
-    - `[TODO]` this exists only as dictation bullets; needs dates and one or two examples
-  - Monitoring as software: gsm and OpenRBQM
-    - Workflows, tests, qualification: the quality framework that already exists [diary #4]
-    - `[TODO]` one picture of what the team ships (a KRI report or dashboard)
-  - AI in the loop, today
-    - The day job: Copilot, "humans own the process and all deliverables", agentic AI adopted from January 2026 [diary #1]
-    - Release rate up about 50% year on year; issues and pull requests roughly doubled; "not a controlled productivity study" [diary #1]
-    - `[TODO]` confirm what can be said publicly about the team's numbers
-  - The agentic engineering loop
-    - Issue → requirement → implementation → tests → demo → pull request → human review [old deck]
-    - gsm.agent: red-green test-driven development, from a failing test to a merged pull request [submitted abstract]
-  - Requirements before work
-    - gsm.roadmap: AI-assisted requirement decomposition [submitted abstract]
-  - Traceability as an output
-    - qcthat: traceability matrices generated from tests and issues [submitted abstract]
-  - A person still owns it
-    - The four "a person must…" lines [old deck]
-    - Evidence, permissions, traceability, humans [old deck guardrails grid]
-  - What good practice looks like now
-    - Validation as code, generated documentation and traceability, human gates [promised in diary #9]
-    - `[TODO]` diary #10 is not written; this slide may have to be drafted for the talk directly
-  - The bridge
-    - Open, software-shaped workflows are agent-ready [old deck: "Why this matters for AI"]
-    - Agentic AI is arriving into this context, not replacing it [dictation notes 2026-06-06]
+    - `[TODO]` exists only as dictation bullets; needs dates and one or two examples before it can be a slide
 
 3. safety.viz: OrangeBot, safetyGraphics and gsm with semi-autonomous agents (10 min) — not drafted
   - From Orange to obot
@@ -196,5 +203,5 @@ Kept here so nothing from draft 1 is lost; pull any of it back in.
 - Which demo, and whether it is live or recorded
 - Whether the industry-history slide stays (it has the least material behind it)
 - Whether diary #10 is written before the talk
-- Section colours: beat 1 uses the amber hue throughout (it suits Orange); beats 2–4 each take one of the other hues
+- Section colours: beat 1 is amber (it suits Orange), beat 2 is teal; beats 3 and 4 take two of the remaining hues
 - Beats 3 and 4 are each about three slides over a 10-slide budget; the `[cut?]` marks are where to start
