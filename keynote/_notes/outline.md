@@ -3,14 +3,14 @@
 ## Overview
 Drafted 2026-10-01 from `research-digest.md` (including the section 7 addendum). L1 = sections, L2 = slides, L3 = details.
 The talk is on the morning of Wednesday 21 October 2026, in a 40-minute slot (confirmed by Jeremy, 2026-10-01). About 40 slides.
-Draft 2 (2026-10-01) regroups the detailed outline under the four beats below, about 10 minutes and 10 slides each; whether Q&A comes out of the 40 is not known yet.
+Draft 2 (2026-10-01) regroups the detailed outline under the four beats below. Timing as of 2026-10-02: beat 2 grows to about 15 minutes and the other three share the remaining 25 (Jeremy: "expand beat 2 to ~15 minutes and trim elsewhere"). Whether Q&A comes out of the 40 is not known yet.
 `[cut?]` = a slide kept from draft 1 that is the first to go if the beat runs long.
 `[TODO]` = content that does not exist yet. `[Orange]` = a transition slide with a photo from `keynote/assets/orange/`.
 Sources are named in brackets: diary #N is the developer diary post, hub is obot.roadmap.
 
 ## Overall Flow
 
-4 beats roughly 10 minutes each
+4 beats. Originally about 10 minutes each; from 2026-10-02 beat 2 gets about 15 and the rest are trimmed to fit (suggested split: 8 / 15 / 10 / 7, not yet decided)
 1. Opening - Background and context - Intro Orange talk about path to safetyGraphics
 2. openRBQM - Actual Current state right now - GxP monitoring at a large pharma with AI in the loop
 3. safety.viz - OrangeBot + Combining safetyGraphics + gsm using semi-autonomous agentic engineering workflows
@@ -18,7 +18,7 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
 
 ## Detailed Outline
 
-1. Opening: Orange and the path to safetyGraphics (10 min) — drafted, slides 1–10
+1. Opening: Orange and the path to safetyGraphics (about 8 min, suggested) — drafted, slides 1–10
   - Title (built, slide 1)
     - "Building open-source clinical trial tools with agentic AI"
     - Working title from the keynote page; earlier titles were about "AI in the loop" and clinical trial operations
@@ -57,7 +57,7 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - "Change the industry standard for how people monitor safety" [diary #3]
     - Modernizing it "needed a team and a budget I no longer have" — or does it? [diary #3]
 
-2. OpenRBQM: GxP monitoring with AI in the loop (10 min) — drafted, slides 11–24
+2. OpenRBQM: GxP monitoring with AI in the loop (about 15 min) — drafted, slides 11–24
   - Sources: public material (diary #1 and #4, gsm.agent, gsm.roadmap README, the 6 June deck) for slides 11–16 and 23–24; the team's internal Q3 2026 agentic update deck for slides 17–22 (read from Downloads 2026-10-02; the file is not in this repo). `[TODO]` Jeremy vets everything on the Q3-deck slides (17–22)
   - Story (from the Q3 deck): the team moved its effort from coding agents to the two ends of the lifecycle, planning and operations, "where the value was"
   - [Orange] What we do right now (built, slide 11)
@@ -71,10 +71,10 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - The five levels of AI usage as a ladder, level 5 on top, with "the day job" marked at level 3 [March all-hands deck; post 2026-02-10]
     - Level names are Dan Shapiro's via Simon Willison; descriptions reworded; credited on the slide
     - `[TODO]` Jeremy confirms level 3 is still right for October; the ladder can return in beat 3 as obot climbs
-  - Same lifecycle; five steps changed hands (built, slide 15) `[cut?]`
+  - Same lifecycle; five steps changed hands (built, slide 15)
     - Design, build, publish: each step marked a person, the agent, or automated; merges the all-hands deck's before and after slides into one [March all-hands deck]
     - Optional (Jeremy: "possibly"); it shows the March state, and slide 18 says how it has moved since
-  - +50% (built, slide 16) `[cut?]`
+  - +50% (built, slide 16)
     - Releases up about 50% on last year; issues and pull requests roughly doubled; "not a controlled productivity study" [diary #1]
     - `[TODO]` June figures; the Q3 deck has fresher numbers that could replace them
   - Plan → build → run: we invest at both ends (built, slide 17)
@@ -84,7 +84,7 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - Title is Jeremy's line. Stopped building: a coding agent of our own. Maintain: one context file mapping about 40 repos, plus three skills [Q3 deck: "Coding: maintained, not abandoned"]
     - About a third of recent roadmap-repo commits co-authored by Copilot or Claude
     - Replaces the seven-step red/green gsm.agent slide
-  - Deterministic tools first, agents on top (built, slide 19) `[cut?]`
+  - Deterministic tools first, agents on top (built, slide 19)
     - Framework → Tools → Skills → Bots; the first three reliable, bots still learning [Q3 deck]
     - "Agents write prose on top of evidence the tools compute, so the numbers stay right even when an agent fails"
   - Plan: agents draft; people approve (built, slide 20)
@@ -106,7 +106,7 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - What good practice looks like now (the diary #10 placeholder); a better fit for beat 4
     - The industry got ready without knowing it (never built)
 
-3. safety.viz: OrangeBot, safetyGraphics and gsm with semi-autonomous agents (10 min) — not drafted
+3. safety.viz: OrangeBot, safetyGraphics and gsm with semi-autonomous agents (about 10 min, suggested) — not drafted
   - From Orange to obot
     - The agent is named after the cat [diary #2]
     - Photo option: `orange-supervising-laptop.jpg`, `orange-desk-copilot.jpg` or `orange-paw-on-github.jpg`
@@ -148,7 +148,7 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - Back to one requirement per session, a definition of done, me driving; three weeks since: one new explorer, no releases [digest 7b]
     - `[TODO]` this exists only in agent-written hub pages; needs Jeremy's own account
 
-4. Lessons learned: what is AI good at now, and what is next (10 min) — not drafted
+4. Lessons learned: what is AI good at now, and what is next (about 7 min, suggested) — not drafted
   - [Orange] transition
     - Photo option: `orange-looking-up-agenda.jpg` (so what now?) or `orange-asleep-on-keyboard.jpg`
   - The summer in one number
@@ -232,4 +232,5 @@ Kept here so nothing from draft 1 is lost; pull any of it back in.
 - Whether the industry-history slide stays (it has the least material behind it)
 - Whether diary #10 is written before the talk
 - Section colours: beat 1 is amber (it suits Orange), beat 2 is teal; beats 3 and 4 take two of the remaining hues
-- Beats 3 and 4 are each about three slides over a 10-slide budget; the `[cut?]` marks are where to start
+- Where the five minutes for beat 2 come from. Suggested: two from beat 1 (it is ten quick slides already) and three from beat 4, with beat 3 held at ten. Beat 2's fourteen slides now fit its fifteen minutes, so its cut marks are removed
+- Beats 3 and 4 as outlined are each about three slides over even a 10-slide budget, and beat 4 now has about seven minutes; the `[cut?]` marks are where to start, and the recurring callouts can carry some of beat 4's "good at / bad at" lists before the close
