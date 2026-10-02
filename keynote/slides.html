@@ -209,13 +209,12 @@
     /* "What are agents good at now?" callout: Orange says the answer from the bottom-right corner.
        Always amber, whatever the section hue. Markup:
        <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p>
-       <p class="a">Writing <em>code!</em></p></div><div class="who"></div></div> */
+       <p class="a">Writing code!</p></div><div class="who"></div></div> */
     .goodat { position: absolute; right: 140px; bottom: 96px; z-index: 2; display: flex; align-items: center; gap: 26px; }
     .goodat .bub { position: relative; background: #fbf1e0; border: 3px solid var(--spec-1); border-radius: 26px; padding: 20px 32px 22px; }
     .goodat .bub::after { content: ""; position: absolute; right: -15px; top: 50%; width: 24px; height: 24px; margin-top: -12px; background: #fbf1e0; border-right: 3px solid var(--spec-1); border-top: 3px solid var(--spec-1); transform: rotate(45deg); }
     .goodat .q { font-family: var(--mono); font-size: 18px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--soft); margin: 0 0 4px; line-height: 1.3; }
     .goodat .a { font-family: var(--serif); font-size: 50px; line-height: 1.05; margin: 0; color: var(--ink); }
-    .goodat .a em { font-style: italic; color: var(--spec-1); }
     .goodat .who { position: relative; flex: none; width: 170px; height: 196px; clip-path: none; }
     .goodat .who::before { content: ""; position: absolute; inset: 0; clip-path: var(--hex-clip); background: var(--spec-1); }
     .goodat .who::after { content: ""; position: absolute; inset: 7px 6px; clip-path: var(--hex-clip); background: url(assets/orange/orange-face.jpg) center / cover; }
@@ -233,7 +232,6 @@
     .goodat.bad { right: auto; left: 140px; flex-direction: row-reverse; }
     .goodat.bad .bub { background: #fbeceb; border-color: var(--spec-0); }
     .goodat.bad .bub::after { right: auto; left: -15px; background: #fbeceb; border: 0; border-left: 3px solid var(--spec-0); border-bottom: 3px solid var(--spec-0); }
-    .goodat.bad .a em { color: var(--spec-0); }
     .goodat.bad .who::before { background: var(--spec-0); }
     .goodat.bad .who::after { background-image: url(assets/orange/orange-face-unimpressed.jpg); }
     .goodat.bad .who i { right: auto; left: -22px; }
@@ -314,7 +312,7 @@
         <polygon points="66.0,5.6 80.5,13.9 80.5,30.6 66.0,38.9 51.6,30.6 51.6,13.9" fill="#988bdd"/>
       </svg>
       <p class="kicker">R/Pharma 2026 · Keynote</p>
-      <h1>Building open-source clinical trial tools with <em>agentic AI</em></h1>
+      <h1>Building open-source clinical trial tools with agentic AI</h1>
       <p class="byline"><strong>Jeremy Wildfire</strong> · 21 October 2026 · jwildfire.github.io/keynote</p>
       <p class="cameo">with help from 😺🤖</p>
       <aside class="notes">Title slide. Working title from the keynote page — confirm or replace once the outline lands.</aside>
@@ -438,7 +436,7 @@
         <div class="frame"><img src="../assets/img/fig1_NYT.png" alt="An interactive election graphic from the New York Times, 2012" /></div>
         <figcaption>Interactive graphics in the New York Times</figcaption>
       </figure>
-      <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Teaching me <em>things!</em></p></div><div class="who"><i>👍</i></div></div>
+      <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Teaching me things!</p></div><div class="who"><i>👍</i></div></div>
       <aside class="notes">
         Source: diary #3, "Re-Introducing safetyGraphics" (2026-06-16), "A Brief Prehistory".
         Beats: SAS in grad school (an 80-page master's paper, about 60 pages of it SAS Graph output);
@@ -698,7 +696,7 @@
         <div class="col"><h3>What we maintain</h3>
           <p>One shared context file for about 40 repos, plus three skills.</p></div>
       </div>
-      <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Writing <em>code!</em></p></div><div class="who"><i>👍</i></div></div>
+      <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Writing code!</p></div><div class="who"><i>👍</i></div></div>
       <aside class="notes">
         Title is Jeremy's line (2026-10-02). Source: Q3 deck, "Coding: maintained, not abandoned":
         "Vendor coding agents improve monthly, so we invest in shared context, not a custom agent."
@@ -751,8 +749,8 @@
         <div class="st"><div class="hx">5</div><b>Release</b><span>testing, knowledge transfer</span></div>
         <div class="st who"><div class="hx">6</div><b>Done</b><span>every gate signed off by a person</span></div>
       </div>
-      <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Drafting <em>documents!</em></p></div><div class="who"><i>👍</i></div></div>
-      <div class="goodat bad"><div class="bub"><p class="q">What are agents bad at now?</p><p class="a">Setting <em>priorities</em></p></div><div class="who"><i>👎</i></div></div>
+      <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Drafting documents!</p></div><div class="who"><i>👍</i></div></div>
+      <div class="goodat bad"><div class="bub"><p class="q">What are agents bad at now?</p><p class="a">Setting priorities</p></div><div class="who"><i>👎</i></div></div>
       <aside class="notes">
         Source: Q3 deck, roadmap scaffold slides, and the gsm.roadmap README. Every requirement
         moves through the same six stages; a person records sign-off at each gate and the stage
