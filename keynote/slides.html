@@ -553,31 +553,48 @@
       </aside>
     </section>
 
-    <section class="slide" data-hue="3">
-      <p class="kicker pkg" style="--pkg: url(assets/hex/testthat.png)">gsm.agent</p>
-      <h2>From a failing test to a <em>reviewed pull request</em></h2>
-      <p class="chain-key"><span><i></i>the agent does it</span><span><i class="who"></i>a person decides</span></p>
-      <div class="chain">
-        <div class="st who"><div class="hx">1</div><b>Requirement</b><span>a GitHub issue, read and clarified</span></div>
-        <div class="st" style="--c: var(--spec-0)"><div class="hx">2</div><b>Red</b><span>write the tests, watch them fail</span></div>
-        <div class="st who"><div class="hx">3</div><b>Approve</b><span>the tests and the commit</span></div>
-        <div class="st" style="--c: var(--spec-2)"><div class="hx">4</div><b>Green</b><span>the smallest change that passes</span></div>
-        <div class="st"><div class="hx">5</div><b>Check</b><span>the full package check, clean</span></div>
-        <div class="st"><div class="hx">6</div><b>Pull request</b><span>drafted, linked to the issue</span></div>
-        <div class="st who"><div class="hx">7</div><b>Review</b><span>a person reviews and merges</span></div>
+    <section class="slide s-split" data-hue="3">
+      <p class="kicker">How we build, now</p>
+      <h2>“We just let the coding agent <em>deal with it</em>”</h2>
+      <div class="cols">
+        <div class="col"><h3>Earlier this year</h3>
+          <p>A step-by-step playbook for the agent: failing test, approval, smallest change, check, pull request.</p>
+          <p class="small">gsm.agent’s test-first skill, with a person approving each commit.</p></div>
+        <div class="col"><h3>Now</h3>
+          <p>The coding agent runs the development loop itself. A person still reviews and merges.</p>
+          <p class="small">The effort moved from steering the agent to improving operations.</p></div>
       </div>
       <aside class="notes">
-        Source: the public gsm.agent repo: its tdd skill ("Red-Green TDD: write tests first,
-        confirm they fail (red), then implement the minimal change until they pass (green)") and
-        its conventions: approval prompts before each commit, attribution on every issue, PR and
-        comment ("drafted by {agent} using {model} and reviewed by {user}"), one isolated worktree
-        per branch, and a clean devtools::check() as the gate before an implementation commit.
-        The abstract's wording: "{gsm.agent} drives a red-green TDD cycle from failing test to merged PR."
-        <br><br>gsm.agent is "the shared context layer for AI coding agents working anywhere in
-        the gsm / OpenRBQM ecosystem": one repo of ecosystem context, conventions and skills that
-        every session inherits, whichever tool is used.
-        <br><br>The testthat hex is the bullet. Old deck's version of this loop: "Issue →
-        requirement → implementation → tests → rendered demo → PR → human review."
+        PROVISIONAL: drafted from Jeremy's one-line steer (2026-10-02): "The gsm.agent slide has
+        largely been replaced by 'we just let the coding agent deal with it'; much more focus on
+        operational improvements." To be refined from the Q3 2026 agentic RBQM update deck, which
+        I have not been able to open yet. The wording in both columns is mine, not the deck's.
+        <br><br>This replaces the seven-step red/green chain slide. For reference, the earlier
+        practice (public gsm.agent repo): requirement → red → approve → green → check → pull
+        request → review, with attribution on every issue and PR and one worktree per branch.
+        The abstract's wording was "{gsm.agent} drives a red-green TDD cycle from failing test to merged PR."
+        <br><br>Check with Jeremy: is "a person still reviews and merges" still true as stated?
+      </aside>
+    </section>
+
+    <section class="slide s-split" data-hue="3">
+      <p class="kicker">Where the effort went</p>
+      <h2>Operations: studies as <em>repositories</em></h2>
+      <div class="cols">
+        <div class="col"><h3>One repo per study</h3>
+          <p>Each study’s configuration, workflows and outputs live in a repository of their own.</p>
+          <p class="small">Details to come from the Q3 scaffold deck.</p></div>
+        <div class="col"><h3>One central repo for monitoring</h3>
+          <p>A single place that watches every study repo.</p>
+          <p class="small">Details to come from the Q3 scaffold deck.</p></div>
+      </div>
+      <aside class="notes">
+        PROVISIONAL: the two headings are Jeremy's words (2026-10-02: "One repo per study, central
+        repo for monitoring"); the sentence under each is my guess at what they mean and must be
+        replaced from the Q3 2026 agentic RBQM update deck. A diagram (study repos feeding one
+        monitoring repo) would suit this slide once the real structure is known.
+        <br><br>Reminder: that deck is an internal document. Nothing from it goes on a public
+        slide until Jeremy has said it can.
       </aside>
     </section>
 
@@ -693,7 +710,7 @@
       <p class="kicker">Outline</p>
       <h2>Beats 3–4 <em>to be drafted</em></h2>
       <div class="todo">
-        <p>Beats 1 and 2 (slides 1–21) are drafted. The rest follows keynote/_notes/outline.md.</p>
+        <p>Beats 1 and 2 (slides 1–22) are drafted. The rest follows keynote/_notes/outline.md.</p>
         <ul>
           <li>Source digest: keynote/_notes/research-digest.md</li>
           <li>Drop content in: keynote/_notes/inbox/</li>

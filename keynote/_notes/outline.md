@@ -57,7 +57,7 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - "Change the industry standard for how people monitor safety" [diary #3]
     - Modernizing it "needed a team and a budget I no longer have" — or does it? [diary #3]
 
-2. OpenRBQM: GxP monitoring with AI in the loop (10 min) — drafted from public sources, slides 11–21
+2. OpenRBQM: GxP monitoring with AI in the loop (10 min) — drafted from public sources, slides 11–22
   - Source plan (Jeremy, 2026-10-01): the agent drafts from public sources (the gsm packages, gsm.agent, gsm.roadmap, qcthat, the submitted abstract); Jeremy adds the inside view and cuts what should not be said on stage
   - [Orange] What we do right now (built, slide 11)
     - Photo: `orange-reviewing-spreadsheet.jpg`; line "OpenRBQM, with AI in the loop." (draft wording)
@@ -73,22 +73,26 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
   - +50% (built, slide 15)
     - Releases up about 50% on last year; issues and pull requests roughly doubled; "not a controlled productivity study" [diary #1]
     - `[TODO]` confirm these June figures can go on a slide, and whether to refresh them
-  - gsm.agent: from a failing test to a reviewed pull request (built, slide 16)
-    - Seven steps, coloured by who does them: requirement, red, approve, green, check, pull request, review [gsm.agent tdd skill]
-    - testthat hex as the bullet
-  - gsm.roadmap: requirements before work (built, slide 17)
+  - "We just let the coding agent deal with it" (provisional, slide 16)
+    - Jeremy, 2026-10-02: the gsm.agent step-by-step slide "has largely been replaced by 'we just let the coding agent deal with it'"; much more focus on operational improvements
+    - Then/now split; replaces the seven-step red/green chain slide
+    - `[TODO]` refine from the Q3 2026 agentic RBQM update deck (not yet readable: macOS blocks the Messages attachments folder)
+  - Operations: studies as repositories (provisional, slide 17)
+    - One repo per study; one central repo for monitoring (Jeremy, 2026-10-02)
+    - `[TODO]` the real structure and a diagram, from the Q3 deck; internal content needs Jeremy's OK before it goes on a public slide
+  - gsm.roadmap: requirements before work (built, slide 18)
     - A requirement issue with four parts and a six-stage lifecycle; the work is sub-issues in the package repos [gsm.roadmap README]
     - `[TODO]` how much of the AI-assisted planning to describe
-  - qcthat: traceability as a byproduct (built, slide 18)
+  - qcthat: traceability as a byproduct (built, slide 19)
     - The issue number goes in the test name; a traceability matrix comes out [qcthat description, submitted abstract]
     - The table on the slide is an illustration; `[TODO]` swap in a real qcthat report screenshot if one can be shown
     - qcthat hex as the bullet
-  - AI-written code still needs a human owner (built, slide 19)
+  - AI-written code still needs a human owner (built, slide 20)
     - The four "a person…" lines, verbatim from the 6 June deck
-  - What good practice looks like now (placeholder, slide 20)
+  - What good practice looks like now (placeholder, slide 21)
     - Validation as code, generated documentation and traceability, human gates, monitoring agents [promised in diary #9]
     - `[TODO]` diary #10 is not written; needs Jeremy's inside view; may belong in beat 4
-  - The bridge (built, slide 21)
+  - The bridge (built, slide 22)
     - "Open, software-shaped workflows are agent-ready." Then: so what happens when the agent does more of the work?
     - Notes: "I'm not comfortable using those highly autonomous tools for GxP use cases right now" [diary #1], so the experiment runs on safetyGraphics
   - Not built: The industry got ready without knowing it `[cut?]`
