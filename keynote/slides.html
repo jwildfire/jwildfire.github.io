@@ -118,6 +118,8 @@
     .s-title h1 { max-width: 1060px; }
     .s-title .byline { margin-top: 56px; font-size: 34px; color: var(--soft); }
     .s-title .byline strong { color: var(--ink); font-weight: 600; }
+    /* The title's one flourish: two words in the spectrum gradient, matching the logo. */
+    .s-title .spectrum { background: var(--spec-gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
     .s-title .byline { margin-bottom: 0; }
     .s-title .cameo { margin: 10px 0 0; font-size: 24px; color: var(--soft); }
     .s-title .mark { position: absolute; right: 150px; top: 50%; width: 430px; height: 430px; margin-top: -215px; }
@@ -312,7 +314,7 @@
         <polygon points="66.0,5.6 80.5,13.9 80.5,30.6 66.0,38.9 51.6,30.6 51.6,13.9" fill="#988bdd"/>
       </svg>
       <p class="kicker">R/Pharma 2026 · Keynote</p>
-      <h1>Building open-source clinical trial tools with agentic AI</h1>
+      <h1>Building open-source clinical trial tools with <span class="spectrum">agentic AI</span></h1>
       <p class="byline"><strong>Jeremy Wildfire</strong> · 21 October 2026 · jwildfire.github.io/keynote</p>
       <p class="cameo">with help from 😺🤖</p>
       <aside class="notes">Title slide. Working title from the keynote page — confirm or replace once the outline lands.</aside>
