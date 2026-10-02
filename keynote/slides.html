@@ -155,6 +155,8 @@
     .s-image .frame .ph { font-family: var(--mono); font-size: 26px; color: var(--faint); }
     .s-image figcaption { margin-top: 20px; font-family: var(--mono); font-size: 22px; color: var(--soft); }
     .s-image h2 { margin-bottom: 32px; font-size: 64px; }
+    /* Two screenshots side by side: wrap two <figure>s in .pair. */
+    .s-image .pair { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
 
     /* Photo: text on the left, a full-height photo on the right (the Orange slides).
        Set --focus on the <figure> to choose which part of the photo survives the crop. */
@@ -484,15 +486,25 @@
     <section class="slide s-image" data-hue="1">
       <p class="kicker">The best thing we built</p>
       <h2>The hepatic explorer, and a <em>clinical workflow</em> to go with it</h2>
-      <figure>
-        <div class="frame"><img src="../assets/img/fig3_hepexplorer.gif" alt="The eDISH hepatic safety explorer: a scatter plot of liver test results with participant drill-down" /></div>
-        <figcaption>eDISH: the standard plot for flagging potential drug-induced liver injury</figcaption>
-      </figure>
+      <div class="pair">
+        <figure>
+          <div class="frame"><img src="../assets/img/fig3_hepexplorer.gif" alt="The eDISH hepatic safety explorer: a scatter plot of liver test results with participant drill-down" /></div>
+          <figcaption>The explorer · eDISH, the standard plot for drug-induced liver injury</figcaption>
+        </figure>
+        <figure>
+          <div class="frame"><img src="assets/hep-workflow-step1.png" alt="Step 1 of the clinical workflow: a decision diagram that starts from potential Hy's Law cases and branches on population confounders" /></div>
+          <figcaption>The workflow · step 1 of 9, as it reads in safety.viz today</figcaption>
+        </figure>
+      </div>
       <aside class="notes">
         Source: diary #3. "I think the best work we did is this eDISH hepatic explorer … and the
         associated clinical workflow." Worth planting here: the workflow document is what the
         agents were later handed (diary #6 ports the guide; diary #7 builds on Jim Buchanan's
         references), so this slide pays off in beat 3.
+        <br><br>The workflow image is a screenshot of the clinical guide on the safety.viz site
+        (jwildfire.github.io/safety.viz/hep-explorer/guide.html), taken 2026-10-02. The working
+        group's original was a PDF (HepExplorerWorkflow v1.2.1); the safety.viz page is the
+        agent-ported version, so strictly it is a preview of beat 3.
       </aside>
     </section>
 

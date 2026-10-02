@@ -52,6 +52,7 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - Acknowledgements up front, by name; `[TODO]` Jeremy confirms which names go on the slide
   - The hepatic explorer and its clinical workflow (built, slide 9)
     - "The best work we did" [diary #3]; image `fig3_hepexplorer.gif`
+    - Second image: step 1 of the clinical workflow, screenshot from the safety.viz guide page (`keynote/assets/hep-workflow-step1.png`)
     - Plants the workflow document that the agents are handed in beat 3
   - What we did, and what we didn't (built, slide 10)
     - "Change the industry standard for how people monitor safety" [diary #3]
