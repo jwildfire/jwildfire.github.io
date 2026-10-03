@@ -18,6 +18,18 @@
 # safety.viz ------------------------------------------------------------------
 
 - package: safety.viz
+  version: v1.8.0
+  date: 2026-10-02
+  blurb: "safety.viz becomes something you can use on your own study"
+  links:
+    - label: Notes
+      url: https://github.com/jwildfire/safety.viz/releases/tag/v1.8.0
+    - label: Demo
+      url: https://jwildfire.github.io/safety.viz/
+    - label: Walkthrough
+      url: https://jwildfire.github.io/obot.roadmap/reports/sv-v1.8-demo/
+
+- package: safety.viz
   version: v1.7.0
   date: 2026-08-15
   blurb: "Time-to-Event Explorer: Kaplan–Meier curves with CIs and an at-risk table, shipped as Experimental"
