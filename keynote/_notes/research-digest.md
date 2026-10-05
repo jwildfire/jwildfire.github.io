@@ -450,3 +450,60 @@ Short version: one new explorer was built, nothing was released, and the mid-Oct
 ### 7d. Orange photos
 
 `keynote/assets/orange/` holds 18 photos and one short video from Jeremy's download of 2026-10-01, resized to 2000px on the long edge. Orange opens the talk (slide 2, the blue-hat photo) and returns "working" on the transition slides. Five files are 360px originals (suffix `-small`) and will look soft at full slide height. `orange-lap-patio.jpg` shows another person, and `orange-supervising-laptop.jpg`, `orange-desk-copilot.jpg` and `orange-across-the-keyboard-small.jpg` show Jeremy.
+
+---
+
+## 8. Addendum — state on 2026-10-05, for beat 3
+
+Checked against GitHub and the local Claude Code transcripts on Jeremy's Mac on 2026-10-05.
+Section 7b's "nothing was released" stopped being true on 2 October; this section replaces it.
+
+### 8a. Releases since section 7
+
+| Package | Release | Date (UTC) | What it added |
+|---|---|---|---|
+| safety.viz | [v1.8.0](https://github.com/jwildfire/safety.viz/releases/tag/v1.8.0) | 2026-10-02 | The demo app: load your own CSV or JSON, map columns, 13 charts, nothing uploaded, and the whole app as one HTML file that runs offline. Nine requests from the old RhoInc and SafetyGraphics trackers. Chart status tiers. Patient Journey Explorer as a Prototype |
+| safety.viz | [v1.9.0](https://github.com/jwildfire/safety.viz/releases/tag/v1.9.0) | 2026-10-03 | The shared chart parts exported as a kit (36 members); a second chart library's charts in the demo app; R started in the browser on request |
+| safety.viz | [v1.9.1](https://github.com/jwildfire/safety.viz/releases/tag/v1.9.1) | 2026-10-04 | The app says what happens to loaded data; the histogram's two JavaScript p-values deprecated |
+| bio.viz | [v0.1.0](https://github.com/jwildfire/bio.viz/releases/tag/v0.1.0), [v0.2.0](https://github.com/jwildfire/bio.viz/releases/tag/v0.2.0) | 2026-10-03, 2026-10-05 | Six biomarker charts (one Experimental); every test computed by R |
+| gsm.bio | [v0.1.0](https://github.com/jwildfire/gsm.bio/releases/tag/v0.1.0), [v0.2.0](https://github.com/jwildfire/gsm.bio/releases/tag/v0.2.0) | 2026-10-03, 2026-10-05 | The R behind bio.viz: statistics functions, six widgets, static figures and RTF tables |
+
+- safety.viz has 14 releases between 2026-07-11 (v0.1.0) and 2026-10-04 (v1.9.1).
+- gsm.safety has not moved: v1.1.0 (2026-08-17) is the latest release. [v1.2.0-RC1](https://github.com/jwildfire/gsm.safety/pull/88) is open, review required, last touched 2026-09-14. Released `main` has 9 `Widget_*` functions; `dev` has 13.
+- Never say where the biomarker charts' design came from. bio.viz and gsm.bio are public; their origin is not.
+
+### 8b. Counts for the slides
+
+- Charts: 13 in the library and the demo app. 8 stable (histogram, outlier explorer, results over time, shift plot, delta-delta, hepatic explorer, AE explorer, AE timelines), 5 Experimental (hepatic waterfall, participant profile, nephrotoxicity, time-to-event, QT). Source: `site/config.json` on safety.viz `main` at v1.9.1.
+- Not counted: the Patient Journey Explorer (Prototype, docs site only, known issues in safety.viz#167) and two planned charts. The gallery page's own header reads "14 of 16 migrated", which counts the prototype.
+- Tests: 249 unit and 94 browser at v1.0.0 (diary #5); 2,185 unit and 374 browser at v1.9.1 (release notes).
+- The AI narrative layer for the Patient Journey Explorer was merged to `dev` on 2026-09-18 (safety.viz#148), taken out of v1.8.0 (safety.viz#178) and kept on the branch `parked/pje-narratives`.
+- open.csr: v0.3.0 (2026-08-27) is the latest release; v0.4.0-RC1 (open.csr#75) has been open since 2026-09-02; no pull request has merged since.
+- FDA safety figures: still 22 specified, 0 drawn (obot.roadmap#323 and #324, backlog, untouched since 2026-09-11).
+- demo-301: the weekly pipeline run failed on 2026-09-28 and 2026-10-05.
+- Cost: the hub's published usage data (`site/usage/usage.json`) covers 2026-07-09 to 2026-08-19: $7,123.67 API-equivalent, 24 active days, 228 agents. Nothing is published for any later date.
+
+### 8c. The last evolution before the talk: one orchestrator session
+
+Jeremy's steer (2026-10-05): "Capabilities keep improving and Opus 5.5 moved the goal posts again. Orchestration works *great* with a simple prompt now."
+
+The session is "Biomarker charts orchestration", local transcript `7c154956-4cfd-4a8b-ae87-f50aaaf3cf94` in `~/.claude/projects/-Users-jwildfire-Documents-obot2/`. Measured from that transcript and its 52 subagent transcripts, deduplicated by message id:
+
+- Ran from 2026-10-02 12:03 UTC to 2026-10-05 03:59 UTC (Friday 08:03 to Sunday 23:59 Eastern); Jeremy's last message was at 23:43 Eastern on Sunday.
+- One model throughout: `claude-opus-5-5`.
+- 3.94 billion tokens: 3.77 billion cache reads (96%), 167 million cache writes, 1.23 million output. 9,818 model calls. By day: 0.94B, 1.36B, 1.50B, 0.15B.
+- 52 agents spawned by the orchestrator, all at depth 1: 30 reviewers, the rest builders and page writers. They were long-lived: 141 hand-backs, about 9,200 shell commands.
+- Jeremy's part: an opening brief of about 800 words, about 22 messages over the three days, 19 multiple-choice answers.
+- What came out: six releases (safety.viz v1.9.0 and v1.9.1, bio.viz v0.1.0 and v0.2.0, gsm.bio v0.1.0 and v0.2.0) and all twelve requirements under obot.roadmap#353. bio.viz merged 32 pull requests and gsm.bio 23, all between 2 and 5 October.
+- The same Friday, two other sessions produced safety.viz v1.8.0: "Safety.viz app with data loader" (09:30 to 14:13 UTC, 216M tokens) and "safety.viz v1.8.0-RC1" (14:12 to 21:45 UTC, 325M tokens). The first message was "I want to work on creating an app version for safety.viz that includes a data loader"; the release was published at 21:41 UTC.
+
+Not reproduced:
+- Jeremy's "over 1000 subagents". The transcript shows 52.
+- Jeremy's "half of my weekly allotment". Only the plan meter knows.
+- An API-equivalent cost. The hub's price table has no Opus 5.5 row.
+
+The contrast with obot v4: the 10 September retirement removed 475 files of scaffolding from obot.agent (hub diary 2026-09-10). This session ran on Claude Code as shipped, the hub's three standards documents and one brief. The release-candidate review by three subagents replaced the ultrareview gate during this session (hub NEWS v0.5, 2026-10-03).
+
+### 8d. A found error worth a callout
+
+safety.viz#188 (2026-10-03): a reviewer agent in the gsm.bio v0.1.0 release review found that the histogram's optional group comparison printed `exp(-0.5 * F)`, which "is not an F-test p-value", and that the normality screen was approximate. Both had shipped. v1.9.1 deprecates both settings and says so on the chart; v1.10.0 removes them. An agent wrote the shortcut and a later agent caught it.
