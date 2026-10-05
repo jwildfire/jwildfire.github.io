@@ -497,10 +497,18 @@ The session is "Biomarker charts orchestration", local transcript `7c154956-4cfd
 - What came out: six releases (safety.viz v1.9.0 and v1.9.1, bio.viz v0.1.0 and v0.2.0, gsm.bio v0.1.0 and v0.2.0) and all twelve requirements under obot.roadmap#353. bio.viz merged 32 pull requests and gsm.bio 23, all between 2 and 5 October.
 - The same Friday, two other sessions produced safety.viz v1.8.0: "Safety.viz app with data loader" (09:30 to 14:13 UTC, 216M tokens) and "safety.viz v1.8.0-RC1" (14:12 to 21:45 UTC, 325M tokens). The first message was "I want to work on creating an app version for safety.viz that includes a data loader"; the release was published at 21:41 UTC.
 
+Cost, at API list prices. The rates are the ones the desktop session "Today's API cost summary" (2 to 3 October) took from Claude Code's bundled API reference: Opus 5.5 at $4 input, $20 output, $0.20 cache read, $5 five-minute cache write and $8 one-hour cache write per million tokens. That session's own figures, reproduced here from the transcripts to within about a dollar:
+
+- The orchestration session up to 05:49 Eastern on Saturday 3 October: 4,835 requests, 1.96 billion tokens, $737, with 27 subagents so far.
+- Everything on Friday 2 October including the overnight run, all local sessions: 6,345 requests, 2.6 billion tokens, $943. The same tokens at Opus 5 rates would have cost $1,809 (48% less on Opus 5.5).
+- The two sessions that produced safety.viz v1.8.0 that day: $62 and $91.
+- The plan meter went from 12% to 21% of the weekly limit between 15:27 and 21:59 on Friday.
+
+Extended to the whole orchestration session with the same rates (computed 2026-10-05, not in the cost session): $1,637 for 3.94 billion tokens, of which $1,414 was the 52 subagents. Cache writes cost more than cache reads: 158 million five-minute cache-write tokens at $5 against 3.77 billion cache reads at $0.20.
+
 Not reproduced:
-- Jeremy's "over 1000 subagents". The transcript shows 52.
-- Jeremy's "half of my weekly allotment". Only the plan meter knows.
-- An API-equivalent cost. The hub's price table has no Opus 5.5 row.
+- Jeremy's "over 1000 subagents". The transcript shows 52 agents, 27 of them by Saturday morning. (The session made about 9,800 model requests; 4,835 by Saturday morning.)
+- Jeremy's "half of my weekly allotment". The last meter reading on record is 21% on Friday night.
 
 The contrast with obot v4: the 10 September retirement removed 475 files of scaffolding from obot.agent (hub diary 2026-09-10). This session ran on Claude Code as shipped, the hub's three standards documents and one brief. The release-candidate review by three subagents replaced the ultrareview gate during this session (hub NEWS v0.5, 2026-10-03).
 
