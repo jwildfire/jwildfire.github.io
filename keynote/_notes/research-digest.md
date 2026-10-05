@@ -492,7 +492,7 @@ The session is "Biomarker charts orchestration", local transcript `7c154956-4cfd
 - Ran from 2026-10-02 12:03 UTC to 2026-10-05 03:59 UTC (Friday 08:03 to Sunday 23:59 Eastern); Jeremy's last message was at 23:43 Eastern on Sunday.
 - One model throughout: `claude-opus-5-5`.
 - 3.94 billion tokens: 3.77 billion cache reads (96%), 167 million cache writes, 1.23 million output. 9,818 model calls. By day: 0.94B, 1.36B, 1.50B, 0.15B.
-- 52 agents spawned by the orchestrator, all at depth 1: 30 reviewers, the rest builders and page writers. They were long-lived: 141 hand-backs, about 9,200 shell commands.
+- 52 agents spawned by the orchestrator, all at depth 1: 40 reviewers (by task description), 12 builders and page writers. They were long-lived: 141 hand-backs, about 9,200 shell commands.
 - Jeremy's part: an opening brief of about 800 words, about 22 messages over the three days, 19 multiple-choice answers.
 - What came out: six releases (safety.viz v1.9.0 and v1.9.1, bio.viz v0.1.0 and v0.2.0, gsm.bio v0.1.0 and v0.2.0) and all twelve requirements under obot.roadmap#353. bio.viz merged 32 pull requests and gsm.bio 23, all between 2 and 5 October.
 - The same Friday, two other sessions produced safety.viz v1.8.0: "Safety.viz app with data loader" (09:30 to 14:13 UTC, 216M tokens) and "safety.viz v1.8.0-RC1" (14:12 to 21:45 UTC, 325M tokens). The first message was "I want to work on creating an app version for safety.viz that includes a data loader"; the release was published at 21:41 UTC.
