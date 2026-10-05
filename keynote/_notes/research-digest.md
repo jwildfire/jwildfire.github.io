@@ -515,3 +515,32 @@ The contrast with obot v4: the 10 September retirement removed 475 files of scaf
 ### 8d. A found error worth a callout
 
 safety.viz#188 (2026-10-03): a reviewer agent in the gsm.bio v0.1.0 release review found that the histogram's optional group comparison printed `exp(-0.5 * F)`, which "is not an F-test p-value", and that the normality screen was approximate. Both had shipped. v1.9.1 deprecates both settings and says so on the chart; v1.10.0 removes them. An agent wrote the shortcut and a later agent caught it.
+
+### 8e. Overall cost and activity, counted 2026-10-05
+
+Cost, API-equivalent:
+
+| Window | Cost | Tokens | Source and caveat |
+|---|---|---|---|
+| 9 July to 19 August | $7,123.67 | about 8.0 billion | The hub's analytics page (`usage/usage.json`): 24 active days, 40,071 requests, 228 agents. Its local data stops on 19 August; the live page adds one cloud session of 12 September ($8.85) |
+| 20 August to 18 September | at least $2,470 | at least 3.1 billion | Transcripts still on the Mac, priced at the hub script's rates. A floor: older transcripts have been pruned (for 14 to 19 August the Mac now holds $634 of the $3,653 the hub recorded) and cloud sessions after 10 September are not on the Mac |
+| 1 to 5 October | $1,865 | 4.6 billion | Local transcripts, complete, all Opus 5.5 at the cost session's rates |
+
+- More than $11,400 on record. June (the OpenClaw obot) is counted nowhere.
+- Blended price: about $0.90 per million tokens for 9 July to 19 August, about $0.40 for October.
+- What Jeremy paid: "$200/month Claude Max" (diary #6, diary #8). Not confirmed for October.
+
+Activity on GitHub since 2026-06-10, over the twelve repositories in diary #9's footnote (safety.viz, gsm.safety, open.csr, open.gismo, obot.agent, obot.roadmap, demo-301, scaffold, showlist, RPharma2026-AIKeynote, and the safetyGraphics and safetyCharts forks) plus bio.viz and gsm.bio:
+
+| | To 6 September (12 repos) | To 5 October (14 repos) |
+|---|---|---|
+| Pull requests merged | 367 | 496 |
+| Releases | 23 | 32 |
+| Issues opened | not counted then | 704 |
+| Issues closed | not counted then | 483 |
+| Commits on default branches | not counted then | about 2,100 |
+
+- The 6 September column reproduces diary #9 exactly, so the method matches.
+- By repository, pull requests merged to 5 October: obot.agent 185, safety.viz 95, gsm.safety 53, obot.roadmap 47, open.csr 43, bio.viz 32, gsm.bio 23, open.gismo 8, demo-301 4, the old keynote repository 4, scaffold 2.
+- Lines of source have not been recounted since diary #9's 315,000.
+- The hub tracker on 2026-10-05: 10 objectives, 175 requirements (66 released, 44 retired, 55 backlog, 7 in review, 3 ready), 266 tasks (224 done).

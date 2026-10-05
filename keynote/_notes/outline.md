@@ -108,18 +108,18 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - What good practice looks like now (the diary #10 placeholder); a better fit for beat 4
     - The industry got ready without knowing it (never built)
 
-3. safety.viz: OrangeBot, safetyGraphics and gsm with semi-autonomous agents (about 10 min) — outlined 2026-10-05, not built; proposed slides 25–39
-  - Status: re-outlined on 2026-10-05 after Jeremy's steers of that day; he reviews this outline before any slide is built. Facts are checked against GitHub and the local session transcripts as of 2026-10-05; sources are in `research-digest.md` section 8
+3. safety.viz: OrangeBot, safetyGraphics and gsm with semi-autonomous agents (about 10 min) — first build 2026-10-05, slides 25–41
+  - Status: re-outlined and first built on 2026-10-05 after Jeremy's steers of that day ("build the initial version of the slides. I'll work on refinements/cuts once i see how it looks"). Facts are checked against GitHub and the local session transcripts as of 2026-10-05; sources are in `research-digest.md` section 8. Headlines are draft wording unless marked as Jeremy's
   - Shape: the beat opens on the goal, and the goal's four lines are its four parts: build, climb, experiment, have fun
-  - Budget: 15 slides as listed, for about 10 minutes. The three marked `[cut?]` bring it to 12
+  - Budget: 17 slides as built, for about 10 minutes, so it is over. The four marked `[cut?]` bring it to 13; Jeremy cuts after seeing it
   - Hue: 4, blue (proposed). It is the ladder's level-4 colour, where obot spends most of the beat
-  - The ladder from slide 14 returns three times (level 4, level 5, level 4). How it returns is a design choice for the build: the full ladder each time, the full ladder once at the end, or a small six-hex strip in the corner of three slides. Suggested: the small strip, which adds no slides
-  - [Orange] From Orange to obot (proposed slide 25)
+  - The ladder from slide 14 returns three times (level 4, level 5, level 4) as a small six-hex strip in the top right corner of slides 29, 33 and 37, which adds no slides. Not mocked up: the full ladder each time, or the full ladder once at the end
+  - [Orange] From Orange to obot (built, slide 25)
     - The beat's transition slide, forcats hex as the kicker. The agent is named after the cat: "obot is named after Orange, your cat." [diary #2, Obot's words]; "Orange was a very good cat. I like that working with you reminds me of him." [diary #2, Jeremy's]
     - Photo, suggested: `orange-paw-on-github.jpg` (his paw on a laptop showing GitHub). Check before using it: the screen shows three GitHub usernames from the Rho days, small but readable when zoomed. Alternatives `orange-supervising-laptop.jpg` and `orange-desk-copilot.jpg` both show Jeremy
     - Notes: the first obot ran on a clean-room laptop with none of Jeremy's credentials; "51% fun and 49% frustrating" [diary #2]
     - `[TODO]` Jeremy: this slide first and the goal second, or the goal first? Every other beat opens on its Orange photo, so the outline keeps that order
-  - The goal (proposed slide 26)
+  - The goal (built, slide 26)
     - Jeremy's words (2026-10-05), four lines on the slide:
       - Build a modern version of safetyGraphics, with everything we've learned from gsm as the foundation
       - See just how high we can climb the levels of automation
@@ -127,74 +127,87 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
       - Have some fun!
     - Answers beat 2's bridge ("so what happens when the agent does more of the work?") and sets up the four parts below
     - Notes: why this project and not the day job: "I'm not comfortable using those highly autonomous tools for GxP use cases right now" [diary #1]
-  - The disclaimer (proposed slide 27) `[cut?]` could be a second click on slide 26
+  - The disclaimer (built, slide 27) `[cut?]` could be a second click on slide 26
     - On the slide, Jeremy's words: "This is really, really not GxP" and, smaller, "(but there are A LOT of tests included …)"
     - Pays off on the "Is it validated?" slide, where the tests get counted
   - Part 1 · Build
-  - The plan: keep, modernize, borrow (proposed slide 28)
+  - The plan: keep, modernize, borrow (built, slide 28)
     - Three columns. Keep the expert workflows and the interactivity; modernize a decade-old charting engine; borrow gsm's quality framework [diary #4]
     - "Instead of inventing a new quality framework, we plug the safety graphics into a quality framework that already exists." [diary #4]
     - "The outputs need to be checkable — by a person, by a test suite, and by another agent." [diary #4]
     - qcthat hex as the kicker
-  - obot v3: a plan, a playbook and an identity (proposed slide 29) `[cut?]` its content can move to the notes of slide 30
+  - obot v3: a plan, a playbook and an identity (built, slide 29) `[cut?]` its content can move to the notes of slide 30
     - Claude Code plus obot.roadmap ("the plan and the memory"), obot.agent ("the playbook") and a bot account ("the identity") [diary #6]
     - Ladder marker: level 4, "you write the specs and plans; agents do the work"
     - One weekend: 5 sessions, 16 named agents [diary #6]
-  - "The first renderer took a few weeks; the next six took a weekend." (proposed slide 30)
+  - "The first renderer took a few weeks; the next six took a weekend." (built, slide 30)
     - The headline is the diary #5 line, quoted exactly
     - Four-step release timeline, 11–12 July: v0.1.0 at 8 am, v1.0.0 at 10:30 pm, v1.1.0 at 11:50 pm, v1.2.0 at 10 pm the next night [diary #5; times match the GitHub release timestamps]
     - Folded in from the old "billion tokens" slide: 1.0B tokens, $1,273 at API prices, $200 a month actually paid, about 10 hours of Jeremy's time [diary #6]
     - Notes: "delivering a 6-month project for less than $2k seems like an amazing deal" [diary #6]
-  - Papers → prompts → prototypes (proposed slide 31)
+  - Papers → prompts → prototypes (built, slide 31)
     - Jim Buchanan sends references after a demo; two working prototypes the same evening [diary #7]
     - Hepatic composite view: 176M tokens, about $143. QT explorer: 308M tokens, about $241 [diary #7]
     - The point: agents are only as good as the clinical workflow they are handed (pays off slide 9)
     - Images: `hep-explorer-composite.gif`, `qt-explorer-demo.gif`
-  - "Is it validated?" (proposed slide 32)
+  - "Is it validated?" (built, slide 32)
     - Then: "Not really. It's exploratory" [diary #5]. Now: 2,185 unit tests and 374 browser tests keyed to requirement IDs [safety.viz v1.9.1 release notes]. In July it was 249 and 94 [diary #5]
     - Every chart has a live demo and a published evidence report. Still not GxP: this is where the disclaimer pays off
-    - Images: a fresh screenshot of an evidence page; the July one in `assets/img/` shows July's counts
+    - Built as two columns, then and now. A fresh screenshot of an evidence page could replace them; the July one in `assets/img/` shows July's counts
     - testthat hex as the kicker
-    - Callout, proposed (thumbs-up): "Catching real errors, including its own". A reviewer agent found that a p-value an earlier agent had put on the histogram "is not an F-test p-value"; v1.9.1 deprecates it [safety.viz#188]. Also available: the death count that went from 4 to 13, which is in gsm.safety's unreleased v1.2.0 candidate
+    - Callout (thumbs-up), built as "Catching real errors"; the outline's wording was "Catching real errors, including its own". A reviewer agent found that a p-value an earlier agent had put on the histogram "is not an F-test p-value"; v1.9.1 deprecates it [safety.viz#188]. Also available: the death count that went from 4 to 13, which is in gsm.safety's unreleased v1.2.0 candidate
   - Part 2 · Climb
-  - obot v4: the agent became an organisation (proposed slide 33)
+  - obot v4: the agent became an organisation (built, slide 33)
     - "The agent stopped being a worker and became an organisation" [diary #8, Obot's words]
-    - Six-step chain in the deck's style, labels from the post's diagram: Jeremy, concierge, operating officer, workers, fleet manager, and a timer script that is not an agent and was the only part with a clean record
+    - The post's org chart redrawn in the deck's style with the same labels: Jeremy, concierge, operating officer, workers, fleet manager, and a timer script that is not an agent and was the only part with a clean record
     - Ladder marker: level 5, reached for
     - Notes: "never let an agent be the sole watcher of an agent" [diary #8]
-  - Quietly wrong (proposed slide 34)
+  - Quietly wrong (built, slide 34)
     - Quote slide: "Nine cases in one night of something reporting success while having done nothing." [diary #8, Obot's words about itself]
     - Notes: about $7,000 at API prices across 24 active days, on a $200 a month plan [diary #8; the hub's usage data gives $7,124 for 9 July to 19 August]
     - Callout (thumbs-down): "Knowing when it has failed"
-  - 10 September: I shut it down (proposed slide 35)
+  - 10 September: I shut it down (built, slide 35)
     - `[TODO]` Jeremy's own account. The only record is agent-written: "the agent structure held… it never produced a release for him to review" [hub diary 2026-09-10]
     - Facts available: 475 files of scaffolding removed from obot.agent, seven left; back to one requirement per session with a definition of done, Jeremy driving [hub diary 2026-09-10, hub NEWS v0.4]
     - `[TODO]` Jeremy: the "mixed feelings" promised in diary #8. Here, or kept for beat 4 where the outline already has a slide for them
-    - Callout, proposed (thumbs-down): "Remembering". The readout said memory management was poor
-  - One orchestrator, one brief, one weekend (proposed slide 36)
+    - Callout candidate, not placed (thumbs-down): "Remembering". The readout said memory management was poor. It is in the slide's notes
+  - The scaffold that stayed: "I review releases and answer questions" (built, slide 36)
+    - Added at Jeremy's request (2026-10-05): "worth talking at least a little bit about the scaffold, obot.roadmap (goal/requirement/tasks). I review releases and answer questions. I think it really worked quite well in the last weekend session after so many struggles." The headline is his sentence
+    - Five-step chain, marked by who does each: objective (Jeremy), requirements with a definition of done, tasks as one pull request each, a release candidate read by three reviewer agents, the release (Jeremy)
+    - Example line: Biomarker charts, 1 objective → 12 requirements → 37 tasks → 4 releases [hub tracker, 2026-10-05]
+    - Notes: the whole hub that day held 10 objectives, 175 requirements (66 released, 44 retired) and 266 tasks; "Human driving, not human reviewing" [hub, ways of working]
+    - A screenshot of the tracker is in `keynote/assets/obot-tracker-biomarkers.png`; as the whole slide it was too small to read
+    - `[TODO]` Jeremy: a sentence on "after so many struggles". What made this version work when v4's did not?
+  - One orchestrator, one brief, one weekend (built, slide 37)
     - Jeremy's steer (2026-10-05): "Capabilities keep improving and Opus 5.5 moved the goal posts again. Orchestration works *great* with a simple prompt now." The last evolution of obot before the talk
     - What went in: one brief of about 800 words, about 22 messages from Jeremy over three days, Claude Code as shipped. No custom scaffolding
-    - What came back, Friday 2 to Sunday 4 October: 52 agents (40 of them reviewers of the other 12's work), 3.9 billion tokens, six releases across three packages, all twelve requirements of the objective [local transcript; digest 8c]
-    - Cost: about $1,640 at API list prices for the whole session; $737 of that by Saturday morning ["Today's API cost summary" session and the same rates applied to the whole transcript; digest 8c]
+    - What came back, Friday 2 to Sunday 4 October: 52 agents (40 of them reviewers of the other 12's work), 3.9 billion tokens, about $1,640 at API prices, six releases across three packages, all twelve requirements of the objective [local transcript; digest 8c]
+    - The cost is $737 by Saturday morning from the "Today's API cost summary" session, and the same rates applied to the rest of the transcript [digest 8c]
     - Ladder marker: back to level 4, with Jeremy driving (his answer, 2026-10-05)
     - `[TODO]` Jeremy: two figures of his that the transcript does not reproduce. "Over 1,000 subagents": the transcript has 52 agents and about 9,800 model requests. "Half my weekly allotment": the last meter reading on record is 21% on the Friday night
     - `[TODO]` Jeremy: what to call it. "obot v5" is a placeholder of the outline's, not his
     - Notes: the same Friday, two ordinary sessions took the demo app from "I want to work on creating an app version" to the v1.8.0 release in about 12 hours, for about $150 at API prices
   - Part 3 · Experiment
-  - Agents are great at experiments (proposed slide 37)
+  - Agents are great at experiments (built, slide 38)
     - Headline is Jeremy's line (2026-10-05)
     - Kept going: bio.viz and gsm.bio, six biomarker charts with every test computed by R, two releases each in four days [GitHub releases]
     - Stopped at a prototype: AI-drafted safety narratives for the Patient Journey Explorer (merged in September, taken out of v1.8.0, parked on a branch) and open.csr (v0.3.0 in August; its next candidate has sat unreviewed since 2 September) [safety.viz#178; open.csr#75]
     - Nothing on the slide or in the notes about where the biomarker charts' design came from
     - Callout (thumbs-up): "Running experiments"
   - Where it landed
-  - Where it stands today (proposed slide 38) `[cut?]` its numbers can be said over the demo
+  - What it took (built, slide 39) `[cut?]` or moves to beat 4, where it would replace "The summer in one number"
+    - Added at Jeremy's request (2026-10-05): overall cost numbers from the hub's analytics page, and activity on GitHub. Two small tables
+    - At API prices: $7,124 for 9 July to 19 August [hub analytics page, which stops there]; at least $2,470 for 20 August to 18 September [transcripts still on the Mac, a floor]; $1,865 for 1 to 5 October [local transcripts, complete]. More than $11,400 on record. What Jeremy paid: $200 a month
+    - On GitHub since 10 June, over diary #9's twelve repositories plus bio.viz and gsm.bio: 496 pull requests merged, 32 releases, 704 issues opened and 483 closed, 14 repositories [counted 2026-10-05; the same count stopped at 6 September gives diary #9's 367 and 23]
+    - Notes: about 2,100 commits on the main branches; the price per token fell from about $0.90 to about $0.40 per million between the summer and October; lines of source not recounted since 6 September (315,000)
+    - `[TODO]` Jeremy: confirm "$200 a month" still holds for October
+  - Where it stands today (built, slide 40) `[cut?]` its numbers can be said over the demo
     - 14 releases of safety.viz since 11 July; the latest, v1.9.1, on 4 October [GitHub releases]
     - 13 charts in the library and the app: 8 stable, 5 marked Experimental. One more is a Prototype and is not counted [safety.viz v1.8.0 release notes, `site/config.json`]
     - In R: released gsm.safety (v1.1.0, 17 August) carries 9 of the 13; the other 4 are in a release candidate that has waited on Jeremy's review since 14 September [gsm.safety#88]. Sets up beat 4's "review is the bottleneck"
     - Not done: the 22 figures in the FDA safety guidance, all specified, none drawn [obot.roadmap#323, #324]
     - `[TODO]` refresh the counts on the morning of the talk
-  - Demo: your own files, one HTML file, offline (proposed slide 39)
+  - Demo: your own files, one HTML file, nothing uploaded (built, slide 41)
     - Decided 2026-10-05: the safety.viz demo app, released in v1.8.0. Drop CSV or JSON files, the columns are mapped with every guess labelled, the charts the data supports are drawn, nothing is uploaded [safety.viz v1.8.0 and v1.9.1 release notes]
     - The whole app is one HTML file of about 1.2 MB that runs with no network, so the demo does not depend on conference wifi
     - Slide: the app's Data view beside a chart, as the fallback picture if the demo is skipped
@@ -260,17 +273,17 @@ A recurring callout in the bottom-right corner: Orange's face in an amber hex wi
   - Teaching me things — slide 6, "Why can't I do this for work?"
   - Writing code — slide 18, "We just let the coding agent deal with it"
   - Drafting documents — slide 20, "Agents draft; people approve"
-- Proposed for beat 3 (not built)
-  - Catching real errors, including its own — "Is it validated?"
-  - Running experiments — "Agents are great at experiments" (Jeremy's wording, 2026-10-05)
+- Placed in beat 3 (2026-10-05)
+  - Catching real errors — slide 32, "Is it validated?" (the candidate list had "Catching real errors, including its own")
+  - Running experiments — slide 38, "Agents are great at experiments" (Jeremy's wording, 2026-10-05)
 - Candidates from the close-out list, not placed yet
   - Busy work: making slides, meeting minutes
   - Design: artifacts, .md → .html
   - Syntax: git
 - Thumbs-down version, "What are agents bad at now?": an unimpressed Orange in a muted-red hex, bottom-left corner
   - Placed: Setting priorities — slide 20, "Agents draft; people approve" (alongside "Drafting documents")
-  - Proposed for beat 3 (not built): knowing when it has failed — "Quietly wrong"; remembering — "10 September: I shut it down"
-  - Candidates from the close-out list, not placed yet: being concise
+  - Placed: Knowing when it has failed — slide 34, "Quietly wrong"
+  - Candidates from the close-out list, not placed yet: being concise, remembering (suggested for slide 35)
 
 ## Left out of draft 2
 
@@ -291,7 +304,7 @@ Kept here so nothing from draft 1 is lost; pull any of it back in.
 - Section colours: beat 1 is amber (it suits Orange), beat 2 is teal; beat 3 is proposed as blue (hue 4); beat 4 takes one of the remaining hues
 - Where the five minutes for beat 2 come from. Suggested: two from beat 1 (it is ten quick slides already) and three from beat 4, with beat 3 held at ten. Beat 2's fourteen slides now fit its fifteen minutes, so its cut marks are removed
 - Beats 3 and 4 as outlined are each about three slides over even a 10-slide budget, and beat 4 now has about seven minutes; the `[cut?]` marks are where to start, and the recurring callouts can carry some of beat 4's "good at / bad at" lists before the close
-- Beat 3 before it is built: Jeremy reviews the outline above; the order of its first two slides; how the ladder returns; the transition photo; which of the three `[cut?]` slides go
+- Beat 3 after its first build: which of the four `[cut?]` slides go, and whether "What it took" moves to beat 4; the order of its first two slides; the transition photo; whether the small level strip is the right way to bring the ladder back; Jeremy's own words for 10 September, the scaffold, the name of the October way of working and the closing "fun" line
 - Stale in beat 4 after 5 October, left for Jeremy since beat 4 is his to revise:
   - "The summer in one number" stops at 6 September. Since then: seven more releases and two new packages (digest 8a)
   - "What is next" asks how much of the unbuilt mid-October plan to promise. The app part is built and released; the 22 FDA figures are still none drawn
