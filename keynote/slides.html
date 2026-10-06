@@ -302,6 +302,13 @@
     /* Lifecycle at obot v5 (class "s-life5" on the slide): the agent's steps in purple. */
     .s-life5 .chain-key i:not(.who):not(.auto), .s-life5 .life .s.ai::before { background: var(--spec-5); }
     .s-life5 .life .s.ai { background: #efecfb; border-color: var(--spec-5); }
+    .s-life5 h2 { margin-bottom: 22px; }
+    .s-life5 .chain-key { margin-bottom: 34px !important; }
+    .s-life5 .frame { position: relative; border: 3px solid var(--ink); border-radius: 20px; padding: 30px 16px 6px; margin: 0 -19px; }
+    .s-life5 .frame .lab { position: absolute; top: -20px; left: 22px; margin: 0; padding: 0 14px; background: var(--bg); font-size: 25px; font-weight: 600; color: var(--ink); display: flex; align-items: center; gap: 12px; }
+    .s-life5 .frame .lab i { width: 20px; height: 23px; clip-path: var(--hex-clip); background: var(--ink); }
+    .s-life5 .life .s { padding: 5px 14px; margin-bottom: 7px; }
+    .s-life5 .life h3 { margin-bottom: 8px; }
 
     /* Org chart (obot v4): boxes and arrows in an SVG inside .pvr. */
     .pvr.org .t { font-size: 25px; font-weight: 600; fill: var(--ink); }
@@ -1961,6 +1968,8 @@
       <p class="kicker pkg" style="--pkg: url(assets/hex/obot-v5.png)">obot v5 and v5.5 · how it works</p>
       <h2>Same lifecycle; I kept two steps</h2>
       <p class="chain-key"><span><i class="who"></i>me</span><span><i></i>agents</span><span><i class="auto"></i>automated, as before</span></p>
+      <div class="frame">
+      <p class="lab"><i></i>Review artifacts and answer questions</p>
       <div class="life">
         <div><h3>Design</h3>
           <div class="s">Set the goal</div>
@@ -1985,6 +1994,7 @@
           <div class="s auto">Publish</div>
         </div>
       </div>
+      </div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
         Added 2026-10-06 (Jeremy: "Let's re-use slide 19 to show how obot v5/v5.5 works. Add a
@@ -1999,6 +2009,12 @@
         release candidate; he approves the release), and "Review the plan, then prompt" (in
         v5.5 the orchestrator reviews plans and briefs the workers). "Implement" lost "with a
         person steering". Answering questions is not a box; say it out loud or ask for one.
+        <br><br>Oversight frame added 2026-10-06 (Jeremy: "How can we add in a human layer of
+        oversight for the full process. 'Reviews artifacts and answers questions' is human and
+        is added throughout"). He chose the frame from four mock-ups (a band on top, a
+        checkpoint per phase, a marker on every step, a frame). The black outline and its
+        label are his layer: the agents' steps all sit inside it. The title still says "two
+        steps"; the frame is a third thing he kept, so the title may want another look.
         <br><br>The title is draft wording, written to echo slide 19 ("Same lifecycle; five
         steps changed hands"). The sidebar is at level 4, as on both version title slides.
       </aside>
