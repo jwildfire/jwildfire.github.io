@@ -544,3 +544,37 @@ Activity on GitHub since 2026-06-10, over the twelve repositories in diary #9's 
 - By repository, pull requests merged to 5 October: obot.agent 185, safety.viz 95, gsm.safety 53, obot.roadmap 47, open.csr 43, bio.viz 32, gsm.bio 23, open.gismo 8, demo-301 4, the old keynote repository 4, scaffold 2.
 - Lines of source have not been recounted since diary #9's 315,000.
 - The hub tracker on 2026-10-05: 10 objectives, 175 requirements (66 released, 44 retired, 55 backlog, 7 in review, 3 ready), 266 tasks (224 done).
+
+### 8f. The five obot versions, and the starting point (2026-10-05)
+
+Jeremy's numbering (2026-10-05): "v1 was actually a local personal assistant who drafted a handoff/build for the openclaw! v2 is open claw. v2.5 was paperclip (probably just a footnote). v3 fable 5. v4 org. v5 opus 5.5."
+
+| Version | When | What the record has |
+|---|---|---|
+| v1, a local personal assistant | early May 2026 | No public account. gsm.safety's first commit (2026-05-09) has the author name "Orange" and the message "Initial gsm.safety design". In diary #2 the OpenClaw agent calls itself "the second bot of the name, following obot v1 or obot-prime" |
+| v2, OpenClaw | 11 May to June | The old hub's diary: "obot came online" on 2026-05-11. Diary #2: clean-room laptop, Telegram, GitHub identity obot-claw; 266 commits, 18 pull requests and 2 releases by 10 June; "51% fun and 49% frustrating" |
+| v2.5, Paperclip | late June | Diary #6 footnote: PM, Dev and Testing agents, OpenClaw heartbeats, Paperclip as the control plane; "never shipped" |
+| v3, Claude Code on Fable 5 | July | Diary #5, #6, #7. Hub established 2 July; the weekend of 10 to 12 July |
+| v4, the organisation, on Opus 5 | August to 10 September | Diary #8 (20 August); hub diary 2026-09-10 for the shutdown |
+| v5, Opus 5.5 | October | Section 8c above. Opus 5.5 first appears in the local session logs on 2026-10-01 |
+
+The earlier notes in this digest (sections 2 and 5) call the OpenClaw agent "v1"; Jeremy's numbering above replaces that.
+
+The starting point for the goal slide, measured 2026-10-05 from fresh clones (`wc -l` over `src/**/*.js`, last commit on the default branch, `package.json`):
+
+| Legacy renderer | Last commit | Lines of JavaScript in src/ | Files |
+|---|---|---|---|
+| RhoInc/safety-histogram | 2020-01-20 | 3,587 | 102 |
+| RhoInc/safety-outlier-explorer | 2021-06-01 | 2,463 | 85 |
+| RhoInc/safety-results-over-time | 2019-07-12 | 1,731 | 72 |
+| RhoInc/safety-shift-plot | 2019-08-19 | 1,330 | 38 |
+| RhoInc/safety-delta-delta | 2019-11-27 | 1,326 | 47 |
+| RhoInc/paneled-outlier-explorer | 2019-08-19 | 1,897 | 61 |
+| RhoInc/aeexplorer | 2020-10-21 | 2,161 | 45 |
+| RhoInc/ae-timelines | 2019-08-19 | 1,063 | 28 |
+| RhoInc/web-codebook | 2021-05-07 | 4,762 | 119 |
+| SafetyGraphics/hep-explorer | 2022-02-25 | 5,103 | 133 |
+| Total | | 25,423 | 730 |
+
+- Every one depends on D3 version 3 and on Webcharts. safety.viz v1.9.1 depends on Chart.js ^4.5.1 and has 45,655 lines in 147 files under `src/`.
+- Idle on 2026-10-05: six for more than six years, eight for more than five, nine for more than four.
