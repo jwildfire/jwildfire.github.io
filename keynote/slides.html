@@ -441,11 +441,13 @@
     .slide .qr svg { display: block; width: 190px; height: 190px; border-radius: 10px; }
     /* A graphic beside a placeholder: <div class="gfx"><img/><div class="todo">…</div></div>.
        The dashed box is the s-todo box, for art that has not arrived. */
-    .s-graphic .gfx { flex: 1; min-height: 0; display: grid; grid-template-columns: 380px 1fr; gap: 80px; align-items: center; }
-    .s-graphic .gfx img { display: block; width: 380px; height: auto; }
+    .s-graphic .gfx { flex: 1; min-height: 0; display: grid; grid-template-columns: 330px 1fr; gap: 80px; align-items: center; }
+    .s-graphic .gfx img { display: block; width: 330px; height: auto; }
     .s-graphic .todo { font-family: var(--mono); font-size: 26px; color: var(--soft); border: 2px dashed var(--hue); border-radius: 18px; padding: 28px 36px; background: repeating-linear-gradient(135deg, var(--bg) 0 28px, #f4f5f1 28px 56px); }
     .s-graphic .todo p { font-size: 30px; margin: 0 0 14px; }
     .s-graphic .todo li { font-size: 26px; margin-bottom: 8px; }
+    .s-graphic .more { font-family: var(--mono); font-size: 24px; color: var(--soft); margin: 22px 0 8px; }
+    .s-graphic .more a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--hue); text-decoration-thickness: 3px; text-underline-offset: 6px; }
   </style>
 </head>
 <body>
@@ -641,12 +643,20 @@
           </ul>
         </div>
       </div>
+      <p class="more">At R/Pharma in 2020: <a href="https://www.youtube.com/watch?v=2Ykw1jwSw5M" target="_blank" rel="noopener">safetyGraphics v2.0, the talk</a></p>
       <aside class="notes">
         Graphic slide from 2026-10-06 (Jeremy: "Slide 8 needs a graphic. Maybe safety graphics
         hex + contributing companies (Add a todo note, I can pull it from an old slide). current
         content to speaker notes."). The hex is the package's own, from
         inst/resources/safetyGraphicsHex.png in the safetyGraphics repository. The dashed box
         is a placeholder for the companies' logos.
+        <br><br>The link under the graphic (Jeremy, 2026-10-06: "add a link to my r/pharma talk
+        on safety graphics several years back") goes to the R in Pharma channel's recording,
+        "R/Pharma 2020 Day 2. Jeremy Wildfire. safetyGraphics v2.0"
+        (youtube.com/watch?v=2Ykw1jwSw5M); the title was checked against YouTube on that date.
+        There was also a safetyGraphics workshop at R/Pharma 2021
+        (safetygraphics.github.io/RPharma2021-Workshop/) if that is the one he means. The
+        link's wording is draft.
         <br><br>What the slide said until then, now talking points:
         <br>• Clinicians and data scientists, dozens of companies, five years: papers, conferences, the FDA.
         <br>• One open-source R package: a Shiny app for exploring a trial's safety data in the browser.
