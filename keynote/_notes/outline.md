@@ -86,7 +86,7 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
     - Photo: `orange-paw-on-trackpad.jpg`, cropped to the bottom of the frame (swapped 2026-10-06; `orange-desk-copilot.jpg` is now unused). Line, draft: "The same lifecycle, with an agent in some of the seats."
   - AI in the loop (built, slide 17)
     - "We use AI heavily, but it's not autonomous. Humans own the process and all deliverables." [diary #1]
-    - Callout, second click: "Writing code!" (moved here 2026-10-06 from "We just let the coding agent deal with it")
+    - Callout, second click: "Writing code!", with "as of Q4 2025" in small text (moved here 2026-10-06 from "We just let the coding agent deal with it")
   - How much do you hand over? (built, slide 18)
     - The five levels of AI usage as a ladder, level 5 on top, with "the day job" marked at level 3 [March all-hands deck; post 2026-02-10]
     - Level names are Dan Shapiro's via Simon Willison; descriptions reworded; credited on the slide, with links to both articles (added 2026-10-06)
