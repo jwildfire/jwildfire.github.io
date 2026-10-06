@@ -50,6 +50,8 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
     - The wall of numbers; the Rho Graphics Group; the Adverse Event Explorer [diary #3]
     - Image: `fig2_aeexplorer.gif`
   - safetyGraphics and the people who built it (built, slide 8)
+    - From 2026-10-06 a graphic slide: the safetyGraphics hex beside a dashed placeholder for the contributing companies' logos. The four bullets it carried are now in its speaker notes
+    - `[TODO]` Jeremy: the companies graphic, from an old slide (drop it in `keynote/_notes/inbox/`)
     - ASA-DIA Safety Working Group: five years of clinicians and data scientists together [diary #3]
     - Acknowledgements up front, by name; `[TODO]` Jeremy confirms which names go on the slide
   - The hepatic explorer and its clinical workflow (built, slide 9)

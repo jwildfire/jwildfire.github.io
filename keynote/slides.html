@@ -439,6 +439,13 @@
     .slide .qr span { font-family: var(--mono); font-size: 20px; line-height: 1.45; color: var(--soft); text-align: right; padding-bottom: 6px; }
     .slide .qr span b { display: block; font-weight: 500; color: var(--ink); }
     .slide .qr svg { display: block; width: 190px; height: 190px; border-radius: 10px; }
+    /* A graphic beside a placeholder: <div class="gfx"><img/><div class="todo">…</div></div>.
+       The dashed box is the s-todo box, for art that has not arrived. */
+    .s-graphic .gfx { flex: 1; min-height: 0; display: grid; grid-template-columns: 380px 1fr; gap: 80px; align-items: center; }
+    .s-graphic .gfx img { display: block; width: 380px; height: auto; }
+    .s-graphic .todo { font-family: var(--mono); font-size: 26px; color: var(--soft); border: 2px dashed var(--hue); border-radius: 18px; padding: 28px 36px; background: repeating-linear-gradient(135deg, var(--bg) 0 28px, #f4f5f1 28px 56px); }
+    .s-graphic .todo p { font-size: 30px; margin: 0 0 14px; }
+    .s-graphic .todo li { font-size: 26px; margin-bottom: 8px; }
   </style>
 </head>
 <body>
@@ -621,16 +628,31 @@
       </aside>
     </section>
 
-    <section class="slide s-bullets" data-hue="1">
+    <section class="slide s-graphic" data-hue="1">
       <p class="kicker">ASA–DIA Safety Working Group</p>
       <h2>safetyGraphics, and the people who built it</h2>
-      <ul>
-        <li>Clinicians and data scientists, dozens of companies, five years <span>— papers, conferences, the FDA</span></li>
-        <li>One open-source R package <span>— a Shiny app for exploring a trial's safety data in the browser</span></li>
-        <li>Jim Buchanan, Susan Mayo, Xiao Ni, Melvin Munsaka, Frank Harrell</li>
-        <li>Agustin Calatroni, Herman Mitchell, Russ Helms and the Rho Graphics Group</li>
-      </ul>
+      <div class="gfx">
+        <img src="assets/hex/safetyGraphics.png" alt="The safetyGraphics hex sticker: a heart with a pulse line through it" />
+        <div class="todo">
+          <p>TODO (Jeremy): the contributing companies</p>
+          <ul>
+            <li>Logos to come, from an old slide</li>
+            <li>Drop the slide or the image in keynote/_notes/inbox/</li>
+          </ul>
+        </div>
+      </div>
       <aside class="notes">
+        Graphic slide from 2026-10-06 (Jeremy: "Slide 8 needs a graphic. Maybe safety graphics
+        hex + contributing companies (Add a todo note, I can pull it from an old slide). current
+        content to speaker notes."). The hex is the package's own, from
+        inst/resources/safetyGraphicsHex.png in the safetyGraphics repository. The dashed box
+        is a placeholder for the companies' logos.
+        <br><br>What the slide said until then, now talking points:
+        <br>• Clinicians and data scientists, dozens of companies, five years: papers, conferences, the FDA.
+        <br>• One open-source R package: a Shiny app for exploring a trial's safety data in the browser.
+        <br>• Jim Buchanan, Susan Mayo, Xiao Ni, Melvin Munsaka, Frank Harrell.
+        <br>• Agustin Calatroni, Herman Mitchell, Russ Helms and the Rho Graphics Group.
+        <br><br>
         Acknowledgements up front, as in diary #3 ("Why do the acknowledgements always come at the
         end?"). All names are from that post's footnotes; Jeremy to confirm who goes on the slide.
         Also thanked there: Alexa, his parents, Kathy Roggenkamp, the Posit team (Ramnath, Joe, Phil),
