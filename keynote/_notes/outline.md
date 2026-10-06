@@ -64,7 +64,7 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
     - Modernizing it "needed a team and a budget I no longer have" — or does it? [diary #3]
 
 2. OpenRBQM: GxP monitoring, first without AI and then with it (about 15 min) — drafted, slides 11–27; split in two on 2026-10-06
-  - Sources: public material (diary #1 and #4, gsm.agent, gsm.roadmap README, the 6 June deck) for slides 11–20 and 15–27; the team's internal Q3 2026 agentic update deck for slides 21–22 and 24–25 (read from Downloads 2026-10-02; the file is not in this repo). `[TODO]` Jeremy vets everything on the Q3-deck slides (17–20, 22–23)
+  - Sources: public material (diary #1 and #4, gsm.agent, gsm.roadmap README, the 6 June deck) for the rest of slides 11–27; the team's internal Q3 2026 agentic update deck for slides 20–21 and 23–24 (read from Downloads 2026-10-02; the file is not in this repo). `[TODO]` Jeremy vets everything on the Q3-deck slides (17–20, 22–23)
   - Checked 2026-10-05: gsm.roadmap and gsm.agent are NOT publicly reachable (the gsm.roadmap site redirects to a GitHub sign-in; both repositories return 404 without a login). So what beat 2 says about them is not from public sources, and no gsm.roadmap artifact can be shown or linked. `[TODO]` Jeremy decides what can be said and shown
   - Story (from the Q3 deck): the team moved its effort from coding agents to the two ends of the lifecycle, planning and operations, "where the value was"
   - Part 2a: OpenRBQM and how it works without AI (Jeremy, 2026-10-06: "Need to intro gsm/openRBQM and explian how it works without AI before getting into AI. slides 11/12 stay.")
@@ -95,33 +95,35 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
     - Level sidebar with levels 2 and 3 both boxed (2026-10-06, Jeremy: "Call out both 2 and 3 in the sidebar on 19 (i really think we're more level 2.5 than full level 3)")
     - Design, build, publish: each step marked a person, the agent, or automated; merges the all-hands deck's before and after slides into one [March all-hands deck]
     - Optional (Jeremy: "possibly"); it shows the March state, and the slide that said how it has moved since is in the reserves
-  - +50% (built, slide 20)
-    - Releases up about 50% on last year; issues and pull requests roughly doubled; "not a controlled productivity study" [diary #1]
-    - `[TODO]` June figures; the Q3 deck has fresher numbers that could replace them
-    - `[TODO]` flagged on the slide in orange (Jeremy, 2026-10-06: "Slide 20 needs updates/details/visual"): newer numbers, more detail, a visual
-  - Faster code; planning and operations had to catch up (built, slide 21; title is draft wording)
+  - Faster code; planning and operations had to catch up (built, slide 20; title is draft wording)
     - Jeremy's message (2026-10-06): "agents have sped up/simplified SDLC enough that we've had to spend time improving our upstream and downstream process to support the rapidly increasing code volume"
     - Five columns (his ask the same day; "I like 21 - clean it up"): Upstream, Planning (our scaffold) → the standard development lifecycle, Design · Build · Publish, with less detail (vendor coding agents, plus our shared context) → Downstream, Operations (our scaffold); the outer headings were first "Plan / Roadmap" and "Run / Deploy / Operations" and he shortened them
     - Callout, second click: "The standard SDLC", with "as of Q2 2026" in small text
     - Replaces "Plan → build → run: we invest at both ends" (reserves); the two slides after it were cut the same day (reserves)
-  - Plan: agents draft; people approve (built, slide 22)
+  - Plan: agents draft; people approve (built, slide 21)
     - Six stages, Backlog to Done, with an artifact at each and a person signing off every gate [Q3 deck, gsm.roadmap README]
     - Numbers held in the notes: 13 skills, 82 requirements, 64 artifacts, 132 merged pull requests since July
-  - The artifact is what a person reviews (built, slide 23)
+  - The artifact is what a person reviews (built, slide 22)
     - Added 2026-10-05 (Jeremy: "Are we capturing the importance of artifacts in beat 2?… A slide with thumbnails of a bunch of the artifacts goes a long way"). No version of the deck had shown an artifact before
     - Ten thumbnails in a five-by-two grid: migration assessment, data requirement, design document, layout options, roadmap plan, decision record, release demo, qualification evidence, release review guide, org chart. Images in `keynote/assets/artifacts/`; pages and exclusions in `keynote/_notes/beat2-artifacts-sources.md`
     - All ten are from obot.roadmap, the side project's public hub, standing in for the team's; the slide says so in one line
     - Callout on the second click, draft: "Designing pages!" (from the outline's candidate "Design: artifacts are amazing; .md → .html")
-    - `[TODO]` Jeremy: vet the ten pages; supply or approve real work artifacts if any can be shown; headline is a placeholder; keep or drop the callout (slide 22 already has two)
-  - Run: one repo per study, one hub to run them (built, slide 24)
+    - `[TODO]` Jeremy: vet the ten pages; supply or approve real work artifacts if any can be shown; headline is a placeholder; keep or drop the callout (slide 21 already has two)
+  - Run: one repo per study, one hub to run them (built, slide 23)
     - Study repos (20), central scheduling, intake and a 15-step guide, weekly plan alignment [Q3 deck]
     - `[TODO]` a diagram or dashboard screenshot would beat bullets; the deck's screenshots are internal
-  - Run: the hub replaced spreadsheets and email (built, slide 25)
+  - Run: the hub replaced spreadsheets and email (built, slide 24)
     - Before: Excel trackers, status by email, no live view. Now: merge a schedule and issues open in each study repo, a daily dashboard, an audit trail through pull requests [Q3 deck]
-  - AI-written code still needs a human owner (built, slide 26)
+  - AI-written code still needs a human owner (built, slide 25)
     - The four "a person…" lines, verbatim from the 6 June deck
-  - Wrap-up: "We're having great success at level 3!" (built, slide 27)
-    - Jeremy's outline (2026-10-05): efficiency gains; fully compliant; but what's next … With the level sidebar at level 3
+  - +50% (built, slide 26)
+    - Moved here from straight after the lifecycle slide on 2026-10-06 (Jeremy: "s20 moves just before 27.")
+    - Releases up about 50% on last year; issues and pull requests roughly doubled; "not a controlled productivity study" [diary #1]
+    - `[TODO]` June figures; the Q3 deck has fresher numbers that could replace them
+    - `[TODO]` flagged on the slide in orange (Jeremy, 2026-10-06: "Slide 20 needs updates/details/visual", when it was slide 20): newer numbers, more detail, a visual
+  - Wrap-up: "We're having great success at level 2.5!" (built, slide 27)
+    - Level changed from 3 to 2.5 on 2026-10-06 (Jeremy: "s27 becomes L2.5 (instead of L3)"); the sidebar boxes levels 2 and 3. His outline line was "We're having great success at level 3!"
+    - Jeremy's outline (2026-10-05): efficiency gains; fully compliant; but what's next …
     - `[TODO]` Jeremy confirms "Fully compliant!" as a public claim about the day job, and fresher efficiency numbers
     - Replaces the bridge slide ("Open, software-shaped workflows are agent-ready"), which is in the reserves
   - Taken out of beat 2 on 2026-10-02 (still in git history)
@@ -289,9 +291,9 @@ A recurring callout in the bottom-right corner: Orange's face in an amber hex wi
 - Beats 1 and 2 ("What are agents good at now?" / "What are agents bad at now?")
   - Teaching me things — slide 6
   - Writing code — slide 17
-  - The standard SDLC, as of Q2 2026 — slide 21
-  - Drafting documents, and Setting priorities (thumbs-down) — slide 22
-  - Designing pages (draft wording) — slide 23, the artifacts
+  - The standard SDLC, as of Q2 2026 — slide 20
+  - Drafting documents, and Setting priorities (thumbs-down) — slide 21
+  - Designing pages (draft wording) — slide 22, the artifacts
 - Beat 3 uses the same two callouts as each version's verdict, labelled "What worked" and "What didn't" (Jeremy's outline, 2026-10-05). All wording is draft
   - v2, slide 34: Real work, by text / Autonomy
   - v3, slide 36: Porting old code / Working without me; slide 37: Translating research into software (thumbs-up only, Jeremy's wording)
