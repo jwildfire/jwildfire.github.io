@@ -7,12 +7,13 @@
     https://github.com/simonw/tools/blob/main/kakapo-party.html
     https://simonwillison.net/2026/Sep/26/kakapo-party/
   which is licensed under the Apache License, Version 2.0. A copy of the license is in
-  LICENSE-orange-party.txt beside this file (http://www.apache.org/licenses/LICENSE-2.0).
+  party-LICENSE.txt beside this file (http://www.apache.org/licenses/LICENSE-2.0).
 
   Changes from the original, 2026-10-06: the kākāpō became Orange the cat (new sprites, paws
   and tail in place of wings, a captain's cap); the forest became a city skyline under the
   mountains; the banner text is set with ?banner=; the calls are cat calls; the pixel fonts
-  cover A to Z; and when the page is embedded it passes navigation keys up to the deck.
+  cover A to Z; when the page is embedded it passes navigation keys up to the deck; and
+  pressing S brings one of the original kākāpō up from the corner to say thanks.
 -->
 <html lang="en">
 <head>
@@ -50,7 +51,7 @@
 <body>
 <div id="stage">
   <canvas id="party" tabindex="0" role="img"
-    aria-label="Pixel-art party of orange cats jumping up and down under confetti, balloons and a disco ball. Click, tap or press Space for more confetti."></canvas>
+    aria-label="Pixel-art party of orange cats jumping up and down under confetti, balloons and a disco ball. Click, tap or press Space for more confetti. Press S for a guest."></canvas>
 </div>
 <script>
 (() => {
@@ -331,6 +332,7 @@ const SMALL = {
   Y: ['#.#', '#.#', '.#.', '.#.', '.#.'],
   Z: ['###', '..#', '.#.', '#..', '###'],
   '!': ['#', '#', '#', '.', '#'],
+  ',': ['..', '..', '..', '.#', '#.'],
   ' ': ['..', '..', '..', '..', '..'],
 };
 const MACRON = { 'Ā': 'A', 'Ō': 'O' };
@@ -383,6 +385,46 @@ const banner = (() => {
   }
   return c;
 })();
+
+/* ------------------------------------------------------------ the guest */
+// Press S and a kākāpō pops up in the bottom corner to thank Simon Willison, whose Kākāpō Party
+// this page is adapted from. The sprite and its colours are the original's, unchanged.
+// K outline · G D L H Y moss-green plumage · F f S facial disc · C B b beak · E W eyes · P p feet
+const KAKAPO = [
+  '......KKKKKK......',
+  '....KKGHGGHGKK....',
+  '...KGDGHGGHGDGK...',
+  '..KGDGFFFFFFGDGK..',
+  '..KGFFFffffFFFGK..',
+  '.KGFWEFCCCCFWEFGK.',
+  '.KGFEEFbBBbFEEFGK.',
+  '.KGFSffbBBbffSFGK.',
+  '.KGFFSffBbffSFFGK.',
+  'KGDGFFfFbbFfFFGDGK',
+  'KGGDGFFfSSfFFGDGGK',
+  'KGLGDGFFFFFFGDGLGK',
+  'KDGDGLGYGGYGLGDGDK',
+  'KGDGDGYGLLGYGDGDGK',
+  'KDGDGYGLYYLGYGDGDK',
+  'KGDGDLGYGGYGLDGDGK',
+  '.KDGDGLGYYGLGDGDK.',
+  '..KGDGGLGGLGGDGK..',
+  '...KKPPKKKKPPKK...',
+  '..KPpPpPKKPpPpPK..',
+  '...KKKKK..KKKKK...',
+];
+const KAKAPO_PAL = {
+  K: '#1f2a0f', G: '#6f8f2a', D: '#435e1a', L: '#a3b43f', H: '#86a532', Y: '#b3b54f',
+  F: '#a88b58', f: '#cdb37e', S: '#735f39',
+  C: '#8a867b', B: '#ebe5cf', b: '#b2ab98', E: '#120d0a', W: '#ffffff', P: '#c7a3a0', p: '#8e6c6a',
+};
+const kakapo = (() => {
+  const c = mkCanvas(18, KAKAPO.length);
+  paintGrid(c.getContext('2d'), KAKAPO, KAKAPO_PAL, 0, 0);
+  return c;
+})();
+const GUEST_WORDS = 'THANKS, SIMON!', GUEST_Z = 2, GUEST_RISE = 0.3, GUEST_STAY = 4.2;
+let guestT = -99;
 
 /* ------------------------------------------------------------ world state */
 let W = 0, H = 0, S = 2, floorTop = 0, portrait = false;
@@ -525,7 +567,7 @@ function buildScene() {
   buildCats();
   conf = []; settled = []; streamers = []; balloons = []; pops = []; glints = [];
   cvs.dataset.cats = cats.length;
-  cvs.setAttribute('aria-label', `Pixel-art party of ${cats.length} orange cats jumping up and down under confetti, balloons and a disco ball. Click, tap or press Space for more confetti.`);
+  cvs.setAttribute('aria-label', `Pixel-art party of ${cats.length} orange cats jumping up and down under confetti, balloons and a disco ball. Click, tap or press Space for more confetti. Press S for a guest.`);
 }
 
 function buildBackground() {
@@ -1028,6 +1070,30 @@ function drawBubbles() {
   for (const k of cats) if (k.call) drawBubble(Math.round(k.x), k.top - (k.cap ? 5 : k.hat ? 7 : 1), k.call.word);
 }
 
+function guest() {
+  if (tNow - guestT < GUEST_STAY) return;        // already up
+  guestT = tNow;
+  burst(W - 8 - 9 * GUEST_Z, H - 6, 46, 150, -Math.PI / 2, 0.8, true);
+}
+function drawGuest(t) {
+  const a = t - guestT;
+  if (a < 0 || a > GUEST_STAY) return;
+  const k = a < GUEST_RISE ? a / GUEST_RISE : a > GUEST_STAY - GUEST_RISE ? (GUEST_STAY - a) / GUEST_RISE : 1;
+  const up = 1 - (1 - k) * (1 - k);              // ease out on the way up, and back down the same way
+  const w = 18 * GUEST_Z, h = KAKAPO.length * GUEST_Z, shown = h - 3 * GUEST_Z;   // the feet stay below the edge
+  const x = W - w - 8, y = Math.round(H - shown * up) + (k === 1 && beatFrac < 0.5 ? -1 : 0);
+  ctx.drawImage(kakapo, x, y, w, h);
+  if (k < 1) return;
+  const tw = textWidth(GUEST_WORDS, BIG), bw = tw + 10, bh = 15;
+  const bx = clamp(W - 5 - bw, 1, W - bw - 1), by = y - bh - 5;
+  ctx.fillStyle = '#1a1026';
+  ctx.fillRect(bx + 1, by, bw - 2, bh); ctx.fillRect(bx, by + 1, bw, bh - 2);
+  ctx.fillStyle = '#fff8ec';
+  ctx.fillRect(bx + 1, by + 1, bw - 2, bh - 2);
+  paintGrid(ctx, TAIL, { K: '#1a1026', W: '#fff8ec' }, x + (w >> 1) - 1, by + bh - 1);
+  drawText(ctx, GUEST_WORDS, bx + 5, by + 4, BIG, '#c81e62');
+}
+
 function drawPops(t) {
   for (const p of pops) {
     const a = t - p.t0;
@@ -1067,6 +1133,7 @@ function render() {
   drawConf(true);
   drawStreamers(true, t);
   drawBubbles();
+  drawGuest(t);
   drawPops(t);
   if (flashT > 0) {
     ctx.globalAlpha = flashT;
@@ -1100,13 +1167,17 @@ window.addEventListener('keydown', e => {
   if (e.key === ' ' || e.key === 'Enter') {
     e.preventDefault();
     celebrate(rand(W * 0.15, W * 0.85), rand(H * 0.15, floorTop));
+  } else if ((e.key === 's' || e.key === 'S') && !e.metaKey && !e.ctrlKey && !e.altKey) {
+    guest();
   } else if (window.parent !== window && NAV_KEYS.includes(e.key) && !e.metaKey && !e.ctrlKey && !e.altKey) {
     window.parent.postMessage({ type: 'deck-key', key: e.key }, '*');
   }
 });
-// The deck can ask for confetti too: postMessage({ type: 'party-burst' }).
+// The deck can ask for confetti, or for the guest: postMessage({ type: 'party-burst' | 'party-guest' }).
 window.addEventListener('message', e => {
-  if (e.data && e.data.type === 'party-burst') celebrate(rand(W * 0.15, W * 0.85), rand(H * 0.15, floorTop));
+  if (!e.data) return;
+  if (e.data.type === 'party-burst') celebrate(rand(W * 0.15, W * 0.85), rand(H * 0.15, floorTop));
+  else if (e.data.type === 'party-guest') guest();
 });
 
 let resizeTimer = 0;

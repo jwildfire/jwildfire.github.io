@@ -2417,11 +2417,11 @@
       </aside>
     </section>
 
-    <!-- 4 · closing: the orange cat party. A live page (orange-party.html) in an iframe;
+    <!-- 4 · closing: the orange cat party. A live page (party.html) in an iframe;
          clicks inside it throw confetti instead of advancing. The banner words are the
          ?banner= part of data-src. -->
     <section class="slide s-party" data-hue="6" style="--poster: url(assets/orange-party-poster.png)">
-      <iframe data-src="orange-party.html?banner=THANK%20YOU!" title="A pixel-art party of orange cats dancing under a disco ball, with confetti" hidden></iframe>
+      <iframe data-src="party.html?banner=THANK%20YOU!" title="A pixel-art party of orange cats dancing under a disco ball, with confetti" hidden></iframe>
       <aside class="notes">
         The closing slide, built 2026-10-06 at Jeremy's request: "an orange cat dance party
         inspired by" Simon Willison's Kākāpō Party, "exact same approach look/feel (but with
@@ -2434,12 +2434,16 @@
         change it, edit ?banner= in this slide's data-src (capitals, up to 28 characters; a
         space is %20). Without it the banner reads "ORANGE PARTY!". Add &amp;hint=0 to hide the
         "click for confetti" line, which otherwise shows for the first ten seconds.
+        <br>• Press S and a kākāpō pops up in the bottom right corner to say "Thanks, Simon!".
+        It works whether or not the party has been clicked, stays about four seconds, and can
+        be called again.
         <br>• Two of the cats wear the blue and gold cap from the slide that introduces Orange.
         They are not impressed.
         <br><br>Credit: adapted from Kākāpō Party by Simon Willison
         (simonwillison.net/2026/Sep/26/kakapo-party/, source in github.com/simonw/tools,
         Apache License 2.0). The credit and the list of changes are at the top of
-        orange-party.html, and the license text is in LICENSE-orange-party.txt.
+        party.html, and the license text is in party-LICENSE.txt. The page is also published
+        on its own at jwildfire.github.io/keynote/party.html.
         <br><br>Not on this slide: the links (deck, diary, repos) and the QR code the outline
         lists for the close, and "the question, one last time". The placeholder this replaced
         is in Reserves.
@@ -2960,6 +2964,11 @@
         else if (k === 'End') go(slides.length - 1);
         else if (k === 'o' || k === 'O' || k === 'Escape') { if (k !== 'Escape' || document.body.classList.contains('overview')) toggleOverview(); }
         else if (k === 'n' || k === 'N') document.body.classList.toggle('show-notes');
+        else if (k === 's' || k === 'S') {
+          // On the party slide, S calls the guest: a kākāpō who thanks Simon.
+          var pf = slides[i].querySelector('iframe[data-src]');
+          if (pf && !pf.hidden && pf.contentWindow) pf.contentWindow.postMessage({ type: 'party-guest' }, '*');
+        }
         else if (k === 'f' || k === 'F') {
           if (!document.fullscreenElement) document.documentElement.requestFullscreen && document.documentElement.requestFullscreen();
           else document.exitFullscreen && document.exitFullscreen();
