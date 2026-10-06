@@ -20,7 +20,8 @@
        Authoring: every <section class="slide"> is one 16:9 slide (1600 x 900,
        scaled to fit). Layouts: .s-title, .s-section, .s-bullets, .s-quote,
        .s-stat, .s-split, .s-image, .s-todo. Speaker notes go in
-       <aside class="notes">.
+       <aside class="notes">. Each aside opens with <strong class="say">: Jeremy's own spoken
+       notes, or "<none yet>"; background notes follow.
        Keys: ← → / space / PgUp PgDn · Home End · O overview · N notes · F fullscreen.
        The slide number is top right; the hex strip fills in with progress through the talk.
        Orange's callouts (.goodat) appear on a second press; add ?reveal to the URL to show them all.
@@ -382,6 +383,9 @@
       display: none; position: fixed; left: 0; right: 0; bottom: 0; max-height: 34vh; overflow: auto; z-index: 5;
       background: rgba(31, 35, 40, 0.94); color: #f3f4f1; font-family: var(--sans); font-size: 16px; line-height: 1.55; padding: 18px 28px;
     }
+    /* What Jeremy says comes first in every aside, in <strong class="say">; "<none yet>" where
+       he has not given any. Everything after it is background for him, not for the room. */
+    .notes-panel strong.say { display: block; font-weight: 700; font-size: 19px; line-height: 1.5; color: #fff; margin: 0 0 10px; padding: 0 0 10px; border-bottom: 1px solid rgba(243, 244, 241, 0.25); }
     .notes-panel b { font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--spec-3); display: block; margin-bottom: 6px; }
 
 
@@ -479,10 +483,11 @@
       <p class="byline"><strong>Jeremy Wildfire</strong> · 21 October 2026 · jwildfire.github.io/keynote</p>
       <p class="cameo">with help from 😺🤖</p>
       <aside class="notes">
-        Intro (Jeremy's words, 2026-10-06): "Hi I'm Jeremy and I work on building open source
+        <strong class="say">Hi I'm Jeremy and I work on building open source
         tools for clinical trials. I've spent the last few years trying to figure out how AI
         fits into this world. Today I'm going to talk about what these tools are good at right
-        now ... As you'll see, the answer to that question changes on a regular basis."
+        now ... As you'll see, the answer to that question changes on a regular basis.</strong>
+        The intro is Jeremy's, given on 2026-10-06.
         <br><br>Title slide. Working title from the keynote page — confirm or replace once the outline lands.
       </aside>
     </section>
@@ -492,6 +497,7 @@
       <blockquote>“What can we actually do with AI agents right now?”</blockquote>
       <cite>— developer diary #1, 10 June 2026</cite>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         The question the whole talk hangs on. It is the title of diary #1 ("What Can We Actually
         Do With AI Agents Right Now?", 2026-06-10) and comes back through the summer: restated in
         diary #6 ("What are these tools good at right now? How much can they do autonomously?")
@@ -549,6 +555,7 @@
         </svg>
       </div>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Talking points (the slide's earlier bullets; Jeremy to reword):
         <br>• Working in public: nine developer-diary posts, June to September, each with its own AI collaboration note.
         <br>• "My plan has changed at least three times since I found out about the keynote."
@@ -575,10 +582,10 @@
       <h2>Introducing Orange</h2>
       <p class="line">He was a very good cat.</p>
       <aside class="notes">
-        Jeremy's notes: "But, first I want to introduce a key collaborator, Orange! He was a Chilean
+        <strong class="say">But, first I want to introduce a key collaborator, Orange! He was a Chilean
         street cat and was very silly. One time he fell from our 7th story window into the parking
-        lot and survived! He loved sitting with me while I worked. He really was a good cat."
-        <br><br>Background: Obot is named after Orange (diary #2, 2026-06-12). The Chile / Santiago /
+        lot and survived! He loved sitting with me while I worked. He really was a good cat.</strong>
+        Background: Obot is named after Orange (diary #2, 2026-06-12). The Chile / Santiago /
         first safetyGraphics ideas origin story was noted as a candidate opener in the hub diary of
         2026-07-11 and has not been told in a post.
       </aside>
@@ -592,13 +599,14 @@
       <h2>And <em>such</em> a helpful coworker</h2>
       <p class="line">We actually got a lot done!</p>
       <aside class="notes">
-        Jeremy's notes: "I want to tell you about some of the work Orange and I did together! He
-        was there both when I learned R and when I learned clinical trials."
+        <strong class="say">I want to tell you about some of the work Orange and I did together! He
+        was there both when I learned R and when I learned clinical trials.
+        <br><br>I promise I'm not <i>just</i> going to talk about my cat
+        today. This actually is a talk about AI and how it has completely changed how I do my
+        job over the last year.</strong>
+        The second paragraph is Jeremy's hand-off line to the next slide.
         <br><br>(Slide title changed 2026-10-01 from "But a somewhat inconsistent co-worker"; the
         photo of him asleep on the laptop carries the joke.)
-        <br><br>Hand-off line (Jeremy's): "I promise I'm not <i>just</i> going to talk about my cat
-        today. This actually is a talk about AI and how it has completely changed how I do my
-        job over the last year."
       </aside>
     </section>
 
@@ -612,6 +620,7 @@
       </figure>
       <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Teaching me things!</p></div><div class="who"><i>👍</i></div></div>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Source: diary #3, "Re-Introducing safetyGraphics" (2026-06-16), "A Brief Prehistory".
         Beats: SAS in grad school (an 80-page master's paper, about 60 pages of it SAS Graph output);
         Agustin Calatroni introduced R at Rho, pre-tidyverse, lots of lattice; then the NYT
@@ -632,6 +641,7 @@
         <figcaption>The Adverse Event Explorer · open source, in the browser</figcaption>
       </figure>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Source: diary #3. The "wall of numbers" in a clinical study report was "100% impenetrable"
         (the post uses a Harry Potter GIF for the feeling). The Graphics Group at Rho shipped
         open-source tools in R and JavaScript: ggplot, D3 renderers wrapped as htmlwidgets, hosted
@@ -658,7 +668,12 @@
       </div>
       <p class="more">At R/Pharma in 2020: <a href="https://www.youtube.com/watch?v=2Ykw1jwSw5M" target="_blank" rel="noopener">safetyGraphics v2.0, the talk</a></p>
       <aside class="notes">
-        Graphic slide from 2026-10-06 (Jeremy: "Slide 8 needs a graphic. Maybe safety graphics
+        <strong class="say">• Clinicians and data scientists, dozens of companies, five years: papers, conferences, the FDA.
+        <br>• One open-source R package: a Shiny app for exploring a trial's safety data in the browser.
+        <br>• Jim Buchanan, Susan Mayo, Xiao Ni, Melvin Munsaka, Frank Harrell.
+        <br>• Agustin Calatroni, Herman Mitchell, Russ Helms and the Rho Graphics Group.</strong>
+        These four points are what the slide said until 2026-10-06, moved here at Jeremy's request.
+        <br><br>Graphic slide from 2026-10-06 (Jeremy: "Slide 8 needs a graphic. Maybe safety graphics
         hex + contributing companies (Add a todo note, I can pull it from an old slide). current
         content to speaker notes."). The hex is the package's own, from
         inst/resources/safetyGraphicsHex.png in the safetyGraphics repository. The dashed box
@@ -670,11 +685,7 @@
         There was also a safetyGraphics workshop at R/Pharma 2021
         (safetygraphics.github.io/RPharma2021-Workshop/) if that is the one he means. The
         link's wording is draft.
-        <br><br>What the slide said until then, now talking points:
-        <br>• Clinicians and data scientists, dozens of companies, five years: papers, conferences, the FDA.
-        <br>• One open-source R package: a Shiny app for exploring a trial's safety data in the browser.
-        <br>• Jim Buchanan, Susan Mayo, Xiao Ni, Melvin Munsaka, Frank Harrell.
-        <br>• Agustin Calatroni, Herman Mitchell, Russ Helms and the Rho Graphics Group.
+
         <br><br>
         Acknowledgements up front, as in diary #3 ("Why do the acknowledgements always come at the
         end?"). All names are from that post's footnotes; Jeremy to confirm who goes on the slide.
@@ -700,6 +711,7 @@
         </figure>
       </div>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Source: diary #3. "I think the best work we did is this eDISH hepatic explorer … and the
         associated clinical workflow." Worth planting here: the workflow document is what the
         agents were later handed (diary #6 ports the guide; diary #7 builds on Jim Buchanan's
@@ -725,6 +737,7 @@
         </ul>
       </div>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         TODO box added 2026-10-06 (Jeremy: "slide 10 needs a visual add a todo"). The two
         columns are unchanged, only tightened to make room. Ideas for the visual, none built:
         the safetyGraphics repository's commits by year, going quiet after 2021 (can be drawn
@@ -754,6 +767,7 @@
       <h2>What we do right now</h2>
       <p class="line">OpenRBQM, with AI in the loop.</p>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Transition into beat 2: the actual current state. This is the day job, not the experiment:
         GxP risk-based quality monitoring at a large pharma, built in the open as the gsm packages
         and the PHUSE OpenRBQM working group (diary #1).
@@ -770,6 +784,7 @@
       </figure>
       <p class="more" style="margin-top: 16px">Built in the open as <a href="https://openrbqm.github.io/" target="_blank" rel="noopener">OpenRBQM</a>, a <a href="https://advance.hub.phuse.global/wiki/spaces/WEL/pages/26811224/OpenRBQM+Pre-Competitive+Collaboration+on+Open-Source+Software+for+RBQM" target="_blank" rel="noopener">PHUSE working group</a> · openrbqm.github.io</p>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Sources: diary #1 ("We use the {gsm} tools to monitor actual studies. We wrote a paper and
         have given a bunch of presentations") and diary #4 ("Unlike {safetyGraphics}, {gsm} was
         designed for GxP from the start").
@@ -791,6 +806,7 @@
       <blockquote>“We use AI heavily, but it's <em>not autonomous.</em> Humans own the process and all deliverables.”</blockquote>
       <cite>— developer diary #1, 10 June 2026</cite>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Source: diary #1. The team "uses agentic AI, mostly via GitHub Copilot, to create
         open-source R packages for GxP processes related to risk-based quality monitoring."
         Adoption timeline from the same post: capabilities jumped in late 2025; the team started
@@ -815,6 +831,7 @@
       </div>
       <p class="levels-src">Levels: Dan Shapiro, via Simon Willison, January 2026</p>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         From the March all-hands deck ("Levels of AI Usage", with "We are here" at level 3 and,
         later, "Are we here??" at level 4) and Jeremy's post of 2026-02-10, "Five Levels of
         AI-Assisted Development": "I'm currently getting comfortable at level 3, which feels
@@ -855,6 +872,7 @@
         </div>
       </div>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         From the March all-hands deck, which showed this as two slides: "Standard Development
         Lifecycle" (every step a person or automated) and "AI in the Loop Life Cycle" (the same
         steps, some handed to the agent). This slide merges them: the teal steps are the ones
@@ -873,6 +891,7 @@
       <div class="big">+50%</div>
       <p>releases compared with last year. Issues and pull requests roughly doubled. <span class="soft">Not a controlled productivity study.</span></p>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Source: diary #1 (2026-06-10): "Our rate of releases has gone up by roughly 50% compared
         to last year. The number of issues, both opened and closed, has roughly doubled. Same with
         PRs. That's not a controlled productivity study — lots of other things changed too — but
@@ -891,6 +910,7 @@
         <div class="st"><div class="hx">3</div><b>Run</b><span>Study set-up, snapshot schedules, checks against the monitoring plan</span><i class="tag">our scaffold</i></div>
       </div>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Source: the team's Q3 2026 agentic update deck (internal), strategy slide. The headline
         there: "we moved focus from coding agents to the roadmap and operations scaffolds, where
         the value was." The chain follows the product lifecycle: the roadmap produces the specs
@@ -912,6 +932,7 @@
       </div>
       <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Writing code!</p></div><div class="who"><i>👍</i></div></div>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Title is Jeremy's line (2026-10-02). Source: Q3 deck, "Coding: maintained, not abandoned":
         "Vendor coding agents improve monthly, so we invest in shared context, not a custom agent."
         gsm.agent is one AGENTS.md (the map of the gsm repos plus conventions: attribution,
@@ -939,6 +960,7 @@
         <div class="st" style="--c: var(--faint)"><div class="hx">4</div><b>Bots</b><span>Agents acting on a schedule, under their own identity</span><i class="tag muted">still learning</i></div>
       </div>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Source: Q3 deck, "Framework → Tools → Skills → Bots". "Each layer only works once the one
         below it is solid. Layers 1–3 are reliable today; layer 4 is where we're still learning."
         <br><br>The line worth saying out loud: "Deterministic tools come before agents on
@@ -966,6 +988,7 @@
       <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Drafting documents!</p></div><div class="who"><i>👍</i></div></div>
       <div class="goodat bad"><div class="bub"><p class="q">What are agents bad at now?</p><p class="a">Setting priorities</p></div><div class="who"><i>👎</i></div></div>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Source: Q3 deck, roadmap scaffold slides, and the gsm.roadmap README. Every requirement
         moves through the same six stages; a person records sign-off at each gate and the stage
         only advances when the gate's evidence passes. Agents draft most of the written artifacts
@@ -1000,6 +1023,7 @@
       <p class="src">Examples from my side project, standing in for the team's</p>
       <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Designing pages!</p></div><div class="who"><i>👍</i></div></div>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Added to beat 2 on 2026-10-05 as slide 21, straight after "Agents draft; people approve",
         which says there is an artifact at each stage; this is the picture of that sentence.
         A worker session drafted it; the pages and what was left out are listed in
@@ -1082,6 +1106,7 @@
         <li>Plan alignment <span>— a weekly check of each study's configuration against its monitoring plan</span></li>
       </ul>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Jeremy's steer (2026-10-02): "One repo per study, central repo for monitoring." Source:
         Q3 deck, "The operations scaffold at a glance".
         <br><br>Production workflows run under a bot identity. The plan-alignment check is fully
@@ -1101,6 +1126,7 @@
           <p>Merge a schedule, and issues open in each study repo<br>A live dashboard, updated daily<br>A full audit trail through pull requests</p></div>
       </div>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Source: Q3 deck, "The Central Monitoring hub replaced spreadsheets and email". Also on
         that slide: self-serve editors with approver sign-off; cadence growing toward weekly;
         20 study repos managed and 19 production workflows.
@@ -1130,6 +1156,7 @@
       </div>
       <p class="soft" style="margin: 32px 0 0; font-size: 29px">Qualification: every requirement has a test, every test has a result, and a person signs the release.</p>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Restored on 2026-10-05 at Jeremy's request ("Missing a slide around quality"; he chose
         "restore it, plus qualification"). The slide was in the first draft of beat 2 and was
         cut on 2 October; the qualification line under the columns is new and is draft wording.
@@ -1162,6 +1189,7 @@
         <li>A person must be able to explain why it is safe enough for medical research.</li>
       </ul>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         The four lines are verbatim from the 6 June deck draft (RPharma2026-AIKeynote), which came
         from Jeremy's dictation. Same idea in the abstract: scaffolding that keeps AI behaviour
         "repeatable, auditable, and governed by the humans who remain responsible for every line of code."
@@ -1180,6 +1208,7 @@
         <li>But what's next …</li>
       </ul>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Beat 2 wrap-up, added 2026-10-05 from Jeremy's outline: "We're having great success at
         level 3! Efficiency gains. Fully compliant! But what's next …". The headline and the
         three lead phrases are his; the grey asides are draft wording.
@@ -1215,6 +1244,7 @@
       <h2>From Orange to obot</h2>
       <p class="line">The agent is named after him.</p>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Transition into beat 3: the Orange photo that opens every beat. Headline and line are
         draft wording. (Moved to the reserves on 2026-10-05 in the journey rebuild and restored
         the same day at Jeremy's request.)
@@ -1241,6 +1271,7 @@
         <div class="st"><img class="vx" src="assets/hex/obot-v5-5.png" alt="obot v5.5 as a robot cat in sunglasses" /><b>v5.5</b><span>Opus 5.5</span></div>
       </div>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Opens beat 3. Title from Jeremy's outline (2026-10-05): "What's next? A summer down the
         AI rabbit hole (in the matrix??) with obot …".
         <br><br>PLACEHOLDER IMAGE. Jeremy: "Placeholder image … Comic of orange transforming into
@@ -1271,6 +1302,7 @@
         <li>Let's experiment and have some fun …</li>
       </ul>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         From Jeremy's outline (2026-10-05): "What are these tools good at right now? Mad
         Scientist Edition … Open Source. Not GxP. Let's experiment and have some fun …". He
         wrote "Not GxP" in bold, so it is the one heavier line here.
@@ -1302,6 +1334,7 @@
       </div>
       <p class="soft" style="font-family: var(--mono); font-size: 21px; margin: 18px 0 0">10 original charts · last commit, top right · 25,400 lines of JavaScript · all on D3 v3</p>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Changed on 2026-10-05 at Jeremy's request to "show a gallery of the original charts".
         The three-figure version of this slide (10 / 25,400 / D3 v3) is in the reserves.
         <br><br>The pictures are the originals' own screenshots: the first image in each
@@ -1340,6 +1373,7 @@
       <p>A local assistant on my own laptop. It drafted the first design of gsm.safety, and the hand-off for the agent that came next.</p>
       <p class="chg"><b>Where it started</b>The first commit is signed “Orange”.</p>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Jeremy (2026-10-05): "v1 was actually a local personal assistant who drafted a
         handoff/build for the openclaw!" Everything else on this slide is draft wording.
         <br><br>What the record has: the first commit in gsm.safety is dated 9 May 2026, its
@@ -1364,6 +1398,7 @@
       <p>An agent on a clean-room laptop with none of my credentials. I text it on Telegram; it works on GitHub under its own name.</p>
       <p class="chg"><b>What changed</b>It got its own machine, its own account and a job.</p>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Source: diary #2, "Introducing Obot" (2026-06-12), an interview over Telegram. Obot: "I'm
         obot: a small autonomous development agent living in OpenClaw on your MacBook… part
         assistant, part repo janitor, part junior engineer." "The machine has OpenClaw running,
@@ -1390,6 +1425,7 @@
       <div class="goodat"><div class="bub"><p class="q">What worked</p><p class="a">Real work, by text</p></div><div class="who"><i>👍</i></div></div>
       <div class="goodat bad"><div class="bub"><p class="q">What didn't</p><p class="a">Autonomy</p></div><div class="who"><i>👎</i></div></div>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Source: diary #2. Jeremy: "your biggest success is probably the early POC work we did on
         gsm.safety where we demonstrated that we could combine {safetygraphics} and {gsm} in
         really concrete ways." Obot: "We built workr-style example workflows, package docs, and
@@ -1424,6 +1460,7 @@
       <p>A plan, a playbook and an identity: a public roadmap, a set of skills, and a bot account. A session starts when I sit down.</p>
       <p class="chg"><b>What changed</b>Fable 5 came out, and I moved everything into Claude Code.</p>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Source: diary #6, "Obot v3: How I Used a Billion Tokens in a Weekend" (2026-07-13). "My
         original readout — '51% fun / 49% frustrating' — still stands. That's clearly not good
         enough… So when Fable 5 was announced, I decided to give it a try."
@@ -1452,6 +1489,7 @@
       <div class="goodat"><div class="bub"><p class="q">What worked</p><p class="a">Porting old code</p></div><div class="who"><i>👍</i></div></div>
       <div class="goodat bad"><div class="bub"><p class="q">What didn't</p><p class="a">Working without me</p></div><div class="who"><i>👎</i></div></div>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Headline: the excerpt of diary #5, "Introducing safety.viz" (2026-07-12), quoted exactly.
         <br><br>Timeline from that post, checked against the GitHub release timestamps (Eastern):
         v0.1.0 on 11 July at 8:04 am, v1.0.0 at 10:31 pm, v1.1.0 at 11:50 pm, v1.2.0 on 12 July
@@ -1490,6 +1528,7 @@
       </div>
       <div class="goodat"><div class="bub"><p class="q">What worked</p><p class="a" style="font-size: 42px">Translating research into software</p></div><div class="who"><i>👍</i></div></div>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Source: diary #7, "Papers → Prompts → Prototypes" (2026-07-17). "I demoed safety.viz for
         safetyGraphics' clinical lead, Jim Buchanan, this week and asked if he had any
         improvements in mind, and no surprise, he had a few! Jim promptly sent a handful of
@@ -1518,6 +1557,7 @@
       <p>The agent stopped being a worker and became a small company, on Opus 5, built to run while I wasn't watching.</p>
       <p class="chg"><b>What changed</b>I asked how far it could get without me in the loop at all.</p>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Source: diary #8, "A Second Interview with Obot" (2026-08-20). Obot: "v4 is the version
         where the agent stopped being a worker and became an organisation — and where most of
         the engineering went into watching itself rather than into shipping." Jeremy: "I'd say
@@ -1565,6 +1605,7 @@
         </svg>
       </div>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Source: diary #8, "A Second Interview with Obot" (2026-08-20). The diagram is the post's,
         redrawn in the deck's style with the same labels; the full version is at
         jwildfire.github.io/obot.roadmap/reports/org-chart/.
@@ -1593,6 +1634,7 @@
       <div class="goodat"><div class="bub"><p class="q">What worked</p><p class="a" style="font-size: 44px">The structure held</p></div><div class="who"><i>👍</i></div></div>
       <div class="goodat bad"><div class="bub"><p class="q">What didn't</p><p class="a" style="font-size: 44px">Knowing when it has failed</p></div><div class="who"><i>👎</i></div></div>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Source: diary #8. These are Obot's words in the interview, not Jeremy's: "And most of the
         last week was the agent finding out how it was quietly wrong. Nine cases in one night of
         something reporting success while having done nothing. A blocker that set an evening's
@@ -1623,6 +1665,7 @@
       <p>I retired the organisation and kept a tree of issues. One session per requirement, each with a definition of done.</p>
       <p class="chg"><b>What changed</b>On 10 September I shut v4 down. 475 files of scaffolding went; seven stayed.</p>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Jeremy (2026-10-05): "I think we might want to split out a v5 (after retiring factory,
         before opus 5.5) and 5.5 (opus 5.5 work)… Did a decent amount of scaffold update at a
         minimum." Headline and set-up are draft wording.
@@ -1661,6 +1704,7 @@
       </div>
       <p class="soft" style="font-size: 30px; margin: 0">Written down on 11 September as three short standards: tracking, sessions and releases<br>jwildfire.github.io/obot.roadmap/tracker.html</p>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Jeremy's steer (2026-10-05): "worth talking at least a little bit about the scaffold,
         obot.roadmap (goal/requirement/tasks). I review releases and answer questions. I think it
         really worked quite well in the last weekend session after so many struggles." The
@@ -1698,6 +1742,7 @@
       <div class="goodat"><div class="bub"><p class="q">What worked</p><p class="a">A definition of done</p></div><div class="who"><i>👍</i></div></div>
       <div class="goodat bad"><div class="bub"><p class="q">What didn't</p><p class="a">No chart releases</p></div><div class="who"><i>👎</i></div></div>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         What shipped between the 10 September shutdown and the first Opus 5.5 session on
         1 October, checked against GitHub on 2026-10-05. Headline and callouts are draft wording.
         <br><br>The scaffold: obot.agent v0.5.0 ("the requirement-session core") and obot.roadmap
@@ -1736,6 +1781,7 @@
       <p>The same tree of issues, with one orchestrator and one brief. I review releases and answer questions.</p>
       <p class="chg"><b>What changed</b>The model got better. Orchestration now works from a plain brief.</p>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Jeremy's steers (2026-10-05): "Capabilities keep improving and Opus 5.5 moved the goal
         posts again. Orchestration works *great* with a simple prompt now." And: "I review
         releases and answer questions. I think it really worked quite well in the last weekend
@@ -1772,6 +1818,7 @@
       <div class="goodat"><div class="bub"><p class="q">What worked</p><p class="a">Reviewing its own work</p></div><div class="who"><i>👍</i></div></div>
       <div class="goodat bad"><div class="bub"><p class="q">What didn't</p><p class="a">Still waits on me</p></div><div class="who"><i>👎</i></div></div>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Jeremy's steer (2026-10-05): "Capabilities keep improving and Opus 5.5 moved the goal
         posts again. Orchestration works *great* with a simple prompt now." This is the last
         evolution of obot before the talk. Headline is draft wording.
@@ -1828,6 +1875,7 @@
         </figure>
       </div>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         The payoff of the beat (Jeremy's outline, 2026-10-05: "What I built: gsm.viz demo (this
         is the payoff)"). Read here as the safety.viz demo app; gsm.viz is the RBQM chart
         library. TODO (Jeremy): confirm.
@@ -1870,6 +1918,7 @@
       <h2>How we built it</h2>
       <p class="line">What it cost, how it was run, and how fast it moved.</p>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Transition into part 3.5, added 2026-10-05 when Jeremy regrouped the beats. Headline is
         his phrase ("how we built it"); the line under it is draft wording.
         <br><br>What follows: costs, the SDLC (quality, then the roadmap as two pictures) and
@@ -1955,6 +2004,7 @@
       </div>
       <p style="font-size: 32px; margin: 12px 0 0">The record has holes: June is not counted, and most of September is missing.</p>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Part 3.5, "how we built it": costs. Drafted on 2026-10-05 as beat 4's costs point and
         regrouped the same day. A worker session drafted it from the hub's usage data after
         bringing that data up to 6 October. The numbers are those of the pull request that
@@ -2051,6 +2101,7 @@
       </div>
       <p class="soft" style="margin: 22px 0 0; font-size: 29px">Tests and reviews are cheap now. The signature is not.</p>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         DRAFT, 2026-10-05. Part 3.5, "how we built it". Jeremy's list for this part is
         "cost/sdlc/treemaps/timeline overview" and does not name quality; this slide is placed
         here as the SDLC slide (tests, review, sign-off), ahead of the two roadmap pictures.
@@ -2100,6 +2151,7 @@
       <p class="stamp">obot.roadmap · as of 5 October 2026 · 44 retired requirements and 25 with no objective not shown</p>
       <!-- roadmap-tree:treemap:end -->
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         DRAFT, 2026-10-05. The headline and kicker are draft wording for Jeremy to replace.
         The picture is generated, not drawn by hand; the numbers below come from the same run.
         <br><br>What it shows
@@ -2160,6 +2212,7 @@
       <p class="stamp">obot.roadmap · as of 5 October 2026 · one bead per task</p>
       <!-- roadmap-tree:node-link:end -->
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         DRAFT, 2026-10-05. The headline and kicker are draft wording for Jeremy to replace.
         The picture is generated; the numbers below come from the same run.
         <br><br>What it shows
@@ -2286,6 +2339,7 @@
       </div>
       <p style="font-size: 32px; margin: 12px 0 0">We cannot keep up, so the gap between capability and adoption keeps widening.</p>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         The last slide of part 3.5, "how we built it" (Jeremy, late on 2026-10-05: "3.5 = how
         we built it (cost/sdlc/treemaps/timeline overview)"). Earlier the same day it closed
         beat 3 after the demo, at his request; it is placed last here because he listed it last
@@ -2384,6 +2438,7 @@
       <h2>What we learned</h2>
       <p class="line">What agents are good at, what they are not, and how I feel about it.</p>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Transition into beat 4, added 2026-10-05; it takes the place of the "Beat 4 to be
         drafted" placeholder. Headline is Jeremy's phrase ("what we learned"); the line under it
         is draft wording.
@@ -2412,6 +2467,7 @@
         <li><span class="a">Reviewing its own work</span><span class="w">obot v5.5</span></li>
       </ul>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         DRAFT, 2026-10-05. Beat 4, "what we learned"; s1 in Jeremy's first structure ("revisit our answers to 'What are
         these tools good at'"). Every answer here is one Orange already gave in a callout earlier
         in the deck, with one exception noted below. The wording of each answer is the
@@ -2451,6 +2507,7 @@
         <li><span class="a">Remembering</span><span class="w">Every day</span></li>
       </ul>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         DRAFT, 2026-10-05. Beat 4, "what we learned"; s2 in Jeremy's first structure ("and not good at (s2)"). Same
         build as the slide before: Orange's thumbs-down answers gathered. Draft wording
         throughout.
@@ -2487,6 +2544,7 @@
         </ul>
       </div>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Placeholder, added 2026-10-05 when Jeremy put "mixed feelings" in beat 4 ("4 = what we
         learned (good/bad/mixed feelings/closing)"). The headline is a stand-in. Nothing here
         is drafted on his behalf: the three lines are his own, quoted from the posts of
@@ -2503,6 +2561,7 @@
     <section class="slide s-party" data-hue="6" style="--poster: url(assets/orange-party-poster.png)">
       <iframe data-src="party.html?banner=THANK%20YOU!" title="A pixel-art party of orange cats dancing under a disco ball, with confetti" hidden></iframe>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         The closing slide, built 2026-10-06 at Jeremy's request: "an orange cat dance party
         inspired by" Simon Willison's Kākāpō Party, "exact same approach look/feel (but with
         orange cats)". It is a live page, not a video.
@@ -2540,6 +2599,7 @@
       <p class="kicker">Reserves</p>
       <h2>Reserve slides</h2>
       <p>Demoted from the main deck, kept in case. Each one's notes say when it was demoted, and why.</p>
+      <aside class="notes"><strong class="say">&lt;none yet&gt;</strong></aside>
     </section>
 
     <section class="slide s-todo" data-reserve="6 October 2026" data-hue="6">
@@ -2554,6 +2614,7 @@
         </ul>
       </div>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Placeholder, 2026-10-05. Jeremy: "Add a placeholder for the closing slide. Will have
         image model build that one." Nothing here is content for the audience.
         <br><br>From the outline's earlier list for the end of the talk: "The question, one
@@ -2571,6 +2632,7 @@
       <blockquote>Open, software-shaped workflows are agent-ready.</blockquote>
       <cite>So what happens when the agent does more of the work?</cite>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Reserve. Demoted from the main deck on 2026-10-05: replaced as the last slide of beat 2 by the wrap-up ("We're having great success at level 3!").
         <br><br>
         Hand-off into beat 3. The claim is from the 6 June deck ("Once the workflow is open and
@@ -2593,6 +2655,7 @@
         <li>Have some fun!</li>
       </ul>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Reserve. Demoted from the main deck on 2026-10-05: Demoted on 2026-10-05 when beat 3 was rebuilt as a journey through five obot versions. Replaced by "Mad scientist edition" and the new goal slide.
         <br><br>
         The four lines are Jeremy's (2026-10-05): "Build a modern version of safetyGraphics using
@@ -2613,6 +2676,7 @@
       <blockquote>This is really really not GxP</blockquote>
       <cite>(but there are A LOT of tests included …)</cite>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Reserve. Demoted from the main deck on 2026-10-05: Demoted on 2026-10-05 when beat 3 was rebuilt as a journey through five obot versions. "Not GxP" is now a line on the "Mad scientist edition" slide.
         <br><br>
         Jeremy's words (2026-10-05): "This is really really not GxP (but there are A LOT of
@@ -2636,6 +2700,7 @@
       </div>
       <p class="soft" style="margin-top: 44px; font-size: 34px; font-family: var(--serif); font-style: italic">“The outputs need to be checkable — by a person, by a test suite, and by another agent.”</p>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Reserve. Demoted from the main deck on 2026-10-05: Demoted on 2026-10-05 when beat 3 was rebuilt as a journey through five obot versions. Its content is in the notes of the new goal slide.
         <br><br>
         Source: diary #4, "safetyGraphics ❤️ gsm" (2026-07-02). Column text is paraphrase; draft wording.
@@ -2662,6 +2727,7 @@
         <div class="st"><div class="hx">3</div><b>obotclaw[bot]</b><span>“the identity”: the agent's commits and pull requests are its own, not mine</span></div>
       </div>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Reserve. Demoted from the main deck on 2026-10-05: Demoted on 2026-10-05 when beat 3 was rebuilt as a journey through five obot versions. Folded into the obot v3 title slide.
         <br><br>
         Source: diary #6, "Obot v3: How I Used a Billion Tokens in a Weekend" (2026-07-13). The
@@ -2689,6 +2755,7 @@
       </div>
       <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Catching real errors</p></div><div class="who"><i>👍</i></div></div>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Reserve. Demoted from the main deck on 2026-10-05: Demoted on 2026-10-05 when beat 3 was rebuilt as a journey through five obot versions. Not in the new outline; its test counts are in the notes of the payoff slide.
         <br><br>
         Source: diary #5. "The most frequently asked question about {safetyGraphics} has always
@@ -2725,6 +2792,7 @@
         </ul>
       </div>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Reserve. Demoted from the main deck on 2026-10-05: Demoted on 2026-10-05 when beat 3 was rebuilt as a journey through five obot versions. 10 September is now the "what changed" line on the obot v5 title slide, whose notes carry the same TODO.
         <br><br>
         Placeholder. Nothing about 10 September is in Jeremy's own words yet; the only record is
@@ -2759,6 +2827,7 @@
       </div>
       <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Running experiments!</p></div><div class="who"><i>👍</i></div></div>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Reserve. Demoted from the main deck on 2026-10-05: Demoted on 2026-10-05 when beat 3 was rebuilt as a journey through five obot versions. Not in the new outline; bio.viz and gsm.bio are in the notes of the obot v5 weekend slide.
         <br><br>
         Headline is Jeremy's line (2026-10-05): "Agents are great at experiments. bio.viz got
@@ -2800,6 +2869,7 @@
           </table></div>
       </div>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Reserve. Demoted from the main deck on 2026-10-05: Demoted on 2026-10-05 when beat 3 was rebuilt as a journey through five obot versions. Not in the new outline. A candidate for beat 4, where it would replace "The summer in one number".
         <br><br>
         Jeremy asked for overall cost numbers and activity metrics (2026-10-05) and said some of
@@ -2837,6 +2907,7 @@
         <li>Not done: the 22 figures in the FDA safety guidance <span>— all specified, none drawn</span></li>
       </ul>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Reserve. Demoted from the main deck on 2026-10-05: Demoted on 2026-10-05 when beat 3 was rebuilt as a journey through five obot versions. Not in the new outline; its numbers are in the notes of the payoff slide.
         <br><br>
         Checked against GitHub on 2026-10-05; refresh on the morning of the talk. Draft wording.
@@ -2870,6 +2941,7 @@
           <p class="n">D3 v3</p><p>from 2013. Today: Chart.js 4, inside gsm's workflows and tests</p></div>
       </div>
       <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
         Reserve. Demoted from the main deck on 2026-10-05: replaced by a gallery of the ten original charts, at Jeremy's request. This is the three-figure version of the goal slide.
         <br><br>
         From Jeremy's outline (2026-10-05): "The goal: Modernize Safety Graphics using gsm
@@ -2903,6 +2975,7 @@
       <p class="kicker">Section</p>
       <h2>Section divider</h2>
       <p>Each section takes the next hue of the spectrum: <code>data-hue="0"</code> … <code>"6"</code>.</p>
+      <aside class="notes"><strong class="say">&lt;none yet&gt;</strong></aside>
     </section>
 
     <section class="slide s-bullets" data-hue="0">
@@ -2913,19 +2986,21 @@
         <li>Second supporting point</li>
         <li>Third supporting point</li>
       </ul>
-      <aside class="notes">Speaker notes live in an aside.notes element; press N to show them.</aside>
+      <aside class="notes"><strong class="say">&lt;none yet&gt;</strong> Speaker notes live in an aside.notes element; press N to show them.</aside>
     </section>
 
     <section class="slide s-quote" data-hue="1">
       <p class="kicker">Layout · quote</p>
       <blockquote>“What can we actually do with these tools right now?”</blockquote>
       <cite>— the question running through the developer diary</cite>
+      <aside class="notes"><strong class="say">&lt;none yet&gt;</strong></aside>
     </section>
 
     <section class="slide s-stat" data-hue="2">
       <p class="kicker">Layout · big number</p>
       <div class="big">1B</div>
       <p>tokens in a weekend — a single figure with one line of context.</p>
+      <aside class="notes"><strong class="say">&lt;none yet&gt;</strong></aside>
     </section>
 
     <section class="slide s-split" data-hue="4">
@@ -2935,6 +3010,7 @@
         <div class="col"><h3>Then</h3><p>Left column text.</p></div>
         <div class="col"><h3>Now</h3><p>Right column text.</p></div>
       </div>
+      <aside class="notes"><strong class="say">&lt;none yet&gt;</strong></aside>
     </section>
 
     <section class="slide s-image" data-hue="5">
@@ -2944,6 +3020,7 @@
         <div class="frame"><span class="ph">img src="assets/…" goes here</span></div>
         <figcaption>Caption · source link</figcaption>
       </figure>
+      <aside class="notes"><strong class="say">&lt;none yet&gt;</strong></aside>
     </section>
 
     <section class="slide s-section" data-hue="6">
@@ -2951,6 +3028,7 @@
       <p class="kicker">Close</p>
       <h2>Thank you</h2>
       <p>jwildfire.github.io/keynote</p>
+      <aside class="notes"><strong class="say">&lt;none yet&gt;</strong></aside>
     </section>
 
   </div>
