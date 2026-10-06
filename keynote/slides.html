@@ -249,7 +249,8 @@
     .levels .lv span { font-size: 25px; color: var(--soft); }
     .levels .lv.here { background: var(--panel); border-color: var(--c); box-shadow: 0 8px 24px rgba(31, 35, 40, 0.07); }
     .levels .lv .tag { font-family: var(--mono); font-style: normal; font-size: 19px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c); white-space: nowrap; }
-    .levels-src { font-family: var(--mono); font-size: 18px; color: var(--faint); margin: 10px 0 0; }
+    .levels-src { font-family: var(--mono); font-size: 20px; color: var(--soft); margin: 10px 0 0; }
+    .levels-src a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--hue); text-decoration-thickness: 2px; text-underline-offset: 5px; }
 
     /* Lifecycle: three columns of steps, each marked by who does it now. */
     .life { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; flex: 1; align-content: start; }
@@ -1005,7 +1006,7 @@
         <div class="lv" style="--c: var(--spec-1)"><div class="hx">1</div><b>The coding intern</b><span>It writes the boilerplate; you check everything</span></div>
         <div class="lv" style="--c: var(--spec-0)"><div class="hx">0</div><b>Spicy autocomplete</b><span>It finishes your line</span></div>
       </div>
-      <p class="levels-src">Levels: Dan Shapiro, via Simon Willison, January 2026</p>
+      <p class="levels-src">Levels: <a href="https://www.danshapiro.com/blog/2026/01/the-five-levels-from-spicy-autocomplete-to-the-software-factory/">Dan Shapiro, “The Five Levels”</a> · via <a href="https://simonwillison.net/2026/Jan/28/the-five-levels/">Simon Willison's write-up</a> · January 2026</p>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
         From the March all-hands deck ("Levels of AI Usage", with "We are here" at level 3 and,
@@ -1014,6 +1015,11 @@
         'safe' to me for our pre-competitive open-source work."
         <br><br>The level names are Dan Shapiro's, as summarised by Simon Willison (28 Jan 2026);
         the one-line descriptions are reworded for the slide. Credit both out loud.
+        <br><br>Links added 2026-10-06 (Jeremy: "add links to the original articles on slide
+        18"), both taken from his 2026-02-10 post and checked that day: Dan Shapiro, "The Five
+        Levels: from Spicy Autocomplete to the Dark Factory"
+        (danshapiro.com/blog/2026/01/the-five-levels-from-spicy-autocomplete-to-the-software-factory/)
+        and Simon Willison's write-up of it (simonwillison.net/2026/Jan/28/the-five-levels/).
         <br><br>Check with Jeremy: is level 3 still where the day job sits in October, given
         "we just let the coding agent deal with it"? The marker is one class on one row, so it
         can move, and the same ladder can come back in beat 3 as obot climbs to 4 and 5.

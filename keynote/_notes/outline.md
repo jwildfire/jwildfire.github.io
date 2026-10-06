@@ -88,7 +88,7 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
     - "We use AI heavily, but it's not autonomous. Humans own the process and all deliverables." [diary #1]
   - How much do you hand over? (built, slide 18)
     - The five levels of AI usage as a ladder, level 5 on top, with "the day job" marked at level 3 [March all-hands deck; post 2026-02-10]
-    - Level names are Dan Shapiro's via Simon Willison; descriptions reworded; credited on the slide
+    - Level names are Dan Shapiro's via Simon Willison; descriptions reworded; credited on the slide, with links to both articles (added 2026-10-06)
     - `[TODO]` Jeremy confirms level 3 is still right for October; the ladder can return in beat 3 as obot climbs
   - Same lifecycle; five steps changed hands (built, slide 19)
     - Level sidebar at level 3 (added 2026-10-06)
