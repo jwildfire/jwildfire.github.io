@@ -268,7 +268,7 @@
     .s-split .cols.c3 .col { padding: 40px; }
     .s-split .cols.c3 .col p:not(.n) { font-size: 31px; }
 
-    /* Level strip: slide 17's ladder as six small hexes, top right, the current level filled.
+    /* Level strip: slide 18's ladder as six small hexes, top right, the current level filled.
        <div class="lvstrip" style="--c: var(--spec-4)"><i>0</i>…<i class="on">4</i><i>5</i><b>Label</b></div> */
     .lvstrip { position: absolute; right: 140px; top: 98px; display: flex; align-items: center; gap: 8px; }
     .lvstrip i { width: 30px; height: 35px; clip-path: var(--hex-clip); background: var(--rule); color: var(--faint); display: grid; place-items: center; font-style: normal; font-family: var(--serif); font-size: 19px; }
@@ -746,8 +746,8 @@
         isn't fully GxP-compliant." The column heading and "In every talk. The answer then:"
         are draft wording; the slide shortens the question to its first three words.
         <br><br>Where the thread comes back: slide 12 (gsm, "built for GxP from the start"),
-        slide 15 ("GxP is built into the design"), slide 31 ("Not GxP", the mad scientist
-        edition), and slide 50 ("A lot of tests, and still not GxP"). A reserve slide, "Is it validated?", asks the same question with a
+        slide 15 ("GxP is built into the design"), slide 32 ("Not GxP", the mad scientist
+        edition), and slide 51 ("A lot of tests, and still not GxP"). A reserve slide, "Is it validated?", asks the same question with a
         then-and-now answer.
         <br><br>TODO box added 2026-10-06 (Jeremy: "slide 10 needs a visual add a todo"). The two
         columns are unchanged, only tightened to make room. Ideas for the visual, none built:
@@ -869,7 +869,7 @@
         <strong class="say">&lt;none yet&gt;</strong>
         Added 2026-10-06 (Jeremy: "immediately intro SDLC (s15 without the AI overlay)"). It is
         the lifecycle slide with the agent taken out: every step is a person or automated. The
-        same picture returns on slide 18 with five steps handed over.
+        same picture returns on slide 19 with five steps handed over.
         <br><br>TODO (Jeremy): check the steps against the March all-hands deck's "Standard
         Development Lifecycle" slide. I did not have that slide; this version is worked back
         from the merged one by un-marking the agent's steps, dropping the step that only exists
@@ -924,11 +924,29 @@
         a screenshot of a real qcthat report if one can be shown.
         <br><br>Pays off in beat 3: safety.viz and gsm.safety borrow exactly this (diary #4:
         "Instead of inventing a new quality framework, we plug the safety graphics into a quality
-        framework that already exists"), and "Not GxP" on slide 31 is the contrast.
+        framework that already exists"), and "Not GxP" on slide 32 is the contrast.
       </aside>
     </section>
 
     <!-- 2b · How we have layered AI in (Jeremy, 2026-10-06: "Then we talk about how we've layered in AI. then experiments.") -->
+
+    <section class="slide s-photo" data-hue="3">
+      <figure class="photo" style="--focus: 64% 50%">
+        <img src="assets/orange/orange-desk-copilot.jpg" alt="Orange sitting upright on Jeremy's lap at a desk, front paws hanging over his arm, while Jeremy types" />
+      </figure>
+      <p class="kicker pkg" style="--pkg: url(assets/hex/orange.png)">Orange, in the loop</p>
+      <h2>AI in the loop</h2>
+      <p class="line">The same lifecycle, with an agent in some of the seats.</p>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        Section break added 2026-10-06 (Jeremy: "Add a new orange section break between 15 +
+        16. Tentative title 'AI in the loop'"). It opens the second half of beat 2: how AI was
+        layered onto the lifecycle and the GxP evidence just shown. The title is his and
+        tentative; the line under it is draft wording.
+        <br><br>Photo: orange-desk-copilot.jpg, not used elsewhere in the deck. Jeremy is in
+        it. The next slide's kicker also reads "AI in the loop".
+      </aside>
+    </section>
 
     <section class="slide s-quote" data-hue="3">
       <p class="kicker">AI in the loop</p>
@@ -1013,7 +1031,7 @@
         <br><br>From 2026-10-06 the before picture is its own slide again (slide 14, "A standard
         development lifecycle"), shown before any AI; this slide is the same picture with the
         overlay.
-        <br><br>Optional slide (Jeremy: "possibly"). It shows the March state; slide 21 then says
+        <br><br>Optional slide (Jeremy: "possibly"). It shows the March state; slide 22 then says
         how it has moved since ("we just let the coding agent deal with it").
       </aside>
     </section>
@@ -1049,7 +1067,7 @@
         and sub-issues that coding consumes; coding produces releases that operations deploys to studies.
         <br><br>Why both ends: they are company-specific process that no vendor will build. The
         middle is commodity and improving monthly.
-        <br><br>Vet before publishing: everything on slides 20–23 and 25–26 comes from that internal deck. (Slide 24, the artifacts, is from the side project's public hub.)
+        <br><br>Vet before publishing: everything on slides 21–24 and 26–27 comes from that internal deck. (Slide 25, the artifacts, is from the side project's public hub.)
       </aside>
     </section>
 
@@ -1156,7 +1174,7 @@
       <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Designing pages!</p></div><div class="who"><i>👍</i></div></div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
-        Added to beat 2 on 2026-10-05 as slide 24, straight after "Agents draft; people approve",
+        Added to beat 2 on 2026-10-05 as slide 25, straight after "Agents draft; people approve",
         which says there is an artifact at each stage; this is the picture of that sentence.
         A worker session drafted it; the pages and what was left out are listed in
         keynote/_notes/beat2-artifacts-sources.md.
@@ -1202,15 +1220,15 @@
         https://jwildfire.github.io/obot.roadmap/reports/release-review-plan-2026-09-12/
         <br>10. Org chart: who answers to whom among the agents ("The chart" section).
         https://jwildfire.github.io/obot.roadmap/reports/org-chart/
-        <br><br>WHERE IT GOES. Recommended: straight after slide 23, "Agents draft; people
-        approve", as the new slide 24. Slide 23 names an artifact at each of the six stages and
+        <br><br>WHERE IT GOES. Recommended: straight after slide 24, "Agents draft; people
+        approve", as the new slide 25. Slide 24 names an artifact at each of the six stages and
         its notes say each is published by a pull request and indexed on a site; this slide is
-        the picture of that sentence. The first row follows slide 23's order (requirement, data,
+        the picture of that sentence. The first row follows slide 24's order (requirement, data,
         design, plan); the second row is what comes out at release. Then the Run slides carry on
         as now. Alternative: if stand-ins from the side project feel wrong in the middle of the
         day-job beat, the same slide works unchanged in beat 3 (hue 4, without the caption's
         second half), next to the slide where obot starts writing requirements.
-        <br><br>CALLOUT. "Drafting documents!" is already on slide 23, so this one proposes
+        <br><br>CALLOUT. "Drafting documents!" is already on slide 24, so this one proposes
         "Designing pages!", from the unplaced candidate in the outline ("design (artifacts,
         .md → .html)"). Other wordings: "Design!", "Making it readable", "Turning notes into
         pages". It is a smaller copy of the callout so that it sits under the grid and covers no
@@ -1302,13 +1320,13 @@
         Beat 2 wrap-up, added 2026-10-05 from Jeremy's outline: "We're having great success at
         level 3! Efficiency gains. Fully compliant! But what's next …". The headline and the
         three lead phrases are his; the grey asides are draft wording.
-        <br><br>Efficiency: the diary #1 figures already on slide 19 ("Our rate of releases has
+        <br><br>Efficiency: the diary #1 figures already on slide 20 ("Our rate of releases has
         gone up by roughly 50% compared to last year. The number of issues, both opened and
         closed, has roughly doubled. Same with PRs."). TODO (Jeremy): fresher numbers if you have them.
-        <br><br>Compliant: slide 16 ("Humans own the process and all deliverables"), the quality
+        <br><br>Compliant: slide 17 ("Humans own the process and all deliverables"), the quality
         slide (24) and the human-owner rule (25). TODO (Jeremy): "Fully compliant!" is a claim
         about the day job on a public slide; confirm the wording.
-        <br><br>Level 3 is slide 17's marker, "the day job". The strip in the corner is the same
+        <br><br>Level 3 is slide 18's marker, "the day job". The strip in the corner is the same
         ladder; it comes back on every obot version in beat 3.
         <br><br>"But what's next …" hands to beat 3. It replaces the bridge slide ("Open,
         software-shaped workflows are agent-ready"), which is now in the reserves. The honest
@@ -1705,7 +1723,7 @@
         <br><br>The timer script: "Underneath it all is a script that runs every five minutes and
         isn't an agent at all. That's the load-bearing part… the only component with a clean
         record. The rule: never let an agent be the sole watcher of an agent. Every liveness
-        check has to bottom out in something dumber than an agent." Echoes slide 22:
+        check has to bottom out in something dumber than an agent." Echoes slide 23:
         deterministic tools first.
         <br><br>Jeremy, in the same post: "I'd say we're at v4 now. Still using claude, but I'm
         now much more hands off with the code."
@@ -1814,7 +1832,7 @@
         day: 10 objectives, 175 requirements (66 released, 44 retired), 266 tasks. A screenshot
         of that tracker view is in keynote/assets/obot-tracker-biomarkers.png if a picture of
         the real thing is wanted; it was too small to read as the whole slide.
-        <br><br>The link to beat 2: this is the same shape as gsm.roadmap on slide 23 (agents
+        <br><br>The link to beat 2: this is the same shape as gsm.roadmap on slide 24 (agents
         draft, people approve), with the gates moved to the release.
         <br><br>TODO (Jeremy): "after so many struggles" deserves a sentence of yours here. What
         made this version of the scaffold work when v4's did not?
@@ -2197,7 +2215,7 @@
         here as the SDLC slide (tests, review, sign-off), ahead of the two roadmap pictures.
         TODO (Jeremy): say if it belongs in "what we learned" instead. It was drafted as s5
         ("Quality", under "how do we do this in GxP?") in his first structure. Every word is draft; the numbers are sourced below. It calls back to the
-        beat 3 opener (slide 31, "Not GxP") and to beat 2's quality slide (slide 15: every
+        beat 3 opener (slide 32, "Not GxP") and to beat 2's quality slide (slide 15: every
         requirement has a test, every test has a result, and a person signs the release).
         <br><br>Column 1. 2,185 unit and 374 browser tests at safety.viz v1.9.1, from its
         release notes (2026-10-04; still the latest release when checked on 5 October).
@@ -2565,12 +2583,12 @@
         Jeremy to rewrite.
         <br><br>Where each one comes from:
         <br>Teaching me things: slide 6.
-        <br>Writing code: slide 21.
-        <br>Drafting documents: slide 23.
-        <br>Designing pages: slide 24 (the artifacts).
-        <br>Porting old code: slide 37 (v3, the weekend of renderers).
-        <br>Translating research into software: slide 38 (v3; Jeremy's wording).
-        <br>Reviewing its own work: slide 46 (v5.5; the reviewer agents).
+        <br>Writing code: slide 22.
+        <br>Drafting documents: slide 24.
+        <br>Designing pages: slide 25 (the artifacts).
+        <br>Porting old code: slide 38 (v3, the weekend of renderers).
+        <br>Translating research into software: slide 39 (v3; Jeremy's wording).
+        <br>Reviewing its own work: slide 47 (v5.5; the reviewer agents).
         <br>Running experiments: not a callout in the main deck. It is from Jeremy's steer of
         5 October ("Agents are great at experiments") and from a slide now in the reserves. If
         it stays here it probably wants a callout in beat 3, on the v5.5 slide.
@@ -2602,17 +2620,17 @@
         build as the slide before: Orange's thumbs-down answers gathered. Draft wording
         throughout.
         <br><br>Where each one comes from:
-        <br>Setting priorities: slide 23.
-        <br>Working without me: three callouts folded into one. "Autonomy" (v2, slide 35),
-        "Working without me" (v3, slide 37) and "Still waits on me" (v5.5, slide 46, which is a
+        <br>Setting priorities: slide 24.
+        <br>Working without me: three callouts folded into one. "Autonomy" (v2, slide 36),
+        "Working without me" (v3, slide 38) and "Still waits on me" (v5.5, slide 47, which is a
         placeholder Jeremy has not confirmed).
-        <br>Knowing when it has failed: slide 41 (v4; "Nine cases in one night of something
+        <br>Knowing when it has failed: slide 42 (v4; "Nine cases in one night of something
         reporting success while having done nothing", diary #8).
         <br>Being concise and Remembering: from Jeremy's close-out list in the outline
         ("Communicating: being concise", "Remembering"). Neither is a callout anywhere in the
         deck yet, and the label "Every day" is a guess at a tag. TODO (Jeremy): keep them, and
         if so say where they bit.
-        <br><br>Left out: "No chart releases" (v5, slide 44). It is true of September, but
+        <br><br>Left out: "No chart releases" (v5, slide 45). It is true of September, but
         October shipped six releases in a weekend, so it does not read as something agents are
         bad at.
         <br><br>Until late on 5 October a sixth, dashed cell bridged to "So how do we do this in
