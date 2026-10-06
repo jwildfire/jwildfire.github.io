@@ -132,7 +132,8 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - Jeremy's three lines: Open source. Not GxP (his bold). Let's experiment and have some fun …
     - Notes: why not at work, "I'm not comfortable using those highly autonomous tools for GxP use cases right now" [diary #1]
   - The goal: modernize safetyGraphics, using the gsm framework (built, slide 29)
-    - Three figures, measured 2026-10-05 from the public repositories: 10 legacy renderers last touched between 2019 and 2022; 25,400 lines of JavaScript in 730 files; all on D3 v3 (2013) and Webcharts. Today: Chart.js 4
+    - A gallery of the ten original charts (Jeremy, 2026-10-05: "show a gallery of the original charts"): each one's own README screenshot as a still, with the year of its last commit in the corner. Images in `keynote/assets/legacy/`; all ten repositories are MIT-licensed
+    - One line under it: 10 original charts, 25,400 lines of JavaScript, all on D3 v3. Measured 2026-10-05 from the public repositories (730 files; last commits 2019 to 2022; today safety.viz is on Chart.js 4). The earlier three-figure version of the slide is in the reserves
     - Jeremy's draft said "sitting idle for 5+ years": true of eight of the ten; the newest last commit is February 2022
   - obot v1 · early May: a personal assistant (built, slide 30)
     - One slide; there is no public account of v1. What the record has: gsm.safety's first commit, 9 May 2026, is authored by "Orange" ("Initial gsm.safety design")
@@ -252,6 +253,7 @@ Since 2026-10-05, a slide that leaves the main deck moves to the reserves sectio
   - Agents are great at experiments (with the callout "Running experiments!")
   - What it took (costs and GitHub activity; a candidate for beat 4)
   - Where it stands today
+  - The goal as three figures (10 / 25,400 / D3 v3), replaced by the gallery of original charts
 
 ## Left out of draft 2
 

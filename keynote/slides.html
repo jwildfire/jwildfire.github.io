@@ -303,6 +303,13 @@
     /* Reserve slides: a tag in the header, and no slide number (JS leaves them out of the count). */
     .slide .rsv { position: absolute; left: 140px; top: 48px; font-family: var(--mono); font-size: 18px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--spec-0); }
 
+    /* Gallery: a grid of small framed pictures, each with a label and a corner tag (<i>). */
+    .gallery { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px 20px; align-content: start; }
+    .gallery figure { margin: 0; position: relative; }
+    .gallery img { display: block; width: 100%; height: 170px; object-fit: contain; background: var(--panel); border: 2px solid var(--rule); border-radius: 12px; padding: 6px; }
+    .gallery figcaption { font-size: 21px; margin-top: 6px; white-space: nowrap; }
+    .gallery figure i { position: absolute; right: 8px; top: 8px; font-family: var(--mono); font-style: normal; font-size: 15px; background: var(--rail); color: var(--soft); border-radius: 999px; padding: 1px 9px; }
+
     /* Placeholder slide for the outline stage. */
     .s-todo { background: repeating-linear-gradient(135deg, var(--bg) 0 28px, #f4f5f1 28px 56px); }
     .s-todo .todo { margin-top: 12px; font-family: var(--mono); font-size: 26px; color: var(--soft); border: 2px dashed var(--hue); border-radius: 18px; padding: 28px 36px; background: var(--bg); }
@@ -1019,19 +1026,30 @@
       </aside>
     </section>
 
-    <section class="slide s-split" data-hue="4">
+    <section class="slide" data-hue="4">
       <p class="kicker">The goal</p>
       <h2>Modernize safetyGraphics, using the gsm framework</h2>
-      <div class="cols c3" style="flex: none">
-        <div class="col"><h3>Starting from</h3>
-          <p class="n">10</p><p>legacy renderers, last touched between 2019 and 2022</p></div>
-        <div class="col"><h3>Which is</h3>
-          <p class="n">25,400</p><p>lines of JavaScript, in 730 files</p></div>
-        <div class="col"><h3>Built on</h3>
-          <p class="n">D3 v3</p><p>from 2013. Today: Chart.js 4, inside gsm's workflows and tests</p></div>
+      <div class="gallery">
+        <figure><img src="assets/legacy/safety-histogram.png" alt="The original Safety Histogram, as shown in its README" /><i>2020</i><figcaption>Safety Histogram</figcaption></figure>
+        <figure><img src="assets/legacy/safety-outlier-explorer.png" alt="The original Outlier Explorer, as shown in its README" /><i>2021</i><figcaption>Outlier Explorer</figcaption></figure>
+        <figure><img src="assets/legacy/safety-results-over-time.png" alt="The original Results Over Time, as shown in its README" /><i>2019</i><figcaption>Results Over Time</figcaption></figure>
+        <figure><img src="assets/legacy/safety-shift-plot.png" alt="The original Shift Plot, as shown in its README" /><i>2019</i><figcaption>Shift Plot</figcaption></figure>
+        <figure><img src="assets/legacy/safety-delta-delta.png" alt="The original Delta-Delta, as shown in its README" /><i>2019</i><figcaption>Delta-Delta</figcaption></figure>
+        <figure><img src="assets/legacy/paneled-outlier-explorer.png" alt="The original Paneled Outlier Explorer, as shown in its README" /><i>2019</i><figcaption>Paneled Outlier Explorer</figcaption></figure>
+        <figure><img src="assets/legacy/aeexplorer.png" alt="The original AE Explorer, as shown in its README" /><i>2020</i><figcaption>AE Explorer</figcaption></figure>
+        <figure><img src="assets/legacy/ae-timelines.png" alt="The original AE Timelines, as shown in its README" /><i>2019</i><figcaption>AE Timelines</figcaption></figure>
+        <figure><img src="assets/legacy/web-codebook.png" alt="The original Web Codebook, as shown in its README" /><i>2021</i><figcaption>Web Codebook</figcaption></figure>
+        <figure><img src="assets/legacy/hep-explorer.png" alt="The original Hepatic Explorer, as shown in its README" /><i>2022</i><figcaption>Hepatic Explorer</figcaption></figure>
       </div>
+      <p class="soft" style="font-family: var(--mono); font-size: 21px; margin: 18px 0 0">10 original charts · last commit, top right · 25,400 lines of JavaScript · all on D3 v3</p>
       <aside class="notes">
-        From Jeremy's outline (2026-10-05): "The goal: Modernize Safety Graphics using gsm
+        Changed on 2026-10-05 at Jeremy's request to "show a gallery of the original charts".
+        The three-figure version of this slide (10 / 25,400 / D3 v3) is in the reserves.
+        <br><br>The pictures are the originals' own screenshots: the first image in each
+        repository's README, saved as a still on 2026-10-05 (several are animated GIFs there).
+        All ten repositories are MIT-licensed. The year in each corner is the year of the last
+        commit on its default branch.
+        <br><br>From Jeremy's outline (2026-10-05): "The goal: Modernize Safety Graphics using gsm
         framework. Starting from X legacy renderers sitting idle for 5+ years; X lines of code;
         D3 v3 -> ???". The numbers were measured on 2026-10-05 from the public repositories.
         <br><br>The ten: RhoInc's safety-histogram, safety-outlier-explorer,
@@ -1819,6 +1837,43 @@
         standard safety tables and figures guidance as a static chart. All 22 are specified in a
         requirement matrix; none is drawn (obot.roadmap#323 and #324, untouched since 11 September).
         <br><br>Cut candidate: these four lines could be said over the demo instead.
+      </aside>
+    </section>
+
+<section class="slide s-split" data-reserve="5 October 2026" data-hue="4">
+      <p class="kicker">The goal</p>
+      <h2>Modernize safetyGraphics, using the gsm framework</h2>
+      <div class="cols c3" style="flex: none">
+        <div class="col"><h3>Starting from</h3>
+          <p class="n">10</p><p>legacy renderers, last touched between 2019 and 2022</p></div>
+        <div class="col"><h3>Which is</h3>
+          <p class="n">25,400</p><p>lines of JavaScript, in 730 files</p></div>
+        <div class="col"><h3>Built on</h3>
+          <p class="n">D3 v3</p><p>from 2013. Today: Chart.js 4, inside gsm's workflows and tests</p></div>
+      </div>
+      <aside class="notes">
+        Reserve. Demoted from the main deck on 2026-10-05: replaced by a gallery of the ten original charts, at Jeremy's request. This is the three-figure version of the goal slide.
+        <br><br>
+        From Jeremy's outline (2026-10-05): "The goal: Modernize Safety Graphics using gsm
+        framework. Starting from X legacy renderers sitting idle for 5+ years; X lines of code;
+        D3 v3 -> ???". The numbers were measured on 2026-10-05 from the public repositories.
+        <br><br>The ten: RhoInc's safety-histogram, safety-outlier-explorer,
+        safety-results-over-time, safety-shift-plot, safety-delta-delta,
+        paneled-outlier-explorer, aeexplorer, ae-timelines and web-codebook, and
+        SafetyGraphics/hep-explorer. Diary #5 calls them "the ten original {safetyGraphics} renderers".
+        <br><br>Idle: last commits run from July 2019 (safety-results-over-time) to February 2022
+        (hep-explorer). Six of the ten have not been touched for more than six years, nine for
+        more than four. "Idle for 5+ years" is true of eight; say it that way if you like.
+        <br><br>Size: 25,423 lines of JavaScript in 730 files under src/, counted with wc on a
+        fresh clone of each. Every one depends on D3 version 3 ("^3" or "~3" in package.json;
+        D3 v3 dates from 2013) and on Webcharts.
+        <br><br>Where it ended up: safety.viz depends on Chart.js ^4.5.1. Diary #4: "Our primary
+        charting engine is D3 v3 — D3 is now on v7.9."
+        <br><br>The plan in diary #4 was keep, modernize, borrow: "Instead of inventing a new
+        quality framework, we plug the safety graphics into a quality framework that already
+        exists." That slide is in the reserves.
+        <br><br>From diary #3: modernizing it "always felt like it needed a team and a budget I
+        no longer have — but with AI agents, I'm honestly not sure that's true anymore."
       </aside>
     </section>
 
