@@ -83,7 +83,7 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
     - `[TODO]` Jeremy vets the qualification line and supplies a real qcthat report if one can be shown
   - Part 2b: how we have layered AI in (Jeremy, 2026-10-06: "Then we talk about how we've layered in AI. then experiments."). An Orange section break opens it
   - [Orange] AI in the loop (built, slide 16; title is Jeremy's and tentative)
-    - Photo: `orange-desk-copilot.jpg` (Jeremy is in it). Line, draft: "The same lifecycle, with an agent in some of the seats."
+    - Photo: `orange-paw-on-trackpad.jpg`, cropped to the bottom of the frame (swapped 2026-10-06; `orange-desk-copilot.jpg` is now unused). Line, draft: "The same lifecycle, with an agent in some of the seats."
   - AI in the loop (built, slide 17)
     - "We use AI heavily, but it's not autonomous. Humans own the process and all deliverables." [diary #1]
   - How much do you hand over? (built, slide 18)
