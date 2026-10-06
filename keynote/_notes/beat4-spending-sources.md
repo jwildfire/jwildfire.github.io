@@ -7,7 +7,8 @@ Draft of 2026-10-05 for the slide in `beat4-spending-draft.html` ("Costs"). Not 
 - The hub's analytics page, https://jwildfire.github.io/obot.roadmap/analytics/index.html, and the file behind it, https://jwildfire.github.io/obot.roadmap/usage/usage.json.
 - Built by `scripts/build_usage_data.py` in jwildfire/obot.roadmap from Claude Code's session logs on Jeremy's Mac (the obot2 workspace only), plus whatever cloud sessions published. One cell per day and session: tokens, requests, cost.
 - The page was brought forward from 19 August to 6 October on 2026-10-05, in https://github.com/jwildfire/obot.roadmap/pull/370 (task https://github.com/jwildfire/obot.roadmap/issues/368).
-- When this was written the pull request was open, not merged. The numbers below are from its branch (`368-usage-through-october`, commit `6b2444a`) with the one published cloud session added, which is what the live file will hold once it merges. Until then the live page still reads $7,132.52 through 12 September.
+- Update, 2026-10-05 evening: the pull request merged at 2026-10-06T01:26Z and the live file was fetched after the deploy: last day 2026-10-06, $11,756.53, 54 active days, 244 agents.
+- When the rest of this note was written the pull request was open, not merged. The numbers below are from its branch (`368-usage-through-october`, commit `6b2444a`) with the one published cloud session added, which is what the live file will hold once it merges. Until then the live page still reads $7,132.52 through 12 September.
 - Counted on the evening of 5 October Eastern. The data's days are UTC days, so the last day in it is 2026-10-06 and it is a partial day.
 
 ## What "at API prices" means

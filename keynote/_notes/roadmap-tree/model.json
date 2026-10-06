@@ -1,0 +1,1547 @@
+{
+ "source": "jwildfire/obot.roadmap, read through scripts/lib/collect/tracker.mjs",
+ "readAt": "2026-10-06T01:23:08.306Z",
+ "asOf": "5 October 2026",
+ "asOfTime": "21:23 Eastern",
+ "totals": {
+  "objectives": {
+   "total": 10,
+   "open": 10,
+   "closed": 0
+  },
+  "requirements": {
+   "total": 177,
+   "open": 67,
+   "closed": 110,
+   "drift": 0,
+   "blocked": 0,
+   "byStage": {
+    "Backlog": 55,
+    "Ready": 3,
+    "In session": 2,
+    "Review": 7,
+    "Released": 66,
+    "Retired": 44,
+    "Unstaged": 0
+   }
+  },
+  "tasks": {
+   "total": 274,
+   "open": 45,
+   "inReview": 2,
+   "done": 225,
+   "retired": 2,
+   "blocked": 0
+  },
+  "unparented": 25
+ },
+ "objectives": [
+  {
+   "number": 78,
+   "title": "Chart coverage — every figure in the FDA safety guidance, static and interactive",
+   "short": "Chart coverage",
+   "state": "OPEN",
+   "requirements": [
+    {
+     "n": 165,
+     "title": "gsm.safety v1.2.0 — Widget_TimeToEvent + participant-profile surface (safety.viz v1.7.0 parity)",
+     "stage": "Review",
+     "tasks": []
+    },
+    {
+     "n": 164,
+     "title": "gsm.safety v1.2.0 — safety.viz v1.6.0 widget parity + parity guard",
+     "stage": "Review",
+     "tasks": [
+      "done"
+     ]
+    },
+    {
+     "n": 9,
+     "title": "FDA ST&F phase 0 — reference criteria as package data, first Derive_* functions, requirement matrix (gsm.safety v1.2.0)",
+     "stage": "Review",
+     "tasks": [
+      "done",
+      "done",
+      "done",
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 351,
+     "title": "AI narratives for the Patient Journey Explorer — drafted, cited, reviewer-accepted",
+     "stage": "Ready",
+     "tasks": [
+      "done",
+      "open"
+     ]
+    },
+    {
+     "n": 349,
+     "title": "the Patient Journey Explorer — one participant's whole safety course on one study-day axis",
+     "stage": "Ready",
+     "tasks": [
+      "done",
+      "done",
+      "open"
+     ]
+    },
+    {
+     "n": 350,
+     "title": "Widget_PatientJourneyExplorer() — the Patient Journey Explorer from R",
+     "stage": "Backlog",
+     "tasks": []
+    },
+    {
+     "n": 32,
+     "title": "hep-explorer user guide — Word doc to HTML (v1.3 release companion)",
+     "stage": "Backlog",
+     "tasks": []
+    },
+    {
+     "n": 43,
+     "title": "abnormal-baseline DILI tools — migration Sankey + ALT waterfall (Amirzadegan 2025)",
+     "stage": "Backlog",
+     "tasks": [
+      "done",
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 161,
+     "title": "Kaplan–Meier time-to-event chart family — interactive renderer for safety.viz",
+     "stage": "Backlog",
+     "tasks": [
+      "done"
+     ]
+    },
+    {
+     "n": 33,
+     "title": "legacy renderer issue migration — mine the RhoInc trackers for safety.viz features",
+     "stage": "Backlog",
+     "tasks": [
+      "done"
+     ]
+    },
+    {
+     "n": 15,
+     "title": "qcthat-compatible QC reporting for safety.viz (JS issue-linked test matrix)",
+     "stage": "Backlog",
+     "tasks": []
+    },
+    {
+     "n": 39,
+     "title": "Benefit-risk value tree (MCDA)",
+     "stage": "Backlog",
+     "tasks": []
+    },
+    {
+     "n": 38,
+     "title": "Benefit-risk forest plot (safety-graphics suite)",
+     "stage": "Backlog",
+     "tasks": []
+    },
+    {
+     "n": 324,
+     "title": "FDA ST&F phase 1b and the Kaplan–Meier family — static coverage 22 of 22",
+     "stage": "Backlog",
+     "tasks": []
+    },
+    {
+     "n": 323,
+     "title": "FDA ST&F phase 1 — four static engines, twelve figures in gsm.safety",
+     "stage": "Backlog",
+     "tasks": []
+    },
+    {
+     "n": 37,
+     "title": "QT Safety Explorer Phase 2 — QTcI, multi-interval, drill-down, hysteresis & guided ICH-E14 workflow",
+     "stage": "Backlog",
+     "tasks": []
+    },
+    {
+     "n": 40,
+     "title": "Recurrent AE analysis (beyond first occurrence)",
+     "stage": "Backlog",
+     "tasks": []
+    },
+    {
+     "n": 119,
+     "title": "Participant profile: the published copy documents the rail but not the adverse-event domain (sv#112 follow-up)",
+     "stage": "Backlog",
+     "tasks": []
+    },
+    {
+     "n": 168,
+     "title": "nepExplorer Phase 2 — patient-profile drill-down (KDIGO scatter follow-on)",
+     "stage": "Backlog",
+     "tasks": []
+    },
+    {
+     "n": 169,
+     "title": "hepExplorer — exposure track, v1.2 follow-ups, and waterfall panel legends",
+     "stage": "Backlog",
+     "tasks": [
+      "open",
+      "open",
+      "open"
+     ]
+    },
+    {
+     "n": 171,
+     "title": "canonical demo data — scripted pharmaverse ADaM pipeline",
+     "stage": "Backlog",
+     "tasks": [
+      "open"
+     ]
+    },
+    {
+     "n": 98,
+     "title": "brush multiselect on the scatter renderer family",
+     "stage": "Backlog",
+     "tasks": []
+    },
+    {
+     "n": 172,
+     "title": "safety.viz platform hardening — site generator, fan-out robustness, porting tooling",
+     "stage": "Backlog",
+     "tasks": [
+      "open",
+      "open",
+      "open",
+      "open"
+     ]
+    },
+    {
+     "n": 173,
+     "title": "participant-profile lab-family dock — roll out across the remaining long-lab renderers",
+     "stage": "Backlog",
+     "tasks": [
+      "open"
+     ]
+    },
+    {
+     "n": 2,
+     "title": "Safety Histogram migration (pilot)",
+     "stage": "Released",
+     "tasks": [
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 21,
+     "title": "safety.viz documentation site — example gallery, test evidence, and API reference",
+     "stage": "Released",
+     "tasks": [
+      "done",
+      "done",
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 25,
+     "title": "canonical demo data for safety.viz renderers",
+     "stage": "Released",
+     "tasks": [
+      "done"
+     ]
+    },
+    {
+     "n": 29,
+     "title": "safety.viz v1.3 — remaining renderers + explorer demo environment",
+     "stage": "Released",
+     "tasks": [
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 35,
+     "title": "nepExplorer migration — KDIGO kidney-safety explorer for safety.viz",
+     "stage": "Released",
+     "tasks": [
+      "done"
+     ]
+    },
+    {
+     "n": 45,
+     "title": "participant profile — shared drill-down module for safety.viz",
+     "stage": "Released",
+     "tasks": [
+      "done"
+     ]
+    },
+    {
+     "n": 138,
+     "title": "participant-level metrics and flags in gsm.safety — a 2_metrics phase over the existing charts",
+     "stage": "Released",
+     "tasks": [
+      "done"
+     ]
+    },
+    {
+     "n": 64,
+     "title": "move safety.viz requirement matrix out of obot.agent",
+     "stage": "Released",
+     "tasks": []
+    },
+    {
+     "n": 75,
+     "title": "participant profile v2 — sidebar surfacing + AE domains",
+     "stage": "Released",
+     "tasks": []
+    },
+    {
+     "n": 88,
+     "title": "hepExplorer follow-up enhancements — interaction, animation & data handling",
+     "stage": "Released",
+     "tasks": [
+      "done",
+      "done",
+      "done",
+      "done",
+      "done",
+      "done"
+     ]
+    }
+   ]
+  },
+  {
+   "number": 79,
+   "title": "Portfolio view — every safety.viz chart on one page, on the standard domain set",
+   "short": "Portfolio view",
+   "state": "OPEN",
+   "requirements": [
+    {
+     "n": 327,
+     "title": "study-level settings and filters — arm, site and population across every chart, saved as one study configuration",
+     "stage": "Backlog",
+     "tasks": []
+    },
+    {
+     "n": 326,
+     "title": "the portfolio shell — every chart on one page, navigated by domain, with the participant profile as the shared drill-down",
+     "stage": "Backlog",
+     "tasks": []
+    },
+    {
+     "n": 139,
+     "title": "action log — record and resolve the risks the app identifies",
+     "stage": "Backlog",
+     "tasks": []
+    },
+    {
+     "n": 134,
+     "title": "demo-301 v0 — forkable demo study running the app (Safety + RBQM domains)",
+     "stage": "Backlog",
+     "tasks": [
+      "open"
+     ]
+    },
+    {
+     "n": 325,
+     "title": "the standard domain set — a portfolio manifest naming the domains, the charts each feeds and the columns each needs",
+     "stage": "Released",
+     "tasks": [
+      "done",
+      "done",
+      "done"
+     ]
+    }
+   ]
+  },
+  {
+   "number": 328,
+   "title": "Static parity — a static twin for every interactive chart, driven by the same settings",
+   "short": "Static parity",
+   "state": "OPEN",
+   "requirements": [
+    {
+     "n": 332,
+     "title": "a static twin for every interactive chart — the twins beyond objective 1's engines, and a 13 of 13 gallery",
+     "stage": "Backlog",
+     "tasks": []
+    },
+    {
+     "n": 331,
+     "title": "one settings contract per chart — a JSON schema shared by the safety.viz module and its gsm.safety function",
+     "stage": "Backlog",
+     "tasks": []
+    }
+   ]
+  },
+  {
+   "number": 329,
+   "title": "Data loading and mapping — a user's own files into the portfolio, nothing leaving the browser",
+   "short": "Data loading and mapping",
+   "state": "OPEN",
+   "requirements": [
+    {
+     "n": 365,
+     "title": "several files in one domain — labs and vitals delivered apart are read together, each with its own mapping",
+     "stage": "Backlog",
+     "tasks": []
+    },
+    {
+     "n": 335,
+     "title": "fit and load — mapped data flows into the portfolio, the chart status recomputes and the drill-down follows the mapped identifiers",
+     "stage": "Backlog",
+     "tasks": []
+    },
+    {
+     "n": 334,
+     "title": "the mapping module — per-domain column mapping, auto-filled from the detected standard, editable, validated and saved",
+     "stage": "Backlog",
+     "tasks": []
+    },
+    {
+     "n": 333,
+     "title": "local file loading and standard detection — CSV and JSON through the browser, placed by domain and standard",
+     "stage": "Backlog",
+     "tasks": []
+    },
+    {
+     "n": 352,
+     "title": "the basic app — load, map and view a study on one page, and as one file",
+     "stage": "Released",
+     "tasks": [
+      "done",
+      "done",
+      "done",
+      "done",
+      "done",
+      "done",
+      "done",
+      "done"
+     ]
+    }
+   ]
+  },
+  {
+   "number": 330,
+   "title": "A local-only desktop tool — one downloadable file, no network, no install",
+   "short": "A local-only desktop tool",
+   "state": "OPEN",
+   "requirements": [
+    {
+     "n": 338,
+     "title": "release, guide and demo — the download on the site, a user guide page, and the talk demo run end to end on a clean machine",
+     "stage": "Backlog",
+     "tasks": []
+    },
+    {
+     "n": 337,
+     "title": "persistence and export — save and reload a study configuration from the desktop file; export a chart as an image and its settings JSON",
+     "stage": "Backlog",
+     "tasks": []
+    },
+    {
+     "n": 336,
+     "title": "the single-file build — every script, style and the demo data inlined into one HTML file under a size budget",
+     "stage": "Backlog",
+     "tasks": []
+    }
+   ]
+  },
+  {
+   "number": 342,
+   "title": "Program operations — the orchestrator, sessions that answer their reviews, and one GitHub flow for every repository",
+   "short": "Program operations",
+   "state": "OPEN",
+   "requirements": [
+    {
+     "n": 343,
+     "title": "the GitHub-flows standard — auto-merge, both rulesets and Copilot review applied to every repository, with a check that reports drift",
+     "stage": "Ready",
+     "tasks": [
+      "retired",
+      "open",
+      "open"
+     ]
+    },
+    {
+     "n": 345,
+     "title": "the requirement-session skill watches its pull requests — event subscriptions, every Copilot thread answered, and the session's address in its start comment",
+     "stage": "Backlog",
+     "tasks": [
+      "open"
+     ]
+    },
+    {
+     "n": 344,
+     "title": "the sweep routine and the orchestrator chat — an hourly sweep that notifies and wakes, and a Claude Project where @jwildfire answers blocked questions",
+     "stage": "Backlog",
+     "tasks": []
+    }
+   ]
+  },
+  {
+   "number": 353,
+   "title": "Biomarker charts — compare groups and relate variables, with every test computed by R",
+   "short": "Biomarker charts",
+   "state": "OPEN",
+   "requirements": [
+    {
+     "n": 367,
+     "title": "The group comparison chart opens on trends over time and drills down to one visit",
+     "stage": "In session",
+     "tasks": [
+      "in review",
+      "open",
+      "open",
+      "done",
+      "open",
+      "open"
+     ]
+    },
+    {
+     "n": 369,
+     "title": "bio.viz's site is laid out and styled as safety.viz's is",
+     "stage": "In session",
+     "tasks": [
+      "open"
+     ]
+    },
+    {
+     "n": 362,
+     "title": "Results out of R: static twins, RTF tables and batch runs",
+     "stage": "Released",
+     "tasks": [
+      "done",
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 361,
+     "title": "Results out of the browser: titles, footnotes, PNG and specifications",
+     "stage": "Released",
+     "tasks": [
+      "done",
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 360,
+     "title": "Stratified survival, and survival rows in the biomarker screen",
+     "stage": "Released",
+     "tasks": [
+      "done",
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 359,
+     "title": "Cross-tabulation and the shared cut rule",
+     "stage": "Released",
+     "tasks": [
+      "done",
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 364,
+     "title": "gsm.bio's statistics: the package, a synthetic biomarker study and every test the charts will print",
+     "stage": "Released",
+     "tasks": [
+      "done",
+      "done",
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 363,
+     "title": "R in the browser, measured: the connection a chart uses to ask R for a statistic",
+     "stage": "Released",
+     "tasks": [
+      "done",
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 358,
+     "title": "Biomarker screen: one row per biomarker",
+     "stage": "Released",
+     "tasks": [
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 357,
+     "title": "Association scatter and correlation matrix",
+     "stage": "Released",
+     "tasks": [
+      "done",
+      "done",
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 356,
+     "title": "Group comparison, the tests: R's results on the chart, and the chart from R",
+     "stage": "Released",
+     "tasks": [
+      "done",
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 355,
+     "title": "Group comparison, the picture: bio.viz's first chart, drawn and drillable",
+     "stage": "Released",
+     "tasks": [
+      "done",
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 354,
+     "title": "safety.viz's shared parts opened to a second library",
+     "stage": "Released",
+     "tasks": [
+      "done"
+     ]
+    },
+    {
+     "n": 366,
+     "title": "The demo app hosts the biomarker charts, on the files and mapping a study already has",
+     "stage": "Released",
+     "tasks": [
+      "done",
+      "done",
+      "done",
+      "done",
+      "done"
+     ]
+    }
+   ]
+  },
+  {
+   "number": 72,
+   "title": "R/Pharma 2026 keynote deck",
+   "short": "R/Pharma 2026 keynote deck",
+   "state": "OPEN",
+   "requirements": [
+    {
+     "n": 10,
+     "title": "R/Pharma 2026 AI keynote deck",
+     "stage": "Backlog",
+     "tasks": []
+    },
+    {
+     "n": 22,
+     "title": "R/Pharma 2026 developer-diary blog series",
+     "stage": "Backlog",
+     "tasks": []
+    },
+    {
+     "n": 74,
+     "title": "keynote live demo — audience ideas implemented during the talk",
+     "stage": "Backlog",
+     "tasks": []
+    }
+   ]
+  },
+  {
+   "number": 73,
+   "title": "increased autonomy in obot.agent",
+   "short": "increased autonomy in obot.agent",
+   "state": "OPEN",
+   "requirements": [
+    {
+     "n": 274,
+     "title": "SafetyCensus stays and is rebuilt on metrics and reports — design first",
+     "stage": "Review",
+     "tasks": [
+      "done",
+      "done",
+      "done",
+      "open",
+      "open",
+      "done",
+      "done",
+      "open"
+     ]
+    },
+    {
+     "n": 123,
+     "title": "release scaffolding — news record, draft notes, semver milestones, RC PR framework, and the merge gate",
+     "stage": "Backlog",
+     "tasks": [
+      "done"
+     ]
+    },
+    {
+     "n": 260,
+     "title": "git pushes and commits still go out as him — the lane no token fixes",
+     "stage": "Backlog",
+     "tasks": [
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 272,
+     "title": "branch protections, live before any scheduled session runs",
+     "stage": "Backlog",
+     "tasks": []
+    },
+    {
+     "n": 291,
+     "title": "charts for the safety census, starting with data coverage",
+     "stage": "Backlog",
+     "tasks": []
+    },
+    {
+     "n": 229,
+     "title": "adversarial review of safetyCensus() — does it stay or go, before v1.1.0 publishes",
+     "stage": "Backlog",
+     "tasks": [
+      "open"
+     ]
+    },
+    {
+     "n": 3,
+     "title": "obot GitHub App for agent and automation access",
+     "stage": "Released",
+     "tasks": []
+    },
+    {
+     "n": 18,
+     "title": "autonomous obot operations — scheduled and event-driven agent runs",
+     "stage": "Released",
+     "tasks": [
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 24,
+     "title": "session hub — live session dashboard + wrapup session report",
+     "stage": "Released",
+     "tasks": [
+      "done",
+      "done",
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 31,
+     "title": "roadmap transparency — requirements tied to session goals, releases, and live status",
+     "stage": "Released",
+     "tasks": [
+      "done"
+     ]
+    },
+    {
+     "n": 109,
+     "title": "trigger audit fixes from the page — one click, live run status, decisions logged in place",
+     "stage": "Released",
+     "tasks": []
+    },
+    {
+     "n": 140,
+     "title": "one write-policy decision per repo — unify merge tiers and autonomy grants into profiles",
+     "stage": "Released",
+     "tasks": [
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 211,
+     "title": "rebuild the roadmap page on D0018 — the queue in front, the catalog behind",
+     "stage": "Released",
+     "tasks": []
+    },
+    {
+     "n": 212,
+     "title": "a worker that stops — finished, stalled or dead — wakes the Navigator",
+     "stage": "Released",
+     "tasks": [
+      "done",
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 223,
+     "title": "every surface renders honestly on a machine with no history — before the move, not after",
+     "stage": "Released",
+     "tasks": [
+      "done",
+      "done",
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 237,
+     "title": "the org chart — who does what, what each may never do, and which failure created each role",
+     "stage": "Released",
+     "tasks": []
+    },
+    {
+     "n": 243,
+     "title": "merging is not deploying — the checkout tracks main, and consumers restart when it moves",
+     "stage": "Released",
+     "tasks": [
+      "done",
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 251,
+     "title": "a kill this house reports is a kill it confirmed — the liveness anchor reports success while the session survives",
+     "stage": "Released",
+     "tasks": [
+      "done"
+     ]
+    },
+    {
+     "n": 252,
+     "title": "nobody can write to the board — the App is forbidden and the guard denies the only credential that works",
+     "stage": "Released",
+     "tasks": [
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 256,
+     "title": "work that never reached GitHub is invisible to every check we run",
+     "stage": "Released",
+     "tasks": [
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 257,
+     "title": "a thing he asked for has a delivery state, and something notices when it goes quiet",
+     "stage": "Released",
+     "tasks": []
+    },
+    {
+     "n": 264,
+     "title": "a config item's claim is checked on a cadence, not asserted on the day it was filed",
+     "stage": "Released",
+     "tasks": [
+      "done"
+     ]
+    },
+    {
+     "n": 265,
+     "title": "he answers a decision from the car, by voice, without a screen or an issue number",
+     "stage": "Released",
+     "tasks": []
+    },
+    {
+     "n": 61,
+     "title": "reaction feedback and trigger reliability for the Ideas triage pipeline",
+     "stage": "Released",
+     "tasks": []
+    },
+    {
+     "n": 77,
+     "title": "chat with the orchestrator from the live session dashboard",
+     "stage": "Released",
+     "tasks": []
+    },
+    {
+     "n": 92,
+     "title": "nightly roadmap audit — rules, confidence-scored findings, and a one-click apply loop",
+     "stage": "Released",
+     "tasks": [
+      "done",
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 198,
+     "title": "no inline bold in artifacts — emphasis is structural, or it is a callout",
+     "stage": "Released",
+     "tasks": []
+    },
+    {
+     "n": 202,
+     "title": "the roadmap page redesign — a design spike he can react to",
+     "stage": "Released",
+     "tasks": [
+      "done"
+     ]
+    },
+    {
+     "n": 203,
+     "title": "one information architecture, two audiences — symmetry between the private dashboard and the public hub",
+     "stage": "Released",
+     "tasks": []
+    },
+    {
+     "n": 266,
+     "title": "a decision artifact notices when its own premise expires",
+     "stage": "Released",
+     "tasks": [
+      "done",
+      "done",
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 267,
+     "title": "the judge can see the constraints it is judging against",
+     "stage": "Released",
+     "tasks": [
+      "done"
+     ]
+    },
+    {
+     "n": 275,
+     "title": "what the fleet spends is measured before it is spent",
+     "stage": "Released",
+     "tasks": []
+    },
+    {
+     "n": 278,
+     "title": "what comes next is written down — a ranked head, tiers below, before any clock runs",
+     "stage": "Released",
+     "tasks": []
+    },
+    {
+     "n": 280,
+     "title": "an open decision artifact has an episode he can answer from a car",
+     "stage": "Released",
+     "tasks": []
+    },
+    {
+     "n": 289,
+     "title": "one stylesheet for every surface he reads, and a check that keeps it that way",
+     "stage": "Retired",
+     "tasks": [
+      "done",
+      "done",
+      "open",
+      "open",
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 279,
+     "title": "a step-by-step IQ for the new laptop — the chance to fix rather than replicate",
+     "stage": "Retired",
+     "tasks": []
+    },
+    {
+     "n": 263,
+     "title": "config items are short local artifacts he can decide from, not a field form",
+     "stage": "Retired",
+     "tasks": [
+      "done"
+     ]
+    },
+    {
+     "n": 261,
+     "title": "the highest-authority file the agents read has no owner, no history and no review path",
+     "stage": "Retired",
+     "tasks": []
+    },
+    {
+     "n": 242,
+     "title": "does the briefing get read aloud — and at what cost to the words",
+     "stage": "Retired",
+     "tasks": []
+    },
+    {
+     "n": 240,
+     "title": "the session skills the fold replaces — one retirement, five re-homings, and the notes that say so",
+     "stage": "Retired",
+     "tasks": []
+    },
+    {
+     "n": 239,
+     "title": "the weekly briefing — the sink that keeps the daily at nine lines",
+     "stage": "Retired",
+     "tasks": []
+    },
+    {
+     "n": 238,
+     "title": "the morning fold, and the briefing it produces",
+     "stage": "Retired",
+     "tasks": [
+      "done",
+      "done",
+      "done",
+      "done",
+      "done",
+      "done",
+      "done",
+      "open",
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 236,
+     "title": "the admiral — a triggered manager, so finished work stops sitting and nobody has to remember to look",
+     "stage": "Retired",
+     "tasks": [
+      "done",
+      "done",
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 234,
+     "title": "one-off tasks — a small fix files against its goal, without a requirement to justify it",
+     "stage": "Retired",
+     "tasks": []
+    },
+    {
+     "n": 227,
+     "title": "the dashboard's two views, literally — a session table with filters, and a filterable metrics dashboard",
+     "stage": "Retired",
+     "tasks": [
+      "done",
+      "done",
+      "done",
+      "done",
+      "done",
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 226,
+     "title": "goal #73 says what it is now — a current body, five workstreams, and a bounded backlog",
+     "stage": "Retired",
+     "tasks": [
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 220,
+     "title": "his queue holds exactly three buckets — RC, decision, config — and the remainder is ours",
+     "stage": "Retired",
+     "tasks": [
+      "done"
+     ]
+    },
+    {
+     "n": 218,
+     "title": "the dashboard reads like a news feed, not an audit log — rebuild the sessions and Navigator pages",
+     "stage": "Retired",
+     "tasks": [
+      "done"
+     ]
+    },
+    {
+     "n": 215,
+     "title": "a requirement says whose decision it carries — an agent's inference must not read as his approval",
+     "stage": "Retired",
+     "tasks": [
+      "open",
+      "open",
+      "done",
+      "open"
+     ]
+    },
+    {
+     "n": 206,
+     "title": "the priced usage artifact refreshes on a cadence, or every surface says how old it is",
+     "stage": "Retired",
+     "tasks": [
+      "done"
+     ]
+    },
+    {
+     "n": 205,
+     "title": "a real \"since you last looked\" — record page views locally, or say plainly that we cannot",
+     "stage": "Retired",
+     "tasks": [
+      "done"
+     ]
+    },
+    {
+     "n": 200,
+     "title": "roadmap discipline is measured — the sweep checks all seven repos, and the audit stops reporting stale",
+     "stage": "Retired",
+     "tasks": [
+      "done",
+      "done",
+      "open",
+      "done",
+      "open"
+     ]
+    },
+    {
+     "n": 199,
+     "title": "the agent roster — every agent with its id, status, cost and roadmap impact",
+     "stage": "Retired",
+     "tasks": [
+      "done",
+      "done"
+     ]
+    },
+    {
+     "n": 184,
+     "title": "the worker closeout check — every agent finishes into a PR, a question, or a config request",
+     "stage": "Retired",
+     "tasks": []
+    },
+    {
+     "n": 195,
+     "title": "the Navigator as operating officer — asks become requirements, and delivery is judged at closeout",
+     "stage": "Retired",
+     "tasks": [
+      "done",
+      "done",
+      "done",
+      "open",
+      "done",
+      "open",
+      "open"
+     ]
+    },
+    {
+     "n": 194,
+     "title": "every worker agent gets a permanent W0001 identity, allocated once and never recycled",
+     "stage": "Retired",
+     "tasks": [
+      "done",
+      "open"
+     ]
+    },
+    {
+     "n": 186,
+     "title": "standing sessions survive compaction — continuous state, an explicit setting, and a silent-loss check",
+     "stage": "Retired",
+     "tasks": []
+    },
+    {
+     "n": 185,
+     "title": "the first mate — in-flight supervision of worker agents",
+     "stage": "Retired",
+     "tasks": []
+    },
+    {
+     "n": 181,
+     "title": "Navigator phase 2 — working-set verification (split from #157)",
+     "stage": "Retired",
+     "tasks": []
+    },
+    {
+     "n": 180,
+     "title": "the Operations Dashboard — my todo list, with blockers, where I answer decisions",
+     "stage": "Retired",
+     "tasks": [
+      "done",
+      "done",
+      "done",
+      "done",
+      "open",
+      "done",
+      "done",
+      "done",
+      "done",
+      "done",
+      "open",
+      "done"
+     ]
+    },
+    {
+     "n": 178,
+     "title": "audit stage history — re-gate the missing-design check to the moment work starts",
+     "stage": "Retired",
+     "tasks": []
+    },
+    {
+     "n": 170,
+     "title": "session hub — session reports as diary tabs",
+     "stage": "Retired",
+     "tasks": [
+      "open"
+     ]
+    },
+    {
+     "n": 122,
+     "title": "scheduled autonomous sessions — the A2 promotion (recurring goal-work loop)",
+     "stage": "Retired",
+     "tasks": [
+      "done"
+     ]
+    },
+    {
+     "n": 157,
+     "title": "Navigator — standing roadmap-state verifier (file-writing only)",
+     "stage": "Retired",
+     "tasks": []
+    },
+    {
+     "n": 148,
+     "title": "fast, responsive /session-wrapup — the closing bookend",
+     "stage": "Retired",
+     "tasks": []
+    },
+    {
+     "n": 147,
+     "title": "concurrent sessions — autonomous runs alongside @jwildfire's and each other",
+     "stage": "Retired",
+     "tasks": []
+    },
+    {
+     "n": 146,
+     "title": "durable todo list — one permanent list per goal and overall, updated not rewritten",
+     "stage": "Retired",
+     "tasks": []
+    },
+    {
+     "n": 132,
+     "title": "roadmap hierarchy — every issue reachable from a goal",
+     "stage": "Retired",
+     "tasks": []
+    },
+    {
+     "n": 128,
+     "title": "assignee and reviewer conventions for autonomous work — obot holds what's in flight, @jwildfire reviews",
+     "stage": "Retired",
+     "tasks": []
+    },
+    {
+     "n": 127,
+     "title": "/oneoff — a single-agent lane that skips session startup but still logs to the roadmap",
+     "stage": "Retired",
+     "tasks": []
+    },
+    {
+     "n": 117,
+     "title": "obot's Chrome tab sprawl — name, reuse, and clean up the tabs obot opens",
+     "stage": "Retired",
+     "tasks": []
+    },
+    {
+     "n": 91,
+     "title": "fast session startup — sub-10-second responsive /session-init",
+     "stage": "Retired",
+     "tasks": []
+    },
+    {
+     "n": 76,
+     "title": "obot GitHub App avatar — Orange's photo",
+     "stage": "Retired",
+     "tasks": []
+    },
+    {
+     "n": 69,
+     "title": "Reviewer Notes section in PR template",
+     "stage": "Retired",
+     "tasks": []
+    },
+    {
+     "n": 48,
+     "title": "idea queue — Siri/Reminders + hub Ideas Discussions intake with obot triage",
+     "stage": "Retired",
+     "tasks": []
+    },
+    {
+     "n": 87,
+     "title": "weekly goal review — freshness sweep proposing linkages, labels, and orphan candidates",
+     "stage": "Retired",
+     "tasks": []
+    },
+    {
+     "n": 58,
+     "title": "ideas-triage v2 — stronger model, richer context, bias-to-promote",
+     "stage": "Retired",
+     "tasks": [
+      "done"
+     ]
+    }
+   ]
+  },
+  {
+   "number": 112,
+   "title": "open.csr — the Clinical Study Report builder (web app)",
+   "short": "open.csr",
+   "state": "OPEN",
+   "requirements": [
+    {
+     "n": 111,
+     "title": "open.csr — open-source Clinical Study Report builder",
+     "stage": "Backlog",
+     "tasks": []
+    },
+    {
+     "n": 113,
+     "title": "open.csr Demo surface — one app, four tabs, and the move from reader to editor",
+     "stage": "Backlog",
+     "tasks": []
+    },
+    {
+     "n": 129,
+     "title": "open.csr submission outputs — RTF tables/listings, a values store, and seamless Reader editing",
+     "stage": "Backlog",
+     "tasks": [
+      "done"
+     ]
+    },
+    {
+     "n": 130,
+     "title": "open.csr display change-request loop — the writer proposes, the agent drafts, the statistician signs the diff",
+     "stage": "Backlog",
+     "tasks": [
+      "open",
+      "open",
+      "open",
+      "open",
+      "open"
+     ]
+    },
+    {
+     "n": 179,
+     "title": "open.csr Reader editing — closing the seam between reading and writing",
+     "stage": "Backlog",
+     "tasks": []
+    },
+    {
+     "n": 115,
+     "title": "text review and sign-off in the app — the first editing verb",
+     "stage": "Retired",
+     "tasks": []
+    }
+   ]
+  }
+ ],
+ "unparented": [
+  {
+   "n": 321,
+   "title": "open.csr — the explorer reads as the pipeline, and every element shows its flow",
+   "stage": "Review",
+   "tasks": [
+    "done",
+    "done"
+   ]
+  },
+  {
+   "n": 320,
+   "title": "open.csr — the sidebar says where every number came from (Data and Metadata sections, explicit links)",
+   "stage": "Review",
+   "tasks": [
+    "done",
+    "done",
+    "done"
+   ]
+  },
+  {
+   "n": 319,
+   "title": "open.csr v0.4.0 — one study, and all thirty-one reference displays",
+   "stage": "Review",
+   "tasks": [
+    "done",
+    "done",
+    "done",
+    "done",
+    "done",
+    "open",
+    "done",
+    "done",
+    "done"
+   ]
+  },
+  {
+   "n": 182,
+   "title": "remove the Experimental marking from the Time-to-Event Explorer after external clinical review",
+   "stage": "Backlog",
+   "tasks": []
+  },
+  {
+   "n": 282,
+   "title": "the usage analytics run on a cadence, and the page says when it last did",
+   "stage": "Backlog",
+   "tasks": [
+    "in review"
+   ]
+  },
+  {
+   "n": 305,
+   "title": "dispatches come from the ranked head, and drift from it is visible",
+   "stage": "Backlog",
+   "tasks": []
+  },
+  {
+   "n": 313,
+   "title": "the change chip says a site improved when its peers got worse",
+   "stage": "Backlog",
+   "tasks": []
+  },
+  {
+   "n": 306,
+   "title": "where the data-coverage numbers come from — design before the thirteenth metric",
+   "stage": "Backlog",
+   "tasks": []
+  },
+  {
+   "n": 281,
+   "title": "safetyGraphics and safetyCharts back on CRAN — remove the Tendril chart",
+   "stage": "Backlog",
+   "tasks": []
+  },
+  {
+   "n": 131,
+   "title": "study-level GitHub repo for the CSR demo study — CRs, PRs and sign-offs live with the study, not the engine",
+   "stage": "Backlog",
+   "tasks": []
+  },
+  {
+   "n": 246,
+   "title": "what the machine may say about itself in public — session names and draft-release titles",
+   "stage": "Backlog",
+   "tasks": []
+  },
+  {
+   "n": 1,
+   "title": "safety.viz — consolidated safety-chart JavaScript library",
+   "stage": "Released",
+   "tasks": [
+    "done",
+    "done",
+    "done",
+    "done",
+    "done",
+    "done",
+    "done",
+    "done",
+    "done",
+    "done",
+    "done",
+    "done",
+    "done"
+   ]
+  },
+  {
+   "n": 7,
+   "title": "migrate the obot-claw hub into obot.roadmap as the project's memory",
+   "stage": "Released",
+   "tasks": []
+  },
+  {
+   "n": 17,
+   "title": "rebuild safety.agent as a thin overlay on the gsm.agent harness",
+   "stage": "Released",
+   "tasks": [
+    "done",
+    "done",
+    "done",
+    "done",
+    "retired"
+   ]
+  },
+  {
+   "n": 28,
+   "title": "gsm.safety v1.0 — full adoption of safety.viz v1.1",
+   "stage": "Released",
+   "tasks": [
+    "done",
+    "done",
+    "done",
+    "done",
+    "done",
+    "done",
+    "done",
+    "done",
+    "done",
+    "done",
+    "done",
+    "done",
+    "done"
+   ]
+  },
+  {
+   "n": 30,
+   "title": "safety.viz v1.2 — hep-explorer migration",
+   "stage": "Released",
+   "tasks": [
+    "done"
+   ]
+  },
+  {
+   "n": 36,
+   "title": "QT Safety Explorer — ICH-E14 cardiac-safety renderer for safety.viz",
+   "stage": "Released",
+   "tasks": [
+    "done"
+   ]
+  },
+  {
+   "n": 41,
+   "title": "Shared view selector — always-visible view options across safety.viz renderers",
+   "stage": "Released",
+   "tasks": [
+    "done"
+   ]
+  },
+  {
+   "n": 241,
+   "title": "an answer you clicked that nothing applied has to reach someone",
+   "stage": "Released",
+   "tasks": [
+    "done"
+   ]
+  },
+  {
+   "n": 46,
+   "title": "Session framework: Remote Control on every agent; Claude Tag not viable",
+   "stage": "Released",
+   "tasks": []
+  },
+  {
+   "n": 53,
+   "title": "Goal pages in the hub",
+   "stage": "Released",
+   "tasks": []
+  },
+  {
+   "n": 57,
+   "title": "Roadmap homepage refactor",
+   "stage": "Released",
+   "tasks": []
+  },
+  {
+   "n": 71,
+   "title": "goal issues — goals move from obot.agent files to hub issues",
+   "stage": "Released",
+   "tasks": []
+  },
+  {
+   "n": 297,
+   "title": "the ranked head as cards, and one day of re-ranking he can watch move",
+   "stage": "Released",
+   "tasks": []
+  },
+  {
+   "n": 310,
+   "title": "a spoken standup the voice check-in can read aloud",
+   "stage": "Released",
+   "tasks": []
+  }
+ ]
+}
