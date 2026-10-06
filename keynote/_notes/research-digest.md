@@ -556,7 +556,8 @@ Jeremy's numbering (2026-10-05): "v1 was actually a local personal assistant who
 | v2.5, Paperclip | late June | Diary #6 footnote: PM, Dev and Testing agents, OpenClaw heartbeats, Paperclip as the control plane; "never shipped" |
 | v3, Claude Code on Fable 5 | July | Diary #5, #6, #7. Hub established 2 July; the weekend of 10 to 12 July |
 | v4, the organisation, on Opus 5 | August to 10 September | Diary #8 (20 August); hub diary 2026-09-10 for the shutdown |
-| v5, Opus 5.5 | October | Section 8c above. Opus 5.5 first appears in the local session logs on 2026-10-01 |
+| v5, one requirement at a time | 10 to 30 September | Split out by Jeremy on 2026-10-05 ("after retiring factory, before opus 5.5"). See the table below |
+| v5.5, Opus 5.5 | October | Section 8c above. Opus 5.5 was released on 22 September (simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/) and first appears in the local session logs on 2026-10-01 |
 
 The earlier notes in this digest (sections 2 and 5) call the OpenClaw agent "v1"; Jeremy's numbering above replaces that.
 
@@ -578,3 +579,20 @@ The starting point for the goal slide, measured 2026-10-05 from fresh clones (`w
 
 - Every one depends on D3 version 3 and on Webcharts. safety.viz v1.9.1 depends on Chart.js ^4.5.1 and has 45,655 lines in 147 files under `src/`.
 - Idle on 2026-10-05: six for more than six years, eight for more than five, nine for more than four.
+
+### 8g. What shipped under obot v5, 10 to 30 September (checked 2026-10-05)
+
+| Where | What | When |
+|---|---|---|
+| obot.agent | v0.5.0, "the requirement-session core": the retirement pull request (#334) removed 475 files and left seven | released 11 September |
+| obot.roadmap | v0.4, "the standards home": the issue contract, ways of working, developer guidelines; objective, requirement and task templates; status as a label | released 11 September |
+| obot.roadmap | The tracker page (#347); per-session usage published from cloud sessions (obot.agent#339) | 12 September |
+| gsm.safety | 38 pull requests merged, about 100 commits on `dev`, toward v1.2.0: the FDA requirement matrix (22 figures), reference criteria as package data, the first `Derive_*` functions, many input checks. Still a release candidate (#88) | 11 to 13 September |
+| safety.viz | The Patient Journey Explorer (#144, #147) and its AI narrative layer (#148), merged to `dev` | 18 September |
+| ai-roundup | A new public repository, "Agentic Sweep for AI News related to Clinical Trials" | 9 to 21 September |
+| jwildfire.github.io | The site's light theme, honeycomb favicon and the homepage release feed (#14 to #18) | 12 to 13 September |
+
+- Releases in the window: the two scaffold releases only. No safety.viz release between v1.7.0 (15 August) and v1.8.0 (2 October); no gsm.safety release since v1.1.0 (17 August).
+- Nothing merged in safety.viz, gsm.safety, obot.agent or obot.roadmap between 19 and 30 September.
+- Not in this window, though Jeremy remembered them here: open.csr (last activity 2 September, v0.4.0-RC1 opened that day, under v4) and the participant profile (rebuilt in safety.viz v1.5.0, 26 July).
+- Models: local logs for 10 to 18 September show Fable 5.1 and Opus 5 (18 September: 1,364 Fable 5.1 requests and 455 Opus 5); the one cloud session with published usage (12 September) ran on Fable 5.1.

@@ -112,13 +112,14 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - What good practice looks like now (the diary #10 placeholder); a better fit for beat 4
     - The industry got ready without knowing it (never built)
 
-3. What's next? A summer down the AI rabbit hole, with obot (about 10 min) — rebuilt 2026-10-05 as a journey, slides 26–42
+3. What's next? A summer down the AI rabbit hole, with obot (about 10 min) — rebuilt 2026-10-05 as a journey, slides 26–44
   - Status: rebuilt on 2026-10-05 to Jeremy's outline of that day: "the narrative (and the slide structure) is a total mess. Let's add more structure. Frame it as a journey. 5 versions of obot created during a summer of experiments." The first build (same day) is in git history; the slides it dropped are in the deck's reserves
   - The five versions (Jeremy, 2026-10-05): "v1 was actually a local personal assistant who drafted a handoff/build for the openclaw! v2 is open claw. v2.5 was paperclip (probably just a footnote). v3 fable 5. v4 org. v5 opus 5.5."
   - Template for each version: a title slide (the version's hex, name, dates, the set-up, the ladder strip, and "what changed" to get here), then what it built, with Orange's thumbs on the second click as "What worked" and "What didn't"
-  - Ladder (Jeremy, 2026-10-05, re-mapped to his version numbers): v2 = 3, v3 = 4, v4 = 5, v5 = back to 4. v1 = 2 is the outline's guess, `[TODO]` Jeremy
-  - Hexes: placeholder robot cats drawn as SVG, `keynote/assets/hex/obot-v1.svg` to `obot-v5.svg` and `obot-v2-5.svg`. Jeremy: "A is fine for now as placeholder. I'll provide hexes later." The three options are in `keynote/_notes/obot-version-hex-options.html`
-  - Hue: 4, blue. Budget: 17 slides for about 10 minutes, so still over; Jeremy cuts after seeing it
+  - Later the same day he split the last version: "a v5 (after retiring factory, before opus 5.5) and 5.5 (opus 5.5 work)". So: v5 = September, one requirement at a time; v5.5 = October, Opus 5.5
+  - Ladder (Jeremy, 2026-10-05, re-mapped to his version numbers): v2 = 3, v3 = 4, v4 = 5, v5 and v5.5 = back to 4. v1 = 2 is the outline's guess, `[TODO]` Jeremy
+  - Hexes: placeholder robot cats drawn as SVG, `keynote/assets/hex/obot-v1.svg` to `obot-v5.svg`, plus `obot-v2-5.svg` and `obot-v5-5.svg`. Jeremy: "A is fine for now as placeholder. I'll provide hexes later." The three options are in `keynote/_notes/obot-version-hex-options.html`
+  - Hue: 4, blue. Budget: 19 slides for about 10 minutes, so still over; Jeremy cuts after seeing it
   - Facts are checked against GitHub and the local session transcripts as of 2026-10-05 (`research-digest.md`, section 8). Wording is draft unless marked as Jeremy's
   - [Orange] From Orange to obot (built, slide 26)
     - The beat's Orange transition, forcats hex as the kicker; line "The agent is named after him." [diary #2]
@@ -147,20 +148,28 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - Title slide: a plan, a playbook and an identity; "a session starts when I sit down". What changed: Fable 5 came out [diary #6]. Level 4
     - What I built: "The first renderer took a few weeks; the next six took a weekend." Four-step release timeline, with 1.0 billion tokens, $1,273 at API prices, $200 a month paid, about 10 hours [diary #5, #6]
     - What worked: "Porting old code". What didn't: "Working without me"
-    - What I built next: Papers → prompts → prototypes [diary #7]
+    - What I built next: Papers → prompts → prototypes [diary #7]. What worked: "Translating research into software" (Jeremy's wording, 2026-10-05)
   - obot v4 · August to 10 September: the organisation (built, slides 36–38)
     - Title slide: "the agent stopped being a worker and became an organisation", on Opus 5. What changed: "seeing how far a fully autonomous session can get without me in the loop at all" [diary #7, #8]. Level 5
     - What I built: four roles and a timer script, the diary #8 org chart redrawn
     - Quietly wrong: "Nine cases in one night of something reporting success while having done nothing." [diary #8, Obot's words]
     - What worked: "The structure held". What didn't: "Knowing when it has failed"
-  - obot v5 · October: Opus 5.5 (built, slides 39–41)
-    - Title slide: one orchestrator, one brief, a tree of issues. What changed: "On 10 September I shut v4 down and kept only the issue tree. Then the model got better." Back to level 4
+  - obot v5 · September: one requirement at a time (built, slides 39–41)
+    - Title slide: he retired the organisation and kept a tree of issues; one session per requirement, each with a definition of done. What changed: "On 10 September I shut v4 down. 475 files of scaffolding went; seven stayed." Back to level 4
     - `[TODO]` Jeremy's own account of 10 September, and the "mixed feelings" from diary #8; both are in this slide's notes
-    - The scaffold that stayed: "I review releases and answer questions" (his sentence); objective → requirements → tasks → release candidate → release; Biomarker charts as the example, 1 → 12 → 37 → 4 [hub tracker]
+    - The scaffold that stayed: "I review releases and answer questions" (his sentence); objective → requirements → tasks → release candidate → release; written down on 11 September as three short standards [hub NEWS v0.4]
+    - What I built, 10 to 30 September, checked against GitHub: the scaffold rewritten (obot.agent v0.5.0 and obot.roadmap v0.4, both 11 September); gsm.safety v1.2.0 as a release candidate (38 pull requests in three days, the FDA's 22 figures specified, still waiting on review); the Patient Journey Explorer with AI-drafted narratives (merged 18 September)
+    - What worked: "A definition of done". What didn't: "No chart releases" (draft wording)
+    - Where the record differs from Jeremy's recollection ("some gsm.viz releases + experiments (open.csr, patient profile, etc)"): no safety.viz release between 15 August and 2 October; open.csr's last activity was 2 September, under v4; the participant profile shipped in July. After 18 September nothing merged in the chart repositories until 1 October
+    - Models: Fable 5.1 and Opus 5 in the local logs; most sessions ran in the cloud and left no local log
+  - obot v5.5 · October: Opus 5.5 (built, slides 42–43)
+    - Title slide: the same tree of issues, one orchestrator and one brief. What changed: "The model got better. Orchestration now works from a plain brief." Level 4
+    - Opus 5.5 was released on 22 September [Willison, via the beat 4 timeline sources]; it first appears in the local session logs on 1 October
     - What I built: one orchestrator, one brief, one weekend. In: a brief of about 800 words, about 22 messages. Out: 52 agents (40 reviewers), 3.9 billion tokens, about $1,640 at API prices, six releases [digest 8c]
     - What worked: "Reviewing its own work". What didn't: "Still waits on me" is a placeholder, `[TODO]` Jeremy
     - `[TODO]` Jeremy: "over 1,000 subagents" and "half my weekly allotment" are not what the transcript shows (52 agents; 21% on the Friday night)
-  - The payoff: the safety.viz demo (built, slide 42)
+    - Notes: the safety.viz demo app (v1.8.0) was also built on Opus 5.5, in two ordinary sessions on 2 October
+  - The payoff: the safety.viz demo (built, slide 44)
     - Jeremy's outline: "What I built: gsm.viz demo (this is the payoff)". Read as the safety.viz demo app; `[TODO]` Jeremy confirms
     - Your own files, mapped columns, nothing uploaded, one HTML file that runs offline [safety.viz v1.8.0 and v1.9.1 release notes]
     - `[TODO]` Jeremy: live or recorded, which files, and a closing line that hands to beat 4
@@ -230,9 +239,10 @@ A recurring callout in the bottom-right corner: Orange's face in an amber hex wi
   - Drafting documents, and Setting priorities (thumbs-down) — slide 20
 - Beat 3 uses the same two callouts as each version's verdict, labelled "What worked" and "What didn't" (Jeremy's outline, 2026-10-05). All wording is draft
   - v2, slide 32: Real work, by text / Autonomy
-  - v3, slide 34: Porting old code / Working without me
+  - v3, slide 34: Porting old code / Working without me; slide 35: Translating research into software (thumbs-up only, Jeremy's wording)
   - v4, slide 38: The structure held / Knowing when it has failed
-  - v5, slide 41: Reviewing its own work / Still waits on me (placeholder)
+  - v5, slide 41: A definition of done / No chart releases
+  - v5.5, slide 43: Reviewing its own work / Still waits on me (placeholder)
 - Candidates from the close-out list, not placed
   - Good at: busy work (making slides, meeting minutes); design (artifacts, .md → .html); syntax (git); catching real errors, including its own; running experiments
   - Bad at: being concise; remembering
@@ -274,7 +284,7 @@ Kept here so nothing from draft 1 is lost; pull any of it back in.
 - Section colours: beat 1 is amber (it suits Orange), beat 2 is teal; beat 3 is proposed as blue (hue 4); beat 4 takes one of the remaining hues
 - Where the five minutes for beat 2 come from. Suggested: two from beat 1 (it is ten quick slides already) and three from beat 4, with beat 3 held at ten. Beat 2's fourteen slides now fit its fifteen minutes, so its cut marks are removed
 - Beats 3 and 4 as outlined are each about three slides over even a 10-slide budget, and beat 4 now has about seven minutes; the `[cut?]` marks are where to start, and the recurring callouts can carry some of beat 4's "good at / bad at" lists before the close
-- Beat 3 after the journey rebuild: Jeremy's opening image and his own hexes; what v1 was; each version's "what worked" and "what didn't" in his words (v5's thumbs-down is a placeholder); his account of 10 September and the "mixed feelings"; which slides to cut (17 for about 10 minutes); whether "What it took" comes back in beat 4
+- Beat 3 after the journey rebuild: Jeremy's opening image and his own hexes; what v1 was; each version's "what worked" and "what didn't" in his words (v5's thumbs-down is a placeholder); his account of 10 September and the "mixed feelings"; which slides to cut (19 for about 10 minutes); whether "What it took" comes back in beat 4
 - Stale in beat 4 after 5 October, left for Jeremy since beat 4 is his to revise:
   - "The summer in one number" stops at 6 September. Since then: seven more releases and two new packages (digest 8a)
   - "What is next" asks how much of the unbuilt mid-October plan to promise. The app part is built and released; the 22 FDA figures are still none drawn

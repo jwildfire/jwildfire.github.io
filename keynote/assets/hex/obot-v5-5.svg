@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 230" role="img" aria-label="obot-v5: a placeholder robot cat in a hexagon">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 230" role="img" aria-label="obot-v5-5: a placeholder robot cat in a hexagon">
 <!-- Placeholder art, drawn 2026-10-05. Jeremy will supply the real hexes. -->
-<polygon points="100,4 196,58 196,172 100,226 4,172 4,58" fill="#00afa9"/>
+<polygon points="100,4 196,58 196,172 100,226 4,172 4,58" fill="#519fdd"/>
 <path d="M100 82 V60" stroke="#1f2328" stroke-width="5"/><circle cx="100" cy="54" r="8" fill="#c78a3b" stroke="#1f2328" stroke-width="4"/><polygon points="62,96 66,54 92,86" fill="#f3f4f1" stroke="#1f2328" stroke-width="5" stroke-linejoin="round"/>
 <polygon points="138,96 134,54 108,86" fill="#f3f4f1" stroke="#1f2328" stroke-width="5" stroke-linejoin="round"/>
 <polygon points="68,84 70,66 82,82" fill="#c78a3b"/><polygon points="132,84 130,66 118,82" fill="#c78a3b"/>
@@ -9,5 +9,5 @@
 <circle cx="58" cy="92" r="2.5" fill="#98a0aa"/><circle cx="142" cy="92" r="2.5" fill="#98a0aa"/>
 <polygon points="94,134 106,134 100,141" fill="#d87972"/>
 <path d="M90 147 q5 6 10 0 q5 6 10 0" fill="none" stroke="#1f2328" stroke-width="3" stroke-linecap="round"/>
-<path d="M60 136 L34 130 M60 143 L34 147 M140 136 L166 130 M140 143 L166 147" stroke="#1f2328" stroke-width="3" stroke-linecap="round"/><circle cx="80" cy="118" r="11" fill="#1f2328"/><circle cx="120" cy="118" r="11" fill="#1f2328"/><circle cx="80" cy="118" r="5" fill="#7fe3df"/><circle cx="120" cy="118" r="5" fill="#7fe3df"/><g stroke="#1f2328" fill="none"><circle cx="162" cy="46" r="17" stroke-width="5" fill="#fff"/><circle cx="162" cy="46" r="4" fill="#1f2328" stroke-width="2"/><path d="M162 50 V63 M158.5 44 L147 39 M165.5 44 L177 39" stroke-width="4" stroke-linecap="round"/></g><text x="100" y="205" text-anchor="middle" font-family="IBM Plex Mono, ui-monospace, monospace" font-weight="600" font-size="24" fill="#fff">v5</text>
+<path d="M60 136 L34 130 M60 143 L34 147 M140 136 L166 130 M140 143 L166 147" stroke="#1f2328" stroke-width="3" stroke-linecap="round"/><rect x="62" y="106" width="34" height="22" rx="7" fill="#1f2328"/><rect x="104" y="106" width="34" height="22" rx="7" fill="#1f2328"/><path d="M96 114 h8 M62 112 L50 106 M138 112 L150 106" stroke="#1f2328" stroke-width="4"/><path d="M160 36 l4 10 l10 4 l-10 4 l-4 10 l-4 -10 l-10 -4 l10 -4 z" fill="#fff"/><text x="100" y="205" text-anchor="middle" font-family="IBM Plex Mono, ui-monospace, monospace" font-weight="600" font-size="22" fill="#fff">v5.5</text>
 </svg>
