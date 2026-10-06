@@ -1539,7 +1539,7 @@
         <br><br>From diary #2 (2026-06-12), the first interview. Obot: "obot is named after Orange,
         your cat." Jeremy: "That's right! Orange was a very good cat. I like that working with
         you reminds me of him."
-        <br><br>Two slides on is the map of the beat: Orange, then the five versions of obot.
+        <br><br>Three slides on is the map of the beat: Orange, then the five versions of obot.
         <br><br>Photo check (Jeremy): the laptop screen shows a GitHub feed from the Rho days.
         Three usernames are on it; at this size they are a few pixels tall. Alternatives:
         orange-supervising-laptop.jpg and orange-desk-copilot.jpg, both of which show Jeremy.
@@ -1557,7 +1557,8 @@
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
         Moved up one place on 2026-10-06 (Jeremy: "switch slides 31/32"); it now follows the
-        Orange transition and the journey row comes after it.
+        Orange transition. Later the same day the goal slide was placed straight after it, then
+        the journey row ("question/goal/hexes/v1").
         <br><br>From Jeremy's outline (2026-10-05): "What are these tools good at right now? Mad
         Scientist Edition … Open Source. Not GxP. Let's experiment and have some fun …". He
         wrote "Not GxP" in bold, so it is the one heavier line here.
@@ -1569,6 +1570,57 @@
         <br><br>His earlier line for the same idea, now in the reserves: "This is really really
         not GxP (but there are A LOT of tests included ...)". For the record: safety.viz v1.9.1
         runs 2,185 unit and 374 browser tests.
+      </aside>
+    </section>
+
+    <section class="slide" data-hue="4">
+      <p class="kicker">The goal</p>
+      <h2>Modernize safetyGraphics, using the gsm framework</h2>
+      <div class="gallery">
+        <figure><img src="assets/legacy/safety-histogram.png" alt="The original Safety Histogram, as shown in its README" /><i>2020</i><figcaption>Safety Histogram</figcaption></figure>
+        <figure><img src="assets/legacy/safety-outlier-explorer.png" alt="The original Outlier Explorer, as shown in its README" /><i>2021</i><figcaption>Outlier Explorer</figcaption></figure>
+        <figure><img src="assets/legacy/safety-results-over-time.png" alt="The original Results Over Time, as shown in its README" /><i>2019</i><figcaption>Results Over Time</figcaption></figure>
+        <figure><img src="assets/legacy/safety-shift-plot.png" alt="The original Shift Plot, as shown in its README" /><i>2019</i><figcaption>Shift Plot</figcaption></figure>
+        <figure><img src="assets/legacy/safety-delta-delta.png" alt="The original Delta-Delta, as shown in its README" /><i>2019</i><figcaption>Delta-Delta</figcaption></figure>
+        <figure><img src="assets/legacy/paneled-outlier-explorer.png" alt="The original Paneled Outlier Explorer, as shown in its README" /><i>2019</i><figcaption>Paneled Outlier Explorer</figcaption></figure>
+        <figure><img src="assets/legacy/aeexplorer.png" alt="The original AE Explorer, as shown in its README" /><i>2020</i><figcaption>AE Explorer</figcaption></figure>
+        <figure><img src="assets/legacy/ae-timelines.png" alt="The original AE Timelines, as shown in its README" /><i>2019</i><figcaption>AE Timelines</figcaption></figure>
+        <figure><img src="assets/legacy/web-codebook.png" alt="The original Web Codebook, as shown in its README" /><i>2021</i><figcaption>Web Codebook</figcaption></figure>
+        <figure><img src="assets/legacy/hep-explorer.png" alt="The original Hepatic Explorer, as shown in its README" /><i>2022</i><figcaption>Hepatic Explorer</figcaption></figure>
+      </div>
+      <p class="soft" style="font-family: var(--mono); font-size: 21px; margin: 18px 0 0">10 original charts · last commit, top right · 25,400 lines of JavaScript · all on D3 v3</p>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        Order set 2026-10-06 (Jeremy: "i want 28/31/29/30. question/goal/hexes/v1"): the
+        question, then this goal slide, then the row of version hexes, then obot v1. (An
+        earlier flip the same day had put it after v1 by mistake.)
+        <br><br>
+        Changed on 2026-10-05 at Jeremy's request to "show a gallery of the original charts".
+        The three-figure version of this slide (10 / 25,400 / D3 v3) is in the reserves.
+        <br><br>The pictures are the originals' own screenshots: the first image in each
+        repository's README, saved as a still on 2026-10-05 (several are animated GIFs there).
+        All ten repositories are MIT-licensed. The year in each corner is the year of the last
+        commit on its default branch.
+        <br><br>From Jeremy's outline (2026-10-05): "The goal: Modernize Safety Graphics using gsm
+        framework. Starting from X legacy renderers sitting idle for 5+ years; X lines of code;
+        D3 v3 -> ???". The numbers were measured on 2026-10-05 from the public repositories.
+        <br><br>The ten: RhoInc's safety-histogram, safety-outlier-explorer,
+        safety-results-over-time, safety-shift-plot, safety-delta-delta,
+        paneled-outlier-explorer, aeexplorer, ae-timelines and web-codebook, and
+        SafetyGraphics/hep-explorer. Diary #5 calls them "the ten original {safetyGraphics} renderers".
+        <br><br>Idle: last commits run from July 2019 (safety-results-over-time) to February 2022
+        (hep-explorer). Six of the ten have not been touched for more than six years, nine for
+        more than four. "Idle for 5+ years" is true of eight; say it that way if you like.
+        <br><br>Size: 25,423 lines of JavaScript in 730 files under src/, counted with wc on a
+        fresh clone of each. Every one depends on D3 version 3 ("^3" or "~3" in package.json;
+        D3 v3 dates from 2013) and on Webcharts.
+        <br><br>Where it ended up: safety.viz depends on Chart.js ^4.5.1. Diary #4: "Our primary
+        charting engine is D3 v3 — D3 is now on v7.9."
+        <br><br>The plan in diary #4 was keep, modernize, borrow: "Instead of inventing a new
+        quality framework, we plug the safety graphics into a quality framework that already
+        exists." That slide is in the reserves.
+        <br><br>From diary #3: modernizing it "always felt like it needed a team and a budget I
+        no longer have — but with AI agents, I'm honestly not sure that's true anymore."
       </aside>
     </section>
 
@@ -1604,7 +1656,9 @@
         day he split the last one: "a v5 (after retiring factory, before opus 5.5) and 5.5
         (opus 5.5 work)". So the row has five versions and a half.
         <br><br>Order changed 2026-10-06 (Jeremy: "switch slides 31/32"): the mad scientist
-        slide now comes first, straight after the Orange transition, and this row follows it.
+        slide now comes first, straight after the Orange transition. Later the same day the
+        goal slide was placed between that slide and this row ("question/goal/hexes/v1"), so
+        this row now leads straight into obot v1.
       </aside>
     </section>
 
@@ -1626,9 +1680,6 @@
       <p class="chg"><b>Where it started</b>The first commit is signed “Orange”.</p>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
-        Order changed 2026-10-06 (Jeremy: "Flip slides 30/31"): this slide now comes before
-        the goal slide, straight after the journey row.
-        <br><br>
         Jeremy (2026-10-05): "v1 was actually a local personal assistant who drafted a
         handoff/build for the openclaw!" Everything else on this slide is draft wording.
         <br><br>What the record has: the first commit in gsm.safety is dated 9 May 2026, its
@@ -1641,56 +1692,6 @@
         thumbs yet.
         <br><br>TODO (Jeremy): the ladder level. Level 2 ("you pair with it and still read every
         line") is a guess to start the climb: 2, 3, 4, 5, then back to 4.
-      </aside>
-    </section>
-
-    <section class="slide" data-hue="4">
-      <p class="kicker">The goal</p>
-      <h2>Modernize safetyGraphics, using the gsm framework</h2>
-      <div class="gallery">
-        <figure><img src="assets/legacy/safety-histogram.png" alt="The original Safety Histogram, as shown in its README" /><i>2020</i><figcaption>Safety Histogram</figcaption></figure>
-        <figure><img src="assets/legacy/safety-outlier-explorer.png" alt="The original Outlier Explorer, as shown in its README" /><i>2021</i><figcaption>Outlier Explorer</figcaption></figure>
-        <figure><img src="assets/legacy/safety-results-over-time.png" alt="The original Results Over Time, as shown in its README" /><i>2019</i><figcaption>Results Over Time</figcaption></figure>
-        <figure><img src="assets/legacy/safety-shift-plot.png" alt="The original Shift Plot, as shown in its README" /><i>2019</i><figcaption>Shift Plot</figcaption></figure>
-        <figure><img src="assets/legacy/safety-delta-delta.png" alt="The original Delta-Delta, as shown in its README" /><i>2019</i><figcaption>Delta-Delta</figcaption></figure>
-        <figure><img src="assets/legacy/paneled-outlier-explorer.png" alt="The original Paneled Outlier Explorer, as shown in its README" /><i>2019</i><figcaption>Paneled Outlier Explorer</figcaption></figure>
-        <figure><img src="assets/legacy/aeexplorer.png" alt="The original AE Explorer, as shown in its README" /><i>2020</i><figcaption>AE Explorer</figcaption></figure>
-        <figure><img src="assets/legacy/ae-timelines.png" alt="The original AE Timelines, as shown in its README" /><i>2019</i><figcaption>AE Timelines</figcaption></figure>
-        <figure><img src="assets/legacy/web-codebook.png" alt="The original Web Codebook, as shown in its README" /><i>2021</i><figcaption>Web Codebook</figcaption></figure>
-        <figure><img src="assets/legacy/hep-explorer.png" alt="The original Hepatic Explorer, as shown in its README" /><i>2022</i><figcaption>Hepatic Explorer</figcaption></figure>
-      </div>
-      <p class="soft" style="font-family: var(--mono); font-size: 21px; margin: 18px 0 0">10 original charts · last commit, top right · 25,400 lines of JavaScript · all on D3 v3</p>
-      <aside class="notes">
-        <strong class="say">&lt;none yet&gt;</strong>
-        Order changed 2026-10-06 (Jeremy: "Flip slides 30/31"): this slide now comes after
-        the obot v1 title slide and before v2.
-        <br><br>
-        Changed on 2026-10-05 at Jeremy's request to "show a gallery of the original charts".
-        The three-figure version of this slide (10 / 25,400 / D3 v3) is in the reserves.
-        <br><br>The pictures are the originals' own screenshots: the first image in each
-        repository's README, saved as a still on 2026-10-05 (several are animated GIFs there).
-        All ten repositories are MIT-licensed. The year in each corner is the year of the last
-        commit on its default branch.
-        <br><br>From Jeremy's outline (2026-10-05): "The goal: Modernize Safety Graphics using gsm
-        framework. Starting from X legacy renderers sitting idle for 5+ years; X lines of code;
-        D3 v3 -> ???". The numbers were measured on 2026-10-05 from the public repositories.
-        <br><br>The ten: RhoInc's safety-histogram, safety-outlier-explorer,
-        safety-results-over-time, safety-shift-plot, safety-delta-delta,
-        paneled-outlier-explorer, aeexplorer, ae-timelines and web-codebook, and
-        SafetyGraphics/hep-explorer. Diary #5 calls them "the ten original {safetyGraphics} renderers".
-        <br><br>Idle: last commits run from July 2019 (safety-results-over-time) to February 2022
-        (hep-explorer). Six of the ten have not been touched for more than six years, nine for
-        more than four. "Idle for 5+ years" is true of eight; say it that way if you like.
-        <br><br>Size: 25,423 lines of JavaScript in 730 files under src/, counted with wc on a
-        fresh clone of each. Every one depends on D3 version 3 ("^3" or "~3" in package.json;
-        D3 v3 dates from 2013) and on Webcharts.
-        <br><br>Where it ended up: safety.viz depends on Chart.js ^4.5.1. Diary #4: "Our primary
-        charting engine is D3 v3 — D3 is now on v7.9."
-        <br><br>The plan in diary #4 was keep, modernize, borrow: "Instead of inventing a new
-        quality framework, we plug the safety graphics into a quality framework that already
-        exists." That slide is in the reserves.
-        <br><br>From diary #3: modernizing it "always felt like it needed a team and a budget I
-        no longer have — but with AI agents, I'm honestly not sure that's true anymore."
       </aside>
     </section>
 
