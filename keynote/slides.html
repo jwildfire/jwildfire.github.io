@@ -24,6 +24,7 @@
        Keys: ← → / space / PgUp PgDn · Home End · O overview · N notes · F fullscreen.
        The slide number is top right; the hex strip fills in with progress through the talk.
        Orange's callouts (.goodat) appear on a second press; add ?reveal to the URL to show them all.
+       Slides with data-reserve="date" are reserves: kept at the end, not counted in the numbers.
        ------------------------------------------------------------------ */
     :root {
       --bg: #fafaf8;
@@ -264,7 +265,7 @@
     /* Three columns in a split: add class "c3" to .cols. */
     .s-split .cols.c3 { grid-template-columns: repeat(3, 1fr); gap: 40px; }
     .s-split .cols.c3 .col { padding: 40px; }
-    .s-split .cols.c3 .col p { font-size: 31px; }
+    .s-split .cols.c3 .col p:not(.n) { font-size: 31px; }
 
     /* Level strip: slide 14's ladder as six small hexes, top right, the current level filled.
        <div class="lvstrip" style="--c: var(--spec-4)"><i>0</i>…<i class="on">4</i><i>5</i><b>Label</b></div> */
@@ -279,6 +280,28 @@
     .pvr.org .w { fill: #fff; }
     .pvr.org .l { font-family: var(--mono); font-size: 15px; letter-spacing: .06em; text-transform: uppercase; fill: var(--soft); }
     .pvr.org .n { font-family: var(--serif); font-style: italic; font-size: 27px; fill: var(--soft); }
+
+    /* Obot version title slide: the version's hex on the right (assets/hex/obot-vN.svg),
+       the set-up as a paragraph, and "what changed" as <p class="chg"><b>What changed</b>…</p>. */
+    .s-version { justify-content: center; background: var(--rail); padding-right: 640px; }
+    .s-version .vhex { position: absolute; right: 150px; top: 50%; width: 380px; height: 437px; margin-top: -200px; }
+    .s-version h2 { font-size: 104px; margin: 0 0 28px; }
+    .s-version p:not(.kicker) { color: var(--soft); font-size: 34px; }
+    .s-version p.chg { color: var(--ink); margin: 14px 0 0; }
+    .s-version p.chg b { display: block; font-family: var(--mono); font-weight: 500; font-size: 19px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--hue); margin-bottom: 6px; }
+
+    /* Journey row: a chain whose steps are pictures (the opener of beat 3). */
+    .chain.journey { align-items: flex-start; margin-top: 44px; }
+    .chain.journey .st img.vx, .chain.journey .st .ohex { display: block; width: 150px; height: 173px; margin: 0 auto 16px; }
+    .chain.journey .st .ohex { position: relative; clip-path: var(--hex-clip); background: var(--spec-1); }
+    .chain.journey .st .ohex::after { content: ""; position: absolute; inset: 7px 6px; clip-path: var(--hex-clip); background: url(assets/orange/orange-face.jpg) center / cover; }
+    .chain.journey .st + .st::before { top: 62px; }
+
+    /* A big figure at the top of a split column. */
+    .s-split .cols .col p.n { font-family: var(--serif); font-size: 92px; line-height: 1; margin: 0 0 14px; color: var(--ink); }
+
+    /* Reserve slides: a tag in the header, and no slide number (JS leaves them out of the count). */
+    .slide .rsv { position: absolute; left: 140px; top: 48px; font-family: var(--mono); font-size: 18px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--spec-0); }
 
     /* Placeholder slide for the outline stage. */
     .s-todo { background: repeating-linear-gradient(135deg, var(--bg) 0 28px, #f4f5f1 28px 56px); }
@@ -828,6 +851,47 @@
       </aside>
     </section>
 
+    <section class="slide s-split" data-hue="3">
+      <p class="kicker pkg" style="--pkg: url(assets/hex/qcthat.png)">Quality · qcthat</p>
+      <h2>Traceability as a byproduct</h2>
+      <div class="cols" style="flex: none">
+        <div class="col" style="padding-bottom: 28px"><h3>The issue number goes in the test name</h3>
+          <pre>test_that("Flags sites above
+  the upper limit #19", {
+  ...
+})</pre></div>
+        <div class="col" style="padding-bottom: 28px"><h3>What comes out (an illustration)</h3>
+          <table>
+            <tr><th>Issue</th><th>Test</th><th>Result</th></tr>
+            <tr><td>#19</td><td>Flags sites above the upper limit</td><td class="ok">Pass</td></tr>
+            <tr><td>#19</td><td>Leaves sites inside the limits</td><td class="ok">Pass</td></tr>
+            <tr><td>#23</td><td>Handles a site with no data</td><td class="ok">Pass</td></tr>
+          </table></div>
+      </div>
+      <p class="soft" style="margin: 32px 0 0; font-size: 29px">Qualification: every requirement has a test, every test has a result, and a person signs the release.</p>
+      <aside class="notes">
+        Restored on 2026-10-05 at Jeremy's request ("Missing a slide around quality"; he chose
+        "restore it, plus qualification"). The slide was in the first draft of beat 2 and was
+        cut on 2 October; the qualification line under the columns is new and is draft wording.
+        <br><br>Source: the qcthat package description: "A lightweight quality control framework for R
+        packages, particularly those used in regulated environments such as clinical trials.
+        Integrates formal quality control reports into package development workflows using
+        testthat and GitHub." The abstract: "{qcthat} generates audit-ready traceability matrices
+        as a byproduct of normal development." The test-naming rule is in the gsm.agent tdd skill:
+        "include the issue number in each test_that description."
+        <br><br>Qualification, from public material only: diary #1 lists it among the steps
+        people own ("product management, design, coding, code review, qualification, and
+        everything else"); diary #4: "{gsm} was designed for GxP from the start"; the 6 June deck
+        has a slide titled "Qualified, validated, GxP-ready". TODO (Jeremy): vet the
+        qualification sentence and say what a qualified release involves at work, in your words.
+        <br><br>The table on the slide is made up to show the shape. TODO (Jeremy): replace it with
+        a screenshot of a real qcthat report if one can be shown.
+        <br><br>Pays off in beat 3: safety.viz and gsm.safety borrow exactly this (diary #4:
+        "Instead of inventing a new quality framework, we plug the safety graphics into a quality
+        framework that already exists"), and "Not GxP" on slide 27 is the contrast.
+      </aside>
+    </section>
+
     <section class="slide s-bullets" data-hue="3">
       <p class="kicker">The rule that doesn't change</p>
       <h2>AI-written code still needs a human owner</h2>
@@ -846,148 +910,249 @@
       </aside>
     </section>
 
-    <section class="slide s-quote" data-hue="3">
-      <p class="kicker">The bridge</p>
-      <blockquote>Open, software-shaped workflows are agent-ready.</blockquote>
-      <cite>So what happens when the agent does more of the work?</cite>
+        <section class="slide s-bullets" data-hue="3">
+      <div class="lvstrip" style="--c: var(--spec-3)"><i>0</i><i>1</i><i>2</i><i class="on">3</i><i>4</i><i>5</i><b>Level 3 · the developer</b></div>
+      <p class="kicker">Where that leaves us</p>
+      <h2>We're having great success at level 3!</h2>
+      <ul>
+        <li>Efficiency gains <span>— releases up about 50%; issues and pull requests roughly doubled</span></li>
+        <li>Fully compliant! <span>— people own every requirement, review and release</span></li>
+        <li>But what's next …</li>
+      </ul>
       <aside class="notes">
-        Hand-off into beat 3. The claim is from the 6 June deck ("Once the workflow is open and
-        software-shaped… AI can do more than autocomplete code") and the dictation notes
-        ("Agentic AI is arriving into that context, not replacing it from scratch").
-        <br><br>The honest set-up for the experiment, from diary #1: "I'm not comfortable using
-        those highly autonomous tools for GxP use cases right now, but the capabilities are
-        coming, and I want to understand them." So the experiment runs on something that is not
-        GxP yet: safetyGraphics.
+        Beat 2 wrap-up, added 2026-10-05 from Jeremy's outline: "We're having great success at
+        level 3! Efficiency gains. Fully compliant! But what's next …". The headline and the
+        three lead phrases are his; the grey asides are draft wording.
+        <br><br>Efficiency: the diary #1 figures already on slide 16 ("Our rate of releases has
+        gone up by roughly 50% compared to last year. The number of issues, both opened and
+        closed, has roughly doubled. Same with PRs."). TODO (Jeremy): fresher numbers if you have them.
+        <br><br>Compliant: slide 13 ("Humans own the process and all deliverables"), the quality
+        slide (23) and the human-owner rule (24). TODO (Jeremy): "Fully compliant!" is a claim
+        about the day job on a public slide; confirm the wording.
+        <br><br>Level 3 is slide 14's marker, "the day job". The strip in the corner is the same
+        ladder; it comes back on every obot version in beat 3.
+        <br><br>"But what's next …" hands to beat 3. It replaces the bridge slide ("Open,
+        software-shaped workflows are agent-ready"), which is now in the reserves. The honest
+        set-up from diary #1 still applies: "I'm not comfortable using those highly autonomous
+        tools for GxP use cases right now, but the capabilities are coming, and I want to
+        understand them."
       </aside>
     </section>
 
     <!-- ============================================================
-         3 · safety.viz: OrangeBot, safetyGraphics and gsm with semi-autonomous agents
-         First build, 2026-10-05, from keynote/_notes/outline.md. Facts are checked against
-         GitHub and the local session transcripts as of that day (research-digest.md, section 8).
-         Headlines and lines are draft wording unless the notes say they are Jeremy's.
+         3 · What's next? A summer down the AI rabbit hole, with obot
+         Rebuilt 2026-10-05 as a journey through five obot versions (Jeremy's outline of
+         that day). Each version: a title slide (robot-cat hex, the set-up, the ladder strip,
+         what changed) and what it built, with Orange's "what worked" / "what didn't" on the
+         second click. Facts: research-digest.md, section 8. Wording is draft unless the notes
+         say it is Jeremy's. Slides that left the main deck are in the reserves, below.
          ============================================================ -->
-    <section class="slide s-photo" data-hue="4">
-      <figure class="photo" style="--focus: 50% 100%">
-        <img src="assets/orange/orange-paw-on-github.jpg" alt="Orange, seen from behind on Jeremy's lap, with one paw stretched onto the keyboard of a laptop showing GitHub" />
-      </figure>
-      <p class="kicker pkg" style="--pkg: url(assets/hex/forcats.png)">Orange, on GitHub</p>
-      <h2>From Orange to obot</h2>
-      <p class="line">The agent is named after him.</p>
+    <section class="slide" data-hue="4">
+      <p class="kicker pkg" style="--pkg: url(assets/hex/forcats.png)">What's next?</p>
+      <h2>A summer down the AI rabbit hole, with obot</h2>
+      <div class="chain journey">
+        <div class="st"><div class="ohex"></div><b>Orange</b><span>the original</span></div>
+        <div class="st"><img class="vx" src="assets/hex/obot-v1.svg" alt="obot v1 as a robot cat holding a clipboard" /><b>v1</b><span>a personal assistant</span></div>
+        <div class="st"><img class="vx" src="assets/hex/obot-v2.svg" alt="obot v2 as a robot cat with a paper plane" /><b>v2</b><span>OpenClaw</span></div>
+        <div class="st"><img class="vx" src="assets/hex/obot-v3.svg" alt="obot v3 as a robot cat with a terminal prompt" /><b>v3</b><span>Fable 5</span></div>
+        <div class="st"><img class="vx" src="assets/hex/obot-v4.svg" alt="obot v4 as a robot cat in a crown and tie" /><b>v4</b><span>the organisation</span></div>
+        <div class="st"><img class="vx" src="assets/hex/obot-v5.svg" alt="obot v5 as a robot cat in sunglasses" /><b>v5</b><span>Opus 5.5</span></div>
+      </div>
       <aside class="notes">
-        Transition into beat 3. Headline and line are draft wording.
-        <br><br>From diary #2 (2026-06-12), the first interview. Obot: "obot is named after Orange,
-        your cat." Jeremy: "That's right! Orange was a very good cat. I like that working with
-        you reminds me of him."
-        <br><br>The first obot (June) ran OpenClaw on a clean-room laptop with none of Jeremy's
-        credentials: "the most concrete guardrail is that the cleanroom laptop doesn't have any
-        of my personal or professional credentials." Verdict then: "51% fun and 49% frustrating"
-        and "slightly less productive using Obot than working directly in Claude Code".
-        <br><br>Photo check (Jeremy): the laptop screen shows a GitHub feed from the Rho days.
-        Three usernames are on it; at this size they are a few pixels tall. Alternatives:
-        orange-supervising-laptop.jpg and orange-desk-copilot.jpg, both of which show Jeremy.
-        <br><br>TODO (Jeremy): this slide first and the goal second, or the goal first?
+        Opens beat 3. Title from Jeremy's outline (2026-10-05): "What's next? A summer down the
+        AI rabbit hole (in the matrix??) with obot …".
+        <br><br>PLACEHOLDER IMAGE. Jeremy: "Placeholder image … Comic of orange transforming into
+        a robot? Evolution graphic? I'll figure something out". This row is a stand-in evolution
+        graphic that doubles as the map of the beat. The robot cats are placeholder art
+        (assets/hex/obot-v1.svg to obot-v5.svg); Jeremy will supply the real hexes.
+        <br><br>The agent is named after the cat. Diary #2 (2026-06-12), Obot: "obot is named
+        after Orange, your cat." Jeremy: "That's right! Orange was a very good cat. I like that
+        working with you reminds me of him."
+        <br><br>The five versions (Jeremy, 2026-10-05): "v1 was actually a local personal
+        assistant who drafted a handoff/build for the openclaw! v2 is open claw. v2.5 was
+        paperclip (probably just a footnote). v3 fable 5. v4 org. v5 opus 5.5."
+        <br><br>The earlier transition slide (Orange's paw on a laptop showing GitHub) is in the reserves.
       </aside>
     </section>
 
     <section class="slide s-bullets" data-hue="4">
-      <p class="kicker">The experiment</p>
-      <h2>The goal</h2>
+      <p class="kicker">Mad scientist edition …</p>
+      <h2>What are these tools good at right now?</h2>
       <ul>
-        <li>Build a modern version of safetyGraphics <span>— with everything we've learned from gsm as the foundation</span></li>
-        <li>See just how high we can climb the levels of automation</li>
-        <li>Experiment</li>
-        <li>Have some fun!</li>
+        <li>Open source</li>
+        <li><b style="font-weight: 600">Not GxP</b></li>
+        <li>Let's experiment and have some fun …</li>
       </ul>
       <aside class="notes">
-        The four lines are Jeremy's (2026-10-05): "Build a modern version of safetyGraphics using
-        everything we've learned as gsm as our foundation. See just how high we can climb the
-        levels of automation. Experiment. Have some fun!" Lightly tidied for the slide.
-        <br><br>They are also the four parts of this beat: build (the plan, the weekend, papers
-        to prototypes, the tests), climb (obot v3, v4, the shutdown, the last weekend),
-        experiment (what kept going and what stopped), and fun (the demo, and the hand-off).
-        <br><br>This answers slide 24's question ("So what happens when the agent does more of
-        the work?"). Why here and not at work, from diary #1: "I'm not comfortable using those
-        highly autonomous tools for GxP use cases right now, but the capabilities are coming,
-        and I want to understand them."
+        From Jeremy's outline (2026-10-05): "What are these tools good at right now? Mad
+        Scientist Edition … Open Source. Not GxP. Let's experiment and have some fun …". He
+        wrote "Not GxP" in bold, so it is the one heavier line here.
+        <br><br>The question is slide 2's, as diary #6 restated it: "What are these tools good at
+        right now? How much can they do autonomously?"
+        <br><br>Why this is a side project and not the day job, from diary #1: "I'm not
+        comfortable using those highly autonomous tools for GxP use cases right now, but the
+        capabilities are coming, and I want to understand them."
+        <br><br>His earlier line for the same idea, now in the reserves: "This is really really
+        not GxP (but there are A LOT of tests included ...)". For the record: safety.viz v1.9.1
+        runs 2,185 unit and 374 browser tests.
       </aside>
     </section>
 
-    <section class="slide s-quote" data-hue="4">
-      <p class="kicker">A disclaimer</p>
-      <blockquote>This is really really not GxP</blockquote>
-      <cite>(but there are A LOT of tests included …)</cite>
-      <aside class="notes">
-        Jeremy's words (2026-10-05): "This is really really not GxP (but there are A LOT of
-        tests included ...)".
-        <br><br>Pays off on slide 32, where the tests get counted: 2,185 unit and 374 browser
-        tests at safety.viz v1.9.1.
-        <br><br>Cut candidate: could be a second click on the goal slide instead of its own slide.
-      </aside>
-    </section>
-
-    <!-- 3a · Build -->
     <section class="slide s-split" data-hue="4">
-      <p class="kicker pkg" style="--pkg: url(assets/hex/qcthat.png)">The plan · July</p>
-      <h2>Keep, modernize, borrow</h2>
+      <p class="kicker">The goal</p>
+      <h2>Modernize safetyGraphics, using the gsm framework</h2>
       <div class="cols c3" style="flex: none">
-        <div class="col"><h3>Keep</h3>
-          <p>The expert clinical workflows. Click a point, see the patient. Open source.</p></div>
-        <div class="col"><h3>Modernize</h3>
-          <p>A charting engine nearly a decade old, rebuilt with data contracts and tests.</p></div>
-        <div class="col"><h3>Borrow from gsm</h3>
-          <p>A quality framework that was designed for GxP from the start.</p></div>
+        <div class="col"><h3>Starting from</h3>
+          <p class="n">10</p><p>legacy renderers, last touched between 2019 and 2022</p></div>
+        <div class="col"><h3>Which is</h3>
+          <p class="n">25,400</p><p>lines of JavaScript, in 730 files</p></div>
+        <div class="col"><h3>Built on</h3>
+          <p class="n">D3 v3</p><p>from 2013. Today: Chart.js 4, inside gsm's workflows and tests</p></div>
       </div>
-      <p class="soft" style="margin-top: 44px; font-size: 34px; font-family: var(--serif); font-style: italic">“The outputs need to be checkable — by a person, by a test suite, and by another agent.”</p>
       <aside class="notes">
-        Source: diary #4, "safetyGraphics ❤️ gsm" (2026-07-02). Column text is paraphrase; draft wording.
-        <br><br>Keep: "the tools encode how experienced safety monitors actually review a trial";
-        "click on a point, see the patient". Modernize: "Much of the {safetyGraphics} JavaScript
-        dates back nearly a decade. Our primary charting engine is D3 v3 — D3 is now on v7.9."
-        Borrow: "Unlike {safetyGraphics}, {gsm} was designed for GxP from the start"; workflows
-        with {workr}, test and traceability matrices with {qcthat}.
-        <br><br>"Instead of inventing a new quality framework, we plug the safety graphics into
-        a quality framework that already exists."
-        <br><br>The quote on the slide, in full: "If an agent is going to help maintain these
-        tools, the outputs need to be checkable — by a person, by a test suite, and by another agent."
-        <br><br>The qcthat hex is the kicker because the borrowed part is gsm's quality framework.
+        From Jeremy's outline (2026-10-05): "The goal: Modernize Safety Graphics using gsm
+        framework. Starting from X legacy renderers sitting idle for 5+ years; X lines of code;
+        D3 v3 -> ???". The numbers were measured on 2026-10-05 from the public repositories.
+        <br><br>The ten: RhoInc's safety-histogram, safety-outlier-explorer,
+        safety-results-over-time, safety-shift-plot, safety-delta-delta,
+        paneled-outlier-explorer, aeexplorer, ae-timelines and web-codebook, and
+        SafetyGraphics/hep-explorer. Diary #5 calls them "the ten original {safetyGraphics} renderers".
+        <br><br>Idle: last commits run from July 2019 (safety-results-over-time) to February 2022
+        (hep-explorer). Six of the ten have not been touched for more than six years, nine for
+        more than four. "Idle for 5+ years" is true of eight; say it that way if you like.
+        <br><br>Size: 25,423 lines of JavaScript in 730 files under src/, counted with wc on a
+        fresh clone of each. Every one depends on D3 version 3 ("^3" or "~3" in package.json;
+        D3 v3 dates from 2013) and on Webcharts.
+        <br><br>Where it ended up: safety.viz depends on Chart.js ^4.5.1. Diary #4: "Our primary
+        charting engine is D3 v3 — D3 is now on v7.9."
+        <br><br>The plan in diary #4 was keep, modernize, borrow: "Instead of inventing a new
+        quality framework, we plug the safety graphics into a quality framework that already
+        exists." That slide is in the reserves.
+        <br><br>From diary #3: modernizing it "always felt like it needed a team and a budget I
+        no longer have — but with AI agents, I'm honestly not sure that's true anymore."
       </aside>
     </section>
 
-    <section class="slide" data-hue="4">
-      <div class="lvstrip" style="--c: var(--spec-4)"><i>0</i><i>1</i><i>2</i><i>3</i><i class="on">4</i><i>5</i><b>Level 4 · the engineering team</b></div>
-      <p class="kicker">obot v3 · July</p>
-      <h2>A plan, a playbook and an identity</h2>
-      <div class="chain">
-        <div class="st"><div class="hx">1</div><b>obot.roadmap</b><span>“the plan and the memory”: requirements and tasks as issues, on a public site</span></div>
-        <div class="st"><div class="hx">2</div><b>obot.agent</b><span>“the playbook”: conventions and skills that every session loads</span></div>
-        <div class="st"><div class="hx">3</div><b>obotclaw[bot]</b><span>“the identity”: the agent's commits and pull requests are its own, not mine</span></div>
-      </div>
+    <!-- 3 · obot v1 -->
+    <section class="slide s-version" data-hue="4">
+      <div class="lvstrip" style="--c: var(--spec-2)"><i>0</i><i>1</i><i class="on">2</i><i>3</i><i>4</i><i>5</i><b>Level 2 · the junior developer</b></div>
+      <img class="vhex" src="assets/hex/obot-v1.svg" alt="obot v1: a robot cat holding a clipboard" />
+      <p class="kicker">obot v1 · early May</p>
+      <h2>A personal assistant</h2>
+      <p>A local assistant on my own laptop. It drafted the first design of gsm.safety, and the hand-off for the agent that came next.</p>
+      <p class="chg"><b>Where it started</b>The first commit is signed “Orange”.</p>
       <aside class="notes">
-        Source: diary #6, "Obot v3: How I Used a Billion Tokens in a Weekend" (2026-07-13). The
-        three quoted labels are from that post. Everything runs in Claude Code.
+        Jeremy (2026-10-05): "v1 was actually a local personal assistant who drafted a
+        handoff/build for the openclaw!" Everything else on this slide is draft wording.
+        <br><br>What the record has: the first commit in gsm.safety is dated 9 May 2026, its
+        author name is "Orange", and its message is "Initial gsm.safety design". Two days later
+        the OpenClaw agent came online and "began reconstructing context around early gsm.safety
+        pull-request work" (the old hub's diary, 2026-05-11). In diary #2 the OpenClaw agent
+        calls itself "the second bot of the name, following obot v1 or obot-prime".
+        <br><br>TODO (Jeremy): which tool v1 was, what you asked it for, and what worked and
+        what didn't. There is no public account of it, so this version has one slide and no
+        thumbs yet.
+        <br><br>TODO (Jeremy): the ladder level. Level 2 ("you pair with it and still read every
+        line") is a guess to start the climb: 2, 3, 4, 5, then back to 4.
+      </aside>
+    </section>
+
+    <!-- 3 · obot v2 -->
+    <section class="slide s-version" data-hue="4">
+      <div class="lvstrip" style="--c: var(--spec-3)"><i>0</i><i>1</i><i>2</i><i class="on">3</i><i>4</i><i>5</i><b>Level 3 · the developer</b></div>
+      <img class="vhex" src="assets/hex/obot-v2.svg" alt="obot v2: a robot cat with a paper plane" />
+      <p class="kicker">obot v2 · May to June</p>
+      <h2>OpenClaw</h2>
+      <p>An agent on a clean-room laptop with none of my credentials. I text it on Telegram; it works on GitHub under its own name.</p>
+      <p class="chg"><b>What changed</b>It got its own machine, its own account and a job.</p>
+      <aside class="notes">
+        Source: diary #2, "Introducing Obot" (2026-06-12), an interview over Telegram. Obot: "I'm
+        obot: a small autonomous development agent living in OpenClaw on your MacBook… part
+        assistant, part repo janitor, part junior engineer." "The machine has OpenClaw running,
+        a local workspace… plus GitHub access as obot-claw. Telegram is the human control
+        surface. GitHub is the durable work surface."
+        <br><br>The guardrail, in Jeremy's words: "the most concrete guardrail is that the
+        cleanroom laptop doesn't have any of my personal or professional credentials."
+        <br><br>The job: "become an open-source development agent that can help move real GitHub
+        projects forward without constant hand-holding."
+        <br><br>It came online on 11 May 2026 (the old hub's diary). Ladder: level 3, the same
+        rung as the day job: it wrote the code and Jeremy reviewed all of it. "What changed" is
+        draft wording.
+      </aside>
+    </section>
+
+    <section class="slide s-bullets" data-hue="4">
+      <p class="kicker pkg" style="--pkg: url(assets/hex/obot-v2.svg)">obot v2 · what I built</p>
+      <h2>safetyGraphics, inside a gsm workflow</h2>
+      <ul>
+        <li>A proof of concept for gsm.safety <span>— the old charts, run from gsm's workflows</span></li>
+        <li>A public hub and a daily diary <span>— the experiment as a working record</span></li>
+        <li>266 commits, 18 pull requests, 2 releases <span>— by 10 June</span></li>
+      </ul>
+      <div class="goodat"><div class="bub"><p class="q">What worked</p><p class="a">Real work, by text</p></div><div class="who"><i>👍</i></div></div>
+      <div class="goodat bad"><div class="bub"><p class="q">What didn't</p><p class="a">Autonomy</p></div><div class="who"><i>👎</i></div></div>
+      <aside class="notes">
+        Source: diary #2. Jeremy: "your biggest success is probably the early POC work we did on
+        gsm.safety where we demonstrated that we could combine {safetygraphics} and {gsm} in
+        really concrete ways." Obot: "We built workr-style example workflows, package docs, and
+        rendered outputs for concrete clinical-safety views like histograms, outlier explorer,
+        AE explorer, shift plots, and more." The pull request it points to is gsm.safety #26
+        (14 May). gsm.safety v0.1.0 was released on 15 May.
+        <br><br>Metrics as of 2026-06-10, from the same post: "266 commits made, 18 PRs merged,
+        11,798 tracked text lines, 2 releases". Headline is draft wording.
+        <br><br>What worked (thumbs-up): "Chatting with an agent via Telegram and having it do
+        real work is cool."
+        <br><br>What didn't (thumbs-down): "It's been 51% fun and 49% frustrating experimenting
+        with OpenClaw… getting everything set up has mostly been a time-consuming hassle.
+        Overall, I think I'm slightly less productive using Obot than working directly in Claude
+        Code or Codex or GitHub Copilot, and it's a lot more work to configure. I've been trying
+        (and mostly failing) in recent weeks to get Obot to be more autonomous." Obot's own
+        answer: "I overstated 'active work' before I had reliable liveness proof. That broke trust."
+        <br><br>Footnote, v2.5 (Jeremy: "probably just a footnote"): from diary #6, "an 'Obot
+        2.5' that never shipped: a much more structured framework with a PM agent… a Dev agent…
+        and a Testing agent… OpenClaw heartbeats for liveness, all tied together with Paperclip
+        as the control plane… Then the frontier moved, as it always does." There is a
+        placeholder hex for it (assets/hex/obot-v2-5.svg) if it earns a mention on screen.
+        <br><br>Both callout wordings are draft; Jeremy to confirm.
+      </aside>
+    </section>
+
+    <!-- 3 · obot v3 -->
+    <section class="slide s-version" data-hue="4">
+      <div class="lvstrip" style="--c: var(--spec-4)"><i>0</i><i>1</i><i>2</i><i>3</i><i class="on">4</i><i>5</i><b>Level 4 · the engineering team</b></div>
+      <img class="vhex" src="assets/hex/obot-v3.svg" alt="obot v3: a robot cat with a terminal prompt" />
+      <p class="kicker">obot v3 · July</p>
+      <h2>Claude Code, on Fable 5</h2>
+      <p>A plan, a playbook and an identity: a public roadmap, a set of skills, and a bot account. A session starts when I sit down.</p>
+      <p class="chg"><b>What changed</b>Fable 5 came out, and I moved everything into Claude Code.</p>
+      <aside class="notes">
+        Source: diary #6, "Obot v3: How I Used a Billion Tokens in a Weekend" (2026-07-13). "My
+        original readout — '51% fun / 49% frustrating' — still stands. That's clearly not good
+        enough… So when Fable 5 was announced, I decided to give it a try."
+        <br><br>The scaffold, in the post's words: obot.roadmap is "the plan and the memory",
+        obot.agent is "the playbook", and the obotclaw GitHub App is "the identity", "keeping my
+        work and the agent's distinguishable in the audit trail".
         <br><br>"For now, I'd call the process semi-autonomous; a session starts when I sit down
         to work and ends when I close Claude." Roles: one session manager, sibling agents on
         well-defined tasks, and long-running workers "I leave running overnight". One weekend:
         "5 primary sessions which initialized 16 named agents".
-        <br><br>Ladder (the strip, top right): level 4 on slide 14's ladder, "you write the specs
-        and plans; agents do the work". The day job was marked at level 3.
-        <br><br>Before this: obot v2 and "2.5" on OpenClaw were abandoned (the post's footnote).
-        <br><br>Cut candidate: this could move into the notes of the next slide. It earns its
-        place if the contrast with v4 (slide 33) and with "one brief" (slide 37) is wanted.
+        <br><br>Ladder: level 4, "you write the specs and plans; agents do the work".
+        <br><br>The three-step slide this replaces ("A plan, a playbook and an identity") is in the reserves.
       </aside>
     </section>
 
     <section class="slide" data-hue="4">
-      <p class="kicker">11–12 July · developer diary #5</p>
-      <h2>“The first renderer took a few weeks; the next six took a weekend.”</h2>
-      <div class="chain" style="margin-top: 0">
+      <p class="kicker pkg" style="--pkg: url(assets/hex/obot-v3.svg)">obot v3 · what I built · 11–12 July</p>
+      <h2 style="font-size: 54px; margin-bottom: 20px">“The first renderer took a few weeks; the next six took a weekend.”</h2>
+      <p class="soft" style="font-family: var(--mono); font-size: 21px; margin: 0 0 30px">1.0 billion tokens · $1,273 at API prices · $200 a month actually paid · about 10 hours of me</p>
+      <div class="chain" style="margin-top: 0; flex: none">
         <div class="st"><div class="hx">0.1</div><b>Saturday, 8 am</b><span>One chart, after a few weeks of sessions</span></div>
         <div class="st"><div class="hx">1.0</div><b>Saturday, 10:30 pm</b><span>Five more charts, in one session</span></div>
         <div class="st"><div class="hx">1.1</div><b>Saturday, 11:50 pm</b><span>Real example data, about an hour later</span></div>
         <div class="st"><div class="hx">1.2</div><b>Sunday, 10 pm</b><span>The hepatic explorer, and its clinical guide</span></div>
       </div>
-      <p class="soft" style="font-size: 30px; margin: 0">1.0 billion tokens · $1,273 at API prices · $200 a month actually paid · about 10 hours of me</p>
+      <div class="goodat"><div class="bub"><p class="q">What worked</p><p class="a">Porting old code</p></div><div class="who"><i>👍</i></div></div>
+      <div class="goodat bad"><div class="bub"><p class="q">What didn't</p><p class="a">Working without me</p></div><div class="who"><i>👎</i></div></div>
       <aside class="notes">
         Headline: the excerpt of diary #5, "Introducing safety.viz" (2026-07-12), quoted exactly.
         <br><br>Timeline from that post, checked against the GitHub release timestamps (Eastern):
@@ -1003,12 +1168,17 @@
         use, but I'm not sure it's that far off."
         <br><br>The hepatic explorer is the workflow from slide 9, ported: one prompt, just under
         two hours, about 50 million tokens (about $55 at API prices).
-        <br><br>The outline's separate "a billion tokens in a weekend" slide is folded in here.
+        
+        <br><br>What worked (thumbs-up): porting old code. Diary #5: "The structure from v0.1
+        unlocked agentic development in a meaningful way — v1.0.0 added 5 renderers in one session."
+        <br><br>What didn't (thumbs-down): working without me. Diary #6: "Eventually, I could see
+        Obot running a whole session independently, but we're not there yet." Both callout
+        wordings are draft; Jeremy to confirm.
       </aside>
     </section>
 
     <section class="slide s-image" data-hue="4">
-      <p class="kicker">17 July · one evening</p>
+      <p class="kicker pkg" style="--pkg: url(assets/hex/obot-v3.svg)">obot v3 · what I built next · 17 July</p>
       <h2>Papers → prompts → prototypes</h2>
       <div class="pair">
         <figure>
@@ -1038,43 +1208,31 @@
       </aside>
     </section>
 
-    <section class="slide s-split" data-hue="4">
-      <p class="kicker pkg" style="--pkg: url(assets/hex/testthat.png)">The question safetyGraphics always got</p>
-      <h2>“Is it validated?”</h2>
-      <div class="cols" style="flex: none">
-        <div class="col" style="padding-bottom: 20px"><h3>Then</h3>
-          <p>“Not really. It's exploratory.”</p></div>
-        <div class="col" style="padding-bottom: 20px"><h3>Now</h3>
-          <p>2,185 unit and 374 browser tests, each tied to a requirement.</p></div>
-      </div>
-      <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Catching real errors</p></div><div class="who"><i>👍</i></div></div>
+    <!-- 3 · obot v4 -->
+    <section class="slide s-version" data-hue="4">
+      <div class="lvstrip" style="--c: var(--spec-5)"><i>0</i><i>1</i><i>2</i><i>3</i><i>4</i><i class="on">5</i><b>Level 5 · the dark software factory</b></div>
+      <img class="vhex" src="assets/hex/obot-v4.svg" alt="obot v4: a robot cat in a crown and tie" />
+      <p class="kicker">obot v4 · August to 10 September</p>
+      <h2>The organisation</h2>
+      <p>The agent stopped being a worker and became a small company, on Opus 5, built to run while I wasn't watching.</p>
+      <p class="chg"><b>What changed</b>I asked how far it could get without me in the loop at all.</p>
       <aside class="notes">
-        Source: diary #5. "The most frequently asked question about {safetyGraphics} has always
-        been: 'Is it validated? Can I use it on actual studies?' The original answer was, 'Not
-        really. It's exploratory'."
-        <br><br>Counts: 2,185 unit and 374 browser tests at safety.viz v1.9.1 (release notes,
-        2026-10-04). At v1.0 in July it was 249 and 94 (diary #5). Every chart traces to a
-        requirement matrix and has a live demo and a published evidence report, for example
-        jwildfire.github.io/safety.viz/histogram/evidence.html.
-        <br><br>This is where the disclaimer (slide 27) pays off: a lot of tests, and still not
-        GxP. Nobody has qualified it.
-        <br><br>Callout: what are agents good at now? Catching real errors, including their own.
-        The example: on 3 October a reviewer agent found that a p-value an earlier agent had put
-        on the histogram "is not an F-test p-value" (safety.viz#188). v1.9.1 deprecates it and
-        says so on the chart. A second example, if wanted: the death count in the safety census
-        that went from 4 to 13, in gsm.safety's v1.2.0 candidate, which is not released yet.
-        <br><br>The callout's wording is from the outline's candidate list ("Catching real
-        errors, including its own"), shortened to fit; Jeremy to confirm.
-        <br><br>A screenshot of an evidence page could replace the two columns; the one in
-        assets/img is from July and shows July's counts.
+        Source: diary #8, "A Second Interview with Obot" (2026-08-20). Obot: "v4 is the version
+        where the agent stopped being a worker and became an organisation — and where most of
+        the engineering went into watching itself rather than into shipping." Jeremy: "I'd say
+        we're at v4 now. Still using claude, but I'm now much more hands off with the code."
+        <br><br>"What changed" is the closing line of diary #7 (2026-07-17): "Up next: seeing how
+        far a fully autonomous session can get without me in the loop at all."
+        <br><br>Ladder: level 5, reached for. "What reaches you is three things and nothing else.
+        A release candidate to approve, a decision to make, or something only your hands can do."
+        <br><br>The model: the interview's footer says "Obot (Claude Code, using Opus 5)", and
+        the hub's usage data has Opus 5 as the main model of the period.
       </aside>
     </section>
 
-    <!-- 3b · Climb -->
     <section class="slide" data-hue="4">
-      <div class="lvstrip" style="--c: var(--spec-5)"><i>0</i><i>1</i><i>2</i><i>3</i><i>4</i><i class="on">5</i><b>Level 5 · the dark software factory</b></div>
-      <p class="kicker">obot v4 · August</p>
-      <h2>The agent became an organisation</h2>
+      <p class="kicker pkg" style="--pkg: url(assets/hex/obot-v4.svg)">obot v4 · what I built</p>
+      <h2>Four roles, and a timer script</h2>
       <div class="pvr org">
         <svg viewBox="0 0 1320 430" role="img" aria-label="Jeremy talks to a concierge, which directs an operating officer, which dispatches workers. A timer script watches the officer and launches a fleet manager, which clears stalled workers.">
           <defs><marker id="oa" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#98a0aa"/></marker></defs>
@@ -1119,18 +1277,20 @@
         deterministic tools first.
         <br><br>Jeremy, in the same post: "I'd say we're at v4 now. Still using claude, but I'm
         now much more hands off with the code."
-        <br><br>Ladder: level 5, reached for. "What reaches you is three things and nothing else.
-        A release candidate to approve, a decision to make, or something only your hands can do."
+        
         <br><br>Charts did ship in this stretch: thirteen renderers by 20 August, with the
         nephrotoxicity explorer and time-to-event in mid-August.
+        <br><br>Headline is draft wording; the slide's earlier title, "The agent became an
+        organisation", is now the version's title slide.
       </aside>
     </section>
 
     <section class="slide s-quote" data-hue="4" style="padding-bottom: 330px">
-      <p class="kicker">Quietly wrong</p>
+      <p class="kicker pkg" style="--pkg: url(assets/hex/obot-v4.svg)">obot v4 · quietly wrong</p>
       <blockquote>“Nine cases in one night of something reporting success while having done nothing.”</blockquote>
       <cite>— Obot, on itself · developer diary #8, 20 August 2026</cite>
-      <div class="goodat bad"><div class="bub"><p class="q">What are agents bad at now?</p><p class="a">Knowing when it has failed</p></div><div class="who"><i>👎</i></div></div>
+      <div class="goodat"><div class="bub"><p class="q">What worked</p><p class="a" style="font-size: 44px">The structure held</p></div><div class="who"><i>👍</i></div></div>
+      <div class="goodat bad"><div class="bub"><p class="q">What didn't</p><p class="a" style="font-size: 44px">Knowing when it has failed</p></div><div class="who"><i>👎</i></div></div>
       <aside class="notes">
         Source: diary #8. These are Obot's words in the interview, not Jeremy's: "And most of the
         last week was the agent finding out how it was quietly wrong. Nine cases in one night of
@@ -1144,46 +1304,46 @@
         $7,124 for 9 July to 19 August.
         <br><br>"Whether v4 is faster than v3, I don't know. It's more capable and much better at
         catching itself. Whether that nets out to more charts by October is the open question."
-        <br><br>Callout: what are agents bad at now? Knowing when it has failed.
+        
+        <br><br>What worked (thumbs-up): the structure held. Charts kept shipping (thirteen
+        renderers by 20 August, four releases in five weeks), and the 10 September readout,
+        written by an agent, begins "the agent structure held". Draft wording; Jeremy to confirm.
+        <br><br>What didn't (thumbs-down): knowing when it has failed. This is the callout the
+        outline reserved for the quietly-wrong story.
       </aside>
     </section>
 
-    <section class="slide s-todo" data-hue="4">
-      <p class="kicker">10 September</p>
-      <h2>I shut it down</h2>
-      <div class="todo">
-        <p>TODO (Jeremy): your account, in your words. What the record has:</p>
-        <ul>
-          <li>“The agent structure held… it never produced a release for him to review.” (agent-written hub diary)</li>
-          <li>475 files of scaffolding removed; seven left</li>
-          <li>Back to one requirement per session, with a definition of done, and me driving</li>
-          <li>The “mixed feelings” from diary #8: here, or in beat 4?</li>
-        </ul>
-      </div>
+    <!-- 3 · obot v5 -->
+    <section class="slide s-version" data-hue="4">
+      <div class="lvstrip" style="--c: var(--spec-4)"><i>0</i><i>1</i><i>2</i><i>3</i><i class="on">4</i><i>5</i><b>Back to level 4, with me driving</b></div>
+      <img class="vhex" src="assets/hex/obot-v5.svg" alt="obot v5: a robot cat in sunglasses" />
+      <p class="kicker">obot v5 · October</p>
+      <h2>Opus 5.5</h2>
+      <p>One orchestrator, one brief, and a tree of issues. I review releases and answer questions.</p>
+      <p class="chg"><b>What changed</b>On 10 September I shut v4 down and kept only the issue tree. Then the model got better.</p>
       <aside class="notes">
-        Placeholder. Nothing about 10 September is in Jeremy's own words yet; the only record is
-        the hub diary entry of that day, drafted by an agent: "the fully autonomous multi-agent
-        prototype is shut down. The readout was hard to argue with — the agent structure held,
-        objectives and memory management were poor, most of the effort went into the
-        orchestration itself, he had to redirect it constantly, and it never produced a release
-        for him to review."
-        <br><br>From the same entry: "The replacement is requirement sessions: five objectives
-        broken into requirements and tasks, one requirement per session, running as long as it
-        takes, with him driving rather than reviewing." The retirement pull request removed 475
-        files from obot.agent and left seven; the hub removed 35 files and about 20,000 lines of
-        its own scaffold (hub NEWS, v0.4).
-        <br><br>The promise to keep, from diary #8: "I've honestly got some mixed feelings about
-        the whole thing ... but this is getting long, so I'll talk about that more in the keynote :)".
-        The outline has a "Mixed feelings" slide in beat 4; decide where they go.
-        <br><br>Callout candidate, not placed: what are agents bad at now? Remembering. The
-        readout said memory management was poor.
-        <br><br>What happened next, for context: the following three weeks produced one new
-        explorer (the Patient Journey Explorer, merged 18 September) and no releases.
+        Jeremy's steers (2026-10-05): "Capabilities keep improving and Opus 5.5 moved the goal
+        posts again. Orchestration works *great* with a simple prompt now." And: "I review
+        releases and answer questions. I think it really worked quite well in the last weekend
+        session after so many struggles."
+        <br><br>TODO (Jeremy): 10 September in your own words. The only record is the hub diary
+        of that day, drafted by an agent: "the fully autonomous multi-agent prototype is shut
+        down. The readout was hard to argue with — the agent structure held, objectives and
+        memory management were poor, most of the effort went into the orchestration itself, he
+        had to redirect it constantly, and it never produced a release for him to review." The
+        retirement removed 475 files from obot.agent and left seven. The placeholder slide for
+        this account is in the reserves.
+        <br><br>TODO (Jeremy): the "mixed feelings" promised in diary #8 ("I've honestly got some
+        mixed feelings about the whole thing ... I'll talk about that more in the keynote").
+        Here, or in beat 4.
+        <br><br>Between the two: the three weeks after 10 September produced one new explorer and
+        no releases. Opus 5.5 first appears in the local session logs on 1 October.
+        <br><br>Ladder: back to level 4, with Jeremy driving (his answer, 2026-10-05).
       </aside>
     </section>
 
     <section class="slide" data-hue="4">
-      <p class="kicker">The scaffold that stayed · obot.roadmap</p>
+      <p class="kicker pkg" style="--pkg: url(assets/hex/obot-v5.svg)">obot v5 · the scaffold that stayed</p>
       <h2>I review releases and answer questions</h2>
       <p class="chain-key" style="margin-bottom: 28px"><span><i class="who"></i>me</span><span><i></i>agents</span></p>
       <div class="chain" style="margin-top: 0">
@@ -1222,25 +1382,24 @@
     </section>
 
     <section class="slide s-split" data-hue="4">
-      <div class="lvstrip" style="--c: var(--spec-4)"><i>0</i><i>1</i><i>2</i><i>3</i><i class="on">4</i><i>5</i><b>Back to level 4, with me driving</b></div>
-      <p class="kicker">obot today · 2–4 October</p>
-      <h2>One orchestrator, one brief, one weekend</h2>
-      <div class="cols">
-        <div class="col"><h3>What went in</h3>
+      <p class="kicker pkg" style="--pkg: url(assets/hex/obot-v5.svg)">obot v5 · what I built · 2–4 October</p>
+      <h2 style="margin-bottom: 30px">One orchestrator, one brief, one weekend</h2>
+      <div class="cols" style="flex: none">
+        <div class="col" style="padding: 34px 44px 4px"><h3>What went in</h3>
           <table>
             <tr><td>One brief</td><td>about 800 words</td></tr>
             <tr><td>Messages from me</td><td>about 22, in three days</td></tr>
             <tr><td>Scaffolding</td><td>Claude Code, as shipped</td></tr>
-            <tr><td>Model</td><td>Opus 5.5</td></tr>
           </table></div>
-        <div class="col"><h3>What came back</h3>
+        <div class="col" style="padding: 34px 44px 4px"><h3>What came back</h3>
           <table>
             <tr><td>Agents</td><td>52, 40 of them reviewers</td></tr>
-            <tr><td>Tokens</td><td>3.9 billion</td></tr>
-            <tr><td>At API prices</td><td>about $1,640</td></tr>
+            <tr><td>Tokens</td><td>3.9 billion, about $1,640</td></tr>
             <tr><td>Releases</td><td>6, across 3 packages</td></tr>
           </table></div>
       </div>
+      <div class="goodat"><div class="bub"><p class="q">What worked</p><p class="a">Reviewing its own work</p></div><div class="who"><i>👍</i></div></div>
+      <div class="goodat bad"><div class="bub"><p class="q">What didn't</p><p class="a">Still waits on me</p></div><div class="who"><i>👎</i></div></div>
       <aside class="notes">
         Jeremy's steer (2026-10-05): "Capabilities keep improving and Opus 5.5 moved the goal
         posts again. Orchestration works *great* with a simple prompt now." This is the last
@@ -1260,7 +1419,7 @@
         <br><br>The contrast with v4: no concierge, no officer, no timer script. The scaffolding
         removed on 10 September was 475 files; this ran on one brief and the issue tree on the
         previous slide.
-        <br><br>Ladder: back to level 4, with Jeremy driving (his answer, 2026-10-05).
+        
         <br><br>TODO (Jeremy): two of your figures are not what the transcript shows. "Over
         1,000 subagents": the transcript has 52 agents and about 9,800 model requests. "Half of
         my weekly allotment": the last meter reading on record is 21% on the Friday night. Tell
@@ -1269,11 +1428,295 @@
         <br><br>Also that Friday: two ordinary sessions took the safety.viz demo app from "I want
         to work on creating an app version for safety.viz that includes a data loader" to the
         v1.8.0 release in about 12 hours, for about $150 at API prices.
+        <br><br>What came back, in two lines: bio.viz and gsm.bio (six biomarker charts, every
+        test computed by R, two releases each) and safety.viz v1.9.0 and v1.9.1. Do not say
+        where the biomarker charts' design came from.
+        <br><br>What worked (thumbs-up): reviewing its own work. Forty of the 52 agents were
+        reviewers, and one of them found a p-value on the histogram that "is not an F-test
+        p-value" (safety.viz#188); v1.9.1 deprecates it. Draft wording.
+        <br><br>What didn't (thumbs-down): TODO (Jeremy). "Still waits on me" is a placeholder:
+        gsm.safety v1.2.0-RC1 has waited on review since 14 September, and the 22 figures in
+        the FDA safety guidance are specified but not drawn. Another candidate from the cost
+        session: each new subagent paid to cache its context from scratch, so cache writes cost
+        more than cache reads.
       </aside>
     </section>
 
-    <!-- 3c · Experiment -->
-    <section class="slide s-split" data-hue="4">
+    <!-- 3 · the payoff -->
+    <section class="slide s-image" data-hue="4">
+      <p class="kicker">The payoff · what I built</p>
+      <h2>The safety.viz demo: your own files, nothing uploaded</h2>
+      <div class="pair">
+        <figure>
+          <div class="frame"><img src="assets/safety-viz-demo-data.jpg" alt="The safety.viz demo app's Data view: a drop zone for CSV or JSON files and a table mapping each file's columns to what the charts need" /></div>
+          <figcaption>Load your files and map the columns · every guess is labelled</figcaption>
+        </figure>
+        <figure>
+          <div class="frame"><img src="assets/safety-viz-demo-chart.png" alt="The safety.viz demo app showing histograms of every lab measure, with tabs for each chart the data supports" /></div>
+          <figcaption>Then every chart the data supports · jwildfire.github.io/safety.viz/demo</figcaption>
+        </figure>
+      </div>
+      <aside class="notes">
+        The payoff of the beat (Jeremy's outline, 2026-10-05: "What I built: gsm.viz demo (this
+        is the payoff)"). Read here as the safety.viz demo app; gsm.viz is the RBQM chart
+        library. TODO (Jeremy): confirm.
+        <br><br>The safety.viz demo app, released in v1.8.0 on 2 October. Headline is draft wording.
+        <br><br>What it does (v1.8.0 and v1.9.1 release notes): drop CSV or JSON files; each is
+        placed in a data domain and its columns mapped, "with every guess labelled"; tabs by
+        domain say how many charts the data supports; "a chart that cannot draw names what it is
+        missing". "Nothing is uploaded." The whole app is also one HTML file of about 1.2 MB that
+        runs offline: "This file loads nothing; files you add are read here and never leave this
+        computer."
+        <br><br>Draft demo script, about two minutes: open the single file from the desktop with
+        wifi off; drop four CSVs; show one guessed mapping and fix it; open the hepatic explorer
+        and click a participant; open the Biomarkers tab.
+        <br><br>TODO (Jeremy): live or recorded, and which files to drop in. Record a fallback
+        either way; these two screenshots are the fallback of the fallback. The Data view image
+        is from the hub's v1.8.0 demo page; the chart image is the live app on 2026-10-05.
+        <br><br>TODO (Jeremy): the goal's fourth line was "have some fun". A closing line here
+        hands to beat 4. In June it was "51% fun and 49% frustrating". What is it now?
+        <br><br>Ruled out: demo-301 (its weekly pipeline failed on 28 September and 5 October),
+        the live audience-ideas demo (its tooling was retired on 10 September), and the Patient
+        Journey Explorer (a Prototype with known issues).
+        <br><br>Where it stands, to say over the demo (checked 2026-10-05): 14 releases of
+        safety.viz since 11 July; 13 charts, 8 stable and 5 marked Experimental; 2,185 unit and
+        374 browser tests; released gsm.safety carries 9 of the 13 in R. The slides with these
+        numbers ("Where it stands today", "Is it validated?", "What it took") are in the reserves.
+      </aside>
+    </section>
+
+    <section class="slide s-todo" data-hue="3">
+      <p class="kicker">Outline</p>
+      <h2>Beat 4 to be drafted</h2>
+      <div class="todo">
+        <p>Beats 1 to 3 (slides 1–41) are drafted. Beat 4 follows keynote/_notes/outline.md.</p>
+        <ul>
+          <li>Source digest: keynote/_notes/research-digest.md</li>
+          <li>Drop content in: keynote/_notes/inbox/</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Reserves — slides demoted from the main deck. They are not counted in the slide
+         numbers. Each carries data-reserve="date" and says in its notes when and why it was
+         demoted. To restore one, move it back and delete the attribute.
+         ============================================================ -->
+    <section class="slide s-section" data-hue="6" data-reserve="section">
+      <div class="bighex">R</div>
+      <p class="kicker">Reserves</p>
+      <h2>Reserve slides</h2>
+      <p>Demoted from the main deck, kept in case. Each one's notes say when it was demoted, and why.</p>
+    </section>
+
+<section class="slide s-quote" data-reserve="5 October 2026" data-hue="3">
+      <p class="kicker">The bridge</p>
+      <blockquote>Open, software-shaped workflows are agent-ready.</blockquote>
+      <cite>So what happens when the agent does more of the work?</cite>
+      <aside class="notes">
+        Reserve. Demoted from the main deck on 2026-10-05: replaced as the last slide of beat 2 by the wrap-up ("We're having great success at level 3!").
+        <br><br>
+        Hand-off into beat 3. The claim is from the 6 June deck ("Once the workflow is open and
+        software-shaped… AI can do more than autocomplete code") and the dictation notes
+        ("Agentic AI is arriving into that context, not replacing it from scratch").
+        <br><br>The honest set-up for the experiment, from diary #1: "I'm not comfortable using
+        those highly autonomous tools for GxP use cases right now, but the capabilities are
+        coming, and I want to understand them." So the experiment runs on something that is not
+        GxP yet: safetyGraphics.
+      </aside>
+    </section>
+
+<section class="slide s-photo" data-reserve="5 October 2026" data-hue="4">
+      <figure class="photo" style="--focus: 50% 100%">
+        <img src="assets/orange/orange-paw-on-github.jpg" alt="Orange, seen from behind on Jeremy's lap, with one paw stretched onto the keyboard of a laptop showing GitHub" />
+      </figure>
+      <p class="kicker pkg" style="--pkg: url(assets/hex/forcats.png)">Orange, on GitHub</p>
+      <h2>From Orange to obot</h2>
+      <p class="line">The agent is named after him.</p>
+      <aside class="notes">
+        Reserve. Demoted from the main deck on 2026-10-05: Demoted on 2026-10-05 when beat 3 was rebuilt as a journey through five obot versions. It was beat 3's Orange transition; the new opener is a placeholder for an image Jeremy is choosing.
+        <br><br>
+        Transition into beat 3. Headline and line are draft wording.
+        <br><br>From diary #2 (2026-06-12), the first interview. Obot: "obot is named after Orange,
+        your cat." Jeremy: "That's right! Orange was a very good cat. I like that working with
+        you reminds me of him."
+        <br><br>The first obot (June) ran OpenClaw on a clean-room laptop with none of Jeremy's
+        credentials: "the most concrete guardrail is that the cleanroom laptop doesn't have any
+        of my personal or professional credentials." Verdict then: "51% fun and 49% frustrating"
+        and "slightly less productive using Obot than working directly in Claude Code".
+        <br><br>Photo check (Jeremy): the laptop screen shows a GitHub feed from the Rho days.
+        Three usernames are on it; at this size they are a few pixels tall. Alternatives:
+        orange-supervising-laptop.jpg and orange-desk-copilot.jpg, both of which show Jeremy.
+        <br><br>TODO (Jeremy): this slide first and the goal second, or the goal first?
+      </aside>
+    </section>
+
+<section class="slide s-bullets" data-reserve="5 October 2026" data-hue="4">
+      <p class="kicker">The experiment</p>
+      <h2>The goal</h2>
+      <ul>
+        <li>Build a modern version of safetyGraphics <span>— with everything we've learned from gsm as the foundation</span></li>
+        <li>See just how high we can climb the levels of automation</li>
+        <li>Experiment</li>
+        <li>Have some fun!</li>
+      </ul>
+      <aside class="notes">
+        Reserve. Demoted from the main deck on 2026-10-05: Demoted on 2026-10-05 when beat 3 was rebuilt as a journey through five obot versions. Replaced by "Mad scientist edition" and the new goal slide.
+        <br><br>
+        The four lines are Jeremy's (2026-10-05): "Build a modern version of safetyGraphics using
+        everything we've learned as gsm as our foundation. See just how high we can climb the
+        levels of automation. Experiment. Have some fun!" Lightly tidied for the slide.
+        <br><br>They are also the four parts of this beat: build (the plan, the weekend, papers
+        to prototypes, the tests), climb (obot v3, v4, the shutdown, the last weekend),
+        experiment (what kept going and what stopped), and fun (the demo, and the hand-off).
+        <br><br>This answers slide 24's question ("So what happens when the agent does more of
+        the work?"). Why here and not at work, from diary #1: "I'm not comfortable using those
+        highly autonomous tools for GxP use cases right now, but the capabilities are coming,
+        and I want to understand them."
+      </aside>
+    </section>
+
+<section class="slide s-quote" data-reserve="5 October 2026" data-hue="4">
+      <p class="kicker">A disclaimer</p>
+      <blockquote>This is really really not GxP</blockquote>
+      <cite>(but there are A LOT of tests included …)</cite>
+      <aside class="notes">
+        Reserve. Demoted from the main deck on 2026-10-05: Demoted on 2026-10-05 when beat 3 was rebuilt as a journey through five obot versions. "Not GxP" is now a line on the "Mad scientist edition" slide.
+        <br><br>
+        Jeremy's words (2026-10-05): "This is really really not GxP (but there are A LOT of
+        tests included ...)".
+        <br><br>Pays off on slide 32, where the tests get counted: 2,185 unit and 374 browser
+        tests at safety.viz v1.9.1.
+        <br><br>Cut candidate: could be a second click on the goal slide instead of its own slide.
+      </aside>
+    </section>
+
+<section class="slide s-split" data-reserve="5 October 2026" data-hue="4">
+      <p class="kicker pkg" style="--pkg: url(assets/hex/qcthat.png)">The plan · July</p>
+      <h2>Keep, modernize, borrow</h2>
+      <div class="cols c3" style="flex: none">
+        <div class="col"><h3>Keep</h3>
+          <p>The expert clinical workflows. Click a point, see the patient. Open source.</p></div>
+        <div class="col"><h3>Modernize</h3>
+          <p>A charting engine nearly a decade old, rebuilt with data contracts and tests.</p></div>
+        <div class="col"><h3>Borrow from gsm</h3>
+          <p>A quality framework that was designed for GxP from the start.</p></div>
+      </div>
+      <p class="soft" style="margin-top: 44px; font-size: 34px; font-family: var(--serif); font-style: italic">“The outputs need to be checkable — by a person, by a test suite, and by another agent.”</p>
+      <aside class="notes">
+        Reserve. Demoted from the main deck on 2026-10-05: Demoted on 2026-10-05 when beat 3 was rebuilt as a journey through five obot versions. Its content is in the notes of the new goal slide.
+        <br><br>
+        Source: diary #4, "safetyGraphics ❤️ gsm" (2026-07-02). Column text is paraphrase; draft wording.
+        <br><br>Keep: "the tools encode how experienced safety monitors actually review a trial";
+        "click on a point, see the patient". Modernize: "Much of the {safetyGraphics} JavaScript
+        dates back nearly a decade. Our primary charting engine is D3 v3 — D3 is now on v7.9."
+        Borrow: "Unlike {safetyGraphics}, {gsm} was designed for GxP from the start"; workflows
+        with {workr}, test and traceability matrices with {qcthat}.
+        <br><br>"Instead of inventing a new quality framework, we plug the safety graphics into
+        a quality framework that already exists."
+        <br><br>The quote on the slide, in full: "If an agent is going to help maintain these
+        tools, the outputs need to be checkable — by a person, by a test suite, and by another agent."
+        <br><br>The qcthat hex is the kicker because the borrowed part is gsm's quality framework.
+      </aside>
+    </section>
+
+<section class="slide" data-reserve="5 October 2026" data-hue="4">
+      <div class="lvstrip" style="--c: var(--spec-4)"><i>0</i><i>1</i><i>2</i><i>3</i><i class="on">4</i><i>5</i><b>Level 4 · the engineering team</b></div>
+      <p class="kicker">obot v3 · July</p>
+      <h2>A plan, a playbook and an identity</h2>
+      <div class="chain">
+        <div class="st"><div class="hx">1</div><b>obot.roadmap</b><span>“the plan and the memory”: requirements and tasks as issues, on a public site</span></div>
+        <div class="st"><div class="hx">2</div><b>obot.agent</b><span>“the playbook”: conventions and skills that every session loads</span></div>
+        <div class="st"><div class="hx">3</div><b>obotclaw[bot]</b><span>“the identity”: the agent's commits and pull requests are its own, not mine</span></div>
+      </div>
+      <aside class="notes">
+        Reserve. Demoted from the main deck on 2026-10-05: Demoted on 2026-10-05 when beat 3 was rebuilt as a journey through five obot versions. Folded into the obot v3 title slide.
+        <br><br>
+        Source: diary #6, "Obot v3: How I Used a Billion Tokens in a Weekend" (2026-07-13). The
+        three quoted labels are from that post. Everything runs in Claude Code.
+        <br><br>"For now, I'd call the process semi-autonomous; a session starts when I sit down
+        to work and ends when I close Claude." Roles: one session manager, sibling agents on
+        well-defined tasks, and long-running workers "I leave running overnight". One weekend:
+        "5 primary sessions which initialized 16 named agents".
+        <br><br>Ladder (the strip, top right): level 4 on slide 14's ladder, "you write the specs
+        and plans; agents do the work". The day job was marked at level 3.
+        <br><br>Before this: obot v2 and "2.5" on OpenClaw were abandoned (the post's footnote).
+        <br><br>Cut candidate: this could move into the notes of the next slide. It earns its
+        place if the contrast with v4 (slide 33) and with "one brief" (slide 37) is wanted.
+      </aside>
+    </section>
+
+<section class="slide s-split" data-reserve="5 October 2026" data-hue="4">
+      <p class="kicker pkg" style="--pkg: url(assets/hex/testthat.png)">The question safetyGraphics always got</p>
+      <h2>“Is it validated?”</h2>
+      <div class="cols" style="flex: none">
+        <div class="col" style="padding-bottom: 20px"><h3>Then</h3>
+          <p>“Not really. It's exploratory.”</p></div>
+        <div class="col" style="padding-bottom: 20px"><h3>Now</h3>
+          <p>2,185 unit and 374 browser tests, each tied to a requirement.</p></div>
+      </div>
+      <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Catching real errors</p></div><div class="who"><i>👍</i></div></div>
+      <aside class="notes">
+        Reserve. Demoted from the main deck on 2026-10-05: Demoted on 2026-10-05 when beat 3 was rebuilt as a journey through five obot versions. Not in the new outline; its test counts are in the notes of the payoff slide.
+        <br><br>
+        Source: diary #5. "The most frequently asked question about {safetyGraphics} has always
+        been: 'Is it validated? Can I use it on actual studies?' The original answer was, 'Not
+        really. It's exploratory'."
+        <br><br>Counts: 2,185 unit and 374 browser tests at safety.viz v1.9.1 (release notes,
+        2026-10-04). At v1.0 in July it was 249 and 94 (diary #5). Every chart traces to a
+        requirement matrix and has a live demo and a published evidence report, for example
+        jwildfire.github.io/safety.viz/histogram/evidence.html.
+        <br><br>This is where the disclaimer (slide 27) pays off: a lot of tests, and still not
+        GxP. Nobody has qualified it.
+        <br><br>Callout: what are agents good at now? Catching real errors, including their own.
+        The example: on 3 October a reviewer agent found that a p-value an earlier agent had put
+        on the histogram "is not an F-test p-value" (safety.viz#188). v1.9.1 deprecates it and
+        says so on the chart. A second example, if wanted: the death count in the safety census
+        that went from 4 to 13, in gsm.safety's v1.2.0 candidate, which is not released yet.
+        <br><br>The callout's wording is from the outline's candidate list ("Catching real
+        errors, including its own"), shortened to fit; Jeremy to confirm.
+        <br><br>A screenshot of an evidence page could replace the two columns; the one in
+        assets/img is from July and shows July's counts.
+      </aside>
+    </section>
+
+<section class="slide s-todo" data-reserve="5 October 2026" data-hue="4">
+      <p class="kicker">10 September</p>
+      <h2>I shut it down</h2>
+      <div class="todo">
+        <p>TODO (Jeremy): your account, in your words. What the record has:</p>
+        <ul>
+          <li>“The agent structure held… it never produced a release for him to review.” (agent-written hub diary)</li>
+          <li>475 files of scaffolding removed; seven left</li>
+          <li>Back to one requirement per session, with a definition of done, and me driving</li>
+          <li>The “mixed feelings” from diary #8: here, or in beat 4?</li>
+        </ul>
+      </div>
+      <aside class="notes">
+        Reserve. Demoted from the main deck on 2026-10-05: Demoted on 2026-10-05 when beat 3 was rebuilt as a journey through five obot versions. 10 September is now the "what changed" line on the obot v5 title slide, whose notes carry the same TODO.
+        <br><br>
+        Placeholder. Nothing about 10 September is in Jeremy's own words yet; the only record is
+        the hub diary entry of that day, drafted by an agent: "the fully autonomous multi-agent
+        prototype is shut down. The readout was hard to argue with — the agent structure held,
+        objectives and memory management were poor, most of the effort went into the
+        orchestration itself, he had to redirect it constantly, and it never produced a release
+        for him to review."
+        <br><br>From the same entry: "The replacement is requirement sessions: five objectives
+        broken into requirements and tasks, one requirement per session, running as long as it
+        takes, with him driving rather than reviewing." The retirement pull request removed 475
+        files from obot.agent and left seven; the hub removed 35 files and about 20,000 lines of
+        its own scaffold (hub NEWS, v0.4).
+        <br><br>The promise to keep, from diary #8: "I've honestly got some mixed feelings about
+        the whole thing ... but this is getting long, so I'll talk about that more in the keynote :)".
+        The outline has a "Mixed feelings" slide in beat 4; decide where they go.
+        <br><br>Callout candidate, not placed: what are agents bad at now? Remembering. The
+        readout said memory management was poor.
+        <br><br>What happened next, for context: the following three weeks produced one new
+        explorer (the Patient Journey Explorer, merged 18 September) and no releases.
+      </aside>
+    </section>
+
+<section class="slide s-split" data-reserve="5 October 2026" data-hue="4">
       <p class="kicker">Experiment</p>
       <h2>Agents are great at experiments</h2>
       <div class="cols" style="flex: none">
@@ -1284,6 +1727,8 @@
       </div>
       <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Running experiments!</p></div><div class="who"><i>👍</i></div></div>
       <aside class="notes">
+        Reserve. Demoted from the main deck on 2026-10-05: Demoted on 2026-10-05 when beat 3 was rebuilt as a journey through five obot versions. Not in the new outline; bio.viz and gsm.bio are in the notes of the obot v5 weekend slide.
+        <br><br>
         Headline is Jeremy's line (2026-10-05): "Agents are great at experiments. bio.viz got
         multiple releases. A few others (safety narrative, open.csr) ended after prototypes."
         <br><br>Kept going: bio.viz (a chart library beside safety.viz) and gsm.bio (the R behind
@@ -1303,8 +1748,7 @@
       </aside>
     </section>
 
-    <!-- 3d · Where it landed -->
-    <section class="slide s-split" data-hue="4">
+<section class="slide s-split" data-reserve="5 October 2026" data-hue="4">
       <p class="kicker">June to October</p>
       <h2>What it took</h2>
       <div class="cols">
@@ -1324,6 +1768,8 @@
           </table></div>
       </div>
       <aside class="notes">
+        Reserve. Demoted from the main deck on 2026-10-05: Demoted on 2026-10-05 when beat 3 was rebuilt as a journey through five obot versions. Not in the new outline. A candidate for beat 4, where it would replace "The summer in one number".
+        <br><br>
         Jeremy asked for overall cost numbers and activity metrics (2026-10-05) and said some of
         this may belong in beat 4, where the outline has "The summer in one number". Headline is draft.
         <br><br>Cost, all API-equivalent (what the same tokens would cost at list prices):
@@ -1349,7 +1795,7 @@
       </aside>
     </section>
 
-    <section class="slide s-bullets" data-hue="4">
+<section class="slide s-bullets" data-reserve="5 October 2026" data-hue="4">
       <p class="kicker">safety.viz · 5 October</p>
       <h2>Where it stands today</h2>
       <ul>
@@ -1359,6 +1805,8 @@
         <li>Not done: the 22 figures in the FDA safety guidance <span>— all specified, none drawn</span></li>
       </ul>
       <aside class="notes">
+        Reserve. Demoted from the main deck on 2026-10-05: Demoted on 2026-10-05 when beat 3 was rebuilt as a journey through five obot versions. Not in the new outline; its numbers are in the notes of the payoff slide.
+        <br><br>
         Checked against GitHub on 2026-10-05; refresh on the morning of the talk. Draft wording.
         <br><br>Releases: safety.viz v0.1.0 (11 July) to v1.9.1 (4 October), 14 in all.
         <br><br>Charts: 13 in the library and the demo app (v1.8.0 release notes: "Thirteen
@@ -1376,54 +1824,6 @@
         requirement matrix; none is drawn (obot.roadmap#323 and #324, untouched since 11 September).
         <br><br>Cut candidate: these four lines could be said over the demo instead.
       </aside>
-    </section>
-
-    <section class="slide s-image" data-hue="4">
-      <p class="kicker">Demo</p>
-      <h2>Your own files, one HTML file, nothing uploaded</h2>
-      <div class="pair">
-        <figure>
-          <div class="frame"><img src="assets/safety-viz-demo-data.jpg" alt="The safety.viz demo app's Data view: a drop zone for CSV or JSON files and a table mapping each file's columns to what the charts need" /></div>
-          <figcaption>Load your files and map the columns · every guess is labelled</figcaption>
-        </figure>
-        <figure>
-          <div class="frame"><img src="assets/safety-viz-demo-chart.png" alt="The safety.viz demo app showing histograms of every lab measure, with tabs for each chart the data supports" /></div>
-          <figcaption>Then every chart the data supports · jwildfire.github.io/safety.viz/demo</figcaption>
-        </figure>
-      </div>
-      <aside class="notes">
-        The demo, decided 2026-10-05: the safety.viz demo app, released in v1.8.0 on 2 October.
-        Headline is draft wording.
-        <br><br>What it does (v1.8.0 and v1.9.1 release notes): drop CSV or JSON files; each is
-        placed in a data domain and its columns mapped, "with every guess labelled"; tabs by
-        domain say how many charts the data supports; "a chart that cannot draw names what it is
-        missing". "Nothing is uploaded." The whole app is also one HTML file of about 1.2 MB that
-        runs offline: "This file loads nothing; files you add are read here and never leave this
-        computer."
-        <br><br>Draft demo script, about two minutes: open the single file from the desktop with
-        wifi off; drop four CSVs; show one guessed mapping and fix it; open the hepatic explorer
-        and click a participant; open the Biomarkers tab.
-        <br><br>TODO (Jeremy): live or recorded, and which files to drop in. Record a fallback
-        either way; these two screenshots are the fallback of the fallback. The Data view image
-        is from the hub's v1.8.0 demo page; the chart image is the live app on 2026-10-05.
-        <br><br>TODO (Jeremy): the goal's fourth line was "have some fun". A closing line here
-        hands to beat 4. In June it was "51% fun and 49% frustrating". What is it now?
-        <br><br>Ruled out: demo-301 (its weekly pipeline failed on 28 September and 5 October),
-        the live audience-ideas demo (its tooling was retired on 10 September), and the Patient
-        Journey Explorer (a Prototype with known issues).
-      </aside>
-    </section>
-
-    <section class="slide s-todo" data-hue="3">
-      <p class="kicker">Outline</p>
-      <h2>Beat 4 to be drafted</h2>
-      <div class="todo">
-        <p>Beats 1 to 3 (slides 1–41) are drafted. Beat 4 follows keynote/_notes/outline.md.</p>
-        <ul>
-          <li>Source digest: keynote/_notes/research-digest.md</li>
-          <li>Drop content in: keynote/_notes/inbox/</li>
-        </ul>
-      </div>
     </section>
 
     <!-- ============================================================
@@ -1496,16 +1896,18 @@
       var i = 0;
       var foot = 'R/Pharma 2026 · Jeremy Wildfire';
 
+      // Reserve slides (data-reserve) stay in the file but are left out of the count and the progress strip.
+      var counted = slides.filter(function (s) { return !s.hasAttribute('data-reserve'); });
       slides.forEach(function (s, k) {
         if (!s.classList.contains('s-title')) s.setAttribute('data-foot', foot);
-        var n = document.createElement('span');
-        n.className = 'num';
-        n.textContent = (k + 1) + ' / ' + slides.length;
+        var pos = counted.indexOf(s), n = document.createElement('span');
+        n.className = pos < 0 ? 'rsv' : 'num';
+        n.textContent = pos < 0 ? (s.getAttribute('data-reserve') === 'section' ? 'Reserves' : 'Reserve · demoted ' + s.getAttribute('data-reserve')) : (pos + 1) + ' / ' + counted.length;
         s.appendChild(n);
         // Fill the hex strip in proportion to progress, snapped to whole hexes.
         var HEX = 18 * 6.928 / 9, f = document.createElement('span');
         f.className = 'hexfill';
-        f.style.width = (k === slides.length - 1 ? 1600 : Math.round((k + 1) / slides.length * 1600 / HEX) * HEX) + 'px';
+        f.style.width = (pos < 0 ? 0 : pos === counted.length - 1 ? 1600 : Math.round((pos + 1) / counted.length * 1600 / HEX) * HEX) + 'px';
         s.appendChild(f);
         // Wrap for overview thumbnails.
         var w = document.createElement('div');
