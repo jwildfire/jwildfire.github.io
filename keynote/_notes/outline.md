@@ -68,8 +68,9 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
   - Checked 2026-10-05: gsm.roadmap and gsm.agent are NOT publicly reachable (the gsm.roadmap site redirects to a GitHub sign-in; both repositories return 404 without a login). So what beat 2 says about them is not from public sources, and no gsm.roadmap artifact can be shown or linked. `[TODO]` Jeremy decides what can be said and shown
   - Story (from the Q3 deck): the team moved its effort from coding agents to the two ends of the lifecycle, planning and operations, "where the value was"
   - Part 2a: OpenRBQM and how it works without AI (Jeremy, 2026-10-06: "Need to intro gsm/openRBQM and explian how it works without AI before getting into AI. slides 11/12 stay.")
-  - [Orange] What we do right now (built, slide 11)
-    - Photo: `orange-reviewing-spreadsheet.jpg`; line "OpenRBQM, with AI in the loop." (draft wording)
+  - [Orange] OpenRBQM (built, slide 11)
+    - Photo: `orange-reviewing-spreadsheet.jpg`. Headline and line are Jeremy's (2026-10-06): "OpenRBQM" and "Open-source Risk Based Quality Monitoring. GxP by design." Before that: "What we do right now" / "OpenRBQM, with AI in the loop."
+    - `[TODO]` Jeremy: the OpenRBQM site says "risk-based quality management"; confirm "Monitoring"
   - Monitoring a trial, as software (built, slide 12)
     - gsm: open-source R packages for risk-based quality monitoring, built for GxP from the start [diary #1, diary #4]
     - Image: the report screenshot from the public gsm.kri README (example data); `[TODO]` Jeremy confirms or supplies a newer one
