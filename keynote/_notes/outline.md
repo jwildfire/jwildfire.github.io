@@ -95,7 +95,7 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
     - Level sidebar with levels 2 and 3 both boxed (2026-10-06, Jeremy: "Call out both 2 and 3 in the sidebar on 19 (i really think we're more level 2.5 than full level 3)")
     - Design, build, publish: each step marked a person, the agent, or automated; merges the all-hands deck's before and after slides into one [March all-hands deck]
     - Optional (Jeremy: "possibly"); it shows the March state, and the slide that said how it has moved since is in the reserves
-  - Faster code; planning and operations had to catch up (built, slide 20; title is draft wording)
+  - Faster code; planning and operations have to catch up (built, slide 20; present tense at Jeremy's request, 2026-10-06)
     - Jeremy's message (2026-10-06): "agents have sped up/simplified SDLC enough that we've had to spend time improving our upstream and downstream process to support the rapidly increasing code volume"
     - Five columns (his ask the same day; "I like 21 - clean it up"): Upstream, Planning (our scaffold) → the standard development lifecycle, Design · Build · Publish, with less detail (vendor coding agents, plus our shared context) → Downstream, Operations (our scaffold); the outer headings were first "Plan / Roadmap" and "Run / Deploy / Operations" and he shortened them
     - Callout, second click: "The standard SDLC", with "as of Q2 2026" in small text
