@@ -96,6 +96,7 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
   - +50% (built, slide 20)
     - Releases up about 50% on last year; issues and pull requests roughly doubled; "not a controlled productivity study" [diary #1]
     - `[TODO]` June figures; the Q3 deck has fresher numbers that could replace them
+    - `[TODO]` flagged on the slide in orange (Jeremy, 2026-10-06: "Slide 20 needs updates/details/visual"): newer numbers, more detail, a visual
   - Plan → build → run: we invest at both ends (built, slide 21)
     - Plan and run are our own scaffolds; build is vendor coding agents plus our shared context [Q3 deck]
     - Why: both ends are company-specific process no vendor will build; the middle is commodity and improving monthly
