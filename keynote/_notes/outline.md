@@ -60,7 +60,8 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - Modernizing it "needed a team and a budget I no longer have" — or does it? [diary #3]
 
 2. OpenRBQM: GxP monitoring with AI in the loop (about 15 min) — drafted, slides 11–25
-  - Sources: public material (diary #1 and #4, gsm.agent, gsm.roadmap README, the 6 June deck) for slides 11–16 and 23–24; the team's internal Q3 2026 agentic update deck for slides 17–22 (read from Downloads 2026-10-02; the file is not in this repo). `[TODO]` Jeremy vets everything on the Q3-deck slides (17–22)
+  - Sources: public material (diary #1 and #4, gsm.agent, gsm.roadmap README, the 6 June deck) for slides 11–16 and 24–26; the team's internal Q3 2026 agentic update deck for slides 17–20 and 22–23 (read from Downloads 2026-10-02; the file is not in this repo). `[TODO]` Jeremy vets everything on the Q3-deck slides (17–20, 22–23)
+  - Checked 2026-10-05: gsm.roadmap and gsm.agent are NOT publicly reachable (the gsm.roadmap site redirects to a GitHub sign-in; both repositories return 404 without a login). So what beat 2 says about them is not from public sources, and no gsm.roadmap artifact can be shown or linked. `[TODO]` Jeremy decides what can be said and shown
   - Story (from the Q3 deck): the team moved its effort from coding agents to the two ends of the lifecycle, planning and operations, "where the value was"
   - [Orange] What we do right now (built, slide 11)
     - Photo: `orange-reviewing-spreadsheet.jpg`; line "OpenRBQM, with AI in the loop." (draft wording)
@@ -92,27 +93,33 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
   - Plan: agents draft; people approve (built, slide 20)
     - Six stages, Backlog to Done, with an artifact at each and a person signing off every gate [Q3 deck, gsm.roadmap README]
     - Numbers held in the notes: 13 skills, 82 requirements, 64 artifacts, 132 merged pull requests since July
-  - Run: one repo per study, one hub to run them (built, slide 21)
+  - The artifact is what a person reviews (built, slide 21)
+    - Added 2026-10-05 (Jeremy: "Are we capturing the importance of artifacts in beat 2?… A slide with thumbnails of a bunch of the artifacts goes a long way"). No version of the deck had shown an artifact before
+    - Ten thumbnails in a five-by-two grid: migration assessment, data requirement, design document, layout options, roadmap plan, decision record, release demo, qualification evidence, release review guide, org chart. Images in `keynote/assets/artifacts/`; pages and exclusions in `keynote/_notes/beat2-artifacts-sources.md`
+    - All ten are from obot.roadmap, the side project's public hub, standing in for the team's; the slide says so in one line
+    - Callout on the second click, draft: "Designing pages!" (from the outline's candidate "Design: artifacts are amazing; .md → .html")
+    - `[TODO]` Jeremy: vet the ten pages; supply or approve real work artifacts if any can be shown; headline is a placeholder; keep or drop the callout (slide 20 already has two)
+  - Run: one repo per study, one hub to run them (built, slide 22)
     - Study repos (20), central scheduling, intake and a 15-step guide, weekly plan alignment [Q3 deck]
     - `[TODO]` a diagram or dashboard screenshot would beat bullets; the deck's screenshots are internal
-  - Run: the hub replaced spreadsheets and email (built, slide 22)
+  - Run: the hub replaced spreadsheets and email (built, slide 23)
     - Before: Excel trackers, status by email, no live view. Now: merge a schedule and issues open in each study repo, a daily dashboard, an audit trail through pull requests [Q3 deck]
-  - Quality: traceability as a byproduct (built, slide 23)
+  - Quality: traceability as a byproduct (built, slide 24)
     - Restored on 2026-10-05 (Jeremy: "Missing a slide around quality"; "restore it, plus qualification"). The qcthat slide cut on 2 October, with one new line: "Qualification: every requirement has a test, every test has a result, and a person signs the release."
     - `[TODO]` Jeremy vets the qualification line and supplies a real qcthat report if one can be shown
-  - AI-written code still needs a human owner (built, slide 24)
+  - AI-written code still needs a human owner (built, slide 25)
     - The four "a person…" lines, verbatim from the 6 June deck
-  - Wrap-up: "We're having great success at level 3!" (built, slide 25)
+  - Wrap-up: "We're having great success at level 3!" (built, slide 26)
     - Jeremy's outline (2026-10-05): efficiency gains; fully compliant; but what's next … With the ladder strip at level 3
     - `[TODO]` Jeremy confirms "Fully compliant!" as a public claim about the day job, and fresher efficiency numbers
     - Replaces the bridge slide ("Open, software-shaped workflows are agent-ready"), which is in the reserves
   - Taken out of beat 2 on 2026-10-02 (still in git history)
     - Every metric is the same six steps (Input → Summarize)
-    - qcthat: traceability as a byproduct — restored on 2026-10-05 as slide 23
+    - qcthat: traceability as a byproduct — restored on 2026-10-05 as slide 24
     - What good practice looks like now (the diary #10 placeholder); a better fit for beat 4
     - The industry got ready without knowing it (never built)
 
-3. What's next? A summer down the AI rabbit hole, with obot (about 10 min) — rebuilt 2026-10-05 as a journey, slides 26–45
+3. What's next? A summer down the AI rabbit hole, with obot (about 10 min) — rebuilt 2026-10-05 as a journey, slides 27–46
   - Status: rebuilt on 2026-10-05 to Jeremy's outline of that day: "the narrative (and the slide structure) is a total mess. Let's add more structure. Frame it as a journey. 5 versions of obot created during a summer of experiments." The first build (same day) is in git history; the slides it dropped are in the deck's reserves
   - The five versions (Jeremy, 2026-10-05): "v1 was actually a local personal assistant who drafted a handoff/build for the openclaw! v2 is open claw. v2.5 was paperclip (probably just a footnote). v3 fable 5. v4 org. v5 opus 5.5."
   - Template for each version: a title slide (the version's hex, name, dates, the set-up, the ladder strip, and "what changed" to get here), then what it built, with Orange's thumbs on the second click as "What worked" and "What didn't"
@@ -121,40 +128,40 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
   - Hexes: placeholder robot cats drawn as SVG, `keynote/assets/hex/obot-v1.svg` to `obot-v5.svg`, plus `obot-v2-5.svg` and `obot-v5-5.svg`. Jeremy: "A is fine for now as placeholder. I'll provide hexes later." The three options are in `keynote/_notes/obot-version-hex-options.html`
   - Hue: 4, blue. Budget: 20 slides for about 10 minutes, so still over; Jeremy cuts after seeing it
   - Facts are checked against GitHub and the local session transcripts as of 2026-10-05 (`research-digest.md`, section 8). Wording is draft unless marked as Jeremy's
-  - [Orange] From Orange to obot (built, slide 26)
+  - [Orange] From Orange to obot (built, slide 27)
     - The beat's Orange transition, forcats hex as the kicker; line "The agent is named after him." [diary #2]
     - Photo: `orange-paw-on-github.jpg`. Demoted to the reserves in the journey rebuild and restored the same day (Jeremy: "Restore the section transition slide between 25 and 26")
     - `[TODO]` Jeremy checks the photo: three Rho-era GitHub usernames are on the laptop screen, a few pixels tall at slide size
-  - Opener: A summer down the AI rabbit hole, with obot (built, slide 27)
+  - Opener: A summer down the AI rabbit hole, with obot (built, slide 28)
     - Title from Jeremy's outline: "What's next? A summer down the AI rabbit hole (in the matrix??) with obot …"
     - `[TODO]` Jeremy's image: "Comic of orange transforming into a robot? Evolution graphic? I'll figure something out". Built as a stand-in evolution row: Orange's photo hex, then the five version hexes. It doubles as the map of the beat
     - Notes: the agent is named after the cat [diary #2]
-  - What are these tools good at right now? Mad scientist edition (built, slide 28)
+  - What are these tools good at right now? Mad scientist edition (built, slide 29)
     - Jeremy's three lines: Open source. Not GxP (his bold). Let's experiment and have some fun …
     - Notes: why not at work, "I'm not comfortable using those highly autonomous tools for GxP use cases right now" [diary #1]
-  - The goal: modernize safetyGraphics, using the gsm framework (built, slide 29)
+  - The goal: modernize safetyGraphics, using the gsm framework (built, slide 30)
     - A gallery of the ten original charts (Jeremy, 2026-10-05: "show a gallery of the original charts"): each one's own README screenshot as a still, with the year of its last commit in the corner. Images in `keynote/assets/legacy/`; all ten repositories are MIT-licensed
     - One line under it: 10 original charts, 25,400 lines of JavaScript, all on D3 v3. Measured 2026-10-05 from the public repositories (730 files; last commits 2019 to 2022; today safety.viz is on Chart.js 4). The earlier three-figure version of the slide is in the reserves
     - Jeremy's draft said "sitting idle for 5+ years": true of eight of the ten; the newest last commit is February 2022
-  - obot v1 · early May: a personal assistant (built, slide 30)
+  - obot v1 · early May: a personal assistant (built, slide 31)
     - One slide; there is no public account of v1. What the record has: gsm.safety's first commit, 9 May 2026, is authored by "Orange" ("Initial gsm.safety design")
     - `[TODO]` Jeremy: which tool it was, what worked, what didn't, and its ladder level
-  - obot v2 · May to June: OpenClaw (built, slides 31–32)
+  - obot v2 · May to June: OpenClaw (built, slides 32–33)
     - Title slide: a clean-room laptop with none of his credentials, Telegram, its own GitHub account [diary #2]. Level 3
     - What I built: the gsm.safety proof of concept (the old charts run from gsm workflows), a public hub and daily diary, 266 commits, 18 pull requests and 2 releases by 10 June [diary #2]
     - What worked: "Real work, by text". What didn't: "Autonomy" ("51% fun and 49% frustrating"; "trying (and mostly failing)… to get Obot to be more autonomous") [diary #2]
     - Footnote in the notes: v2.5, a PM, a developer and a tester with Paperclip as the control plane, "never shipped" [diary #6]
-  - obot v3 · July: Claude Code, on Fable 5 (built, slides 33–35)
+  - obot v3 · July: Claude Code, on Fable 5 (built, slides 34–36)
     - Title slide: a plan, a playbook and an identity; "a session starts when I sit down". What changed: Fable 5 came out [diary #6]. Level 4
     - What I built: "The first renderer took a few weeks; the next six took a weekend." Four-step release timeline, with 1.0 billion tokens, $1,273 at API prices, $200 a month paid, about 10 hours [diary #5, #6]
     - What worked: "Porting old code". What didn't: "Working without me"
     - What I built next: Papers → prompts → prototypes [diary #7]. What worked: "Translating research into software" (Jeremy's wording, 2026-10-05)
-  - obot v4 · August to 10 September: the organisation (built, slides 36–38)
+  - obot v4 · August to 10 September: the organisation (built, slides 37–39)
     - Title slide: "the agent stopped being a worker and became an organisation", on Opus 5. What changed: "seeing how far a fully autonomous session can get without me in the loop at all" [diary #7, #8]. Level 5
     - What I built: four roles and a timer script, the diary #8 org chart redrawn
     - Quietly wrong: "Nine cases in one night of something reporting success while having done nothing." [diary #8, Obot's words]
     - What worked: "The structure held". What didn't: "Knowing when it has failed"
-  - obot v5 · September: one requirement at a time (built, slides 39–41)
+  - obot v5 · September: one requirement at a time (built, slides 40–42)
     - Title slide: he retired the organisation and kept a tree of issues; one session per requirement, each with a definition of done. What changed: "On 10 September I shut v4 down. 475 files of scaffolding went; seven stayed." Back to level 4
     - `[TODO]` Jeremy's own account of 10 September, and the "mixed feelings" from diary #8; both are in this slide's notes
     - The scaffold that stayed: "I review releases and answer questions" (his sentence); objective → requirements → tasks → release candidate → release; written down on 11 September as three short standards [hub NEWS v0.4]
@@ -162,18 +169,18 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - What worked: "A definition of done". What didn't: "No chart releases" (draft wording)
     - Where the record differs from Jeremy's recollection ("some gsm.viz releases + experiments (open.csr, patient profile, etc)"): no safety.viz release between 15 August and 2 October; open.csr's last activity was 2 September, under v4; the participant profile shipped in July. After 18 September nothing merged in the chart repositories until 1 October
     - Models: Fable 5.1 and Opus 5 in the local logs; most sessions ran in the cloud and left no local log
-  - obot v5.5 · October: Opus 5.5 (built, slides 42–43)
+  - obot v5.5 · October: Opus 5.5 (built, slides 43–44)
     - Title slide: the same tree of issues, one orchestrator and one brief. What changed: "The model got better. Orchestration now works from a plain brief." Level 4
     - Opus 5.5 was released on 22 September [Willison, via the beat 4 timeline sources]; it first appears in the local session logs on 1 October
     - What I built: one orchestrator, one brief, one weekend. In: a brief of about 800 words, about 22 messages. Out: 52 agents (40 reviewers), 3.9 billion tokens, about $1,640 at API prices, six releases [digest 8c]
     - What worked: "Reviewing its own work". What didn't: "Still waits on me" is a placeholder, `[TODO]` Jeremy
     - `[TODO]` Jeremy: "over 1,000 subagents" and "half my weekly allotment" are not what the transcript shows (52 agents; 21% on the Friday night)
     - Notes: the safety.viz demo app (v1.8.0) was also built on Opus 5.5, in two ordinary sessions on 2 October
-  - The payoff: the safety.viz demo (built, slide 44)
+  - The payoff: the safety.viz demo (built, slide 45)
     - Jeremy's outline: "What I built: gsm.viz demo (this is the payoff)". Read as the safety.viz demo app; `[TODO]` Jeremy confirms
     - Your own files, mapped columns, nothing uploaded, one HTML file that runs offline [safety.viz v1.8.0 and v1.9.1 release notes]
     - `[TODO]` Jeremy: live or recorded, which files, and a closing line that hands to beat 4
-  - Recap: how fast it is moving (built, slide 45; draft wording throughout)
+  - Recap: how fast it is moving (built, slide 46; draft wording throughout)
     - Jeremy (2026-10-05): the five versions set up "a slide in beat 4 where we can emphasize just how fast capabilities are improving… roughly 1 year after Opus 4.5 changed the game and made agents viable. Maybe show a timeline of how the major innovations/model releases line up against my 5 agent experiments. Mention all the things I *didn't* experiment with… Takeaway for pharma is that we just can't keep up and as a result the gap between capabilities and adoption is rapidly widening."
     - Also out of scope, and worth saying (Jeremy, 2026-10-05): open-source models. All five obot versions ran on closed, hosted models
     - Reference: https://simonwillison.net/2026/Sep/27/2026-in-llms-so-far/
@@ -186,7 +193,7 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - s1 What are these tools good at: gathers the thumbs-up callouts from beats 1 to 3
     - s2 What are they not good at: gathers the thumbs-down callouts
     - How do we do this in GxP?
-      - s3 Velocity: the capability timeline. Drafted; it now closes beat 3 (slide 45), so beat 4 either calls back to it or shows it again
+      - s3 Velocity: the capability timeline. Drafted; it now closes beat 3 (slide 46), so beat 4 either calls back to it or shows it again
       - s4 Costs: a spending slide from the hub's analytics page. `[TODO]` in progress: a worker is refreshing the page, then drafting the slide (`keynote/_notes/beat4-spending-draft.html`)
       - s5 Quality
       - s6 SDLC / roadmap: a tree of objectives → requirements → tasks coloured by status, from a new hub page. `[TODO]` in progress: a worker is preparing tree-type options for Jeremy to choose from
@@ -251,12 +258,13 @@ A recurring callout in the bottom-right corner: Orange's face in an amber hex wi
   - Teaching me things — slide 6
   - Writing code — slide 18
   - Drafting documents, and Setting priorities (thumbs-down) — slide 20
+  - Designing pages (draft wording) — slide 21, the artifacts
 - Beat 3 uses the same two callouts as each version's verdict, labelled "What worked" and "What didn't" (Jeremy's outline, 2026-10-05). All wording is draft
-  - v2, slide 32: Real work, by text / Autonomy
-  - v3, slide 34: Porting old code / Working without me; slide 35: Translating research into software (thumbs-up only, Jeremy's wording)
-  - v4, slide 38: The structure held / Knowing when it has failed
-  - v5, slide 41: A definition of done / No chart releases
-  - v5.5, slide 43: Reviewing its own work / Still waits on me (placeholder)
+  - v2, slide 33: Real work, by text / Autonomy
+  - v3, slide 35: Porting old code / Working without me; slide 36: Translating research into software (thumbs-up only, Jeremy's wording)
+  - v4, slide 39: The structure held / Knowing when it has failed
+  - v5, slide 42: A definition of done / No chart releases
+  - v5.5, slide 44: Reviewing its own work / Still waits on me (placeholder)
 - Candidates from the close-out list, not placed
   - Good at: busy work (making slides, meeting minutes); design (artifacts, .md → .html); syntax (git); catching real errors, including its own; running experiments
   - Bad at: being concise; remembering
@@ -266,7 +274,7 @@ A recurring callout in the bottom-right corner: Orange's face in an amber hex wi
 Since 2026-10-05, a slide that leaves the main deck moves to the reserves section near the end of `slides.html` instead of being deleted (Jeremy: "start saving any discarded slides in a reserves section in the deck. Just add a note about when it was demoted"). A reserve slide carries `data-reserve="date"`, shows a "Reserve · demoted …" tag in place of its number, is left out of the slide count, and says in its notes when and why it was demoted.
 
 - Demoted 2026-10-05
-  - (Restored the same day: From Orange to obot, the paw-on-GitHub transition, now slide 26)
+  - (Restored the same day: From Orange to obot, the paw-on-GitHub transition, now slide 27)
   - The bridge, "Open, software-shaped workflows are agent-ready" (was the last slide of beat 2)
   - The goal, as four lines (build, climb, experiment, have fun)
   - The disclaimer, "This is really really not GxP (but there are A LOT of tests included …)"

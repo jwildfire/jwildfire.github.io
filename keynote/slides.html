@@ -327,6 +327,20 @@
     .pvr.tl .k { font-family: var(--mono); font-size: 18px; fill: var(--soft); }
     
 
+    /* Artifacts wall (beat 2 draft): a close variant of .gallery. Everything here is scoped to
+       .s-artifacts. Thumbnails keep the captures' own 64:45 shape, so nothing is cropped. */
+    .s-artifacts h2 { font-size: 64px; margin-bottom: 26px; }
+    .s-artifacts .gallery { gap: 14px 20px; }
+    .s-artifacts .gallery a { display: block; }
+    .s-artifacts .gallery img { height: auto; aspect-ratio: 64 / 45; object-fit: cover; object-position: top; padding: 0; }
+    .s-artifacts .src { font-family: var(--mono); font-size: 21px; line-height: 1.4; color: var(--soft); margin: 14px 0 0; max-width: 720px; white-space: nowrap; }
+    /* A smaller callout that sits under the grid, so it covers no thumbnail or label. */
+    .s-artifacts .goodat { bottom: 30px; gap: 20px; }
+    .s-artifacts .goodat .bub { padding: 14px 26px 16px; }
+    .s-artifacts .goodat .a { font-size: 40px; }
+    .s-artifacts .goodat .who { width: 130px; height: 150px; }
+    .s-artifacts .goodat .who i { width: 50px; height: 58px; font-size: 26px; right: -16px; bottom: -6px; }
+
     /* Placeholder slide for the outline stage. */
     .s-todo { background: repeating-linear-gradient(135deg, var(--bg) 0 28px, #f4f5f1 28px 56px); }
     .s-todo .todo { margin-top: 12px; font-family: var(--mono); font-size: 26px; color: var(--soft); border: 2px dashed var(--hue); border-radius: 18px; padding: 28px 36px; background: var(--bg); }
@@ -751,7 +765,7 @@
         and sub-issues that coding consumes; coding produces releases that operations deploys to studies.
         <br><br>Why both ends: they are company-specific process that no vendor will build. The
         middle is commodity and improving monthly.
-        <br><br>Vet before publishing: everything on slides 17–22 comes from that internal deck.
+        <br><br>Vet before publishing: everything on slides 17–20 and 22–23 comes from that internal deck. (Slide 21, the artifacts, is from the side project's public hub.)
       </aside>
     </section>
 
@@ -836,6 +850,96 @@
       </aside>
     </section>
 
+<section class="slide s-artifacts" data-hue="3">
+      <p class="kicker">Plan · the artifacts</p>
+      <h2>The artifact is what a person reviews</h2>
+      <div class="gallery">
+        <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/nepexplorer-migration-assessment-2026-07-15/" target="_blank" rel="noopener"><img src="assets/artifacts/assessment-nepexplorer-migration.png" alt="A migration assessment page: a title, an executive summary in three cards and a row of headline figures" /></a><figcaption>Migration assessment</figcaption></figure>
+        <figure><a href="https://jwildfire.github.io/obot.roadmap/requirements/design/35_design.html#data" target="_blank" rel="noopener"><img src="assets/artifacts/data-requirement-nepexplorer.png" alt="The data requirement section of a design page: a table of settings, defaults and what each column is used for" /></a><figcaption>Data requirement</figcaption></figure>
+        <figure><a href="https://jwildfire.github.io/obot.roadmap/requirements/design/352_design.html" target="_blank" rel="noopener"><img src="assets/artifacts/design-basic-app.png" alt="A design document: a title, a summary and a sketch of the screen the user will see" /></a><figcaption>Design document</figcaption></figure>
+        <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/safety-viz-homepage-options-2026-07-11/" target="_blank" rel="noopener"><img src="assets/artifacts/options-safety-viz-homepage.png" alt="A layout options page: one of five mocked-up home pages, with notes on what it changes" /></a><figcaption>Layout options</figcaption></figure>
+        <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/goal-sessions-plan-2026-09-10/" target="_blank" rel="noopener"><img src="assets/artifacts/plan-requirement-sessions.png" alt="A plan page: a title, a summary and a boxed list of the decisions it rests on" /></a><figcaption>Roadmap plan</figcaption></figure>
+        <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/decisions/2026-08-17-safetycensus-stay-or-go/" target="_blank" rel="noopener"><img src="assets/artifacts/decision-safetycensus-stay-or-go.png" alt="A decision page: two numbered questions at the top and the recorded answer below" /></a><figcaption>Decision record</figcaption></figure>
+        <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/sv-v1.8-demo/#app" target="_blank" rel="noopener"><img src="assets/artifacts/release-demo-safety-viz-v1.8.png" alt="An annotated release demo: a paragraph on what changed above a screenshot of a chart in the new app" /></a><figcaption>Release demo</figcaption></figure>
+        <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/gsm-safety-v1.0.0-rc1/" target="_blank" rel="noopener"><img src="assets/artifacts/qualification-evidence-gsm-safety-v1.0-rc1.png" alt="A qualification evidence page: four headline counts above a grid of working examples" /></a><figcaption>Qualification evidence</figcaption></figure>
+        <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/release-review-plan-2026-09-12/" target="_blank" rel="noopener"><img src="assets/artifacts/review-guide-release-plan.png" alt="A release review guide: a headline, a summary and the reviewer's recorded decisions" /></a><figcaption>Release review guide</figcaption></figure>
+        <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/org-chart/" target="_blank" rel="noopener"><img src="assets/artifacts/org-chart.png" alt="An org chart drawn as boxes and arrows: one person, three named agents and a crew of workers" /></a><figcaption>Org chart</figcaption></figure>
+      </div>
+      <p class="src">Examples from my side project, standing in for the team's</p>
+      <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Designing pages!</p></div><div class="who"><i>👍</i></div></div>
+      <aside class="notes">
+        Added to beat 2 on 2026-10-05 as slide 21, straight after "Agents draft; people approve",
+        which says there is an artifact at each stage; this is the picture of that sentence.
+        A worker session drafted it; the pages and what was left out are listed in
+        keynote/_notes/beat2-artifacts-sources.md.
+        <br><br>
+        DRAFT (2026-10-05), built at Jeremy's request: "Are we capturing the importance of
+        artifacts in beat 2? I think it maybe got demoted. A slide with thumbnails of a bunch of
+        the artifacts goes a long way." Headline, kicker, labels, caption line and callout are
+        all draft wording.
+        <br><br>WHAT THESE ARE, AND WHAT THEY ARE NOT. All ten pages are from obot.roadmap, the
+        public hub of the side project (beat 3's subject), not from the team's gsm.roadmap.
+        Checked on 2026-10-05 without logging in: the gsm.roadmap site
+        (gilead-biostats.github.io/gsm.roadmap) redirects to a GitHub sign-in page and the
+        repository returns 404, so none of its artifacts can be shown or linked from a public
+        slide. The caption line says the pages are stand-ins. Nothing on the slide or in these
+        notes describes what any gsm.roadmap page contains.
+        <br><br>The point (draft; Jeremy writes the final words): "Agents draft; people approve"
+        only works if there is something worth approving. At each stage the agent writes a page,
+        not a chat reply or a diff: something a person can open in a browser, read in a few
+        minutes and sign. The page is the hand-off between the agent and the person, and the
+        published pages become the record of what was decided and why.
+        <br><br>Said, not shown: these used to be Markdown files nobody opened. The same content
+        as a designed HTML page gets read. Jeremy's line from the outline: "Design: artifacts are
+        amazing; .md → .html".
+        <br><br>The ten thumbnails, in slide order (each is a link; captured 2026-10-05 at
+        1280 × 900 in light mode, shrunk to 640 px wide):
+        <br>1. Migration assessment: can an old kidney-safety chart move to the new library?
+        https://jwildfire.github.io/obot.roadmap/reports/nepexplorer-migration-assessment-2026-07-15/
+        <br>2. Data requirement: section 5 of the same chart's design page, the table of columns
+        the chart needs. https://jwildfire.github.io/obot.roadmap/requirements/design/35_design.html#data
+        <br>3. Design document: the basic app, "load, map and view a study on one page".
+        https://jwildfire.github.io/obot.roadmap/requirements/design/352_design.html
+        <br>4. Layout options: five mocked-up home pages to choose between (option A shown).
+        https://jwildfire.github.io/obot.roadmap/reports/safety-viz-homepage-options-2026-07-11/
+        <br>5. Roadmap plan: "Five objectives, five weeks, two lanes", the September plan.
+        https://jwildfire.github.io/obot.roadmap/reports/goal-sessions-plan-2026-09-10/
+        <br>6. Decision record: two numbered questions about one function, and the answer as dictated.
+        https://jwildfire.github.io/obot.roadmap/reports/decisions/2026-08-17-safetycensus-stay-or-go/
+        <br>7. Release demo: the annotated demo for safety.viz v1.8.0 ("The demo app" section).
+        https://jwildfire.github.io/obot.roadmap/reports/sv-v1.8-demo/
+        <br>8. Qualification evidence: gsm.safety v1.0.0 release candidate 1.
+        https://jwildfire.github.io/obot.roadmap/reports/gsm-safety-v1.0.0-rc1/
+        <br>9. Release review guide: "Two releases are waiting on you", with the decisions recorded on the page.
+        https://jwildfire.github.io/obot.roadmap/reports/release-review-plan-2026-09-12/
+        <br>10. Org chart: who answers to whom among the agents ("The chart" section).
+        https://jwildfire.github.io/obot.roadmap/reports/org-chart/
+        <br><br>WHERE IT GOES. Recommended: straight after slide 20, "Agents draft; people
+        approve", as the new slide 21. Slide 20 names an artifact at each of the six stages and
+        its notes say each is published by a pull request and indexed on a site; this slide is
+        the picture of that sentence. The first row follows slide 20's order (requirement, data,
+        design, plan); the second row is what comes out at release. Then the Run slides carry on
+        as now. Alternative: if stand-ins from the side project feel wrong in the middle of the
+        day-job beat, the same slide works unchanged in beat 3 (hue 4, without the caption's
+        second half), next to the slide where obot starts writing requirements.
+        <br><br>CALLOUT. "Drafting documents!" is already on slide 20, so this one proposes
+        "Designing pages!", from the unplaced candidate in the outline ("design (artifacts,
+        .md → .html)"). Other wordings: "Design!", "Making it readable", "Turning notes into
+        pages". It is a smaller copy of the callout so that it sits under the grid and covers no
+        label; if three callouts in two slides is one too many, delete the .goodat div and the
+        caption line can run the full width.
+        <br><br>Other headlines considered: "A page to review at every gate"; "Every stage
+        leaves a page a person can read"; "The artifacts: a web page at every stage".
+        <br><br>TODO (Jeremy): (1) Vet all ten pages; they are public already, but they have not
+        been on a keynote slide. Two things to look at in particular: thumbnail 9 names the
+        other repositories of the side project in small print, and thumbnail 7 shows a scatter
+        plot of the public demo study. (2) Supply or approve real gsm.roadmap artifacts if any
+        can be shown: screenshots you take yourself, cleared for a public talk, would replace
+        some or all of these and the caption line would go. (3) Confirm the caption wording:
+        it tells the room these are not the team's pages. (4) Say whether the callout stays.
+      </aside>
+    </section>
+
     <section class="slide s-bullets" data-hue="3">
       <p class="kicker">Run · operations</p>
       <h2>One repo per study, one hub to run them</h2>
@@ -912,7 +1016,7 @@
         a screenshot of a real qcthat report if one can be shown.
         <br><br>Pays off in beat 3: safety.viz and gsm.safety borrow exactly this (diary #4:
         "Instead of inventing a new quality framework, we plug the safety graphics into a quality
-        framework that already exists"), and "Not GxP" on slide 28 is the contrast.
+        framework that already exists"), and "Not GxP" on slide 29 is the contrast.
       </aside>
     </section>
 
@@ -951,7 +1055,7 @@
         gone up by roughly 50% compared to last year. The number of issues, both opened and
         closed, has roughly doubled. Same with PRs."). TODO (Jeremy): fresher numbers if you have them.
         <br><br>Compliant: slide 13 ("Humans own the process and all deliverables"), the quality
-        slide (23) and the human-owner rule (24). TODO (Jeremy): "Fully compliant!" is a claim
+        slide (24) and the human-owner rule (25). TODO (Jeremy): "Fully compliant!" is a claim
         about the day job on a public slide; confirm the wording.
         <br><br>Level 3 is slide 14's marker, "the day job". The strip in the corner is the same
         ladder; it comes back on every obot version in beat 3.
@@ -1796,7 +1900,7 @@
       <p class="kicker">Outline</p>
       <h2>Beat 4 to be drafted</h2>
       <div class="todo">
-        <p>Beats 1 to 3 (slides 1–45) are drafted. Beat 4 follows keynote/_notes/outline.md.</p>
+        <p>Beats 1 to 3 (slides 1–46) are drafted. Beat 4 follows keynote/_notes/outline.md.</p>
         <ul>
           <li>Source digest: keynote/_notes/research-digest.md</li>
           <li>Drop content in: keynote/_notes/inbox/</li>

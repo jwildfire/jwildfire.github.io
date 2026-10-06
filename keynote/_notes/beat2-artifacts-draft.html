@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Draft · beat 2 artifacts wall — R/Pharma 2026 keynote</title>
+  <meta name="description" content="Slides for Jeremy Wildfire's R/Pharma 2026 keynote: building open-source clinical trial tools with agentic AI." />
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,4 90,27 90,73 50,96 10,73 10,27' fill='%2300afa9'/%3E%3C/svg%3E" />
+  <style>
+    /* ------------------------------------------------------------------
+       Rainbow hex deck template.
+       Palette, type and the hex strip are the site theme's (/css/site-theme.css):
+       paper #fafaf8, graphite ink, a seven-hue muted spectrum seen through a
+       row of hex outlines. Each section takes the next hue (data-hue="0".."6").
+
+       Authoring: every <section class="slide"> is one 16:9 slide (1600 x 900,
+       scaled to fit). Layouts: .s-title, .s-section, .s-bullets, .s-quote,
+       .s-stat, .s-split, .s-image, .s-todo. Speaker notes go in
+       <aside class="notes">.
+       Keys: ← → / space / PgUp PgDn · Home End · O overview · N notes · F fullscreen.
+       The slide number is top right; the hex strip fills in with progress through the talk.
+       Orange's callouts (.goodat) appear on a second press; add ?reveal to the URL to show them all.
+       Slides with data-reserve="date" are reserves: kept at the end, not counted in the numbers.
+       ------------------------------------------------------------------ */
+    :root {
+      --bg: #fafaf8;
+      --panel: #ffffff;
+      --rail: #f3f4f1;
+      --ink: #1f2328;
+      --soft: #5b6470;
+      --faint: #98a0aa;
+      --rule: #e4e6e3;
+      --spec-0: #d87972;
+      --spec-1: #c78a3b;
+      --spec-2: #77a95b;
+      --spec-3: #00afa9;
+      --spec-4: #519fdd;
+      --spec-5: #988bdd;
+      --spec-6: #c67bb6;
+      --spec-gradient: linear-gradient(90deg, var(--spec-0), var(--spec-1), var(--spec-2), var(--spec-3), var(--spec-4), var(--spec-5), var(--spec-6));
+      --spec-gradient-diag: linear-gradient(135deg, var(--spec-0), var(--spec-1), var(--spec-2), var(--spec-3), var(--spec-4), var(--spec-5), var(--spec-6));
+      --hex-mask: url("data:image/svg+xml;utf8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' width%3D'6.928' height%3D'9.000' viewBox%3D'0 0 6.928 9.000'%3E%3Cg fill%3D'none' stroke%3D'%23000' stroke-width%3D'0.9'%3E%3Cpolygon points%3D'3.464%2C0.50 6.928%2C2.50 6.928%2C6.50 3.464%2C8.50 0.000%2C6.50 0.000%2C2.50'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+      --hex-mask-fill: url("data:image/svg+xml;utf8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' width%3D'6.928' height%3D'9.000' viewBox%3D'0 0 6.928 9.000'%3E%3Cpolygon fill%3D'%23000' points%3D'3.464%2C0.50 6.928%2C2.50 6.928%2C6.50 3.464%2C8.50 0.000%2C6.50 0.000%2C2.50'%2F%3E%3C%2Fsvg%3E");
+      --hex-clip: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+      --sans: "Instrument Sans", system-ui, sans-serif;
+      --serif: "Instrument Serif", Georgia, serif;
+      --mono: "IBM Plex Mono", ui-monospace, monospace;
+      --hue: var(--spec-3);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; }
+    body { background: #e9eae6; color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; overflow: hidden; }
+
+    /* Stage: slides are authored at 1600x900 and scaled to the viewport by JS (--scale). */
+    .deck { position: fixed; inset: 0; display: grid; place-items: center; }
+    .slide {
+      position: absolute; left: 50%; top: 50%;
+      width: 1600px; height: 900px;
+      margin: -450px 0 0 -800px;
+      transform: scale(var(--scale, 1));
+      background: var(--bg);
+      box-shadow: 0 20px 60px rgba(31, 35, 40, 0.12);
+      padding: 120px 140px 110px;
+      display: none; flex-direction: column;
+      overflow: hidden;
+    }
+    .slide.active { display: flex; }
+    .slide[data-hue="0"] { --hue: var(--spec-0); }
+    .slide[data-hue="1"] { --hue: var(--spec-1); }
+    .slide[data-hue="2"] { --hue: var(--spec-2); }
+    .slide[data-hue="3"] { --hue: var(--spec-3); }
+    .slide[data-hue="4"] { --hue: var(--spec-4); }
+    .slide[data-hue="5"] { --hue: var(--spec-5); }
+    .slide[data-hue="6"] { --hue: var(--spec-6); }
+
+    /* Hex strip along the top edge of every slide. */
+    .slide::before {
+      content: ""; position: absolute; left: 0; right: 0; top: 0; height: 18px;
+      background: var(--spec-gradient);
+      -webkit-mask-image: var(--hex-mask); mask-image: var(--hex-mask);
+      -webkit-mask-repeat: repeat-x; mask-repeat: repeat-x;
+      -webkit-mask-size: auto 18px; mask-size: auto 18px;
+    }
+    /* Progress: the hexes of the strip fill in, left to right, as the talk advances.
+       JS sets the width to a whole number of hexes for (slide number / slide count). */
+    .slide .hexfill {
+      position: absolute; left: 0; top: 0; height: 18px; width: 0;
+      background: var(--spec-gradient); background-size: 1600px 100%; background-repeat: no-repeat;
+      -webkit-mask-image: var(--hex-mask-fill); mask-image: var(--hex-mask-fill);
+      -webkit-mask-repeat: repeat-x; mask-repeat: repeat-x;
+      -webkit-mask-size: auto 18px; mask-size: auto 18px;
+    }
+    /* Footer: talk name (filled by JS). The slide number sits in the header, top right. */
+    .slide::after {
+      content: attr(data-foot); position: absolute; left: 140px; right: 140px; bottom: 44px;
+      font-family: var(--mono); font-size: 20px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint);
+    }
+    .slide .num { position: absolute; right: 140px; top: 48px; font-family: var(--mono); font-size: 20px; color: var(--faint); }
+
+    .kicker { font-family: var(--mono); font-size: 24px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--hue); margin: 0 0 28px; display: flex; align-items: center; gap: 16px; }
+    .kicker::before { content: ""; width: 22px; height: 25px; background: var(--hue); clip-path: var(--hex-clip); flex: none; }
+    /* Package hex as the kicker's bullet: class="kicker pkg" style="--pkg: url(../assets/hex/NAME.png)". */
+    .kicker.pkg::before { width: 56px; height: 65px; clip-path: none; background: var(--pkg) center / contain no-repeat; }
+    h1, h2 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.01em; margin: 0; }
+    h1 { font-size: 112px; line-height: 1.02; }
+    h2 { font-size: 76px; line-height: 1.06; margin-bottom: 44px; }
+    h1 em, h2 em { font-style: italic; color: var(--hue); }
+    p, li { font-size: 38px; line-height: 1.4; }
+    p { margin: 0 0 24px; }
+    .soft { color: var(--soft); }
+    code { font-family: var(--mono); font-size: 0.85em; background: var(--rail); padding: 0.05em 0.3em; border-radius: 6px; }
+
+    /* Title */
+    .s-title { justify-content: center; }
+    .s-title h1 { max-width: 1060px; }
+    .s-title .byline { margin-top: 56px; font-size: 34px; color: var(--soft); }
+    .s-title .byline strong { color: var(--ink); font-weight: 600; }
+    /* The title's one flourish: two words in the spectrum gradient, matching the logo. */
+    .s-title .spectrum { background: var(--spec-gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .s-title .byline { margin-bottom: 0; }
+    .s-title .cameo { margin: 10px 0 0; font-size: 24px; color: var(--soft); }
+    .s-title .mark { position: absolute; right: 150px; top: 50%; width: 430px; height: 430px; margin-top: -215px; }
+
+    /* Section divider: big hex in the section's hue. */
+    .s-section { justify-content: center; background: var(--rail); }
+    .s-section .bighex { position: absolute; right: 150px; top: 50%; width: 360px; height: 416px; margin-top: -208px; background: var(--hue); clip-path: var(--hex-clip); display: grid; place-items: center; font-family: var(--serif); font-size: 200px; color: #fff; }
+    .s-section h2 { font-size: 104px; max-width: 900px; margin: 0 0 24px; }
+    .s-section p { color: var(--soft); max-width: 860px; }
+
+    /* Bullets: hex markers in the slide's hue. */
+    .s-bullets ul { list-style: none; padding: 0; margin: 0; }
+    .s-bullets li { position: relative; padding-left: 56px; margin-bottom: 26px; }
+    .s-bullets li::before { content: ""; position: absolute; left: 0; top: 0.42em; width: 22px; height: 25px; background: var(--hue); clip-path: var(--hex-clip); }
+    .s-bullets li span { color: var(--soft); }
+
+    /* Quote */
+    .s-quote { justify-content: center; }
+    .s-quote blockquote { margin: 0; font-family: var(--serif); font-size: 80px; line-height: 1.12; max-width: 1240px; border-left: 10px solid var(--hue); padding-left: 56px; }
+    .s-quote cite { display: block; margin-top: 40px; padding-left: 66px; font-family: var(--mono); font-style: normal; font-size: 26px; color: var(--soft); }
+
+    /* Big number */
+    .s-stat { justify-content: center; }
+    .s-stat .big { font-family: var(--serif); font-size: 300px; line-height: 0.9; background: var(--spec-gradient-diag); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .s-stat p { font-size: 46px; max-width: 1100px; margin-top: 30px; }
+
+    /* Two columns */
+    .s-split .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; flex: 1; }
+    .s-split .col { background: var(--panel); border: 2px solid var(--rule); border-radius: 24px; padding: 48px; border-top: 10px solid var(--hue); }
+    .s-split .col h3 { font-family: var(--mono); font-size: 24px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--soft); margin: 0 0 24px; font-weight: 500; }
+    .s-split .col p { font-size: 34px; }
+
+    /* Image / screenshot */
+    .s-image figure { margin: 0; flex: 1; display: flex; flex-direction: column; min-height: 0; }
+    .s-image .frame { flex: 1; min-height: 0; border: 2px dashed var(--rule); border-radius: 24px; display: grid; place-items: center; overflow: hidden; background: var(--panel); }
+    .s-image .frame { position: relative; }
+    .s-image .frame img { position: absolute; inset: 16px; width: calc(100% - 32px); height: calc(100% - 32px); object-fit: contain; }
+    .s-image .frame .ph { font-family: var(--mono); font-size: 26px; color: var(--faint); }
+    .s-image figcaption { margin-top: 20px; font-family: var(--mono); font-size: 22px; color: var(--soft); }
+    .s-image h2 { margin-bottom: 32px; font-size: 64px; }
+    /* Two screenshots side by side: wrap two <figure>s in .pair. */
+    .s-image .pair { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+
+    /* Photo: text on the left, a full-height photo on the right (the Orange slides).
+       Set --focus on the <figure> to choose which part of the photo survives the crop. */
+    .s-photo { justify-content: center; padding-right: 880px; }
+    .s-photo h2 { font-size: 104px; margin-bottom: 28px; }
+    .s-photo p { color: var(--soft); }
+    .s-photo .line { font-family: var(--serif); font-style: italic; font-size: 56px; line-height: 1.2; color: var(--ink); }
+    .s-photo .photo { position: absolute; right: 0; top: 18px; bottom: 0; width: 780px; margin: 0; border-left: 10px solid var(--hue); background: var(--rail); }
+    .s-photo .photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: var(--focus, 50% 50%); }
+    .s-photo .num { color: #fff; text-shadow: 0 1px 6px rgba(31, 35, 40, 0.6); }
+
+    /* Diary timeline: a looping line whose numbered points are the diary posts, each a link (slide 3). */
+    .pvr { flex: 1; min-height: 0; }
+    .pvr svg { width: 100%; height: 100%; display: block; }
+    .pvr text { font-family: var(--sans); }
+    .pvr .posts circle { fill: var(--ink); }
+    .pvr .posts .n { font-family: var(--mono); font-size: 19px; font-weight: 600; fill: #fff; text-anchor: middle; }
+    .pvr .posts .d { font-family: var(--mono); font-size: 18px; letter-spacing: .1em; text-transform: uppercase; fill: var(--soft); }
+    .pvr .posts .t { font-size: 24px; fill: var(--ink); }
+    .pvr .posts a { cursor: pointer; }
+    .pvr .posts a:hover circle { fill: var(--hue); }
+    .pvr .posts a:hover .t { text-decoration: underline; }
+
+    /* Chain: a row of hex steps joined by arrows (pipelines and loops). --c sets a step's colour;
+       .who marks a step a person owns. */
+    .chain { display: flex; align-items: flex-start; flex: 1; margin-top: 28px; }
+    .chain .st { flex: 1; text-align: center; position: relative; padding: 0 10px; }
+    .chain .st .hx { width: 116px; height: 134px; margin: 0 auto 20px; clip-path: var(--hex-clip); background: var(--c, var(--hue)); color: #fff; display: grid; place-items: center; font-family: var(--serif); font-size: 58px; }
+    .chain .st.who .hx { background: var(--ink); }
+    .chain .st b { display: block; font-size: 28px; font-weight: 600; margin-bottom: 8px; }
+    .chain .st span { display: block; font-size: 22px; line-height: 1.3; color: var(--soft); }
+    .chain .st + .st::before { content: "→"; position: absolute; left: -17px; top: 42px; font-size: 38px; color: var(--faint); }
+    .chain .st i.tag { display: inline-block; margin-top: 14px; font-family: var(--mono); font-style: normal; font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--hue); border: 2px solid currentColor; border-radius: 999px; padding: 3px 14px; }
+    .chain .st i.tag.muted { color: var(--faint); }
+    .chain-key { font-family: var(--mono); font-size: 20px; color: var(--soft); margin: 0 0 56px; display: flex; gap: 36px; }
+    .chain-key i { display: inline-block; width: 18px; height: 21px; clip-path: var(--hex-clip); background: var(--hue); margin-right: 10px; vertical-align: -3px; }
+    .chain-key i.who { background: var(--ink); }
+
+    /* Code and a small table inside a two-column card. */
+    .s-split pre { font-family: var(--mono); font-size: 25px; line-height: 1.5; margin: 0; white-space: pre-wrap; background: var(--rail); border-radius: 14px; padding: 22px 26px; }
+    .s-split table { border-collapse: collapse; width: 100%; font-size: 25px; }
+    .s-split th { font-family: var(--mono); font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--soft); text-align: left; font-weight: 500; padding: 0 12px 10px 0; border-bottom: 2px solid var(--rule); }
+    .s-split td { padding: 12px 12px 12px 0; border-bottom: 2px solid var(--rule); }
+    .s-split td.ok { color: var(--spec-2); font-weight: 600; }
+    .s-split .col p.small { font-size: 26px; color: var(--soft); margin-top: 20px; }
+
+    /* "What are agents good at now?" callout: Orange says the answer from the bottom-right corner.
+       Always amber, whatever the section hue. Markup:
+       <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p>
+       <p class="a">Writing code!</p></div><div class="who"></div></div> */
+    .goodat { position: absolute; right: 140px; bottom: 96px; z-index: 2; display: flex; align-items: center; gap: 26px; }
+    .goodat .bub { position: relative; background: #fbf1e0; border: 3px solid var(--spec-1); border-radius: 26px; padding: 20px 32px 22px; }
+    .goodat .bub::after { content: ""; position: absolute; right: -15px; top: 50%; width: 24px; height: 24px; margin-top: -12px; background: #fbf1e0; border-right: 3px solid var(--spec-1); border-top: 3px solid var(--spec-1); transform: rotate(45deg); }
+    .goodat .q { font-family: var(--mono); font-size: 18px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--soft); margin: 0 0 4px; line-height: 1.3; }
+    .goodat .a { font-family: var(--serif); font-size: 50px; line-height: 1.05; margin: 0; color: var(--ink); }
+    .goodat .who { position: relative; flex: none; width: 170px; height: 196px; clip-path: none; }
+    .goodat .who::before { content: ""; position: absolute; inset: 0; clip-path: var(--hex-clip); background: var(--spec-1); }
+    .goodat .who::after { content: ""; position: absolute; inset: 7px 6px; clip-path: var(--hex-clip); background: url(../assets/orange/orange-face.jpg) center / cover; }
+    .goodat .who i { position: absolute; right: -22px; bottom: -8px; z-index: 1; width: 62px; height: 72px; clip-path: var(--hex-clip); background: var(--ink); display: grid; place-items: center; font-size: 32px; font-style: normal; }
+
+    /* The callouts are a second click: hidden when a slide opens, shown when its slide gets
+       the "revealed" class (JS: next() reveals before it advances). Always shown in the overview,
+       in print, and with ?reveal in the URL. */
+    .goodat { opacity: 0; transform: translateY(14px) scale(0.96); transition: opacity 220ms ease, transform 220ms ease; pointer-events: none; }
+    .slide.revealed .goodat, body.overview .goodat, body.reveal-all .goodat { opacity: 1; transform: none; }
+    @media print { .goodat { opacity: 1 !important; transform: none !important; } }
+
+    /* Thumbs-down version: add class "bad". Muted red, an unimpressed Orange, and it sits in the
+       bottom-left corner facing the other way, so a slide can carry one of each. */
+    .goodat.bad { right: auto; left: 140px; flex-direction: row-reverse; }
+    .goodat.bad .bub { background: #fbeceb; border-color: var(--spec-0); }
+    .goodat.bad .bub::after { right: auto; left: -15px; background: #fbeceb; border: 0; border-left: 3px solid var(--spec-0); border-bottom: 3px solid var(--spec-0); }
+    .goodat.bad .who::before { background: var(--spec-0); }
+    .goodat.bad .who::after { background-image: url(../assets/orange/orange-face-unimpressed.jpg); }
+    .goodat.bad .who i { right: auto; left: -22px; }
+
+    /* Levels ladder: six rows, level 5 on top. Put class "here" on the row to mark, with a
+       <i class="tag"> for its label. */
+    .levels { display: flex; flex-direction: column; gap: 8px; flex: 1; justify-content: center; }
+    .levels .lv { display: grid; grid-template-columns: 52px 390px 1fr auto; align-items: center; gap: 22px; padding: 6px 24px 6px 12px; border-radius: 16px; border: 2px solid transparent; }
+    .levels .lv .hx { width: 48px; height: 55px; clip-path: var(--hex-clip); background: var(--c); color: #fff; display: grid; place-items: center; font-family: var(--serif); font-size: 30px; }
+    .levels .lv b { font-size: 29px; font-weight: 600; }
+    .levels .lv span { font-size: 25px; color: var(--soft); }
+    .levels .lv.here { background: var(--panel); border-color: var(--c); box-shadow: 0 8px 24px rgba(31, 35, 40, 0.07); }
+    .levels .lv .tag { font-family: var(--mono); font-style: normal; font-size: 19px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c); white-space: nowrap; }
+    .levels-src { font-family: var(--mono); font-size: 18px; color: var(--faint); margin: 10px 0 0; }
+
+    /* Lifecycle: three columns of steps, each marked by who does it now. */
+    .life { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; flex: 1; align-content: start; }
+    .life h3 { font-family: var(--mono); font-size: 22px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--soft); margin: 0 0 12px; font-weight: 500; }
+    .life .s { display: flex; align-items: center; gap: 14px; font-size: 25px; padding: 8px 16px; border-radius: 12px; margin-bottom: 8px; background: var(--panel); border: 2px solid var(--rule); }
+    .life .s::before { content: ""; flex: none; width: 18px; height: 21px; clip-path: var(--hex-clip); background: var(--ink); }
+    .life .s.ai { background: #e6f6f5; border-color: var(--hue); font-weight: 600; }
+    .life .s.ai::before { background: var(--hue); }
+    .life .s.both::before { background: linear-gradient(90deg, var(--ink) 50%, var(--hue) 50%); }
+    .life .s.auto { background: var(--rail); color: var(--soft); }
+    .life .s.auto::before { background: var(--faint); }
+    .chain-key i.auto { background: var(--faint); }
+
+    /* Three columns in a split: add class "c3" to .cols. */
+    .s-split .cols.c3 { grid-template-columns: repeat(3, 1fr); gap: 40px; }
+    .s-split .cols.c3 .col { padding: 40px; }
+    .s-split .cols.c3 .col p:not(.n) { font-size: 31px; }
+
+    /* Level strip: slide 14's ladder as six small hexes, top right, the current level filled.
+       <div class="lvstrip" style="--c: var(--spec-4)"><i>0</i>…<i class="on">4</i><i>5</i><b>Label</b></div> */
+    .lvstrip { position: absolute; right: 140px; top: 98px; display: flex; align-items: center; gap: 8px; }
+    .lvstrip i { width: 30px; height: 35px; clip-path: var(--hex-clip); background: var(--rule); color: var(--faint); display: grid; place-items: center; font-style: normal; font-family: var(--serif); font-size: 19px; }
+    .lvstrip i.on { width: 48px; height: 55px; background: var(--c); color: #fff; font-size: 30px; }
+    .lvstrip b { order: -1; margin-right: 12px; font-family: var(--mono); font-weight: 500; font-size: 19px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c); }
+
+    /* Org chart (obot v4): boxes and arrows in an SVG inside .pvr. */
+    .pvr.org .t { font-size: 25px; font-weight: 600; fill: var(--ink); }
+    .pvr.org .s { font-size: 17px; fill: var(--soft); }
+    .pvr.org .w { fill: #fff; }
+    .pvr.org .l { font-family: var(--mono); font-size: 15px; letter-spacing: .06em; text-transform: uppercase; fill: var(--soft); }
+    .pvr.org .n { font-family: var(--serif); font-style: italic; font-size: 27px; fill: var(--soft); }
+
+    /* Obot version title slide: the version's hex on the right (assets/hex/obot-vN.svg),
+       the set-up as a paragraph, and "what changed" as <p class="chg"><b>What changed</b>…</p>. */
+    .s-version { justify-content: center; background: var(--rail); padding-right: 640px; }
+    .s-version .vhex { position: absolute; right: 150px; top: 50%; width: 380px; height: 437px; margin-top: -200px; }
+    .s-version h2 { font-size: 104px; margin: 0 0 28px; }
+    .s-version p:not(.kicker) { color: var(--soft); font-size: 34px; }
+    .s-version p.chg { color: var(--ink); margin: 14px 0 0; }
+    .s-version p.chg b { display: block; font-family: var(--mono); font-weight: 500; font-size: 19px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--hue); margin-bottom: 6px; }
+
+    /* Journey row: a chain whose steps are pictures (the opener of beat 3). */
+    .chain.journey { align-items: flex-start; margin-top: 44px; }
+    .chain.journey .st img.vx, .chain.journey .st .ohex { display: block; width: 150px; height: 173px; margin: 0 auto 16px; }
+    .chain.journey .st .ohex { position: relative; clip-path: var(--hex-clip); background: var(--spec-1); }
+    .chain.journey .st .ohex::after { content: ""; position: absolute; inset: 7px 6px; clip-path: var(--hex-clip); background: url(../assets/orange/orange-face.jpg) center / cover; }
+    .chain.journey .st + .st::before { top: 62px; }
+
+    /* A big figure at the top of a split column. */
+    .s-split .cols .col p.n { font-family: var(--serif); font-size: 92px; line-height: 1; margin: 0 0 14px; color: var(--ink); }
+
+    /* Reserve slides: a tag in the header, and no slide number (JS leaves them out of the count). */
+    .slide .rsv { position: absolute; left: 140px; top: 48px; font-family: var(--mono); font-size: 18px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--spec-0); }
+
+    /* Gallery: a grid of small framed pictures, each with a label and a corner tag (<i>). */
+    .gallery { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px 20px; align-content: start; }
+    .gallery figure { margin: 0; position: relative; }
+    .gallery img { display: block; width: 100%; height: 170px; object-fit: contain; background: var(--panel); border: 2px solid var(--rule); border-radius: 12px; padding: 6px; }
+    .gallery figcaption { font-size: 21px; margin-top: 6px; white-space: nowrap; }
+    .gallery figure i { position: absolute; right: 8px; top: 8px; font-family: var(--mono); font-style: normal; font-size: 15px; background: var(--rail); color: var(--soft); border-radius: 999px; padding: 1px 9px; }
+
+    /* Capability timeline (beat 4): a month ruler with releases above and the obot versions below. */
+    .pvr.tl .d { font-family: var(--mono); font-size: 18px; letter-spacing: .1em; text-transform: uppercase; fill: var(--soft); text-anchor: middle; }
+    .pvr.tl .t { font-size: 25px; fill: var(--ink); text-anchor: middle; }
+    .pvr.tl .m { font-family: var(--mono); font-size: 18px; letter-spacing: .1em; text-transform: uppercase; fill: var(--soft); text-anchor: middle; }
+    .pvr.tl .y { font-family: var(--mono); font-size: 18px; letter-spacing: .1em; fill: var(--faint); }
+    .pvr.tl .stem { stroke: var(--faint); stroke-width: 2; }
+    .pvr.tl .rel { fill: var(--ink); }
+    .pvr.tl .not { fill: var(--bg); stroke: var(--ink); stroke-width: 3; }
+    .pvr.tl .v { font-size: 26px; font-weight: 600; fill: var(--ink); text-anchor: middle; }
+    .pvr.tl .on { font-size: 21px; fill: var(--ink); text-anchor: middle; }
+    .pvr.tl .card { fill: var(--panel); stroke: var(--rule); stroke-width: 2; }
+    .pvr.tl .ct { font-family: var(--mono); font-size: 18px; letter-spacing: .14em; text-transform: uppercase; fill: var(--hue); }
+    .pvr.tl .ci { font-size: 24px; fill: var(--ink); }
+    .pvr.tl .ci tspan { font-size: 20px; fill: var(--soft); }
+    .pvr.tl .k { font-family: var(--mono); font-size: 18px; fill: var(--soft); }
+    
+
+    /* Placeholder slide for the outline stage. */
+    .s-todo { background: repeating-linear-gradient(135deg, var(--bg) 0 28px, #f4f5f1 28px 56px); }
+    .s-todo .todo { margin-top: 12px; font-family: var(--mono); font-size: 26px; color: var(--soft); border: 2px dashed var(--hue); border-radius: 18px; padding: 28px 36px; background: var(--bg); }
+    .s-todo .todo li { font-size: 28px; margin-bottom: 8px; }
+
+    /* Speaker notes: hidden unless toggled with N. */
+    .notes { display: none; }
+    body.show-notes .notes-panel { display: block; }
+    .notes-panel {
+      display: none; position: fixed; left: 0; right: 0; bottom: 0; max-height: 34vh; overflow: auto; z-index: 5;
+      background: rgba(31, 35, 40, 0.94); color: #f3f4f1; font-family: var(--sans); font-size: 16px; line-height: 1.55; padding: 18px 28px;
+    }
+    .notes-panel b { font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--spec-3); display: block; margin-bottom: 6px; }
+
+
+    .thumb { display: contents; }
+    /* Overview grid (O). */
+    body.overview { overflow: auto; }
+    body.overview .deck { position: static; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; padding: 40px 16px 48px; place-items: stretch; align-items: start; }
+    body.overview .slide { display: flex; position: relative; left: auto; top: auto; margin: 0; transform-origin: top left; transform: scale(var(--thumb, 0.18)); cursor: pointer; }
+    body.overview .thumb { display: block; position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 6px; outline: 3px solid transparent; }
+    body.overview .thumb.current { outline-color: var(--spec-3); }
+
+    body.overview .hint { display: none; }
+    .hint { position: fixed; right: 14px; bottom: 8px; font-family: var(--mono); font-size: 12px; color: var(--faint); z-index: 6; }
+
+    @media print {
+      @page { size: 1600px 900px; margin: 0; }
+      body { overflow: visible; background: none; }
+      .deck { position: static; display: block; }
+      .slide { display: flex !important; position: relative; left: 0; top: 0; margin: 0; transform: none; box-shadow: none; page-break-after: always; }
+      .hint, .notes-panel { display: none !important; }
+    }
+  </style>
+  <style>
+    /* Artifacts wall (beat 2 draft): a close variant of .gallery. Everything here is scoped to
+       .s-artifacts. Thumbnails keep the captures' own 64:45 shape, so nothing is cropped. */
+    .s-artifacts h2 { font-size: 64px; margin-bottom: 26px; }
+    .s-artifacts .gallery { gap: 14px 20px; }
+    .s-artifacts .gallery a { display: block; }
+    .s-artifacts .gallery img { height: auto; aspect-ratio: 64 / 45; object-fit: cover; object-position: top; padding: 0; }
+    .s-artifacts .src { font-family: var(--mono); font-size: 21px; line-height: 1.4; color: var(--soft); margin: 14px 0 0; max-width: 720px; white-space: nowrap; }
+    /* A smaller callout that sits under the grid, so it covers no thumbnail or label. */
+    .s-artifacts .goodat { bottom: 30px; gap: 20px; }
+    .s-artifacts .goodat .bub { padding: 14px 26px 16px; }
+    .s-artifacts .goodat .a { font-size: 40px; }
+    .s-artifacts .goodat .who { width: 130px; height: 150px; }
+    .s-artifacts .goodat .who i { width: 50px; height: 58px; font-size: 26px; right: -16px; bottom: -6px; }
+  </style>
+</head>
+<body>
+  <div class="deck" id="deck">
+
+    <!-- ============================================================
+         DRAFT · beat 2 · the artifacts wall (drafted 2026-10-05 for the lead session to place).
+         To move it into keynote/slides.html: copy the <section> below and the small second
+         <style> block in the <head> (everything scoped to .s-artifacts), and change the image
+         paths from ../assets/artifacts/ to assets/artifacts/. Recommended position: straight
+         after slide 20, "Agents draft; people approve". Sources and what was left out:
+         keynote/_notes/beat2-artifacts-sources.md.
+         ============================================================ -->
+    <section class="slide s-artifacts" data-hue="3">
+      <p class="kicker">Plan · the artifacts</p>
+      <h2>The artifact is what a person reviews</h2>
+      <div class="gallery">
+        <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/nepexplorer-migration-assessment-2026-07-15/" target="_blank" rel="noopener"><img src="../assets/artifacts/assessment-nepexplorer-migration.png" alt="A migration assessment page: a title, an executive summary in three cards and a row of headline figures" /></a><figcaption>Migration assessment</figcaption></figure>
+        <figure><a href="https://jwildfire.github.io/obot.roadmap/requirements/design/35_design.html#data" target="_blank" rel="noopener"><img src="../assets/artifacts/data-requirement-nepexplorer.png" alt="The data requirement section of a design page: a table of settings, defaults and what each column is used for" /></a><figcaption>Data requirement</figcaption></figure>
+        <figure><a href="https://jwildfire.github.io/obot.roadmap/requirements/design/352_design.html" target="_blank" rel="noopener"><img src="../assets/artifacts/design-basic-app.png" alt="A design document: a title, a summary and a sketch of the screen the user will see" /></a><figcaption>Design document</figcaption></figure>
+        <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/safety-viz-homepage-options-2026-07-11/" target="_blank" rel="noopener"><img src="../assets/artifacts/options-safety-viz-homepage.png" alt="A layout options page: one of five mocked-up home pages, with notes on what it changes" /></a><figcaption>Layout options</figcaption></figure>
+        <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/goal-sessions-plan-2026-09-10/" target="_blank" rel="noopener"><img src="../assets/artifacts/plan-requirement-sessions.png" alt="A plan page: a title, a summary and a boxed list of the decisions it rests on" /></a><figcaption>Roadmap plan</figcaption></figure>
+        <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/decisions/2026-08-17-safetycensus-stay-or-go/" target="_blank" rel="noopener"><img src="../assets/artifacts/decision-safetycensus-stay-or-go.png" alt="A decision page: two numbered questions at the top and the recorded answer below" /></a><figcaption>Decision record</figcaption></figure>
+        <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/sv-v1.8-demo/#app" target="_blank" rel="noopener"><img src="../assets/artifacts/release-demo-safety-viz-v1.8.png" alt="An annotated release demo: a paragraph on what changed above a screenshot of a chart in the new app" /></a><figcaption>Release demo</figcaption></figure>
+        <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/gsm-safety-v1.0.0-rc1/" target="_blank" rel="noopener"><img src="../assets/artifacts/qualification-evidence-gsm-safety-v1.0-rc1.png" alt="A qualification evidence page: four headline counts above a grid of working examples" /></a><figcaption>Qualification evidence</figcaption></figure>
+        <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/release-review-plan-2026-09-12/" target="_blank" rel="noopener"><img src="../assets/artifacts/review-guide-release-plan.png" alt="A release review guide: a headline, a summary and the reviewer's recorded decisions" /></a><figcaption>Release review guide</figcaption></figure>
+        <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/org-chart/" target="_blank" rel="noopener"><img src="../assets/artifacts/org-chart.png" alt="An org chart drawn as boxes and arrows: one person, three named agents and a crew of workers" /></a><figcaption>Org chart</figcaption></figure>
+      </div>
+      <p class="src">Examples from my side project, standing in for the team's</p>
+      <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Designing pages!</p></div><div class="who"><i>👍</i></div></div>
+      <aside class="notes">
+        DRAFT (2026-10-05), built at Jeremy's request: "Are we capturing the importance of
+        artifacts in beat 2? I think it maybe got demoted. A slide with thumbnails of a bunch of
+        the artifacts goes a long way." Headline, kicker, labels, caption line and callout are
+        all draft wording.
+        <br><br>WHAT THESE ARE, AND WHAT THEY ARE NOT. All ten pages are from obot.roadmap, the
+        public hub of the side project (beat 3's subject), not from the team's gsm.roadmap.
+        Checked on 2026-10-05 without logging in: the gsm.roadmap site
+        (gilead-biostats.github.io/gsm.roadmap) redirects to a GitHub sign-in page and the
+        repository returns 404, so none of its artifacts can be shown or linked from a public
+        slide. The caption line says the pages are stand-ins. Nothing on the slide or in these
+        notes describes what any gsm.roadmap page contains.
+        <br><br>The point (draft; Jeremy writes the final words): "Agents draft; people approve"
+        only works if there is something worth approving. At each stage the agent writes a page,
+        not a chat reply or a diff: something a person can open in a browser, read in a few
+        minutes and sign. The page is the hand-off between the agent and the person, and the
+        published pages become the record of what was decided and why.
+        <br><br>Said, not shown: these used to be Markdown files nobody opened. The same content
+        as a designed HTML page gets read. Jeremy's line from the outline: "Design: artifacts are
+        amazing; .md → .html".
+        <br><br>The ten thumbnails, in slide order (each is a link; captured 2026-10-05 at
+        1280 × 900 in light mode, shrunk to 640 px wide):
+        <br>1. Migration assessment: can an old kidney-safety chart move to the new library?
+        https://jwildfire.github.io/obot.roadmap/reports/nepexplorer-migration-assessment-2026-07-15/
+        <br>2. Data requirement: section 5 of the same chart's design page, the table of columns
+        the chart needs. https://jwildfire.github.io/obot.roadmap/requirements/design/35_design.html#data
+        <br>3. Design document: the basic app, "load, map and view a study on one page".
+        https://jwildfire.github.io/obot.roadmap/requirements/design/352_design.html
+        <br>4. Layout options: five mocked-up home pages to choose between (option A shown).
+        https://jwildfire.github.io/obot.roadmap/reports/safety-viz-homepage-options-2026-07-11/
+        <br>5. Roadmap plan: "Five objectives, five weeks, two lanes", the September plan.
+        https://jwildfire.github.io/obot.roadmap/reports/goal-sessions-plan-2026-09-10/
+        <br>6. Decision record: two numbered questions about one function, and the answer as dictated.
+        https://jwildfire.github.io/obot.roadmap/reports/decisions/2026-08-17-safetycensus-stay-or-go/
+        <br>7. Release demo: the annotated demo for safety.viz v1.8.0 ("The demo app" section).
+        https://jwildfire.github.io/obot.roadmap/reports/sv-v1.8-demo/
+        <br>8. Qualification evidence: gsm.safety v1.0.0 release candidate 1.
+        https://jwildfire.github.io/obot.roadmap/reports/gsm-safety-v1.0.0-rc1/
+        <br>9. Release review guide: "Two releases are waiting on you", with the decisions recorded on the page.
+        https://jwildfire.github.io/obot.roadmap/reports/release-review-plan-2026-09-12/
+        <br>10. Org chart: who answers to whom among the agents ("The chart" section).
+        https://jwildfire.github.io/obot.roadmap/reports/org-chart/
+        <br><br>WHERE IT GOES. Recommended: straight after slide 20, "Agents draft; people
+        approve", as the new slide 21. Slide 20 names an artifact at each of the six stages and
+        its notes say each is published by a pull request and indexed on a site; this slide is
+        the picture of that sentence. The first row follows slide 20's order (requirement, data,
+        design, plan); the second row is what comes out at release. Then the Run slides carry on
+        as now. Alternative: if stand-ins from the side project feel wrong in the middle of the
+        day-job beat, the same slide works unchanged in beat 3 (hue 4, without the caption's
+        second half), next to the slide where obot starts writing requirements.
+        <br><br>CALLOUT. "Drafting documents!" is already on slide 20, so this one proposes
+        "Designing pages!", from the unplaced candidate in the outline ("design (artifacts,
+        .md → .html)"). Other wordings: "Design!", "Making it readable", "Turning notes into
+        pages". It is a smaller copy of the callout so that it sits under the grid and covers no
+        label; if three callouts in two slides is one too many, delete the .goodat div and the
+        caption line can run the full width.
+        <br><br>Other headlines considered: "A page to review at every gate"; "Every stage
+        leaves a page a person can read"; "The artifacts: a web page at every stage".
+        <br><br>TODO (Jeremy): (1) Vet all ten pages; they are public already, but they have not
+        been on a keynote slide. Two things to look at in particular: thumbnail 9 names the
+        other repositories of the side project in small print, and thumbnail 7 shows a scatter
+        plot of the public demo study. (2) Supply or approve real gsm.roadmap artifacts if any
+        can be shown: screenshots you take yourself, cleared for a public talk, would replace
+        some or all of these and the caption line would go. (3) Confirm the caption wording:
+        it tells the room these are not the team's pages. (4) Say whether the callout stays.
+      </aside>
+    </section>
+
+  </div>
+
+  <div class="notes-panel" id="notes" aria-live="polite"></div>
+  <div class="hint">← → · O overview · N notes · F fullscreen</div>
+
+  <script>
+    (function () {
+      var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+      var notes = document.getElementById('notes');
+      var i = 0;
+      var foot = 'R/Pharma 2026 · Jeremy Wildfire';
+
+      // Reserve slides (data-reserve) stay in the file but are left out of the count and the progress strip.
+      var counted = slides.filter(function (s) { return !s.hasAttribute('data-reserve'); });
+      slides.forEach(function (s, k) {
+        if (!s.classList.contains('s-title')) s.setAttribute('data-foot', foot);
+        var pos = counted.indexOf(s), n = document.createElement('span');
+        n.className = pos < 0 ? 'rsv' : 'num';
+        n.textContent = pos < 0 ? (s.getAttribute('data-reserve') === 'section' ? 'Reserves' : 'Reserve · demoted ' + s.getAttribute('data-reserve')) : (pos + 1) + ' / ' + counted.length;
+        s.appendChild(n);
+        // Fill the hex strip in proportion to progress, snapped to whole hexes.
+        var HEX = 18 * 6.928 / 9, f = document.createElement('span');
+        f.className = 'hexfill';
+        f.style.width = (pos < 0 ? 0 : pos === counted.length - 1 ? 1600 : Math.round((pos + 1) / counted.length * 1600 / HEX) * HEX) + 'px';
+        s.appendChild(f);
+        // Wrap for overview thumbnails.
+        var w = document.createElement('div');
+        w.className = 'thumb';
+        s.parentNode.insertBefore(w, s);
+        w.appendChild(s);
+        s.addEventListener('click', function () {
+          if (document.body.classList.contains('overview')) { toggleOverview(); go(k); }
+        });
+      });
+
+      function fit() {
+        var s = Math.min(window.innerWidth / 1600, window.innerHeight / 900);
+        document.documentElement.style.setProperty('--scale', s);
+        var t = document.querySelector('.thumb');
+        if (t && document.body.classList.contains('overview')) {
+          document.documentElement.style.setProperty('--thumb', t.clientWidth / 1600);
+        }
+      }
+
+      // go(k, revealed): show slide k. Its callouts start hidden unless revealed is true.
+      function go(k, revealed) {
+        i = Math.max(0, Math.min(slides.length - 1, k));
+        slides.forEach(function (s, k2) {
+          s.classList.toggle('active', k2 === i);
+          s.classList.toggle('revealed', k2 === i && !!revealed);
+          s.parentNode.classList.toggle('current', k2 === i);
+        });
+        var a = slides[i].querySelector('.notes');
+        notes.innerHTML = '<b>Notes · slide ' + (i + 1) + '</b>' + (a ? a.innerHTML : '<i>No notes.</i>');
+        if (location.hash !== '#' + (i + 1)) history.replaceState(null, '', '#' + (i + 1));
+      }
+
+      // Forward: the first press on a slide with a callout reveals it; the next one advances.
+      // Back: hides a revealed callout first, then steps back to the previous slide fully shown.
+      function hasCallout() { return !!slides[i].querySelector('.goodat'); }
+      function next() {
+        if (hasCallout() && !slides[i].classList.contains('revealed')) slides[i].classList.add('revealed');
+        else if (i < slides.length - 1) go(i + 1);
+      }
+      function prev() {
+        if (hasCallout() && slides[i].classList.contains('revealed')) slides[i].classList.remove('revealed');
+        else if (i > 0) go(i - 1, true);
+      }
+
+      function toggleOverview() {
+        document.body.classList.toggle('overview');
+        fit();
+        if (document.body.classList.contains('overview')) slides[i].parentNode.scrollIntoView({ block: 'center' });
+      }
+
+      document.addEventListener('keydown', function (e) {
+        if (e.metaKey || e.ctrlKey || e.altKey) return;
+        var k = e.key;
+        if (k === 'ArrowRight' || k === 'PageDown' || k === ' ' || k === 'ArrowDown') { e.preventDefault(); next(); }
+        else if (k === 'ArrowLeft' || k === 'PageUp' || k === 'ArrowUp') { e.preventDefault(); prev(); }
+        else if (k === 'Home') go(0);
+        else if (k === 'End') go(slides.length - 1);
+        else if (k === 'o' || k === 'O' || k === 'Escape') { if (k !== 'Escape' || document.body.classList.contains('overview')) toggleOverview(); }
+        else if (k === 'n' || k === 'N') document.body.classList.toggle('show-notes');
+        else if (k === 'f' || k === 'F') {
+          if (!document.fullscreenElement) document.documentElement.requestFullscreen && document.documentElement.requestFullscreen();
+          else document.exitFullscreen && document.exitFullscreen();
+        }
+      });
+
+      // Click / tap: right two-thirds advances, left third goes back.
+      document.getElementById('deck').addEventListener('click', function (e) {
+        if (document.body.classList.contains('overview')) return;
+        if (e.target.closest('a')) return;
+        if (e.clientX > window.innerWidth / 3) next(); else prev();
+      });
+
+      if (/[?&]reveal\b/.test(location.search)) document.body.classList.add('reveal-all');
+      window.addEventListener('resize', fit);
+      window.addEventListener('hashchange', function () { go(parseInt(location.hash.slice(1), 10) - 1 || 0); });
+      fit();
+      go((parseInt(location.hash.slice(1), 10) || 1) - 1);
+    })();
+  </script>
+</body>
+</html>
