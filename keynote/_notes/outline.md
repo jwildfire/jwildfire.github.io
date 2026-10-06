@@ -194,9 +194,11 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - s2 What are they not good at: gathers the thumbs-down callouts
     - How do we do this in GxP?
       - s3 Velocity: the capability timeline. Drafted; it now closes beat 3 (slide 46), so beat 4 either calls back to it or shows it again
-      - s4 Costs: a spending slide from the hub's analytics page. `[TODO]` in progress: a worker is refreshing the page, then drafting the slide (`keynote/_notes/beat4-spending-draft.html`)
+      - s4 Costs (built, slide 48; draft wording): "$11,750 at API prices. I paid $200 a month." Bars by obot version (v3 $3,330; v4 $6,020 or more; v5 $450 or more; v5.5 $1,955 so far), with the uncertain parts hatched; cards for what he paid, the price per million tokens ($0.97 in July, $0.41 in October) and the two long weekends. Sources in `keynote/_notes/beat4-spending-sources.md`
+        - The numbers come from the hub's usage data brought up to 6 October in obot.roadmap#370, which is open and not merged; the live analytics page still stops in August
+        - `[TODO]` Jeremy: "$200 a month" is unconfirmed after 6 September; the July weekend's $1,273 (diary #6) is mostly not in the hub data, which holds $146 for 9 to 12 July, so the true total is probably about $1,100 higher; refresh the October figures before the talk
       - s5 Quality
-      - s6 SDLC / roadmap: a tree of objectives → requirements → tasks coloured by status, from a new hub page. `[TODO]` in progress: a worker is preparing tree-type options for Jeremy to choose from
+      - s6 SDLC / roadmap: two slides (Jeremy, 2026-10-05: "Both, as two slides"), a treemap of the whole roadmap and a node-link tree of one objective, coloured by status, each a date-stamped snapshot embedded in the deck. No hub page for now ("No need for a day of work on the website right now"). `[TODO]` in progress: a worker is building them; the five options he chose from are in a hub worktree, unpublished
       - s7 Best practices: orchestration, agents
     - Closing
     - In the earlier list but not in this structure: the Orange transition; the summer in one number; the bottleneck moved (review); mixed feelings; the execution gap; open source is the path; what is next; if the models were frozen today; the question, one last time; the thank-you slide

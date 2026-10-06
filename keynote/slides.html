@@ -341,6 +341,26 @@
     .s-artifacts .goodat .who { width: 130px; height: 150px; }
     .s-artifacts .goodat .who i { width: 50px; height: 58px; font-size: 26px; right: -16px; bottom: -6px; }
 
+      /* Spending (beat 4): four bars, one per obot version, and three cards. */
+      .pvr.sp .tick { font-family: var(--mono); font-size: 18px; fill: var(--soft); text-anchor: end; }
+      .pvr.sp .grid { stroke: var(--rule); stroke-width: 2; }
+      .pvr.sp .base { stroke: var(--faint); stroke-width: 2; }
+      .pvr.sp .bar { fill: var(--hue); }
+      .pvr.sp .flr { fill: url(#sp-hatch); stroke: var(--hue); stroke-width: 2; }
+      .pvr.sp .hb { fill: var(--bg); }
+      .pvr.sp .hl { fill: var(--hue); }
+      .pvr.sp .v { font-size: 30px; font-weight: 600; fill: var(--ink); text-anchor: middle; }
+      .pvr.sp .v .q { font-size: 21px; font-weight: 400; fill: var(--soft); }
+      .pvr.sp .ver { font-size: 26px; font-weight: 600; fill: var(--ink); text-anchor: middle; }
+      .pvr.sp .per { font-size: 21px; fill: var(--ink); text-anchor: middle; }
+      .pvr.sp .lg { font-size: 20px; fill: var(--soft); }
+      .pvr.sp .card { fill: var(--panel); stroke: var(--rule); stroke-width: 2; }
+      .pvr.sp .ct { font-family: var(--mono); font-size: 18px; letter-spacing: .14em; text-transform: uppercase; fill: var(--soft); }
+      .pvr.sp .big { font-family: var(--serif); font-size: 54px; fill: var(--ink); }
+      .pvr.sp .sub { font-size: 21px; fill: var(--soft); }
+      .pvr.sp .ln { font-size: 26px; fill: var(--ink); }
+      .pvr.sp .ln .k { fill: var(--soft); }
+
     /* Placeholder slide for the outline stage. */
     .s-todo { background: repeating-linear-gradient(135deg, var(--bg) 0 28px, #f4f5f1 28px 56px); }
     .s-todo .todo { margin-top: 12px; font-family: var(--mono); font-size: 26px; color: var(--soft); border: 2px dashed var(--hue); border-radius: 18px; padding: 28px 36px; background: var(--bg); }
@@ -1540,7 +1560,7 @@
         reviews the release candidates." Before a release candidate reaches him, three reviewer
         agents read it for correctness, for the definition of done and for the house rules.
         <br><br>An example to give out loud, from the next version: the hub's tracker page,
-        filtered to the objective "Biomarker charts", showed 12 of 12 requirements released and 37 of 37 tasks done on 2026-10-05;
+        filtered to the objective "Biomarker charts", showed 12 of 12 requirements released and 37 of 37 tasks done on the morning of 2026-10-05 (by evening a thirteenth requirement was in session, with 43 tasks in all);
         its four releases are bio.viz and gsm.bio v0.1.0 and v0.2.0. Across the whole hub that
         day: 10 objectives, 175 requirements (66 released, 44 retired), 266 tasks. A screenshot
         of that tracker view is in keynote/assets/obot-tracker-biomarkers.png if a picture of
@@ -1900,12 +1920,165 @@
       <p class="kicker">Outline</p>
       <h2>Beat 4 to be drafted</h2>
       <div class="todo">
-        <p>Beats 1 to 3 (slides 1–46) are drafted. Beat 4 follows keynote/_notes/outline.md.</p>
+        <p>Beats 1 to 3 (slides 1–46) are drafted. Beat 4 follows keynote/_notes/outline.md; its drafted slides come next, in no settled order.</p>
         <ul>
           <li>Source digest: keynote/_notes/research-digest.md</li>
           <li>Drop content in: keynote/_notes/inbox/</li>
         </ul>
       </div>
+    </section>
+
+    <!-- 4 · Lessons learned. Drafted so far (2026-10-05): the costs slide. -->
+    <section class="slide" data-hue="5">
+      <p class="kicker">Costs</p>
+      <h2 style="font-size: 64px; margin-bottom: 14px">$11,750 at API prices. I paid $200 a month.</h2>
+      <div class="pvr sp">
+        <svg viewBox="0 0 1320 470" role="img" aria-label="Bar chart of spend at API list prices for four obot versions. Version 3, July: 3,330 dollars. Version 4, August to 10 September: 6,020 dollars or more, of which 2,190 is a floor. Version 5, 11 to 30 September: 450 dollars or more, all of it a floor. Version 5.5, October so far: 1,955 dollars. Beside it: what was paid, 200 dollars a month; the price per million tokens, 97 cents in July and 41 cents in October; and two long weekends, 1.0 billion tokens for 1,273 dollars in July and 3.9 billion tokens for 1,639 dollars in October.">
+          <defs>
+            <pattern id="sp-hatch" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <rect class="hb" width="12" height="12"/><rect class="hl" width="5" height="12"/>
+            </pattern>
+          </defs>
+
+          <!-- the plot: one axis, dollars at list prices -->
+          <line class="grid" x1="80" x2="800" y1="60" y2="60"/><text class="tick" x="70" y="66">$6,000</text>
+          <line class="grid" x1="80" x2="800" y1="140" y2="140"/><text class="tick" x="70" y="146">$4,000</text>
+          <line class="grid" x1="80" x2="800" y1="220" y2="220"/><text class="tick" x="70" y="226">$2,000</text>
+
+          <!-- v3, July: $3,329.60 -->
+          <g><title>obot v3, July: $3,329.60 on 14 days with usage</title>
+            <path class="bar" d="M113,300V170.8Q113,166.8 117,166.8H213Q217,166.8 217,170.8V300Z"/></g>
+          <text class="v" x="165" y="154">$3,330</text>
+
+          <!-- v4, 1 August to 10 September: $3,830.50 recorded in full (1 to 19 August) + $2,189.76 floor -->
+          <g><title>obot v4, 1 to 19 August: $3,830.50, recorded in full</title>
+            <rect class="bar" x="293" y="146.8" width="104" height="153.2"/></g>
+          <g><title>obot v4, 20 August to 10 September: at least $2,189.76. A floor.</title>
+            <path class="flr" d="M294,144.8V63.2Q294,60.2 297,60.2H393Q396,60.2 396,63.2V144.8Z"/></g>
+          <text class="v" x="345" y="46">$6,020<tspan class="q"> or more</tspan></text>
+
+          <!-- v5, 11 to 30 September: $451.72 on three days, all of it a floor -->
+          <g><title>obot v5, 11 to 30 September: at least $451.72, on three days. A floor.</title>
+            <path class="flr" d="M474,299V285.9Q474,282.9 477,282.9H573Q576,282.9 576,285.9V299Z"/></g>
+          <text class="v" x="525" y="268">$450<tspan class="q"> or more</tspan></text>
+
+          <!-- v5.5, October: $1,954.96 for 1 to 6 October (UTC), still running -->
+          <g><title>obot v5.5, 1 to 6 October: $1,954.96 so far</title>
+            <path class="bar" d="M653,300V225.8Q653,221.8 657,221.8H753Q757,221.8 757,225.8V300Z"/></g>
+          <text class="v" x="705" y="208">$1,955<tspan class="q"> so far</tspan></text>
+
+          <line class="base" x1="80" x2="800" y1="300" y2="300"/>
+
+          <!-- who each bar is -->
+          <image href="assets/hex/obot-v3.svg" x="143" y="310" width="44" height="50.6"/>
+          <text class="ver" x="165" y="390">v3</text><text class="per" x="165" y="418">July</text>
+          <image href="assets/hex/obot-v4.svg" x="323" y="310" width="44" height="50.6"/>
+          <text class="ver" x="345" y="390">v4</text><text class="per" x="345" y="418">Aug to 10 Sep</text>
+          <image href="assets/hex/obot-v5.svg" x="503" y="310" width="44" height="50.6"/>
+          <text class="ver" x="525" y="390">v5</text><text class="per" x="525" y="418">11 to 30 Sep</text>
+          <image href="assets/hex/obot-v5-5.svg" x="683" y="310" width="44" height="50.6"/>
+          <text class="ver" x="705" y="390">v5.5</text><text class="per" x="705" y="418">October</text>
+
+          <!-- the one legend entry: what hatching means -->
+          <rect class="flr" x="81" y="443" width="30" height="20"/>
+          <text class="lg" x="122" y="460">A floor: most of those session logs were deleted before they were read</text>
+
+          <!-- three cards -->
+          <rect class="card" x="851" y="1" width="468" height="142" rx="16"/>
+          <text class="ct" x="879" y="38">What I paid</text>
+          <text class="big" x="877" y="92">$200 a month</text>
+          <text class="sub" x="879" y="124">One Claude Max plan, with a weekly limit</text>
+
+          <rect class="card" x="851" y="164" width="468" height="142" rx="16"/>
+          <text class="ct" x="879" y="201">Per million tokens</text>
+          <text class="big" x="877" y="255">$0.97 → $0.41</text>
+          <text class="sub" x="879" y="287">Everything in July against October</text>
+
+          <rect class="card" x="851" y="327" width="468" height="142" rx="16"/>
+          <text class="ct" x="879" y="364">Two long weekends</text>
+          <text class="ln" x="879" y="408"><tspan class="k">July:</tspan> 1.0B tokens for $1,273</text>
+          <text class="ln" x="879" y="446"><tspan class="k">October:</tspan> 3.9B tokens for $1,639</text>
+        </svg>
+      </div>
+      <p style="font-size: 32px; margin: 12px 0 0">The record has holes: June is not counted, and most of September is missing.</p>
+      <aside class="notes">
+        A drafted beat 4 slide (the "costs" point under "how do we do this in GxP?"), added to
+        the deck on 2026-10-05. A worker session drafted it from the hub's usage data after
+        bringing that data up to 6 October. The numbers are those of the pull request that
+        updates the analytics page (obot.roadmap#370), which is not merged yet, so the live page
+        still shows August. Every number's source is in keynote/_notes/beat4-spending-sources.md.
+        <br><br>
+        DRAFT, 2026-10-05. Every word on this slide is draft wording for Jeremy to replace; the
+        numbers are sourced (below, and in beat4-spending-sources.md). Counted on the evening of
+        5 October Eastern, which is 6 October UTC; the data's days are UTC days.
+        <br><br>Where the numbers come from: the hub's analytics page,
+        jwildfire.github.io/obot.roadmap/analytics/, and its data file usage/usage.json. The page
+        was brought forward from 19 August to 6 October on 2026-10-05 (obot.roadmap pull request
+        370). Until that pull request is merged the live page still shows the August numbers and
+        the figures here are the branch's.
+        <br><br>What "at API prices" means: tokens recorded in Claude Code's session logs,
+        multiplied by Anthropic's list prices. It is what the same usage would bill through the
+        API. It is not an invoice and it is not what was paid.
+        <br><br>Talking points
+        <br>1. The bars, one per obot version, at API list prices.
+        <br>• v3, July: $3,329.60. 3.43 billion tokens, 17,283 requests, 14 days with usage.
+        <br>• v4, 1 August to 10 September: at least $6,020.26. The solid part, $3,830.50, is
+        1 to 19 August and was recorded in full. The hatched part, $2,189.76, is 20 August to
+        10 September and is a floor.
+        <br>• v5, 11 to 30 September: at least $451.72, on three days (11, 12 and 18 September),
+        including the one cloud session that published its usage ($8.85). All of it is a floor.
+        <br>• v5.5, October: $1,954.96 for 1 to 6 October, 4.82 billion tokens, all on Opus 5.5.
+        Still running.
+        <br>• Together: $11,756.53 on record, 15.7 billion tokens, 61,351 requests, 54 days with
+        any usage.
+        <br>2. Why the hatched bars are floors. The nightly job that was meant to read the logs
+        never ran (macOS would not let it open a script in the Documents folder), and Claude Code
+        deletes a session log it has not touched for 30 days. When the logs were finally read on
+        5 October, what was left of 20 August to 18 September was mostly the two coordinating
+        sessions. In the last week recorded in full, 14 to 18 August, those two were 16% of the
+        spend ($570 of $3,625). From 10 September the work also moved to cloud sessions, and one
+        of them published its usage. Nothing at all is recorded for 19 to 30 September; nothing
+        was merged on GitHub in those days either (research digest 8g).
+        <br>3. What I paid. Diary #6: “All of the work was done on a $200/month Claude Max plan.”
+        Diary #8: “The $7k is API-equivalent spend, not out of pocket costs.” Diary #9's footnote
+        adds the catch: “When the weekly allowance ran out in August, the work paused until it
+        reset.” So the plan's real price was sometimes waiting.
+        <br>4. The price per token fell by more than half. Everything in July: $0.97 per million
+        tokens. Everything in October: $0.41. (9 July to 19 August together: $0.92.) Two reasons,
+        both list prices: Opus 5.5 is $4 in and $20 out per million tokens against $5 and $25 for
+        Opus 5 and $10 and $50 for Fable 5; and it reads its cache at $0.20 per million against
+        $0.50 and $1.00. About 97% of all the tokens here are cache reads.
+        <br>5. Two long weekends. July, Friday 10 to Sunday 12: “just over 1 billion tokens”,
+        $1,273 (diary #6). October, Friday 2 to Sunday 4: one orchestration session, 3.94 billion
+        tokens, $1,639.07, 9,822 requests. Nearly four times the tokens for 1.3 times the price.
+        <br>6. For the GxP question (draft): this is what it costs when one person runs it on a
+        consumer plan. A regulated team would pay API or enterprise prices, so the bars are closer
+        to their bill than the $200 is. Jeremy to say it his way.
+        <br><br>TODO (Jeremy)
+        <br>• Confirm that “$200 a month” still describes September and October. It is the figure
+        in diary #6, #8 and #9; nothing on record confirms it after 6 September.
+        <br>• The headline's $11,750 and the October bar will be out of date by 21 October. Refresh
+        both from the analytics page the week of the talk.
+        <br>• The July weekend is mostly missing from the bars. Diary #6 reports $1,273 for
+        10 to 12 July; the hub's file holds $145.60 for 9 to 12 July. So July is a floor too, by
+        about $1,100, unless the two overlap in a way the record cannot show. Not added to the
+        total. Say it, or leave the July bar as it is?
+        <br>• v1 and v2 (May and June, the personal assistant and OpenClaw) have no usage data at
+        all. The bottom line says June is not counted; it does not say what June cost.
+        <br>• 10 September, the day v4 was retired, is counted under v4 ($36.74).
+        <br>• Keep the three cards, or cut to two? “Two long weekends” repeats beat 3.
+        <br>• Whether to show the 496 merged pull requests beside the cost (the reserve slide
+        “What it took” did). Left off here to keep one idea on the slide.
+        <br><br>Sources
+        <br>- Usage data: https://jwildfire.github.io/obot.roadmap/usage/usage.json, built by
+        scripts/build_usage_data.py in jwildfire/obot.roadmap; update in pull request
+        https://github.com/jwildfire/obot.roadmap/pull/370
+        <br>- List prices, read 2026-10-05: https://platform.claude.com/docs/en/about-claude/pricing
+        <br>- Diary #6, 13 July 2026: https://jwildfire.github.io/2026/07/13/obot-v3-billion-tokens.html
+        <br>- Diary #8, 20 August 2026: https://jwildfire.github.io/2026/08/20/obot-v4-second-interview.html
+        <br>- Diary #9, 6 September 2026: https://jwildfire.github.io/2026/09/06/not-a-capabilities-problem.html
+        <br>- The October session: research digest section 8c.
+      </aside>
     </section>
 
     <!-- ============================================================
