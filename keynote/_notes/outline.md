@@ -198,11 +198,13 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - Never let an agent be the sole watcher of an agent [diary #8]
     - Commit working notes; transcript-only work dies with the session [unpublished draft]
     - Requirements before work
-  - How fast it is moving `[TODO]` drafting, 2026-10-05
+  - How fast it is moving (built, slide 46; draft wording throughout)
     - Jeremy (2026-10-05): the five versions set up "a slide in beat 4 where we can emphasize just how fast capabilities are improving… roughly 1 year after Opus 4.5 changed the game and made agents viable. Maybe show a timeline of how the major innovations/model releases line up against my 5 agent experiments. Mention all the things I *didn't* experiment with… Takeaway for pharma is that we just can't keep up and as a result the gap between capabilities and adoption is rapidly widening."
     - Also out of scope, and worth saying (Jeremy, 2026-10-05): open-source models. All five obot versions ran on closed, hosted models
     - Reference: https://simonwillison.net/2026/Sep/27/2026-in-llms-so-far/
-    - A draft is being made in `keynote/_notes/beat4-capability-timeline-draft.html`, with its sources beside it; not in the deck yet
+    - Built 2026-10-05 by a worker session and placed after the beat 4 placeholder. Draft headline "Eleven months, and I could not keep up"; a month ruler from November 2025 to October 2026 with eight releases above and the six obot versions below; a "did not try" card (MCP, open-weight models, Muse, Jev, Dots); draft takeaway "We cannot keep up, so the gap between capability and adoption keeps widening."
+    - Every date is sourced in `keynote/_notes/beat4-capability-timeline-sources.md`; the standalone draft is `beat4-capability-timeline-draft.html`
+    - `[TODO]` Jeremy: "eleven months" or "a year" (Opus 4.5 was 24 November 2025, 331 days before the talk); whether "did not try MCP" is right; whether GPT-5.1 shares the credit for the November turn, as Willison has it; v5's label says Fable 5.1 though it also ran on Opus 5
   - The bottleneck moved
     - "Review, not writing, is the bottleneck" [diary #9]
     - "The bottleneck still isn't intelligence. It's plumbing." [unpublished draft]
