@@ -186,6 +186,7 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - Requirements before work
   - How fast it is moving `[TODO]` drafting, 2026-10-05
     - Jeremy (2026-10-05): the five versions set up "a slide in beat 4 where we can emphasize just how fast capabilities are improving… roughly 1 year after Opus 4.5 changed the game and made agents viable. Maybe show a timeline of how the major innovations/model releases line up against my 5 agent experiments. Mention all the things I *didn't* experiment with… Takeaway for pharma is that we just can't keep up and as a result the gap between capabilities and adoption is rapidly widening."
+    - Also out of scope, and worth saying (Jeremy, 2026-10-05): open-source models. All five obot versions ran on closed, hosted models
     - Reference: https://simonwillison.net/2026/Sep/27/2026-in-llms-so-far/
     - A draft is being made in `keynote/_notes/beat4-capability-timeline-draft.html`, with its sources beside it; not in the deck yet
   - The bottleneck moved
