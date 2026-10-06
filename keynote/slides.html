@@ -434,6 +434,11 @@
     .goodat .who::after, .s-answers .who::after { inset: 0; clip-path: none; background: url(assets/hex/orange-thumbs-up.png) center / contain no-repeat; }
     .goodat.bad .who::after, .s-answers.bad .who::after { background-image: url(assets/hex/orange-thumbs-down.png); }
     .goodat .who i, .s-answers .who i { display: none; }
+    /* A QR code beside a slide's title: <a class="qr"><span>caption</span><svg>…</svg></a>. */
+    .slide .qr { position: absolute; right: 140px; top: 96px; display: flex; align-items: flex-end; gap: 22px; text-decoration: none; }
+    .slide .qr span { font-family: var(--mono); font-size: 20px; line-height: 1.45; color: var(--soft); text-align: right; padding-bottom: 6px; }
+    .slide .qr span b { display: block; font-weight: 500; color: var(--ink); }
+    .slide .qr svg { display: block; width: 190px; height: 190px; border-radius: 10px; }
   </style>
 </head>
 <body>
@@ -475,6 +480,7 @@
     <section class="slide" data-hue="1">
       <p class="kicker">How I tried to answer it</p>
       <h2>By working in public</h2>
+      <a class="qr" href="https://jwildfire.github.io/keynote/" target="_blank" rel="noopener"><span>Every post, and the links<b>jwildfire.github.io/keynote</b></span><svg viewBox="0 0 33 33" role="img" aria-label="QR code for jwildfire.github.io/keynote" shape-rendering="crispEdges"><rect width="33" height="33" fill="#fff"/><path d="M2 2h7v1h-7zM10 2h1v1h-1zM13 2h1v1h-1zM15 2h1v1h-1zM17 2h1v1h-1zM21 2h2v1h-2zM24 2h7v1h-7zM2 3h1v1h-1zM8 3h1v1h-1zM10 3h3v1h-3zM15 3h1v1h-1zM18 3h3v1h-3zM22 3h1v1h-1zM24 3h1v1h-1zM30 3h1v1h-1zM2 4h1v1h-1zM4 4h3v1h-3zM8 4h1v1h-1zM11 4h1v1h-1zM13 4h1v1h-1zM17 4h1v1h-1zM20 4h2v1h-2zM24 4h1v1h-1zM26 4h3v1h-3zM30 4h1v1h-1zM2 5h1v1h-1zM4 5h3v1h-3zM8 5h1v1h-1zM10 5h1v1h-1zM13 5h1v1h-1zM16 5h1v1h-1zM19 5h1v1h-1zM21 5h1v1h-1zM24 5h1v1h-1zM26 5h3v1h-3zM30 5h1v1h-1zM2 6h1v1h-1zM4 6h3v1h-3zM8 6h1v1h-1zM11 6h1v1h-1zM13 6h1v1h-1zM16 6h2v1h-2zM19 6h1v1h-1zM21 6h1v1h-1zM24 6h1v1h-1zM26 6h3v1h-3zM30 6h1v1h-1zM2 7h1v1h-1zM8 7h1v1h-1zM12 7h4v1h-4zM19 7h1v1h-1zM21 7h1v1h-1zM24 7h1v1h-1zM30 7h1v1h-1zM2 8h7v1h-7zM10 8h1v1h-1zM12 8h1v1h-1zM14 8h1v1h-1zM16 8h1v1h-1zM18 8h1v1h-1zM20 8h1v1h-1zM22 8h1v1h-1zM24 8h7v1h-7zM10 9h2v1h-2zM18 9h2v1h-2zM2 10h1v1h-1zM4 10h2v1h-2zM7 10h3v1h-3zM11 10h1v1h-1zM13 10h3v1h-3zM18 10h2v1h-2zM21 10h2v1h-2zM24 10h1v1h-1zM27 10h1v1h-1zM29 10h2v1h-2zM5 11h2v1h-2zM9 11h3v1h-3zM13 11h4v1h-4zM18 11h9v1h-9zM30 11h1v1h-1zM2 12h1v1h-1zM5 12h7v1h-7zM13 12h1v1h-1zM15 12h1v1h-1zM20 12h1v1h-1zM23 12h1v1h-1zM25 12h1v1h-1zM28 12h2v1h-2zM5 13h1v1h-1zM7 13h1v1h-1zM11 13h4v1h-4zM21 13h1v1h-1zM24 13h3v1h-3zM30 13h1v1h-1zM2 14h1v1h-1zM4 14h2v1h-2zM7 14h2v1h-2zM10 14h1v1h-1zM12 14h2v1h-2zM16 14h4v1h-4zM21 14h1v1h-1zM27 14h2v1h-2zM3 15h2v1h-2zM7 15h1v1h-1zM9 15h3v1h-3zM13 15h1v1h-1zM16 15h3v1h-3zM21 15h1v1h-1zM24 15h1v1h-1zM28 15h3v1h-3zM2 16h1v1h-1zM5 16h2v1h-2zM8 16h1v1h-1zM11 16h1v1h-1zM15 16h1v1h-1zM21 16h5v1h-5zM28 16h3v1h-3zM3 17h2v1h-2zM7 17h1v1h-1zM9 17h2v1h-2zM12 17h1v1h-1zM16 17h1v1h-1zM18 17h1v1h-1zM21 17h4v1h-4zM29 17h1v1h-1zM4 18h1v1h-1zM6 18h5v1h-5zM13 18h1v1h-1zM16 18h2v1h-2zM20 18h1v1h-1zM22 18h2v1h-2zM25 18h3v1h-3zM29 18h1v1h-1zM5 19h1v1h-1zM9 19h3v1h-3zM14 19h1v1h-1zM16 19h2v1h-2zM19 19h1v1h-1zM22 19h1v1h-1zM25 19h1v1h-1zM27 19h3v1h-3zM2 20h1v1h-1zM7 20h2v1h-2zM15 20h3v1h-3zM19 20h1v1h-1zM23 20h3v1h-3zM28 20h1v1h-1zM4 21h1v1h-1zM6 21h1v1h-1zM10 21h1v1h-1zM15 21h7v1h-7zM23 21h1v1h-1zM28 21h1v1h-1zM3 22h3v1h-3zM7 22h2v1h-2zM12 22h1v1h-1zM15 22h5v1h-5zM22 22h7v1h-7zM10 23h1v1h-1zM12 23h3v1h-3zM18 23h3v1h-3zM22 23h1v1h-1zM26 23h5v1h-5zM2 24h7v1h-7zM10 24h1v1h-1zM14 24h1v1h-1zM16 24h1v1h-1zM18 24h1v1h-1zM20 24h3v1h-3zM24 24h1v1h-1zM26 24h2v1h-2zM29 24h1v1h-1zM2 25h1v1h-1zM8 25h1v1h-1zM10 25h4v1h-4zM15 25h2v1h-2zM18 25h1v1h-1zM20 25h3v1h-3zM26 25h2v1h-2zM30 25h1v1h-1zM2 26h1v1h-1zM4 26h3v1h-3zM8 26h1v1h-1zM11 26h2v1h-2zM18 26h2v1h-2zM22 26h5v1h-5zM28 26h1v1h-1zM2 27h1v1h-1zM4 27h3v1h-3zM8 27h1v1h-1zM10 27h3v1h-3zM17 27h2v1h-2zM21 27h3v1h-3zM26 27h2v1h-2zM30 27h1v1h-1zM2 28h1v1h-1zM4 28h3v1h-3zM8 28h1v1h-1zM10 28h1v1h-1zM12 28h5v1h-5zM19 28h1v1h-1zM23 28h1v1h-1zM25 28h1v1h-1zM28 28h1v1h-1zM30 28h1v1h-1zM2 29h1v1h-1zM8 29h1v1h-1zM11 29h2v1h-2zM16 29h3v1h-3zM22 29h2v1h-2zM27 29h1v1h-1zM29 29h1v1h-1zM2 30h7v1h-7zM10 30h1v1h-1zM12 30h1v1h-1zM14 30h1v1h-1zM20 30h3v1h-3zM24 30h3v1h-3zM29 30h1v1h-1z" fill="#1f2328"/></svg></a>
       <div class="pvr">
         <svg viewBox="0 105 1320 385" role="img" aria-label="A looping timeline through nine diary posts, June to September, each linked.">
           <defs><linearGradient id="sg" gradientUnits="userSpaceOnUse" x1="20" x2="1300"><stop offset="0" stop-color="#d87972"/><stop offset=".17" stop-color="#c78a3b"/><stop offset=".33" stop-color="#77a95b"/><stop offset=".5" stop-color="#00afa9"/><stop offset=".67" stop-color="#519fdd"/><stop offset=".83" stop-color="#988bdd"/><stop offset="1" stop-color="#c67bb6"/></linearGradient></defs>
@@ -528,6 +534,10 @@
         <br><br>Both quotes are from diary #1 (2026-06-10), which reprints the submitted abstract
         ("AI in the Loop…") and calls it out of date the same day. The nine posts are listed on
         jwildfire.github.io/keynote. Diary #10 (GxP best practices) is promised in diary #9 but not written.
+        <br><br>The QR code (added 2026-10-06 at Jeremy's request) encodes
+        https://jwildfire.github.io/keynote/, the page that lists the posts. It was made with
+        macOS's built-in generator at error-correction level M and read back from a screenshot
+        of this slide. The caption's first line is draft wording.
         <br><br>Each numbered point is a diary post and links to it (opens in a new tab).
         "The reality is messier" is the spoken line; the slide title is "By working in public".
       </aside>
