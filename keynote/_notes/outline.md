@@ -270,7 +270,7 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
 
 ## Callouts: "What are agents good at now?"
 
-A recurring callout in the bottom-right corner: Orange's face in an amber hex with a thumbs-up, the question in small capitals, the answer in a speech bubble (design B, chosen 2026-10-02). The close in beat 4 gathers the same answers into one list.
+A recurring callout in the bottom-right corner: Orange's face in an amber hex with a thumbs-up, the question in small capitals, the answer in a speech bubble (design B, chosen 2026-10-02). The close in beat 4 gathers the same answers into one list. From 2026-10-06 the photo hexes are Jeremy's drawn ones: `keynote/assets/hex/orange-thumbs-up.png` and `orange-thumbs-down.png` (the emoji badge is gone, since the art carries the thumb). A third, `orange-question.png` (Orange thinking, with a question mark), is saved and not placed.
 
 - Beats 1 and 2 ("What are agents good at now?" / "What are agents bad at now?")
   - Teaching me things — slide 6

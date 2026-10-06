@@ -426,6 +426,14 @@
     .s-answers .who i { position: absolute; right: -22px; bottom: -8px; z-index: 1; width: 62px; height: 72px; clip-path: var(--hex-clip); background: var(--ink); display: grid; place-items: center; font-size: 32px; font-style: normal; }
     .s-answers.bad .who::before { background: var(--spec-0); }
     .s-answers.bad .who::after { background-image: url(assets/orange/orange-face-unimpressed.jpg); }
+    /* Orange's callout hexes are drawn art from 2026-10-06 (assets/hex/orange-thumbs-up.png and
+       orange-thumbs-down.png). They replace the photo in a hex and its emoji badge; the photo
+       rules above are kept, and these override them. A third hex, orange-question.png, is in
+       the same folder and not used yet. */
+    .goodat .who::before, .s-answers .who::before { content: none; }
+    .goodat .who::after, .s-answers .who::after { inset: 0; clip-path: none; background: url(assets/hex/orange-thumbs-up.png) center / contain no-repeat; }
+    .goodat.bad .who::after, .s-answers.bad .who::after { background-image: url(assets/hex/orange-thumbs-down.png); }
+    .goodat .who i, .s-answers .who i { display: none; }
   </style>
 </head>
 <body>
