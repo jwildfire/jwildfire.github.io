@@ -310,6 +310,32 @@
     .s-life5 .life .s { padding: 5px 14px; margin-bottom: 7px; }
     .s-life5 .life h3 { margin-bottom: 8px; }
 
+    /* Five columns (slide 21): the standard lifecycle in the middle, the work before and
+       after it called out on either side. The callout sits on the middle panel's lower edge. */
+    .s-five h2 { font-size: 72px; margin-bottom: 34px; }
+    .five { display: grid; grid-template-columns: 1.12fr 3fr 1.12fr; gap: 46px; align-items: stretch; margin-top: 4px; height: 396px; }
+    .five > * { position: relative; }
+    .five > * + *::after { content: "→"; position: absolute; left: -41px; top: 50%; margin-top: -24px; font-size: 34px; color: var(--faint); }
+    .five .c { display: flex; flex-direction: column; }
+    .five h3 { font-size: 26px; line-height: 1.15; font-weight: 600; margin: 0 0 14px; min-height: 60px; display: flex; align-items: flex-end; }
+    .five .s { display: flex; align-items: center; gap: 12px; font-size: 21px; line-height: 1.2; padding: 9px 12px; border-radius: 12px; margin-bottom: 8px; background: var(--panel); border: 2px solid var(--rule); }
+    .five .s::before { content: ""; flex: none; width: 16px; height: 19px; clip-path: var(--hex-clip); background: var(--faint); }
+    .five .out { background: #e6f6f5; border: 3px solid var(--hue); border-radius: 20px; padding: 18px 16px 12px; }
+    .five .out .s { border-color: var(--hue); font-weight: 600; }
+    .five .out .s::before { background: var(--hue); }
+    .five .tag { font-family: var(--mono); font-size: 17px; line-height: 1.5; letter-spacing: 0.14em; text-transform: uppercase; color: var(--hue); margin: 0; }
+    .five .tag span { display: block; font-size: 16px; letter-spacing: 0.02em; text-transform: none; color: var(--soft); }
+    .five .mid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 14px; align-content: start; background: var(--rail); border: 2px solid var(--rule); border-radius: 20px; padding: 19px 18px 12px; }
+    .five .mid .tag { grid-column: 1 / -1; color: var(--soft); }
+    .five .mid .tag span { color: var(--faint); }
+    .five .mid h3, .five .mid .s { color: var(--soft); }
+    .s-five .goodat { right: 428px; bottom: 76px; }
+    .s-five .goodat .a { font-size: 44px; }
+    .s-five .goodat .who { width: 140px; height: 162px; }
+    .goodat .when { font-family: var(--mono); font-size: 17px; color: var(--soft); margin: 6px 0 0; }
+    /* Two levels boxed at once in the sidebar (slide 19: "more level 2.5"). */
+    .lvside li.on + li.on { margin-top: -6px; }
+
     /* Org chart (obot v4): boxes and arrows in an SVG inside .pvr. */
     .pvr.org .t { font-size: 25px; font-weight: 600; fill: var(--ink); }
     .pvr.org .s { font-size: 17px; fill: var(--soft); }
@@ -781,8 +807,8 @@
         isn't fully GxP-compliant." The column heading and "In every talk. The answer then:"
         are draft wording; the slide shortens the question to its first three words.
         <br><br>Where the thread comes back: slide 12 (gsm, "built for GxP from the start"),
-        slide 15 ("GxP is built into the design"), slide 31 ("Not GxP", the mad scientist
-        edition), and slide 52 ("A lot of tests, and still not GxP"). A reserve slide, "Is it validated?", asks the same question with a
+        slide 15 ("GxP is built into the design"), slide 29 ("Not GxP", the mad scientist
+        edition), and slide 50 ("A lot of tests, and still not GxP"). A reserve slide, "Is it validated?", asks the same question with a
         then-and-now answer.
         <br><br>TODO box added 2026-10-06 (Jeremy: "slide 10 needs a visual add a todo"). The two
         columns are unchanged, only tightened to make room. Ideas for the visual, none built:
@@ -963,7 +989,7 @@
         a screenshot of a real qcthat report if one can be shown.
         <br><br>Pays off in beat 3: safety.viz and gsm.safety borrow exactly this (diary #4:
         "Instead of inventing a new quality framework, we plug the safety graphics into a quality
-        framework that already exists"), and "Not GxP" on slide 31 is the contrast.
+        framework that already exists"), and "Not GxP" on slide 29 is the contrast.
       </aside>
     </section>
 
@@ -993,6 +1019,7 @@
       <p class="kicker">AI in the loop</p>
       <blockquote>“We use AI heavily, but it's <em>not autonomous.</em> Humans own the process and all deliverables.”</blockquote>
       <cite>— developer diary #1, 10 June 2026</cite>
+      <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Writing code!</p></div><div class="who"><i>👍</i></div></div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
         Source: diary #1. The team "uses agentic AI, mostly via GitHub Copilot, to create
@@ -1003,6 +1030,9 @@
         ("Everyone should be using this every day. Who knows how skills work?").
         <br><br>"Humans still own every step of the process: product management, design, coding,
         code review, qualification, and everything else. But we use AI as a power tool throughout."
+        <br><br>Callout, second click: what are agents good at now? Writing code. Moved here on
+        2026-10-06 from "We just let the coding agent deal with it", which went to the reserves
+        (Jeremy: "Move the 'good at writing code call out to slide 17'").
       </aside>
     </section>
 
@@ -1043,7 +1073,7 @@
         <li style="--c: var(--spec-5)"><i>5</i><b>The dark software factory</b></li>
         <li style="--c: var(--spec-4)"><i>4</i><b>The engineering team</b></li>
         <li class="on" style="--c: var(--spec-3)"><i>3</i><b>The developer</b></li>
-        <li style="--c: var(--spec-2)"><i>2</i><b>The junior developer</b></li>
+        <li class="on" style="--c: var(--spec-2)"><i>2</i><b>The junior developer</b></li>
         <li style="--c: var(--spec-1)"><i>1</i><b>The coding intern</b></li>
         <li style="--c: var(--spec-0)"><i>0</i><b>Spicy autocomplete</b></li>
       </ol>
@@ -1088,8 +1118,12 @@
         overlay.
         <br><br>Level sidebar added 2026-10-06 (Jeremy: "add levels sidebar on slide 19."), at
         level 3, the level slide 18 marks as the day job.
-        <br><br>Optional slide (Jeremy: "possibly"). It shows the March state; slide 22 then says
-        how it has moved since ("we just let the coding agent deal with it").
+        Later the same day he asked for both 2 and 3 to be boxed: "Call out both 2 and 3 in the
+        sidebar on 19 (i really think we're more level 2.5 than full level 3)." Slide 18 still
+        marks level 3 alone as the day job, and the wrap-up slide still says level 3.
+        <br><br>Optional slide (Jeremy: "possibly"). It shows the March state. The slide that
+        said how it has moved since ("we just let the coding agent deal with it") went to the
+        reserves on 2026-10-06.
       </aside>
     </section>
 
@@ -1116,83 +1150,70 @@
       </aside>
     </section>
 
-    <section class="slide" data-hue="3">
+    <section class="slide s-five" data-hue="3">
       <p class="kicker">Where we put the effort</p>
-      <h2>Plan → build → run: we invest at both ends</h2>
-      <div class="chain">
-        <div class="st"><div class="hx">1</div><b>Plan</b><span>Requirements, designs and phase gates</span><i class="tag">our scaffold</i></div>
-        <div class="st" style="--c: var(--faint)"><div class="hx">2</div><b>Build</b><span>Vendor coding agents, plus our shared context and conventions</span><i class="tag muted">maintained</i></div>
-        <div class="st"><div class="hx">3</div><b>Run</b><span>Study set-up, snapshot schedules, checks against the monitoring plan</span><i class="tag">our scaffold</i></div>
+      <h2>Faster code; planning and operations had to catch up</h2>
+      <div class="five">
+        <div class="c out">
+          <p class="tag">Upstream<span>our scaffold</span></p>
+          <h3>Plan / Roadmap</h3>
+          <div class="s">Requirements</div>
+          <div class="s">Designs</div>
+          <div class="s">Phase gates</div>
+        </div>
+        <div class="mid">
+          <p class="tag">The standard development lifecycle<span>vendor coding agents, plus our shared context and conventions</span></p>
+          <div class="c"><h3>Design</h3>
+            <div class="s">Work item</div>
+            <div class="s">Technical plan</div>
+          </div>
+          <div class="c"><h3>Build</h3>
+            <div class="s">Tests</div>
+            <div class="s">Code</div>
+            <div class="s">Review</div>
+          </div>
+          <div class="c"><h3>Publish</h3>
+            <div class="s">Quality gates</div>
+            <div class="s">Documentation</div>
+            <div class="s">Release</div>
+          </div>
+        </div>
+        <div class="c out">
+          <p class="tag">Downstream<span>our scaffold</span></p>
+          <h3>Run / Deploy / Operations</h3>
+          <div class="s">Study set-up</div>
+          <div class="s">Snapshot schedules</div>
+          <div class="s">Monitoring plan checks</div>
+        </div>
       </div>
-      <div class="todo" style="padding: 22px 36px; margin: 34px 0 10px">
-        <p style="max-width: none; margin: 0">TODO: use the same framing as the 3-column lifecycle slides</p>
-      </div>
+      <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">The standard SDLC</p><p class="when">as of Q2 2026</p></div><div class="who"><i>👍</i></div></div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
-        Source: the team's Q3 2026 agentic update deck (internal), strategy slide. The headline
+        Jeremy's message for this slide (2026-10-06): "messaging is that agents have sped
+        up/simplified SDLC enough that we've had to spend time improving our upstream and
+        downstream process to support the rapidly increasing code volume."
+        <br><br>Rebuilt 2026-10-06 as five columns (Jeremy: "Draft a 5 column view. Plan/Roadmap
+        (before design) and 'Run/Deply/Operatations' as 5th column. Don't need as much detail,
+        just want to call out the upstream and downstream work as places where AI can help a
+        lot outside of standard SDLC."), and approved by him the same day ("I like 21 - clean
+        it up"). The middle three columns are the lifecycle of slides 14, 19 and 43 with less
+        detail; the two teal columns are the work before and after it. The earlier three-step
+        version ("Plan → build → run: we invest at both ends") is in the reserves.
+        <br><br>The title is draft wording for his message; the first draft's title was "AI can
+        help a lot upstream and downstream".
+        <br><br>Callout, second click (Jeremy: "Add a agents are good at standard SDLC (as of Q2
+        2026 in small text below)"): what are agents good at now? The standard SDLC, as of Q2
+        2026.
+        <br><br>Nothing new is on the slide: the items in the outer columns and the line under
+        the middle label are the words of the earlier version ("checks against the monitoring
+        plan" is shortened to fit); the middle items are shortened from slide 14.
+        <br><br>Source: the team's Q3 2026 agentic update deck (internal), strategy slide. The headline
         there: "we moved focus from coding agents to the roadmap and operations scaffolds, where
         the value was." The chain follows the product lifecycle: the roadmap produces the specs
         and sub-issues that coding consumes; coding produces releases that operations deploys to studies.
         <br><br>Why both ends: they are company-specific process that no vendor will build. The
         middle is commodity and improving monthly.
-        <br><br>TODO box added 2026-10-06 (Jeremy: "To do on 21. Use same framing as 3-col SDLC
-        slide ..."). The three-column slides are 14, 19 and 45: Design, Build, Publish. This one
-        says Plan, Build, Run, so the rework needs a decision on how "Run" (operations on
-        studies) sits beside "Publish".
-        <br><br>Vet before publishing: everything on slides 21–24 and 26–27 comes from that internal deck. (Slide 25, the artifacts, is from the side project's public hub.)
-      </aside>
-    </section>
-
-    <section class="slide s-split" data-hue="3">
-      <p class="kicker">Build</p>
-      <h2>“We just let the coding agent deal with it”</h2>
-      <div class="cols" style="flex: none">
-        <div class="col"><h3>What we stopped building</h3>
-          <p>A coding agent of our own, steered step by step.</p></div>
-        <div class="col"><h3>What we maintain</h3>
-          <p>One shared context file for about 40 repos, plus three skills.</p></div>
-      </div>
-      <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Writing code!</p></div><div class="who"><i>👍</i></div></div>
-      <aside class="notes">
-        <strong class="say">&lt;none yet&gt;</strong>
-        Title is Jeremy's line (2026-10-02). Source: Q3 deck, "Coding: maintained, not abandoned":
-        "Vendor coding agents improve monthly, so we invest in shared context, not a custom agent."
-        gsm.agent is one AGENTS.md (the map of the gsm repos plus conventions: attribution,
-        test-first development, worktrees) and three skills; unchanged since July, by design.
-        A deeper issue-to-pull-request pilot and domain skills are parked until 2027.
-        <br><br>This replaces the seven-step red/green chain slide from the first draft. The
-        abstract promised "{gsm.agent} drives a red-green TDD cycle from failing test to merged
-        PR"; the honest update is that the vendors' agents now do that well enough on their own.
-        <br><br>Said, not shown: the vendors' coding agents improve every month; the shared
-        context works in Copilot and in Claude Code; about a third of recent commits in the
-        roadmap repo were co-authored by one of them.
-        <br><br>The "about a third" figure is for the roadmap repo's commits since July
-        (co-authored by Copilot or Claude), as of late September.
-        <br><br>Callout: what are agents good at now? Writing code.
-      </aside>
-    </section>
-
-    <section class="slide" data-hue="3">
-      <p class="kicker">How we build the scaffolds</p>
-      <h2>Deterministic tools first, agents on top</h2>
-      <div class="chain">
-        <div class="st"><div class="hx">1</div><b>Framework</b><span>GitHub as the system of record: issues, a lifecycle, decision records</span><i class="tag">reliable</i></div>
-        <div class="st"><div class="hx">2</div><b>Tools</b><span>Scripts and Actions that compute the evidence</span><i class="tag">reliable</i></div>
-        <div class="st"><div class="hx">3</div><b>Skills</b><span>Version-controlled procedures an agent loads for a task</span><i class="tag">reliable</i></div>
-        <div class="st" style="--c: var(--faint)"><div class="hx">4</div><b>Bots</b><span>Agents acting on a schedule, under their own identity</span><i class="tag muted">still learning</i></div>
-      </div>
-      <aside class="notes">
-        <strong class="say">&lt;none yet&gt;</strong>
-        Source: Q3 deck, "Framework → Tools → Skills → Bots". "Each layer only works once the one
-        below it is solid. Layers 1–3 are reliable today; layer 4 is where we're still learning."
-        <br><br>The line worth saying out loud: "Deterministic tools come before agents on
-        purpose: agents write prose on top of evidence the tools compute, so the numbers stay
-        right even when an agent fails."
-        <br><br>Example for the stage: the weekly check of each study's configuration against its
-        monitoring plan runs with no model at all. An agent wrote the checker and its matching
-        rules; the rules stay marked "inferred" until an engineer confirms them.
-        <br><br>Echo for beat 3: the obot summer learned the same thing the hard way ("never let
-        an agent be the sole watcher of an agent", diary #8). Cut candidate if beat 2 runs long.
+        <br><br>Vet before publishing: everything on slides 21–22 and 24–25 comes from that internal deck. (Slide 23, the artifacts, is from the side project's public hub.)
       </aside>
     </section>
 
@@ -1246,7 +1267,7 @@
       <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Designing pages!</p></div><div class="who"><i>👍</i></div></div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
-        Added to beat 2 on 2026-10-05 as slide 25, straight after "Agents draft; people approve",
+        Added to beat 2 on 2026-10-05 as slide 23, straight after "Agents draft; people approve",
         which says there is an artifact at each stage; this is the picture of that sentence.
         A worker session drafted it; the pages and what was left out are listed in
         keynote/_notes/beat2-artifacts-sources.md.
@@ -1292,15 +1313,15 @@
         https://jwildfire.github.io/obot.roadmap/reports/release-review-plan-2026-09-12/
         <br>10. Org chart: who answers to whom among the agents ("The chart" section).
         https://jwildfire.github.io/obot.roadmap/reports/org-chart/
-        <br><br>WHERE IT GOES. Recommended: straight after slide 24, "Agents draft; people
-        approve", as the new slide 25. Slide 24 names an artifact at each of the six stages and
+        <br><br>WHERE IT GOES. Recommended: straight after slide 22, "Agents draft; people
+        approve", as the new slide 23. Slide 22 names an artifact at each of the six stages and
         its notes say each is published by a pull request and indexed on a site; this slide is
-        the picture of that sentence. The first row follows slide 24's order (requirement, data,
+        the picture of that sentence. The first row follows slide 22's order (requirement, data,
         design, plan); the second row is what comes out at release. Then the Run slides carry on
         as now. Alternative: if stand-ins from the side project feel wrong in the middle of the
         day-job beat, the same slide works unchanged in beat 3 (hue 4, without the caption's
         second half), next to the slide where obot starts writing requirements.
-        <br><br>CALLOUT. "Drafting documents!" is already on slide 24, so this one proposes
+        <br><br>CALLOUT. "Drafting documents!" is already on slide 22, so this one proposes
         "Designing pages!", from the unplaced candidate in the outline ("design (artifacts,
         .md → .html)"). Other wordings: "Design!", "Making it readable", "Turning notes into
         pages". It is a smaller copy of the callout so that it sits under the grid and covers no
@@ -1838,8 +1859,8 @@
         <br><br>The timer script: "Underneath it all is a script that runs every five minutes and
         isn't an agent at all. That's the load-bearing part… the only component with a clean
         record. The rule: never let an agent be the sole watcher of an agent. Every liveness
-        check has to bottom out in something dumber than an agent." Echoes slide 23:
-        deterministic tools first.
+        check has to bottom out in something dumber than an agent." Echoes "Deterministic
+        tools first, agents on top", a beat 2 slide that went to the reserves on 2026-10-06.
         <br><br>Jeremy, in the same post: "I'd say we're at v4 now. Still using claude, but I'm
         now much more hands off with the code."
         
@@ -1955,7 +1976,7 @@
         day: 10 objectives, 175 requirements (66 released, 44 retired), 266 tasks. A screenshot
         of that tracker view is in keynote/assets/obot-tracker-biomarkers.png if a picture of
         the real thing is wanted; it was too small to read as the whole slide.
-        <br><br>The link to beat 2: this is the same shape as gsm.roadmap on slide 24 (agents
+        <br><br>The link to beat 2: this is the same shape as gsm.roadmap on slide 22 (agents
         draft, people approve), with the gates moved to the release.
         <br><br>TODO (Jeremy): "after so many struggles" deserves a sentence of yours here. What
         made this version of the scaffold work when v4's did not?
@@ -2411,7 +2432,7 @@
         here as the SDLC slide (tests, review, sign-off), ahead of the two roadmap pictures.
         TODO (Jeremy): say if it belongs in "what we learned" instead. It was drafted as s5
         ("Quality", under "how do we do this in GxP?") in his first structure. Every word is draft; the numbers are sourced below. It calls back to the
-        beat 3 opener (slide 31, "Not GxP") and to beat 2's quality slide (slide 15: every
+        beat 3 opener (slide 29, "Not GxP") and to beat 2's quality slide (slide 15: every
         requirement has a test, every test has a result, and a person signs the release).
         <br><br>Column 1. 2,185 unit and 374 browser tests at safety.viz v1.9.1, from its
         release notes (2026-10-04; still the latest release when checked on 5 October).
@@ -2779,12 +2800,12 @@
         Jeremy to rewrite.
         <br><br>Where each one comes from:
         <br>Teaching me things: slide 6.
-        <br>Writing code: slide 22.
-        <br>Drafting documents: slide 24.
-        <br>Designing pages: slide 25 (the artifacts).
-        <br>Porting old code: slide 38 (v3, the weekend of renderers).
-        <br>Translating research into software: slide 39 (v3; Jeremy's wording).
-        <br>Reviewing its own work: slide 48 (v5.5; the reviewer agents).
+        <br>Writing code: slide 17.
+        <br>Drafting documents: slide 22.
+        <br>Designing pages: slide 23 (the artifacts).
+        <br>Porting old code: slide 36 (v3, the weekend of renderers).
+        <br>Translating research into software: slide 37 (v3; Jeremy's wording).
+        <br>Reviewing its own work: slide 46 (v5.5; the reviewer agents).
         <br>Running experiments: not a callout in the main deck. It is from Jeremy's steer of
         5 October ("Agents are great at experiments") and from a slide now in the reserves. If
         it stays here it probably wants a callout in beat 3, on the v5.5 slide.
@@ -2816,17 +2837,17 @@
         build as the slide before: Orange's thumbs-down answers gathered. Draft wording
         throughout.
         <br><br>Where each one comes from:
-        <br>Setting priorities: slide 24.
-        <br>Working without me: three callouts folded into one. "Autonomy" (v2, slide 36),
-        "Working without me" (v3, slide 38) and "Still waits on me" (v5.5, slide 48, which is a
+        <br>Setting priorities: slide 22.
+        <br>Working without me: three callouts folded into one. "Autonomy" (v2, slide 34),
+        "Working without me" (v3, slide 36) and "Still waits on me" (v5.5, slide 46, which is a
         placeholder Jeremy has not confirmed).
-        <br>Knowing when it has failed: slide 42 (v4; "Nine cases in one night of something
+        <br>Knowing when it has failed: slide 40 (v4; "Nine cases in one night of something
         reporting success while having done nothing", diary #8).
         <br>Being concise and Remembering: from Jeremy's close-out list in the outline
         ("Communicating: being concise", "Remembering"). Neither is a callout anywhere in the
         deck yet, and the label "Every day" is a guess at a tag. TODO (Jeremy): keep them, and
         if so say where they bit.
-        <br><br>Left out: "No chart releases" (v5, slide 46). It is true of September, but
+        <br><br>Left out: "No chart releases" (v5, slide 44). It is true of September, but
         October shipped six releases in a weekend, so it does not read as something agents are
         bad at.
         <br><br>Until late on 5 October a sixth, dashed cell bridged to "So how do we do this in
@@ -3272,6 +3293,94 @@
         exists." That slide is in the reserves.
         <br><br>From diary #3: modernizing it "always felt like it needed a team and a budget I
         no longer have — but with AI agents, I'm honestly not sure that's true anymore."
+      </aside>
+    </section>
+
+    <section class="slide" data-reserve="6 October 2026" data-hue="3">
+      <p class="kicker">Where we put the effort</p>
+      <h2>Plan → build → run: we invest at both ends</h2>
+      <div class="chain">
+        <div class="st"><div class="hx">1</div><b>Plan</b><span>Requirements, designs and phase gates</span><i class="tag">our scaffold</i></div>
+        <div class="st" style="--c: var(--faint)"><div class="hx">2</div><b>Build</b><span>Vendor coding agents, plus our shared context and conventions</span><i class="tag muted">maintained</i></div>
+        <div class="st"><div class="hx">3</div><b>Run</b><span>Study set-up, snapshot schedules, checks against the monitoring plan</span><i class="tag">our scaffold</i></div>
+      </div>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        Reserve. Demoted from the main deck on 2026-10-06: replaced on slide 21 by a
+        five-column view (Plan / Roadmap, Design, Build, Publish, Run / Deploy / Operations)
+        at Jeremy's request. Its orange TODO box ("use the same framing as the 3-column
+        lifecycle slides") was the prompt for that rebuild and is not carried over.
+        <br><br>
+        Source: the team's Q3 2026 agentic update deck (internal), strategy slide. The headline
+        there: "we moved focus from coding agents to the roadmap and operations scaffolds, where
+        the value was." The chain follows the product lifecycle: the roadmap produces the specs
+        and sub-issues that coding consumes; coding produces releases that operations deploys to studies.
+        <br><br>Why both ends: they are company-specific process that no vendor will build. The
+        middle is commodity and improving monthly.
+        <br><br>TODO box added 2026-10-06 (Jeremy: "To do on 21. Use same framing as 3-col SDLC
+        slide ..."). The three-column slides are 14, 19 and 45: Design, Build, Publish. This one
+        says Plan, Build, Run, so the rework needs a decision on how "Run" (operations on
+        studies) sits beside "Publish".
+        <br><br>Vet before publishing: everything on slides 21–24 and 26–27 comes from that internal deck. (Slide 25, the artifacts, is from the side project's public hub.)
+      </aside>
+    </section>
+
+    <section class="slide s-split" data-reserve="6 October 2026" data-hue="3">
+      <p class="kicker">Build</p>
+      <h2>“We just let the coding agent deal with it”</h2>
+      <div class="cols" style="flex: none">
+        <div class="col"><h3>What we stopped building</h3>
+          <p>A coding agent of our own, steered step by step.</p></div>
+        <div class="col"><h3>What we maintain</h3>
+          <p>One shared context file for about 40 repos, plus three skills.</p></div>
+      </div>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        Reserve. Demoted from the main deck on 2026-10-06: cut at Jeremy's request ("cut slide 22 + 23")
+        when the slide before it became the five-column view of the lifecycle. Its callout
+        ("What are agents good at now? Writing code!") moved to the "not autonomous" quote
+        slide.
+        <br><br>
+        Title is Jeremy's line (2026-10-02). Source: Q3 deck, "Coding: maintained, not abandoned":
+        "Vendor coding agents improve monthly, so we invest in shared context, not a custom agent."
+        gsm.agent is one AGENTS.md (the map of the gsm repos plus conventions: attribution,
+        test-first development, worktrees) and three skills; unchanged since July, by design.
+        A deeper issue-to-pull-request pilot and domain skills are parked until 2027.
+        <br><br>This replaces the seven-step red/green chain slide from the first draft. The
+        abstract promised "{gsm.agent} drives a red-green TDD cycle from failing test to merged
+        PR"; the honest update is that the vendors' agents now do that well enough on their own.
+        <br><br>Said, not shown: the vendors' coding agents improve every month; the shared
+        context works in Copilot and in Claude Code; about a third of recent commits in the
+        roadmap repo were co-authored by one of them.
+        <br><br>The "about a third" figure is for the roadmap repo's commits since July
+        (co-authored by Copilot or Claude), as of late September.
+      </aside>
+    </section>
+
+    <section class="slide" data-reserve="6 October 2026" data-hue="3">
+      <p class="kicker">How we build the scaffolds</p>
+      <h2>Deterministic tools first, agents on top</h2>
+      <div class="chain">
+        <div class="st"><div class="hx">1</div><b>Framework</b><span>GitHub as the system of record: issues, a lifecycle, decision records</span><i class="tag">reliable</i></div>
+        <div class="st"><div class="hx">2</div><b>Tools</b><span>Scripts and Actions that compute the evidence</span><i class="tag">reliable</i></div>
+        <div class="st"><div class="hx">3</div><b>Skills</b><span>Version-controlled procedures an agent loads for a task</span><i class="tag">reliable</i></div>
+        <div class="st" style="--c: var(--faint)"><div class="hx">4</div><b>Bots</b><span>Agents acting on a schedule, under their own identity</span><i class="tag muted">still learning</i></div>
+      </div>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        Reserve. Demoted from the main deck on 2026-10-06: cut at Jeremy's request ("cut slide 22 + 23")
+        when the slide before it became the five-column view of the lifecycle.
+        <br><br>
+        Source: Q3 deck, "Framework → Tools → Skills → Bots". "Each layer only works once the one
+        below it is solid. Layers 1–3 are reliable today; layer 4 is where we're still learning."
+        <br><br>The line worth saying out loud: "Deterministic tools come before agents on
+        purpose: agents write prose on top of evidence the tools compute, so the numbers stay
+        right even when an agent fails."
+        <br><br>Example for the stage: the weekly check of each study's configuration against its
+        monitoring plan runs with no model at all. An agent wrote the checker and its matching
+        rules; the rules stay marked "inferred" until an engineer confirms them.
+        <br><br>Echo for beat 3: the obot summer learned the same thing the hard way ("never let
+        an agent be the sole watcher of an agent", diary #8). Cut candidate if beat 2 runs long.
       </aside>
     </section>
 
