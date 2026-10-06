@@ -112,14 +112,14 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - What good practice looks like now (the diary #10 placeholder); a better fit for beat 4
     - The industry got ready without knowing it (never built)
 
-3. What's next? A summer down the AI rabbit hole, with obot (about 10 min) — rebuilt 2026-10-05 as a journey, slides 26–44
+3. What's next? A summer down the AI rabbit hole, with obot (about 10 min) — rebuilt 2026-10-05 as a journey, slides 26–45
   - Status: rebuilt on 2026-10-05 to Jeremy's outline of that day: "the narrative (and the slide structure) is a total mess. Let's add more structure. Frame it as a journey. 5 versions of obot created during a summer of experiments." The first build (same day) is in git history; the slides it dropped are in the deck's reserves
   - The five versions (Jeremy, 2026-10-05): "v1 was actually a local personal assistant who drafted a handoff/build for the openclaw! v2 is open claw. v2.5 was paperclip (probably just a footnote). v3 fable 5. v4 org. v5 opus 5.5."
   - Template for each version: a title slide (the version's hex, name, dates, the set-up, the ladder strip, and "what changed" to get here), then what it built, with Orange's thumbs on the second click as "What worked" and "What didn't"
   - Later the same day he split the last version: "a v5 (after retiring factory, before opus 5.5) and 5.5 (opus 5.5 work)". So: v5 = September, one requirement at a time; v5.5 = October, Opus 5.5
   - Ladder (Jeremy, 2026-10-05, re-mapped to his version numbers): v2 = 3, v3 = 4, v4 = 5, v5 and v5.5 = back to 4. v1 = 2 is the outline's guess, `[TODO]` Jeremy
   - Hexes: placeholder robot cats drawn as SVG, `keynote/assets/hex/obot-v1.svg` to `obot-v5.svg`, plus `obot-v2-5.svg` and `obot-v5-5.svg`. Jeremy: "A is fine for now as placeholder. I'll provide hexes later." The three options are in `keynote/_notes/obot-version-hex-options.html`
-  - Hue: 4, blue. Budget: 19 slides for about 10 minutes, so still over; Jeremy cuts after seeing it
+  - Hue: 4, blue. Budget: 20 slides for about 10 minutes, so still over; Jeremy cuts after seeing it
   - Facts are checked against GitHub and the local session transcripts as of 2026-10-05 (`research-digest.md`, section 8). Wording is draft unless marked as Jeremy's
   - [Orange] From Orange to obot (built, slide 26)
     - The beat's Orange transition, forcats hex as the kicker; line "The agent is named after him." [diary #2]
@@ -173,8 +173,27 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - Jeremy's outline: "What I built: gsm.viz demo (this is the payoff)". Read as the safety.viz demo app; `[TODO]` Jeremy confirms
     - Your own files, mapped columns, nothing uploaded, one HTML file that runs offline [safety.viz v1.8.0 and v1.9.1 release notes]
     - `[TODO]` Jeremy: live or recorded, which files, and a closing line that hands to beat 4
+  - Recap: how fast it is moving (built, slide 45; draft wording throughout)
+    - Jeremy (2026-10-05): the five versions set up "a slide in beat 4 where we can emphasize just how fast capabilities are improving… roughly 1 year after Opus 4.5 changed the game and made agents viable. Maybe show a timeline of how the major innovations/model releases line up against my 5 agent experiments. Mention all the things I *didn't* experiment with… Takeaway for pharma is that we just can't keep up and as a result the gap between capabilities and adoption is rapidly widening."
+    - Also out of scope, and worth saying (Jeremy, 2026-10-05): open-source models. All five obot versions ran on closed, hosted models
+    - Reference: https://simonwillison.net/2026/Sep/27/2026-in-llms-so-far/
+    - Built 2026-10-05 by a worker session as the first slide of beat 4, then moved the same day to close beat 3 after the demo (Jeremy: "pull the timeline slide to the end of beat 3, I think it works well as a recap/closer after the demo"). Draft headline "Eleven months, and I could not keep up"; a month ruler from November 2025 to October 2026 with eight releases above and the six obot versions below; a "did not try" card (MCP, open-weight models, Muse, Jev, Dots); draft takeaway "We cannot keep up, so the gap between capability and adoption keeps widening."
+    - Every date is sourced in `keynote/_notes/beat4-capability-timeline-sources.md`; the standalone draft is `beat4-capability-timeline-draft.html`
+    - `[TODO]` Jeremy: "eleven months" or "a year" (Opus 4.5 was 24 November 2025, 331 days before the talk); whether "did not try MCP" is right; whether GPT-5.1 shares the credit for the November turn, as Willison has it; v5's label says Fable 5.1 though it also ran on Opus 5
 
 4. Lessons learned: what is AI good at now, and what is next (about 7 min, suggested) — not drafted
+  - Proposed structure (Jeremy, 2026-10-05), not yet reconciled with the earlier list below: "revisit our answers to 'What are these tools good at' (slide 1) and not good at (s2) and then discuss 'how do we do this in GxP?' velocity/timeline (s3, drafted), costs (s4) Quality (s5), SDLC/Roadmap (s6, treemap visual above), best practices (s7, orchestration, agents). Then closing."
+    - s1 What are these tools good at: gathers the thumbs-up callouts from beats 1 to 3
+    - s2 What are they not good at: gathers the thumbs-down callouts
+    - How do we do this in GxP?
+      - s3 Velocity: the capability timeline. Drafted; it now closes beat 3 (slide 45), so beat 4 either calls back to it or shows it again
+      - s4 Costs: a spending slide from the hub's analytics page. `[TODO]` in progress: a worker is refreshing the page, then drafting the slide (`keynote/_notes/beat4-spending-draft.html`)
+      - s5 Quality
+      - s6 SDLC / roadmap: a tree of objectives → requirements → tasks coloured by status, from a new hub page. `[TODO]` in progress: a worker is preparing tree-type options for Jeremy to choose from
+      - s7 Best practices: orchestration, agents
+    - Closing
+    - In the earlier list but not in this structure: the Orange transition; the summer in one number; the bottleneck moved (review); mixed feelings; the execution gap; open source is the path; what is next; if the models were frozen today; the question, one last time; the thank-you slide
+  - Earlier list (draft 2, 2026-10-01), kept until the two are reconciled
   - [Orange] transition
     - Photo option: `orange-looking-up-agenda.jpg` (so what now?) or `orange-asleep-on-keyboard.jpg`
   - The summer in one number
@@ -198,13 +217,6 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
     - Never let an agent be the sole watcher of an agent [diary #8]
     - Commit working notes; transcript-only work dies with the session [unpublished draft]
     - Requirements before work
-  - How fast it is moving (built, slide 46; draft wording throughout)
-    - Jeremy (2026-10-05): the five versions set up "a slide in beat 4 where we can emphasize just how fast capabilities are improving… roughly 1 year after Opus 4.5 changed the game and made agents viable. Maybe show a timeline of how the major innovations/model releases line up against my 5 agent experiments. Mention all the things I *didn't* experiment with… Takeaway for pharma is that we just can't keep up and as a result the gap between capabilities and adoption is rapidly widening."
-    - Also out of scope, and worth saying (Jeremy, 2026-10-05): open-source models. All five obot versions ran on closed, hosted models
-    - Reference: https://simonwillison.net/2026/Sep/27/2026-in-llms-so-far/
-    - Built 2026-10-05 by a worker session and placed after the beat 4 placeholder. Draft headline "Eleven months, and I could not keep up"; a month ruler from November 2025 to October 2026 with eight releases above and the six obot versions below; a "did not try" card (MCP, open-weight models, Muse, Jev, Dots); draft takeaway "We cannot keep up, so the gap between capability and adoption keeps widening."
-    - Every date is sourced in `keynote/_notes/beat4-capability-timeline-sources.md`; the standalone draft is `beat4-capability-timeline-draft.html`
-    - `[TODO]` Jeremy: "eleven months" or "a year" (Opus 4.5 was 24 November 2025, 331 days before the talk); whether "did not try MCP" is right; whether GPT-5.1 shares the credit for the November turn, as Willison has it; v5's label says Fable 5.1 though it also ran on Opus 5
   - The bottleneck moved
     - "Review, not writing, is the bottleneck" [diary #9]
     - "The bottleneck still isn't intelligence. It's plumbing." [unpublished draft]
@@ -286,7 +298,7 @@ Kept here so nothing from draft 1 is lost; pull any of it back in.
 - Section colours: beat 1 is amber (it suits Orange), beat 2 is teal; beat 3 is proposed as blue (hue 4); beat 4 takes one of the remaining hues
 - Where the five minutes for beat 2 come from. Suggested: two from beat 1 (it is ten quick slides already) and three from beat 4, with beat 3 held at ten. Beat 2's fourteen slides now fit its fifteen minutes, so its cut marks are removed
 - Beats 3 and 4 as outlined are each about three slides over even a 10-slide budget, and beat 4 now has about seven minutes; the `[cut?]` marks are where to start, and the recurring callouts can carry some of beat 4's "good at / bad at" lists before the close
-- Beat 3 after the journey rebuild: Jeremy's opening image and his own hexes; what v1 was; each version's "what worked" and "what didn't" in his words (v5's thumbs-down is a placeholder); his account of 10 September and the "mixed feelings"; which slides to cut (19 for about 10 minutes); whether "What it took" comes back in beat 4
+- Beat 3 after the journey rebuild: Jeremy's opening image and his own hexes; what v1 was; each version's "what worked" and "what didn't" in his words (v5's thumbs-down is a placeholder); his account of 10 September and the "mixed feelings"; which slides to cut (20 for about 10 minutes); whether "What it took" comes back in beat 4
 - Stale in beat 4 after 5 October, left for Jeremy since beat 4 is his to revise:
   - "The summer in one number" stops at 6 September. Since then: seven more releases and two new packages (digest 8a)
   - "What is next" asks how much of the unbuilt mid-October plan to promise. The app part is built and released; the 22 FDA figures are still none drawn
