@@ -336,6 +336,31 @@
     /* Two levels boxed at once in the sidebar (slide 19: "more level 2.5"). */
     .lvside li.on + li.on { margin-top: -6px; }
 
+    /* A pillar from the five-column slide shown again beside other content: add class
+       "side-l" (pillar first) or "side-r" (pillar last) to .five. */
+    .five.side-l { grid-template-columns: 262px 1fr; gap: 40px; height: auto; flex: 1; align-items: start; }
+    .five.side-r { grid-template-columns: 1fr 262px; gap: 40px; height: auto; flex: 1; align-items: start; }
+    .five.side-l > * + *::after, .five.side-r > * + *::after { content: none; }
+    .five.side-l .out, .five.side-r .out { padding-bottom: 14px; }
+    .five .lab { font-family: var(--mono); font-size: 20px; letter-spacing: 0.04em; color: var(--soft); margin: 0 0 12px; }
+    .s-artifacts .five .gallery { gap: 12px 16px; }
+    .s-artifacts .five .gallery figcaption { font-size: 18px; margin-top: 4px; }
+    .s-artifacts .five .src { font-size: 18px; margin-top: 10px; }
+    .s-artifacts .five ~ .goodat { bottom: 64px; }
+    .s-artifacts:has(.five) h2 { margin-bottom: 14px; }
+    .s-ops h2, .s-split:has(.five) h2 { font-size: 72px; margin-bottom: 30px; }
+    .s-ops .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; position: relative; }
+    .s-ops .pair::after { content: "↔"; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 36px; color: var(--faint); }
+    .s-ops .card { position: relative; background: var(--panel); border: 2px solid var(--rule); border-radius: 18px; padding: 18px 18px 10px; }
+    .s-ops .card.stack { box-shadow: 8px 8px 0 -2px var(--panel), 8px 8px 0 0 var(--rule), 16px 16px 0 -2px var(--panel), 16px 16px 0 0 var(--rule); }
+    .s-ops .card h4 { font-size: 28px; font-weight: 600; margin: 0 0 12px; display: flex; align-items: baseline; justify-content: space-between; }
+    .s-ops .card h4 span { font-family: var(--mono); font-weight: 400; font-size: 17px; color: var(--soft); }
+    .s-ops .card .s { background: var(--rail); }
+    .s-ops .card .s::before { background: var(--hue); }
+    .s-split .five .cols { flex: none; gap: 24px; }
+    .s-split .five .cols .col { padding: 30px 32px; }
+    .s-split .five .cols .col p { font-size: 29px; }
+
     /* Org chart (obot v4): boxes and arrows in an SVG inside .pvr. */
     .pvr.org .t { font-size: 25px; font-weight: 600; fill: var(--ink); }
     .pvr.org .s { font-size: 17px; fill: var(--soft); }
@@ -807,8 +832,8 @@
         isn't fully GxP-compliant." The column heading and "In every talk. The answer then:"
         are draft wording; the slide shortens the question to its first three words.
         <br><br>Where the thread comes back: slide 12 (gsm, "built for GxP from the start"),
-        slide 15 ("GxP is built into the design"), slide 29 ("Not GxP", the mad scientist
-        edition), and slide 50 ("A lot of tests, and still not GxP"). A reserve slide, "Is it validated?", asks the same question with a
+        slide 15 ("GxP is built into the design"), slide 28 ("Not GxP", the mad scientist
+        edition), and slide 49 ("A lot of tests, and still not GxP"). A reserve slide, "Is it validated?", asks the same question with a
         then-and-now answer.
         <br><br>TODO box added 2026-10-06 (Jeremy: "slide 10 needs a visual add a todo"). The two
         columns are unchanged, only tightened to make room. Ideas for the visual, none built:
@@ -989,7 +1014,7 @@
         a screenshot of a real qcthat report if one can be shown.
         <br><br>Pays off in beat 3: safety.viz and gsm.safety borrow exactly this (diary #4:
         "Instead of inventing a new quality framework, we plug the safety graphics into a quality
-        framework that already exists"), and "Not GxP" on slide 29 is the contrast.
+        framework that already exists"), and "Not GxP" on slide 28 is the contrast.
       </aside>
     </section>
 
@@ -1175,7 +1200,7 @@
         (before design) and 'Run/Deply/Operatations' as 5th column. Don't need as much detail,
         just want to call out the upstream and downstream work as places where AI can help a
         lot outside of standard SDLC."), and approved by him the same day ("I like 21 - clean
-        it up"). The middle three columns are the lifecycle of slides 14, 19 and 43 with less
+        it up"). The middle three columns are the lifecycle of slides 14, 19 and 42 with less
         detail; the two teal columns are the work before and after it. The earlier three-step
         version ("Plan → build → run: we invest at both ends") is in the reserves.
         <br><br>Column headings shortened 2026-10-06 (Jeremy: "s21. Plan/Roadmap -> planning.
@@ -1197,61 +1222,56 @@
         and sub-issues that coding consumes; coding produces releases that operations deploys to studies.
         <br><br>Why both ends: they are company-specific process that no vendor will build. The
         middle is commodity and improving monthly.
-        <br><br>Vet before publishing: everything on slides 20–21 and 23–24 comes from that internal deck. (Slide 22, the artifacts, is from the side project's public hub.)
+        <br><br>Vet before publishing: everything on slides 20 and 22–23, and the Planning cell on slide 21, comes from that internal deck. (The artifact grid on slide 21 is from the side project's public hub.)
       </aside>
     </section>
 
-    <section class="slide" data-hue="3">
-      <p class="kicker">Plan · gsm.roadmap</p>
-      <h2>Agents draft; people approve</h2>
-      <div class="chain">
-        <div class="st"><div class="hx">1</div><b>Backlog</b><span>business requirement</span></div>
-        <div class="st"><div class="hx">2</div><b>Gathering</b><span>data specification</span></div>
-        <div class="st"><div class="hx">3</div><b>Design</b><span>analytics spec, for business sign-off</span></div>
-        <div class="st"><div class="hx">4</div><b>Development</b><span>implementation plan, sub-issues per repo</span></div>
-        <div class="st"><div class="hx">5</div><b>Release</b><span>testing, knowledge transfer</span></div>
-        <div class="st who"><div class="hx">6</div><b>Done</b><span>every gate signed off by a person</span></div>
+    <section class="slide s-artifacts" data-hue="3">
+      <p class="kicker">Upstream · planning</p>
+      <h2>Agents can help a lot with planning</h2>
+      <div class="five side-l">
+        <div class="c out">
+          <p class="tag">Upstream<span>our scaffold</span></p>
+          <h3>Planning</h3>
+          <div class="s">Requirements</div>
+          <div class="s">Designs</div>
+          <div class="s">Phase gates</div>
+        </div>
+        <div class="arts">
+          <p class="lab">The artifact is what a person reviews</p>
+          <div class="gallery">
+            <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/nepexplorer-migration-assessment-2026-07-15/" target="_blank" rel="noopener"><img src="assets/artifacts/assessment-nepexplorer-migration.png" alt="A migration assessment page: a title, an executive summary in three cards and a row of headline figures" /></a><figcaption>Migration assessment</figcaption></figure>
+            <figure><a href="https://jwildfire.github.io/obot.roadmap/requirements/design/35_design.html#data" target="_blank" rel="noopener"><img src="assets/artifacts/data-requirement-nepexplorer.png" alt="The data requirement section of a design page: a table of settings, defaults and what each column is used for" /></a><figcaption>Data requirement</figcaption></figure>
+            <figure><a href="https://jwildfire.github.io/obot.roadmap/requirements/design/352_design.html" target="_blank" rel="noopener"><img src="assets/artifacts/design-basic-app.png" alt="A design document: a title, a summary and a sketch of the screen the user will see" /></a><figcaption>Design document</figcaption></figure>
+            <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/safety-viz-homepage-options-2026-07-11/" target="_blank" rel="noopener"><img src="assets/artifacts/options-safety-viz-homepage.png" alt="A layout options page: one of five mocked-up home pages, with notes on what it changes" /></a><figcaption>Layout options</figcaption></figure>
+            <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/goal-sessions-plan-2026-09-10/" target="_blank" rel="noopener"><img src="assets/artifacts/plan-requirement-sessions.png" alt="A plan page: a title, a summary and a boxed list of the decisions it rests on" /></a><figcaption>Roadmap plan</figcaption></figure>
+            <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/decisions/2026-08-17-safetycensus-stay-or-go/" target="_blank" rel="noopener"><img src="assets/artifacts/decision-safetycensus-stay-or-go.png" alt="A decision page: two numbered questions at the top and the recorded answer below" /></a><figcaption>Decision record</figcaption></figure>
+            <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/sv-v1.8-demo/#app" target="_blank" rel="noopener"><img src="assets/artifacts/release-demo-safety-viz-v1.8.png" alt="An annotated release demo: a paragraph on what changed above a screenshot of a chart in the new app" /></a><figcaption>Release demo</figcaption></figure>
+            <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/gsm-safety-v1.0.0-rc1/" target="_blank" rel="noopener"><img src="assets/artifacts/qualification-evidence-gsm-safety-v1.0-rc1.png" alt="A qualification evidence page: four headline counts above a grid of working examples" /></a><figcaption>Qualification evidence</figcaption></figure>
+            <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/release-review-plan-2026-09-12/" target="_blank" rel="noopener"><img src="assets/artifacts/review-guide-release-plan.png" alt="A release review guide: a headline, a summary and the reviewer's recorded decisions" /></a><figcaption>Release review guide</figcaption></figure>
+            <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/org-chart/" target="_blank" rel="noopener"><img src="assets/artifacts/org-chart.png" alt="An org chart drawn as boxes and arrows: one person, three named agents and a crew of workers" /></a><figcaption>Org chart</figcaption></figure>
+          </div>
+          <p class="src">Examples from my side project, standing in for the team's</p>
+        </div>
       </div>
       <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Drafting documents!</p></div><div class="who"><i>👍</i></div></div>
       <div class="goodat bad"><div class="bub"><p class="q">What are agents bad at now?</p><p class="a">Setting priorities</p></div><div class="who"><i>👎</i></div></div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
-        Source: Q3 deck, roadmap scaffold slides, and the gsm.roadmap README. Every requirement
-        moves through the same six stages; a person records sign-off at each gate and the stage
-        only advances when the gate's evidence passes. Agents draft most of the written artifacts
-        (requirements, specs, designs, implementation plans) from templates, through 13 skills;
-        each artifact is published by a validated pull request and indexed on the roadmap site.
-        <br><br>Numbers available if wanted on the slide (late September): 13 skills, up from 7 in
-        July; 82 requirements tracked; 64 artifacts across 29 requirements; 103 linked sub-issues
-        across 17 repos; 132 pull requests merged since early July; 23 architecture decision records.
-        <br><br>The abstract's wording: "{gsm.roadmap} decomposes requirements with AI-assisted
-        planning using GitHub workflows." Ties forward to beat 4: requirements before work.
-        <br><br>Callout: what are agents good at now? Drafting documents (specs, designs, plans).
-        <br><br>Callout: what are agents bad at now? Setting priorities. They will draft any
-        requirement you ask for; deciding which one matters is still a person's job (Jeremy, 2026-10-02).
-      </aside>
-    </section>
-
-<section class="slide s-artifacts" data-hue="3">
-      <p class="kicker">Plan · the artifacts</p>
-      <h2>The artifact is what a person reviews</h2>
-      <div class="gallery">
-        <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/nepexplorer-migration-assessment-2026-07-15/" target="_blank" rel="noopener"><img src="assets/artifacts/assessment-nepexplorer-migration.png" alt="A migration assessment page: a title, an executive summary in three cards and a row of headline figures" /></a><figcaption>Migration assessment</figcaption></figure>
-        <figure><a href="https://jwildfire.github.io/obot.roadmap/requirements/design/35_design.html#data" target="_blank" rel="noopener"><img src="assets/artifacts/data-requirement-nepexplorer.png" alt="The data requirement section of a design page: a table of settings, defaults and what each column is used for" /></a><figcaption>Data requirement</figcaption></figure>
-        <figure><a href="https://jwildfire.github.io/obot.roadmap/requirements/design/352_design.html" target="_blank" rel="noopener"><img src="assets/artifacts/design-basic-app.png" alt="A design document: a title, a summary and a sketch of the screen the user will see" /></a><figcaption>Design document</figcaption></figure>
-        <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/safety-viz-homepage-options-2026-07-11/" target="_blank" rel="noopener"><img src="assets/artifacts/options-safety-viz-homepage.png" alt="A layout options page: one of five mocked-up home pages, with notes on what it changes" /></a><figcaption>Layout options</figcaption></figure>
-        <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/goal-sessions-plan-2026-09-10/" target="_blank" rel="noopener"><img src="assets/artifacts/plan-requirement-sessions.png" alt="A plan page: a title, a summary and a boxed list of the decisions it rests on" /></a><figcaption>Roadmap plan</figcaption></figure>
-        <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/decisions/2026-08-17-safetycensus-stay-or-go/" target="_blank" rel="noopener"><img src="assets/artifacts/decision-safetycensus-stay-or-go.png" alt="A decision page: two numbered questions at the top and the recorded answer below" /></a><figcaption>Decision record</figcaption></figure>
-        <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/sv-v1.8-demo/#app" target="_blank" rel="noopener"><img src="assets/artifacts/release-demo-safety-viz-v1.8.png" alt="An annotated release demo: a paragraph on what changed above a screenshot of a chart in the new app" /></a><figcaption>Release demo</figcaption></figure>
-        <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/gsm-safety-v1.0.0-rc1/" target="_blank" rel="noopener"><img src="assets/artifacts/qualification-evidence-gsm-safety-v1.0-rc1.png" alt="A qualification evidence page: four headline counts above a grid of working examples" /></a><figcaption>Qualification evidence</figcaption></figure>
-        <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/release-review-plan-2026-09-12/" target="_blank" rel="noopener"><img src="assets/artifacts/review-guide-release-plan.png" alt="A release review guide: a headline, a summary and the reviewer's recorded decisions" /></a><figcaption>Release review guide</figcaption></figure>
-        <figure><a href="https://jwildfire.github.io/obot.roadmap/reports/org-chart/" target="_blank" rel="noopener"><img src="assets/artifacts/org-chart.png" alt="An org chart drawn as boxes and arrows: one person, three named agents and a crew of workers" /></a><figcaption>Org chart</figcaption></figure>
-      </div>
-      <p class="src">Examples from my side project, standing in for the team's</p>
-      <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Designing pages!</p></div><div class="who"><i>👍</i></div></div>
-      <aside class="notes">
-        <strong class="say">&lt;none yet&gt;</strong>
-        Added to beat 2 on 2026-10-05 as slide 22, straight after "Agents draft; people approve",
+        Reformatted 2026-10-06 to match the five-column slide (Jeremy: "Reformat 21-24 to match
+        the new framing. Messaging - Agents can help a lot with both Planning and Operations.
+        Cut 21 (move the good/bad callouts to 22) for 22 Lets show the planning cell again next
+        to the artifact grids."). The Planning cell from the five-column slide sits beside the
+        grid. The title is draft wording for his message; the old title ("The artifact is what
+        a person reviews") is now the line above the grid.
+        <br><br>Callouts, second click, moved here from "Agents draft; people approve" (now in
+        the reserves): what are agents good at now? Drafting documents (specs, designs, plans).
+        What are agents bad at now? Setting priorities: they will draft any requirement you ask
+        for; deciding which one matters is still a person's job (Jeremy, 2026-10-02).
+        <br><br>This slide's own callout, "Designing pages!", came off to make room for those
+        two. It is still a card on the good-at wrap-up slide; say if it should come back here.
+        <br><br>
+        Added to beat 2 on 2026-10-05 as slide 21, straight after "Agents draft; people approve",
         which says there is an artifact at each stage; this is the picture of that sentence.
         A worker session drafted it; the pages and what was left out are listed in
         keynote/_notes/beat2-artifacts-sources.md.
@@ -1297,20 +1317,15 @@
         https://jwildfire.github.io/obot.roadmap/reports/release-review-plan-2026-09-12/
         <br>10. Org chart: who answers to whom among the agents ("The chart" section).
         https://jwildfire.github.io/obot.roadmap/reports/org-chart/
-        <br><br>WHERE IT GOES. Recommended: straight after slide 21, "Agents draft; people
-        approve", as the new slide 22. Slide 21 names an artifact at each of the six stages and
-        its notes say each is published by a pull request and indexed on a site; this slide is
-        the picture of that sentence. The first row follows slide 21's order (requirement, data,
-        design, plan); the second row is what comes out at release. Then the Run slides carry on
-        as now. Alternative: if stand-ins from the side project feel wrong in the middle of the
-        day-job beat, the same slide works unchanged in beat 3 (hue 4, without the caption's
-        second half), next to the slide where obot starts writing requirements.
-        <br><br>CALLOUT. "Drafting documents!" is already on slide 21, so this one proposes
-        "Designing pages!", from the unplaced candidate in the outline ("design (artifacts,
-        .md → .html)"). Other wordings: "Design!", "Making it readable", "Turning notes into
-        pages". It is a smaller copy of the callout so that it sits under the grid and covers no
-        label; if three callouts in two slides is one too many, delete the .goodat div and the
-        caption line can run the full width.
+        <br><br>WHERE IT WENT. It was built to follow "Agents draft; people approve", which named
+        an artifact at each of six stages; that slide is in the reserves since 2026-10-06 and
+        this one now follows the five-column slide. The first row follows the stages' order
+        (requirement, data, design, plan); the second row is what comes out at release.
+        Alternative, still open: the same grid works in beat 3, next to the slide where obot
+        starts writing requirements.
+        <br><br>CALLOUT, as first built: "Designing pages!", from the unplaced candidate in the
+        outline ("design (artifacts, .md → .html)"). It came off on 2026-10-06 when "Drafting
+        documents!" and "Setting priorities" moved here.
         <br><br>Other headlines considered: "A page to review at every gate"; "Every stage
         leaves a page a person can read"; "The artifacts: a web page at every stage".
         <br><br>TODO (Jeremy): (1) Vet all ten pages; they are public already, but they have not
@@ -1323,17 +1338,51 @@
       </aside>
     </section>
 
-    <section class="slide s-bullets" data-hue="3">
-      <p class="kicker">Run · operations</p>
-      <h2>One repo per study, one hub to run them</h2>
-      <ul>
-        <li>Study repos <span>— 20 studies, each with its own configuration and snapshot workflow</span></li>
-        <li>Central scheduling <span>— one schedule opens issues in every study repo; the dashboard updates daily</span></li>
-        <li>Intake and a guide <span>— request forms, and a 15-step study set-up guide</span></li>
-        <li>Plan alignment <span>— a weekly check of each study's configuration against its monitoring plan</span></li>
-      </ul>
+    <section class="slide s-ops" data-hue="3">
+      <p class="kicker">Downstream · operations</p>
+      <h2>Agents can help a lot with operations</h2>
+      <div class="five side-r">
+        <div class="ops">
+          <p class="lab">One repo per study, one hub to run them</p>
+          <div class="pair">
+            <div class="card stack">
+              <h4>A study repo<span>one of 20</span></h4>
+              <div class="s">Its own configuration</div>
+              <div class="s">Its own snapshot workflow</div>
+              <div class="s">Issues, opened by the schedule</div>
+              <div class="s">A weekly check against its monitoring plan</div>
+            </div>
+            <div class="card">
+              <h4>The hub<span>one for all of them</span></h4>
+              <div class="s">One schedule for every study</div>
+              <div class="s">A dashboard, updated daily</div>
+              <div class="s">Request forms</div>
+              <div class="s">A 15-step study set-up guide</div>
+            </div>
+          </div>
+          <div class="todo" style="padding: 16px 28px; margin-top: 18px">
+            <p style="max-width: none; margin: 0; font-size: 25px">TODO (Jeremy): a real visual of study ops, e.g. a study repo, or a schedule with mock data</p>
+          </div>
+        </div>
+        <div class="c out">
+          <p class="tag">Downstream<span>our scaffold</span></p>
+          <h3>Operations</h3>
+          <div class="s">Study set-up</div>
+          <div class="s">Snapshot schedules</div>
+          <div class="s">Monitoring plan checks</div>
+        </div>
+      </div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
+        DRAFT, reformatted 2026-10-06 to match the five-column slide (Jeremy: "23-24 can also
+        use the operations pillar. Not sure about exact content there though. needs a visual
+        about study ops. Could maybe show what a study repo looks like and then just reference
+        the hub ... or maybe i can pull together a schedule with mock data. draft something and
+        then leave me a todo to update."). The Operations cell from the five-column slide sits
+        on the right. The two cards are the four bullets this slide had before, redrawn as a
+        study repo and the hub; nothing is added. The title is draft wording for his message;
+        the old title is the line above the cards. The orange box is his to-do.
+        <br><br>
         Jeremy's steer (2026-10-02): "One repo per study, central repo for monitoring." Source:
         Q3 deck, "The operations scaffold at a glance".
         <br><br>Production workflows run under a bot identity. The plan-alignment check is fully
@@ -1344,16 +1393,29 @@
     </section>
 
     <section class="slide s-split" data-hue="3">
-      <p class="kicker">Run · what changed</p>
+      <p class="kicker">Downstream · operations · what changed</p>
       <h2>The hub replaced spreadsheets and email</h2>
-      <div class="cols">
-        <div class="col"><h3>Before</h3>
-          <p>Schedules in several Excel trackers<br>Status chased by email<br>No live view for leadership</p></div>
-        <div class="col"><h3>Now</h3>
-          <p>Merge a schedule, and issues open in each study repo<br>A live dashboard, updated daily<br>A full audit trail through pull requests</p></div>
+      <div class="five side-r">
+        <div class="cols">
+          <div class="col"><h3>Before</h3>
+            <p>Schedules in several Excel trackers<br>Status chased by email<br>No live view for leadership</p></div>
+          <div class="col"><h3>Now</h3>
+            <p>Merge a schedule, and issues open in each study repo<br>A live dashboard, updated daily<br>A full audit trail through pull requests</p></div>
+        </div>
+        <div class="c out">
+          <p class="tag">Downstream<span>our scaffold</span></p>
+          <h3>Operations</h3>
+          <div class="s">Study set-up</div>
+          <div class="s">Snapshot schedules</div>
+          <div class="s">Monitoring plan checks</div>
+        </div>
       </div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
+        Reformatted 2026-10-06 to match the five-column slide: the Operations cell sits on
+        the right (Jeremy: "23-24 can also use the operations pillar"). The before and now
+        columns are unchanged.
+        <br><br>
         Source: Q3 deck, "The Central Monitoring hub replaced spreadsheets and email". Also on
         that slide: self-serve editors with approver sign-off; cadence growing toward weekly;
         20 study repos managed and 19 production workflows.
@@ -1438,7 +1500,7 @@
         Beat 2 wrap-up, added 2026-10-05 from Jeremy's outline: "We're having great success at
         level 3! Efficiency gains. Fully compliant! But what's next …". The headline and the
         three lead phrases are his; the grey asides are draft wording.
-        <br><br>Efficiency: the diary #1 figures already on slide 26 ("Our rate of releases has
+        <br><br>Efficiency: the diary #1 figures already on slide 25 ("Our rate of releases has
         gone up by roughly 50% compared to last year. The number of issues, both opened and
         closed, has roughly doubled. Same with PRs."). TODO (Jeremy): fresher numbers if you have them.
         <br><br>Compliant: slide 17 ("Humans own the process and all deliverables"), the quality
@@ -1993,8 +2055,9 @@
         day: 10 objectives, 175 requirements (66 released, 44 retired), 266 tasks. A screenshot
         of that tracker view is in keynote/assets/obot-tracker-biomarkers.png if a picture of
         the real thing is wanted; it was too small to read as the whole slide.
-        <br><br>The link to beat 2: this is the same shape as gsm.roadmap on slide 21 (agents
-        draft, people approve), with the gates moved to the release.
+        <br><br>The link to beat 2: this is the same shape as gsm.roadmap in "Agents draft;
+        people approve" (a beat 2 slide, in the reserves since 2026-10-06), with the gates
+        moved to the release.
         <br><br>TODO (Jeremy): "after so many struggles" deserves a sentence of yours here. What
         made this version of the scaffold work when v4's did not?
       </aside>
@@ -2449,7 +2512,7 @@
         here as the SDLC slide (tests, review, sign-off), ahead of the two roadmap pictures.
         TODO (Jeremy): say if it belongs in "what we learned" instead. It was drafted as s5
         ("Quality", under "how do we do this in GxP?") in his first structure. Every word is draft; the numbers are sourced below. It calls back to the
-        beat 3 opener (slide 29, "Not GxP") and to beat 2's quality slide (slide 15: every
+        beat 3 opener (slide 28, "Not GxP") and to beat 2's quality slide (slide 15: every
         requirement has a test, every test has a result, and a person signs the release).
         <br><br>Column 1. 2,185 unit and 374 browser tests at safety.viz v1.9.1, from its
         release notes (2026-10-04; still the latest release when checked on 5 October).
@@ -2819,10 +2882,10 @@
         <br>Teaching me things: slide 6.
         <br>Writing code: slide 17.
         <br>Drafting documents: slide 21.
-        <br>Designing pages: slide 22 (the artifacts).
-        <br>Porting old code: slide 36 (v3, the weekend of renderers).
-        <br>Translating research into software: slide 37 (v3; Jeremy's wording).
-        <br>Reviewing its own work: slide 46 (v5.5; the reviewer agents).
+        <br>Designing pages: was the callout on slide 21 (the artifacts) until 2026-10-06; no longer on a slide before this one.
+        <br>Porting old code: slide 35 (v3, the weekend of renderers).
+        <br>Translating research into software: slide 36 (v3; Jeremy's wording).
+        <br>Reviewing its own work: slide 45 (v5.5; the reviewer agents).
         <br>Running experiments: not a callout in the main deck. It is from Jeremy's steer of
         5 October ("Agents are great at experiments") and from a slide now in the reserves. If
         it stays here it probably wants a callout in beat 3, on the v5.5 slide.
@@ -2859,16 +2922,16 @@
         throughout.
         <br><br>Where each one comes from:
         <br>Setting priorities: slide 21.
-        <br>Working without me: three callouts folded into one. "Autonomy" (v2, slide 34),
-        "Working without me" (v3, slide 36) and "Still waits on me" (v5.5, slide 46, which is a
+        <br>Working without me: three callouts folded into one. "Autonomy" (v2, slide 33),
+        "Working without me" (v3, slide 35) and "Still waits on me" (v5.5, slide 45, which is a
         placeholder Jeremy has not confirmed).
-        <br>Knowing when it has failed: slide 40 (v4; "Nine cases in one night of something
+        <br>Knowing when it has failed: slide 39 (v4; "Nine cases in one night of something
         reporting success while having done nothing", diary #8).
         <br>Being concise and Remembering: from Jeremy's close-out list in the outline
         ("Communicating: being concise", "Remembering"). Neither is a callout anywhere in the
         deck yet, and the label "Every day" is a guess at a tag. TODO (Jeremy): keep them, and
         if so say where they bit.
-        <br><br>Left out: "No chart releases" (v5, slide 44). It is true of September, but
+        <br><br>Left out: "No chart releases" (v5, slide 43). It is true of September, but
         October shipped six releases in a weekend, so it does not read as something agents are
         bad at.
         <br><br>Until late on 5 October a sixth, dashed cell bridged to "So how do we do this in
@@ -3402,6 +3465,40 @@
         rules; the rules stay marked "inferred" until an engineer confirms them.
         <br><br>Echo for beat 3: the obot summer learned the same thing the hard way ("never let
         an agent be the sole watcher of an agent", diary #8). Cut candidate if beat 2 runs long.
+      </aside>
+    </section>
+
+    <section class="slide" data-reserve="6 October 2026" data-hue="3">
+      <p class="kicker">Plan · gsm.roadmap</p>
+      <h2>Agents draft; people approve</h2>
+      <div class="chain">
+        <div class="st"><div class="hx">1</div><b>Backlog</b><span>business requirement</span></div>
+        <div class="st"><div class="hx">2</div><b>Gathering</b><span>data specification</span></div>
+        <div class="st"><div class="hx">3</div><b>Design</b><span>analytics spec, for business sign-off</span></div>
+        <div class="st"><div class="hx">4</div><b>Development</b><span>implementation plan, sub-issues per repo</span></div>
+        <div class="st"><div class="hx">5</div><b>Release</b><span>testing, knowledge transfer</span></div>
+        <div class="st who"><div class="hx">6</div><b>Done</b><span>every gate signed off by a person</span></div>
+      </div>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        Reserve. Demoted from the main deck on 2026-10-06: cut at Jeremy's request ("Cut 21
+        (move the good/bad callouts to 22)") when the planning and operations slides were
+        reformatted around the five-column view. Its two callouts ("Drafting documents!" and
+        "Setting priorities") moved to the planning slide with the artifact grid.
+        <br><br>
+        Source: Q3 deck, roadmap scaffold slides, and the gsm.roadmap README. Every requirement
+        moves through the same six stages; a person records sign-off at each gate and the stage
+        only advances when the gate's evidence passes. Agents draft most of the written artifacts
+        (requirements, specs, designs, implementation plans) from templates, through 13 skills;
+        each artifact is published by a validated pull request and indexed on the roadmap site.
+        <br><br>Numbers available if wanted on the slide (late September): 13 skills, up from 7 in
+        July; 82 requirements tracked; 64 artifacts across 29 requirements; 103 linked sub-issues
+        across 17 repos; 132 pull requests merged since early July; 23 architecture decision records.
+        <br><br>The abstract's wording: "{gsm.roadmap} decomposes requirements with AI-assisted
+        planning using GitHub workflows." Ties forward to beat 4: requirements before work.
+        <br><br>Callout: what are agents good at now? Drafting documents (specs, designs, plans).
+        <br><br>Callout: what are agents bad at now? Setting priorities. They will draft any
+        requirement you ask for; deciding which one matters is still a person's job (Jeremy, 2026-10-02).
       </aside>
     </section>
 
