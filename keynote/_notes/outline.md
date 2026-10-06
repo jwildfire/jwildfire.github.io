@@ -151,13 +151,14 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
     - Title from Jeremy's outline: "What's next? A summer down the AI rabbit hole (in the matrix??) with obot …"
     - `[TODO]` Jeremy's image: "Comic of orange transforming into a robot? Evolution graphic? I'll figure something out". Built as a stand-in evolution row: Orange's photo hex, then the five version hexes. It doubles as the map of the beat
     - Notes: the agent is named after the cat [diary #2]
-  - The goal: modernize safetyGraphics, using the gsm framework (built, slide 30)
+  - obot v1 · early May: a personal assistant (built, slide 30)
+    - One slide; there is no public account of v1. What the record has: gsm.safety's first commit, 9 May 2026, is authored by "Orange" ("Initial gsm.safety design")
+    - `[TODO]` Jeremy: which tool it was, what worked, what didn't, and its ladder level
+  - The goal: modernize safetyGraphics, using the gsm framework (built, slide 31)
+    - Order flipped with the obot v1 title on 2026-10-06 (Jeremy: "Flip slides 30/31"); it now sits between v1 and v2
     - A gallery of the ten original charts (Jeremy, 2026-10-05: "show a gallery of the original charts"): each one's own README screenshot as a still, with the year of its last commit in the corner. Images in `keynote/assets/legacy/`; all ten repositories are MIT-licensed
     - One line under it: 10 original charts, 25,400 lines of JavaScript, all on D3 v3. Measured 2026-10-05 from the public repositories (730 files; last commits 2019 to 2022; today safety.viz is on Chart.js 4). The earlier three-figure version of the slide is in the reserves
     - Jeremy's draft said "sitting idle for 5+ years": true of eight of the ten; the newest last commit is February 2022
-  - obot v1 · early May: a personal assistant (built, slide 31)
-    - One slide; there is no public account of v1. What the record has: gsm.safety's first commit, 9 May 2026, is authored by "Orange" ("Initial gsm.safety design")
-    - `[TODO]` Jeremy: which tool it was, what worked, what didn't, and its ladder level
   - obot v2 · May to June: OpenClaw (built, slides 32–33)
     - Title slide: a clean-room laptop with none of his credentials, Telegram, its own GitHub account [diary #2]. Level 3
     - What I built: the gsm.safety proof of concept (the old charts run from gsm workflows), a public hub and daily diary, 266 commits, 18 pull requests and 2 releases by 10 June [diary #2]
