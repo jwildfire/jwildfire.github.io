@@ -124,7 +124,7 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
   - AI-written code still needs a human owner (built, slide 28)
     - The four "a person…" lines, verbatim from the 6 June deck
   - Wrap-up: "We're having great success at level 3!" (built, slide 29)
-    - Jeremy's outline (2026-10-05): efficiency gains; fully compliant; but what's next … With the ladder strip at level 3
+    - Jeremy's outline (2026-10-05): efficiency gains; fully compliant; but what's next … With the level sidebar at level 3
     - `[TODO]` Jeremy confirms "Fully compliant!" as a public claim about the day job, and fresher efficiency numbers
     - Replaces the bridge slide ("Open, software-shaped workflows are agent-ready"), which is in the reserves
   - Taken out of beat 2 on 2026-10-02 (still in git history)
@@ -136,7 +136,7 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
 3. What's next? The goal and what we built: a summer down the AI rabbit hole, with obot (about 10 min) — rebuilt 2026-10-05 as a journey, slides 30–48
   - Status: rebuilt on 2026-10-05 to Jeremy's outline of that day: "the narrative (and the slide structure) is a total mess. Let's add more structure. Frame it as a journey. 5 versions of obot created during a summer of experiments." The first build (same day) is in git history; the slides it dropped are in the deck's reserves
   - The five versions (Jeremy, 2026-10-05): "v1 was actually a local personal assistant who drafted a handoff/build for the openclaw! v2 is open claw. v2.5 was paperclip (probably just a footnote). v3 fable 5. v4 org. v5 opus 5.5."
-  - Template for each version: a title slide (the version's hex, name, dates, the set-up, the ladder strip, and "what changed" to get here), then what it built, with Orange's thumbs on the second click as "What worked" and "What didn't"
+  - Template for each version: a title slide (the version's hex, name, dates, the set-up, the level sidebar (the full ladder down the right edge with the current level boxed; replaced the small strip on 2026-10-06, Jeremy: "this isn't enough emphasis. maybe as a sidebar?"), and "what changed" to get here), then what it built, with Orange's thumbs on the second click as "What worked" and "What didn't"
   - Later the same day he split the last version: "a v5 (after retiring factory, before opus 5.5) and 5.5 (opus 5.5 work)". So: v5 = September, one requirement at a time; v5.5 = October, Opus 5.5
   - Ladder (Jeremy, 2026-10-05, re-mapped to his version numbers): v2 = 3, v3 = 4, v4 = 5, v5 and v5.5 = back to 4. v1 = 2 is the outline's guess, `[TODO]` Jeremy
   - Hexes: Jeremy's own, supplied 2026-10-05 as one sheet (kept in `keynote/_notes/inbox/`) and cut into `keynote/assets/hex/orange.png` and `obot-v1.png` to `obot-v5-5.png`, used in the journey row, the version title slides, the kickers, the timeline and the costs slide. The sheet also had three unframed cats (`orange-cutout.png`, `obot-cutout-claw.png`, `obot-cutout-shades.png`), saved and not placed. `[TODO]` full-size files (the brief asked for 1040 × 1200) would be sharper than the 240 px cuts. Before that: placeholder robot cats drawn as SVG, still in the folder as `obot-v1.svg` to `obot-v5-5.svg`. Jeremy: "A is fine for now as placeholder. I'll provide hexes later." The three options are in `keynote/_notes/obot-version-hex-options.html`

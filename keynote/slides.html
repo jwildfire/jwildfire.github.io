@@ -275,6 +275,26 @@
     .lvstrip i.on { width: 48px; height: 55px; background: var(--c); color: #fff; font-size: 30px; }
     .lvstrip b { order: -1; margin-right: 12px; font-family: var(--mono); font-weight: 500; font-size: 19px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c); }
 
+    /* Level sidebar (2026-10-06, replaces the level strip on the main deck): slide 18's ladder
+       down the right edge, the current level boxed. <ol class="lvside"> with six <li>, the
+       current one class="on"; an optional <small> inside its <b> adds a second line. */
+    .lvside { position: absolute; right: 0; top: 18px; bottom: 0; width: 330px; margin: 0; padding: 0 22px 0 0; list-style: none; display: flex; flex-direction: column; justify-content: center; gap: 10px; background: var(--panel); border-left: 2px solid var(--rule); z-index: 0; }
+    .s-version .lvside { background: #fafaf8; }
+    .lvside li { display: grid; grid-template-columns: 40px 1fr; align-items: center; gap: 16px; padding: 10px 14px 10px 26px; border: 3px solid transparent; border-radius: 16px; opacity: 0.5; margin: 0; }
+    .lvside li::before { content: none; }
+    .lvside li i { width: 40px; height: 46px; clip-path: var(--hex-clip); background: var(--c); color: #fff; display: grid; place-items: center; font-style: normal; font-family: var(--serif); font-size: 25px; }
+    .lvside li b { font-size: 22px; line-height: 1.2; font-weight: 600; color: var(--ink); }
+    .lvside li.on { opacity: 1; grid-template-columns: 62px 1fr; margin: 6px 0 6px -44px; padding: 18px 16px 18px 20px; background: var(--panel); border-color: var(--c); box-shadow: 0 10px 28px rgba(31, 35, 40, 0.14); }
+    .lvside li.on i { width: 62px; height: 72px; font-size: 40px; }
+    .lvside li.on b { font-size: 28px; }
+    .lvside li.on small { display: block; margin-top: 4px; font-family: var(--mono); font-weight: 500; font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c); }
+    .lvside li.hd { display: block; opacity: 1; padding: 0 0 8px 26px; font-family: var(--mono); font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); }
+    .slide:has(> .lvside) { padding-right: 420px; }
+    .slide:has(> .lvside) .num { z-index: 1; }
+    .s-version:has(> .lvside) { padding-right: 790px; }
+    .s-version:has(> .lvside) .vhex { right: 412px; width: 340px; height: 391px; margin-top: -180px; }
+    .s-version:has(> .lvside) h2 { font-size: 96px; text-wrap: balance; }
+
     /* Org chart (obot v4): boxes and arrows in an SVG inside .pvr. */
     .pvr.org .t { font-size: 25px; font-weight: 600; fill: var(--ink); }
     .pvr.org .s { font-size: 17px; fill: var(--soft); }
@@ -1321,7 +1341,15 @@
     </section>
 
         <section class="slide s-bullets" data-hue="3">
-      <div class="lvstrip" style="--c: var(--spec-3)"><i>0</i><i>1</i><i>2</i><i class="on">3</i><i>4</i><i>5</i><b>Level 3 · the developer</b></div>
+      <ol class="lvside">
+        <li class="hd">Levels of AI usage</li>
+        <li style="--c: var(--spec-5)"><i>5</i><b>The dark software factory</b></li>
+        <li style="--c: var(--spec-4)"><i>4</i><b>The engineering team</b></li>
+        <li class="on" style="--c: var(--spec-3)"><i>3</i><b>The developer</b></li>
+        <li style="--c: var(--spec-2)"><i>2</i><b>The junior developer</b></li>
+        <li style="--c: var(--spec-1)"><i>1</i><b>The coding intern</b></li>
+        <li style="--c: var(--spec-0)"><i>0</i><b>Spicy autocomplete</b></li>
+      </ol>
       <p class="kicker">Where that leaves us</p>
       <h2>We're having great success at level 3!</h2>
       <ul>
@@ -1353,7 +1381,7 @@
     <!-- ============================================================
          3 · What's next? A summer down the AI rabbit hole, with obot
          Rebuilt 2026-10-05 as a journey through five obot versions (Jeremy's outline of
-         that day). Each version: a title slide (robot-cat hex, the set-up, the ladder strip,
+         that day). Each version: a title slide (robot-cat hex, the set-up, the level sidebar,
          what changed) and what it built, with Orange's "what worked" / "what didn't" on the
          second click. Facts: research-digest.md, section 8. Wording is draft unless the notes
          say it is Jeremy's. Slides that left the main deck are in the reserves, below.
@@ -1488,7 +1516,15 @@
 
     <!-- 3 · obot v1 -->
     <section class="slide s-version" data-hue="4">
-      <div class="lvstrip" style="--c: var(--spec-2)"><i>0</i><i>1</i><i class="on">2</i><i>3</i><i>4</i><i>5</i><b>Level 2 · the junior developer</b></div>
+      <ol class="lvside">
+        <li class="hd">Levels of AI usage</li>
+        <li style="--c: var(--spec-5)"><i>5</i><b>The dark software factory</b></li>
+        <li style="--c: var(--spec-4)"><i>4</i><b>The engineering team</b></li>
+        <li style="--c: var(--spec-3)"><i>3</i><b>The developer</b></li>
+        <li class="on" style="--c: var(--spec-2)"><i>2</i><b>The junior developer</b></li>
+        <li style="--c: var(--spec-1)"><i>1</i><b>The coding intern</b></li>
+        <li style="--c: var(--spec-0)"><i>0</i><b>Spicy autocomplete</b></li>
+      </ol>
       <img class="vhex" src="assets/hex/obot-v1.png" alt="obot v1: a robot cat holding a clipboard" />
       <p class="kicker">obot v1 · early May</p>
       <h2>A personal assistant</h2>
@@ -1513,7 +1549,15 @@
 
     <!-- 3 · obot v2 -->
     <section class="slide s-version" data-hue="4">
-      <div class="lvstrip" style="--c: var(--spec-3)"><i>0</i><i>1</i><i>2</i><i class="on">3</i><i>4</i><i>5</i><b>Level 3 · the developer</b></div>
+      <ol class="lvside">
+        <li class="hd">Levels of AI usage</li>
+        <li style="--c: var(--spec-5)"><i>5</i><b>The dark software factory</b></li>
+        <li style="--c: var(--spec-4)"><i>4</i><b>The engineering team</b></li>
+        <li class="on" style="--c: var(--spec-3)"><i>3</i><b>The developer</b></li>
+        <li style="--c: var(--spec-2)"><i>2</i><b>The junior developer</b></li>
+        <li style="--c: var(--spec-1)"><i>1</i><b>The coding intern</b></li>
+        <li style="--c: var(--spec-0)"><i>0</i><b>Spicy autocomplete</b></li>
+      </ol>
       <img class="vhex" src="assets/hex/obot-v2.png" alt="obot v2: a robot cat with a paper plane" />
       <p class="kicker">obot v2 · May to June</p>
       <h2>OpenClaw</h2>
@@ -1575,7 +1619,15 @@
 
     <!-- 3 · obot v3 -->
     <section class="slide s-version" data-hue="4">
-      <div class="lvstrip" style="--c: var(--spec-4)"><i>0</i><i>1</i><i>2</i><i>3</i><i class="on">4</i><i>5</i><b>Level 4 · the engineering team</b></div>
+      <ol class="lvside">
+        <li class="hd">Levels of AI usage</li>
+        <li style="--c: var(--spec-5)"><i>5</i><b>The dark software factory</b></li>
+        <li class="on" style="--c: var(--spec-4)"><i>4</i><b>The engineering team</b></li>
+        <li style="--c: var(--spec-3)"><i>3</i><b>The developer</b></li>
+        <li style="--c: var(--spec-2)"><i>2</i><b>The junior developer</b></li>
+        <li style="--c: var(--spec-1)"><i>1</i><b>The coding intern</b></li>
+        <li style="--c: var(--spec-0)"><i>0</i><b>Spicy autocomplete</b></li>
+      </ol>
       <img class="vhex" src="assets/hex/obot-v3.png" alt="obot v3: a robot cat with a terminal prompt" />
       <p class="kicker">obot v3 · July</p>
       <h2>Claude Code, on Fable 5</h2>
@@ -1672,7 +1724,15 @@
 
     <!-- 3 · obot v4 -->
     <section class="slide s-version" data-hue="4">
-      <div class="lvstrip" style="--c: var(--spec-5)"><i>0</i><i>1</i><i>2</i><i>3</i><i>4</i><i class="on">5</i><b>Level 5 · the dark software factory</b></div>
+      <ol class="lvside">
+        <li class="hd">Levels of AI usage</li>
+        <li class="on" style="--c: var(--spec-5)"><i>5</i><b>The dark software factory</b></li>
+        <li style="--c: var(--spec-4)"><i>4</i><b>The engineering team</b></li>
+        <li style="--c: var(--spec-3)"><i>3</i><b>The developer</b></li>
+        <li style="--c: var(--spec-2)"><i>2</i><b>The junior developer</b></li>
+        <li style="--c: var(--spec-1)"><i>1</i><b>The coding intern</b></li>
+        <li style="--c: var(--spec-0)"><i>0</i><b>Spicy autocomplete</b></li>
+      </ol>
       <img class="vhex" src="assets/hex/obot-v4.png" alt="obot v4: a robot cat in a crown and tie" />
       <p class="kicker">obot v4 · August to 10 September</p>
       <h2>The organisation</h2>
@@ -1780,7 +1840,15 @@
 
     <!-- 3 · obot v5 -->
     <section class="slide s-version" data-hue="4">
-      <div class="lvstrip" style="--c: var(--spec-4)"><i>0</i><i>1</i><i>2</i><i>3</i><i class="on">4</i><i>5</i><b>Back to level 4, with me driving</b></div>
+      <ol class="lvside">
+        <li class="hd">Levels of AI usage</li>
+        <li style="--c: var(--spec-5)"><i>5</i><b>The dark software factory</b></li>
+        <li class="on" style="--c: var(--spec-4)"><i>4</i><b>The engineering team<small>back, with me driving</small></b></li>
+        <li style="--c: var(--spec-3)"><i>3</i><b>The developer</b></li>
+        <li style="--c: var(--spec-2)"><i>2</i><b>The junior developer</b></li>
+        <li style="--c: var(--spec-1)"><i>1</i><b>The coding intern</b></li>
+        <li style="--c: var(--spec-0)"><i>0</i><b>Spicy autocomplete</b></li>
+      </ol>
       <img class="vhex" src="assets/hex/obot-v5.png" alt="obot v5: a robot cat with a steering wheel" />
       <p class="kicker">obot v5 · September</p>
       <h2>One requirement at a time</h2>
@@ -1896,7 +1964,15 @@
 
     <!-- 3 · obot v5.5 -->
     <section class="slide s-version" data-hue="4">
-      <div class="lvstrip" style="--c: var(--spec-4)"><i>0</i><i>1</i><i>2</i><i>3</i><i class="on">4</i><i>5</i><b>Level 4 · the engineering team</b></div>
+      <ol class="lvside">
+        <li class="hd">Levels of AI usage</li>
+        <li style="--c: var(--spec-5)"><i>5</i><b>The dark software factory</b></li>
+        <li class="on" style="--c: var(--spec-4)"><i>4</i><b>The engineering team</b></li>
+        <li style="--c: var(--spec-3)"><i>3</i><b>The developer</b></li>
+        <li style="--c: var(--spec-2)"><i>2</i><b>The junior developer</b></li>
+        <li style="--c: var(--spec-1)"><i>1</i><b>The coding intern</b></li>
+        <li style="--c: var(--spec-0)"><i>0</i><b>Spicy autocomplete</b></li>
+      </ol>
       <img class="vhex" src="assets/hex/obot-v5-5.png" alt="obot v5.5: a robot cat in sunglasses" />
       <p class="kicker">obot v5.5 · October</p>
       <h2>Opus 5.5</h2>
