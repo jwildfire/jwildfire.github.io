@@ -448,6 +448,13 @@
     .s-graphic .todo li { font-size: 26px; margin-bottom: 8px; }
     .s-graphic .more { font-family: var(--mono); font-size: 24px; color: var(--soft); margin: 22px 0 8px; }
     .s-graphic .more a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--hue); text-decoration-thickness: 3px; text-underline-offset: 6px; }
+    /* TODO boxes are filled orange so they cannot be missed (Jeremy, 2026-10-06). A
+       <div class="todo"> works in any layout; these rules override the paler ones above. */
+    .slide .todo { font-family: var(--mono); font-size: 26px; color: var(--ink); background: #f5a83f; border: 3px dashed #9a5a12; border-radius: 18px; padding: 28px 36px; }
+    .slide .todo p { font-size: 30px; margin: 0 0 12px; color: var(--ink); }
+    .slide .todo ul { margin: 0; padding-left: 1.2em; }
+    .slide .todo li { font-size: 26px; margin-bottom: 8px; color: var(--ink); }
+    .slide .todo li:last-child, .slide .todo p:last-child { margin-bottom: 0; }
   </style>
 </head>
 <body>
@@ -701,11 +708,23 @@
     <section class="slide s-split" data-hue="1">
       <p class="kicker">A few quiet years</p>
       <h2>What we did, and what we didn't</h2>
-      <div class="cols">
-        <div class="col"><h3>We showed</h3><p>Open-source, interactive graphics work in clinical trials.</p></div>
-        <div class="col"><h3>We didn't</h3><p>“Change the industry standard for how people monitor safety.”</p></div>
+      <div class="cols" style="flex: none">
+        <div class="col" style="padding: 36px 48px 20px"><h3>We showed</h3><p>Open-source, interactive graphics work in clinical trials.</p></div>
+        <div class="col" style="padding: 36px 48px 20px"><h3>We didn't</h3><p>“Change the industry standard for how people monitor safety.”</p></div>
+      </div>
+      <div class="todo" style="margin-top: 28px">
+        <p>TODO (Jeremy): this slide needs a visual</p>
+        <ul>
+          <li>Ideas are in the speaker notes</li>
+        </ul>
       </div>
       <aside class="notes">
+        TODO box added 2026-10-06 (Jeremy: "slide 10 needs a visual add a todo"). The two
+        columns are unchanged, only tightened to make room. Ideas for the visual, none built:
+        the safetyGraphics repository's commits by year, going quiet after 2021 (can be drawn
+        from the repository's history); a page of a study report's "wall of numbers"; a
+        screenshot of the safetyGraphics Shiny app as it was left.
+        <br><br>
         Source: diary #3, "A Few Quiet Years". Jeremy stopped active work on safetyGraphics on
         moving to Gilead in 2021 to work on RBQM. "Those 200-page walls of text still exist in
         Clinical Study Reports, and safetyGraphics isn't fully GxP-compliant."
