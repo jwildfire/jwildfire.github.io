@@ -446,8 +446,8 @@
     .s-graphic .todo { font-family: var(--mono); font-size: 26px; color: var(--soft); border: 2px dashed var(--hue); border-radius: 18px; padding: 28px 36px; background: repeating-linear-gradient(135deg, var(--bg) 0 28px, #f4f5f1 28px 56px); }
     .s-graphic .todo p { font-size: 30px; margin: 0 0 14px; }
     .s-graphic .todo li { font-size: 26px; margin-bottom: 8px; }
-    .s-graphic .more { font-family: var(--mono); font-size: 24px; color: var(--soft); margin: 22px 0 8px; }
-    .s-graphic .more a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--hue); text-decoration-thickness: 3px; text-underline-offset: 6px; }
+    .slide .more { font-family: var(--mono); font-size: 24px; color: var(--soft); margin: 22px 0 8px; }
+    .slide .more a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--hue); text-decoration-thickness: 3px; text-underline-offset: 6px; }
     /* TODO boxes are filled orange so they cannot be missed (Jeremy, 2026-10-06). A
        <div class="todo"> works in any layout; these rules override the paler ones above. */
     .slide .todo { font-family: var(--mono); font-size: 26px; color: var(--ink); background: #f5a83f; border: 3px dashed #9a5a12; border-radius: 18px; padding: 28px 36px; }
@@ -762,6 +762,7 @@
         <div class="frame"><img src="assets/gsm-report.png" alt="A gsm study overview report: a table of sites by key risk indicator, with red and amber flags" /></div>
         <figcaption>A {gsm} site-risk report on example data · open-source R packages, built for GxP from the start</figcaption>
       </figure>
+      <p class="more" style="margin-top: 16px">Built in the open as <a href="https://openrbqm.github.io/" target="_blank" rel="noopener">OpenRBQM</a>, a <a href="https://advance.hub.phuse.global/wiki/spaces/WEL/pages/26811224/OpenRBQM+Pre-Competitive+Collaboration+on+Open-Source+Software+for+RBQM" target="_blank" rel="noopener">PHUSE working group</a> · openrbqm.github.io</p>
       <aside class="notes">
         Sources: diary #1 ("We use the {gsm} tools to monitor actual studies. We wrote a paper and
         have given a bunch of presentations") and diary #4 ("Unlike {safetyGraphics}, {gsm} was
@@ -770,6 +771,10 @@
         key risk indicators and quality tolerance limits by site, reported as HTML. gsm.core is the
         analytics engine; workr runs the workflows; qcthat produces the quality-control evidence.
         The team leads the PHUSE OpenRBQM working group.
+        <br><br>The line under the caption (Jeremy, 2026-10-06: "Slide 12 needs a reference to
+        the openRBQM and the Phuse working group") links openrbqm.github.io and the PHUSE page
+        that site links to. Diary #1: "we lead a PHUSE working group called OpenRBQM". The site
+        itself calls it "a PHUSE pre-competitive collaboration"; the line's wording is draft.
         <br><br>Image: the report screenshot from the public gsm.kri README (example study
         AA-AA-000-0000, not real data). Jeremy to confirm it is the picture he wants, or supply a newer one.
       </aside>
