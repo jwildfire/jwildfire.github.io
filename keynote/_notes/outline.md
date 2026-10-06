@@ -190,19 +190,23 @@ Sources are named in brackets: diary #N is the developer diary post, hub is obot
 
 4. Lessons learned: what is AI good at now, and what is next (about 7 min, suggested) — not drafted
   - Proposed structure (Jeremy, 2026-10-05), not yet reconciled with the earlier list below: "revisit our answers to 'What are these tools good at' (slide 1) and not good at (s2) and then discuss 'how do we do this in GxP?' velocity/timeline (s3, drafted), costs (s4) Quality (s5), SDLC/Roadmap (s6, treemap visual above), best practices (s7, orchestration, agents). Then closing."
-    - s1 What are these tools good at: gathers the thumbs-up callouts from beats 1 to 3
-    - s2 What are they not good at: gathers the thumbs-down callouts
+    - s1 What are these tools good at (built, slide 48; draft wording): "What are agents good at now?", Orange's thumbs-up answers gathered as eight cards. Left column, the opening and the team: Teaching me things, Writing code, Drafting documents, Designing pages. Right column, obot: Porting old code, Translating research into software, Running experiments, Reviewing its own work
+      - `[TODO]` Jeremy: "Running experiments" is his steer but is not a callout in the main deck; left out as verdicts on a way of working: Real work by text, The structure held, A definition of done
+    - s2 What are they not good at (built, slide 49; draft wording): "What are agents bad at now?", five cards and a dashed bridge cell. Setting priorities; Working without me (v2, v3 and v5.5 folded into one); Knowing when it has failed; Being concise; Remembering. Bridge cell: "So how do we do this in GxP?" with his five headings under it
+      - `[TODO]` Jeremy: Being concise and Remembering are from his close-out list and are not callouts anywhere yet; "No chart releases" (v5) is left out
     - How do we do this in GxP?
       - s3 Velocity: the capability timeline. Drafted; it now closes beat 3 (slide 46), so beat 4 either calls back to it or shows it again
-      - s4 Costs (built, slide 48; draft wording): "$11,750 at API prices. I paid $200 a month." Bars by obot version (v3 $3,330; v4 $6,020 or more; v5 $450 or more; v5.5 $1,955 so far), with the uncertain parts hatched; cards for what he paid, the price per million tokens ($0.97 in July, $0.41 in October) and the two long weekends. Sources in `keynote/_notes/beat4-spending-sources.md`
+      - s4 Costs (built, slide 50; draft wording): "$11,750 at API prices. I paid $200 a month." Bars by obot version (v3 $3,330; v4 $6,020 or more; v5 $450 or more; v5.5 $1,955 so far), with the uncertain parts hatched; cards for what he paid, the price per million tokens ($0.97 in July, $0.41 in October) and the two long weekends. Sources in `keynote/_notes/beat4-spending-sources.md`
         - The numbers come from the hub's usage data brought up to 6 October in obot.roadmap#370, merged on 5 October; the live analytics page was checked after the deploy and reads $11,756.53 through 2026-10-06
         - `[TODO]` Jeremy: "$200 a month" is unconfirmed after 6 September; the July weekend's $1,273 (diary #6) is mostly not in the hub data, which holds $146 for 9 to 12 July, so the true total is probably about $1,100 higher; refresh the October figures before the talk
-      - s5 Quality
-      - s6 SDLC / roadmap: two slides (Jeremy, 2026-10-05: "Both, as two slides"), a treemap of the whole roadmap and a node-link tree of one objective, coloured by status, each a date-stamped snapshot embedded in the deck. No hub page for now ("No need for a day of work on the website right now"). Built, slides 49 and 50 (draft wording): "The whole roadmap is one tree of GitHub issues" (treemap: 10 objectives, 108 requirements, 155 tasks; 44 retired requirements and 25 with no objective not shown) and "An objective becomes requirements, then tasks" (Biomarker charts: 14 requirements, 44 tasks, one bead per task). Stamped "as of 5 October 2026". Refresh with `keynote/_notes/roadmap-tree/` (fetch.mjs, then build.mjs --inject ../../slides.html); sources in beat4-roadmap-tree-sources.md. The five options he chose from are in a hub worktree, unpublished
+      - s5 Quality (built, slide 51; draft wording): "A lot of tests, and still not GxP". Three columns: Agents test (2,559 tests in safety.viz, up from 343 in July); Agents review (40 of 52 agents on the October weekend were reviewers; one caught a bad p-value, safety.viz#188); A person signs (0 qualified releases; a gsm.safety candidate open since 11 September). Line under: "Tests and reviews are cheap now. The signature is not."
+        - `[TODO]` Jeremy: whether to say "0 qualified releases" that flatly; the gsm.safety candidate (pull request 88) shows "review required" on GitHub with 25 comment reviews under his account and no approval, while the hub's last note says approved and waiting on a ruleset edit; whether his own unfinished review belongs on a slide. Alternative third column: the organisation-chart claim check (97 checked, 68 confirmed)
+        - This slide is where "review, not writing, is the bottleneck" [diary #9] can be said
+      - s6 SDLC / roadmap: two slides (Jeremy, 2026-10-05: "Both, as two slides"), a treemap of the whole roadmap and a node-link tree of one objective, coloured by status, each a date-stamped snapshot embedded in the deck. No hub page for now ("No need for a day of work on the website right now"). Built, slides 52 and 53 (draft wording): "The whole roadmap is one tree of GitHub issues" (treemap: 10 objectives, 108 requirements, 155 tasks; 44 retired requirements and 25 with no objective not shown) and "An objective becomes requirements, then tasks" (Biomarker charts: 14 requirements, 44 tasks, one bead per task). Stamped "as of 5 October 2026". Refresh with `keynote/_notes/roadmap-tree/` (fetch.mjs, then build.mjs --inject ../../slides.html); sources in beat4-roadmap-tree-sources.md. The five options he chose from are in a hub worktree, unpublished
         - `[TODO]` Jeremy: two things on the treemap could mislead and are only in the notes. Six pale backlog boxes are full of done tasks (labels not kept up), and open.csr looks untouched because its three in-review requirements are not linked to the objective. Four small objectives are drawn larger than true size so their names fit
         - `[TODO]` Refresh both pictures the week of the talk so the date stamp is current
       - s7 Best practices: orchestration, agents
-    - Closing
+    - Closing (placeholder, slide 54): Jeremy is having an image model build it (2026-10-05). The earlier list has the question one last time and Orange's thank-you with links and a QR code
     - In the earlier list but not in this structure: the Orange transition; the summer in one number; the bottleneck moved (review); mixed feelings; the execution gap; open source is the path; what is next; if the models were frozen today; the question, one last time; the thank-you slide
   - Earlier list (draft 2, 2026-10-01), kept until the two are reconciled
   - [Orange] transition
@@ -269,7 +273,8 @@ A recurring callout in the bottom-right corner: Orange's face in an amber hex wi
   - v4, slide 39: The structure held / Knowing when it has failed
   - v5, slide 42: A definition of done / No chart releases
   - v5.5, slide 44: Reviewing its own work / Still waits on me (placeholder)
-- Candidates from the close-out list, not placed
+- Beat 4 gathers the answers: slide 48 (good at) and slide 49 (bad at)
+- Candidates from the close-out list, not placed in a callout
   - Good at: busy work (making slides, meeting minutes); design (artifacts, .md → .html); syntax (git); catching real errors, including its own; running experiments
   - Bad at: being concise; remembering
 
