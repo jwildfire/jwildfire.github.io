@@ -147,13 +147,14 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
     - The beat's Orange transition, forcats hex as the kicker; line "The agent is named after him." [diary #2]
     - Photo: `orange-paw-on-github.jpg`. Demoted to the reserves in the journey rebuild and restored the same day (Jeremy: "Restore the section transition slide between 25 and 26")
     - `[TODO]` Jeremy checks the photo: three Rho-era GitHub usernames are on the laptop screen, a few pixels tall at slide size
-  - Opener: A summer down the AI rabbit hole, with obot (built, slide 31)
+  - What are these tools good at right now? Mad scientist edition (built, slide 31)
+    - Order switched with the journey row on 2026-10-06 (Jeremy: "switch slides 31/32")
+    - Jeremy's three lines: Open source. Not GxP (his bold). Let's experiment and have some fun …
+    - Notes: why not at work, "I'm not comfortable using those highly autonomous tools for GxP use cases right now" [diary #1]
+  - A summer down the AI rabbit hole, with obot (built, slide 32)
     - Title from Jeremy's outline: "What's next? A summer down the AI rabbit hole (in the matrix??) with obot …"
     - `[TODO]` Jeremy's image: "Comic of orange transforming into a robot? Evolution graphic? I'll figure something out". Built as a stand-in evolution row: Orange's photo hex, then the five version hexes. It doubles as the map of the beat
     - Notes: the agent is named after the cat [diary #2]
-  - What are these tools good at right now? Mad scientist edition (built, slide 32)
-    - Jeremy's three lines: Open source. Not GxP (his bold). Let's experiment and have some fun …
-    - Notes: why not at work, "I'm not comfortable using those highly autonomous tools for GxP use cases right now" [diary #1]
   - The goal: modernize safetyGraphics, using the gsm framework (built, slide 33)
     - A gallery of the ten original charts (Jeremy, 2026-10-05: "show a gallery of the original charts"): each one's own README screenshot as a still, with the year of its last commit in the corner. Images in `keynote/assets/legacy/`; all ten repositories are MIT-licensed
     - One line under it: 10 original charts, 25,400 lines of JavaScript, all on D3 v3. Measured 2026-10-05 from the public repositories (730 files; last commits 2019 to 2022; today safety.viz is on Chart.js 4). The earlier three-figure version of the slide is in the reserves
