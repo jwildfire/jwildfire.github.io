@@ -23,7 +23,7 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
 1. Opening: Orange and the path to safetyGraphics (about 8 min, suggested) — drafted, slides 1–10
   - Title (built, slide 1)
     - "Building open-source clinical trial tools with agentic AI"
-    - Spoken intro, in the speaker notes (Jeremy, 2026-10-06): "Hi I'm Jeremy and I work on building open source tools for clinical trials. I've spent the last few years trying to figure out how AI fits into this world. Today I'm going to talk about what these tools are good at right now ... As you'll see, the answer to that question changes on a regular basis."
+    - Spoken intro, in the speaker notes (Jeremy, 2026-10-06): "Hi I'm Jeremy and I work on building open source tools for clinical trials. I've spent the last few years trying to figure out how AI fits into this world." The second half is spoken over slide 2: "Today I'm going to talk about what these tools are good at right now ... As you'll see, the answer to that question changes on a regular basis."
     - Working title from the keynote page; earlier titles were about "AI in the loop" and clinical trial operations
   - The question (built, slide 2)
     - "What can we actually do with AI agents right now?" [diary #1]
