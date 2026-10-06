@@ -91,6 +91,7 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
     - Level names are Dan Shapiro's via Simon Willison; descriptions reworded; credited on the slide
     - `[TODO]` Jeremy confirms level 3 is still right for October; the ladder can return in beat 3 as obot climbs
   - Same lifecycle; five steps changed hands (built, slide 19)
+    - Level sidebar at level 3 (added 2026-10-06)
     - Design, build, publish: each step marked a person, the agent, or automated; merges the all-hands deck's before and after slides into one [March all-hands deck]
     - Optional (Jeremy: "possibly"); it shows the March state, and slide 22 says how it has moved since
   - +50% (built, slide 20)

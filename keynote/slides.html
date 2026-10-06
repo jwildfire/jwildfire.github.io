@@ -291,6 +291,9 @@
     .lvside li.hd { display: block; opacity: 1; padding: 0 0 8px 26px; font-family: var(--mono); font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); }
     .slide:has(> .lvside) { padding-right: 420px; }
     .slide:has(> .lvside) .num { z-index: 1; }
+    .slide:has(> .lvside) .chain-key { margin-bottom: 30px; font-size: 19px; gap: 28px; }
+    .slide:has(> .lvside) .life { gap: 22px; }
+    .slide:has(> .lvside) .life .s { font-size: 22px; padding: 7px 14px; gap: 12px; }
     .s-version:has(> .lvside) { padding-right: 790px; }
     .s-version:has(> .lvside) .vhex { right: 412px; width: 340px; height: 391px; margin-top: -180px; }
     .s-version:has(> .lvside) h2 { font-size: 96px; text-wrap: balance; }
@@ -1018,6 +1021,15 @@
     </section>
 
     <section class="slide" data-hue="3">
+      <ol class="lvside">
+        <li class="hd">Levels of AI usage</li>
+        <li style="--c: var(--spec-5)"><i>5</i><b>The dark software factory</b></li>
+        <li style="--c: var(--spec-4)"><i>4</i><b>The engineering team</b></li>
+        <li class="on" style="--c: var(--spec-3)"><i>3</i><b>The developer</b></li>
+        <li style="--c: var(--spec-2)"><i>2</i><b>The junior developer</b></li>
+        <li style="--c: var(--spec-1)"><i>1</i><b>The coding intern</b></li>
+        <li style="--c: var(--spec-0)"><i>0</i><b>Spicy autocomplete</b></li>
+      </ol>
       <p class="kicker">What “AI in the loop” looks like</p>
       <h2>Same lifecycle; five steps changed hands</h2>
       <p class="chain-key"><span><i class="who"></i>a person</span><span><i></i>the agent, where a person used to be</span><span><i class="auto"></i>automated, as before</span></p>
@@ -1057,6 +1069,8 @@
         <br><br>From 2026-10-06 the before picture is its own slide again (slide 14, "A standard
         development lifecycle"), shown before any AI; this slide is the same picture with the
         overlay.
+        <br><br>Level sidebar added 2026-10-06 (Jeremy: "add levels sidebar on slide 19."), at
+        level 3, the level slide 18 marks as the day job.
         <br><br>Optional slide (Jeremy: "possibly"). It shows the March state; slide 22 then says
         how it has moved since ("we just let the coding agent deal with it").
       </aside>
