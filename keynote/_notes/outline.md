@@ -99,6 +99,7 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
     - `[TODO]` June figures; the Q3 deck has fresher numbers that could replace them
     - `[TODO]` flagged on the slide in orange (Jeremy, 2026-10-06: "Slide 20 needs updates/details/visual"): newer numbers, more detail, a visual
   - Plan → build → run: we invest at both ends (built, slide 21)
+    - `[TODO]` (Jeremy, 2026-10-06: "Use same framing as 3-col SDLC slide ..."): rework with the Design · Build · Publish columns of slides 14, 19 and 45; orange box on the slide
     - Plan and run are our own scaffolds; build is vendor coding agents plus our shared context [Q3 deck]
     - Why: both ends are company-specific process no vendor will build; the middle is commodity and improving monthly
   - "We just let the coding agent deal with it" (built, slide 22)
