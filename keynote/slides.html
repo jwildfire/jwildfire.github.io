@@ -299,6 +299,10 @@
     .s-version:has(> .lvside) .vhex { right: 412px; width: 340px; height: 391px; margin-top: -180px; }
     .s-version:has(> .lvside) h2 { font-size: 96px; text-wrap: balance; }
 
+    /* Lifecycle at obot v5 (class "s-life5" on the slide): the agent's steps in purple. */
+    .s-life5 .chain-key i:not(.who):not(.auto), .s-life5 .life .s.ai::before { background: var(--spec-5); }
+    .s-life5 .life .s.ai { background: #efecfb; border-color: var(--spec-5); }
+
     /* Org chart (obot v4): boxes and arrows in an SVG inside .pvr. */
     .pvr.org .t { font-size: 25px; font-weight: 600; fill: var(--ink); }
     .pvr.org .s { font-size: 17px; fill: var(--soft); }
@@ -771,7 +775,7 @@
         are draft wording; the slide shortens the question to its first three words.
         <br><br>Where the thread comes back: slide 12 (gsm, "built for GxP from the start"),
         slide 15 ("GxP is built into the design"), slide 31 ("Not GxP", the mad scientist
-        edition), and slide 51 ("A lot of tests, and still not GxP"). A reserve slide, "Is it validated?", asks the same question with a
+        edition), and slide 52 ("A lot of tests, and still not GxP"). A reserve slide, "Is it validated?", asks the same question with a
         then-and-now answer.
         <br><br>TODO box added 2026-10-06 (Jeremy: "slide 10 needs a visual add a todo"). The two
         columns are unchanged, only tightened to make room. Ideas for the visual, none built:
@@ -1944,6 +1948,62 @@
       </aside>
     </section>
 
+    <section class="slide s-life5" data-hue="4">
+      <ol class="lvside">
+        <li class="hd">Levels of AI usage</li>
+        <li style="--c: var(--spec-5)"><i>5</i><b>The dark software factory</b></li>
+        <li class="on" style="--c: var(--spec-4)"><i>4</i><b>The engineering team</b></li>
+        <li style="--c: var(--spec-3)"><i>3</i><b>The developer</b></li>
+        <li style="--c: var(--spec-2)"><i>2</i><b>The junior developer</b></li>
+        <li style="--c: var(--spec-1)"><i>1</i><b>The coding intern</b></li>
+        <li style="--c: var(--spec-0)"><i>0</i><b>Spicy autocomplete</b></li>
+      </ol>
+      <p class="kicker pkg" style="--pkg: url(assets/hex/obot-v5.png)">obot v5 and v5.5 · how it works</p>
+      <h2>Same lifecycle; I kept two steps</h2>
+      <p class="chain-key"><span><i class="who"></i>me</span><span><i></i>agents</span><span><i class="auto"></i>automated, as before</span></p>
+      <div class="life">
+        <div><h3>Design</h3>
+          <div class="s">Set the goal</div>
+          <div class="s ai">Gather requirements</div>
+          <div class="s ai">Write the work item</div>
+          <div class="s ai">Draft the technical plan</div>
+          <div class="s ai">Review the plan, then prompt</div>
+        </div>
+        <div><h3>Build</h3>
+          <div class="s ai">Write the tests</div>
+          <div class="s ai">Review the tests</div>
+          <div class="s ai">Implement</div>
+          <div class="s ai">Draft the change summary</div>
+          <div class="s auto">Check code quality</div>
+          <div class="s ai">Approve</div>
+        </div>
+        <div><h3>Publish</h3>
+          <div class="s auto">Automated gates</div>
+          <div class="s auto">Quality documentation</div>
+          <div class="s ai">Draft the documentation updates</div>
+          <div class="s">Finalize and release</div>
+          <div class="s auto">Publish</div>
+        </div>
+      </div>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        Added 2026-10-06 (Jeremy: "Let's re-use slide 19 to show how obot v5/v5.5 works. Add a
+        slide after 44 that turns most of the boxes purple. Add a 'Set's Goal' box (human)
+        before gathers requirements (AI)."). It is slide 19's lifecycle with the same steps in
+        the same order, one new box at the front ("Set the goal", a person), and purple for
+        every step an agent does. Ten are purple, two are his, five are automated as before.
+        <br><br>DRAFT, for Jeremy to check: which boxes are purple is my reading of the slide
+        before this one ("I review releases and answer questions") and of the hub's standards.
+        His: "Set the goal" and "Finalize and release". Purple, and worth a look: "Review the
+        tests" and "Approve" (reviewer agents and the merge rules do these on the way to a
+        release candidate; he approves the release), and "Review the plan, then prompt" (in
+        v5.5 the orchestrator reviews plans and briefs the workers). "Implement" lost "with a
+        person steering". Answering questions is not a box; say it out loud or ask for one.
+        <br><br>The title is draft wording, written to echo slide 19 ("Same lifecycle; five
+        steps changed hands"). The sidebar is at level 4, as on both version title slides.
+      </aside>
+    </section>
+
     <section class="slide s-bullets" data-hue="4">
       <p class="kicker pkg" style="--pkg: url(assets/hex/obot-v5.png)">obot v5 · what I built · 10–30 September</p>
       <h2>A new scaffold, a candidate and an experiment</h2>
@@ -2701,7 +2761,7 @@
         <br>Designing pages: slide 25 (the artifacts).
         <br>Porting old code: slide 38 (v3, the weekend of renderers).
         <br>Translating research into software: slide 39 (v3; Jeremy's wording).
-        <br>Reviewing its own work: slide 47 (v5.5; the reviewer agents).
+        <br>Reviewing its own work: slide 48 (v5.5; the reviewer agents).
         <br>Running experiments: not a callout in the main deck. It is from Jeremy's steer of
         5 October ("Agents are great at experiments") and from a slide now in the reserves. If
         it stays here it probably wants a callout in beat 3, on the v5.5 slide.
@@ -2735,7 +2795,7 @@
         <br><br>Where each one comes from:
         <br>Setting priorities: slide 24.
         <br>Working without me: three callouts folded into one. "Autonomy" (v2, slide 36),
-        "Working without me" (v3, slide 38) and "Still waits on me" (v5.5, slide 47, which is a
+        "Working without me" (v3, slide 38) and "Still waits on me" (v5.5, slide 48, which is a
         placeholder Jeremy has not confirmed).
         <br>Knowing when it has failed: slide 42 (v4; "Nine cases in one night of something
         reporting success while having done nothing", diary #8).
@@ -2743,7 +2803,7 @@
         ("Communicating: being concise", "Remembering"). Neither is a callout anywhere in the
         deck yet, and the label "Every day" is a guess at a tag. TODO (Jeremy): keep them, and
         if so say where they bit.
-        <br><br>Left out: "No chart releases" (v5, slide 45). It is true of September, but
+        <br><br>Left out: "No chart releases" (v5, slide 46). It is true of September, but
         October shipped six releases in a weekend, so it does not read as something agents are
         bad at.
         <br><br>Until late on 5 October a sixth, dashed cell bridged to "So how do we do this in

@@ -134,7 +134,7 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
     - What good practice looks like now (the diary #10 placeholder); a better fit for beat 4
     - The industry got ready without knowing it (never built)
 
-3. What's next? The goal and what we built: a summer down the AI rabbit hole, with obot (about 10 min) — rebuilt 2026-10-05 as a journey, slides 30–48
+3. What's next? The goal and what we built: a summer down the AI rabbit hole, with obot (about 10 min) — rebuilt 2026-10-05 as a journey, slides 30–49
   - Status: rebuilt on 2026-10-05 to Jeremy's outline of that day: "the narrative (and the slide structure) is a total mess. Let's add more structure. Frame it as a journey. 5 versions of obot created during a summer of experiments." The first build (same day) is in git history; the slides it dropped are in the deck's reserves
   - The five versions (Jeremy, 2026-10-05): "v1 was actually a local personal assistant who drafted a handoff/build for the openclaw! v2 is open claw. v2.5 was paperclip (probably just a footnote). v3 fable 5. v4 org. v5 opus 5.5."
   - Template for each version: a title slide (the version's hex, name, dates, the set-up, the level sidebar (the full ladder down the right edge with the current level boxed; replaced the small strip on 2026-10-06, Jeremy: "this isn't enough emphasis. maybe as a sidebar?"), and "what changed" to get here), then what it built, with Orange's thumbs on the second click as "What worked" and "What didn't"
@@ -177,42 +177,44 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
     - What I built: four roles and a timer script, the diary #8 org chart redrawn
     - Quietly wrong: "Nine cases in one night of something reporting success while having done nothing." [diary #8, Obot's words]
     - What worked: "The structure held". What didn't: "Knowing when it has failed"
-  - obot v5 · September: one requirement at a time (built, slides 43–45)
+  - obot v5 · September: one requirement at a time (built, slides 43–46)
     - Title slide: he retired the organisation and kept a tree of issues; one session per requirement, each with a definition of done. What changed: "On 10 September I shut v4 down. 475 files of scaffolding went; seven stayed." Back to level 4
     - `[TODO]` Jeremy's own account of 10 September, and the "mixed feelings" from diary #8; both are in this slide's notes
     - The scaffold that stayed: "I review releases and answer questions" (his sentence); objective → requirements → tasks → release candidate → release; written down on 11 September as three short standards [hub NEWS v0.4]
+    - How it works (built, slide 45; added 2026-10-06, Jeremy: "Let's re-use slide 19 to show how obot v5/v5.5 works. Add a slide after 44 that turns most of the boxes purple. Add a 'Set's Goal' box (human) before gathers requirements (AI)."): slide 19's lifecycle with a new first box, "Set the goal" (his), and every agent step in purple; level sidebar at level 4. Draft title: "Same lifecycle; I kept two steps"
+    - `[TODO]` Jeremy checks which boxes are purple: his are "Set the goal" and "Finalize and release"; ten are the agents', including "Review the tests" and "Approve"
     - What I built, 10 to 30 September, checked against GitHub: the scaffold rewritten (obot.agent v0.5.0 and obot.roadmap v0.4, both 11 September); gsm.safety v1.2.0 as a release candidate (38 pull requests in three days, the FDA's 22 figures specified, still waiting on review); the Patient Journey Explorer with AI-drafted narratives (merged 18 September)
     - What worked: "A definition of done". What didn't: "No chart releases" (draft wording)
     - Where the record differs from Jeremy's recollection ("some gsm.viz releases + experiments (open.csr, patient profile, etc)"): no safety.viz release between 15 August and 2 October; open.csr's last activity was 2 September, under v4; the participant profile shipped in July. After 18 September nothing merged in the chart repositories until 1 October
     - Models: Fable 5.1 and Opus 5 in the local logs; most sessions ran in the cloud and left no local log
-  - obot v5.5 · October: Opus 5.5 (built, slides 46–47)
+  - obot v5.5 · October: Opus 5.5 (built, slides 47–48)
     - Title slide: the same tree of issues, one orchestrator and one brief. What changed: "The model got better. Orchestration now works from a plain brief." Level 4
     - Opus 5.5 was released on 22 September [Willison, via the beat 4 timeline sources]; it first appears in the local session logs on 1 October
     - What I built: one orchestrator, one brief, one weekend. In: a brief of about 800 words, about 22 messages. Out: 52 agents (40 reviewers), 3.9 billion tokens, about $1,640 at API prices, six releases [digest 8c]
     - What worked: "Reviewing its own work". What didn't: "Still waits on me" is a placeholder, `[TODO]` Jeremy
     - `[TODO]` Jeremy: "over 1,000 subagents" and "half my weekly allotment" are not what the transcript shows (52 agents; 21% on the Friday night)
     - Notes: the safety.viz demo app (v1.8.0) was also built on Opus 5.5, in two ordinary sessions on 2 October
-  - The payoff: the safety.viz demo (built, slide 48)
+  - The payoff: the safety.viz demo (built, slide 49)
     - Jeremy's outline: "What I built: gsm.viz demo (this is the payoff)". Read as the safety.viz demo app; `[TODO]` Jeremy confirms
     - Your own files, mapped columns, nothing uploaded, one HTML file that runs offline [safety.viz v1.8.0 and v1.9.1 release notes]
     - `[TODO]` Jeremy: live or recorded, which files, and a closing line that hands to beat 4
 
-3.5. How we built it — slides 49–54, regrouped late on 2026-10-05
+3.5. How we built it — slides 50–55, regrouped late on 2026-10-05
   - Jeremy (2026-10-05): "3.5 = how we built it (cost/sdlc/treemaps/timeline overview)". These slides were drafted earlier the same day under beat 4's "how do we do this in GxP?"
-  - [Orange] How we built it (built, slide 49; draft wording)
+  - [Orange] How we built it (built, slide 50; draft wording)
     - Photo: `orange-supervising-laptop.jpg` (Jeremy is in it); alternative `orange-spreadsheet-side-eye.jpg`. Line: "What it cost, how it was run, and how fast it moved."
     - `[TODO]` Jeremy: whether 3.5 wants its own Orange transition or runs straight on from the demo
-  - Costs (built, slide 50; draft wording): "$11,750 at API prices. I paid $200 a month." Bars by obot version (v3 $3,330; v4 $6,020 or more; v5 $450 or more; v5.5 $1,955 so far), with the uncertain parts hatched; cards for what he paid, the price per million tokens ($0.97 in July, $0.41 in October) and the two long weekends. Sources in `keynote/_notes/beat4-spending-sources.md`
+  - Costs (built, slide 51; draft wording): "$11,750 at API prices. I paid $200 a month." Bars by obot version (v3 $3,330; v4 $6,020 or more; v5 $450 or more; v5.5 $1,955 so far), with the uncertain parts hatched; cards for what he paid, the price per million tokens ($0.97 in July, $0.41 in October) and the two long weekends. Sources in `keynote/_notes/beat4-spending-sources.md`
     - The numbers come from the hub's usage data brought up to 6 October in obot.roadmap#370, merged on 5 October; the live analytics page was checked after the deploy and reads $11,756.53 through 2026-10-06
     - `[TODO]` Jeremy: "$200 a month" is unconfirmed after 6 September; the July weekend's $1,273 (diary #6) is mostly not in the hub data, which holds $146 for 9 to 12 July, so the true total is probably about $1,100 higher; refresh the October figures before the talk
-  - The SDLC: quality (built, slide 51; kicker "SDLC · quality"; draft wording): "A lot of tests, and still not GxP". Three columns: Agents test (2,559 tests in safety.viz, up from 343 in July); Agents review (40 of 52 agents on the October weekend were reviewers; one caught a bad p-value, safety.viz#188); A person signs (0 qualified releases; a gsm.safety candidate open since 11 September). Line under: "Tests and reviews are cheap now. The signature is not."
+  - The SDLC: quality (built, slide 52; kicker "SDLC · quality"; draft wording): "A lot of tests, and still not GxP". Three columns: Agents test (2,559 tests in safety.viz, up from 343 in July); Agents review (40 of 52 agents on the October weekend were reviewers; one caught a bad p-value, safety.viz#188); A person signs (0 qualified releases; a gsm.safety candidate open since 11 September). Line under: "Tests and reviews are cheap now. The signature is not."
     - `[TODO]` Jeremy: whether to say "0 qualified releases" that flatly; the gsm.safety candidate (pull request 88) shows "review required" on GitHub with 25 comment reviews under his account and no approval, while the hub's last note says approved and waiting on a ruleset edit; whether his own unfinished review belongs on a slide. Alternative third column: the organisation-chart claim check (97 checked, 68 confirmed)
     - This slide is where "review, not writing, is the bottleneck" [diary #9] can be said
     - `[TODO]` Jeremy: his list for 3.5 does not name quality; it is placed here as the SDLC slide. Say if it belongs in "what we learned" instead
-  - The SDLC: the roadmap: two slides (Jeremy, 2026-10-05: "Both, as two slides"), a treemap of the whole roadmap and a node-link tree of one objective, coloured by status, each a date-stamped snapshot embedded in the deck. No hub page for now ("No need for a day of work on the website right now"). Built, slides 52 and 53 (draft wording): "The whole roadmap is one tree of GitHub issues" (treemap: 10 objectives, 108 requirements, 155 tasks; 44 retired requirements and 25 with no objective not shown) and "An objective becomes requirements, then tasks" (Biomarker charts: 14 requirements, 44 tasks, one bead per task). Stamped "as of 5 October 2026". Refresh with `keynote/_notes/roadmap-tree/` (fetch.mjs, then build.mjs --inject ../../slides.html); sources in beat4-roadmap-tree-sources.md. The five options he chose from are in a hub worktree, unpublished
+  - The SDLC: the roadmap: two slides (Jeremy, 2026-10-05: "Both, as two slides"), a treemap of the whole roadmap and a node-link tree of one objective, coloured by status, each a date-stamped snapshot embedded in the deck. No hub page for now ("No need for a day of work on the website right now"). Built, slides 53 and 54 (draft wording): "The whole roadmap is one tree of GitHub issues" (treemap: 10 objectives, 108 requirements, 155 tasks; 44 retired requirements and 25 with no objective not shown) and "An objective becomes requirements, then tasks" (Biomarker charts: 14 requirements, 44 tasks, one bead per task). Stamped "as of 5 October 2026". Refresh with `keynote/_notes/roadmap-tree/` (fetch.mjs, then build.mjs --inject ../../slides.html); sources in beat4-roadmap-tree-sources.md. The five options he chose from are in a hub worktree, unpublished
     - `[TODO]` Jeremy: two things on the treemap could mislead and are only in the notes. Six pale backlog boxes are full of done tasks (labels not kept up), and open.csr looks untouched because its three in-review requirements are not linked to the objective. Four small objectives are drawn larger than true size so their names fit
     - `[TODO]` Refresh both pictures the week of the talk so the date stamp is current
-  - The timeline: how fast it is moving (built, slide 54; draft wording throughout)
+  - The timeline: how fast it is moving (built, slide 55; draft wording throughout)
     - Jeremy (2026-10-05): the five versions set up "a slide in beat 4 where we can emphasize just how fast capabilities are improving… roughly 1 year after Opus 4.5 changed the game and made agents viable. Maybe show a timeline of how the major innovations/model releases line up against my 5 agent experiments. Mention all the things I *didn't* experiment with… Takeaway for pharma is that we just can't keep up and as a result the gap between capabilities and adoption is rapidly widening."
     - Also out of scope, and worth saying (Jeremy, 2026-10-05): open-source models. All five obot versions ran on closed, hosted models
     - Reference: https://simonwillison.net/2026/Sep/27/2026-in-llms-so-far/
@@ -221,16 +223,16 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
     - `[TODO]` Jeremy: "eleven months" or "a year" (Opus 4.5 was 24 November 2025, 331 days before the talk); whether "did not try MCP" is right; whether GPT-5.1 shares the credit for the November turn, as Willison has it; v5's label says Fable 5.1 though it also ran on Opus 5
     - Moved again late on 2026-10-05: it now closes part 3.5 (he listed it last, and its takeaway hands to "what we learned")
 
-4. What we learned (about 7 min, suggested) — slides 55–59, regrouped late on 2026-10-05
+4. What we learned (about 7 min, suggested) — slides 56–60, regrouped late on 2026-10-05
   - Jeremy (2026-10-05): "4 = what we learned (good/bad/mixed feelings/closing)"
-  - [Orange] What we learned (built, slide 55; draft wording)
+  - [Orange] What we learned (built, slide 56; draft wording)
     - Photo: `orange-looking-up-agenda.jpg`, cropped so the printed agenda (it has people's names on it) is out of frame. Line: "What agents are good at, what they are not, and how I feel about it."
-  - What are agents good at now? (built, slide 56; draft wording): "What are agents good at now?", Orange's thumbs-up answers gathered as eight cards. Left column, the opening and the team: Teaching me things, Writing code, Drafting documents, Designing pages. Right column, obot: Porting old code, Translating research into software, Running experiments, Reviewing its own work
+  - What are agents good at now? (built, slide 57; draft wording): "What are agents good at now?", Orange's thumbs-up answers gathered as eight cards. Left column, the opening and the team: Teaching me things, Writing code, Drafting documents, Designing pages. Right column, obot: Porting old code, Translating research into software, Running experiments, Reviewing its own work
     - `[TODO]` Jeremy: "Running experiments" is his steer but is not a callout in the main deck; left out as verdicts on a way of working: Real work by text, The structure held, A definition of done
-  - What are agents bad at now? (built, slide 57; draft wording): "What are agents bad at now?", five cards. Setting priorities; Working without me (v2, v3 and v5.5 folded into one); Knowing when it has failed; Being concise; Remembering. The dashed bridge cell ("So how do we do this in GxP?") was removed when the beats were regrouped
+  - What are agents bad at now? (built, slide 58; draft wording): "What are agents bad at now?", five cards. Setting priorities; Working without me (v2, v3 and v5.5 folded into one); Knowing when it has failed; Being concise; Remembering. The dashed bridge cell ("So how do we do this in GxP?") was removed when the beats were regrouped
     - `[TODO]` Jeremy: Being concise and Remembering are from his close-out list and are not callouts anywhere yet; "No chart releases" (v5) is left out
-  - Mixed feelings (placeholder, slide 58): `[TODO]` Jeremy only. The placeholder quotes what he has said in public: "I've honestly got some mixed feelings about the whole thing ... but this is getting long, so I'll talk about that more in the keynote :)" and "For now, I'll just say it's ... weird. Working on open source projects feels very different than it did a year ago." [diary #8]; "51% fun and 49% frustrating" [diary #2]
-  - Closing (placeholder, slide 59): Jeremy is having an image model build it (2026-10-05). The earlier list has the question one last time and Orange's thank-you with links and a QR code
+  - Mixed feelings (placeholder, slide 59): `[TODO]` Jeremy only. The placeholder quotes what he has said in public: "I've honestly got some mixed feelings about the whole thing ... but this is getting long, so I'll talk about that more in the keynote :)" and "For now, I'll just say it's ... weird. Working on open source projects feels very different than it did a year ago." [diary #8]; "51% fun and 49% frustrating" [diary #2]
+  - Closing (placeholder, slide 60): Jeremy is having an image model build it (2026-10-05). The earlier list has the question one last time and Orange's thank-you with links and a QR code
   - Not in this structure: best practices (in his first structure of 5 October, not drafted); the summer in one number; the bottleneck moved (review); the execution gap; open source is the path; what is next; if the models were frozen today
   - His first structure of 2026-10-05, superseded the same day: Proposed structure (Jeremy, 2026-10-05), not yet reconciled with the earlier list below: "revisit our answers to 'What are these tools good at' (slide 1) and not good at (s2) and then discuss 'how do we do this in GxP?' velocity/timeline (s3, drafted), costs (s4) Quality (s5), SDLC/Roadmap (s6, treemap visual above), best practices (s7, orchestration, agents). Then closing."
   - Earlier list (draft 2, 2026-10-01), kept until the two are reconciled
@@ -296,9 +298,9 @@ A recurring callout in the bottom-right corner: Orange's face in an amber hex wi
   - v2, slide 36: Real work, by text / Autonomy
   - v3, slide 38: Porting old code / Working without me; slide 39: Translating research into software (thumbs-up only, Jeremy's wording)
   - v4, slide 42: The structure held / Knowing when it has failed
-  - v5, slide 45: A definition of done / No chart releases
-  - v5.5, slide 47: Reviewing its own work / Still waits on me (placeholder)
-- Beat 4 gathers the answers: slide 56 (good at) and slide 57 (bad at)
+  - v5, slide 46: A definition of done / No chart releases
+  - v5.5, slide 48: Reviewing its own work / Still waits on me (placeholder)
+- Beat 4 gathers the answers: slide 57 (good at) and slide 58 (bad at)
 - Candidates from the close-out list, not placed in a callout
   - Good at: busy work (making slides, meeting minutes); design (artifacts, .md → .html); syntax (git); catching real errors, including its own; running experiments
   - Bad at: being concise; remembering
