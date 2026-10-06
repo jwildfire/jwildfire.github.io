@@ -313,11 +313,11 @@
     /* Five columns (slide 21): the standard lifecycle in the middle, the work before and
        after it called out on either side. The callout sits on the middle panel's lower edge. */
     .s-five h2 { font-size: 72px; margin-bottom: 34px; }
-    .five { display: grid; grid-template-columns: 1.12fr 3fr 1.12fr; gap: 46px; align-items: stretch; margin-top: 4px; height: 396px; }
+    .five { display: grid; grid-template-columns: 1.12fr 3fr 1.12fr; gap: 46px; align-items: stretch; margin-top: 4px; height: 376px; }
     .five > * { position: relative; }
     .five > * + *::after { content: "→"; position: absolute; left: -41px; top: 50%; margin-top: -24px; font-size: 34px; color: var(--faint); }
     .five .c { display: flex; flex-direction: column; }
-    .five h3 { font-size: 26px; line-height: 1.15; font-weight: 600; margin: 0 0 14px; min-height: 60px; display: flex; align-items: flex-end; }
+    .five h3 { font-size: 28px; line-height: 1.15; font-weight: 600; margin: 22px 0 14px; }
     .five .s { display: flex; align-items: center; gap: 12px; font-size: 21px; line-height: 1.2; padding: 9px 12px; border-radius: 12px; margin-bottom: 8px; background: var(--panel); border: 2px solid var(--rule); }
     .five .s::before { content: ""; flex: none; width: 16px; height: 19px; clip-path: var(--hex-clip); background: var(--faint); }
     .five .out { background: #e6f6f5; border: 3px solid var(--hue); border-radius: 20px; padding: 18px 16px 12px; }
@@ -1158,7 +1158,7 @@
       <div class="five">
         <div class="c out">
           <p class="tag">Upstream<span>our scaffold</span></p>
-          <h3>Plan / Roadmap</h3>
+          <h3>Planning</h3>
           <div class="s">Requirements</div>
           <div class="s">Designs</div>
           <div class="s">Phase gates</div>
@@ -1182,7 +1182,7 @@
         </div>
         <div class="c out">
           <p class="tag">Downstream<span>our scaffold</span></p>
-          <h3>Run / Deploy / Operations</h3>
+          <h3>Operations</h3>
           <div class="s">Study set-up</div>
           <div class="s">Snapshot schedules</div>
           <div class="s">Monitoring plan checks</div>
@@ -1201,6 +1201,8 @@
         it up"). The middle three columns are the lifecycle of slides 14, 19 and 43 with less
         detail; the two teal columns are the work before and after it. The earlier three-step
         version ("Plan → build → run: we invest at both ends") is in the reserves.
+        <br><br>Column headings shortened 2026-10-06 (Jeremy: "s21. Plan/Roadmap -> planning.
+        run/deploy/operations -> operations.").
         <br><br>The title is draft wording for his message; the first draft's title was "AI can
         help a lot upstream and downstream".
         <br><br>Callout, second click (Jeremy: "Add a agents are good at standard SDLC (as of Q2

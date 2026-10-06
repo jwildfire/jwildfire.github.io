@@ -101,7 +101,7 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
     - `[TODO]` flagged on the slide in orange (Jeremy, 2026-10-06: "Slide 20 needs updates/details/visual"): newer numbers, more detail, a visual
   - Faster code; planning and operations had to catch up (built, slide 21; title is draft wording)
     - Jeremy's message (2026-10-06): "agents have sped up/simplified SDLC enough that we've had to spend time improving our upstream and downstream process to support the rapidly increasing code volume"
-    - Five columns (his ask the same day; "I like 21 - clean it up"): Upstream, Plan / Roadmap (our scaffold) → the standard development lifecycle, Design · Build · Publish, with less detail (vendor coding agents, plus our shared context) → Downstream, Run / Deploy / Operations (our scaffold)
+    - Five columns (his ask the same day; "I like 21 - clean it up"): Upstream, Planning (our scaffold) → the standard development lifecycle, Design · Build · Publish, with less detail (vendor coding agents, plus our shared context) → Downstream, Operations (our scaffold); the outer headings were first "Plan / Roadmap" and "Run / Deploy / Operations" and he shortened them
     - Callout, second click: "The standard SDLC", with "as of Q2 2026" in small text
     - Replaces "Plan → build → run: we invest at both ends" (reserves); the two slides after it were cut the same day (reserves)
   - Plan: agents draft; people approve (built, slide 22)
