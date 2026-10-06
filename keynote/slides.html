@@ -366,6 +366,15 @@
     .s-todo .todo { margin-top: 12px; font-family: var(--mono); font-size: 26px; color: var(--soft); border: 2px dashed var(--hue); border-radius: 18px; padding: 28px 36px; background: var(--bg); }
     .s-todo .todo li { font-size: 28px; margin-bottom: 8px; }
 
+    /* Party: a live page fills the slide (the closing slide's orange cat party). The iframe
+       only runs while its slide is showing: JS moves data-src into src and takes it out again.
+       The poster behind it is what the overview grid and a printed deck show. */
+    .s-party { padding: 0; background: #0b0620 var(--poster) center / cover no-repeat; }
+    .s-party::before, .s-party::after, .s-party .hexfill, .s-party .num { display: none; }
+    .s-party iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: transparent; }
+    .s-party iframe[hidden] { display: none; }
+    body.overview .s-party iframe { pointer-events: none; }
+
     /* Speaker notes: hidden unless toggled with N. */
     .notes { display: none; }
     body.show-notes .notes-panel { display: block; }
@@ -2408,8 +2417,48 @@
       </aside>
     </section>
 
-    <!-- 4 · closing: placeholder until the image arrives -->
-    <section class="slide s-todo" data-hue="6">
+    <!-- 4 · closing: the orange cat party. A live page (orange-party.html) in an iframe;
+         clicks inside it throw confetti instead of advancing. The banner words are the
+         ?banner= part of data-src. -->
+    <section class="slide s-party" data-hue="6" style="--poster: url(assets/orange-party-poster.png)">
+      <iframe data-src="orange-party.html?banner=THANK%20YOU!" title="A pixel-art party of orange cats dancing under a disco ball, with confetti" hidden></iframe>
+      <aside class="notes">
+        The closing slide, built 2026-10-06 at Jeremy's request: "an orange cat dance party
+        inspired by" Simon Willison's Kākāpō Party, "exact same approach look/feel (but with
+        orange cats)". It is a live page, not a video.
+        <br><br>• Click or tap anywhere on the slide for confetti; the cats near the click jump.
+        Clicking here does not advance the deck.
+        <br>• The arrow keys still move through the deck, before and after a click. After a
+        click, Space and Enter throw confetti instead of advancing.
+        <br>• The banner says "THANK YOU!" because the outline ends on Orange's thank-you. To
+        change it, edit ?banner= in this slide's data-src (capitals, up to 28 characters; a
+        space is %20). Without it the banner reads "ORANGE PARTY!". Add &amp;hint=0 to hide the
+        "click for confetti" line, which otherwise shows for the first ten seconds.
+        <br>• Two of the cats wear the blue and gold cap from the slide that introduces Orange.
+        They are not impressed.
+        <br><br>Credit: adapted from Kākāpō Party by Simon Willison
+        (simonwillison.net/2026/Sep/26/kakapo-party/, source in github.com/simonw/tools,
+        Apache License 2.0). The credit and the list of changes are at the top of
+        orange-party.html, and the license text is in LICENSE-orange-party.txt.
+        <br><br>Not on this slide: the links (deck, diary, repos) and the QR code the outline
+        lists for the close, and "the question, one last time". The placeholder this replaced
+        is in Reserves.
+      </aside>
+    </section>
+
+    <!-- ============================================================
+         Reserves — slides demoted from the main deck. They are not counted in the slide
+         numbers. Each carries data-reserve="date" and says in its notes when and why it was
+         demoted. To restore one, move it back and delete the attribute.
+         ============================================================ -->
+    <section class="slide s-section" data-hue="6" data-reserve="section">
+      <div class="bighex">R</div>
+      <p class="kicker">Reserves</p>
+      <h2>Reserve slides</h2>
+      <p>Demoted from the main deck, kept in case. Each one's notes say when it was demoted, and why.</p>
+    </section>
+
+    <section class="slide s-todo" data-reserve="6 October 2026" data-hue="6">
       <p class="kicker">Closing</p>
       <h2>Closing slide: image to come</h2>
       <div class="todo">
@@ -2428,19 +2477,9 @@
         "[Orange] Thank you" (photo option orange-asleep-on-typing-arm.jpg, or the porch video
         orange-porch.mov; links to the deck, the diary and the repos; a QR code). Whether the
         generated image replaces both or only the thank-you is Jeremy's call.
+        <br><br>Demoted 2026-10-06: the closing slide became the orange cat party (a live
+        page, not a generated image). Kept for its list of what the close should carry.
       </aside>
-    </section>
-
-    <!-- ============================================================
-         Reserves — slides demoted from the main deck. They are not counted in the slide
-         numbers. Each carries data-reserve="date" and says in its notes when and why it was
-         demoted. To restore one, move it back and delete the attribute.
-         ============================================================ -->
-    <section class="slide s-section" data-hue="6" data-reserve="section">
-      <div class="bighex">R</div>
-      <p class="kicker">Reserves</p>
-      <h2>Reserve slides</h2>
-      <p>Demoted from the main deck, kept in case. Each one's notes say when it was demoted, and why.</p>
     </section>
 
 <section class="slide s-quote" data-reserve="5 October 2026" data-hue="3">
@@ -2882,6 +2921,13 @@
           s.classList.toggle('revealed', k2 === i && !!revealed);
           s.parentNode.classList.toggle('current', k2 === i);
         });
+        // Live embeds run only while their slide is showing.
+        slides.forEach(function (s, k2) {
+          var f = s.querySelector('iframe[data-src]');
+          if (!f) return;
+          if (k2 === i) { if (f.hidden) { f.src = f.getAttribute('data-src'); f.hidden = false; } }
+          else if (!f.hidden) { f.hidden = true; f.src = 'about:blank'; }
+        });
         var a = slides[i].querySelector('.notes');
         notes.innerHTML = '<b>Notes · slide ' + (i + 1) + '</b>' + (a ? a.innerHTML : '<i>No notes.</i>');
         if (location.hash !== '#' + (i + 1)) history.replaceState(null, '', '#' + (i + 1));
@@ -2917,6 +2963,13 @@
         else if (k === 'f' || k === 'F') {
           if (!document.fullscreenElement) document.documentElement.requestFullscreen && document.documentElement.requestFullscreen();
           else document.exitFullscreen && document.exitFullscreen();
+        }
+      });
+
+      // An embedded page that has the keyboard focus passes its key presses up to the deck.
+      window.addEventListener('message', function (e) {
+        if (e.data && e.data.type === 'deck-key' && typeof e.data.key === 'string') {
+          document.dispatchEvent(new KeyboardEvent('keydown', { key: e.data.key, cancelable: true }));
         }
       });
 
