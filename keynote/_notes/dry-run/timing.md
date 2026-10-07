@@ -1,6 +1,6 @@
 # Dry-run timing
 
-Generated from keynote/slides.html (fingerprint ef9cbae11e) by keynote/_notes/dry-run/build.mjs. Do not edit by hand; re-run the script after the deck changes.
+Generated from keynote/slides.html (fingerprint 9fae435e31) by keynote/_notes/dry-run/build.mjs. Do not edit by hand; re-run the script after the deck changes.
 
 ## Totals
 
@@ -72,7 +72,7 @@ Generated from keynote/slides.html (fingerprint ef9cbae11e) by keynote/_notes/dr
 - 48. What we learned (beat 4)
 - 49. What are agents good at now? (beat 4)
 - 50. What are agents bad at now? (beat 4)
-- 51. How I feel about it (beat 4)
+- 51. Coding feels completely different than it did a year ago. (beat 4)
 - 52. A pixel-art party of orange cats dancing under a disco ball, with confetti (beat 4)
 
 ## Open TODOs (41)
@@ -117,4 +117,4 @@ Generated from keynote/slides.html (fingerprint ef9cbae11e) by keynote/_notes/dr
 - Slide 47 (in notes): - Settled 7 October: the headline says “Roughly a year” (his choice; the count is eleven months, 24 Nov 2025 to 21 Oct 2026), and “did not try” stays for MCP. / - The sources credit two models for the November turn, Opus 4.5 and GPT-5.1 (diary #1 says “Opus 4.5 and ChatGPT 5.2 in late 2025”). The slide marks only Opus 4.5. / - Diary #1 (dated 10 June) says Fable 5 “came out today”; Willison and Anthropic date it 9 June. The slide uses 9 June. / - v1 and v2 are labelled “assistant” and “OpenClaw” because the model under each is not in the record (diary #2 lists Codex alongside OpenClaw). / - Agent Skills (an open standard since December 2025, diary #9) is one you did use; it could be an eighth label if you want a standard on the chart. / - v5's label says “Fable 5.1”; it also ran on Opus 5 (both names do not fit at a readable size). / - The last label says “today” for 21 October; change it if the deck is read later.
 - Slide 49 (in notes): which eight; the order; whether the left column should be the team's answers and the right column obot's, as drafted.
 - Slide 50 (in notes): keep them, and if so say where they bit.
-- Slide 51 (on slide): yours to write. What you have said in public so far: / “Well, I'm definitely not working less” (you, 6 October) / “I've honestly got some mixed feelings about the whole thing ... but this is getting long, so I'll talk about that more in the keynote :)” (diary #8, August) / “For now, I'll just say it's ... weird. Working on open source projects feels very different than it did a year ago.” (diary #8) / “51% fun and 49% frustrating” (diary #2, June)
+- Slide 51 (on slide): Jeremy to reviewbuilt from your words, 7 Oct
