@@ -26,10 +26,10 @@ const WPM = 140;
 const BEATS = [
   { id: '1',   name: 'Opening',                from: 1,  to: 10, group: '1' },
   { id: '2a',  name: 'OpenRBQM without AI',    from: 11, to: 15, group: '2' },
-  { id: '2b',  name: 'AI layered in',          from: 16, to: 26, group: '2' },
-  { id: '3',   name: 'The obot journey',       from: 27, to: 46, group: '3' },
-  { id: '3.5', name: 'How we built it',        from: 47, to: 51, group: '3.5' },
-  { id: '4',   name: 'What we learned',        from: 52, to: 56, group: '4' },
+  { id: '2b',  name: 'AI layered in',          from: 16, to: 24, group: '2' },
+  { id: '3',   name: 'The obot journey',       from: 25, to: 44, group: '3' },
+  { id: '3.5', name: 'How we built it',        from: 45, to: 49, group: '3.5' },
+  { id: '4',   name: 'What we learned',        from: 50, to: 54, group: '4' },
 ];
 // Suggested split on record (not decided): minutes per group. Beat 2 covers 2a and 2b together.
 // 3.5 was carved out of 3 and 4 afterwards and has no minutes of its own.

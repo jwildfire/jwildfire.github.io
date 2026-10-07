@@ -603,6 +603,26 @@
     .s-eco .pk .d { grid-column: 1 / -1; margin: 0; font-size: 24px; line-height: 1.3; color: var(--ink); max-width: none; }
     .s-eco .pk .d.td { font-family: var(--mono); font-size: 22px; background: #f5a83f; border: 3px dashed #9a5a12; border-radius: 12px; padding: 8px 12px; }
     .s-eco .eco-src { font-family: var(--mono); font-size: 22px; color: var(--soft); margin: 26px 0 0; max-width: none; }
+    /* Demo: a screen recording fills the slide (class "s-demo"). The title shrinks to one
+       compact row so a 16:9 video gets about 1200px of width. <video data-demo> plays from the
+       start, muted and looping, only while its slide is showing (see go()); click it to pause.
+       Its poster is what the overview and a printed deck show. */
+    .s-demo { padding: 40px 140px 34px; }
+    .s-demo::after { display: none; }
+    .s-demo .kicker { margin-bottom: 8px; }
+    .s-demo h2 { font-size: 54px; margin-bottom: 14px; }
+    .s-demo figure { margin: 0; flex: 1; min-height: 0; display: flex; flex-direction: column; }
+    .s-demo .frame { flex: 1; min-height: 0; position: relative; }
+    .s-demo .frame video { position: absolute; top: 0; left: 50%; transform: translateX(-50%); height: 100%; width: auto; max-width: 100%; aspect-ratio: 16 / 9; box-sizing: border-box; object-fit: contain; border: 2px solid var(--rule); border-radius: 14px; background: var(--panel); box-shadow: 0 10px 28px rgba(31, 35, 40, 0.10); cursor: pointer; }
+    .s-demo .cap { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; margin-top: 12px; font-family: var(--mono); font-size: 22px; color: var(--soft); }
+    .s-demo .cap p { margin: 0; max-width: none; font-size: 22px; }
+    .s-demo .review { top: 26px; right: 300px; }
+    .s-demo .cap a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--hue); text-decoration-thickness: 3px; text-underline-offset: 6px; }
+    /* A quote slide that returns later with terms under it (slide 2 called back at the start of beat 3). */
+    .s-quote .terms { list-style: none; margin: 44px 0 0; padding: 0 0 0 66px; display: flex; flex-wrap: wrap; gap: 14px 48px; }
+    .s-quote .terms li { position: relative; padding-left: 38px; font-size: 38px; line-height: 1.25; }
+    .s-quote .terms li::before { content: ""; position: absolute; left: 0; top: 0.3em; width: 22px; height: 25px; background: var(--hue); clip-path: var(--hex-clip); }
+    .s-quote .terms b { font-weight: 600; }
   </style>
 </head>
 <body>
@@ -937,8 +957,8 @@
         isn't fully GxP-compliant." The column heading and "In every talk. The answer then:"
         are draft wording; the slide shortens the question to its first three words.
         <br><br>Where the thread comes back: slide 12 (gsm, "built for GxP from the start"),
-        slide 15 ("GxP is built into the design"), slide 28 ("Not GxP", the mad scientist
-        edition), and slide 48 ("A lot of tests, and still not GxP"). A reserve slide, "Is it validated?", asks the same question with a
+        slide 15 ("GxP is built into the design"), slide 26 ("Not GxP", the opening of the
+        experiment), and slide 46 ("A lot of tests, and still not GxP"). A reserve slide, "Is it validated?", asks the same question with a
         then-and-now answer.
         <br><br>Other ideas for the visual, none built: a page of a study report's "wall of
         numbers"; a screenshot of the safetyGraphics Shiny app as it was left.
@@ -979,14 +999,17 @@
       </aside>
     </section>
 
-    <section class="slide s-image" data-hue="3">
+    <section class="slide s-demo" data-hue="3">
       <p class="kicker">gsm · Good Statistical Monitoring</p>
       <h2>Monitoring a trial, as software</h2>
       <figure>
-        <div class="frame"><img src="assets/gsm-report.png" alt="A gsm study overview report: a table of sites by key risk indicator, with red and amber flags" /></div>
-        <figcaption>A {gsm} site-risk report on example data · open-source R packages, built for GxP from the start</figcaption>
+        <div class="frame"><video data-demo muted loop playsinline preload="none" poster="assets/gsm-kri-report-demo-poster.png" src="assets/gsm-kri-report-demo.mp4" aria-label="Screen recording of a gsm site report on example data: a table of sites by key risk indicator with red and amber flags, then the charts for one indicator"></video></div>
+        <div class="cap">
+          <p>A {gsm} site report on example data · built for GxP from the start</p>
+          <p><a href="https://openrbqm.github.io/" target="_blank" rel="noopener">OpenRBQM</a>, a <a href="https://advance.hub.phuse.global/wiki/spaces/WEL/pages/26811224/OpenRBQM+Pre-Competitive+Collaboration+on+Open-Source+Software+for+RBQM" target="_blank" rel="noopener">PHUSE working group</a></p>
+        </div>
       </figure>
-      <p class="more" style="margin-top: 16px">Built in the open as <a href="https://openrbqm.github.io/" target="_blank" rel="noopener">OpenRBQM</a>, a <a href="https://advance.hub.phuse.global/wiki/spaces/WEL/pages/26811224/OpenRBQM+Pre-Competitive+Collaboration+on+Open-Source+Software+for+RBQM" target="_blank" rel="noopener">PHUSE working group</a> · openrbqm.github.io</p>
+      <div class="review"><b>Jeremy to review</b><br>report recording, added 7 Oct</div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
         Sources: diary #1 ("We use the {gsm} tools to monitor actual studies. We wrote a paper and
@@ -1000,8 +1023,16 @@
         the openRBQM and the Phuse working group") links openrbqm.github.io and the PHUSE page
         that site links to. Diary #1: "we lead a PHUSE working group called OpenRBQM". The site
         itself calls it "a PHUSE pre-competitive collaboration"; the line's wording is draft.
-        <br><br>Image: the report screenshot from the public gsm.kri README (example study
-        AA-AA-000-0000, not real data). Jeremy to confirm it is the picture he wants, or supply a newer one.
+        <br><br>Changed 2026-10-07 (Jeremy: "The deck needs a bit more demo content. start with
+        adding a screen recorded demo of the standard gsm kri report to slide 12."). The static
+        screenshot (assets/gsm-report.png, from the public gsm.kri README, example study
+        AA-AA-000-0000) gave way to a screen recording of the package's own public example,
+        gilead-public.github.io/gsm.kri/examples/Example_SiteReport.html, on synthetic data.
+        The slide uses the new "s-demo" layout so the report is large enough to read on a
+        shared screen; the caption and the OpenRBQM and PHUSE links moved to one line under
+        the video and lost a few words to fit. The recording plays muted and loops while the
+        slide is showing; click it to pause. How it was recorded, and how to re-record it, is
+        in keynote/_notes/demo-kri-report/README.md.
       </aside>
     </section>
 
@@ -1146,7 +1177,7 @@
         a screenshot of a real qcthat report if one can be shown.
         <br><br>Pays off in beat 3: safety.viz and gsm.safety borrow exactly this (diary #4:
         "Instead of inventing a new quality framework, we plug the safety graphics into a quality
-        framework that already exists"), and "Not GxP" on slide 28 is the contrast.
+        framework that already exists"), and "Not GxP" on slide 26 is the contrast.
       </aside>
     </section>
 
@@ -1221,7 +1252,7 @@
         (danshapiro.com/blog/2026/01/the-five-levels-from-spicy-autocomplete-to-the-software-factory/)
         and Simon Willison's write-up of it (simonwillison.net/2026/Jan/28/the-five-levels/).
         <br><br>Settled 2026-10-07 (Jeremy, asked whether to box levels 2 and 3 here as on
-        slides 19 and 26: "Box 2 and 3"). Both rows carry the marker and the "the day job" tag;
+        slides 19 and 24: "Box 2 and 3"). Both rows carry the marker and the "the day job" tag;
         until then only level 3 did. The tag appearing twice is my draft reading of "level 2.5".
       </aside>
     </section>
@@ -1332,7 +1363,7 @@
         (before design) and 'Run/Deply/Operatations' as 5th column. Don't need as much detail,
         just want to call out the upstream and downstream work as places where AI can help a
         lot outside of standard SDLC."), and approved by him the same day ("I like 21 - clean
-        it up"). The middle three columns are the lifecycle of slides 14, 19 and 42 with less
+        it up"). The middle three columns are the lifecycle of slides 14, 19 and 40 with less
         detail; the two teal columns are the work before and after it. The earlier three-step
         version ("Plan → build → run: we invest at both ends") is in the reserves.
         <br><br>Column headings shortened 2026-10-06 (Jeremy: "s21. Plan/Roadmap -> planning.
@@ -1560,43 +1591,14 @@
         <br><br>
         Jeremy's steer (2026-10-02): "One repo per study, central repo for monitoring." Source:
         Q3 deck, "The operations scaffold at a glance".
+        <br><br>To say here, from the slide that followed until 2026-10-07 ("The hub replaced
+        spreadsheets and email", now in the reserves). Before: schedules in several Excel
+        trackers, status chased by email, no live view for leadership. Now: merge a schedule
+        and issues open in each study repo; a live dashboard, updated daily; a full audit
+        trail through pull requests.
         <br><br>Production workflows run under a bot identity. The plan-alignment check is fully
         deterministic at runtime; an agent drafted the code and the matching rules.
         <br><br>The deck's screenshots are internal; none is reproduced here.
-      </aside>
-    </section>
-
-    <section class="slide s-split" data-hue="3">
-      <p class="kicker">Downstream · operations · what changed</p>
-      <h2>The hub replaced spreadsheets and email</h2>
-      <div class="five side-r">
-        <div class="cols">
-          <div class="col"><h3>Before</h3>
-            <p>Schedules in several Excel trackers<br>Status chased by email<br>No live view for leadership</p></div>
-          <div class="col"><h3>Now</h3>
-            <p>Merge a schedule, and issues open in each study repo<br>A live dashboard, updated daily<br>A full audit trail through pull requests</p></div>
-        </div>
-        <div class="c out">
-          <p class="tag">Downstream<span>our scaffold</span></p>
-          <h3>Operations</h3>
-          <div class="s">Study set-up</div>
-          <div class="s">Snapshot schedules</div>
-          <div class="s">Monitoring plan checks</div>
-        </div>
-      </div>
-      <aside class="notes">
-        <strong class="say">&lt;none yet&gt;</strong>
-        Reformatted 2026-10-06 to match the five-column slide: the Operations cell sits on
-        the right (Jeremy: "23-24 can also use the operations pillar"). The before and now
-        columns are unchanged.
-        <br><br>
-        Source: Q3 deck, "The Central Monitoring hub replaced spreadsheets and email". Also on
-        that slide: self-serve editors with approver sign-off; cadence growing toward weekly;
-        20 study repos managed and 19 production workflows.
-        <br><br>Results are qualitative so far: clinical leadership owns the schedule editor, the
-        email chains are gone, nobody compiles status by hand.
-        <br><br>The talk's point: this is where agentic engineering paid off at work. Not faster
-        code, but operations moved into version control, with an audit trail as a side effect.
       </aside>
     </section>
 
@@ -1619,33 +1621,6 @@
       </aside>
     </section>
 
-        <section class="slide s-stat" data-hue="3">
-      <p class="kicker">What changed</p>
-      <div class="big" style="font-size: 230px">+50%</div>
-      <p>releases compared with last year. Issues and pull requests roughly doubled. <span class="soft">Not a controlled productivity study.</span></p>
-      <div class="todo" style="margin-top: 6px; padding: 22px 36px">
-        <p style="max-width: none; margin: 0">TODO (Jeremy): newer numbers, more detail, and a visual</p>
-      </div>
-      <aside class="notes">
-        <strong class="say">&lt;none yet&gt;</strong>
-        Moved 2026-10-06 from straight after the lifecycle slide to just before the wrap-up
-        (Jeremy: "s20 moves just before 27."). It now sets up the wrap-up's "Efficiency gains"
-        line.
-        <br><br>
-        TODO box added 2026-10-06 (Jeremy: "Slide 20 needs updates/details/visual. flag as a
-        todo."). What is on the slide is from June. A chart of releases, issues and pull
-        requests by month, this year against last, would be the obvious visual; the Q3 deck has
-        fresher numbers, which are internal until he says otherwise.
-        <br><br>
-        Source: diary #1 (2026-06-10): "Our rate of releases has gone up by roughly 50% compared
-        to last year. The number of issues, both opened and closed, has roughly doubled. Same with
-        PRs. That's not a controlled productivity study — lots of other things changed too — but
-        the activity pattern is real."
-        <br><br>TODO (Jeremy): these are June figures from a public post. Confirm they can go on a
-        slide, and whether to refresh them for October.
-      </aside>
-    </section>
-
     <section class="slide s-bullets" data-hue="3">
       <ol class="lvside">
         <li class="hd">Levels of AI usage</li>
@@ -1659,7 +1634,7 @@
       <p class="kicker">Where that leaves us</p>
       <h2>We're having great success at level 2.5!</h2>
       <ul>
-        <li>Efficiency gains <span>— releases up about 50%; issues and pull requests roughly doubled</span></li>
+        <li>Efficiency gains <span class="todo" style="display: inline-block; padding: 4px 16px; margin-left: 12px; font-size: 24px; border-radius: 12px">TODO: numbers and a small visual, from GitHub history</span></li>
         <li>Same process! <span>— people own every requirement, review and release</span></li>
         <li>But what's next …</li>
       </ul>
@@ -1673,11 +1648,17 @@
         Beat 2 wrap-up, added 2026-10-05 from Jeremy's outline: "We're having great success at
         level 3! Efficiency gains. Fully compliant! But what's next …". The headline and the
         three lead phrases are his; the grey asides are draft wording.
-        <br><br>Efficiency: the diary #1 figures already on slide 25 ("Our rate of releases has
-        gone up by roughly 50% compared to last year. The number of issues, both opened and
-        closed, has roughly doubled. Same with PRs."). TODO (Jeremy): fresher numbers if you have them.
+        <br><br>Efficiency: until 2026-10-07 this bullet carried the diary #1 figures ("releases up
+        about 50%; issues and pull requests roughly doubled"), which were also on the slide
+        before this one. Counted from public GitHub data that day, they did not hold, and the
+        "+50%" slide went to the reserves (Jeremy: "i can hit the productivity point on the wrap
+        up slide"). The orange tag marks where the re-measured numbers and a small visual go;
+        candidates are being drafted in keynote/_notes/drafts-2026-10-07/ (ai-adoption-*).
+        His expectation, to be tested there: "we really started adopting AI in q1/q2 this year
+        ... I expect that PR creation and definitely issue creation/close should be up.
+        probably also releases".
         <br><br>Compliant: slide 17 ("Humans own the process and all deliverables"), the quality
-        slide (15) and the human-owner rule (25). Settled 2026-10-07: his outline's "Fully compliant!" was a claim
+        slide (15) and the human-owner rule (23). Settled 2026-10-07: his outline's "Fully compliant!" was a claim
         about the day job on a public slide; asked, he chose to soften it and picked "Same
         process!" from three options.
         <br><br>Level 3 is slide 18's marker, "the day job". The strip in the corner is the same
@@ -1720,19 +1701,29 @@
       </aside>
     </section>
 
-    <section class="slide s-bullets" data-hue="4">
-      <p class="kicker">Mad scientist edition …</p>
-      <h2>What are these tools good at right now?</h2>
-      <ul>
+    <section class="slide s-quote" data-hue="4">
+      <p class="kicker">The question, again</p>
+      <blockquote>“What can we actually do with AI agents right now?”</blockquote>
+      <ul class="terms">
         <li>Open source</li>
-        <li><b style="font-weight: 600">Not GxP</b></li>
+        <li><b>Not GxP</b></li>
         <li>Let's experiment and have some fun …</li>
       </ul>
+      <div class="review"><b>Jeremy to review</b><br>callback to slide 2, 7 Oct</div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
+        Reformatted 2026-10-07 (Jeremy: "reformat slide 26 to call back to slide 2."). It now
+        uses slide 2's layout and slide 2's exact words, so the question visibly returns; his
+        three lines sit where slide 2 has its source line. Until then this was a bullet slide
+        headed "What are these tools good at right now?" (his outline's wording for the same
+        question). The kicker, "The question, again", is draft wording.
+        <br><br>
         Moved up one place on 2026-10-06 (Jeremy: "switch slides 31/32"); it now follows the
         Orange transition. Later the same day the goal slide was placed straight after it, then
         the journey row ("question/goal/hexes/v1").
+        <br><br>Kicker changed 2026-10-07 (Jeremy: "I want to remove the mad scientist
+        reference, btw"). It read "Mad scientist edition …"; "The experiment" is draft wording
+        in its place.
         <br><br>From Jeremy's outline (2026-10-05): "What are these tools good at right now? Mad
         Scientist Edition … Open Source. Not GxP. Let's experiment and have some fun …". He
         wrote "Not GxP" in bold, so it is the one heavier line here.
@@ -1831,7 +1822,7 @@
         paperclip (probably just a footnote). v3 fable 5. v4 org. v5 opus 5.5." Later the same
         day he split the last one: "a v5 (after retiring factory, before opus 5.5) and 5.5
         (opus 5.5 work)". So the row has five versions and a half.
-        <br><br>Order changed 2026-10-06 (Jeremy: "switch slides 31/32"): the mad scientist
+        <br><br>Order changed 2026-10-06 (Jeremy: "switch slides 31/32"): the "Not GxP"
         slide now comes first, straight after the Orange transition. Later the same day the
         goal slide was placed between that slide and this row ("question/goal/hexes/v1"), so
         this row now leads straight into obot v1.
@@ -2690,7 +2681,7 @@
         here as the SDLC slide (tests, review, sign-off), ahead of the two roadmap pictures.
         Settled 2026-10-07: asked whether it belongs in "what we learned" instead, Jeremy chose "Stay in how we built it". It was drafted as s5
         ("Quality", under "how do we do this in GxP?") in his first structure. Every word is draft; the numbers are sourced below. It calls back to the
-        beat 3 opener (slide 28, "Not GxP") and to beat 2's quality slide (slide 15: every
+        beat 3 opener (slide 26, "Not GxP") and to beat 2's quality slide (slide 15: every
         requirement has a test, every test has a result, and a person signs the release).
         <br><br>Column 1, re-measured 2026-10-07. 2,242 unit and 385 browser tests at safety.viz
         v1.9.2, from its release notes (released 2026-10-07) and its CI run on the released
@@ -3060,9 +3051,9 @@
         <br>Writing code: slide 17.
         <br>Drafting documents: slide 21.
         <br>Designing pages: was the callout on slide 21 (the artifacts) until 2026-10-06; no longer on a slide before this one.
-        <br>Porting old code: slide 35 (v3, the weekend of renderers).
-        <br>Translating research into software: slide 36 (v3; Jeremy's wording).
-        <br>Reviewing its own work: slide 45 (v5.5; the reviewer agents).
+        <br>Porting old code: slide 33 (v3, the weekend of renderers).
+        <br>Translating research into software: slide 34 (v3; Jeremy's wording).
+        <br>Reviewing its own work: slide 43 (v5.5; the reviewer agents).
         <br>Running experiments: not a callout in the main deck. It is from Jeremy's steer of
         5 October ("Agents are great at experiments") and from a slide now in the reserves. If
         it stays here it probably wants a callout in beat 3, on the v5.5 slide.
@@ -3099,16 +3090,16 @@
         throughout.
         <br><br>Where each one comes from:
         <br>Setting priorities: slide 21.
-        <br>Working without me: three callouts folded into one. "Autonomy" (v2, slide 33),
-        "Working without me" (v3, slide 35) and "Still waits on me" (v5.5, slide 45, which is a
+        <br>Working without me: three callouts folded into one. "Autonomy" (v2, slide 31),
+        "Working without me" (v3, slide 33) and "Still waits on me" (v5.5, slide 43, which is a
         placeholder Jeremy has not confirmed).
-        <br>Knowing when it has failed: slide 39 (v4; "Nine cases in one night of something
+        <br>Knowing when it has failed: slide 37 (v4; "Nine cases in one night of something
         reporting success while having done nothing", diary #8).
         <br>Being concise and Remembering: from Jeremy's close-out list in the outline
         ("Communicating: being concise", "Remembering"). Neither is a callout anywhere in the
         deck yet, and the label "Every day" is a guess at a tag. TODO (Jeremy): keep them, and
         if so say where they bit.
-        <br><br>Left out: "No chart releases" (v5, slide 43). It is true of September, but
+        <br><br>Left out: "No chart releases" (v5, slide 41). It is true of September, but
         October shipped six releases in a weekend, so it does not read as something agents are
         bad at.
         <br><br>Until late on 5 October a sixth, dashed cell bridged to "So how do we do this in
@@ -3727,6 +3718,78 @@
       </aside>
     </section>
 
+    <section class="slide s-split" data-reserve="7 October 2026" data-hue="3">
+      <p class="kicker">Downstream · operations · what changed</p>
+      <h2>The hub replaced spreadsheets and email</h2>
+      <div class="five side-r">
+        <div class="cols">
+          <div class="col"><h3>Before</h3>
+            <p>Schedules in several Excel trackers<br>Status chased by email<br>No live view for leadership</p></div>
+          <div class="col"><h3>Now</h3>
+            <p>Merge a schedule, and issues open in each study repo<br>A live dashboard, updated daily<br>A full audit trail through pull requests</p></div>
+        </div>
+        <div class="c out">
+          <p class="tag">Downstream<span>our scaffold</span></p>
+          <h3>Operations</h3>
+          <div class="s">Study set-up</div>
+          <div class="s">Snapshot schedules</div>
+          <div class="s">Monitoring plan checks</div>
+        </div>
+      </div>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        Demoted to the reserves on 2026-10-07. Jeremy: "s23 needs a visual", then "or could be
+        cut ..."; asked, he chose "Cut to Reserves". It was slide 23, between the operations
+        slide and the human-owner rule. Its before-and-now lines are in the operations slide's
+        notes so they can still be said.
+        <br><br>Reformatted 2026-10-06 to match the five-column slide: the Operations cell sits on
+        the right (Jeremy: "23-24 can also use the operations pillar"). The before and now
+        columns are unchanged.
+        <br><br>
+        Source: Q3 deck, "The Central Monitoring hub replaced spreadsheets and email". Also on
+        that slide: self-serve editors with approver sign-off; cadence growing toward weekly;
+        20 study repos managed and 19 production workflows.
+        <br><br>Results are qualitative so far: clinical leadership owns the schedule editor, the
+        email chains are gone, nobody compiles status by hand.
+        <br><br>The talk's point: this is where agentic engineering paid off at work. Not faster
+        code, but operations moved into version control, with an audit trail as a side effect.
+      </aside>
+    </section>
+
+    <section class="slide s-stat" data-reserve="7 October 2026" data-hue="3">
+      <p class="kicker">What changed</p>
+      <div class="big" style="font-size: 230px">+50%</div>
+      <p>releases compared with last year. Issues and pull requests roughly doubled. <span class="soft">Not a controlled productivity study.</span></p>
+      <div class="todo" style="margin-top: 6px; padding: 22px 36px">
+        <p style="max-width: none; margin: 0">TODO (Jeremy): newer numbers, more detail, and a visual</p>
+      </div>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        Demoted to the reserves on 2026-10-07 (Jeremy: "slide 25 (50%) for now. i can hit the
+        productivity point on the wrap up slide."). It was slide 24, just before the wrap-up.
+        Counted that day from public GitHub data, the June figures did not hold: same dates
+        2026 against 2025, 25 public repositories, bots left out, releases were down 22%,
+        issues opened up 21% and pull requests opened up 20%
+        (keynote/_notes/drafts-2026-10-07/slide25-activity-sources.md). A second look at the
+        GitHub history, for a small visual on the wrap-up slide, was started the same day.
+        <br><br>Moved 2026-10-06 from straight after the lifecycle slide to just before the wrap-up
+        (Jeremy: "s20 moves just before 27."). It now sets up the wrap-up's "Efficiency gains"
+        line.
+        <br><br>
+        TODO box added 2026-10-06 (Jeremy: "Slide 20 needs updates/details/visual. flag as a
+        todo."). What is on the slide is from June. A chart of releases, issues and pull
+        requests by month, this year against last, would be the obvious visual; the Q3 deck has
+        fresher numbers, which are internal until he says otherwise.
+        <br><br>
+        Source: diary #1 (2026-06-10): "Our rate of releases has gone up by roughly 50% compared
+        to last year. The number of issues, both opened and closed, has roughly doubled. Same with
+        PRs. That's not a controlled productivity study — lots of other things changed too — but
+        the activity pattern is real."
+        <br><br>TODO (Jeremy): these are June figures from a public post. Confirm they can go on a
+        slide, and whether to refresh them for October.
+      </aside>
+    </section>
+
     <!-- ============================================================
          Template samples — one of each layout. Marked data-reserve="template" so they are not counted.
          ============================================================ -->
@@ -3843,6 +3906,15 @@
           s.classList.toggle('revealed', k2 === i && !!revealed);
           s.parentNode.classList.toggle('current', k2 === i);
         });
+        // Demo recordings play from the start, only while their slide is showing.
+        slides.forEach(function (s, k2) {
+          var v = s.querySelector('video[data-demo]');
+          if (!v) return;
+          if (k2 === i && !document.body.classList.contains('overview')) {
+            try { v.currentTime = 0; } catch (e) {}
+            var pr = v.play(); if (pr && pr.catch) pr.catch(function () {});
+          } else if (!v.paused) v.pause();
+        });
         // Live embeds run only while their slide is showing.
         slides.forEach(function (s, k2) {
           var f = s.querySelector('iframe[data-src]');
@@ -3904,6 +3976,9 @@
       document.getElementById('deck').addEventListener('click', function (e) {
         if (document.body.classList.contains('overview')) return;
         if (e.target.closest('a')) return;
+        // A demo recording pauses and resumes on a click instead of changing slide.
+        var dv = e.target.closest('video[data-demo]');
+        if (dv) { if (dv.paused) { var pr = dv.play(); if (pr && pr.catch) pr.catch(function () {}); } else dv.pause(); return; }
         if (e.clientX > window.innerWidth / 3) next(); else prev();
       });
 
