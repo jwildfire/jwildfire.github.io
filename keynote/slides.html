@@ -1087,7 +1087,7 @@
         are draft wording; the slide shortens the question to its first three words.
         <br><br>Where the thread comes back: slide 12 (gsm, "quality built in from the start"; it read "built for GxP from the start" until 7 October),
         slide 15 ("Quality is built into the design"), slide 26 (the opening of the
-        experiment, where Inspector Orange is waved off; "Not GxP" came off that slide on 7 October), and slide 46 ("A lot of tests, and still an experiment"; "still not GxP" until 7 October). A reserve slide, "Is it validated?", asks the same question with a
+        experiment, where Inspector Orange is waved off; "Not GxP" came off that slide on 7 October), and slide 45 ("A lot of tests, and still an experiment"; "still not GxP" until 7 October). A reserve slide, "Is it validated?", asks the same question with a
         then-and-now answer.
         <br><br>Other ideas for the visual, none built: a page of a study report's "wall of
         numbers"; a screenshot of the safetyGraphics Shiny app as it was left.
@@ -1536,7 +1536,7 @@
         (before design) and 'Run/Deply/Operatations' as 5th column. Don't need as much detail,
         just want to call out the upstream and downstream work as places where AI can help a
         lot outside of standard SDLC."), and approved by him the same day ("I like 21 - clean
-        it up"). The middle three columns are the lifecycle of slides 14, 19 and 39 with less
+        it up"). The middle three columns are the lifecycle of slides 14, 19 and 38 with less
         detail; the two teal columns are the work before and after it. The earlier three-step
         version ("Plan → build → run: we invest at both ends") is in the reserves.
         <br><br>Column headings shortened 2026-10-06 (Jeremy: "s21. Plan/Roadmap -> planning.
@@ -2354,25 +2354,18 @@ steps:
         <br><br>Jeremy, in the same post: "I'd say we're at v4 now. Still using claude, but I'm
         now much more hands off with the code."
         
-        <br><br>Charts did ship in this stretch: thirteen renderers by 20 August, with the
-        nephrotoxicity explorer and time-to-event in mid-August.
         <br><br>Headline is draft wording; the slide's earlier title, "The agent became an
         organisation", is now the version's title slide.
         <br><br>Hacker Orange popup, second press (Jeremy, 2026-10-07: "s36. hacker: whaaa? can
         the concierge orchestrate a fleet of treats for me? I thought we were building stuff
         ..."). The words are his.
-      </aside>
-    </section>
-
-    <section class="slide s-quote" data-hue="4" style="padding-bottom: 330px">
-      <p class="kicker pkg" style="--pkg: url(assets/hex/obot-v4.png)">obot v4 · quietly wrong</p>
-      <blockquote>“Nine cases in one night of something reporting success while having done nothing.”</blockquote>
-      <cite>— Obot, on itself · developer diary #8, 20 August 2026</cite>
-      <div class="goodat"><div class="bub"><p class="q">What worked</p><p class="a" style="font-size: 44px">The structure held</p></div><div class="who"><i>👍</i></div></div>
-      <div class="goodat bad"><div class="bub"><p class="q">What didn't</p><p class="a" style="font-size: 44px">Knowing when it has failed</p></div><div class="who"><i>👎</i></div></div>
-      <aside class="notes">
-        <strong class="say">&lt;none yet&gt;</strong>
-        Source: diary #8. These are Obot's words in the interview, not Jeremy's: "And most of the
+        <br><br>FROM THE CUT "QUIETLY WRONG" SLIDE (in the reserves since 2026-10-07; Jeremy:
+        "Think I'm going to cut 37 and put its contents in notes for 36."). On that slide:
+        <br>Quote: "Nine cases in one night of something reporting success while having done
+        nothing." Obot, on itself, developer diary #8, 20 August 2026.
+        <br>What worked (thumbs-up): The structure held.
+        <br>What didn't (thumbs-down): Knowing when it has failed.
+        <br><br>Its notes: these are Obot's words in the interview, not Jeremy's: "And most of the
         last week was the agent finding out how it was quietly wrong. Nine cases in one night of
         something reporting success while having done nothing. A blocker that set an evening's
         agenda and turned out never to have existed. Nine hours of work sitting on disk that no
@@ -2385,12 +2378,25 @@ steps:
         same days sum to $7,160.
         <br><br>"Whether v4 is faster than v3, I don't know. It's more capable and much better at
         catching itself. Whether that nets out to more charts by October is the open question."
-        
-        <br><br>What worked (thumbs-up): the structure held. Charts kept shipping (thirteen
-        renderers by 20 August, four releases in five weeks), and the 10 September readout,
-        written by an agent, begins "the agent structure held". Draft wording; Jeremy to confirm.
-        <br><br>What didn't (thumbs-down): knowing when it has failed. This is the callout the
-        outline reserved for the quietly-wrong story.
+        <br><br>The 10 September readout, written by an agent, begins "the agent structure held".
+        <br><br>WHAT SHIPPED IN THE V4 WINDOW, 1 August to 10 September (public GitHub releases
+        and merged pull requests, measured 2026-10-07). Four product releases, all between 14 and
+        27 August:
+        <br>safety.viz v1.6.0, 14 August: the nephrotoxicity explorer (twelfth chart) and
+        study-day playback on the hepatic explorer.
+        <br>safety.viz v1.7.0, 15 August: the time-to-event explorer (thirteenth chart, marked
+        Experimental).
+        <br>gsm.safety v1.1.0, 17 August: three participant-level safety metrics and the safety
+        census.
+        <br>open.csr v0.3.0, 27 August: from six displays to twenty-six, checked against the
+        published CDISC pilot study report.
+        <br>One scaffold release: obot.agent v0.4.0, 15 August. The two that retired the
+        scaffold, obot.agent v0.5.0 and obot.roadmap v0.4, came on 11 September.
+        <br>Nothing was released in the last two weeks, 28 August to 10 September; the only
+        product work merged then was in open.csr (12 pull requests) and one in gsm.safety.
+        <br>Merged pull requests over the whole window: 175 on the scaffold (obot.agent 144,
+        obot.roadmap 31) against 62 on products (open.csr 29, safety.viz 14, gsm.safety 13,
+        open.gismo 3, demo-301 3).
       </aside>
     </section>
 
@@ -3252,7 +3258,7 @@ steps:
         <br>Designing pages: was the callout on slide 22 (the artifacts) until 2026-10-06; no longer on a slide before this one.
         <br>Porting old code: slide 33 (v3, the weekend of renderers).
         <br>Translating research into software: slide 34 (v3; Jeremy's wording).
-        <br>Reviewing its own work: slide 43 (v5.5; the reviewer agents).
+        <br>Reviewing its own work: slide 42 (v5.5; the reviewer agents).
         <br>Running experiments: not a callout in the main deck. It is from Jeremy's steer of
         5 October ("Agents are great at experiments") and from a slide now in the reserves. If
         it stays here it probably wants a callout in beat 3, on the v5.5 slide.
@@ -3290,15 +3296,15 @@ steps:
         <br><br>Where each one comes from:
         <br>Setting priorities: slide 22.
         <br>Working without me: three callouts folded into one. "Autonomy" (v2, slide 31),
-        "Working without me" (v3, slide 33) and "Still waits on me" (v5.5, slide 43, which is a
+        "Working without me" (v3, slide 33) and "Still waits on me" (v5.5, slide 42, which is a
         placeholder Jeremy has not confirmed).
-        <br>Knowing when it has failed: slide 37 (v4; "Nine cases in one night of something
+        <br>Knowing when it has failed: no longer a callout on a slide. The v4 quote slide went to the reserves on 2026-10-07 and its contents are in the notes for slide 36 (v4; "Nine cases in one night of something
         reporting success while having done nothing", diary #8).
         <br>Being concise and Remembering: from Jeremy's close-out list in the outline
         ("Communicating: being concise", "Remembering"). Neither is a callout anywhere in the
         deck yet, and the label "Every day" is a guess at a tag. TODO (Jeremy): keep them, and
         if so say where they bit.
-        <br><br>Left out: "No chart releases" (v5, slide 41). It is true of September, but
+        <br><br>Left out: "No chart releases" (v5, slide 40). It is true of September, but
         October shipped six releases in a weekend, so it does not read as something agents are
         bad at.
         <br><br>Until late on 5 October a sixth, dashed cell bridged to "So how do we do this in
@@ -3327,7 +3333,7 @@ steps:
         working less. But, what's now? Orange callouts - Good: More medicines, faster! (small)
         And no more powerpoint! Bad: Data Centers. Rouge Agents. Quality: So. Much. Change.
         Hacker: 100 years of innovation! Trials on a chip! Robots folding my clothes!" (He
-        gave the number in the 54-slide count; this is slide 51 of 52.) Every word on the
+        gave the number in the 54-slide count; this was slide 51 of 52 then; it is slide 50 of 51 now.) Every word on the
         slide is his, with one spelling changed: "Rouge Agents" is set as "Rogue Agents".
         "But, what's now?" is as he typed it; it may have been meant as "what's next?". His
         three sentences show with the slide; the four Oranges arrive together on the second
@@ -4093,6 +4099,39 @@ steps:
         was no safety.viz release between v1.7.0 (15 August) and v1.8.0 (2 October); open.csr's
         last activity was 2 September, under v4; the participant profile shipped in July
         (v1.5.0). The Patient Journey Explorer is the experiment that belongs here.
+      </aside>
+    </section>
+
+    <section class="slide s-quote" data-hue="4" style="padding-bottom: 330px" data-reserve="2026-10-07">
+      <p class="kicker pkg" style="--pkg: url(assets/hex/obot-v4.png)">obot v4 · quietly wrong</p>
+      <blockquote>“Nine cases in one night of something reporting success while having done nothing.”</blockquote>
+      <cite>— Obot, on itself · developer diary #8, 20 August 2026</cite>
+      <div class="goodat"><div class="bub"><p class="q">What worked</p><p class="a" style="font-size: 44px">The structure held</p></div><div class="who"><i>👍</i></div></div>
+      <div class="goodat bad"><div class="bub"><p class="q">What didn't</p><p class="a" style="font-size: 44px">Knowing when it has failed</p></div><div class="who"><i>👎</i></div></div>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        Reserve. Cut from the main deck on 2026-10-07 (Jeremy: "Think I'm going to cut 37 and put
+        its contents in notes for 36."). It was slide 37, after "Four roles, and a timer script";
+        the quote, both callouts and these notes are copied into that slide's notes.
+        <br><br>        Source: diary #8. These are Obot's words in the interview, not Jeremy's: "And most of the
+        last week was the agent finding out how it was quietly wrong. Nine cases in one night of
+        something reporting success while having done nothing. A blocker that set an evening's
+        agenda and turned out never to have existed. Nine hours of work sitting on disk that no
+        check we had could see."
+        <br><br>The cost, same post: "Seven thousand dollars of usage across twenty-four active
+        days, and this week we consumed your entire weekly allowance in about three days and had
+        to stop." Jeremy's clarification: "we're doing everything on a $200 claude max plan. The
+        $7k is API-equivalent spend, not out of pocket costs." The hub's analytics page gave
+        $7,124 for 9 July to 19 August when this was written; since the 5 October refresh the
+        same days sum to $7,160.
+        <br><br>"Whether v4 is faster than v3, I don't know. It's more capable and much better at
+        catching itself. Whether that nets out to more charts by October is the open question."
+        
+        <br><br>What worked (thumbs-up): the structure held. Charts kept shipping (thirteen
+        renderers by 20 August, four releases in five weeks), and the 10 September readout,
+        written by an agent, begins "the agent structure held". Draft wording; Jeremy to confirm.
+        <br><br>What didn't (thumbs-down): knowing when it has failed. This is the callout the
+        outline reserved for the quietly-wrong story.
       </aside>
     </section>
 
