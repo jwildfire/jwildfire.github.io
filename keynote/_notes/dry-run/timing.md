@@ -1,12 +1,12 @@
 # Dry-run timing
 
-Generated from keynote/slides.html (fingerprint 319498549e) by keynote/_notes/dry-run/build.mjs. Do not edit by hand; re-run the script after the deck changes.
+Generated from keynote/slides.html (fingerprint 4213c1171d) by keynote/_notes/dry-run/build.mjs. Do not edit by hand; re-run the script after the deck changes.
 
 ## Totals
 
 - Slides in the main run: 54
 - Slides with his spoken notes: 5 (no spoken notes yet: 49)
-- Open TODOs: 32 (10 boxes on slides (orange TODO or blue review), 22 "TODO (Jeremy)" items in notes)
+- Open TODOs: 33 (11 boxes on slides (orange TODO or blue review), 22 "TODO (Jeremy)" items in notes)
 - Words in his spoken notes: 219, which take 1.6 min at 140 words a minute
 - Slot: 40 min; the suggested split below adds up to 40 min and is not decided
 
@@ -77,7 +77,7 @@ Generated from keynote/slides.html (fingerprint 319498549e) by keynote/_notes/dr
 - 53. How I feel about it (beat 4)
 - 54. A pixel-art party of orange cats dancing under a disco ball, with confetti (beat 4)
 
-## Open TODOs (32)
+## Open TODOs (33)
 
 - Slide 8 (on slide): the contributing companies / Logos to come, from an old slide / Drop the slide or the image in keynote/_notes/inbox/
 - Slide 10 (on slide): Jeremy to reviewcommits chart, added 7 Octinspector popup, added 7 Oct
@@ -93,6 +93,7 @@ Generated from keynote/slides.html (fingerprint 319498549e) by keynote/_notes/dr
 - Slide 22 (in notes): replace the mock rows or keep them; confirm "Plan check", "OK" and "Flagged".
 - Slide 23 (on slide): Jeremy to reviewinspector popup, added 7 Oct
 - Slide 26 (on slide): Jeremy to reviewcallback to slide 2, 7 Octhacker and inspector, 7 Oct
+- Slide 27 (on slide): Jeremy to reviewhacker popup, added 7 Oct
 - Slide 29 (in notes): which tool v1 was, what you asked it for, and what worked and what didn't. There is no public account of it, so this version has one slide and no thumbs yet.
 - Slide 29 (in notes): the ladder level. Level 2 ("you pair with it and still read every line") is a guess to start the climb: 2, 3, 4, 5, then back to 4.
 - Slide 38 (in notes): 10 September in your own words. The only record is the hub diary of that day, drafted by an agent: "the fully autonomous multi-agent prototype is shut down. The readout was hard to argue with — the agent structure held, objectives and memory management were poor, most of the effort went into the orchestration itself, he had to redirect it constantly, and it never produced a release for him to review." And: "The replacement is requirement sessions: five objectives broken into requirements and tasks, one requirement per session, running as long as it takes, with him driving rather than reviewing." The placeholder slide for this account is in the reserves.

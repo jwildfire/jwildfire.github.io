@@ -300,6 +300,11 @@ Inspector Orange, added 2026-10-07 (Jeremy: "maybe just popups like the good/bad
 - Slide 26, "The question, again": no question here; the inspector just says "Oh jeez. I'll check in later." (his words), after Hacker Orange's "Let's mess around and find out."
 - Slide 46, "A lot of tests, and still not GxP": "Lots of tests. No sign-off." (beside the title)
 
+Hacker Orange, added 2026-10-07 (his art, `keynote/assets/hex/orange-hacker.png`): a dark bubble with green terminal type. Both lines are his
+
+- Slide 26, "The question, again": "Let's mess around and find out." (on the slide, not a popup)
+- Slide 27, "Modernize safetyGraphics, using the gsm framework": "Open Source ftw" (popup, second press)
+
 - Beats 1 and 2 ("What are agents good at now?" / "What are agents bad at now?")
   - Teaching me things — slide 6
   - Writing code — slide 17
