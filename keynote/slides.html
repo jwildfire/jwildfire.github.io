@@ -3510,9 +3510,9 @@
     </section>
 
     <!-- ============================================================
-         Template samples — one of each layout. Delete or reuse.
+         Template samples — one of each layout. Marked data-reserve="template" so they are not counted.
          ============================================================ -->
-    <section class="slide s-section" data-hue="0">
+    <section class="slide s-section" data-reserve="template" data-hue="0">
       <div class="bighex">1</div>
       <p class="kicker">Section</p>
       <h2>Section divider</h2>
@@ -3520,7 +3520,7 @@
       <aside class="notes"><strong class="say">&lt;none yet&gt;</strong></aside>
     </section>
 
-    <section class="slide s-bullets" data-hue="0">
+    <section class="slide s-bullets" data-reserve="template" data-hue="0">
       <p class="kicker">Layout · bullets</p>
       <h2>A headline that makes one claim</h2>
       <ul>
@@ -3531,21 +3531,21 @@
       <aside class="notes"><strong class="say">&lt;none yet&gt;</strong> Speaker notes live in an aside.notes element; press N to show them.</aside>
     </section>
 
-    <section class="slide s-quote" data-hue="1">
+    <section class="slide s-quote" data-reserve="template" data-hue="1">
       <p class="kicker">Layout · quote</p>
       <blockquote>“What can we actually do with these tools right now?”</blockquote>
       <cite>— the question running through the developer diary</cite>
       <aside class="notes"><strong class="say">&lt;none yet&gt;</strong></aside>
     </section>
 
-    <section class="slide s-stat" data-hue="2">
+    <section class="slide s-stat" data-reserve="template" data-hue="2">
       <p class="kicker">Layout · big number</p>
       <div class="big">1B</div>
       <p>tokens in a weekend — a single figure with one line of context.</p>
       <aside class="notes"><strong class="say">&lt;none yet&gt;</strong></aside>
     </section>
 
-    <section class="slide s-split" data-hue="4">
+    <section class="slide s-split" data-reserve="template" data-hue="4">
       <p class="kicker">Layout · two columns</p>
       <h2>Before / after</h2>
       <div class="cols">
@@ -3555,7 +3555,7 @@
       <aside class="notes"><strong class="say">&lt;none yet&gt;</strong></aside>
     </section>
 
-    <section class="slide s-image" data-hue="5">
+    <section class="slide s-image" data-reserve="template" data-hue="5">
       <p class="kicker">Layout · screenshot</p>
       <h2>A picture of the real thing</h2>
       <figure>
@@ -3565,7 +3565,7 @@
       <aside class="notes"><strong class="say">&lt;none yet&gt;</strong></aside>
     </section>
 
-    <section class="slide s-section" data-hue="6">
+    <section class="slide s-section" data-reserve="template" data-hue="6">
       <div class="bighex">?</div>
       <p class="kicker">Close</p>
       <h2>Thank you</h2>
@@ -3591,7 +3591,7 @@
         if (!s.classList.contains('s-title')) s.setAttribute('data-foot', foot);
         var pos = counted.indexOf(s), n = document.createElement('span');
         n.className = pos < 0 ? 'rsv' : 'num';
-        n.textContent = pos < 0 ? (s.getAttribute('data-reserve') === 'section' ? 'Reserves' : 'Reserve · demoted ' + s.getAttribute('data-reserve')) : (pos + 1) + ' / ' + counted.length;
+        n.textContent = pos < 0 ? (s.getAttribute('data-reserve') === 'section' ? 'Reserves' : s.getAttribute('data-reserve') === 'template' ? 'Template sample' : 'Reserve · demoted ' + s.getAttribute('data-reserve')) : (pos + 1) + ' / ' + counted.length;
         s.appendChild(n);
         // Fill the hex strip in proportion to progress, snapped to whole hexes.
         var HEX = 18 * 6.928 / 9, f = document.createElement('span');
