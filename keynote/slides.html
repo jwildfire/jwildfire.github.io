@@ -519,22 +519,22 @@
     /* Orange's callout hexes are drawn art from 2026-10-06 (assets/hex/orange-thumbs-up.png and
        orange-thumbs-down.png). They replace the photo in a hex and its emoji badge; the photo
        rules above are kept, and these override them. A third hex, orange-question.png, is in
-       the same folder; the inspector callout below borrows it for now. */
+       the same folder and not used yet. */
     .goodat .who::before, .s-answers .who::before { content: none; }
     .goodat .who::after, .s-answers .who::after { inset: 0; clip-path: none; background: url(assets/hex/orange-thumbs-up.png) center / contain no-repeat; }
     .goodat.bad .who::after, .s-answers.bad .who::after { background-image: url(assets/hex/orange-thumbs-down.png); }
     .goodat .who i, .s-answers .who i { display: none; }
     /* Inspector Orange (2026-10-07): a third callout in the same series, green, bottom right,
-       asking "What evidence do you have?" with a short answer. No verdicts. The hex is a
-       stand-in, orange-question.png, until Jeremy's inspector art is saved in assets/hex/;
-       then change the one URL below. <p class="a two"> holds a two-line answer. Add "top"
+       asking "What evidence do you have?" with a short answer. No verdicts. The hex is
+       Jeremy's inspector art from 2026-10-07, assets/hex/orange-inspector.png (the original
+       is in _notes/inbox/). <p class="a two"> holds a two-line answer. Add "top"
        to sit beside the title where the bottom of the slide is full. */
     .goodat.insp { bottom: 60px; gap: 20px; }
     .goodat.insp.top { bottom: auto; top: 84px; }
     .goodat.insp .bub { background: #e9f3ea; border-color: #5f9a72; padding: 16px 28px 18px; }
     .goodat.insp .bub::after { background: #e9f3ea; border-color: #5f9a72; }
     .goodat.insp .who { width: 150px; height: 173px; }
-    .goodat.insp .who::after { background-image: url(assets/hex/orange-question.png); }
+    .goodat.insp .who::after { background-image: url(assets/hex/orange-inspector.png); }
     .goodat.insp .a { font-size: 40px; }
     .goodat.insp .a.two { font-size: 29px; line-height: 1.22; }
     .slide .review.low { top: auto; bottom: 28px; }
