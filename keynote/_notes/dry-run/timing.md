@@ -1,12 +1,12 @@
 # Dry-run timing
 
-Generated from keynote/slides.html (fingerprint b4b518aaf0) by keynote/_notes/dry-run/build.mjs. Do not edit by hand; re-run the script after the deck changes.
+Generated from keynote/slides.html (fingerprint 146c893670) by keynote/_notes/dry-run/build.mjs. Do not edit by hand; re-run the script after the deck changes.
 
 ## Totals
 
 - Slides in the main run: 52
 - Slides with his spoken notes: 5 (no spoken notes yet: 47)
-- Open TODOs: 42 (21 boxes on slides (orange TODO or blue review), 21 "TODO (Jeremy)" items in notes)
+- Open TODOs: 43 (22 boxes on slides (orange TODO or blue review), 21 "TODO (Jeremy)" items in notes)
 - Words in his spoken notes: 219, which take 1.6 min at 140 words a minute
 - Slot: 40 min; the suggested split below adds up to 40 min and is not decided
 
@@ -75,9 +75,10 @@ Generated from keynote/slides.html (fingerprint b4b518aaf0) by keynote/_notes/dr
 - 51. Coding feels completely different than it did a year ago. (beat 4)
 - 52. A pixel-art party of orange cats dancing under a disco ball, with confetti (beat 4)
 
-## Open TODOs (42)
+## Open TODOs (43)
 
 - Slide 2 (on slide): Jeremy to reviewmoved up to second, 7 Octdisclaimer popup, 7 Oct
+- Slide 5 (on slide): Jeremy to reviewnow the safetyGraphics transition, 7 Oct
 - Slide 8 (on slide): the contributing companies / Logos to come, from an old slide / Drop the slide or the image in keynote/_notes/inbox/
 - Slide 10 (on slide): Jeremy to reviewcommits chart, added 7 Octinspector popup, added 7 Oct
 - Slide 11 (on slide): Jeremy to reviewsecond line softened, 7 Oct

@@ -40,9 +40,10 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
     - Working in public: nine diary posts, June to September, every one with an AI collaboration note
     - "My plan has changed at least three times since I found out about the keynote" [diary #1]
     - The submitted abstract versus what happened: "the reality is messier" [diary #1]
-  - Orange at work (built, slide 5)
+  - Open Source Safety Graphics: the transition into the safetyGraphics section (built, slide 5)
     - Photo: `orange-asleep-on-trackpad.jpg`
-    - Line on the slide: "And *such* a helpful coworker", subtitle "We actually got a lot done!"
+    - On the slide: kicker "Orange, at work", title "Open Source Safety Graphics", line "Such a helpful coworker"
+    - Changed 2026-10-07 (Jeremy: "S5 becomes transition for Safety graphics 'Open Source Safety Graphics' sub: such a helpful coworker"). Before that the title was "And *such* a helpful coworker" and the line was "We actually got a lot done!", now off the slide
     - Notes: "He was a bit of an inconsistent cowoker though. I want to tell you about some of the work Orange and I did together! He was there both when I learned R and when I learned Clinical trials."
     - Hand-off line: "I promise I'm not *just* going to talk about my cat today. This actually is a talk about AI and how it has completely changed how I do my job over the last year."
   - "Why can't I do this for work?" (built, slide 6)
