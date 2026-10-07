@@ -1,0 +1,242 @@
+{
+  "recorded": "2026-10-07T12:59:29.042Z",
+  "url": "https://gilead-public.github.io/gsm.kri/examples/Example_SiteReport.html",
+  "served": {
+    "status": 200,
+    "lastModified": "Mon, 05 Oct 2026 10:43:43 GMT",
+    "etag": "W/\"6ac37f5f-c54ee1\"",
+    "bytes": 12930785,
+    "sha256": "1b040642cfe4385aaac7eff1239b9ec21e878a85947749fa16bd4c8d4d64e3d5"
+  },
+  "report": {
+    "title": "Site KRI Overview",
+    "study": "Study: AA-AA-000-0000 (OAK-38)",
+    "author": "gsm.kri Example",
+    "snapshot": "Snapshot Date: 2025-04-01",
+    "status": "Nickname OAK-38 Status Active Site Activation 148 / 150 (98.7%) Participant Enrollment 760 / 1000 (76%)",
+    "flags": "37 Red KRIs 94 Amber KRIs",
+    "siteSubset": "1+ red flag",
+    "sitesListed": 36
+  },
+  "site": "0X1748",
+  "metric": "Adverse Event Rate",
+  "window": {
+    "width": 1408,
+    "height": 792,
+    "zoom": 1.1364
+  },
+  "video": {
+    "mp4": "../../assets/gsm-kri-report-demo.mp4",
+    "poster": "../../assets/gsm-kri-report-demo-poster.png",
+    "seconds": 54.92,
+    "bytes": 3222790,
+    "megabytes": 3.22,
+    "stream": "h264,1600,900,yuv420p,25/1",
+    "audioStreams": 0,
+    "frames": 1373,
+    "fps": 25,
+    "crf": 20,
+    "rawWebm": "gsm-kri-report-demo-raw.webm",
+    "loopCloses": true
+  },
+  "camera": {
+    "screenshots": 1302,
+    "perSecond": 23.7,
+    "longestGapMs": 367,
+    "gapsOver50Ms": 89,
+    "stalls": [
+      {
+        "at": 23.25,
+        "ms": 367
+      },
+      {
+        "at": 51.01,
+        "ms": 293
+      }
+    ]
+  },
+  "network": {
+    "requests": [
+      "https://gilead-public.github.io/gsm.kri/examples/Example_SiteReport.html"
+    ],
+    "failed": []
+  },
+  "console": {
+    "errors": [],
+    "pageErrors": [],
+    "all": []
+  },
+  "steps": [
+    {
+      "video": 0,
+      "name": "top",
+      "note": "The report as it opens: \"Site KRI Overview\", Study: AA-AA-000-0000 (OAK-38), Snapshot Date: 2025-04-01.",
+      "screenshot": "steps/01-top.png",
+      "title": "Site KRI Overview",
+      "study": "Study: AA-AA-000-0000 (OAK-38)",
+      "author": "gsm.kri Example",
+      "snapshot": "Snapshot Date: 2025-04-01",
+      "status": "Nickname OAK-38 Status Active Site Activation 148 / 150 (98.7%) Participant Enrollment 760 / 1000 (76%)",
+      "flags": "37 Red KRIs 94 Amber KRIs",
+      "siteSubset": "1+ red flag",
+      "sitesListed": 36
+    },
+    {
+      "video": 4.32,
+      "name": "overview",
+      "note": "Study Overview: 37 Red KRIs 94 Amber KRIs. The table lists the 36 sites with \"1+ red flag\", a column per key risk indicator.",
+      "screenshot": "steps/02-overview.png"
+    },
+    {
+      "video": 10.01,
+      "name": "flagged-site",
+      "note": "The pointer on site 0X1748 (Doe): 2 red flags, 1 amber. Its Adverse Event Rate flag is red (Adjusted Z-Score: 3.22; Adverse Event Rate: 0.21; Adverse Events: 26; Days on Study: 125).",
+      "screenshot": "steps/03-flagged-site.png",
+      "row": [
+        "0X1748 (Doe)",
+        "7",
+        "2",
+        "1",
+        "16"
+      ],
+      "flag": "Adjusted Z-Score: 3.22; Adverse Event Rate: 0.21; Adverse Events: 26; Days on Study: 125"
+    },
+    {
+      "video": 14.6,
+      "name": "scatter",
+      "note": "Adverse Event Rate: the scatter plot, a point per site against the flag thresholds. One point is red.",
+      "screenshot": "steps/04-scatter.png",
+      "drawn": 1372
+    },
+    {
+      "video": 18.51,
+      "name": "scatter-tooltip",
+      "note": "Hovering the red point: \"Site: 0X1748 (Doe / 7 enrolled)\", Adjusted Z-Score: 3.22; Adverse Event Rate: 0.21; Adverse Events: 26; Days on Study: 125.",
+      "screenshot": "steps/05-scatter-tooltip.png",
+      "tooltip": {
+        "title": "Site: 0X1748 (Doe / 7 enrolled)",
+        "lines": [
+          "Adjusted Z-Score: 3.22",
+          "Adverse Event Rate: 0.21",
+          "Adverse Events: 26",
+          "Days on Study: 125",
+          "Studyid: AA-AA-000-0000",
+          "Invid: 0X1748",
+          "Investigator First Name: John",
+          "Investigator Last Name: Doe",
+          "Site Status: Active",
+          "City: Kumamoto",
+          "State: Kumamoto Prefecture",
+          "Country: Japan",
+          "Site Active Dt: 2012-02-01",
+          "Participant Count: 7",
+          "Site Count: 1"
+        ]
+      }
+    },
+    {
+      "video": 24.75,
+      "name": "select-site",
+      "note": "\"Select Group\" set to 0X1748: 42 of the report's 45 charts now highlight that site and fade the rest. The scatter plot shows the site's tooltip by itself, with the pointer elsewhere.",
+      "screenshot": "steps/06-select-site.png",
+      "highlighted": {
+        "0X1748": 42,
+        "None": 3
+      },
+      "tooltip": {
+        "title": "Site: 0X1748 (Doe / 7 enrolled)",
+        "lines": [
+          "Adjusted Z-Score: 3.22",
+          "Adverse Event Rate: 0.21",
+          "Adverse Events: 26",
+          "Days on Study: 125",
+          "Studyid: AA-AA-000-0000",
+          "Invid: 0X1748",
+          "Investigator First Name: John",
+          "Investigator Last Name: Doe",
+          "Site Status: Active",
+          "City: Kumamoto",
+          "State: Kumamoto Prefecture",
+          "Country: Japan",
+          "Site Active Dt: 2012-02-01",
+          "Participant Count: 7",
+          "Site Count: 1"
+        ]
+      }
+    },
+    {
+      "video": 29.71,
+      "name": "bar-chart",
+      "note": "Bar Chart: every site's score, highest first, 0X1748 highlighted. The chart shows the highlighted site's tooltip by itself (\"Site: 0X1748 (Doe / 7 enrolled)\").",
+      "screenshot": "steps/07-bar-chart.png",
+      "drawn": 148,
+      "tooltip": {
+        "title": "Site: 0X1748 (Doe / 7 enrolled)",
+        "lines": [
+          "Adjusted Z-Score: 3.22",
+          "Adverse Event Rate: 0.21",
+          "Adverse Events: 26",
+          "Days on Study: 125",
+          "Studyid: AA-AA-000-0000",
+          "Invid: 0X1748",
+          "Investigator First Name: John",
+          "Investigator Last Name: Doe",
+          "Site Status: Active",
+          "City: Kumamoto",
+          "State: Kumamoto Prefecture",
+          "Country: Japan",
+          "Site Active Dt: 2012-02-01",
+          "Participant Count: 7",
+          "Site Count: 1"
+        ]
+      }
+    },
+    {
+      "video": 34.29,
+      "name": "metric-table",
+      "note": "Metric Table: the flagged sites for this metric. First row: 0X1748 (Doe), 7, 26, 125, 0.21, 3.22.",
+      "screenshot": "steps/08-metric-table.png",
+      "rows": 13
+    },
+    {
+      "video": 39.06,
+      "name": "time-series",
+      "note": "Time Series: the sites' scores at each snapshot, 0X1748 highlighted.",
+      "screenshot": "steps/09-time-series.png",
+      "drawn": 27
+    },
+    {
+      "video": 42.69,
+      "name": "time-series-tooltip",
+      "note": "Hovering the site's point: \"Site 0X1748 on 2025-04-01\", Adjusted Z-Score: 3.22; Adverse Event Rate: 0.21; Adverse Events: 26; Days on Study: 125.",
+      "screenshot": "steps/10-time-series-tooltip.png",
+      "tooltip": {
+        "title": "Site 0X1748 on 2025-04-01",
+        "lines": [
+          "Adjusted Z-Score: 3.22",
+          "Adverse Event Rate: 0.21",
+          "Adverse Events: 26",
+          "Days on Study: 125"
+        ]
+      }
+    },
+    {
+      "video": 49.53,
+      "name": "back-to-top",
+      "note": "Scrolled back to the top of the report.",
+      "screenshot": "steps/11-back-to-top.png"
+    },
+    {
+      "video": 51.64,
+      "name": "clear",
+      "note": "\"Select Group\" set back to None.",
+      "screenshot": "steps/12-clear.png"
+    },
+    {
+      "video": 54.59,
+      "name": "end",
+      "note": "The report as it opened. The video ends here and loops.",
+      "screenshot": "steps/13-end.png"
+    }
+  ]
+}

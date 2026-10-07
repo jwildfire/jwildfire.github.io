@@ -291,6 +291,14 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
 
 A recurring callout in the bottom-right corner: Orange's face in an amber hex with a thumbs-up, the question in small capitals, the answer in a speech bubble (design B, chosen 2026-10-02). The close in beat 4 gathers the same answers into one list. From 2026-10-06 the photo hexes are Jeremy's drawn ones: `keynote/assets/hex/orange-thumbs-up.png` and `orange-thumbs-down.png` (the emoji badge is gone, since the art carries the thumb). A third, `orange-question.png` (Orange thinking, with a question mark), is saved and not placed.
 
+Inspector Orange, added 2026-10-07 (Jeremy: "maybe just popups like the good/bad/confused series? 'What evidence do you have' short answers"; the full Quality Check-in slides were too much to claim around GxP). A third callout, green, asking "What evidence do you have?". No verdicts. The hex is a stand-in (`orange-question.png`) until his inspector art (the green one with the clipboard) is saved in `keynote/assets/hex/`. All five carry a blue review box and all wording is draft except slide 10's, which he picked
+
+- Slide 10, "What we did, and what we didn't": "Written requirements and a manual test script for every chart. / Automated tests on the R package, run on every pull request." Measured from the public record; sources in the slide's notes
+- Slide 15, "GxP is built into the design": "A test for every requirement" (beside the title)
+- Slide 23, "AI-written code still needs a human owner": "The same tests, and a human owner"
+- Slide 26, "The question, again": "None yet. Ask me later." He likes waving the inspector off here
+- Slide 46, "A lot of tests, and still not GxP": "Lots of tests. No sign-off." (beside the title)
+
 - Beats 1 and 2 ("What are agents good at now?" / "What are agents bad at now?")
   - Teaching me things — slide 6
   - Writing code — slide 17

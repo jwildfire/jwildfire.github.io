@@ -1,12 +1,12 @@
 # Dry-run timing
 
-Generated from keynote/slides.html (fingerprint 15c4c02099) by keynote/_notes/dry-run/build.mjs. Do not edit by hand; re-run the script after the deck changes.
+Generated from keynote/slides.html (fingerprint 2048b02d0d) by keynote/_notes/dry-run/build.mjs. Do not edit by hand; re-run the script after the deck changes.
 
 ## Totals
 
 - Slides in the main run: 54
 - Slides with his spoken notes: 5 (no spoken notes yet: 49)
-- Open TODOs: 29 (7 boxes on slides (orange TODO or blue review), 22 "TODO (Jeremy)" items in notes)
+- Open TODOs: 32 (10 boxes on slides (orange TODO or blue review), 22 "TODO (Jeremy)" items in notes)
 - Words in his spoken notes: 219, which take 1.6 min at 140 words a minute
 - Slot: 40 min; the suggested split below adds up to 40 min and is not decided
 
@@ -77,20 +77,22 @@ Generated from keynote/slides.html (fingerprint 15c4c02099) by keynote/_notes/dr
 - 53. How I feel about it (beat 4)
 - 54. A pixel-art party of orange cats dancing under a disco ball, with confetti (beat 4)
 
-## Open TODOs (29)
+## Open TODOs (32)
 
 - Slide 8 (on slide): the contributing companies / Logos to come, from an old slide / Drop the slide or the image in keynote/_notes/inbox/
-- Slide 10 (on slide): Jeremy to reviewcommits chart, added 7 Oct
+- Slide 10 (on slide): Jeremy to reviewcommits chart, added 7 Octinspector popup, added 7 Oct
 - Slide 12 (on slide): Jeremy to reviewreport recording, added 7 Oct
 - Slide 13 (on slide): Jeremy to reviewpackage hexes, added 7 Oct
 - Slide 13 (in notes): the hexes. None of these packages has a hex logo in its public repository except qcthat, whose real logo is used. The other seven are plain hexes in the deck's colours with the short name inside. Real hexes, if you have them or want them made, drop into keynote/assets/hex/ and replace the plain ones.
 - Slide 14 (in notes): check the steps against the March all-hands deck's "Standard Development Lifecycle" slide. I did not have that slide; this version is worked back from the merged one by un-marking the agent's steps, dropping the step that only exists with an agent ("Review the plan, then prompt") and shortening "Implement, with a person steering" to "Implement". The headline is that deck's title in sentence case.
+- Slide 15 (on slide): Jeremy to reviewinspector popup, added 7 Oct
 - Slide 15 (in notes): vet the qualification sentence and say what a qualified release involves at work, in your words.
 - Slide 15 (in notes): replace it with a screenshot of a real qcthat report if one can be shown.
 - Slide 21 (in notes): (1) Vet all ten pages; they are public already, but they have not been on a keynote slide. Two things to look at in particular: thumbnail 9 names the other repositories of the side project in small print, and thumbnail 7 shows a scatter plot of the public demo study. (2) Supply or approve real gsm.roadmap artifacts if any can be shown: screenshots you take yourself, cleared for a public talk, would replace some or all of these and the caption line would go. (3) Confirm the caption wording: it tells the room these are not the team's pages. (4) Say whether the callout stays.
 - Slide 22 (on slide): Jeremy to reviewmock schedule, added 7 Oct
 - Slide 22 (in notes): replace the mock rows or keep them; confirm "Plan check", "OK" and "Flagged".
-- Slide 26 (on slide): Jeremy to reviewcallback to slide 2, 7 Oct
+- Slide 23 (on slide): Jeremy to reviewinspector popup, added 7 Oct
+- Slide 26 (on slide): Jeremy to reviewcallback to slide 2, 7 Octinspector popup, added 7 Oct
 - Slide 29 (in notes): which tool v1 was, what you asked it for, and what worked and what didn't. There is no public account of it, so this version has one slide and no thumbs yet.
 - Slide 29 (in notes): the ladder level. Level 2 ("you pair with it and still read every line") is a guess to start the climb: 2, 3, 4, 5, then back to 4.
 - Slide 38 (in notes): 10 September in your own words. The only record is the hub diary of that day, drafted by an agent: "the fully autonomous multi-agent prototype is shut down. The readout was hard to argue with — the agent structure held, objectives and memory management were poor, most of the effort went into the orchestration itself, he had to redirect it constantly, and it never produced a release for him to review." And: "The replacement is requirement sessions: five objectives broken into requirements and tasks, one requirement per session, running as long as it takes, with him driving rather than reviewing." The placeholder slide for this account is in the reserves.
@@ -102,6 +104,7 @@ Generated from keynote/slides.html (fingerprint 15c4c02099) by keynote/_notes/dr
 - Slide 44 (in notes): which files to drop in on the day.
 - Slide 44 (in notes): the goal's fourth line was "have some fun". A closing line here hands to "how we built it" (part 3.5). In June it was "51% fun and 49% frustrating". What is it now?
 - Slide 45 (in notes): • Settled 2026-10-07: “$200 a month” still describes September and October (Jeremy: "Yes, still $200"). It is the figure in diary #6, #8 and #9; nothing on record confirms it after 6 September. / • The headline's $11,750 and the October bar will be out of date by 21 October. Refresh both from the analytics page the week of the talk. / • The July weekend is mostly missing from the bars. Diary #6 reports $1,273 for 10 to 12 July; the hub's file holds $145.60 for 9 to 12 July. So July is a floor too, by about $1,100, unless the two overlap in a way the record cannot show. Not added to the total. Say it, or leave the July bar as it is? / • v1 and v2 (May and June, the personal assistant and OpenClaw) have no usage data at all. The bottom line says June is not counted; it does not say what June cost. / • 10 September, the day v4 was retired, is counted under v4 ($36.74). / • Keep the three cards, or cut to two? “Two long weekends” repeats beat 3. / • Whether to show the 496 merged pull requests beside the cost (the reserve slide “What it took” did). Left off here to keep one idea on the slide.
+- Slide 46 (on slide): Jeremy to reviewinspector popup, added 7 Oct
 - Slide 47 (in notes): the headline. Whether to say out loud which block is which, or let the green carry it. Whether the autonomy block should be on a slide in this beat at all, since beat 3 has already told that story. Whether the keynote deck's own block staying pale is a joke worth making.
 - Slide 48 (in notes): the headline. Whether to name bio.viz and gsm.bio here or leave that to the demo. Whether one line of supporting text is wanted under the picture; there is room for one only if the picture is made shorter.
 - Slide 49 (in notes): - Headline: “eleven months” is the count (24 Nov 2025 to 21 Oct 2026); you said “roughly 1 year”. Your call. / - The sources credit two models for the November turn, Opus 4.5 and GPT-5.1 (diary #1 says “Opus 4.5 and ChatGPT 5.2 in late 2025”). The slide marks only Opus 4.5. / - MCP: confirm “did not try”. Claude Code sessions can load MCP connectors without anyone setting out to use them; “did not build with” may be closer. / - Diary #1 (dated 10 June) says Fable 5 “came out today”; Willison and Anthropic date it 9 June. The slide uses 9 June. / - v1 and v2 are labelled “assistant” and “OpenClaw” because the model under each is not in the record (diary #2 lists Codex alongside OpenClaw). / - Agent Skills (an open standard since December 2025, diary #9) is one you did use; it could be an eighth label if you want a standard on the chart. / - v5's label says “Fable 5.1”; it also ran on Opus 5 (both names do not fit at a readable size). / - The last label says “today” for 21 October; change it if the deck is read later.

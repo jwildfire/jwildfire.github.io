@@ -519,11 +519,25 @@
     /* Orange's callout hexes are drawn art from 2026-10-06 (assets/hex/orange-thumbs-up.png and
        orange-thumbs-down.png). They replace the photo in a hex and its emoji badge; the photo
        rules above are kept, and these override them. A third hex, orange-question.png, is in
-       the same folder and not used yet. */
+       the same folder; the inspector callout below borrows it for now. */
     .goodat .who::before, .s-answers .who::before { content: none; }
     .goodat .who::after, .s-answers .who::after { inset: 0; clip-path: none; background: url(assets/hex/orange-thumbs-up.png) center / contain no-repeat; }
     .goodat.bad .who::after, .s-answers.bad .who::after { background-image: url(assets/hex/orange-thumbs-down.png); }
     .goodat .who i, .s-answers .who i { display: none; }
+    /* Inspector Orange (2026-10-07): a third callout in the same series, green, bottom right,
+       asking "What evidence do you have?" with a short answer. No verdicts. The hex is a
+       stand-in, orange-question.png, until Jeremy's inspector art is saved in assets/hex/;
+       then change the one URL below. <p class="a two"> holds a two-line answer. Add "top"
+       to sit beside the title where the bottom of the slide is full. */
+    .goodat.insp { bottom: 60px; gap: 20px; }
+    .goodat.insp.top { bottom: auto; top: 84px; }
+    .goodat.insp .bub { background: #e9f3ea; border-color: #5f9a72; padding: 16px 28px 18px; }
+    .goodat.insp .bub::after { background: #e9f3ea; border-color: #5f9a72; }
+    .goodat.insp .who { width: 150px; height: 173px; }
+    .goodat.insp .who::after { background-image: url(assets/hex/orange-question.png); }
+    .goodat.insp .a { font-size: 40px; }
+    .goodat.insp .a.two { font-size: 29px; line-height: 1.22; }
+    .slide .review.low { top: auto; bottom: 28px; }
     /* A QR code beside a slide's title: <a class="qr"><span>caption</span><svg>…</svg></a>. */
     .slide .qr { position: absolute; right: 140px; top: 96px; display: flex; align-items: flex-end; gap: 22px; text-decoration: none; }
     .slide .qr span { font-family: var(--mono); font-size: 20px; line-height: 1.45; color: var(--soft); text-align: right; padding-bottom: 6px; }
@@ -926,7 +940,8 @@
           <text class="an" x="1056" y="70">After I moved to Gilead, in 2021</text>
         </svg>
       </div>
-      <div class="review"><b>Jeremy to review</b><br>commits chart, added 7 Oct</div>
+      <div class="review"><b>Jeremy to review</b><br>commits chart, added 7 Oct<br>inspector popup, added 7 Oct</div>
+      <div class="goodat insp"><div class="bub"><p class="q">What evidence do you have?</p><p class="a two">Written requirements and a manual test script for every chart.<br>Automated tests on the R package, run on every pull request.</p></div><div class="who"></div></div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
         Imported 2026-10-07 at his pick ("Slide 10 commits chart"); the blue box marks it as not yet reviewed. DRAFT visual, 2026-10-07 (replaces the orange TODO box; Jeremy, 2026-10-06: "slide 10
@@ -970,6 +985,15 @@
         team and a budget I no longer have — but with AI agents, I'm honestly not sure that's true
         anymore. Figuring out whether it is, is what this whole keynote experiment is about."
         Then: the OpenRBQM team "is already dragging clinical monitoring toward something more modern."
+        <br><br>Inspector popup, measured 7 October 2026 from the public record. Requirements and
+        manual scripts: each renderer's wiki has a Technical Documentation page; the AE Explorer's
+        (github.com/RhoInc/aeexplorer/wiki/Technical-Documentation) lists 18 user requirements and
+        41 manual regression steps, written 2017–2018. Automated tests: the safetyGraphics R
+        package has 46 testthat tests in 12 files on its dev branch (31 unit tests, 15 browser
+        tests through shinytest), 60 at v1.0.0, run by R CMD check on every pull request. What
+        was missing, left off the popup on purpose: no automated tests on the JavaScript charts,
+        and nothing connecting a requirement to the test that proves it. No public record of
+        the user testing was found; it is not on the popup.
       </aside>
     </section>
 
@@ -1149,6 +1173,8 @@
           </table></div>
       </div>
       <p style="margin: 22px 0 0; font-size: 34px">Every package ships with evidence, every time.</p>
+      <div class="goodat insp top"><div class="bub"><p class="q">What evidence do you have?</p><p class="a">A test for every requirement</p></div><div class="who"></div></div>
+      <div class="review low"><b>Jeremy to review</b><br>inspector popup, added 7 Oct</div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
         Moved up on 2026-10-06 to sit in the first half of beat 2, before any AI (Jeremy:
@@ -1611,6 +1637,8 @@
         <li>A person must be able to explain why the code works.</li>
         <li>A person must be able to explain why it is safe enough for medical research.</li>
       </ul>
+      <div class="goodat insp"><div class="bub"><p class="q">What evidence do you have?</p><p class="a">The same tests, and a human owner</p></div><div class="who"></div></div>
+      <div class="review"><b>Jeremy to review</b><br>inspector popup, added 7 Oct</div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
         The four lines are verbatim from the 6 June deck draft (RPharma2026-AIKeynote), which came
@@ -1709,7 +1737,8 @@
         <li><b>Not GxP</b></li>
         <li>Let's experiment and have some fun …</li>
       </ul>
-      <div class="review"><b>Jeremy to review</b><br>callback to slide 2, 7 Oct</div>
+      <div class="review"><b>Jeremy to review</b><br>callback to slide 2, 7 Oct<br>inspector popup, added 7 Oct</div>
+      <div class="goodat insp"><div class="bub"><p class="q">What evidence do you have?</p><p class="a">None yet. Ask me later.</p></div><div class="who"></div></div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
         Reformatted 2026-10-07 (Jeremy: "reformat slide 26 to call back to slide 2."). It now
@@ -1735,6 +1764,7 @@
         <br><br>His earlier line for the same idea, now in the reserves: "This is really really
         not GxP (but there are A LOT of tests included ...)". For the record: safety.viz v1.9.2
         (7 October) runs 2,242 unit and 385 browser tests.
+        <br><br>Inspector popup (7 October): Jeremy likes waving the inspector off here.
       </aside>
     </section>
 
@@ -2674,6 +2704,8 @@
           <p>Nothing here has been through qualification.</p></div>
       </div>
       <p class="soft" style="margin: 22px 0 0; font-size: 29px">Tests and reviews are cheap now. The signature is not.</p>
+      <div class="goodat insp top"><div class="bub"><p class="q">What evidence do you have?</p><p class="a">Lots of tests. No sign-off.</p></div><div class="who"></div></div>
+      <div class="review low"><b>Jeremy to review</b><br>inspector popup, added 7 Oct</div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
         DRAFT, 2026-10-05. Part 3.5, "how we built it". Jeremy's list for this part is
