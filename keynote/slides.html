@@ -668,6 +668,11 @@
     .gallery.four { grid-template-columns: repeat(4, 1fr); gap: 14px 20px; }
     .gallery.four img { height: 172px; }
     .gallery.four.short img { height: 148px; }
+    /* Plain Orange, no verdict (the disclaimer on slide 4, 2026-10-07): the drawn hex with the
+       amber bubble. */
+    .goodat.plain { right: 40px; bottom: 60px; gap: 22px; }
+    .goodat.plain .who::after { background-image: url(assets/hex/orange.png); }
+    .goodat.plain .a { font-size: 42px; }
     /* Four Oranges answer at once (the "how I feel" slide, 2026-10-07): one .goodat wrapper so the
        second press reveals all four, laid out as a two-by-two grid in the flow of the slide.
        Each cell is hex then bubble; --bg and --bd colour the bubble. */
@@ -811,6 +816,14 @@
       <p class="kicker pkg" style="--pkg: url(assets/hex/orange.png)">First, an introduction</p>
       <h2>Introducing Orange</h2>
       <p class="line">He was a very good cat.</p>
+      <div class="goodat plain">
+        <div class="bub">
+          <p class="q">A quick disclaimer</p>
+          <p class="a">This is all just Jeremy's opinion.</p>
+        </div>
+        <div class="who"></div>
+      </div>
+      <div class="review"><b>Jeremy to review</b><br>disclaimer popup, added 7 Oct</div>
       <aside class="notes">
         <strong class="say">But, first I want to introduce a key collaborator, Orange! He was a Chilean
         street cat and was very silly. One time he fell from our 7th story window into the parking
@@ -818,6 +831,10 @@
         Background: Obot is named after Orange (diary #2, 2026-06-12). The Chile / Santiago /
         first safetyGraphics ideas origin story was noted as a candidate opener in the hub diary of
         2026-07-11 and has not been told in a post.
+        <br><br>Disclaimer popup, second press, added 2026-10-07. Jeremy first asked for a slide
+        ("Add a disclaimer slide at the end of beat 1 after we introduce orange. Can be orange
+        saying 'This is all just Jeremy's opinion.' subhead: A quick disclaimer"), then placed it
+        here ("Actually, just add it as an orange popup on 4"). The plain Orange hex, no thumbs.
       </aside>
     </section>
 

@@ -34,6 +34,7 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
     - "My plan has changed at least three times since I found out about the keynote" [diary #1]
     - The submitted abstract versus what happened: "the reality is messier" [diary #1]
   - Introducing Orange (built, slide 4)
+    - Disclaimer popup on the second press, added 2026-10-07: plain Orange, label "A quick disclaimer", line "This is all just Jeremy's opinion." (his words). He first asked for a slide of its own, then said "Actually, just add it as an orange popup on 4".
     - Photo: `orange-blue-hat.jpg`
     - Origin story: Chilean street cat, Santiago, the first safetyGraphics ideas [hub diary 2026-07-11; not yet told in a post]
     - Line on the slide: "He was a very good cat."
