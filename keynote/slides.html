@@ -637,6 +637,15 @@
     .s-quote .terms li { position: relative; padding-left: 38px; font-size: 38px; line-height: 1.25; }
     .s-quote .terms li::before { content: ""; position: absolute; left: 0; top: 0.3em; width: 22px; height: 25px; background: var(--hue); clip-path: var(--hex-clip); }
     .s-quote .terms b { font-weight: 600; }
+    /* Hacker Orange (2026-10-07) answers the returning question on slide 26: a hex and a dark
+       speech bubble under the quote, shown with the slide. The art is Jeremy's,
+       assets/hex/orange-hacker.png (original in _notes/inbox/). .terms above is no longer
+       used on that slide and is kept. A callout with no .q line is a plain remark. */
+    .s-quote .says { display: flex; align-items: center; gap: 30px; margin: 34px 0 0 60px; }
+    .s-quote .says .who { flex: none; width: 190px; height: 215px; background: url(assets/hex/orange-hacker.png) center / contain no-repeat; }
+    .s-quote .says .bub { position: relative; background: #14181d; border: 3px solid #3fbf5f; border-radius: 26px; padding: 20px 34px 22px; }
+    .s-quote .says .bub::after { content: ""; position: absolute; left: -15px; top: 50%; width: 24px; height: 24px; margin-top: -12px; background: #14181d; border-left: 3px solid #3fbf5f; border-bottom: 3px solid #3fbf5f; transform: rotate(45deg); }
+    .s-quote .says .a { margin: 0; font-family: var(--mono); font-size: 44px; line-height: 1.15; color: #8cf5a4; }
   </style>
 </head>
 <body>
@@ -972,8 +981,8 @@
         isn't fully GxP-compliant." The column heading and "In every talk. The answer then:"
         are draft wording; the slide shortens the question to its first three words.
         <br><br>Where the thread comes back: slide 12 (gsm, "built for GxP from the start"),
-        slide 15 ("Quality is built into the design"), slide 26 ("Not GxP", the opening of the
-        experiment), and slide 46 ("A lot of tests, and still not GxP"). A reserve slide, "Is it validated?", asks the same question with a
+        slide 15 ("Quality is built into the design"), slide 26 (the opening of the
+        experiment, where Inspector Orange is waved off; "Not GxP" came off that slide on 7 October), and slide 46 ("A lot of tests, and still not GxP"). A reserve slide, "Is it validated?", asks the same question with a
         then-and-now answer.
         <br><br>Other ideas for the visual, none built: a page of a study report's "wall of
         numbers"; a screenshot of the safetyGraphics Shiny app as it was left.
@@ -1203,7 +1212,7 @@
         a screenshot of a real qcthat report if one can be shown.
         <br><br>Pays off in beat 3: safety.viz and gsm.safety borrow exactly this (diary #4:
         "Instead of inventing a new quality framework, we plug the safety graphics into a quality
-        framework that already exists"), and "Not GxP" on slide 26 is the contrast.
+        framework that already exists"), and slide 26, where the experiment opens without any of this, is the contrast.
       </aside>
     </section>
 
@@ -1732,15 +1741,19 @@
     <section class="slide s-quote" data-hue="4">
       <p class="kicker">The question, again</p>
       <blockquote>“What can we actually do with AI agents right now?”</blockquote>
-      <ul class="terms">
-        <li>Open source</li>
-        <li><b>Not GxP</b></li>
-        <li>Let's experiment and have some fun …</li>
-      </ul>
-      <div class="review"><b>Jeremy to review</b><br>callback to slide 2, 7 Oct<br>inspector popup, added 7 Oct</div>
-      <div class="goodat insp"><div class="bub"><p class="q">What evidence do you have?</p><p class="a">None yet. Ask me later.</p></div><div class="who"></div></div>
+      <div class="says"><div class="who" role="img" aria-label="Orange in a black hoodie at a laptop, green code falling behind him"></div><div class="bub"><p class="a">Let's mess around and find out.</p></div></div>
+      <div class="review"><b>Jeremy to review</b><br>callback to slide 2, 7 Oct<br>hacker and inspector, 7 Oct</div>
+      <div class="goodat insp"><div class="bub"><p class="a">Oh jeez. I'll check in later.</p></div><div class="who"></div></div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
+        Changed again 2026-10-07 (Jeremy: "Add this guy on slide 26: 'Let's mess around and find
+        out.' remove 'Open source, Not GxP, Let's experiment and have some fun …' keep inspector
+        orange. He can just say 'Oh jeez. I'll check in later.'"). Both lines are his. Hacker
+        Orange shows with the slide; Inspector Orange arrives on the second press and no
+        longer asks his question here. The three lines that came off, for the record: Open
+        source. Not GxP (his bold). Let's experiment and have some fun … "Not GxP" is now for
+        him to say aloud if he wants it; it is not on this slide.
+        <br><br>
         Reformatted 2026-10-07 (Jeremy: "reformat slide 26 to call back to slide 2."). It now
         uses slide 2's layout and slide 2's exact words, so the question visibly returns; his
         three lines sit where slide 2 has its source line. Until then this was a bullet slide
@@ -1764,7 +1777,8 @@
         <br><br>His earlier line for the same idea, now in the reserves: "This is really really
         not GxP (but there are A LOT of tests included ...)". For the record: safety.viz v1.9.2
         (7 October) runs 2,242 unit and 385 browser tests.
-        <br><br>Inspector popup (7 October): Jeremy likes waving the inspector off here.
+        <br><br>Inspector popup (7 October): Jeremy likes waving the inspector off here. Its
+        first wording, "None yet. Ask me later.", was a draft.
       </aside>
     </section>
 
@@ -2713,7 +2727,7 @@
         here as the SDLC slide (tests, review, sign-off), ahead of the two roadmap pictures.
         Settled 2026-10-07: asked whether it belongs in "what we learned" instead, Jeremy chose "Stay in how we built it". It was drafted as s5
         ("Quality", under "how do we do this in GxP?") in his first structure. Every word is draft; the numbers are sourced below. It calls back to the
-        beat 3 opener (slide 26, "Not GxP") and to beat 2's quality slide (slide 15: every
+        beat 3 opener (slide 26, where the inspector is waved off) and to beat 2's quality slide (slide 15: every
         requirement has a test, every test has a result, and a person signs the release).
         <br><br>Column 1, re-measured 2026-10-07. 2,242 unit and 385 browser tests at safety.viz
         v1.9.2, from its release notes (released 2026-10-07) and its CI run on the released

@@ -148,7 +148,7 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
     - `[TODO]` Jeremy checks the photo: three Rho-era GitHub usernames are on the laptop screen, a few pixels tall at slide size
   - The question, again (built, slide 26; reformatted 2026-10-07 at his instruction to call back to slide 2: slide 2's layout and exact words, “What can we actually do with AI agents right now?”, with his three lines under it. The "Mad scientist edition" kicker was removed the same day; "The question, again" is draft wording)
     - Order switched with the journey row on 2026-10-06 (Jeremy: "switch slides 31/32")
-    - Jeremy's three lines: Open source. Not GxP (his bold). Let's experiment and have some fun …
+    - Changed again 2026-10-07 at his instruction: his three lines (Open source. Not GxP, his bold. Let's experiment and have some fun …) came off. In their place Hacker Orange (his art, `keynote/assets/hex/orange-hacker.png`) says "Let's mess around and find out.", and on the second press Inspector Orange says "Oh jeez. I'll check in later." Both lines are his
     - Notes: why not at work, "I'm not comfortable using those highly autonomous tools for GxP use cases right now" [diary #1]
   - The goal: modernize safetyGraphics, using the gsm framework (built, slide 27)
     - Order set 2026-10-06 (Jeremy: "i want 28/31/29/30. question/goal/hexes/v1"): the question, the goal, the hexes, then v1
@@ -292,12 +292,12 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
 
 A recurring callout in the bottom-right corner: Orange's face in an amber hex with a thumbs-up, the question in small capitals, the answer in a speech bubble (design B, chosen 2026-10-02). The close in beat 4 gathers the same answers into one list. From 2026-10-06 the photo hexes are Jeremy's drawn ones: `keynote/assets/hex/orange-thumbs-up.png` and `orange-thumbs-down.png` (the emoji badge is gone, since the art carries the thumb). A third, `orange-question.png` (Orange thinking, with a question mark), is saved and not placed.
 
-Inspector Orange, added 2026-10-07 (Jeremy: "maybe just popups like the good/bad/confused series? 'What evidence do you have' short answers"; the full Quality Check-in slides were too much to claim around GxP). A third callout, green, asking "What evidence do you have?". No verdicts. The hex is his inspector art (green, magnifying glass and a ticked clipboard), saved 2026-10-07 as `keynote/assets/hex/orange-inspector.png`. All five carry a blue review box and all wording is draft except slide 10's, which he picked
+Inspector Orange, added 2026-10-07 (Jeremy: "maybe just popups like the good/bad/confused series? 'What evidence do you have' short answers"; the full Quality Check-in slides were too much to claim around GxP). A third callout, green, asking "What evidence do you have?". No verdicts. The hex is his inspector art (green, magnifying glass and a ticked clipboard), saved 2026-10-07 as `keynote/assets/hex/orange-inspector.png`. All five carry a blue review box and all wording is draft except slide 10's and slide 26's, which are his
 
 - Slide 10, "What we did, and what we didn't": "Written requirements and a manual test script for every chart. / Automated tests on the R package, run on every pull request." Measured from the public record; sources in the slide's notes
 - Slide 15, "Quality is built into the design": "A test for every requirement" (beside the title)
 - Slide 23, "AI-written code still needs a human owner": "The same tests, and a human owner"
-- Slide 26, "The question, again": "None yet. Ask me later." He likes waving the inspector off here
+- Slide 26, "The question, again": no question here; the inspector just says "Oh jeez. I'll check in later." (his words), after Hacker Orange's "Let's mess around and find out."
 - Slide 46, "A lot of tests, and still not GxP": "Lots of tests. No sign-off." (beside the title)
 
 - Beats 1 and 2 ("What are agents good at now?" / "What are agents bad at now?")

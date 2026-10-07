@@ -1,6 +1,6 @@
 # Dry-run timing
 
-Generated from keynote/slides.html (fingerprint 5d50b8b7f3) by keynote/_notes/dry-run/build.mjs. Do not edit by hand; re-run the script after the deck changes.
+Generated from keynote/slides.html (fingerprint 319498549e) by keynote/_notes/dry-run/build.mjs. Do not edit by hand; re-run the script after the deck changes.
 
 ## Totals
 
@@ -92,7 +92,7 @@ Generated from keynote/slides.html (fingerprint 5d50b8b7f3) by keynote/_notes/dr
 - Slide 22 (on slide): Jeremy to reviewmock schedule, added 7 Oct
 - Slide 22 (in notes): replace the mock rows or keep them; confirm "Plan check", "OK" and "Flagged".
 - Slide 23 (on slide): Jeremy to reviewinspector popup, added 7 Oct
-- Slide 26 (on slide): Jeremy to reviewcallback to slide 2, 7 Octinspector popup, added 7 Oct
+- Slide 26 (on slide): Jeremy to reviewcallback to slide 2, 7 Octhacker and inspector, 7 Oct
 - Slide 29 (in notes): which tool v1 was, what you asked it for, and what worked and what didn't. There is no public account of it, so this version has one slide and no thumbs yet.
 - Slide 29 (in notes): the ladder level. Level 2 ("you pair with it and still read every line") is a guess to start the climb: 2, 3, 4, 5, then back to 4.
 - Slide 38 (in notes): 10 September in your own words. The only record is the hub diary of that day, drafted by an agent: "the fully autonomous multi-agent prototype is shut down. The readout was hard to argue with — the agent structure held, objectives and memory management were poor, most of the effort went into the orchestration itself, he had to redirect it constantly, and it never produced a release for him to review." And: "The replacement is requirement sessions: five objectives broken into requirements and tasks, one requirement per session, running as long as it takes, with him driving rather than reviewing." The placeholder slide for this account is in the reserves.
