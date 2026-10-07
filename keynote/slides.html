@@ -164,6 +164,12 @@
     .s-image h2 { margin-bottom: 32px; font-size: 64px; }
     /* Two screenshots side by side: wrap two <figure>s in .pair. */
     .s-image .pair { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    /* A frame that holds code in place of a picture: <div class="frame code"><pre>…</pre></div>.
+       <i> inside the pre marks lines left out. Added 2026-10-07 for the "what I built" slides,
+       which show the work and keep their words in the notes. */
+    .s-image .frame.code { place-items: stretch; border-style: solid; background: var(--rail); }
+    .s-image .frame.code pre { margin: 0; padding: 18px 28px; font-family: var(--mono); font-size: 17px; line-height: 1.3; color: var(--ink); white-space: pre; overflow: hidden; }
+    .s-image .frame.code pre i { font-style: normal; color: var(--faint); }
 
     /* Photo: text on the left, a full-height photo on the right (the Orange slides).
        Set --focus on the <figure> to choose which part of the photo survives the crop. */
@@ -1956,18 +1962,60 @@
       </aside>
     </section>
 
-    <section class="slide s-bullets" data-hue="4">
+    <section class="slide s-image" data-hue="4">
       <p class="kicker pkg" style="--pkg: url(assets/hex/obot-v2.png)">obot v2 · what I built</p>
       <h2>safetyGraphics, inside a gsm workflow</h2>
-      <ul>
-        <li>A proof of concept for gsm.safety <span>— the old charts, run from gsm's workflows</span></li>
-        <li>A public hub and a daily diary <span>— the experiment as a working record</span></li>
-        <li>266 commits, 18 pull requests, 2 releases <span>— by 10 June</span></li>
-      </ul>
+      <div class="pair" style="grid-template-columns: 5fr 7fr">
+        <figure>
+          <div class="frame code"><pre>meta:
+  Type: Report
+  ID: safety_histogram
+  Name: Safety Histogram Report
+  domains:
+    labs: Mapped_LB
+  widgetName: safetyHistogram
+  widgetSettings:
+    id_col: subjid
+    measure_col: measure
+    value_col: value
+    group_by: sex
+<i>  # … the data spec …</i>
+steps:
+<i>  # …</i>
+  - output: Report
+    name: gsm.safety::RenderSafetyChartsWidget</pre></div>
+          <figcaption>The workflow · gsm.safety v0.1.0</figcaption>
+        </figure>
+        <figure>
+          <div class="frame"><img src="assets/gsm-safety-v0.1.0-histogram-workflow.png" alt="A gsm.safety example page dated May 15, 2026, titled Safety Histogram Workflow: the 2020 Safety Histogram, with its controls and small multiples by sex, rendered from the workflow file" /></div>
+          <figcaption>What it rendered · 15 May</figcaption>
+        </figure>
+      </div>
+      <div class="review" style="top: 34px; right: 250px"><b>Jeremy to review</b><br>visual for the bullets, 7 Oct</div>
       <div class="goodat"><div class="bub"><p class="q">What worked</p><p class="a">Real work, by text</p></div><div class="who"><i>👍</i></div></div>
       <div class="goodat bad"><div class="bub"><p class="q">What didn't</p><p class="a">Autonomy</p></div><div class="who"><i>👎</i></div></div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
+        Rebuilt 2026-10-07 (Jeremy: "would like to have each of these evidence slides show a
+        visual of the work - text moves to notes. this one probably pulls from gsm.safety?").
+        The three bullets that were on the slide, now for saying aloud:
+        <br>- A proof of concept for gsm.safety: the old charts, run from gsm's workflows.
+        <br>- A public hub and a daily diary: the experiment as a working record.
+        <br>- 266 commits, 18 pull requests, 2 releases, by 10 June.
+        <br><br>The visual. Left: an excerpt of inst/workflow/3_reports/safety_histogram.yaml
+        as it stood at gsm.safety v0.1.0 (commit 41a0a9c, 15 May 2026); the grey lines mark what
+        is left out (the data spec and two steps), and four settings lines are dropped from
+        widgetSettings. Right: the package site's own example page, "Safety Histogram
+        Workflow", from the build published for v0.1.0 (gh-pages commit 8612b05, 15 May 2026),
+        opened from that commit and screenshotted on 7 October; nothing on it is redrawn. The
+        picture is one unbroken crop of that page, from "The workflow YAML is the report
+        contract" down to the foot of the chart; the page's title and its date stamp ("May 15,
+        2026 07:43:32 EDT") are above the crop. That
+        build has nine such pages, one per old chart. Both captions are draft wording.
+        <br><br>Two details on that site worth knowing: its home page lists the developer as
+        "obot, author, maintainer", and the hepatic explorer's page still carries the old
+        chart's own banner, "This graphic has been thoroughly tested, but is not validated."
+        <br><br>
         Source: diary #2. Jeremy: "your biggest success is probably the early POC work we did on
         gsm.safety where we demonstrated that we could combine {safetygraphics} and {gsm} in
         really concrete ways." Obot: "We built workr-style example workflows, package docs, and
