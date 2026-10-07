@@ -1,12 +1,12 @@
 # Dry-run timing
 
-Generated from keynote/slides.html (fingerprint 37ff586cfe) by keynote/_notes/dry-run/build.mjs. Do not edit by hand; re-run the script after the deck changes.
+Generated from keynote/slides.html (fingerprint cd57f6a70f) by keynote/_notes/dry-run/build.mjs. Do not edit by hand; re-run the script after the deck changes.
 
 ## Totals
 
 - Slides in the main run: 54
 - Slides with his spoken notes: 5 (no spoken notes yet: 49)
-- Open TODOs: 35 (13 boxes on slides (orange TODO or blue review), 22 "TODO (Jeremy)" items in notes)
+- Open TODOs: 37 (15 boxes on slides (orange TODO or blue review), 22 "TODO (Jeremy)" items in notes)
 - Words in his spoken notes: 219, which take 1.6 min at 140 words a minute
 - Slot: 40 min; the suggested split below adds up to 40 min and is not decided
 
@@ -77,7 +77,7 @@ Generated from keynote/slides.html (fingerprint 37ff586cfe) by keynote/_notes/dr
 - 53. How I feel about it (beat 4)
 - 54. A pixel-art party of orange cats dancing under a disco ball, with confetti (beat 4)
 
-## Open TODOs (35)
+## Open TODOs (37)
 
 - Slide 8 (on slide): the contributing companies / Logos to come, from an old slide / Drop the slide or the image in keynote/_notes/inbox/
 - Slide 10 (on slide): Jeremy to reviewcommits chart, added 7 Octinspector popup, added 7 Oct
@@ -98,6 +98,8 @@ Generated from keynote/slides.html (fingerprint 37ff586cfe) by keynote/_notes/dr
 - Slide 29 (in notes): the ladder level. Level 2 ("you pair with it and still read every line") is a guess to start the climb: 2, 3, 4, 5, then back to 4.
 - Slide 30 (on slide): Jeremy to reviewhacker popup, added 7 Oct
 - Slide 31 (on slide): Jeremy to reviewvisual for the bullets, 7 Oct
+- Slide 33 (on slide): Jeremy to reviewthumbnails and hacker, 7 Oct
+- Slide 36 (on slide): Jeremy to reviewhacker popup, added 7 Oct
 - Slide 38 (in notes): 10 September in your own words. The only record is the hub diary of that day, drafted by an agent: "the fully autonomous multi-agent prototype is shut down. The readout was hard to argue with — the agent structure held, objectives and memory management were poor, most of the effort went into the orchestration itself, he had to redirect it constantly, and it never produced a release for him to review." And: "The replacement is requirement sessions: five objectives broken into requirements and tasks, one requirement per session, running as long as it takes, with him driving rather than reviewing." The placeholder slide for this account is in the reserves.
 - Slide 38 (in notes): the "mixed feelings" promised in diary #8 ("I've honestly got some mixed feelings about the whole thing ... I'll talk about that more in the keynote"). Here, or in beat 4.
 - Slide 39 (in notes): "after so many struggles" deserves a sentence of yours here. What made this version of the scaffold work when v4's did not?

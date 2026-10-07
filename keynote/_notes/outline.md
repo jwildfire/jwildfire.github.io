@@ -305,6 +305,14 @@ Hacker Orange, added 2026-10-07 (his art, `keynote/assets/hex/orange-hacker.png`
 - Slide 26, "The question, again": "Let's mess around and find out." (on the slide, not a popup)
 - Slide 27, "Modernize safetyGraphics, using the gsm framework": "Open Source ftw" (popup, second press)
 - Slide 30, "OpenClaw" (obot v2): "ugh. so many config files. can't we just build something?" (popup, second press)
+- Slide 33, obot v3's weekend: "thats more like it" (popup, beside the kicker)
+- Slide 36, "Four roles, and a timer script" (obot v4): "whaaa? can the concierge orchestrate a fleet of treats for me? I thought we were building stuff ..." (popup, under the Jeremy and Concierge boxes)
+
+"What I built" slides show the work, with their words in the notes (Jeremy, 2026-10-07: "would like to have each of these evidence slides show a visual of the work - text moves to notes")
+
+- Slide 31 (v2): an excerpt of a May workflow file beside the gsm.safety v0.1.0 site's own example page, from the build of 15 May
+- Slide 33 (v3): eight tiles from the safety.viz site as published for v1.2.0 on 12 July (seven charts and the clinical guide), each with a release chip
+- Still text or a diagram: slide 36 (v4, the roles diagram), slide 41 (v5, three bullets), slide 43 (v5.5, the brief and what came back)
 
 - Beats 1 and 2 ("What are agents good at now?" / "What are agents bad at now?")
   - Teaching me things — slide 6

@@ -660,6 +660,13 @@
     .goodat.hack .who::after { background-image: url(assets/hex/orange-hacker.png); }
     .goodat.hack .a { font-family: var(--mono); font-size: 40px; color: #8cf5a4; }
     .goodat.hack .a.two { font-size: 30px; line-height: 1.25; }
+    .goodat.hack .a.three { font-size: 27px; line-height: 1.28; }
+    .goodat.hack.sm .who { width: 124px; height: 143px; }
+    .goodat.hack.sm .a { font-size: 34px; }
+    .goodat.hack.sm .a.three { font-size: 27px; }
+    /* Four across: the wall of what a version built (slide 33), a sibling of the goal slide's wall. */
+    .gallery.four { grid-template-columns: repeat(4, 1fr); gap: 14px 20px; }
+    .gallery.four img { height: 172px; }
   </style>
 </head>
 <body>
@@ -2077,17 +2084,37 @@ steps:
     <section class="slide" data-hue="4">
       <p class="kicker pkg" style="--pkg: url(assets/hex/obot-v3.png)">obot v3 · what I built · 11–12 July</p>
       <h2 style="font-size: 54px; margin-bottom: 20px">“The first renderer took a few weeks; the next six took a weekend.”</h2>
-      <p class="soft" style="font-family: var(--mono); font-size: 21px; margin: 0 0 30px">1.0 billion tokens · $1,273 at API prices · $200 a month actually paid · about 10 hours of me</p>
-      <div class="chain" style="margin-top: 0; flex: none">
-        <div class="st"><div class="hx">0.1</div><b>Saturday, 8 am</b><span>One chart, after a few weeks of sessions</span></div>
-        <div class="st"><div class="hx">1.0</div><b>Saturday, 10:30 pm</b><span>Five more charts, in one session</span></div>
-        <div class="st"><div class="hx">1.1</div><b>Saturday, 11:50 pm</b><span>Real example data, about an hour later</span></div>
-        <div class="st"><div class="hx">1.2</div><b>Sunday, 10 pm</b><span>The hepatic explorer, and its clinical guide</span></div>
+      <p class="soft" style="font-family: var(--mono); font-size: 21px; margin: 0 0 24px">1.0 billion tokens · $1,273 at API prices · $200 a month actually paid · about 10 hours of me</p>
+      <div class="gallery four">
+        <figure><img src="assets/safety-viz-v1.2.0/histogram-hero.png" alt="The new Safety Histogram: a blue histogram of a lab measure" /><i>0.1 · Sat 8 am</i><figcaption>Safety Histogram</figcaption></figure>
+        <figure><img src="assets/safety-viz-v1.2.0/outlier-explorer-hero.png" alt="The new Outlier Explorer: one line per participant over visits" /><i>1.0 · Sat 10:30 pm</i><figcaption>Outlier Explorer</figcaption></figure>
+        <figure><img src="assets/safety-viz-v1.2.0/results-over-time-hero.png" alt="The new Results Over Time: box plots by visit and treatment group" /><i>1.0 · Sat 10:30 pm</i><figcaption>Results Over Time</figcaption></figure>
+        <figure><img src="assets/safety-viz-v1.2.0/shift-plot-hero.png" alt="The new Shift Plot: baseline against comparison values" /><i>1.0 · Sat 10:30 pm</i><figcaption>Shift Plot</figcaption></figure>
+        <figure><img src="assets/safety-viz-v1.2.0/delta-delta-hero.png" alt="The new Delta-Delta plot: change in one measure against change in another" /><i>1.0 · Sat 10:30 pm</i><figcaption>Delta-Delta</figcaption></figure>
+        <figure><img src="assets/safety-viz-v1.2.0/ae-timelines-hero.png" alt="The new AE Timelines: one row of adverse events per participant" /><i>1.0 · Sat 10:30 pm</i><figcaption>AE Timelines</figcaption></figure>
+        <figure><img src="assets/safety-viz-v1.2.0/hep-explorer-hero.png" alt="The new Hepatic Explorer: the eDISH scatter with its quadrants" /><i>1.2 · Sun 10 pm</i><figcaption>Hepatic Explorer</figcaption></figure>
+        <figure><img src="assets/safety-viz-v1.2.0/hep-explorer-guide.png" alt="The Hepatic Safety Explorer clinical guide page" /><i>1.2 · Sun 10 pm</i><figcaption>Its clinical guide</figcaption></figure>
       </div>
+      <div class="goodat hack sm" style="bottom: auto; top: 78px"><div class="bub"><p class="a">thats more like it</p></div><div class="who"></div></div>
+      <div class="review low" style="right: 580px; bottom: 20px"><b>Jeremy to review</b><br>thumbnails and hacker, 7 Oct</div>
       <div class="goodat"><div class="bub"><p class="q">What worked</p><p class="a">Porting old code</p></div><div class="who"><i>👍</i></div></div>
       <div class="goodat bad"><div class="bub"><p class="q">What didn't</p><p class="a">Working without me</p></div><div class="who"><i>👎</i></div></div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
+        Rebuilt 2026-10-07 (Jeremy: "s33: Hacker. 'thats more like it' Add thumbnails for
+        everything we built here."). The four-step chain came off; its words, for saying aloud:
+        <br>- 0.1, Saturday 8 am: one chart, after a few weeks of sessions.
+        <br>- 1.0, Saturday 10:30 pm: five more charts, in one session.
+        <br>- 1.1, Saturday 11:50 pm: real example data, about an hour later. It has no tile of
+        its own; every thumbnail here already shows that data.
+        <br>- 1.2, Sunday 10 pm: the hepatic explorer, and its clinical guide.
+        <br><br>The thumbnails are the site's own gallery pictures from the build published for
+        v1.2.0 on the Sunday night (safety.viz gh-pages commit 9b4124a, 13 July 01:50 UTC, which
+        is 12 July 9:50 pm Eastern); that build's gallery reads "7 of 10 migrated". The eighth
+        tile is a screenshot of the clinical guide page from the same build, taken 7 October.
+        Tile names are the charts' names; the chips are draft wording. Hacker Orange's line is
+        Jeremy's, spelled as he wrote it.
+        <br><br>
         Headline: the excerpt of diary #5, "Introducing safety.viz" (2026-07-12), quoted exactly.
         <br><br>Timeline from that post, checked against the GitHub release timestamps (Eastern):
         v0.1.0 on 11 July at 8:04 am, v1.0.0 at 10:31 pm, v1.1.0 at 11:50 pm, v1.2.0 on 12 July
@@ -2210,6 +2237,8 @@ steps:
           </g>
         </svg>
       </div>
+      <div class="goodat hack sm" style="left: 140px; right: auto; bottom: 258px"><div class="bub"><p class="a three">whaaa? can the concierge orchestrate<br>a fleet of treats for me?<br>I thought we were building stuff ...</p></div><div class="who"></div></div>
+      <div class="review"><b>Jeremy to review</b><br>hacker popup, added 7 Oct</div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
         Source: diary #8, "A Second Interview with Obot" (2026-08-20). The diagram is the post's,
@@ -2230,6 +2259,9 @@ steps:
         nephrotoxicity explorer and time-to-event in mid-August.
         <br><br>Headline is draft wording; the slide's earlier title, "The agent became an
         organisation", is now the version's title slide.
+        <br><br>Hacker Orange popup, second press (Jeremy, 2026-10-07: "s36. hacker: whaaa? can
+        the concierge orchestrate a fleet of treats for me? I thought we were building stuff
+        ..."). The words are his.
       </aside>
     </section>
 
