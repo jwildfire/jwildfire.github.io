@@ -222,7 +222,8 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
     - Reference: https://simonwillison.net/2026/Sep/27/2026-in-llms-so-far/
     - Built 2026-10-05 by a worker session as the first slide of beat 4, then moved the same day to close beat 3 after the demo (Jeremy: "pull the timeline slide to the end of beat 3, I think it works well as a recap/closer after the demo"). Draft headline "Eleven months, and I could not keep up"; a month ruler from November 2025 to October 2026 with eight releases above and the six obot versions below; a "did not try" card (MCP, open-weight models, Muse, Jev, Dots); draft takeaway "We cannot keep up, so the gap between capability and adoption keeps widening."
     - Every date is sourced in `keynote/_notes/beat4-capability-timeline-sources.md`; the standalone draft is `beat4-capability-timeline-draft.html`
-    - `[TODO]` Jeremy: "eleven months" or "a year" (Opus 4.5 was 24 November 2025, 331 days before the talk); whether "did not try MCP" is right; whether GPT-5.1 shares the credit for the November turn, as Willison has it; v5's label says Fable 5.1 though it also ran on Opus 5
+    - Settled 2026-10-07 (Jeremy): the headline reads "Roughly a year, and I could not keep up" (Opus 4.5 was 24 November 2025, 331 days before the talk), and "did not try" stays for MCP
+    - `[TODO]` Jeremy: whether GPT-5.1 shares the credit for the November turn, as Willison has it; v5's label says Fable 5.1 though it also ran on Opus 5
     - Moved again late on 2026-10-05: it now closes part 3.5 (he listed it last, and its takeaway hands to "what we learned")
 
 4. What we learned (about 7 min, suggested) — slides 50–54, regrouped late on 2026-10-05

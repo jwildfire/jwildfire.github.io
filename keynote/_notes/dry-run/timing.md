@@ -1,6 +1,6 @@
 # Dry-run timing
 
-Generated from keynote/slides.html (fingerprint b4a9a7586a) by keynote/_notes/dry-run/build.mjs. Do not edit by hand; re-run the script after the deck changes.
+Generated from keynote/slides.html (fingerprint 48cca96d76) by keynote/_notes/dry-run/build.mjs. Do not edit by hand; re-run the script after the deck changes.
 
 ## Totals
 
@@ -70,7 +70,7 @@ Generated from keynote/slides.html (fingerprint b4a9a7586a) by keynote/_notes/dr
 - 46. A lot of tests, and still not GxP (beat 3.5)
 - 47. The whole roadmap is one tree of GitHub issues (beat 3.5)
 - 48. An objective becomes requirements, then tasks (beat 3.5)
-- 49. Eleven months, and I could not keep up (beat 3.5)
+- 49. Roughly a year, and I could not keep up (beat 3.5)
 - 50. What we learned (beat 4)
 - 51. What are agents good at now? (beat 4)
 - 52. What are agents bad at now? (beat 4)
@@ -107,7 +107,7 @@ Generated from keynote/slides.html (fingerprint b4a9a7586a) by keynote/_notes/dr
 - Slide 46 (on slide): Jeremy to reviewinspector popup, added 7 Oct
 - Slide 47 (in notes): the headline. Whether to say out loud which block is which, or let the green carry it. Whether the autonomy block should be on a slide in this beat at all, since beat 3 has already told that story. Whether the keynote deck's own block staying pale is a joke worth making.
 - Slide 48 (in notes): the headline. Whether to name bio.viz and gsm.bio here or leave that to the demo. Whether one line of supporting text is wanted under the picture; there is room for one only if the picture is made shorter.
-- Slide 49 (in notes): - Headline: “eleven months” is the count (24 Nov 2025 to 21 Oct 2026); you said “roughly 1 year”. Your call. / - The sources credit two models for the November turn, Opus 4.5 and GPT-5.1 (diary #1 says “Opus 4.5 and ChatGPT 5.2 in late 2025”). The slide marks only Opus 4.5. / - MCP: confirm “did not try”. Claude Code sessions can load MCP connectors without anyone setting out to use them; “did not build with” may be closer. / - Diary #1 (dated 10 June) says Fable 5 “came out today”; Willison and Anthropic date it 9 June. The slide uses 9 June. / - v1 and v2 are labelled “assistant” and “OpenClaw” because the model under each is not in the record (diary #2 lists Codex alongside OpenClaw). / - Agent Skills (an open standard since December 2025, diary #9) is one you did use; it could be an eighth label if you want a standard on the chart. / - v5's label says “Fable 5.1”; it also ran on Opus 5 (both names do not fit at a readable size). / - The last label says “today” for 21 October; change it if the deck is read later.
+- Slide 49 (in notes): - Settled 7 October: the headline says “Roughly a year” (his choice; the count is eleven months, 24 Nov 2025 to 21 Oct 2026), and “did not try” stays for MCP. / - The sources credit two models for the November turn, Opus 4.5 and GPT-5.1 (diary #1 says “Opus 4.5 and ChatGPT 5.2 in late 2025”). The slide marks only Opus 4.5. / - Diary #1 (dated 10 June) says Fable 5 “came out today”; Willison and Anthropic date it 9 June. The slide uses 9 June. / - v1 and v2 are labelled “assistant” and “OpenClaw” because the model under each is not in the record (diary #2 lists Codex alongside OpenClaw). / - Agent Skills (an open standard since December 2025, diary #9) is one you did use; it could be an eighth label if you want a standard on the chart. / - v5's label says “Fable 5.1”; it also ran on Opus 5 (both names do not fit at a readable size). / - The last label says “today” for 21 October; change it if the deck is read later.
 - Slide 51 (in notes): which eight; the order; whether the left column should be the team's answers and the right column obot's, as drafted.
 - Slide 52 (in notes): keep them, and if so say where they bit.
 - Slide 53 (on slide): yours to write. What you have said in public so far: / “Well, I'm definitely not working less” (you, 6 October) / “I've honestly got some mixed feelings about the whole thing ... but this is getting long, so I'll talk about that more in the keynote :)” (diary #8, August) / “For now, I'll just say it's ... weird. Working on open source projects feels very different than it did a year ago.” (diary #8) / “51% fun and 49% frustrating” (diary #2, June)
