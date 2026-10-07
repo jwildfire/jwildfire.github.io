@@ -590,6 +590,19 @@
     .s-ops.keep .card h4 { margin-bottom: 6px; }
     .s-ops.keep .card .s { padding: 5px 12px; margin-bottom: 5px; }
     .s-ops.keep .sched { margin-top: 14px; }
+    /* Package ecosystem (class "s-eco"): two rows of four hexes, each with its name, a role tag and one line. */
+    .s-eco .eco { display: grid; grid-template-columns: repeat(4, 1fr); gap: 44px 30px; margin-top: 14px; }
+    .s-eco .pk { display: grid; grid-template-columns: 96px 1fr; column-gap: 14px; row-gap: 12px; align-items: center; align-content: start; }
+    .s-eco .pk .hx { width: 96px; height: 111px; }
+    .s-eco .pk div.hx { clip-path: var(--hex-clip); background: var(--c); display: grid; place-items: center; }
+    .s-eco .pk div.hx span { font-family: var(--mono); font-weight: 600; font-size: 16px; color: #fff; }
+    .s-eco .pk img.hx { object-fit: contain; mix-blend-mode: multiply; }
+    .s-eco .pk .t { min-width: 0; }
+    .s-eco .pk .t b { display: block; font-size: 27px; font-weight: 600; line-height: 1.15; white-space: nowrap; }
+    .s-eco .pk .t i { display: block; margin-top: 6px; font-family: var(--mono); font-style: normal; font-size: 20px; line-height: 1.25; letter-spacing: 0.06em; text-transform: uppercase; color: var(--soft); }
+    .s-eco .pk .d { grid-column: 1 / -1; margin: 0; font-size: 24px; line-height: 1.3; color: var(--ink); max-width: none; }
+    .s-eco .pk .d.td { font-family: var(--mono); font-size: 22px; background: #f5a83f; border: 3px dashed #9a5a12; border-radius: 12px; padding: 8px 12px; }
+    .s-eco .eco-src { font-family: var(--mono); font-size: 22px; color: var(--soft); margin: 26px 0 0; max-width: none; }
   </style>
 </head>
 <body>
@@ -993,28 +1006,59 @@
     </section>
 
     <!-- 2a · OpenRBQM in more detail: Jeremy's to fill -->
-    <section class="slide s-todo" data-hue="3">
-      <p class="kicker">OpenRBQM</p>
-      <h2>OpenRBQM, in more detail</h2>
-      <div class="todo">
-        <p>TODO (Jeremy): how OpenRBQM works, before any AI</p>
-        <ul>
-          <li>The packages, and who is in the PHUSE collaboration</li>
-          <li>One pipeline for every metric: input, transform, analyze, threshold, flag, summarize</li>
-          <li>A diagram or a screenshot would beat bullets</li>
-        </ul>
+    <section class="slide s-eco" data-hue="3">
+      <p class="kicker">OpenRBQM · openrbqm.github.io</p>
+      <h2>An ecosystem of packages</h2>
+      <div class="eco">
+        <div class="pk" style="--c: var(--spec-0)"><div class="hx"><span>core</span></div><div class="t"><b>gsm.core</b><i>The engine</i></div><p class="d">Builds and scores every metric</p></div>
+        <div class="pk" style="--c: var(--spec-1)"><div class="hx"><span>kri</span></div><div class="t"><b>gsm.kri</b><i>Metrics</i></div><p class="d">Key risk indicators, with their charts and reports</p></div>
+        <div class="pk" style="--c: var(--spec-2)"><div class="hx"><span>app</span></div><div class="t"><b>gsm.app</b><i>Apps</i></div><p class="d">Shiny applications for gsm assessments</p></div>
+        <div class="pk" style="--c: var(--spec-3)"><div class="hx"><span>endpoints</span></div><div class="t"><b>gsm.endpoints</b><i>Domain</i></div><p class="d td">TODO (Jeremy): one line. Not public yet</p></div>
+        <div class="pk" style="--c: var(--spec-4)"><div class="hx"><span>simaerep</span></div><div class="t"><b>gsm.simaerep</b><i>From IMPALA</i></div><p class="d">Finds sites that under-report adverse events</p></div>
+        <div class="pk" style="--c: var(--spec-5)"><div class="hx"><span>workr</span></div><div class="t"><b>workr</b><i>Workflows</i></div><p class="d">Runs every step from a YAML workflow</p></div>
+        <div class="pk" style="--c: var(--spec-6)"><div class="hx"><span>datasim</span></div><div class="t"><b>gsm.datasim</b><i>Test data</i></div><p class="d">Simulates trial data to test against</p></div>
+        <div class="pk" style="--c: var(--spec-3)"><img class="hx" src="assets/hex/qcthat.png" alt="" /><div class="t"><b>qcthat</b><i>Quality</i></div><p class="d">Quality control for clinical trial packages</p></div>
       </div>
+      <div class="review"><b>Jeremy to review</b><br>package hexes, added 7 Oct</div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
-        Placeholder, added 2026-10-06 (Jeremy: "Need to intro gsm/openRBQM and explian how it
-        works without AI before getting into AI. slides 11/12 stay. Then a new slide with more
-        details about OpenRBQM (add a todo)."). The headline is a stand-in and the three
-        bullets are suggestions, not content.
-        <br><br>Public material to draw on: openrbqm.github.io ("Open-source software for
-        risk-based quality management (RBQM) in clinical trials — a PHUSE pre-competitive
-        collaboration"); diary #1 ("we lead a PHUSE working group called OpenRBQM"); diary #4
-        ("{gsm} was designed for GxP from the start"). A slide cut on 2 October, "Every metric
-        is the same six steps", is in the git history if the pipeline is the picture wanted.
+        Built 2026-10-07 to Jeremy's brief: "I want the slide to introduce the ecosystem of
+        packages. I think i want to show hexes for 6 or 8 packages describing what they do.
+        gsm.core + gsm.kri for sure. Probably gsm.app. probably gsm.endpoints (since it's
+        domain specific). One of the community contributed packages from impala. then maybe
+        workr and gsm.datasim. Kind of just want to quickly decribe the breadth of the project."
+        The headline, the grey tag on each package and every one-line description are draft
+        wording. The address in the kicker is the OpenRBQM site, whose packages page lists the
+        rest. The placeholder this replaces ("OpenRBQM, in more detail") is in the reserves,
+        and the diagram he set aside is in keynote/_notes/drafts-2026-10-07/slide13-openrbqm.html.
+        <br><br>The eight, and where each line comes from (all read on 2026-10-07):
+        gsm.core, "analytics framework for constructing metrics" (repository description);
+        gsm.kri, "workflows to generate metrics and functionality to visualize and report on
+        these metrics" (repository description); gsm.app, "Shiny applications for gsm
+        assessments" (README title); gsm.simaerep, "gsm extension to use simaerep"
+        (repository description; simaerep detects under-reporting of adverse events);
+        workr, "Simple Workflows in R" (repository description) and "executes the
+        YAML-defined workflows" (openrbqm.github.io/packages.html); gsm.datasim, "Generates
+        synthetic test data for the RBQM of Clinical Trials" (repository description);
+        qcthat, "A quality control framework for R packages used in Clinical Trials"
+        (repository description).
+        <br><br>TODO (Jeremy): gsm.endpoints is not public. Its repository is internal to the
+        company's GitHub organisation and returns "not found" without a login, and it is not
+        on the OpenRBQM packages page. Its cell carries the name you gave and an orange line
+        for you to fill; nothing from the internal repository is on the slide. Decide whether
+        to name it in a public talk. Public domain-specific packages that could take its
+        place: gsm.qtl (quality tolerance limits), gsm.ae (adverse events plugin), gsm.pd
+        (protocol deviations plugin).
+        <br><br>TODO (Jeremy): the hexes. None of these packages has a hex logo in its public
+        repository except qcthat, whose real logo is used. The other seven are plain hexes in
+        the deck's colours with the short name inside. Real hexes, if you have them or want
+        them made, drop into keynote/assets/hex/ and replace the plain ones.
+        <br><br>Choices that were mine and are easy to change: gsm.simaerep as the community
+        package (the IMPALA Consortium also publishes gsm.timez, for sites with unusual event
+        trajectories month by month, and gsm.studykri, for study-level limits by
+        bootstrapping); qcthat as the eighth (it sets up slide 15; gsm.mapping, gsm.reporting
+        or gsm.qtl are the alternatives); the order (engine, metrics, apps, domain on the top
+        row; community, workflows, test data, quality below).
       </aside>
     </section>
 
@@ -3655,6 +3699,33 @@
         <br><br>Demoted to the reserves on 2026-10-07. Asked whether part 3.5 keeps its own Orange
         transition or runs straight on from the demo, Jeremy chose "Move it to Reserves". It
         was slide 47; the deck now goes from the demo (46) straight to costs (47).
+      </aside>
+    </section>
+
+    <section class="slide s-todo" data-reserve="7 October 2026" data-hue="3">
+      <p class="kicker">OpenRBQM</p>
+      <h2>OpenRBQM, in more detail</h2>
+      <div class="todo">
+        <p>TODO (Jeremy): how OpenRBQM works, before any AI</p>
+        <ul>
+          <li>The packages, and who is in the PHUSE collaboration</li>
+          <li>One pipeline for every metric: input, transform, analyze, threshold, flag, summarize</li>
+          <li>A diagram or a screenshot would beat bullets</li>
+        </ul>
+      </div>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        Demoted to the reserves on 2026-10-07, when the hex slide "An ecosystem of packages"
+        took its place as slide 13 at Jeremy's direction.
+        <br><br>Placeholder, added 2026-10-06 (Jeremy: "Need to intro gsm/openRBQM and explian how it
+        works without AI before getting into AI. slides 11/12 stay. Then a new slide with more
+        details about OpenRBQM (add a todo)."). The headline is a stand-in and the three
+        bullets are suggestions, not content.
+        <br><br>Public material to draw on: openrbqm.github.io ("Open-source software for
+        risk-based quality management (RBQM) in clinical trials — a PHUSE pre-competitive
+        collaboration"); diary #1 ("we lead a PHUSE working group called OpenRBQM"); diary #4
+        ("{gsm} was designed for GxP from the start"). A slide cut on 2 October, "Every metric
+        is the same six steps", is in the git history if the pipeline is the picture wanted.
       </aside>
     </section>
 

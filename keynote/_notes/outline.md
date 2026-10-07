@@ -74,7 +74,9 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
   - Monitoring a trial, as software (built, slide 12)
     - gsm: open-source R packages for risk-based quality monitoring, built for GxP from the start [diary #1, diary #4]
     - Image: the report screenshot from the public gsm.kri README (example data); `[TODO]` Jeremy confirms or supplies a newer one
-  - OpenRBQM, in more detail (placeholder, slide 13): `[TODO]` Jeremy. "A new slide with more details about OpenRBQM (add a todo)". Suggestions on the placeholder: the packages and who is in the PHUSE collaboration; one pipeline for every metric; a diagram or screenshot
+  - An ecosystem of packages (built 2026-10-07, slide 13; blue review box; draft wording). Jeremy's brief: "introduce the ecosystem of packages … hexes for 6 or 8 packages describing what they do … quickly decribe the breadth of the project". Eight hexes with a role tag and one line each: gsm.core, gsm.kri, gsm.app, gsm.endpoints, gsm.simaerep (from IMPALA), workr, gsm.datasim, qcthat. The placeholder "OpenRBQM, in more detail" is in the reserves; the pipeline diagram he set aside is in `keynote/_notes/drafts-2026-10-07/slide13-openrbqm.html`
+    - `[TODO]` Jeremy: gsm.endpoints is not public (internal repository, not on the OpenRBQM packages page); its line is his to write, or swap it for gsm.qtl, gsm.ae or gsm.pd
+    - `[TODO]` Jeremy: real hexes if he has them; only qcthat has a public logo, the other seven are plain hexes with the short name inside
   - A standard development lifecycle (built, slide 14): the lifecycle slide without the AI overlay, every step a person or automated (Jeremy: "immediately intro SDLC (s15 without the AI overlay)")
     - `[TODO]` Jeremy: check the steps against the March all-hands deck's "Standard Development Lifecycle" slide; this version was worked back from the merged slide
   - GxP is built into the design (built, slide 15; the qcthat slide, moved up)
