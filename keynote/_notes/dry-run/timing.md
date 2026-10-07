@@ -1,6 +1,6 @@
 # Dry-run timing
 
-Generated from keynote/slides.html (fingerprint 9cc57dd61c) by keynote/_notes/dry-run/build.mjs. Do not edit by hand; re-run the script after the deck changes.
+Generated from keynote/slides.html (fingerprint 5d50b8b7f3) by keynote/_notes/dry-run/build.mjs. Do not edit by hand; re-run the script after the deck changes.
 
 ## Totals
 
@@ -36,7 +36,7 @@ Generated from keynote/slides.html (fingerprint 9cc57dd61c) by keynote/_notes/dr
 - 12. Monitoring a trial, as software (beat 2a)
 - 13. An ecosystem of packages (beat 2a)
 - 14. A standard development lifecycle (beat 2a)
-- 15. GxP is built into the design (beat 2a)
+- 15. Quality is built into the design (beat 2a)
 - 16. AI in the loop (beat 2b)
 - 17. “We use AI heavily, but it's not autonomous. Humans own the process and all deliverables.” (beat 2b)
 - 18. How much do you hand over? (beat 2b)

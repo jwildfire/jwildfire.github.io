@@ -79,7 +79,7 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
     - `[TODO]` Jeremy: real hexes if he has them; only qcthat has a public logo, the other seven are plain hexes with the short name inside
   - A standard development lifecycle (built, slide 14): the lifecycle slide without the AI overlay, every step a person or automated (Jeremy: "immediately intro SDLC (s15 without the AI overlay)")
     - `[TODO]` Jeremy: check the steps against the March all-hands deck's "Standard Development Lifecycle" slide; this version was worked back from the merged slide
-  - GxP is built into the design (built, slide 15; the qcthat slide, moved up)
+  - Quality is built into the design (built, slide 15; the qcthat slide, moved up; title was "GxP is built into the design" until Jeremy changed it 2026-10-07)
     - Jeremy (2026-10-06): "OpenRBQM has GxP built into it's design. Every package ships with evidence, every time." The headline and the line under the columns are that sentence in two parts; the old headline ("Traceability as a byproduct") and the qualification line are in the notes
     - Restored on 2026-10-05 (Jeremy: "Missing a slide around quality"; "restore it, plus qualification"). The qcthat slide cut on 2 October, with one new line: "Qualification: every requirement has a test, every test has a result, and a person signs the release."
     - `[TODO]` Jeremy vets the qualification line and supplies a real qcthat report if one can be shown
@@ -295,7 +295,7 @@ A recurring callout in the bottom-right corner: Orange's face in an amber hex wi
 Inspector Orange, added 2026-10-07 (Jeremy: "maybe just popups like the good/bad/confused series? 'What evidence do you have' short answers"; the full Quality Check-in slides were too much to claim around GxP). A third callout, green, asking "What evidence do you have?". No verdicts. The hex is his inspector art (green, magnifying glass and a ticked clipboard), saved 2026-10-07 as `keynote/assets/hex/orange-inspector.png`. All five carry a blue review box and all wording is draft except slide 10's, which he picked
 
 - Slide 10, "What we did, and what we didn't": "Written requirements and a manual test script for every chart. / Automated tests on the R package, run on every pull request." Measured from the public record; sources in the slide's notes
-- Slide 15, "GxP is built into the design": "A test for every requirement" (beside the title)
+- Slide 15, "Quality is built into the design": "A test for every requirement" (beside the title)
 - Slide 23, "AI-written code still needs a human owner": "The same tests, and a human owner"
 - Slide 26, "The question, again": "None yet. Ask me later." He likes waving the inspector off here
 - Slide 46, "A lot of tests, and still not GxP": "Lots of tests. No sign-off." (beside the title)
