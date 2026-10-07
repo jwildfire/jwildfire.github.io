@@ -181,7 +181,7 @@
     .s-photo .photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: var(--focus, 50% 50%); }
     .s-photo .num { color: #fff; text-shadow: 0 1px 6px rgba(31, 35, 40, 0.6); }
 
-    /* Diary timeline: a looping line whose numbered points are the diary posts, each a link (slide 3). */
+    /* Diary timeline: a looping line whose numbered points are the diary posts, each a link (slide 4). */
     .pvr { flex: 1; min-height: 0; }
     .pvr svg { width: 100%; height: 100%; display: block; }
     .pvr text { font-family: var(--sans); }
@@ -638,7 +638,7 @@
     .s-demo .cap p { margin: 0; max-width: none; font-size: 22px; }
     .s-demo .review { top: 26px; right: 300px; }
     .s-demo .cap a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--hue); text-decoration-thickness: 3px; text-underline-offset: 6px; }
-    /* A quote slide that returns later with terms under it (slide 2 called back at the start of beat 3). */
+    /* A quote slide that returns later with terms under it (slide 3 called back at the start of beat 3). */
     .s-quote .terms { list-style: none; margin: 44px 0 0; padding: 0 0 0 66px; display: flex; flex-wrap: wrap; gap: 14px 48px; }
     .s-quote .terms li { position: relative; padding-left: 38px; font-size: 38px; line-height: 1.25; }
     .s-quote .terms li::before { content: ""; position: absolute; left: 0; top: 0.3em; width: 22px; height: 25px; background: var(--hue); clip-path: var(--hex-clip); }
@@ -668,11 +668,12 @@
     .gallery.four { grid-template-columns: repeat(4, 1fr); gap: 14px 20px; }
     .gallery.four img { height: 172px; }
     .gallery.four.short img { height: 148px; }
-    /* Plain Orange, no verdict (the disclaimer on slide 4, 2026-10-07): the drawn hex with the
+    /* Plain Orange, no verdict (the disclaimer on slide 2, 2026-10-7): the drawn hex with the
        amber bubble. */
     .goodat.plain { right: 40px; bottom: 60px; gap: 22px; }
     .goodat.plain .who::after { background-image: url(assets/hex/orange.png); }
-    .goodat.plain .a { font-size: 42px; }
+    .goodat.plain .bub { max-width: 440px; }
+    .goodat.plain .a { font-size: 31px; line-height: 1.2; text-wrap: balance; }
     /* Four Oranges answer at once (the "how I feel" slide, 2026-10-07): one .goodat wrapper so the
        second press reveals all four, laid out as a two-by-two grid in the flow of the slide.
        Each cell is hex then bubble; --bg and --bd colour the bubble. */
@@ -720,8 +721,44 @@
         <strong class="say">Hi I'm Jeremy and I work on building open source
         tools for clinical trials. I've spent the last few years trying to figure out how AI
         fits into this world.</strong>
-        The intro is Jeremy's, given on 2026-10-06; its second half is on slide 2.
+        The intro is Jeremy's, given on 2026-10-06; its second half is on slide 3.
         <br><br>Title slide. Working title from the keynote page — confirm or replace once the outline lands.
+      </aside>
+    </section>
+
+    <!-- The hook: Orange comes straight after the title (moved up from fourth place on
+         2026-10-07), then reappears "working" on the transition slides. Photos live in
+         assets/orange/. -->
+    <section class="slide s-photo" data-hue="1">
+      <figure class="photo" style="--focus: 82% 50%">
+        <img src="assets/orange/orange-blue-hat.jpg" alt="Orange, an orange tabby cat, wearing a blue and gold cap" />
+      </figure>
+      <p class="kicker pkg" style="--pkg: url(assets/hex/orange.png)">First, an introduction</p>
+      <h2>Introducing Orange</h2>
+      <p class="line">He was a very good cat.</p>
+      <div class="goodat plain">
+        <div class="bub">
+          <p class="q">A quick disclaimer</p>
+          <p class="a">Jeremy works for the Biostat Innovation Group at Gilead, but this is all just his opinions.</p>
+        </div>
+        <div class="who"></div>
+      </div>
+      <div class="review"><b>Jeremy to review</b><br>moved up to second, 7 Oct<br>disclaimer popup, 7 Oct</div>
+      <aside class="notes">
+        <strong class="say">But, first I want to introduce a key collaborator, Orange! He was a Chilean
+        street cat and was very silly. One time he fell from our 7th story window into the parking
+        lot and survived! He loved sitting with me while I worked. He really was a good cat.</strong>
+        Background: Obot is named after Orange (diary #2, 2026-06-12). The Chile / Santiago /
+        first safetyGraphics ideas origin story was noted as a candidate opener in the hub diary of
+        2026-07-11 and has not been told in a post.
+        <br><br>Disclaimer popup, second press, added 2026-10-07. Jeremy first asked for a slide
+        ("Add a disclaimer slide at the end of beat 1 after we introduce orange. Can be orange
+        saying 'This is all just Jeremy's opinion.' subhead: A quick disclaimer"), then placed it
+        here ("Actually, just add it as an orange popup on 4"). The plain Orange hex, no thumbs.
+        <br><br>Moved and reworded later on 2026-10-07 (Jeremy: "Move the orange intro (s4) to
+        slide 2. Update disclaimer: Jeremy works for the Biostat Innovation Group at Gilead, but
+        this is all just his opinions."). It was fourth, after the question and "By working in
+        public"; it is now second, and those two each moved down one place.
       </aside>
     </section>
 
@@ -804,37 +841,6 @@
         of this slide. The caption's first line is draft wording.
         <br><br>Each numbered point is a diary post and links to it (opens in a new tab).
         "The reality is messier" is the spoken line; the slide title is "By working in public".
-      </aside>
-    </section>
-
-    <!-- The hook: Orange closes the opening, then reappears "working" on the transition
-         slides. Photos live in assets/orange/. -->
-    <section class="slide s-photo" data-hue="1">
-      <figure class="photo" style="--focus: 82% 50%">
-        <img src="assets/orange/orange-blue-hat.jpg" alt="Orange, an orange tabby cat, wearing a blue and gold cap" />
-      </figure>
-      <p class="kicker pkg" style="--pkg: url(assets/hex/orange.png)">First, an introduction</p>
-      <h2>Introducing Orange</h2>
-      <p class="line">He was a very good cat.</p>
-      <div class="goodat plain">
-        <div class="bub">
-          <p class="q">A quick disclaimer</p>
-          <p class="a">This is all just Jeremy's opinion.</p>
-        </div>
-        <div class="who"></div>
-      </div>
-      <div class="review"><b>Jeremy to review</b><br>disclaimer popup, added 7 Oct</div>
-      <aside class="notes">
-        <strong class="say">But, first I want to introduce a key collaborator, Orange! He was a Chilean
-        street cat and was very silly. One time he fell from our 7th story window into the parking
-        lot and survived! He loved sitting with me while I worked. He really was a good cat.</strong>
-        Background: Obot is named after Orange (diary #2, 2026-06-12). The Chile / Santiago /
-        first safetyGraphics ideas origin story was noted as a candidate opener in the hub diary of
-        2026-07-11 and has not been told in a post.
-        <br><br>Disclaimer popup, second press, added 2026-10-07. Jeremy first asked for a slide
-        ("Add a disclaimer slide at the end of beat 1 after we introduce orange. Can be orange
-        saying 'This is all just Jeremy's opinion.' subhead: A quick disclaimer"), then placed it
-        here ("Actually, just add it as an orange popup on 4"). The plain Orange hex, no thumbs.
       </aside>
     </section>
 
@@ -1810,7 +1816,7 @@
       <p class="kicker">The question, again</p>
       <blockquote>“What can we actually do with AI agents right now?”</blockquote>
       <div class="says"><div class="who" role="img" aria-label="Orange in a black hoodie at a laptop, green code falling behind him"></div><div class="bub"><p class="a">Let's mess around and find out.</p></div></div>
-      <div class="review"><b>Jeremy to review</b><br>callback to slide 2, 7 Oct<br>hacker and inspector, 7 Oct</div>
+      <div class="review"><b>Jeremy to review</b><br>callback to slide 3, 7 Oct<br>hacker and inspector, 7 Oct</div>
       <div class="goodat insp"><div class="bub"><p class="a">Oh jeez. I'll check in later.</p></div><div class="who"></div></div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
@@ -1823,8 +1829,8 @@
         him to say aloud if he wants it; it is not on this slide.
         <br><br>
         Reformatted 2026-10-07 (Jeremy: "reformat slide 26 to call back to slide 2."). It now
-        uses slide 2's layout and slide 2's exact words, so the question visibly returns; his
-        three lines sit where slide 2 has its source line. Until then this was a bullet slide
+        uses slide 3's layout and slide 3's exact words, so the question visibly returns; his
+        three lines sit where slide 3 has its source line. Until then this was a bullet slide
         headed "What are these tools good at right now?" (his outline's wording for the same
         question). The kicker, "The question, again", is draft wording.
         <br><br>
@@ -1837,7 +1843,7 @@
         <br><br>From Jeremy's outline (2026-10-05): "What are these tools good at right now? Mad
         Scientist Edition … Open Source. Not GxP. Let's experiment and have some fun …". He
         wrote "Not GxP" in bold, so it is the one heavier line here.
-        <br><br>The question is slide 2's, as diary #6 restated it: "What are these tools good at
+        <br><br>The question is slide 3's, as diary #6 restated it: "What are these tools good at
         right now? How much can they do autonomously?"
         <br><br>Why this is a side project and not the day job, from diary #1: "I'm not
         comfortable using those highly autonomous tools for GxP use cases right now, but the

@@ -23,22 +23,23 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
 1. Opening: Orange and the path to safetyGraphics (about 8 min, suggested) — drafted, slides 1–10
   - Title (built, slide 1)
     - "Building open-source clinical trial tools with agentic AI"
-    - Spoken intro, in the speaker notes (Jeremy, 2026-10-06): "Hi I'm Jeremy and I work on building open source tools for clinical trials. I've spent the last few years trying to figure out how AI fits into this world." The second half is spoken over slide 2: "Today I'm going to talk about what these tools are good at right now ... As you'll see, the answer to that question changes on a regular basis."
+    - Spoken intro, in the speaker notes (Jeremy, 2026-10-06): "Hi I'm Jeremy and I work on building open source tools for clinical trials. I've spent the last few years trying to figure out how AI fits into this world." The second half is spoken over slide 3: "Today I'm going to talk about what these tools are good at right now ... As you'll see, the answer to that question changes on a regular basis."
     - Working title from the keynote page; earlier titles were about "AI in the loop" and clinical trial operations
-  - The question (built, slide 2)
-    - "What can we actually do with AI agents right now?" [diary #1]
-    - Asked four times across the summer; the talk answers it and ends on it
-  - How I tried to answer it (built, slide 3)
-    - Title on the slide: "By working in public". Visual: a looping timeline whose nine numbered points are the diary posts, each linked; the bullets below are speaker notes
-    - Working in public: nine diary posts, June to September, every one with an AI collaboration note
-    - "My plan has changed at least three times since I found out about the keynote" [diary #1]
-    - The submitted abstract versus what happened: "the reality is messier" [diary #1]
-  - Introducing Orange (built, slide 4)
-    - Disclaimer popup on the second press, added 2026-10-07: plain Orange, label "A quick disclaimer", line "This is all just Jeremy's opinion." (his words). He first asked for a slide of its own, then said "Actually, just add it as an orange popup on 4".
+  - Introducing Orange (built, slide 2)
+    - Disclaimer popup on the second press, added 2026-10-07: plain Orange, label "A quick disclaimer", line "Jeremy works for the Biostat Innovation Group at Gilead, but this is all just his opinions." (his words, second version; the first was "This is all just Jeremy's opinion."). He first asked for a slide of its own, then said "Actually, just add it as an orange popup on 4".
+    - Moved up 2026-10-07 from fourth place to second, straight after the title (Jeremy: "Move the orange intro (s4) to slide 2."). The question and "By working in public" each moved down one.
     - Photo: `orange-blue-hat.jpg`
     - Origin story: Chilean street cat, Santiago, the first safetyGraphics ideas [hub diary 2026-07-11; not yet told in a post]
     - Line on the slide: "He was a very good cat."
     - Notes: "But, first I want to introduce a key collaborator, Orange! He was a Chilean street cat and was very silly. One time he fell from our 7th story window into the parking lot and survived! He loved sitting with me while I worked. He really was a good cat."
+  - The question (built, slide 3)
+    - "What can we actually do with AI agents right now?" [diary #1]
+    - Asked four times across the summer; the talk answers it and ends on it
+  - How I tried to answer it (built, slide 4)
+    - Title on the slide: "By working in public". Visual: a looping timeline whose nine numbered points are the diary posts, each linked; the bullets below are speaker notes
+    - Working in public: nine diary posts, June to September, every one with an AI collaboration note
+    - "My plan has changed at least three times since I found out about the keynote" [diary #1]
+    - The submitted abstract versus what happened: "the reality is messier" [diary #1]
   - Orange at work (built, slide 5)
     - Photo: `orange-asleep-on-trackpad.jpg`
     - Line on the slide: "And *such* a helpful coworker", subtitle "We actually got a lot done!"
@@ -147,7 +148,7 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
     - The beat's Orange transition, forcats hex as the kicker; line "The agent is named after him." [diary #2]
     - Photo: `orange-paw-on-github.jpg`. Demoted to the reserves in the journey rebuild and restored the same day (Jeremy: "Restore the section transition slide between 25 and 26")
     - `[TODO]` Jeremy checks the photo: three Rho-era GitHub usernames are on the laptop screen, a few pixels tall at slide size
-  - The question, again (built, slide 26; reformatted 2026-10-07 at his instruction to call back to slide 2: slide 2's layout and exact words, “What can we actually do with AI agents right now?”, with his three lines under it. The "Mad scientist edition" kicker was removed the same day; "The question, again" is draft wording)
+  - The question, again (built, slide 26; reformatted 2026-10-07 at his instruction to call back to slide 3: slide 3's layout and exact words, “What can we actually do with AI agents right now?”, with his three lines under it. The "Mad scientist edition" kicker was removed the same day; "The question, again" is draft wording)
     - Order switched with the journey row on 2026-10-06 (Jeremy: "switch slides 31/32")
     - Changed again 2026-10-07 at his instruction: his three lines (Open source. Not GxP, his bold. Let's experiment and have some fun …) came off. In their place Hacker Orange (his art, `keynote/assets/hex/orange-hacker.png`) says "Let's mess around and find out.", and on the second press Inspector Orange says "Oh jeez. I'll check in later." Both lines are his
     - Notes: why not at work, "I'm not comfortable using those highly autonomous tools for GxP use cases right now" [diary #1]
