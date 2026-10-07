@@ -191,7 +191,7 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
     - Opus 5.5 was released on 22 September [Willison, via the beat 4 timeline sources]; it first appears in the local session logs on 1 October
     - What I built: one orchestrator, one brief, one weekend. In: a brief of about 800 words, about 22 messages. Out: 52 agents (40 reviewers), 3.9 billion tokens, about $1,640 at API prices, six releases [digest 8c]
     - What worked: "Reviewing its own work". What didn't: "Still waits on me" is a placeholder, `[TODO]` Jeremy
-    - `[TODO]` Jeremy: "over 1,000 subagents" and "half my weekly allotment" are not what the transcript shows (52 agents; 21% on the Friday night)
+    - Settled 2026-10-07 (Jeremy): 52 agents and about 9,800 requests are right; the weekend used about 80% of his weekly allotment (his figure; not on the slide)
     - Notes: the safety.viz demo app (v1.8.0) was also built on Opus 5.5, in two ordinary sessions on 2 October
   - The payoff: the safety.viz demo (built, slide 46)
     - Jeremy's outline: "What I built: gsm.viz demo (this is the payoff)". Read as the safety.viz demo app; `[TODO]` Jeremy confirms
