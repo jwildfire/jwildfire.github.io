@@ -33,6 +33,8 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
     - Line on the slide: "He was a very good cat."
     - Notes: "But, first I want to introduce a key collaborator, Orange! He was a Chilean street cat and was very silly. One time he fell from our 7th story window into the parking lot and survived! He loved sitting with me while I worked. He really was a good cat."
   - The question (built, slide 3)
+    - Doubles as the outline of the talk since 2026-10-07 (Jeremy: "On slide 3 annotate the sections (will use it to give a quick outline of the talk)"): the section names sit under the header strip. Draft names: Orange, safetyGraphics, OpenRBQM, AI in the loop, obot, What we learned
+    - Every slide: the header-strip hex of each transition slide (the six Orange photo slides) has a thicker border and a light fill until the talk reaches it (same size as the rest; he did not like a larger hex). Costs, quality and pace have no transition slide and so no marker
     - "What can we actually do with AI agents right now?" [diary #1]
     - Asked four times across the summer; the talk answers it and ends on it
   - How I tried to answer it (built, slide 4)

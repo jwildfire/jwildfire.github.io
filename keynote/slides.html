@@ -24,6 +24,8 @@
        notes, or "<none yet>"; background notes follow.
        Keys: ← → / space / PgUp PgDn · Home End · O overview · N notes · F fullscreen.
        The slide number is top right; the hex strip fills in with progress through the talk.
+       A slide with data-section="Short name" is a transition: its hex in the strip is drawn
+       heavier on every slide. A slide with data-outline also prints those names under the strip.
        Orange's callouts (.goodat) appear on a second press; add ?reveal to the URL to show them all.
        Slides with data-reserve="date" are reserves: kept at the end, not counted in the numbers.
        ------------------------------------------------------------------ */
@@ -95,6 +97,28 @@
       -webkit-mask-repeat: repeat-x; mask-repeat: repeat-x;
       -webkit-mask-size: auto 18px; mask-size: auto 18px;
     }
+    /* Section markers (2026-10-07): the strip hex where each transition slide sits gets a thicker
+       border and a light fill, at the same size as its neighbours (Jeremy: "don't like the larger
+       hexes. maybe just thicker border? or a light opacity fill (before the full fill)"). Once the
+       talk reaches it, it fills like the rest, a shade darker so the sections still read.
+       A slide is a transition when it carries data-section="Short name". JS places the markers. */
+    .slide .hexmark {
+      position: absolute; top: 1px; width: 13.856px; height: 16px; margin-left: -6.928px; z-index: 1;
+      clip-path: var(--hex-clip);
+      background: var(--spec-gradient); background-size: 1600px 100%; background-repeat: no-repeat;
+    }
+    .slide .hexmark::after { content: ""; position: absolute; inset: 3.4px; clip-path: var(--hex-clip); background: var(--bg); opacity: 0.62; }
+    .slide .hexmark.on { filter: brightness(0.8) saturate(1.15); }
+    .slide .hexmark.on::after { content: none; }
+    /* The outline slide (data-outline): every marker is named, in two staggered rows. */
+    .slide .hexlabel {
+      position: absolute; top: 30px; z-index: 1; white-space: nowrap;
+      font-family: var(--mono); font-size: 22px; letter-spacing: 0.06em; line-height: 1; color: var(--soft);
+    }
+    .slide .hexlabel.low { top: 66px; }
+    .slide .hexstem { position: absolute; top: 20px; width: 2px; height: 40px; margin-left: -1px; background: var(--faint); opacity: 0.6; }
+    .slide[data-outline] .num { top: 108px; }
+    .s-party .hexmark, .s-party .hexlabel, .s-party .hexstem { display: none; }
     /* Footer: talk name (filled by JS). The slide number sits in the header, top right. */
     .slide::after {
       content: attr(data-foot); position: absolute; left: 140px; right: 140px; bottom: 44px;
@@ -729,7 +753,7 @@
     <!-- The hook: Orange comes straight after the title (moved up from fourth place on
          2026-10-07), then reappears "working" on the transition slides. Photos live in
          assets/orange/. -->
-    <section class="slide s-photo" data-hue="1">
+    <section class="slide s-photo" data-hue="1" data-section="Orange">
       <figure class="photo" style="--focus: 82% 50%">
         <img src="assets/orange/orange-blue-hat.jpg" alt="Orange, an orange tabby cat, wearing a blue and gold cap" />
       </figure>
@@ -762,10 +786,11 @@
       </aside>
     </section>
 
-    <section class="slide s-quote" data-hue="1">
+    <section class="slide s-quote" data-hue="1" data-outline>
       <p class="kicker">The question</p>
       <blockquote>“What can we actually do with AI agents right now?”</blockquote>
       <cite>— developer diary #1, 10 June 2026</cite>
+      <div class="review" style="top: auto; bottom: 110px"><b>Jeremy to review</b><br>section names under the strip, 7 Oct</div>
       <aside class="notes">
         <strong class="say">Today I'm going to talk about what these tools are good at right
         now ... As you'll see, the answer to that question changes on a regular basis.</strong>
@@ -774,6 +799,14 @@
         Do With AI Agents Right Now?", 2026-06-10) and comes back through the summer: restated in
         diary #6 ("What are these tools good at right now? How much can they do autonomously?")
         and answered "quite a lot" in diary #9. The talk answers it and ends on it.
+        <br><br>Outline of the talk, added 2026-10-07 (Jeremy: "Can we add emphasis for the hexes
+        representing transition slides in the header. On slide 3 annotate the sections (will use
+        it to give a quick outline of the talk)"). Every slide now draws the strip hex of each
+        transition slide with a thicker border and a light fill, until the talk reaches it; the
+        first try was a larger hex, which he did not like. This slide
+        also names them: Orange, safetyGraphics, OpenRBQM, AI in the loop, obot, What we learned.
+        The names are drafts, set on each transition slide as data-section. The costs, quality
+        and pace slides have no transition slide, so they have no marker.
       </aside>
     </section>
 
@@ -845,7 +878,7 @@
     </section>
 
     <!-- 1b · The path to safetyGraphics (still beat 1, same hue). Opens on its transition slide. -->
-    <section class="slide s-photo" data-hue="1">
+    <section class="slide s-photo" data-hue="1" data-section="safetyGraphics">
       <figure class="photo" style="--focus: 50% 40%">
         <img src="assets/orange/orange-asleep-on-trackpad.jpg" alt="Orange asleep with his head on a laptop while Jeremy works the trackpad around him" />
       </figure>
@@ -1083,7 +1116,7 @@
          Drafted from public sources (diary #1 and #4, gsm.agent, gsm.roadmap, qcthat,
          the old deck). Jeremy adds the inside view and cuts what should not be said.
          ============================================================ -->
-    <section class="slide s-photo" data-hue="3">
+    <section class="slide s-photo" data-hue="3" data-section="OpenRBQM">
       <figure class="photo" style="--focus: 60% 40%">
         <img src="assets/orange/orange-reviewing-spreadsheet.jpg" alt="Orange, seen from behind, watching a colour-coded spreadsheet on a laptop" />
       </figure>
@@ -1112,7 +1145,7 @@
       <p class="kicker">gsm · Good Statistical Monitoring</p>
       <h2>Monitoring a trial, as software</h2>
       <figure>
-        <div class="frame"><video data-demo muted loop playsinline preload="none" poster="assets/gsm-kri-report-demo-poster.png" src="assets/gsm-kri-report-demo.mp4" aria-label="Screen recording of a gsm site report on example data: a table of sites by key risk indicator with red and amber flags, then the charts for one indicator"></video></div>
+        <div class="frame"><video data-demo data-rate="1.5" muted loop playsinline preload="none" poster="assets/gsm-kri-report-demo-poster.png" src="assets/gsm-kri-report-demo.mp4" aria-label="Screen recording of a gsm site report on example data: a table of sites by key risk indicator with red and amber flags, then the charts for one indicator"></video></div>
         <div class="cap">
           <p>A {gsm} site report on example data · quality built in from the start</p>
           <p><a href="https://openrbqm.github.io/" target="_blank" rel="noopener">OpenRBQM</a>, a <a href="https://advance.hub.phuse.global/wiki/spaces/WEL/pages/26811224/OpenRBQM+Pre-Competitive+Collaboration+on+Open-Source+Software+for+RBQM" target="_blank" rel="noopener">PHUSE working group</a></p>
@@ -1299,7 +1332,7 @@
 
     <!-- 2b · How we have layered AI in (Jeremy, 2026-10-06: "Then we talk about how we've layered in AI. then experiments.") -->
 
-    <section class="slide s-photo" data-hue="3">
+    <section class="slide s-photo" data-hue="3" data-section="AI in the loop">
       <figure class="photo" style="--focus: 50% 100%">
         <img src="assets/orange/orange-paw-on-trackpad.jpg" alt="Orange lying across a laptop with one paw on the trackpad, seen from above" />
       </figure>
@@ -1797,7 +1830,7 @@
          second click. Facts: research-digest.md, section 8. Wording is draft unless the notes
          say it is Jeremy's. Slides that left the main deck are in the reserves, below.
          ============================================================ -->
-<section class="slide s-photo" data-hue="4">
+<section class="slide s-photo" data-hue="4" data-section="obot">
       <figure class="photo" style="--focus: 50% 100%">
         <img src="assets/orange/orange-paw-on-github.jpg" alt="Orange, seen from behind on Jeremy's lap, with one paw stretched onto the keyboard of a laptop showing GitHub" />
       </figure>
@@ -3166,7 +3199,7 @@ steps:
          Good at, bad at, mixed feelings, closing (Jeremy, late on 2026-10-05). Best practices
          is in his earlier list and is not drafted. All wording is draft.
          ============================================================ -->
-    <section class="slide s-photo" data-hue="6">
+    <section class="slide s-photo" data-hue="6" data-section="What we learned">
       <figure class="photo" style="--focus: 28% 50%">
         <img src="assets/orange/orange-looking-up-agenda.jpg" alt="Orange looking up at the camera from a chair, in front of an open laptop" />
       </figure>
@@ -4138,6 +4171,7 @@ steps:
 
       // Reserve slides (data-reserve) stay in the file but are left out of the count and the progress strip.
       var counted = slides.filter(function (s) { return !s.hasAttribute('data-reserve'); });
+      var sections = counted.map(function (s, p) { return { pos: p, name: s.getAttribute('data-section') }; }).filter(function (x) { return x.name; });
       slides.forEach(function (s, k) {
         if (!s.classList.contains('s-title')) s.setAttribute('data-foot', foot);
         var pos = counted.indexOf(s), n = document.createElement('span');
@@ -4149,6 +4183,22 @@ steps:
         f.className = 'hexfill';
         f.style.width = (pos < 0 ? 0 : pos === counted.length - 1 ? 1600 : Math.round((pos + 1) / counted.length * 1600 / HEX) * HEX) + 'px';
         s.appendChild(f);
+        // Section markers: a heavier hex over the first strip hex of each transition slide
+        // (data-section). The outline slide (data-outline) also names them, in two rows.
+        if (pos >= 0) sections.forEach(function (sec, j) {
+          var x = Math.round(sec.pos / counted.length * 1600 / HEX) * HEX + HEX / 2;
+          var m = document.createElement('span');
+          m.className = 'hexmark' + (pos >= sec.pos ? ' on' : '');
+          m.style.left = x + 'px'; m.style.backgroundPosition = (HEX / 2 - x) + 'px 0';
+          s.appendChild(m);
+          if (!s.hasAttribute('data-outline')) return;
+          var low = j % 2 === 1, w = sec.name.length * 14.6, l = document.createElement('span');
+          l.className = 'hexlabel' + (low ? ' low' : '');
+          l.textContent = sec.name;
+          l.style.left = Math.max(12, Math.min(1588 - w, x - w / 2)) + 'px';
+          s.appendChild(l);
+          if (low) { var st = document.createElement('span'); st.className = 'hexstem'; st.style.left = x + 'px'; s.appendChild(st); }
+        });
         // Wrap for overview thumbnails.
         var w = document.createElement('div');
         w.className = 'thumb';
@@ -4182,6 +4232,9 @@ steps:
           if (!v) return;
           if (k2 === i && !document.body.classList.contains('overview')) {
             try { v.currentTime = 0; } catch (e) {}
+            // data-rate="1.5" plays the recording faster than it was captured.
+            var rate = parseFloat(v.getAttribute('data-rate')) || 1;
+            v.defaultPlaybackRate = rate; v.playbackRate = rate;
             var pr = v.play(); if (pr && pr.catch) pr.catch(function () {});
           } else if (!v.paused) v.pause();
         });
