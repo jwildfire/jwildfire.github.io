@@ -1,11 +1,11 @@
 # Roadmap tree snapshot
 
-- Snapshot: 5 October 2026, 21:23 Eastern, read from GitHub through the tracker's collector.
-- On the hub in all: 10 objectives; 177 requirements (66 released, 7 review, 2 in session, 3 ready, 55 backlog, 44 retired); 274 tasks (225 done, 2 in review, 45 open, 2 retired); 25 requirements under no objective.
-- Drawn on the treemap: 10 objectives, 108 requirements (52 released, 4 review, 2 in session, 3 ready, 47 backlog), 155 tasks (124 done, 1 in review, 29 open, 1 retired). Not drawn: 44 retired requirements and 25 with no objective.
-- Drawn on the tree: Biomarker charts, 14 requirements (12 released, 2 in session), 44 tasks (38 done, 1 in review, 5 open).
-- Slide A caption: obot.roadmap · as of 5 October 2026 · 44 retired requirements and 25 with no objective not shown
-- Slide B caption: obot.roadmap · as of 5 October 2026 · one bead per task
+- Snapshot: 7 October 2026, 07:44 Eastern, read from GitHub through the tracker's collector.
+- On the hub in all: 10 objectives; 178 requirements (68 released, 7 review, 3 ready, 56 backlog, 44 retired); 277 tasks (234 done, 1 in review, 40 open, 2 retired); 25 requirements under no objective.
+- Drawn on the treemap: 10 objectives, 109 requirements (54 released, 4 review, 3 ready, 48 backlog), 158 tasks (132 done, 1 in review, 24 open, 1 retired). Not drawn: 44 retired requirements and 25 with no objective.
+- Drawn on the tree: Biomarker charts, 15 requirements (14 released, 1 backlog), 47 tasks (46 done, 1 in review).
+- Slide A caption: obot.roadmap · as of 7 October 2026 · 44 retired requirements and 25 with no objective not shown
+- Slide B caption: obot.roadmap · as of 7 October 2026 · one bead per task
 
 ## Readable on slide A
 
@@ -21,6 +21,7 @@ Requirement titles:
 
 ## Readable on slide B
 
+- #367 The group comparison chart opens on trends over time and drills down to one visit
 - #366 The demo app hosts the biomarker charts, on the files and mapping a study already has
 - #357 Association scatter and correlation matrix
 - #364 gsm.bio's statistics: the package, a synthetic biomarker study and every test the charts will print
@@ -31,7 +32,7 @@ Requirement titles:
 - #361 Results out of the browser: titles, footnotes, PNG and specifications
 - #362 Results out of R: static twins, RTF tables and batch runs
 - #363 R in the browser, measured: the connection a chart uses to ask R for a statistic
+- #369 bio.viz's site is laid out and styled as safety.viz's is
 - #358 Biomarker screen: one row per biomarker
 - #354 safety.viz's shared parts opened to a second library
-- #367 The group comparison chart opens on trends over time and drills down to one visit
-- #369 bio.viz's site is laid out and styled as safety.viz's is
+- #371 the group comparison's difference grid as a second opening view

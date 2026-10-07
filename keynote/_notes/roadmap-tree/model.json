@@ -1,8 +1,8 @@
 {
  "source": "jwildfire/obot.roadmap, read through scripts/lib/collect/tracker.mjs",
- "readAt": "2026-10-06T01:23:08.306Z",
- "asOf": "5 October 2026",
- "asOfTime": "21:23 Eastern",
+ "readAt": "2026-10-07T11:44:26.512Z",
+ "asOf": "7 October 2026",
+ "asOfTime": "07:44 Eastern",
  "totals": {
   "objectives": {
    "total": 10,
@@ -10,26 +10,26 @@
    "closed": 0
   },
   "requirements": {
-   "total": 177,
-   "open": 67,
-   "closed": 110,
+   "total": 178,
+   "open": 66,
+   "closed": 112,
    "drift": 0,
    "blocked": 0,
    "byStage": {
-    "Backlog": 55,
+    "Backlog": 56,
     "Ready": 3,
-    "In session": 2,
+    "In session": 0,
     "Review": 7,
-    "Released": 66,
+    "Released": 68,
     "Retired": 44,
     "Unstaged": 0
    }
   },
   "tasks": {
-   "total": 274,
-   "open": 45,
-   "inReview": 2,
-   "done": 225,
+   "total": 277,
+   "open": 40,
+   "inReview": 1,
+   "done": 234,
    "retired": 2,
    "blocked": 0
   },
@@ -486,24 +486,34 @@
    "state": "OPEN",
    "requirements": [
     {
+     "n": 371,
+     "title": "the group comparison's difference grid as a second opening view",
+     "stage": "Backlog",
+     "tasks": [
+      "in review"
+     ]
+    },
+    {
      "n": 367,
      "title": "The group comparison chart opens on trends over time and drills down to one visit",
-     "stage": "In session",
+     "stage": "Released",
      "tasks": [
-      "in review",
-      "open",
-      "open",
       "done",
-      "open",
-      "open"
+      "done",
+      "done",
+      "done",
+      "done",
+      "done"
      ]
     },
     {
      "n": 369,
      "title": "bio.viz's site is laid out and styled as safety.viz's is",
-     "stage": "In session",
+     "stage": "Released",
      "tasks": [
-      "open"
+      "done",
+      "done",
+      "done"
      ]
     },
     {
@@ -1378,7 +1388,7 @@
    "title": "the usage analytics run on a cadence, and the page says when it last did",
    "stage": "Backlog",
    "tasks": [
-    "in review"
+    "done"
    ]
   },
   {
