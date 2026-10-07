@@ -1,6 +1,6 @@
 # Dry-run timing
 
-Generated from keynote/slides.html (fingerprint b1a1895653) by keynote/_notes/dry-run/build.mjs. Do not edit by hand; re-run the script after the deck changes.
+Generated from keynote/slides.html (fingerprint 7f37972d96) by keynote/_notes/dry-run/build.mjs. Do not edit by hand; re-run the script after the deck changes.
 
 ## Totals
 
@@ -41,10 +41,10 @@ Generated from keynote/slides.html (fingerprint b1a1895653) by keynote/_notes/dr
 - 17. “We use AI heavily, but it's not autonomous. Humans own the process and all deliverables.” (beat 2b)
 - 18. How much do you hand over? (beat 2b)
 - 19. Same lifecycle; five steps changed hands (beat 2b)
-- 20. Faster code; planning and operations have to catch up (beat 2b)
-- 21. Agents can help a lot with planning (beat 2b)
-- 22. Agents can help a lot with operations (beat 2b)
-- 23. AI-written code still needs a human owner (beat 2b)
+- 20. AI-written code still needs a human owner (beat 2b)
+- 21. Faster code; planning and operations have to catch up (beat 2b)
+- 22. Agents can help a lot with planning (beat 2b)
+- 23. Agents can help a lot with operations (beat 2b)
 - 24. We're having great success at level 2.5! (beat 2b)
 - 25. From Orange to obot (beat 3)
 - 26. “What can we actually do with AI agents right now?” (beat 3)
@@ -90,10 +90,10 @@ Generated from keynote/slides.html (fingerprint b1a1895653) by keynote/_notes/dr
 - Slide 15 (on slide): Jeremy to reviewinspector popup, added 7 Octkicker softened, 7 Oct
 - Slide 15 (in notes): vet the qualification sentence and say what a qualified release involves at work, in your words.
 - Slide 15 (in notes): replace it with a screenshot of a real qcthat report if one can be shown.
-- Slide 21 (in notes): (1) Vet all ten pages; they are public already, but they have not been on a keynote slide. Two things to look at in particular: thumbnail 9 names the other repositories of the side project in small print, and thumbnail 7 shows a scatter plot of the public demo study. (2) Supply or approve real gsm.roadmap artifacts if any can be shown: screenshots you take yourself, cleared for a public talk, would replace some or all of these and the caption line would go. (3) Confirm the caption wording: it tells the room these are not the team's pages. (4) Say whether the callout stays.
-- Slide 22 (on slide): Jeremy to reviewmock schedule, added 7 Oct
-- Slide 22 (in notes): replace the mock rows or keep them; confirm "Plan check", "OK" and "Flagged".
-- Slide 23 (on slide): Jeremy to reviewinspector popup, added 7 Oct
+- Slide 20 (on slide): Jeremy to reviewmoved up to follow the levels, 7 Octinspector popup, added 7 Oct
+- Slide 22 (in notes): (1) Vet all ten pages; they are public already, but they have not been on a keynote slide. Two things to look at in particular: thumbnail 9 names the other repositories of the side project in small print, and thumbnail 7 shows a scatter plot of the public demo study. (2) Supply or approve real gsm.roadmap artifacts if any can be shown: screenshots you take yourself, cleared for a public talk, would replace some or all of these and the caption line would go. (3) Confirm the caption wording: it tells the room these are not the team's pages. (4) Say whether the callout stays.
+- Slide 23 (on slide): Jeremy to reviewmock schedule, added 7 Oct
+- Slide 23 (in notes): replace the mock rows or keep them; confirm "Plan check", "OK" and "Flagged".
 - Slide 26 (on slide): Jeremy to reviewcallback to slide 3, 7 Octhacker and inspector, 7 Oct
 - Slide 27 (on slide): Jeremy to reviewhacker popup, added 7 Oct
 - Slide 29 (in notes): which tool v1 was, what you asked it for, and what worked and what didn't. There is no public account of it, so this version has one slide and no thumbs yet.

@@ -340,7 +340,7 @@
     .s-life5 .life .s { padding: 5px 14px; margin-bottom: 7px; }
     .s-life5 .life h3 { margin-bottom: 8px; }
 
-    /* Five columns (slide 20): the standard lifecycle in the middle, the work before and
+    /* Five columns (slide 21): the standard lifecycle in the middle, the work before and
        after it called out on either side. The callout sits on the middle panel's lower edge. */
     .s-five h2 { font-size: 72px; margin-bottom: 34px; }
     .five { display: grid; grid-template-columns: 1.12fr 3fr 1.12fr; gap: 46px; align-items: stretch; margin-top: 4px; height: 376px; }
@@ -608,7 +608,7 @@
     .pvr.cy .ct { font-family: var(--mono); font-size: 22px; letter-spacing: .1em; text-transform: uppercase; fill: var(--soft); }
     .pvr.cy .an { font-size: 26px; fill: var(--ink); text-anchor: middle; }
     .pvr.cy .br { stroke: var(--ink); stroke-width: 2; fill: none; }
-    /* Study operations schedule (slide 22), mock data. Scoped to .s-ops .sched. */
+    /* Study operations schedule (slide 23), mock data. Scoped to .s-ops .sched. */
     .s-ops .lab { font-size: 22px; display: flex; align-items: center; justify-content: space-between; }
     .s-ops .lab .mock { font-family: var(--mono); font-size: 22px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); border: 2px solid var(--ink); border-radius: 999px; padding: 1px 16px; }
     .s-ops .sched svg { display: block; width: 100%; height: auto; }
@@ -1145,7 +1145,7 @@
       <p class="kicker">gsm · Good Statistical Monitoring</p>
       <h2>Monitoring a trial, as software</h2>
       <figure>
-        <div class="frame"><video data-demo data-rate="1.5" muted loop playsinline preload="none" poster="assets/gsm-kri-report-demo-poster.png" src="assets/gsm-kri-report-demo.mp4" aria-label="Screen recording of a gsm site report on example data: a table of sites by key risk indicator with red and amber flags, then the charts for one indicator"></video></div>
+        <div class="frame"><video data-demo data-rate="2.75" muted loop playsinline preload="none" poster="assets/gsm-kri-report-demo-poster.png" src="assets/gsm-kri-report-demo.mp4" aria-label="Screen recording of a gsm site report on example data: a table of sites by key risk indicator with red and amber flags, then the charts for one indicator"></video></div>
         <div class="cap">
           <p>A {gsm} site report on example data · quality built in from the start</p>
           <p><a href="https://openrbqm.github.io/" target="_blank" rel="noopener">OpenRBQM</a>, a <a href="https://advance.hub.phuse.global/wiki/spaces/WEL/pages/26811224/OpenRBQM+Pre-Competitive+Collaboration+on+Open-Source+Software+for+RBQM" target="_blank" rel="noopener">PHUSE working group</a></p>
@@ -1371,7 +1371,7 @@
         2026-10-06 from "We just let the coding agent deal with it", which went to the reserves
         (Jeremy: "Move the 'good at writing code call out to slide 17'"). The small line
         "as of Q4 2025" was added the same day (Jeremy: "Add (As of Q4 2025) for 'good at
-        writing code'"); it pairs with "as of Q2 2026" on slide 20's callout.
+        writing code'"); it pairs with "as of Q2 2026" on slide 21's callout.
       </aside>
     </section>
 
@@ -1466,6 +1466,30 @@
       </aside>
     </section>
 
+    <section class="slide s-bullets" data-hue="3">
+      <p class="kicker">The rule that doesn't change</p>
+      <h2>AI-written code still needs a human owner</h2>
+      <ul>
+        <li>A person owns the requirements.</li>
+        <li>A person owns the risk decision.</li>
+        <li>A person must be able to explain why the code works.</li>
+        <li>A person must be able to explain why it is safe enough for medical research.</li>
+      </ul>
+      <div class="goodat insp"><div class="bub"><p class="q">What evidence do you have?</p><p class="a">The same tests, and a human owner</p></div><div class="who"></div></div>
+      <div class="review"><b>Jeremy to review</b><br>moved up to follow the levels, 7 Oct<br>inspector popup, added 7 Oct</div>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        The four lines are verbatim from the 6 June deck draft (RPharma2026-AIKeynote), which came
+        from Jeremy's dictation. Same idea in the abstract: scaffolding that keeps AI behaviour
+        "repeatable, auditable, and governed by the humans who remain responsible for every line of code."
+        <br><br>Old deck's guardrail grid, if a second slide is wanted: Evidence, Permissions,
+        Traceability, Humans.
+        <br><br>Moved up on 2026-10-07 (Jeremy: "move slide 23 after 19."): it now follows the
+        levels slide and comes before "Where we put the effort"; until then it sat after the
+        operations slide, just before the wrap-up.
+      </aside>
+    </section>
+
     <section class="slide s-five" data-hue="3">
       <p class="kicker">Where we put the effort</p>
       <h2>Faster code; planning and operations have to catch up</h2>
@@ -1534,7 +1558,7 @@
         and sub-issues that coding consumes; coding produces releases that operations deploys to studies.
         <br><br>Why both ends: they are company-specific process that no vendor will build. The
         middle is commodity and improving monthly.
-        <br><br>Vet before publishing: everything on slides 20 and 22–23, and the Planning cell on slide 21, comes from that internal deck. (The artifact grid on slide 21 is from the side project's public hub.)
+        <br><br>Vet before publishing: everything on slides 21 and 23, and the Planning cell on slide 22, comes from that internal deck. (The artifact grid on slide 22 is from the side project's public hub.)
       </aside>
     </section>
 
@@ -1735,7 +1759,7 @@
         <br><br>The cards' words are unchanged. Their text is 21 px and the small labels in
         their headings are 17 px, as in the deck today; only the new strip keeps to 22 px.
         <br><br>Option A was his pick over option B (a six-row schedule replacing the cards; still
-        in keynote/_notes/drafts-2026-10-07/slide22-ops.html). TODO (Jeremy): replace the mock rows or keep them;
+        in keynote/_notes/drafts-2026-10-07/slide23-ops.html). TODO (Jeremy): replace the mock rows or keep them;
         confirm "Plan check", "OK" and "Flagged".
         <br><br>
         Jeremy's steer (2026-10-02): "One repo per study, central repo for monitoring." Source:
@@ -1748,27 +1772,6 @@
         <br><br>Production workflows run under a bot identity. The plan-alignment check is fully
         deterministic at runtime; an agent drafted the code and the matching rules.
         <br><br>The deck's screenshots are internal; none is reproduced here.
-      </aside>
-    </section>
-
-    <section class="slide s-bullets" data-hue="3">
-      <p class="kicker">The rule that doesn't change</p>
-      <h2>AI-written code still needs a human owner</h2>
-      <ul>
-        <li>A person owns the requirements.</li>
-        <li>A person owns the risk decision.</li>
-        <li>A person must be able to explain why the code works.</li>
-        <li>A person must be able to explain why it is safe enough for medical research.</li>
-      </ul>
-      <div class="goodat insp"><div class="bub"><p class="q">What evidence do you have?</p><p class="a">The same tests, and a human owner</p></div><div class="who"></div></div>
-      <div class="review"><b>Jeremy to review</b><br>inspector popup, added 7 Oct</div>
-      <aside class="notes">
-        <strong class="say">&lt;none yet&gt;</strong>
-        The four lines are verbatim from the 6 June deck draft (RPharma2026-AIKeynote), which came
-        from Jeremy's dictation. Same idea in the abstract: scaffolding that keeps AI behaviour
-        "repeatable, auditable, and governed by the humans who remain responsible for every line of code."
-        <br><br>Old deck's guardrail grid, if a second slide is wanted: Evidence, Permissions,
-        Traceability, Humans.
       </aside>
     </section>
 
@@ -3245,8 +3248,8 @@ steps:
         <br><br>Where each one comes from:
         <br>Teaching me things: slide 6.
         <br>Writing code: slide 17.
-        <br>Drafting documents: slide 21.
-        <br>Designing pages: was the callout on slide 21 (the artifacts) until 2026-10-06; no longer on a slide before this one.
+        <br>Drafting documents: slide 22.
+        <br>Designing pages: was the callout on slide 22 (the artifacts) until 2026-10-06; no longer on a slide before this one.
         <br>Porting old code: slide 33 (v3, the weekend of renderers).
         <br>Translating research into software: slide 34 (v3; Jeremy's wording).
         <br>Reviewing its own work: slide 43 (v5.5; the reviewer agents).
@@ -3285,7 +3288,7 @@ steps:
         build as the slide before: Orange's thumbs-down answers gathered. Draft wording
         throughout.
         <br><br>Where each one comes from:
-        <br>Setting priorities: slide 21.
+        <br>Setting priorities: slide 22.
         <br>Working without me: three callouts folded into one. "Autonomy" (v2, slide 31),
         "Working without me" (v3, slide 33) and "Still waits on me" (v5.5, slide 43, which is a
         placeholder Jeremy has not confirmed).

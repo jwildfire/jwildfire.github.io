@@ -102,25 +102,26 @@ Four beats, regrouped late on 2026-10-05 into five parts when Jeremy split beat 
     - Level sidebar with levels 2 and 3 both boxed (2026-10-06, Jeremy: "Call out both 2 and 3 in the sidebar on 19 (i really think we're more level 2.5 than full level 3)")
     - Design, build, publish: each step marked a person, the agent, or automated; merges the all-hands deck's before and after slides into one [March all-hands deck]
     - Optional (Jeremy: "possibly"); it shows the March state, and the slide that said how it has moved since is in the reserves
-  - Faster code; planning and operations have to catch up (built, slide 20; present tense at Jeremy's request, 2026-10-06)
+  - AI-written code still needs a human owner (built, slide 20)
+    - Moved up 2026-10-07 to follow the levels slide (Jeremy: "move slide 23 after 19."); it used to sit after the operations slide
+    - The four "a person…" lines, verbatim from the 6 June deck
+  - Faster code; planning and operations have to catch up (built, slide 21; present tense at Jeremy's request, 2026-10-06)
     - Jeremy's message (2026-10-06): "agents have sped up/simplified SDLC enough that we've had to spend time improving our upstream and downstream process to support the rapidly increasing code volume"
     - Five columns (his ask the same day; "I like 21 - clean it up"): Upstream, Planning (our scaffold) → the standard development lifecycle, Design · Build · Publish, with less detail (vendor coding agents, plus our shared context) → Downstream, Operations (our scaffold); the outer headings were first "Plan / Roadmap" and "Run / Deploy / Operations" and he shortened them
     - Callout, second click: "The standard SDLC", with "as of Q2 2026" in small text
     - Replaces "Plan → build → run: we invest at both ends" (reserves); the two slides after it were cut the same day (reserves)
-  - Agents can help a lot with planning (built, slide 21; title is draft wording)
+  - Agents can help a lot with planning (built, slide 22; title is draft wording)
     - Reformatted 2026-10-06 (Jeremy: "Reformat 21-24 to match the new framing. Messaging - Agents can help a lot with both Planning and Operations. Cut 21 (move the good/bad callouts to 22) for 22 Lets show the planning cell again next to the artifact grids."): the Planning cell from the five-column slide on the left, the artifact grid on the right under the line "The artifact is what a person reviews"
     - Ten thumbnails in a five-by-two grid: migration assessment, data requirement, design document, layout options, roadmap plan, decision record, release demo, qualification evidence, release review guide, org chart. Images in `keynote/assets/artifacts/`; pages and exclusions in `keynote/_notes/beat2-artifacts-sources.md`
     - All ten are from obot.roadmap, the side project's public hub, standing in for the team's; the slide says so in one line
     - Callouts on the second click, moved from "Agents draft; people approve": "Drafting documents!" and "Setting priorities". The grid's own callout, "Designing pages!", came off to make room
     - `[TODO]` Jeremy: vet the ten pages; supply or approve real work artifacts if any can be shown; say whether "Designing pages!" comes back
-  - Agents can help a lot with operations (built, slide 22; title is draft wording)
+  - Agents can help a lot with operations (built, slide 23; title is draft wording)
     - Reformatted 2026-10-06 (Jeremy: "23-24 can also use the operations pillar … needs a visual about study ops … draft something and then leave me a todo to update"): two cards, "A study repo, one of 20" and "The hub, one for all of them", made from the four bullets the slide had (study repos, central scheduling, intake and a 15-step guide, weekly plan alignment) [Q3 deck]; the Operations cell on the right; line above the cards, "One repo per study, one hub to run them"
     - `[TODO]` Jeremy, orange on the slide: a real visual of study ops, e.g. a study repo, or a schedule with mock data
   - The hub replaced spreadsheets and email (in the reserves since 2026-10-07; was slide 23. Jeremy: "s23 needs a visual", "or could be cut ...", then "Cut to Reserves"; its before-and-now lines are in the operations slide's notes)
     - Before: Excel trackers, status by email, no live view. Now: merge a schedule and issues open in each study repo, a daily dashboard, an audit trail through pull requests [Q3 deck]
     - The Operations cell sits on the right (2026-10-06)
-  - AI-written code still needs a human owner (built, slide 23)
-    - The four "a person…" lines, verbatim from the 6 June deck
   - +50% (in the reserves since 2026-10-07; was slide 24. Jeremy: "slide 25 (50%) for now. i can hit the productivity point on the wrap up slide." The June figures did not hold on public GitHub data; a small visual from GitHub history is being drafted for the wrap-up slide instead)
     - Moved here from straight after the lifecycle slide on 2026-10-06 (Jeremy: "s20 moves just before 27.")
     - Releases up about 50% on last year; issues and pull requests roughly doubled; "not a controlled productivity study" [diary #1]
@@ -301,7 +302,7 @@ Inspector Orange, added 2026-10-07 (Jeremy: "maybe just popups like the good/bad
 
 - Slide 10, "What we did, and what we didn't": "Written requirements and a manual test script for every chart. / Automated tests on the R package, run on every pull request." Measured from the public record; sources in the slide's notes
 - Slide 15, "Quality is built into the design": "A test for every requirement" (beside the title)
-- Slide 23, "AI-written code still needs a human owner": "The same tests, and a human owner"
+- Slide 20, "AI-written code still needs a human owner": "The same tests, and a human owner"
 - Slide 26, "The question, again": no question here; the inspector just says "Oh jeez. I'll check in later." (his words), after Hacker Orange's "Let's mess around and find out."
 - Slide 46, "A lot of tests, and still not GxP": "Lots of tests. No sign-off." (beside the title)
 
@@ -327,8 +328,8 @@ No "GxP" on any slide (Jeremy, 2026-10-07: "Want to soften 46. No reference of G
 - Beats 1 and 2 ("What are agents good at now?" / "What are agents bad at now?")
   - Teaching me things — slide 6
   - Writing code — slide 17
-  - The standard SDLC, as of Q2 2026 — slide 20
-  - Drafting documents, and Setting priorities (thumbs-down) — slide 21
+  - The standard SDLC, as of Q2 2026 — slide 21
+  - Drafting documents, and Setting priorities (thumbs-down) — slide 22
   - Designing pages (draft wording) — off the slides since 2026-10-06; still a card on the good-at wrap-up
 - Beat 3 uses the same two callouts as each version's verdict, labelled "What worked" and "What didn't" (Jeremy's outline, 2026-10-05). All wording is draft
   - v2, slide 31: Real work, by text / Autonomy
