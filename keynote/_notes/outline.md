@@ -306,7 +306,7 @@ Hacker Orange, added 2026-10-07 (his art, `keynote/assets/hex/orange-hacker.png`
 - Slide 27, "Modernize safetyGraphics, using the gsm framework": "Open Source ftw" (popup, second press)
 - Slide 30, "OpenClaw" (obot v2): "ugh. so many config files. can't we just build something?" (popup, second press)
 - Slide 33, obot v3's weekend: "thats more like it" (popup, beside the kicker)
-- Slide 34, "Papers → prompts → prototypes" (obot v3): "well damn" (popup, beside the kicker)
+- Slide 34, "Papers → prompts → prototypes" (obot v3): 🚀🔥💪 (popup, beside the kicker; he first picked "well damn")
 - Slide 36, "Four roles, and a timer script" (obot v4): "whaaa? can the concierge orchestrate a fleet of treats for me? I thought we were building stuff ..." (popup, under the Jeremy and Concierge boxes)
 
 "What I built" slides show the work, with their words in the notes (Jeremy, 2026-10-07: "would like to have each of these evidence slides show a visual of the work - text moves to notes")
