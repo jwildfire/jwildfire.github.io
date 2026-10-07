@@ -1,0 +1,539 @@
+fetched {"issues_prs_releases_comments":["2026-10-07T12:40:04.117Z","2026-10-07T12:51:42.000Z"],"retries":[{"started":"2026-10-07T12:49:30.630Z","repos":["Gilead-Public/gsm.viz"]}],"pr_commit_lists":["2026-10-07T12:51:57.791Z","2026-10-07T12:52:59.487Z"],"commits_read_from_clones":"2026-10-07T13:01:32.431Z","test_files":"2026-10-07T12:56:01.758Z"}
+
+=== All 25 public repositories (25 repos) — Every public repository of the ecosystem (the earlier pass's list).
+   in: gsm, gsm.viz, qcthat, gsm.qtl, gsm.datasim, gsm.mapping, gsm.kri, gsm.reporting, gsm.core, gsm.utils, workr, gsm.guide, gsm.vizr, gsm.dash, clindata, gsm.app, gsm.qc, gh.dash, open.gismo, OpenRBQM.github.io, gsm.digitpref, gsm.ae, openrbqm, openRBQM-workshop, gsm.pd
+   dropped: 
+  [no_bots] quarter      iO   iC   pO   pM  rel
+   2025Q1          165  137  150  132   17
+   2025Q2          210  151  147  138   25
+   2025Q3          104  134   94   82   16
+   2025Q4          158  102   67   61    8
+   2026Q1          214  193  144  119   14
+   2026Q2          199  164  167  148   15
+   2026Q3          172  106  171  132   18
+   Q1 yoy              iopened 165->214 (+30%) | iclosed 137->193 (+41%) | popened 150->144 (-4%) | pmerged 132->119 (-10%) | rel 17->14 (-18%)
+   Q2 yoy              iopened 210->199 (-5%) | iclosed 151->164 (+9%) | popened 147->167 (+14%) | pmerged 138->148 (+7%) | rel 25->15 (-40%)
+   Q3 yoy              iopened 104->172 (+65%) | iclosed 134->106 (-21%) | popened 94->171 (+82%) | pmerged 82->132 (+61%) | rel 16->18 (+13%)
+   H1 yoy              iopened 375->413 (+10%) | iclosed 288->357 (+24%) | popened 297->311 (+5%) | pmerged 270->267 (-1%) | rel 42->29 (-31%)
+   Q2_Q3 yoy           iopened 314->371 (+18%) | iclosed 285->270 (-5%) | popened 241->338 (+40%) | pmerged 220->280 (+27%) | rel 41->33 (-20%)
+   Jan_Sep yoy         iopened 479->585 (+22%) | iclosed 422->463 (+10%) | popened 391->482 (+23%) | pmerged 352->399 (+13%) | rel 58->47 (-19%)
+   Jan_1_to_Oct_6 yoy  iopened 491->594 (+21%) | iclosed 425->466 (+10%) | popened 403->484 (+20%) | pmerged 359->401 (+12%) | rel 60->47 (-22%)
+  [with_bots] quarter      iO   iC   pO   pM  rel
+   2025Q1          165  137  151  133   17
+   2025Q2          210  151  147  138   25
+   2025Q3          104  134   97   85   16
+   2025Q4          158  102   68   62    8
+   2026Q1          230  195  151  124   14
+   2026Q2          203  182  178  152   15
+   2026Q3          172  106  207  156   18
+   Q1 yoy              iopened 165->230 (+39%) | iclosed 137->195 (+42%) | popened 151->151 (0%) | pmerged 133->124 (-7%) | rel 17->14 (-18%)
+   Q2 yoy              iopened 210->203 (-3%) | iclosed 151->182 (+21%) | popened 147->178 (+21%) | pmerged 138->152 (+10%) | rel 25->15 (-40%)
+   Q3 yoy              iopened 104->172 (+65%) | iclosed 134->106 (-21%) | popened 97->207 (+113%) | pmerged 85->156 (+84%) | rel 16->18 (+13%)
+   H1 yoy              iopened 375->433 (+16%) | iclosed 288->377 (+31%) | popened 298->329 (+10%) | pmerged 271->276 (+2%) | rel 42->29 (-31%)
+   Q2_Q3 yoy           iopened 314->375 (+19%) | iclosed 285->288 (+1%) | popened 244->385 (+58%) | pmerged 223->308 (+38%) | rel 41->33 (-20%)
+   Jan_Sep yoy         iopened 479->605 (+26%) | iclosed 422->483 (+15%) | popened 395->536 (+36%) | pmerged 356->432 (+21%) | rel 58->47 (-19%)
+   Jan_1_to_Oct_6 yoy  iopened 491->614 (+25%) | iclosed 425->486 (+14%) | popened 407->542 (+33%) | pmerged 363->437 (+20%) | rel 60->47 (-22%)
+
+=== Worked on in both years (8 repos) — At least 5 pull requests merged (bots left out) between 1 January and 6 October in 2025 and again in 2026.
+   in: gsm.viz, gsm.qtl, gsm.datasim, gsm.mapping, gsm.kri, gsm.reporting, gsm.core, OpenRBQM.github.io
+   dropped: gsm, qcthat, gsm.utils, workr, gsm.guide, gsm.vizr, gsm.dash, clindata, gsm.app, gsm.qc, gh.dash, open.gismo, gsm.digitpref, gsm.ae, openrbqm, openRBQM-workshop, gsm.pd
+  [no_bots] quarter      iO   iC   pO   pM  rel
+   2025Q1           72   54   71   59   10
+   2025Q2          125   85  114  106   20
+   2025Q3           40   51   48   40    9
+   2025Q4           53   30   40   34    5
+   2026Q1           64   51   71   57    8
+   2026Q2          105   72   92   76   12
+   2026Q3          145   89  127  100   14
+   Q1 yoy              iopened 72->64 (-11%) | iclosed 54->51 (-6%) | popened 71->71 (0%) | pmerged 59->57 (-3%) | rel 10->8 (-20%)
+   Q2 yoy              iopened 125->105 (-16%) | iclosed 85->72 (-15%) | popened 114->92 (-19%) | pmerged 106->76 (-28%) | rel 20->12 (-40%)
+   Q3 yoy              iopened 40->145 (+263%) | iclosed 51->89 (+75%) | popened 48->127 (+165%) | pmerged 40->100 (+150%) | rel 9->14 (+56%)
+   H1 yoy              iopened 197->169 (-14%) | iclosed 139->123 (-12%) | popened 185->163 (-12%) | pmerged 165->133 (-19%) | rel 30->20 (-33%)
+   Q2_Q3 yoy           iopened 165->250 (+52%) | iclosed 136->161 (+18%) | popened 162->219 (+35%) | pmerged 146->176 (+21%) | rel 29->26 (-10%)
+   Jan_Sep yoy         iopened 237->314 (+33%) | iclosed 190->212 (+12%) | popened 233->290 (+25%) | pmerged 205->233 (+14%) | rel 39->34 (-13%)
+   Jan_1_to_Oct_6 yoy  iopened 248->322 (+30%) | iclosed 192->214 (+12%) | popened 244->291 (+19%) | pmerged 212->234 (+10%) | rel 41->34 (-17%)
+  [with_bots] quarter      iO   iC   pO   pM  rel
+   2025Q1           72   54   72   60   10
+   2025Q2          125   85  114  106   20
+   2025Q3           40   51   51   43    9
+   2025Q4           53   30   41   35    5
+   2026Q1           65   52   76   62    8
+   2026Q2          108   75   96   80   12
+   2026Q3          145   89  153  120   14
+   Q1 yoy              iopened 72->65 (-10%) | iclosed 54->52 (-4%) | popened 72->76 (+6%) | pmerged 60->62 (+3%) | rel 10->8 (-20%)
+   Q2 yoy              iopened 125->108 (-14%) | iclosed 85->75 (-12%) | popened 114->96 (-16%) | pmerged 106->80 (-25%) | rel 20->12 (-40%)
+   Q3 yoy              iopened 40->145 (+263%) | iclosed 51->89 (+75%) | popened 51->153 (+200%) | pmerged 43->120 (+179%) | rel 9->14 (+56%)
+   H1 yoy              iopened 197->173 (-12%) | iclosed 139->127 (-9%) | popened 186->172 (-8%) | pmerged 166->142 (-15%) | rel 30->20 (-33%)
+   Q2_Q3 yoy           iopened 165->253 (+53%) | iclosed 136->164 (+21%) | popened 165->249 (+51%) | pmerged 149->200 (+34%) | rel 29->26 (-10%)
+   Jan_Sep yoy         iopened 237->318 (+34%) | iclosed 190->216 (+14%) | popened 237->325 (+37%) | pmerged 209->262 (+25%) | rel 39->34 (-13%)
+   Jan_1_to_Oct_6 yoy  iopened 248->326 (+32%) | iclosed 192->218 (+14%) | popened 248->330 (+33%) | pmerged 216->266 (+23%) | rel 41->34 (-17%)
+
+=== Without repositories new in 2026 (19 repos) — Leaves out repositories with no issue, pull request or release before 1 January 2026.
+   in: gsm, gsm.viz, qcthat, gsm.qtl, gsm.datasim, gsm.mapping, gsm.kri, gsm.reporting, gsm.core, gsm.utils, clindata, gsm.app, gsm.qc, OpenRBQM.github.io, gsm.digitpref, gsm.ae, openrbqm, openRBQM-workshop, gsm.pd
+   dropped: workr, gsm.guide, gsm.vizr, gsm.dash, gh.dash, open.gismo
+  [no_bots] quarter      iO   iC   pO   pM  rel
+   2025Q1          165  137  150  132   17
+   2025Q2          210  151  147  138   25
+   2025Q3          104  134   94   82   16
+   2025Q4          158  102   67   61    8
+   2026Q1          187  176  116   98   12
+   2026Q2          157  128  137  117   14
+   2026Q3          159  100  153  119   15
+   Q1 yoy              iopened 165->187 (+13%) | iclosed 137->176 (+29%) | popened 150->116 (-23%) | pmerged 132->98 (-26%) | rel 17->12 (-29%)
+   Q2 yoy              iopened 210->157 (-25%) | iclosed 151->128 (-15%) | popened 147->137 (-7%) | pmerged 138->117 (-15%) | rel 25->14 (-44%)
+   Q3 yoy              iopened 104->159 (+53%) | iclosed 134->100 (-25%) | popened 94->153 (+63%) | pmerged 82->119 (+45%) | rel 16->15 (-6%)
+   H1 yoy              iopened 375->344 (-8%) | iclosed 288->304 (+6%) | popened 297->253 (-15%) | pmerged 270->215 (-20%) | rel 42->26 (-38%)
+   Q2_Q3 yoy           iopened 314->316 (+1%) | iclosed 285->228 (-20%) | popened 241->290 (+20%) | pmerged 220->236 (+7%) | rel 41->29 (-29%)
+   Jan_Sep yoy         iopened 479->503 (+5%) | iclosed 422->404 (-4%) | popened 391->406 (+4%) | pmerged 352->334 (-5%) | rel 58->41 (-29%)
+   Jan_1_to_Oct_6 yoy  iopened 491->512 (+4%) | iclosed 425->407 (-4%) | popened 403->408 (+1%) | pmerged 359->336 (-6%) | rel 60->41 (-32%)
+  [with_bots] quarter      iO   iC   pO   pM  rel
+   2025Q1          165  137  151  133   17
+   2025Q2          210  151  147  138   25
+   2025Q3          104  134   97   85   16
+   2025Q4          158  102   68   62    8
+   2026Q1          203  178  121  103   12
+   2026Q2          161  146  141  121   14
+   2026Q3          159  100  183  142   15
+   Q1 yoy              iopened 165->203 (+23%) | iclosed 137->178 (+30%) | popened 151->121 (-20%) | pmerged 133->103 (-23%) | rel 17->12 (-29%)
+   Q2 yoy              iopened 210->161 (-23%) | iclosed 151->146 (-3%) | popened 147->141 (-4%) | pmerged 138->121 (-12%) | rel 25->14 (-44%)
+   Q3 yoy              iopened 104->159 (+53%) | iclosed 134->100 (-25%) | popened 97->183 (+89%) | pmerged 85->142 (+67%) | rel 16->15 (-6%)
+   H1 yoy              iopened 375->364 (-3%) | iclosed 288->324 (+13%) | popened 298->262 (-12%) | pmerged 271->224 (-17%) | rel 42->26 (-38%)
+   Q2_Q3 yoy           iopened 314->320 (+2%) | iclosed 285->246 (-14%) | popened 244->324 (+33%) | pmerged 223->263 (+18%) | rel 41->29 (-29%)
+   Jan_Sep yoy         iopened 479->523 (+9%) | iclosed 422->424 (+1%) | popened 395->445 (+13%) | pmerged 356->366 (+3%) | rel 58->41 (-29%)
+   Jan_1_to_Oct_6 yoy  iopened 491->532 (+8%) | iclosed 425->427 (+1%) | popened 407->451 (+11%) | pmerged 363->371 (+2%) | rel 60->41 (-32%)
+
+=== Worked on in 2026 (chosen on the outcome; flatters 2026) (12 repos) — At least 5 pull requests merged in the 2026 window, whatever happened in 2025.
+   in: gsm.viz, qcthat, gsm.qtl, gsm.datasim, gsm.mapping, gsm.kri, gsm.reporting, gsm.core, gsm.utils, workr, gh.dash, OpenRBQM.github.io
+   dropped: gsm, gsm.guide, gsm.vizr, gsm.dash, clindata, gsm.app, gsm.qc, open.gismo, gsm.digitpref, gsm.ae, openrbqm, openRBQM-workshop, gsm.pd
+  [no_bots] quarter      iO   iC   pO   pM  rel
+   2025Q1           74   54   71   59   10
+   2025Q2          128   85  114  106   20
+   2025Q3           51   53   53   44   10
+   2025Q4          151   97   66   60    8
+   2026Q1          206  190  143  118   13
+   2026Q2          196  162  165  146   15
+   2026Q3          163  101  159  125   16
+   Q1 yoy              iopened 74->206 (+178%) | iclosed 54->190 (+252%) | popened 71->143 (+101%) | pmerged 59->118 (+100%) | rel 10->13 (+30%)
+   Q2 yoy              iopened 128->196 (+53%) | iclosed 85->162 (+91%) | popened 114->165 (+45%) | pmerged 106->146 (+38%) | rel 20->15 (-25%)
+   Q3 yoy              iopened 51->163 (+220%) | iclosed 53->101 (+91%) | popened 53->159 (+200%) | pmerged 44->125 (+184%) | rel 10->16 (+60%)
+   H1 yoy              iopened 202->402 (+99%) | iclosed 139->352 (+153%) | popened 185->308 (+67%) | pmerged 165->264 (+60%) | rel 30->28 (-7%)
+   Q2_Q3 yoy           iopened 179->359 (+101%) | iclosed 138->263 (+91%) | popened 167->324 (+94%) | pmerged 150->271 (+81%) | rel 30->31 (+3%)
+   Jan_Sep yoy         iopened 253->565 (+123%) | iclosed 192->453 (+136%) | popened 238->467 (+96%) | pmerged 209->389 (+86%) | rel 40->44 (+10%)
+   Jan_1_to_Oct_6 yoy  iopened 264->574 (+117%) | iclosed 194->456 (+135%) | popened 249->469 (+88%) | pmerged 216->391 (+81%) | rel 42->44 (+5%)
+  [with_bots] quarter      iO   iC   pO   pM  rel
+   2025Q1           74   54   72   60   10
+   2025Q2          128   85  114  106   20
+   2025Q3           51   53   56   47   10
+   2025Q4          151   97   67   61    8
+   2026Q1          222  192  149  123   13
+   2026Q2          200  180  169  150   15
+   2026Q3          163  101  192  149   16
+   Q1 yoy              iopened 74->222 (+200%) | iclosed 54->192 (+256%) | popened 72->149 (+107%) | pmerged 60->123 (+105%) | rel 10->13 (+30%)
+   Q2 yoy              iopened 128->200 (+56%) | iclosed 85->180 (+112%) | popened 114->169 (+48%) | pmerged 106->150 (+42%) | rel 20->15 (-25%)
+   Q3 yoy              iopened 51->163 (+220%) | iclosed 53->101 (+91%) | popened 56->192 (+243%) | pmerged 47->149 (+217%) | rel 10->16 (+60%)
+   H1 yoy              iopened 202->422 (+109%) | iclosed 139->372 (+168%) | popened 186->318 (+71%) | pmerged 166->273 (+65%) | rel 30->28 (-7%)
+   Q2_Q3 yoy           iopened 179->363 (+103%) | iclosed 138->281 (+104%) | popened 170->361 (+112%) | pmerged 153->299 (+95%) | rel 30->31 (+3%)
+   Jan_Sep yoy         iopened 253->585 (+131%) | iclosed 192->473 (+146%) | popened 242->510 (+111%) | pmerged 213->422 (+98%) | rel 40->44 (+10%)
+   Jan_1_to_Oct_6 yoy  iopened 264->594 (+125%) | iclosed 194->476 (+145%) | popened 253->516 (+104%) | pmerged 220->427 (+94%) | rel 42->44 (+5%)
+
+=== Worked on in 2025 (chosen on the baseline; flatters 2025) (13 repos) — At least 5 pull requests merged in the 2025 window, whatever happened in 2026.
+   in: gsm, gsm.viz, gsm.qtl, gsm.datasim, gsm.mapping, gsm.kri, gsm.reporting, gsm.core, gsm.app, gsm.qc, OpenRBQM.github.io, gsm.ae, openRBQM-workshop
+   dropped: qcthat, gsm.utils, workr, gsm.guide, gsm.vizr, gsm.dash, clindata, gh.dash, open.gismo, gsm.digitpref, openrbqm, gsm.pd
+  [no_bots] quarter      iO   iC   pO   pM  rel
+   2025Q1          154  135  143  128   17
+   2025Q2          206  151  147  137   25
+   2025Q3           93  132   89   78   15
+   2025Q4           60   35   41   35    5
+   2026Q1           67   52   72   58    8
+   2026Q2          105   73   93   77   12
+   2026Q3          149   91  132  103   15
+   Q1 yoy              iopened 154->67 (-57%) | iclosed 135->52 (-62%) | popened 143->72 (-50%) | pmerged 128->58 (-55%) | rel 17->8 (-53%)
+   Q2 yoy              iopened 206->105 (-49%) | iclosed 151->73 (-52%) | popened 147->93 (-37%) | pmerged 137->77 (-44%) | rel 25->12 (-52%)
+   Q3 yoy              iopened 93->149 (+60%) | iclosed 132->91 (-31%) | popened 89->132 (+48%) | pmerged 78->103 (+32%) | rel 15->15 (0%)
+   H1 yoy              iopened 360->172 (-52%) | iclosed 286->125 (-56%) | popened 290->165 (-43%) | pmerged 265->135 (-49%) | rel 42->20 (-52%)
+   Q2_Q3 yoy           iopened 299->254 (-15%) | iclosed 283->164 (-42%) | popened 236->225 (-5%) | pmerged 215->180 (-16%) | rel 40->27 (-33%)
+   Jan_Sep yoy         iopened 453->321 (-29%) | iclosed 418->216 (-48%) | popened 379->297 (-22%) | pmerged 343->238 (-31%) | rel 57->35 (-39%)
+   Jan_1_to_Oct_6 yoy  iopened 465->329 (-29%) | iclosed 421->218 (-48%) | popened 391->298 (-24%) | pmerged 350->239 (-32%) | rel 59->35 (-41%)
+  [with_bots] quarter      iO   iC   pO   pM  rel
+   2025Q1          154  135  144  129   17
+   2025Q2          206  151  147  137   25
+   2025Q3           93  132   92   81   15
+   2025Q4           60   35   42   36    5
+   2026Q1           68   53   77   63    8
+   2026Q2          108   76   97   81   12
+   2026Q3          149   91  158  123   15
+   Q1 yoy              iopened 154->68 (-56%) | iclosed 135->53 (-61%) | popened 144->77 (-47%) | pmerged 129->63 (-51%) | rel 17->8 (-53%)
+   Q2 yoy              iopened 206->108 (-48%) | iclosed 151->76 (-50%) | popened 147->97 (-34%) | pmerged 137->81 (-41%) | rel 25->12 (-52%)
+   Q3 yoy              iopened 93->149 (+60%) | iclosed 132->91 (-31%) | popened 92->158 (+72%) | pmerged 81->123 (+52%) | rel 15->15 (0%)
+   H1 yoy              iopened 360->176 (-51%) | iclosed 286->129 (-55%) | popened 291->174 (-40%) | pmerged 266->144 (-46%) | rel 42->20 (-52%)
+   Q2_Q3 yoy           iopened 299->257 (-14%) | iclosed 283->167 (-41%) | popened 239->255 (+7%) | pmerged 218->204 (-6%) | rel 40->27 (-33%)
+   Jan_Sep yoy         iopened 453->325 (-28%) | iclosed 418->220 (-47%) | popened 383->332 (-13%) | pmerged 347->267 (-23%) | rel 57->35 (-39%)
+   Jan_1_to_Oct_6 yoy  iopened 465->333 (-28%) | iclosed 421->222 (-47%) | popened 395->337 (-15%) | pmerged 354->271 (-23%) | rel 59->35 (-41%)
+
+=== The six pipeline packages (6 repos) — gsm, gsm.core, gsm.mapping, gsm.kri, gsm.reporting, gsm.qtl (the earlier pass's cut).
+   in: gsm, gsm.core, gsm.mapping, gsm.kri, gsm.reporting, gsm.qtl
+   dropped: gsm.viz, qcthat, gsm.datasim, gsm.utils, workr, gsm.guide, gsm.vizr, gsm.dash, clindata, gsm.app, gsm.qc, gh.dash, open.gismo, OpenRBQM.github.io, gsm.digitpref, gsm.ae, openrbqm, openRBQM-workshop, gsm.pd
+  [no_bots] quarter      iO   iC   pO   pM  rel
+   2025Q1           73   73   75   66   11
+   2025Q2           98   81   94   86   19
+   2025Q3           34   40   36   32    8
+   2025Q4           45   30   34   28    3
+   2026Q1           60   48   61   53    7
+   2026Q2           65   38   62   50   12
+   2026Q3           79   55   84   70   12
+   Q1 yoy              iopened 73->60 (-18%) | iclosed 73->48 (-34%) | popened 75->61 (-19%) | pmerged 66->53 (-20%) | rel 11->7 (-36%)
+   Q2 yoy              iopened 98->65 (-34%) | iclosed 81->38 (-53%) | popened 94->62 (-34%) | pmerged 86->50 (-42%) | rel 19->12 (-37%)
+   Q3 yoy              iopened 34->79 (+132%) | iclosed 40->55 (+38%) | popened 36->84 (+133%) | pmerged 32->70 (+119%) | rel 8->12 (+50%)
+   H1 yoy              iopened 171->125 (-27%) | iclosed 154->86 (-44%) | popened 169->123 (-27%) | pmerged 152->103 (-32%) | rel 30->19 (-37%)
+   Q2_Q3 yoy           iopened 132->144 (+9%) | iclosed 121->93 (-23%) | popened 130->146 (+12%) | pmerged 118->120 (+2%) | rel 27->24 (-11%)
+   Jan_Sep yoy         iopened 205->204 (-1%) | iclosed 194->141 (-27%) | popened 205->207 (+1%) | pmerged 184->173 (-6%) | rel 38->31 (-18%)
+   Jan_1_to_Oct_6 yoy  iopened 214->211 (-1%) | iclosed 196->142 (-28%) | popened 211->208 (-1%) | pmerged 188->173 (-8%) | rel 39->31 (-21%)
+  [with_bots] quarter      iO   iC   pO   pM  rel
+   2025Q1           73   73   75   66   11
+   2025Q2           98   81   94   86   19
+   2025Q3           34   40   36   32    8
+   2025Q4           45   30   34   28    3
+   2026Q1           61   49   61   53    7
+   2026Q2           68   41   62   50   12
+   2026Q3           79   55   98   79   12
+   Q1 yoy              iopened 73->61 (-16%) | iclosed 73->49 (-33%) | popened 75->61 (-19%) | pmerged 66->53 (-20%) | rel 11->7 (-36%)
+   Q2 yoy              iopened 98->68 (-31%) | iclosed 81->41 (-49%) | popened 94->62 (-34%) | pmerged 86->50 (-42%) | rel 19->12 (-37%)
+   Q3 yoy              iopened 34->79 (+132%) | iclosed 40->55 (+38%) | popened 36->98 (+172%) | pmerged 32->79 (+147%) | rel 8->12 (+50%)
+   H1 yoy              iopened 171->129 (-25%) | iclosed 154->90 (-42%) | popened 169->123 (-27%) | pmerged 152->103 (-32%) | rel 30->19 (-37%)
+   Q2_Q3 yoy           iopened 132->147 (+11%) | iclosed 121->96 (-21%) | popened 130->160 (+23%) | pmerged 118->129 (+9%) | rel 27->24 (-11%)
+   Jan_Sep yoy         iopened 205->208 (+2%) | iclosed 194->145 (-25%) | popened 205->221 (+8%) | pmerged 184->182 (-1%) | rel 38->31 (-18%)
+   Jan_1_to_Oct_6 yoy  iopened 214->215 (+1%) | iclosed 196->146 (-26%) | popened 211->222 (+5%) | pmerged 188->182 (-3%) | rel 39->31 (-21%)
+
+=== per repo, 1 Jan to 6 Oct, bots out: prs merged 2025 -> 2026 | first public item
+   Gilead-Public/gsm                   21 -> 3   2022-01-04  created 2022-01-07
+   Gilead-Public/gsm.viz               13 -> 37  2022-08-15  created 2022-08-09
+   Gilead-Public/qcthat                 2 -> 49  2024-01-15  created 2024-01-11
+   Gilead-Public/gsm.qtl               20 -> 39  2024-04-01  created 2024-04-01
+   Gilead-Public/gsm.datasim           24 -> 22  2024-10-18  created 2024-10-08
+   Gilead-Public/gsm.mapping           30 -> 31  2024-08-12  created 2024-12-03
+   Gilead-Public/gsm.kri               47 -> 49  2024-06-17  created 2024-12-18
+   Gilead-Public/gsm.reporting         26 -> 17  2025-01-29  created 2025-01-27
+   Gilead-Public/gsm.core              44 -> 34  2025-03-10  created 2025-03-10
+   Gilead-Public/gsm.utils              2 -> 48  2025-03-12  created 2025-07-22
+   Gilead-Public/workr                  0 -> 40  2026-02-05  created 2026-01-27
+   Gilead-Public/gsm.guide              0 -> 1   2026-07-21  created 2026-04-01
+   Gilead-Public/gsm.vizr               0 -> 3   2026-08-12  created 2026-08-11
+   Gilead-Public/gsm.dash               0 -> 0   2026-09-14  created 2026-09-04
+   Gilead-BioStats/clindata             1 -> 0   2022-02-05  created 2022-02-04
+   Gilead-BioStats/gsm.app             74 -> 1   2022-06-02  created 2022-06-02
+   Gilead-BioStats/gsm.qc              27 -> 1   2025-02-04  created 2025-02-03
+   Gilead-BioStats/gh.dash              0 -> 20  2026-02-03  created 2026-02-03
+   Gilead-BioStats/open.gismo           0 -> 1   2026-03-25  created 2026-03-19
+   OpenRBQM/OpenRBQM.github.io          8 -> 5   2024-07-22  created 2024-05-29
+   OpenRBQM/gsm.digitpref               2 -> 0   2024-09-11  created 2024-08-29
+   OpenRBQM/gsm.ae                      9 -> 0   2024-12-17  created 2024-12-17
+   OpenRBQM/openrbqm                    2 -> 0   2025-02-03  created 2025-01-21
+   OpenRBQM/openRBQM-workshop           7 -> 0   2025-02-25  created 2025-01-28
+   OpenRBQM/gsm.pd                      0 -> 0   2025-02-26  created 2025-02-26
+
+=== contributors, all_25: quarter accounts items items/acct accts>=10 items/acct>=10 median top1% top3% | mergers prsMerged perMerger
+   2025Q1 7 315 45 4 77.8 35 41.9 87.6 | 5 132 26.4
+   2025Q2 12 357 29.8 5 66.8 7 30.8 73.4 | 9 138 15.3
+   2025Q3 8 198 24.8 5 38.2 19 36.9 77.3 | 7 82 11.7
+   2025Q4 7 225 32.1 5 43.8 24 48.4 79.6 | 7 61 8.7
+   2026Q1 8 358 44.8 6 59.2 36.5 41.6 72.1 | 8 119 14.9
+   2026Q2 10 366 36.6 7 51.1 49.5 18.9 52.5 | 8 148 18.5
+   2026Q3 8 343 42.9 7 48.9 33.5 25.9 71.4 | 7 132 18.9
+   Q1 accounts 7->8 (both 4) items/acct 45->44.8 | >=10: 4->6, 77.8->59.2 | top1 41.9%->41.6% | merged/merger 26.4->14.9 (5->8)
+   Q2 accounts 12->10 (both 6) items/acct 29.8->36.6 | >=10: 5->7, 66.8->51.1 | top1 30.8%->18.9% | merged/merger 15.3->18.5 (9->8)
+   Q3 accounts 8->8 (both 5) items/acct 24.8->42.9 | >=10: 5->7, 38.2->48.9 | top1 36.9%->25.9% | merged/merger 11.7->18.9 (7->7)
+   H1 accounts 13->11 (both 6) items/acct 51.7->65.8 | >=10: 5->8, 129->89.9 | top1 34.2%->27.3% | merged/merger 30->26.7 (9->10)
+   Q2_Q3 accounts 13->11 (both 6) items/acct 42.7->64.5 | >=10: 6->8, 89.5->88.3 | top1 33%->21.6% | merged/merger 22->35 (10->8)
+   Jan_Sep accounts 14->12 (both 6) items/acct 62.1->88.9 | >=10: 6->8, 141.3->132.6 | top1 33.4%->18.6% | merged/merger 35.2->39.9 (10->10)
+   Jan_1_to_Oct_6 accounts 14->12 (both 6) items/acct 63.9->89.8 | >=10: 6->8, 145.3->134 | top1 32.8%->18.4% | merged/merger 35.9->40.1 (10->10)
+
+=== contributors, active_both_years: quarter accounts items items/acct accts>=10 items/acct>=10 median top1% top3% | mergers prsMerged perMerger
+   2025Q1 6 143 23.8 3 43.7 14 62.9 91.6 | 4 59 14.8
+   2025Q2 12 239 19.9 5 44.8 3.5 36.4 79.1 | 9 106 11.8
+   2025Q3 7 88 12.6 4 21 10 40.9 84.1 | 6 40 6.7
+   2025Q4 7 93 13.3 4 21.3 16 26.9 74.2 | 6 34 5.7
+   2026Q1 6 135 22.5 4 30.5 17 42.2 79.3 | 7 57 8.1
+   2026Q2 8 197 24.6 6 31.5 18 34 70.6 | 6 76 12.7
+   2026Q3 7 272 38.9 6 44.2 26 28.3 73.2 | 7 100 14.3
+   Q1 accounts 6->6 (both 4) items/acct 23.8->22.5 | >=10: 3->4, 43.7->30.5 | top1 62.9%->42.2% | merged/merger 14.8->8.1 (4->7)
+   Q2 accounts 12->8 (both 5) items/acct 19.9->24.6 | >=10: 5->6, 44.8->31.5 | top1 36.4%->34% | merged/merger 11.8->12.7 (9->6)
+   Q3 accounts 7->7 (both 5) items/acct 12.6->38.9 | >=10: 4->6, 21->44.2 | top1 40.9%->28.3% | merged/merger 6.7->14.3 (6->7)
+   H1 accounts 12->9 (both 6) items/acct 31.8->36.9 | >=10: 5->8, 72.8->41.4 | top1 46.3%->31% | merged/merger 18.3->14.8 (9->9)
+   Q2_Q3 accounts 13->9 (both 6) items/acct 25.2->52.1 | >=10: 5->7, 61.6->65.9 | top1 37.6%->27.9% | merged/merger 14.6->22 (10->8)
+   Jan_Sep accounts 13->9 (both 6) items/acct 36.2->67.1 | >=10: 5->8, 89.6->75.4 | top1 45.3%->24.8% | merged/merger 20.5->25.9 (10->9)
+   Jan_1_to_Oct_6 accounts 13->9 (both 6) items/acct 37.8->68.1 | >=10: 5->8, 93.2->76.5 | top1 43.3%->24.8% | merged/merger 21.2->26 (10->9)
+
+=== AI-marked commits by month (all refs | default branch): commits ai share% copilot claude autofix authors authorsAI
+   2025-01 318 0 0% agent 0 0% sugg 0 cop 0 cl 0 authors 9 0 | 152 0 0%
+   2025-02 308 0 0% agent 0 0% sugg 0 cop 0 cl 0 authors 13 0 | 194 0 0%
+   2025-03 533 0 0% agent 0 0% sugg 0 cop 0 cl 0 authors 15 0 | 332 0 0%
+   2025-04 273 0 0% agent 0 0% sugg 0 cop 0 cl 0 authors 15 0 | 150 0 0%
+   2025-05 315 0 0% agent 0 0% sugg 0 cop 0 cl 0 authors 12 0 | 166 0 0%
+   2025-06 556 5 0.9% agent 1 0.2% sugg 4 cop 5 cl 0 authors 15 1 | 331 0 0%
+   2025-07 197 2 1% agent 2 1% sugg 0 cop 2 cl 0 authors 10 1 | 89 1 1.1%
+   2025-08 161 3 1.9% agent 3 1.9% sugg 0 cop 3 cl 0 authors 11 1 | 68 1 1.5%
+   2025-09 460 10 2.2% agent 1 0.2% sugg 9 cop 10 cl 0 authors 16 1 | 249 1 0.4%
+   2025-10 256 10 3.9% agent 3 1.2% sugg 7 cop 10 cl 0 authors 11 2 | 132 2 1.5%
+   2025-11 324 2 0.6% agent 1 0.3% sugg 1 cop 2 cl 0 authors 13 1 | 113 1 0.9%
+   2025-12 261 1 0.4% agent 0 0% sugg 1 cop 1 cl 0 authors 17 0 | 113 0 0%
+   2026-01 671 13 1.9% agent 5 0.7% sugg 8 cop 13 cl 0 authors 16 2 | 233 3 1.3%
+   2026-02 649 16 2.5% agent 2 0.3% sugg 14 cop 16 cl 0 authors 22 2 | 195 1 0.5%
+   2026-03 796 21 2.6% agent 3 0.4% sugg 18 cop 21 cl 0 authors 16 3 | 258 3 1.2%
+   2026-04 920 61 6.6% agent 45 4.9% sugg 16 cop 61 cl 0 authors 16 6 | 155 27 17.4%
+   2026-05 732 70 9.6% agent 66 9% sugg 4 cop 63 cl 7 authors 18 4 | 146 41 28.1%
+   2026-06 688 62 9% agent 48 7% sugg 14 cop 40 cl 22 authors 17 5 | 252 48 19%
+   2026-07 876 52 5.9% agent 49 5.6% sugg 3 cop 19 cl 33 authors 18 7 | 186 33 17.7%
+   2026-08 631 38 6% agent 34 5.4% sugg 4 cop 32 cl 6 authors 17 4 | 119 3 2.5%
+   2026-09 427 58 13.6% agent 58 13.6% sugg 0 cop 22 cl 36 authors 17 5 | 53 12 22.6%
+   2025Q1 1159 0 0% agent 0 0% sugg 0 cop 0 cl 0 authors 16 0 | 678 0 0%
+   2025Q2 1144 5 0.4% agent 1 0.1% sugg 4 cop 5 cl 0 authors 22 1 | 647 0 0%
+   2025Q3 818 15 1.8% agent 6 0.7% sugg 9 cop 15 cl 0 authors 18 3 | 406 3 0.7%
+   2025Q4 841 13 1.5% agent 4 0.5% sugg 9 cop 13 cl 0 authors 18 2 | 358 3 0.8%
+   2026Q1 2116 50 2.4% agent 10 0.5% sugg 40 cop 50 cl 0 authors 23 4 | 686 7 1%
+   2026Q2 2340 193 8.2% agent 159 6.8% sugg 34 cop 164 cl 29 authors 23 11 | 553 116 21%
+   2026Q3 1934 148 7.7% agent 141 7.3% sugg 7 cop 73 cl 75 authors 19 8 | 358 48 13.4%
+   first AI-marked commit 2025-06-03T17:29:03.000Z | co-author names {"Copilot":382,"Copilot Autofix powered by AI":47,"Claude Opus 4.8 (1M context)":17,"Claude Opus 4.6":1,"Claude Opus 5.5":24,"Claude Fable 5":36,"Claude Fable 5.1":3,"Claude Sonnet 4.6":2,"Claude Opus 5":12,"Copilot App":3,"GitHub Copilot":58,"Claude Opus 4.7":4,"Claude Opus 4.8":1,"Claude Opus 4.7 (1M context)":5,"Claude Sonnet 5":2,"Claude Code":1}
+   by repo 2026:
+     Gilead-Public/gsm                  19 0 0%
+     Gilead-Public/gsm.viz              337 53 15.7%
+     Gilead-Public/qcthat               833 6 0.7%
+     Gilead-Public/gsm.qtl              513 6 1.2%
+     Gilead-Public/gsm.datasim          405 23 5.7%
+     Gilead-Public/gsm.mapping          375 11 2.9%
+     Gilead-Public/gsm.kri              1057 93 8.8%
+     Gilead-Public/gsm.reporting        172 3 1.7%
+     Gilead-Public/gsm.core             444 8 1.8%
+     Gilead-Public/gsm.utils            791 11 1.4%
+     Gilead-Public/workr                528 53 10%
+     Gilead-Public/gsm.guide            11 0 0%
+     Gilead-Public/gsm.vizr             86 6 7%
+     Gilead-Public/gsm.dash             3 3 100%
+     Gilead-BioStats/gsm.app            29 0 0%
+     Gilead-BioStats/gsm.qc             1 0 0%
+     Gilead-BioStats/gh.dash            742 16 2.2%
+     Gilead-BioStats/open.gismo         38 13 34.2%
+     OpenRBQM/OpenRBQM.github.io        67 5 7.5%
+   pr commits listed 11326 not in clones 1265
+
+=== PR evidence by month: prs agentAcct attrib footer aiCommit copilotReview namesAI | written% any% | authors authorsAI
+   2025-01 39 0 0 0 0 sugg 0 rev 0 0 | 0 0% 0 0% | 4 0
+   2025-02 36 0 0 0 0 sugg 0 rev 0 0 | 0 0% 0 0% | 5 0
+   2025-03 75 0 0 0 0 sugg 0 rev 0 0 | 0 0% 0 0% | 5 0
+   2025-04 39 0 0 0 0 sugg 0 rev 1 1 | 0 0% 1 2.6% | 6 0
+   2025-05 42 0 0 0 0 sugg 1 rev 0 1 | 0 0% 1 2.4% | 6 0
+   2025-06 66 0 0 0 1 sugg 8 rev 17 1 | 1 1.5% 20 30.3% | 6 1
+   2025-07 21 0 0 0 1 sugg 1 rev 8 0 | 1 4.8% 9 42.9% | 4 1
+   2025-08 15 0 0 0 3 sugg 0 rev 6 0 | 3 20% 7 46.7% | 4 2
+   2025-09 58 0 0 0 1 sugg 3 rev 12 0 | 1 1.7% 14 24.1% | 8 1
+   2025-10 27 0 0 0 1 sugg 3 rev 9 0 | 1 3.7% 9 33.3% | 5 1
+   2025-11 21 0 0 0 1 sugg 2 rev 8 1 | 1 4.8% 8 38.1% | 5 1
+   2025-12 19 0 0 0 1 sugg 3 rev 7 1 | 1 5.3% 10 52.6% | 7 1
+   2026-01 46 0 0 1 3 sugg 9 rev 27 2 | 4 8.7% 30 65.2% | 6 3
+   2026-02 51 0 0 0 2 sugg 10 rev 26 2 | 2 3.9% 28 54.9% | 7 1
+   2026-03 47 0 0 0 3 sugg 10 rev 21 0 | 3 6.4% 23 48.9% | 6 3
+   2026-04 52 0 11 1 16 sugg 10 rev 17 12 | 16 30.8% 32 61.5% | 6 5
+   2026-05 69 0 0 6 22 sugg 8 rev 26 11 | 22 31.9% 37 53.6% | 7 6
+   2026-06 46 0 0 2 30 sugg 5 rev 31 5 | 30 65.2% 38 82.6% | 4 3
+   2026-07 61 0 9 1 22 sugg 6 rev 22 17 | 25 41% 34 55.7% | 7 6
+   2026-08 61 0 10 2 9 sugg 7 rev 15 13 | 18 29.5% 21 34.4% | 6 5
+   2026-09 49 0 19 4 22 sugg 1 rev 27 21 | 37 75.5% 41 83.7% | 7 5
+   2025Q1 150 0 0 0 0 sugg 0 rev 0 0 | 0 0% 0 0% | 6 0
+   2025Q2 147 0 0 0 1 sugg 9 rev 18 3 | 1 0.7% 22 15% | 10 1
+   2025Q3 94 0 0 0 5 sugg 4 rev 26 0 | 5 5.3% 30 31.9% | 8 2
+   2025Q4 67 0 0 0 3 sugg 8 rev 24 2 | 3 4.5% 27 40.3% | 7 1
+   2026Q1 144 0 0 1 8 sugg 29 rev 74 4 | 9 6.3% 81 56.3% | 7 4
+   2026Q2 167 0 11 9 68 sugg 23 rev 74 28 | 68 40.7% 107 64.1% | 8 8
+   2026Q3 171 0 38 7 53 sugg 14 rev 64 51 | 80 46.8% 96 56.1% | 7 7
+   active_both_years:
+   2025Q1 71 0 0 0 0 sugg 0 rev 0 0 | 0 0% 0 0% | 5 0
+   2025Q2 114 0 0 0 0 sugg 9 rev 14 3 | 0 0% 18 15.8% | 10 0
+   2025Q3 48 0 0 0 2 sugg 3 rev 14 0 | 2 4.2% 16 33.3% | 6 1
+   2025Q4 40 0 0 0 0 sugg 2 rev 11 1 | 0 0% 12 30% | 7 0
+   2026Q1 71 0 0 0 3 sugg 17 rev 41 1 | 3 4.2% 44 62% | 6 1
+   2026Q2 92 0 0 7 44 sugg 15 rev 39 11 | 44 47.8% 61 66.3% | 7 5
+   2026Q3 127 0 33 6 47 sugg 12 rev 53 42 | 70 55.1% 80 63% | 7 7
+   by repo 2026:
+   Gilead-Public/gsm                  4 0 0 0 0 sugg 0 rev 0 0 | 0 0% 0 0% | 1 0
+   Gilead-Public/gsm.viz              51 0 2 0 42 sugg 7 rev 47 8 | 44 86.3% 51 100% | 3 2
+   Gilead-Public/qcthat               53 0 0 0 4 sugg 1 rev 23 2 | 4 7.5% 24 45.3% | 4 1
+   Gilead-Public/gsm.qtl              44 0 3 1 5 sugg 7 rev 19 5 | 7 15.9% 24 54.5% | 7 3
+   Gilead-Public/gsm.datasim          31 0 5 3 14 sugg 3 rev 11 7 | 15 48.4% 20 64.5% | 8 6
+   Gilead-Public/gsm.mapping          35 0 3 1 6 sugg 4 rev 11 4 | 8 22.9% 16 45.7% | 8 4
+   Gilead-Public/gsm.kri              66 0 14 5 16 sugg 13 rev 25 19 | 27 40.9% 43 65.2% | 8 5
+   Gilead-Public/gsm.reporting        17 0 1 1 2 sugg 4 rev 3 2 | 3 17.6% 5 29.4% | 6 3
+   Gilead-Public/gsm.core             42 0 5 1 8 sugg 6 rev 15 8 | 12 28.6% 24 57.1% | 7 4
+   Gilead-Public/gsm.utils            57 0 1 2 6 sugg 10 rev 26 7 | 7 12.3% 29 50.9% | 7 5
+   Gilead-Public/workr                43 0 9 1 19 sugg 3 rev 16 12 | 19 44.2% 26 60.5% | 5 2
+   Gilead-Public/gsm.guide            1 0 0 0 0 sugg 0 rev 0 0 | 0 0% 0 0% | 1 0
+   Gilead-Public/gsm.vizr             4 0 3 1 1 sugg 2 rev 4 4 | 4 100% 4 100% | 2 2
+   Gilead-BioStats/gsm.app            3 0 1 0 0 sugg 0 rev 0 1 | 1 33.3% 1 33.3% | 2 1
+   Gilead-BioStats/gh.dash            25 0 2 0 3 sugg 6 rev 10 2 | 3 12% 13 52% | 4 1
+   Gilead-BioStats/open.gismo         3 0 0 0 2 sugg 0 rev 0 1 | 2 66.7% 2 66.7% | 2 1
+   OpenRBQM/OpenRBQM.github.io        5 0 0 1 1 sugg 0 rev 2 1 | 1 20% 2 40% | 1 1
+
+=== issue evidence: issues attrib footer namesAI share%
+   2025-01 69 0 0 0 0%
+   2025-02 52 0 0 0 0%
+   2025-03 44 0 0 0 0%
+   2025-04 45 0 0 0 0%
+   2025-05 85 0 0 0 0%
+   2025-06 80 0 0 0 0%
+   2025-07 36 0 0 0 0%
+   2025-08 42 0 0 0 0%
+   2025-09 26 0 0 0 0%
+   2025-10 67 0 0 2 0%
+   2025-11 33 0 0 1 0%
+   2025-12 58 3 1 4 6.9%
+   2026-01 80 0 0 0 0%
+   2026-02 91 0 0 0 0%
+   2026-03 43 0 0 1 0%
+   2026-04 65 17 0 17 26.2%
+   2026-05 77 0 0 0 0%
+   2026-06 57 7 0 7 12.3%
+   2026-07 46 9 0 10 19.6%
+   2026-08 69 22 0 22 31.9%
+   2026-09 57 35 0 30 61.4%
+   2025Q1 165 0 0 0 0%
+   2025Q2 210 0 0 0 0%
+   2025Q3 104 0 0 0 0%
+   2025Q4 158 3 1 7 2.5%
+   2026Q1 214 0 0 1 0%
+   2026Q2 199 24 0 24 12.1%
+   2026Q3 172 66 0 62 38.4%
+
+=== comments by quarter: all byPeople withAttrib byCopilot otherBots share%
+   2025Q1 403 376 0 0 27 0%
+   2025Q2 529 484 0 22 23 0%
+   2025Q3 537 440 0 77 20 0%
+   2025Q4 474 324 0 63 87 0%
+   2026Q1 1125 523 0 291 311 0%
+   2026Q2 1484 481 7 451 552 1.5%
+   2026Q3 1237 313 87 245 679 27.8%
+
+=== shape by quarter
+   2025Q1 {"prs_merged":132,"median_hours_open_to_merge":23.9,"share_merged_within_24h_pct":50,"median_lines_changed":180,"median_files_changed":10,"merged_prs_reviewed_by_another_person_pct":83.3,"issues_opened_with_30_days_to_follow":165,"closed_within_30_days":80,"closed_within_30_days_pct":48.5}
+   2025Q2 {"prs_merged":138,"median_hours_open_to_merge":46.8,"share_merged_within_24h_pct":37.7,"median_lines_changed":181.5,"median_files_changed":11,"merged_prs_reviewed_by_another_person_pct":84.1,"issues_opened_with_30_days_to_follow":210,"closed_within_30_days":96,"closed_within_30_days_pct":45.7}
+   2025Q3 {"prs_merged":82,"median_hours_open_to_merge":47.5,"share_merged_within_24h_pct":39,"median_lines_changed":183.5,"median_files_changed":10,"merged_prs_reviewed_by_another_person_pct":89,"issues_opened_with_30_days_to_follow":104,"closed_within_30_days":46,"closed_within_30_days_pct":44.2}
+   2025Q4 {"prs_merged":61,"median_hours_open_to_merge":28.9,"share_merged_within_24h_pct":42.6,"median_lines_changed":218,"median_files_changed":10,"merged_prs_reviewed_by_another_person_pct":85.2,"issues_opened_with_30_days_to_follow":158,"closed_within_30_days":77,"closed_within_30_days_pct":48.7}
+   2026Q1 {"prs_merged":119,"median_hours_open_to_merge":62.5,"share_merged_within_24h_pct":41.2,"median_lines_changed":310,"median_files_changed":11,"merged_prs_reviewed_by_another_person_pct":93.3,"issues_opened_with_30_days_to_follow":214,"closed_within_30_days":142,"closed_within_30_days_pct":66.4}
+   2026Q2 {"prs_merged":148,"median_hours_open_to_merge":24.5,"share_merged_within_24h_pct":49.3,"median_lines_changed":479.5,"median_files_changed":11,"merged_prs_reviewed_by_another_person_pct":79.1,"issues_opened_with_30_days_to_follow":199,"closed_within_30_days":120,"closed_within_30_days_pct":60.3}
+   2026Q3 {"prs_merged":132,"median_hours_open_to_merge":85.1,"share_merged_within_24h_pct":35.6,"median_lines_changed":176,"median_files_changed":10,"merged_prs_reviewed_by_another_person_pct":96.2,"issues_opened_with_30_days_to_follow":129,"closed_within_30_days":63,"closed_within_30_days_pct":48.8}
+
+=== merged PRs that touch a test file / add a new one
+  all_25
+   2025Q1 129 49 38% 24 18.6% no list 3
+   2025Q2 138 58 42% 23 16.7% no list 0
+   2025Q3 82 22 26.8% 9 11% no list 0
+   2025Q4 61 27 44.3% 15 24.6% no list 0
+   2026Q1 119 66 55.5% 36 30.3% no list 0
+   2026Q2 148 88 59.5% 52 35.1% no list 0
+   2026Q3 132 74 56.1% 53 40.2% no list 0
+   Q1 touch 49/129 (38%) -> 66/119 (55.5%) | add 18.6% -> 30.3%
+   Q2 touch 58/138 (42%) -> 88/148 (59.5%) | add 16.7% -> 35.1%
+   Q3 touch 22/82 (26.8%) -> 74/132 (56.1%) | add 11% -> 40.2%
+   H1 touch 107/267 (40.1%) -> 154/267 (57.7%) | add 17.6% -> 33%
+   Q2_Q3 touch 80/220 (36.4%) -> 162/280 (57.9%) | add 14.5% -> 37.5%
+   Jan_Sep touch 129/349 (37%) -> 228/399 (57.1%) | add 16% -> 35.3%
+   Jan_1_to_Oct_6 touch 129/356 (36.2%) -> 229/401 (57.1%) | add 15.7% -> 35.4%
+  active_both_years
+   2025Q1 59 19 32.2% 11 18.6% no list 0
+   2025Q2 106 37 34.9% 14 13.2% no list 0
+   2025Q3 40 9 22.5% 1 2.5% no list 0
+   2025Q4 34 11 32.4% 3 8.8% no list 0
+   2026Q1 57 26 45.6% 18 31.6% no list 0
+   2026Q2 76 45 59.2% 28 36.8% no list 0
+   2026Q3 100 63 63% 47 47% no list 0
+   Q1 touch 19/59 (32.2%) -> 26/57 (45.6%) | add 18.6% -> 31.6%
+   Q2 touch 37/106 (34.9%) -> 45/76 (59.2%) | add 13.2% -> 36.8%
+   Q3 touch 9/40 (22.5%) -> 63/100 (63%) | add 2.5% -> 47%
+   H1 touch 56/165 (33.9%) -> 71/133 (53.4%) | add 15.2% -> 34.6%
+   Q2_Q3 touch 46/146 (31.5%) -> 108/176 (61.4%) | add 10.3% -> 42.6%
+   Jan_Sep touch 65/205 (31.7%) -> 134/233 (57.5%) | add 12.7% -> 39.9%
+   Jan_1_to_Oct_6 touch 65/212 (30.7%) -> 135/234 (57.7%) | add 12.3% -> 40.2%
+  without_new_in_2026
+   2025Q1 129 49 38% 24 18.6% no list 3
+   2025Q2 138 58 42% 23 16.7% no list 0
+   2025Q3 82 22 26.8% 9 11% no list 0
+   2025Q4 61 27 44.3% 15 24.6% no list 0
+   2026Q1 98 56 57.1% 34 34.7% no list 0
+   2026Q2 117 64 54.7% 37 31.6% no list 0
+   2026Q3 119 67 56.3% 48 40.3% no list 0
+   Q1 touch 49/129 (38%) -> 56/98 (57.1%) | add 18.6% -> 34.7%
+   Q2 touch 58/138 (42%) -> 64/117 (54.7%) | add 16.7% -> 31.6%
+   Q3 touch 22/82 (26.8%) -> 67/119 (56.3%) | add 11% -> 40.3%
+   H1 touch 107/267 (40.1%) -> 120/215 (55.8%) | add 17.6% -> 33%
+   Q2_Q3 touch 80/220 (36.4%) -> 131/236 (55.5%) | add 14.5% -> 36%
+   Jan_Sep touch 129/349 (37%) -> 187/334 (56%) | add 16% -> 35.6%
+   Jan_1_to_Oct_6 touch 129/356 (36.2%) -> 188/336 (56%) | add 15.7% -> 35.7%
+
+=== history, all 25, bots out: quarter iO iC pO pM rel
+   2022Q1  196  165  125  112    6
+   2022Q2  154  150  109  102    9
+   2022Q3  215  154   98   95   12
+   2022Q4  243  232  170  154   39
+   2023Q1  130  159  103  104   23
+   2023Q2   76   75   65   57   12
+   2023Q3   66   53   54   48    6
+   2023Q4   76   74   66   60    2
+   2024Q1   95   81   62   53    9
+   2024Q2   76   91   45   36    2
+   2024Q3  243  211  154  143    3
+   2024Q4  171  151  131  121    7
+   2025Q1  165  137  150  132   17
+   2025Q2  210  151  147  138   25
+   2025Q3  104  134   94   82   16
+   2025Q4  158  102   67   61    8
+   2026Q1  214  193  144  119   14
+   2026Q2  199  164  167  148   15
+   2026Q3  172  106  171  132   18
+   top 3 quarters for issues_opened: 2022Q4 243, 2024Q3 243, 2022Q3 215
+   top 3 quarters for issues_closed: 2022Q4 232, 2024Q3 211, 2026Q1 193
+   top 3 quarters for prs_opened: 2026Q3 171, 2022Q4 170, 2026Q2 167
+   top 3 quarters for prs_merged: 2022Q4 154, 2026Q2 148, 2024Q3 143
+   top 3 quarters for releases: 2022Q4 39, 2025Q2 25, 2023Q1 23
+
+=== attribution line names which tool, by quarter
+   {"Claude Code":{"2026Q3":88,"2026Q4":2},"GitHub Copilot":{"2026Q2":35,"2026Q3":3,"2026Q4":5,"2025Q4":3},"Posit Assistant":{"2026Q3":13}}
+
+=== comments by quarter: people review | copilot review | people issue+pr comments
+   2025Q1 206 0 170
+   2025Q2 254 22 230
+   2025Q3 141 77 299
+   2025Q4 109 63 215
+   2026Q1 301 291 222
+   2026Q2 313 451 168
+   2026Q3 184 245 129
+
+=== compact: set x window, change 2025 -> 2026, bots out: prs opened | prs merged | issues opened | issues closed | releases
+   all_25 Q1                     150→144 (-4%)     132→119 (-10%)    165→214 (+30%)    137→193 (+41%)    17→14 (-18%)      
+   all_25 Q2                     147→167 (+14%)    138→148 (+7%)     210→199 (-5%)     151→164 (+9%)     25→15 (-40%)      
+   all_25 Q3                     94→171 (+82%)     82→132 (+61%)     104→172 (+65%)    134→106 (-21%)    16→18 (+13%)      
+   all_25 Q2_Q3                  241→338 (+40%)    220→280 (+27%)    314→371 (+18%)    285→270 (-5%)     41→33 (-20%)      
+   all_25 Jan_Sep                391→482 (+23%)    352→399 (+13%)    479→585 (+22%)    422→463 (+10%)    58→47 (-19%)      
+   active_both_years Q1          71→71 (0%)        59→57 (-3%)       72→64 (-11%)      54→51 (-6%)       10→8 (-20%)       
+   active_both_years Q2          114→92 (-19%)     106→76 (-28%)     125→105 (-16%)    85→72 (-15%)      20→12 (-40%)      
+   active_both_years Q3          48→127 (+165%)    40→100 (+150%)    40→145 (+263%)    51→89 (+75%)      9→14 (+56%)       
+   active_both_years Q2_Q3       162→219 (+35%)    146→176 (+21%)    165→250 (+52%)    136→161 (+18%)    29→26 (-10%)      
+   active_both_years Jan_Sep     233→290 (+25%)    205→233 (+14%)    237→314 (+33%)    190→212 (+12%)    39→34 (-13%)      
+   without_new_in_2026 Q1        150→116 (-23%)    132→98 (-26%)     165→187 (+13%)    137→176 (+29%)    17→12 (-29%)      
+   without_new_in_2026 Q2        147→137 (-7%)     138→117 (-15%)    210→157 (-25%)    151→128 (-15%)    25→14 (-44%)      
+   without_new_in_2026 Q3        94→153 (+63%)     82→119 (+45%)     104→159 (+53%)    134→100 (-25%)    16→15 (-6%)       
+   without_new_in_2026 Q2_Q3     241→290 (+20%)    220→236 (+7%)     314→316 (+1%)     285→228 (-20%)    41→29 (-29%)      
+   without_new_in_2026 Jan_Sep   391→406 (+4%)     352→334 (-5%)     479→503 (+5%)     422→404 (-4%)     58→41 (-29%)      
+   active_in_2026 Q1             71→143 (+101%)    59→118 (+100%)    74→206 (+178%)    54→190 (+252%)    10→13 (+30%)      
+   active_in_2026 Q2             114→165 (+45%)    106→146 (+38%)    128→196 (+53%)    85→162 (+91%)     20→15 (-25%)      
+   active_in_2026 Q3             53→159 (+200%)    44→125 (+184%)    51→163 (+220%)    53→101 (+91%)     10→16 (+60%)      
+   active_in_2026 Q2_Q3          167→324 (+94%)    150→271 (+81%)    179→359 (+101%)   138→263 (+91%)    30→31 (+3%)       
+   active_in_2026 Jan_Sep        238→467 (+96%)    209→389 (+86%)    253→565 (+123%)   192→453 (+136%)   40→44 (+10%)      
+   active_in_2025 Q1             143→72 (-50%)     128→58 (-55%)     154→67 (-57%)     135→52 (-62%)     17→8 (-53%)       
+   active_in_2025 Q2             147→93 (-37%)     137→77 (-44%)     206→105 (-49%)    151→73 (-52%)     25→12 (-52%)      
+   active_in_2025 Q3             89→132 (+48%)     78→103 (+32%)     93→149 (+60%)     132→91 (-31%)     15→15 (0%)        
+   active_in_2025 Q2_Q3          236→225 (-5%)     215→180 (-16%)    299→254 (-15%)    283→164 (-42%)    40→27 (-33%)      
+   active_in_2025 Jan_Sep        379→297 (-22%)    343→238 (-31%)    453→321 (-29%)    418→216 (-48%)    57→35 (-39%)      
+   pipeline_six Q1               75→61 (-19%)      66→53 (-20%)      73→60 (-18%)      73→48 (-34%)      11→7 (-36%)       
+   pipeline_six Q2               94→62 (-34%)      86→50 (-42%)      98→65 (-34%)      81→38 (-53%)      19→12 (-37%)      
+   pipeline_six Q3               36→84 (+133%)     32→70 (+119%)     34→79 (+132%)     40→55 (+38%)      8→12 (+50%)       
+   pipeline_six Q2_Q3            130→146 (+12%)    118→120 (+2%)     132→144 (+9%)     121→93 (-23%)     27→24 (-11%)      
+   pipeline_six Jan_Sep          205→207 (+1%)     184→173 (-6%)     205→204 (-1%)     194→141 (-27%)    38→31 (-18%)      
+
+=== marked PRs across accounts {"window":"April to September 2026","accounts_opening_prs":8,"accounts_with_a_marked_pr":8,"accounts_with_5_or_more_marked":6,"marked_prs":148,"top_account_share_of_marked_pct":29.1,"top_3_accounts_share_of_marked_pct":66.9,"accounts_with_10_or_more_prs":8,"marked_share_of_own_prs_among_accounts_with_10_or_more_pct":{"lowest":4,"median":46,"highest":89}}

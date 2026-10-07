@@ -1,0 +1,92 @@
+{
+ "started": "2026-10-07T13:06:17.591Z",
+ "finished": "2026-10-07T13:07:19.213Z",
+ "scope": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25",
+ "note": "The search matches the bare phrase \"drafted by\" and includes items opened by bots, so it can exceed the fetch count, which needs an AI tool named after the phrase and leaves bots out.",
+ "rows": [
+  {
+   "window": "2025",
+   "what": "pull requests with \"drafted by\" in the body",
+   "search_total_count": 0,
+   "counted_from_fetch": 0,
+   "query": "is:pr created:2025-01-01..2025-12-31 \"drafted by\" in:body"
+  },
+  {
+   "window": "2025",
+   "what": "issues with \"drafted by\" in the body",
+   "search_total_count": 3,
+   "counted_from_fetch": 3,
+   "query": "is:issue created:2025-01-01..2025-12-31 \"drafted by\" in:body"
+  },
+  {
+   "window": "2025",
+   "what": "pull requests reviewed by Copilot",
+   "search_total_count": 68,
+   "counted_from_fetch": 68,
+   "query": "is:pr created:2025-01-01..2025-12-31 reviewed-by:copilot-pull-request-reviewer[bot]"
+  },
+  {
+   "window": "2026Q1",
+   "what": "pull requests with \"drafted by\" in the body",
+   "search_total_count": 0,
+   "counted_from_fetch": 0,
+   "query": "is:pr created:2026-01-01..2026-03-31 \"drafted by\" in:body"
+  },
+  {
+   "window": "2026Q1",
+   "what": "issues with \"drafted by\" in the body",
+   "search_total_count": 0,
+   "counted_from_fetch": 0,
+   "query": "is:issue created:2026-01-01..2026-03-31 \"drafted by\" in:body"
+  },
+  {
+   "window": "2026Q1",
+   "what": "pull requests reviewed by Copilot",
+   "search_total_count": 74,
+   "counted_from_fetch": 74,
+   "query": "is:pr created:2026-01-01..2026-03-31 reviewed-by:copilot-pull-request-reviewer[bot]"
+  },
+  {
+   "window": "2026Q2",
+   "what": "pull requests with \"drafted by\" in the body",
+   "search_total_count": 11,
+   "counted_from_fetch": 11,
+   "query": "is:pr created:2026-04-01..2026-06-30 \"drafted by\" in:body"
+  },
+  {
+   "window": "2026Q2",
+   "what": "issues with \"drafted by\" in the body",
+   "search_total_count": 24,
+   "counted_from_fetch": 24,
+   "query": "is:issue created:2026-04-01..2026-06-30 \"drafted by\" in:body"
+  },
+  {
+   "window": "2026Q2",
+   "what": "pull requests reviewed by Copilot",
+   "search_total_count": 74,
+   "counted_from_fetch": 74,
+   "query": "is:pr created:2026-04-01..2026-06-30 reviewed-by:copilot-pull-request-reviewer[bot]"
+  },
+  {
+   "window": "2026Q3",
+   "what": "pull requests with \"drafted by\" in the body",
+   "search_total_count": 39,
+   "counted_from_fetch": 38,
+   "query": "is:pr created:2026-07-01..2026-09-30 \"drafted by\" in:body"
+  },
+  {
+   "window": "2026Q3",
+   "what": "issues with \"drafted by\" in the body",
+   "search_total_count": 66,
+   "counted_from_fetch": 66,
+   "query": "is:issue created:2026-07-01..2026-09-30 \"drafted by\" in:body"
+  },
+  {
+   "window": "2026Q3",
+   "what": "pull requests reviewed by Copilot",
+   "search_total_count": 64,
+   "counted_from_fetch": 64,
+   "query": "is:pr created:2026-07-01..2026-09-30 reviewed-by:copilot-pull-request-reviewer[bot]"
+  }
+ ]
+}
