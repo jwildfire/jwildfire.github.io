@@ -1013,7 +1013,7 @@
         <div class="pk" style="--c: var(--spec-0)"><div class="hx"><span>core</span></div><div class="t"><b>gsm.core</b><i>The engine</i></div><p class="d">Builds and scores every metric</p></div>
         <div class="pk" style="--c: var(--spec-1)"><div class="hx"><span>kri</span></div><div class="t"><b>gsm.kri</b><i>Metrics</i></div><p class="d">Key risk indicators, with their charts and reports</p></div>
         <div class="pk" style="--c: var(--spec-2)"><div class="hx"><span>app</span></div><div class="t"><b>gsm.app</b><i>Apps</i></div><p class="d">Shiny applications for gsm assessments</p></div>
-        <div class="pk" style="--c: var(--spec-3)"><div class="hx"><span>endpoints</span></div><div class="t"><b>gsm.endpoints</b><i>Domain</i></div><p class="d td">TODO (Jeremy): one line. Not public yet</p></div>
+        <div class="pk" style="--c: var(--spec-3)"><div class="hx"><span>qtl</span></div><div class="t"><b>gsm.qtl</b><i>Limits</i></div><p class="d">Quality tolerance limits, and their reports</p></div>
         <div class="pk" style="--c: var(--spec-4)"><div class="hx"><span>simaerep</span></div><div class="t"><b>gsm.simaerep</b><i>From IMPALA</i></div><p class="d">Finds sites that under-report adverse events</p></div>
         <div class="pk" style="--c: var(--spec-5)"><div class="hx"><span>workr</span></div><div class="t"><b>workr</b><i>Workflows</i></div><p class="d">Runs every step from a YAML workflow</p></div>
         <div class="pk" style="--c: var(--spec-6)"><div class="hx"><span>datasim</span></div><div class="t"><b>gsm.datasim</b><i>Test data</i></div><p class="d">Simulates trial data to test against</p></div>
@@ -1042,13 +1042,11 @@
         synthetic test data for the RBQM of Clinical Trials" (repository description);
         qcthat, "A quality control framework for R packages used in Clinical Trials"
         (repository description).
-        <br><br>TODO (Jeremy): gsm.endpoints is not public. Its repository is internal to the
-        company's GitHub organisation and returns "not found" without a login, and it is not
-        on the OpenRBQM packages page. Its cell carries the name you gave and an orange line
-        for you to fill; nothing from the internal repository is on the slide. Decide whether
-        to name it in a public talk. Public domain-specific packages that could take its
-        place: gsm.qtl (quality tolerance limits), gsm.ae (adverse events plugin), gsm.pd
-        (protocol deviations plugin).
+        <br><br>Changed 2026-10-07 (Jeremy: "swap gsm.endpoints for gsm.qtl"). gsm.endpoints, in
+        his first list, is not public: its repository is internal and it is not on the OpenRBQM
+        packages page, so it is off the slide. gsm.qtl's line is from its package description,
+        "functions, workflows, and document template to generate reports for QTL" (quality
+        tolerance limits); its tag, "Limits", is draft wording.
         <br><br>TODO (Jeremy): the hexes. None of these packages has a hex logo in its public
         repository except qcthat, whose real logo is used. The other seven are plain hexes in
         the deck's colours with the short name inside. Real hexes, if you have them or want
@@ -1056,8 +1054,8 @@
         <br><br>Choices that were mine and are easy to change: gsm.simaerep as the community
         package (the IMPALA Consortium also publishes gsm.timez, for sites with unusual event
         trajectories month by month, and gsm.studykri, for study-level limits by
-        bootstrapping); qcthat as the eighth (it sets up slide 15; gsm.mapping, gsm.reporting
-        or gsm.qtl are the alternatives); the order (engine, metrics, apps, domain on the top
+        bootstrapping); qcthat as the eighth (it sets up slide 15; gsm.mapping and gsm.reporting
+        are the alternatives); the order (engine, metrics, apps, limits on the top
         row; community, workflows, test data, quality below).
       </aside>
     </section>

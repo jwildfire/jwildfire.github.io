@@ -1,12 +1,12 @@
 # Dry-run timing
 
-Generated from keynote/slides.html (fingerprint 1959f6d0fd) by keynote/_notes/dry-run/build.mjs. Do not edit by hand; re-run the script after the deck changes.
+Generated from keynote/slides.html (fingerprint 5788a1fd9b) by keynote/_notes/dry-run/build.mjs. Do not edit by hand; re-run the script after the deck changes.
 
 ## Totals
 
 - Slides in the main run: 56
 - Slides with his spoken notes: 5 (no spoken notes yet: 51)
-- Open TODOs: 31 (6 boxes on slides (orange TODO or blue review), 25 "TODO (Jeremy)" items in notes)
+- Open TODOs: 30 (6 boxes on slides (orange TODO or blue review), 24 "TODO (Jeremy)" items in notes)
 - Words in his spoken notes: 219, which take 1.6 min at 140 words a minute
 - Slot: 40 min; the suggested split below adds up to 40 min and is not decided
 
@@ -79,12 +79,11 @@ Generated from keynote/slides.html (fingerprint 1959f6d0fd) by keynote/_notes/dr
 - 55. How I feel about it (beat 4)
 - 56. A pixel-art party of orange cats dancing under a disco ball, with confetti (beat 4)
 
-## Open TODOs (31)
+## Open TODOs (30)
 
 - Slide 8 (on slide): the contributing companies / Logos to come, from an old slide / Drop the slide or the image in keynote/_notes/inbox/
 - Slide 10 (on slide): Jeremy to reviewcommits chart, added 7 Oct
 - Slide 13 (on slide): Jeremy to reviewpackage hexes, added 7 Oct
-- Slide 13 (in notes): gsm.endpoints is not public. Its repository is internal to the company's GitHub organisation and returns "not found" without a login, and it is not on the OpenRBQM packages page. Its cell carries the name you gave and an orange line for you to fill; nothing from the internal repository is on the slide. Decide whether to name it in a public talk. Public domain-specific packages that could take its place: gsm.qtl (quality tolerance limits), gsm.ae (adverse events plugin), gsm.pd (protocol deviations plugin).
 - Slide 13 (in notes): the hexes. None of these packages has a hex logo in its public repository except qcthat, whose real logo is used. The other seven are plain hexes in the deck's colours with the short name inside. Real hexes, if you have them or want them made, drop into keynote/assets/hex/ and replace the plain ones.
 - Slide 14 (in notes): check the steps against the March all-hands deck's "Standard Development Lifecycle" slide. I did not have that slide; this version is worked back from the merged one by un-marking the agent's steps, dropping the step that only exists with an agent ("Review the plan, then prompt") and shortening "Implement, with a person steering" to "Implement". The headline is that deck's title in sentence case.
 - Slide 15 (in notes): vet the qualification sentence and say what a qualified release involves at work, in your words.
