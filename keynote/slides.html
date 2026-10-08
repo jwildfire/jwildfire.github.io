@@ -3364,6 +3364,7 @@ steps:
          ?banner= part of data-src. -->
     <section class="slide s-party" data-hue="6" style="--poster: url(assets/orange-party-poster.png)">
       <iframe data-src="party.html?banner=THANK%20YOU!" title="A pixel-art party of orange cats dancing under a disco ball, with confetti" hidden></iframe>
+      <div class="review" style="top: 24px"><b>Jeremy to review</b><br>Hacker, Inspector, thumbs and obot Oranges in the crowd; H and I popups. Added 2026-10-07</div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
         The closing slide, built 2026-10-06 at Jeremy's request: "an orange cat dance party
@@ -3382,6 +3383,17 @@ steps:
         be called again.
         <br>• Two of the cats wear the blue and gold cap from the slide that introduces Orange.
         They are not impressed.
+        <br>• Added 2026-10-07 at Jeremy's request ("include the new oranges added to the deck.
+        hacker orange, inspector orange"): five of the cats are the Oranges from the rest of
+        the deck. Hacker Orange (hoodie, laptop) and Inspector Orange (magnifying glass,
+        clipboard) stand near the front; a thumbs-up Orange, a thumbs-down Orange and obot
+        (antenna, shades, backpack) are further back. Now and then they say their lines from
+        the slides, in capitals because the pixel font has no lower case.
+        <br>• Press H and Hacker Orange comes up in the bottom left corner saying "Let's mess
+        around and find out." while green ones and zeroes fall down the sky. Press I and
+        Inspector Orange comes up asking "What evidence do you have?"; the dancing stops for
+        four beats, then: "Oh jeez. I'll check in later." Clicking either of them in the
+        crowd does the same, which is the only way on a phone.
         <br><br>Credit: adapted from Kākāpō Party by Simon Willison
         (simonwillison.net/2026/Sep/26/kakapo-party/, source in github.com/simonw/tools,
         Apache License 2.0). The credit and the list of changes are at the top of
@@ -4323,6 +4335,11 @@ steps:
           // On the party slide, S calls the guest: a kākāpō who thanks Simon.
           var pf = slides[i].querySelector('iframe[data-src]');
           if (pf && !pf.hidden && pf.contentWindow) pf.contentWindow.postMessage({ type: 'party-guest' }, '*');
+        }
+        else if (k === 'h' || k === 'H' || k === 'i' || k === 'I') {
+          // On the party slide, H calls Hacker Orange up from the corner and I calls Inspector Orange.
+          var qf = slides[i].querySelector('iframe[data-src]');
+          if (qf && !qf.hidden && qf.contentWindow) qf.contentWindow.postMessage({ type: (k === 'h' || k === 'H') ? 'party-hacker' : 'party-inspector' }, '*');
         }
         else if (k === 'f' || k === 'F') {
           if (!document.fullscreenElement) document.documentElement.requestFullscreen && document.documentElement.requestFullscreen();

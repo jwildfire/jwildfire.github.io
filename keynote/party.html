@@ -14,6 +14,12 @@
   mountains; the banner text is set with ?banner=; the calls are cat calls; the pixel fonts
   cover A to Z; when the page is embedded it passes navigation keys up to the deck; and
   pressing S brings one of the original kākāpō up from the corner to say thanks.
+
+  Changes, 2026-10-07: the Oranges from the rest of the deck joined the crowd (Hacker Orange
+  in a hoodie with a laptop, Inspector Orange with a magnifying glass and a clipboard, a
+  thumbs-up and a thumbs-down Orange, and obot the robot cat); they say their lines from the
+  slides; pressing H or I, or clicking either of them in the crowd, brings Hacker Orange or
+  Inspector Orange up from the other corner.
 -->
 <html lang="en">
 <head>
@@ -51,7 +57,7 @@
 <body>
 <div id="stage">
   <canvas id="party" tabindex="0" role="img"
-    aria-label="Pixel-art party of orange cats jumping up and down under confetti, balloons and a disco ball. Click, tap or press Space for more confetti. Press S for a guest."></canvas>
+    aria-label="Pixel-art party of orange cats jumping up and down under confetti, balloons and a disco ball. Click, tap or press Space for more confetti. Press S, H or I for a guest."></canvas>
 </div>
 <script>
 (() => {
@@ -147,15 +153,16 @@ function widen(rows, a, b) {     // chubbier rows for squash and the chest-puffe
     return [-1, r.slice(0, L + 1) + r[L + 1] + r.slice(L + 1, R) + r[R - 1] + r.slice(R)];
   });
 }
-function buildFrames(pal) {
+// A cat that is holding something keeps its front legs to itself: paws = false.
+function buildFrames(pal, body = BODY, airLegs = AIR_LEGS, paws = true) {
   const plain = rows => rows.map(r => [0, r]);
   // [body rows, tail, tail x, tail y, front legs, leg x, leg y]
   const defs = {
-    STAND:  [plain(BODY), TAIL_CURL, 14, 11],
-    SQUASH: [widen(BODY.slice(0, 13).concat([BODY[14]], BODY.slice(16)), 11, 16), TAIL_CURL, 15, 9],
-    UP:     [plain(BODY.slice(0, 14).concat([BODY[13]], BODY.slice(14, 18), AIR_LEGS)), TAIL_OUT, 14, 14, PAW_UP, -4, 2],
-    DOWN:   [plain(BODY.slice(0, 18).concat(AIR_LEGS)), TAIL_OUT, 14, 12, PAW_OUT, -4, 11],
-    PUFF:   [widen(BODY, 11, 18), TAIL_CURL, 15, 11],
+    STAND:  [plain(body), TAIL_CURL, 14, 11],
+    SQUASH: [widen(body.slice(0, 13).concat([body[14]], body.slice(16)), 11, 16), TAIL_CURL, 15, 9],
+    UP:     [plain(body.slice(0, 14).concat([body[13]], body.slice(14, 18), airLegs)), TAIL_OUT, 14, 14, PAW_UP, -4, 2],
+    DOWN:   [plain(body.slice(0, 18).concat(airLegs)), TAIL_OUT, 14, 12, PAW_OUT, -4, 11],
+    PUFF:   [widen(body, 11, 18), TAIL_CURL, 15, 11],
   };
   const out = {};
   for (const k in defs) {
@@ -165,7 +172,7 @@ function buildFrames(pal) {
     rows.forEach(([dx, r], y) => paintGrid(g, [r], pal, OX + dx, y));
     g.fillStyle = '#fff4d6';                             // whiskers, two a side
     for (const [wxx, wyy] of [[-2, 7], [-1, 7], [-1, 9], [-2, 10]]) { g.fillRect(OX + wxx, wyy, 1, 1); g.fillRect(OX + 17 - wxx, wyy, 1, 1); }
-    if (paw) {
+    if (paw && paws) {
       paintGrid(g, paw, pal, OX + wx, wy);
       const mirrored = paw.map(r => r.split('').reverse().join(''));
       paintGrid(g, mirrored, pal, OX + 17 - wx - (paw[0].length - 1), wy);
@@ -174,7 +181,26 @@ function buildFrames(pal) {
   }
   return out;
 }
-const FRAMES = VARIANTS.map(buildFrames);
+const FRAMES = VARIANTS.map(p => buildFrames(p));
+const FRAMES_HOLDING = VARIANTS.map(p => buildFrames(p, BODY, AIR_LEGS, false));
+
+// Hacker Orange's hoodie: black, green piping, open at the chest, hood down behind the neck.
+// h hoodie · j pocket · g green piping
+const HOOD_BODY = BODY.slice(0, 10).concat([
+  '.KhKOOOLLLLOOOKhK.',
+  '..KhhhgLLLLghhhK..',
+  '...KhhhgLLghhhK...',
+  '...KhhhhgghhhhK...',
+  '...KhhhhhhhhhhK...',
+  '...KhjjjjjjjjhK...',
+  '...KhhhhhhhhhhK...',
+  '...KhhhhhhhhhhK...',
+  '...KhhhhKKhhhhK...',
+  '..KLLLLLKKLLLLLK..',
+  '...KKKKK..KKKKK...',
+]);
+const HOOD_LEGS = ['...KhhhKKKKhhhK...', '....KhhK..KhhK....', '....KLLK..KLLK....', '.....KK....KK.....'];
+const FRAMES_HOOD = VARIANTS.map(p => buildFrames(Object.assign({ h: '#20242c', j: '#2c323c', g: '#35e07a' }, p), HOOD_BODY, HOOD_LEGS, false));
 
 /* ------------------------------------------------------------ party gear */
 const HAT = ['...oo...', '..oooo..', '...oo...', '...aa...', '...bb...', '..aaaa..', '..bbbb..', '.aaaaaa.', '.bbbbbb.', 'aaaaaaaa'];
@@ -222,7 +248,8 @@ function drawBow(x0, y0, b) {
   ctx.fillStyle = b[1]; ctx.fillRect(x0 + 8, y0 + 12, 2, 1);
   ctx.fillStyle = b[2]; ctx.fillRect(x0 + 6, y0 + 11, 1, 1); ctx.fillRect(x0 + 10, y0 + 11, 1, 1);
 }
-function drawEyes(x0, y0, mode, face) {
+function drawEyes(x0, y0, mode, face, g = ctx) {
+  const ctx = g;
   ctx.fillStyle = face;
   ctx.fillRect(x0 + 4, y0 + 5, 2, 2); ctx.fillRect(x0 + 12, y0 + 5, 2, 2);
   ctx.fillStyle = '#120d0a';
@@ -244,6 +271,84 @@ const cap = (() => {
   paintGrid(c.getContext('2d'), CAP, { K: '#10143a', N: '#2a3cb0', n: '#5a6ce0', Y: '#f2c230', X: '#16161f' }, 0, 0);
   return c;
 })();
+
+/* ------------------------------------------------------------ the Oranges from the deck */
+// Five cats in the crowd are the ones the slides keep cutting to. Each is the ordinary sprite
+// plus something to hold or wear, drawn over it.
+const LAPTOP = ['.KKKKKKKK.', 'KmmmmmmmmK', 'KmmmggmmmK', 'KnnnnnnnnK', 'GGGGGGGGGG'];
+const LAPTOP_PAL = { K: '#0a0d10', m: '#2b3038', n: '#1f242b', g: '#5dff9c', G: '#1fbf62' };
+const LENS = ['..SSS..', '.SwffS.', 'SfWEEfs', 'SfEEEfs', 'SfEEEfs', '.sfffs.', '..sss..'];
+const GRIP = ['KKKK.', 'KLLOK', 'KLLOO', '.KKKK'];
+const CLIPBOARD = ['..cCCc..', 'BBBccBBB', 'BppppppB', 'BvpssspB', 'BppppppB', 'BvpssspB', 'BppppppB', 'BvpssspB', 'BBBBBBBB'];
+const CLIPBOARD_PAL = { B: '#7a4a22', p: '#fbf3df', c: '#8d939e', C: '#c9ced6', v: '#2aa15a', s: '#b9b2a2' };
+const THUMB_UP = [
+  '..KK......', '.KOOK.....', '.KOOK.....', 'KKOOKK....', 'KOOOOK....', 'KODOOK....',
+  'KOOOOK....', '.KKKOOK...', '....KOOKK.', '.....KOOOK', '......KKKK',
+];
+const THUMB_DOWN = [
+  '.KKKK.....', 'KOOOOKKKK.', 'KODOOOOOOK', 'KOOOOKKKKK', 'KKOOKK....', '.KOOK.....', '.KOOK.....', '..KK......',
+];
+const ANTENNA = ['.bb.', 'bwbb', 'bbbd', '.dd.'];
+const OBOT_SHADES = ['#0c0a14', '#1d1d26', '#8f97a6'];
+
+function drawGear(g, role, x0, y0, pal, lit) {
+  if (role === 'hacker') {
+    g.fillStyle = '#5dff9c'; g.fillRect(x0 + 14, y0 + 1, 2, 1);          // earbud, and its cable
+    g.fillStyle = '#1fbf62'; g.fillRect(x0 + 18, y0 + 2, 1, 3);
+    paintGrid(g, LAPTOP, LAPTOP_PAL, x0 + 4, y0 + 15);
+    g.fillStyle = pal.L; g.fillRect(x0 + 2, y0 + 17, 2, 2); g.fillRect(x0 + 14, y0 + 17, 2, 2);
+  } else if (role === 'inspector') {
+    paintGrid(g, CLIPBOARD, CLIPBOARD_PAL, x0 + 9, y0 + 11);
+    g.fillStyle = pal.L; g.fillRect(x0 + 15, y0 + 17, 2, 2);
+    paintGrid(g, LENS, { S: '#e3e8f0', s: '#9aa1ad', f: mix(pal.F, '#ffffff', 0.5), w: '#ffffff', W: '#ffffff', E: '#1a0f0a' }, x0 - 1, y0 + 3);
+    g.fillStyle = '#5a3a1c'; g.fillRect(x0 + 1, y0 + 10, 1, 2);
+    paintGrid(g, GRIP, pal, x0 - 1, y0 + 12);
+  } else if (role === 'up') {
+    paintGrid(g, THUMB_UP, pal, x0 - 6, y0 + 3);
+  } else if (role === 'down') {
+    paintGrid(g, THUMB_DOWN, pal, x0 - 6, y0 + 10);
+  } else if (role === 'obot') {
+    g.fillStyle = '#8d939e'; g.fillRect(x0 + 1, y0 + 11, 2, 6); g.fillRect(x0 + 15, y0 + 11, 2, 6);   // backpack
+    g.fillStyle = '#3a3f48'; g.fillRect(x0, y0 + 11, 1, 6); g.fillRect(x0 + 17, y0 + 11, 1, 6);
+    g.fillStyle = '#6d737e'; g.fillRect(x0 + 5, y0 + 11, 1, 5); g.fillRect(x0 + 12, y0 + 11, 1, 5);   // straps
+    g.fillStyle = '#3a3f48'; g.fillRect(x0 + 7, y0 + 1, 4, 1);                                        // antenna
+    g.fillStyle = '#2a2d34'; g.fillRect(x0 + 8, y0 - 3, 2, 4);
+    paintGrid(g, ANTENNA, lit ? { b: '#ffd23f', w: '#ffffff', d: '#ff9a1f' } : { b: '#e8872a', w: '#f7c98a', d: '#a8560f' }, x0 + 7, y0 - 7);
+    if (lit) {
+      g.globalCompositeOperation = 'lighter'; g.globalAlpha = 0.3; g.fillStyle = '#ffb347';
+      g.fillRect(x0 + 6, y0 - 8, 6, 6);
+      g.globalAlpha = 1; g.globalCompositeOperation = 'source-over';
+    }
+  }
+}
+// What each of them says, word for word from the slides (the pixel font only has capitals),
+// and the colours of the speech bubble it is said in.
+const SAY_HACK = { bg: '#0b1a12', edge: '#1fbf62', ink: '#5dff9c' };
+const SAY_INSP = { bg: '#eef7f0', edge: '#1f4a36', ink: '#1f6a48' };
+const SAY_GOOD = { bg: '#fff8ec', edge: '#1a1026', ink: '#1d7a3e' };
+const SAY_BAD  = { bg: '#fff8ec', edge: '#1a1026', ink: '#b3262e' };
+const ROLES = {
+  hacker:    { frames: FRAMES_HOOD, st: SAY_HACK, lines: [["LET'S MESS AROUND", 'AND FIND OUT.'], ['OPEN SOURCE FTW'], ['THATS MORE LIKE IT']] },
+  inspector: { frames: FRAMES_HOLDING, st: SAY_INSP, eyes: 'meh', lazy: true, lines: [['WHAT EVIDENCE', 'DO YOU HAVE?']] },
+  up:        { frames: FRAMES_HOLDING, st: SAY_GOOD, eyes: 'happy', lines: [['WRITING CODE!'], ['RUNNING EXPERIMENTS!'], ['DRAFTING DOCUMENTS!'], ['TEACHING ME THINGS!']] },
+  down:      { frames: FRAMES_HOLDING, st: SAY_BAD, eyes: 'meh', lazy: true, lines: [['SETTING PRIORITIES'], ['AUTONOMY'], ['WORKING WITHOUT ME']] },
+  obot:      { frames: FRAMES, shades: OBOT_SHADES },
+};
+// Hacker Orange and Inspector Orange also come up from the corner, twice the size, on H and I.
+const PORTRAITS = {};
+for (const role of ['hacker', 'inspector']) {
+  const c = mkCanvas(FW, BODY.length), g = c.getContext('2d');
+  g.drawImage(ROLES[role].frames[0].STAND.c, 0, 0);
+  if (ROLES[role].eyes) drawEyes(OX, 0, ROLES[role].eyes, VARIANTS[0].F, g);
+  drawGear(g, role, OX, 0, VARIANTS[0], false);
+  PORTRAITS[role] = c;
+}
+const CORNER = {
+  hacker:    { stay: 4.8, st: SAY_HACK, say: [[0, ["LET'S MESS AROUND", 'AND FIND OUT.']]] },
+  inspector: { stay: 5.8, st: SAY_INSP, say: [[0, ['WHAT EVIDENCE', 'DO YOU HAVE?']], [2.6, ['OH JEEZ.', "I'LL CHECK IN LATER."]]] },
+};
+const RAIN_INK = ['#d6ffe4', '#5dff9c', '#35e07a', '#1fbf62', '#14864a', '#0d5a33'];
+let corner = null, rainT = -99, freezeUntil = -99, frozen = false;
 
 const BALLOON = ['..kkk..', '.kccck.', 'kchccck', 'khcccdk', 'kccccdk', '.kccdk.', '..kdk..', '...k...', '..kck..'];
 const BALLOON_COLS = ['#ff3f7f', '#ffd23f', '#3fd0ff', '#b86bff', '#ff8a2e', '#7dffb0'];
@@ -332,6 +437,11 @@ const SMALL = {
   Y: ['#.#', '#.#', '.#.', '.#.', '.#.'],
   Z: ['###', '..#', '.#.', '#..', '###'],
   '!': ['#', '#', '#', '.', '#'],
+  '?': ['##.', '..#', '.#.', '...', '.#.'],
+  '.': ['.', '.', '.', '.', '#'],
+  "'": ['#', '#', '.', '.', '.'],
+  '0': ['###', '#.#', '#.#', '#.#', '###'],
+  '1': ['.#.', '##.', '.#.', '.#.', '###'],
   ',': ['..', '..', '..', '.#', '#.'],
   ' ': ['..', '..', '..', '..', '..'],
 };
@@ -462,12 +572,19 @@ class Cat {
     this.baseH = rand(8, 13);
     this.lazy = Math.random() < 0.14;             // skips every other beat
     this.cap = false;                             // set for a couple of cats once the crowd is built
+    this.role = null; this.frames = FRAMES[this.v];   // see be(), for the five from the deck
     this.y = 0; this.air = false; this.rising = false; this.top = gy - 20;
     this.launchT = 0; this.airT = BEAT; this.peakH = 10; this.landT = -9;
     this.jt0 = 0; this.jy0 = 0; this.jv0 = 1; this.jg = 1;
     this.nextBlink = rand(0.3, 4); this.blinkEnd = 0;
     this.call = null; this.wantCall = null; this.boost = false;
     this.schedule(tNow + rand(0, 0.3));
+  }
+  be(role) {
+    const R = ROLES[role];
+    this.role = role; this.frames = R.frames[this.v];
+    this.hat = null; this.bow = null; this.shades = R.shades || null;
+    if (R.lazy) this.lazy = true;
   }
   schedule(now) {
     const off = MODES[mode](this);
@@ -503,13 +620,15 @@ class Cat {
       if (!this.rising && y <= 0) {
         this.air = false; this.y = 0; this.landT = t;
         if (this.wantCall) {
-          this.call = { word: this.wantCall, until: t + (this.wantCall === 'MEOW!' ? 2.2 : 1.6) * BEAT };
+          const c = this.wantCall;               // a line from the slides stays up long enough to read
+          const beats = c.st ? Math.max(2.6, 1.6 + c.lines.join(' ').length * 0.13) : c.word === 'MEOW!' ? 2.2 : 1.6;
+          this.call = { word: c.word, lines: c.lines, st: c.st, until: t + beats * BEAT };
           this.wantCall = null;
         } else this.schedule(t);
       } else this.y = Math.max(0, y);
     } else if (this.call) {
       if (t >= this.call.until) { this.call = null; this.schedule(t); }
-    } else if (t >= this.launchT) {
+    } else if (t >= this.launchT && t >= freezeUntil) {
       const T = this.airT, h = this.peakH;
       this.launch(this.launchT, 0, 4 * h / T, 8 * h / (T * T));
     }
@@ -524,10 +643,11 @@ class Cat {
     let fk = 'STAND', eyes = null;
     if (this.air) fk = this.rising ? 'UP' : 'DOWN';
     else if (this.call) { if (this.call.word === 'MEOW!') { fk = 'PUFF'; eyes = 'happy'; } }
-    else if (t - this.landT < 0.09 || this.launchT - t < 0.1) { fk = 'SQUASH'; eyes = 'happy'; }
+    else if (t - this.landT < 0.09 || (t >= freezeUntil && this.launchT - t < 0.1)) { fk = 'SQUASH'; eyes = 'happy'; }
     if (!eyes && t < this.blinkEnd) eyes = 'blink';
-    if (!eyes && this.cap) eyes = 'meh';
-    const f = FRAMES[this.v][fk];
+    if (!eyes && (this.cap || t < freezeUntil)) eyes = 'meh';
+    if (!eyes && this.role) eyes = ROLES[this.role].eyes || null;
+    const f = this.frames[fk];
     const left = Math.round(this.x) - OX - 9;
     const top = this.gy - Math.round(this.y) - f.h + 1;
     ctx.drawImage(f.c, left, top);
@@ -535,6 +655,7 @@ class Cat {
     if (this.shades) drawShades(x0, top, this.shades);
     else if (eyes) drawEyes(x0, top, eyes, this.face);
     if (this.bow) drawBow(x0, top, this.bow);
+    if (this.role) drawGear(ctx, this.role, x0, top, VARIANTS[this.v], beatFrac < 0.5);
     if (this.cap) ctx.drawImage(cap, x0 + 2, top - 4 + (this.air && !this.rising ? -1 : 0));
     else if (this.hat) ctx.drawImage(this.hat, x0 + 3, top - 6 + (this.air && !this.rising ? -1 : 0));
     this.top = top;
@@ -567,7 +688,7 @@ function buildScene() {
   buildCats();
   conf = []; settled = []; streamers = []; balloons = []; pops = []; glints = [];
   cvs.dataset.cats = cats.length;
-  cvs.setAttribute('aria-label', `Pixel-art party of ${cats.length} orange cats jumping up and down under confetti, balloons and a disco ball. Click, tap or press Space for more confetti. Press S for a guest.`);
+  cvs.setAttribute('aria-label', `Pixel-art party of ${cats.length} orange cats jumping up and down under confetti, balloons and a disco ball. Click, tap or press Space for more confetti. Press S, H or I for a guest.`);
 }
 
 function buildBackground() {
@@ -708,6 +829,14 @@ function buildCats() {
     const k = pick(cats.filter(c => c.row === r && !c.cap && c.xn > 0.2 && c.xn < 0.8));
     if (k) { k.cap = true; k.lazy = true; k.shades = null; k.hat = null; }
   }
+  // One each of the Oranges from the deck. The two with something to show stand near the front.
+  const cast = (role, front) => {
+    const free = cats.filter(c => !c.cap && !c.role && c.xn > 0.12 && c.xn < 0.88);
+    const k = pick(free.filter(c => front ? c.row >= lastRow - 1 : c.row < lastRow - 1)) || pick(free);
+    if (k) k.be(role);
+  };
+  cast('hacker', true); cast('inspector', true); cast('up', false); cast('down', false); cast('obot', false);
+  cvs.dataset.cast = cats.filter(c => c.role).map(c => c.role).sort().join(' ');
   cats.sort((a, b) => a.gy - b.gy || a.x - b.x);
 }
 
@@ -794,8 +923,16 @@ function update(dt) {
     nextCall = rand(0.7, 1.6);
     let busy = 0;
     for (const k of cats) if (k.call || k.wantCall) busy++;
-    const k = pick(cats);
-    if (busy < 3 && !k.call && !k.wantCall) k.wantCall = pick(CALLS);
+    const cast = cats.filter(c => c.role && ROLES[c.role].lines);
+    const k = cast.length && Math.random() < 0.3 ? pick(cast) : pick(cats);
+    if (busy < 3 && !k.call && !k.wantCall && t >= freezeUntil) {
+      const R = k.role && ROLES[k.role].lines ? ROLES[k.role] : null, w = pick(CALLS);
+      k.wantCall = R ? { word: '', lines: pick(R.lines), st: R.st } : { word: w, lines: [w], st: null };
+    }
+  }
+  if (frozen && t >= freezeUntil) {               // Inspector Orange has looked away: back on the beat
+    frozen = false;
+    for (const k of cats) if (!k.air && !k.call) k.schedule(t);
   }
   for (const k of cats) k.update(t);
 
@@ -1055,19 +1192,71 @@ function drawSpecks(t) {
 }
 
 const TAIL = ['KWWK', 'KWK.', 'KK..'];
-function drawBubble(cx, bottom, word) {
-  const tw = textWidth(word, SMALL), bw = tw + 6, bh = 11;
-  const x = clamp(Math.round(cx - bw / 2), 1, W - bw - 1), y = bottom - bh - 3;
-  ctx.fillStyle = '#1a1026';
+// A speech bubble of one or more lines, its tail pointing down at cx. st = { bg, edge, ink }.
+function drawBubble(cx, bottom, lines, st, font, left) {
+  const big = font === BIG, gh = big ? 7 : 5, px = big ? 5 : 3, py = big ? 4 : 3;
+  let tw = 0;
+  for (const l of lines) tw = Math.max(tw, textWidth(l, font));
+  const bw = tw + px * 2, bh = lines.length * (gh + 2) - 2 + py * 2;
+  const x = clamp(left == null ? Math.round(cx - bw / 2) : left, 1, Math.max(1, W - bw - 1)), y = bottom - bh - 3;
+  ctx.fillStyle = st.edge;
   ctx.fillRect(x + 1, y, bw - 2, bh); ctx.fillRect(x, y + 1, bw, bh - 2);
-  ctx.fillStyle = '#fff8ec';
+  ctx.fillStyle = st.bg;
   ctx.fillRect(x + 1, y + 1, bw - 2, bh - 2);
   const tx = clamp(Math.round(cx) - 1, x + 2, x + bw - 5);
-  paintGrid(ctx, TAIL, { K: '#1a1026', W: '#fff8ec' }, tx, y + bh - 1);
-  drawText(ctx, word, x + 3, y + 3, SMALL, CALL_INK[word]);
+  paintGrid(ctx, TAIL, { K: st.edge, W: st.bg }, tx, y + bh - 1);
+  lines.forEach((l, i) => drawText(ctx, l, x + px, y + py + i * (gh + 2), font, st.ink));
 }
 function drawBubbles() {
-  for (const k of cats) if (k.call) drawBubble(Math.round(k.x), k.top - (k.cap ? 5 : k.hat ? 7 : 1), k.call.word);
+  for (const k of cats) if (k.call) {
+    const st = k.call.st || { bg: '#fff8ec', edge: '#1a1026', ink: CALL_INK[k.call.word] };
+    drawBubble(Math.round(k.x), k.top - (k.cap ? 5 : k.hat ? 7 : k.role === 'obot' ? 8 : 1), k.call.lines, st, SMALL);
+  }
+}
+
+// H and I: Hacker Orange or Inspector Orange comes up in the bottom left corner. The hacker
+// brings green ones and zeroes down the sky. The inspector stops the dancing for four beats
+// while everyone looks innocent, then thinks better of it.
+function popup(who) {
+  if (corner && corner.who === who && tNow - corner.t0 < CORNER[who].stay) return;   // already up
+  corner = { who, t0: tNow };
+  if (who === 'hacker') {
+    rainT = CALM ? -99 : tNow;
+    freezeUntil = Math.min(freezeUntil, tNow);
+    burst(8 + 9 * GUEST_Z, H - 6, 46, 150, -Math.PI / 2, 0.8, true);
+  } else {
+    rainT = -99;
+    freezeUntil = tNow + GUEST_RISE + 4 * BEAT; frozen = true;
+  }
+}
+function drawCorner(t) {
+  if (!corner) return;
+  const P = CORNER[corner.who], a = t - corner.t0;
+  if (a > P.stay) { corner = null; return; }
+  const k = a < GUEST_RISE ? a / GUEST_RISE : a > P.stay - GUEST_RISE ? (P.stay - a) / GUEST_RISE : 1;
+  const up = 1 - (1 - k) * (1 - k);
+  const img = PORTRAITS[corner.who], w = img.width * GUEST_Z, h = img.height * GUEST_Z, shown = h - GUEST_Z;   // all but the soles
+  const x = 8 - OX * GUEST_Z, y = Math.round(H - shown * up) + (k === 1 && beatFrac < 0.5 && t >= freezeUntil ? -1 : 0);
+  ctx.drawImage(img, x, y, w, h);
+  if (k < 1) return;
+  let lines = P.say[0][1];
+  for (const [from, l] of P.say) if (a >= from) lines = l;
+  drawBubble(x + (OX + 9) * GUEST_Z, y - 2, lines, P.st, BIG, 4);
+}
+function drawRain(t) {
+  const a = t - rainT, LEN = CORNER.hacker.stay;
+  if (a < 0 || a > LEN) return;
+  ctx.globalAlpha = 0.85 * clamp(Math.min(a / 0.3, (LEN - a) / 0.7), 0, 1);
+  const span = floorTop + 44;
+  for (let c = 0, x = 2; x < W - 3; c++, x += 6) {
+    const head = (a * (24 + hash(c, 1, 7) * 34) + hash(c, 2, 7) * span) % span - 8;
+    for (let i = 0; i < RAIN_INK.length; i++) {
+      const y = Math.round(head) - i * 7;
+      if (y < -5 || y + 5 > floorTop - 1) continue;
+      drawText(ctx, hash(c, Math.round(head / 7) - i, Math.floor(t * 5)) < 0.5 ? '0' : '1', x, y, SMALL, RAIN_INK[i]);
+    }
+  }
+  ctx.globalAlpha = 1;
 }
 
 function guest() {
@@ -1114,6 +1303,7 @@ function render() {
   ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
   ctx.drawImage(bg, 0, 0);
   drawStars(t);
+  drawRain(t);
   drawBunting();
   drawLights();
   drawDisco(t);
@@ -1134,6 +1324,7 @@ function render() {
   drawStreamers(true, t);
   drawBubbles();
   drawGuest(t);
+  drawCorner(t);
   drawPops(t);
   if (flashT > 0) {
     ctx.globalAlpha = flashT;
@@ -1160,7 +1351,13 @@ function toCanvas(e) {
   const r = cvs.getBoundingClientRect();
   return [(e.clientX - r.left) * W / r.width, (e.clientY - r.top) * H / r.height];
 }
-cvs.addEventListener('pointerdown', e => { const [x, y] = toCanvas(e); celebrate(x, y); });
+cvs.addEventListener('pointerdown', e => {
+  const [x, y] = toCanvas(e);
+  // A click or tap on Hacker Orange or Inspector Orange in the crowd does what H and I do.
+  const k = cats.find(c => CORNER[c.role] && Math.abs(c.x - x) < 11 && y > c.top - 2 && y < c.gy + 2);
+  if (k) popup(k.role);
+  celebrate(x, y);
+});
 // Only the deck's own navigation keys are passed up, never anything else that is typed.
 const NAV_KEYS = ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', 'Escape', 'o', 'O', 'n', 'N', 'f', 'F'];
 window.addEventListener('keydown', e => {
@@ -1169,15 +1366,22 @@ window.addEventListener('keydown', e => {
     celebrate(rand(W * 0.15, W * 0.85), rand(H * 0.15, floorTop));
   } else if ((e.key === 's' || e.key === 'S') && !e.metaKey && !e.ctrlKey && !e.altKey) {
     guest();
+  } else if ((e.key === 'h' || e.key === 'H') && !e.metaKey && !e.ctrlKey && !e.altKey) {
+    popup('hacker');
+  } else if ((e.key === 'i' || e.key === 'I') && !e.metaKey && !e.ctrlKey && !e.altKey) {
+    popup('inspector');
   } else if (window.parent !== window && NAV_KEYS.includes(e.key) && !e.metaKey && !e.ctrlKey && !e.altKey) {
     window.parent.postMessage({ type: 'deck-key', key: e.key }, '*');
   }
 });
-// The deck can ask for confetti, or for the guest: postMessage({ type: 'party-burst' | 'party-guest' }).
+// The deck can ask for confetti or for a guest:
+// postMessage({ type: 'party-burst' | 'party-guest' | 'party-hacker' | 'party-inspector' }).
 window.addEventListener('message', e => {
   if (!e.data) return;
   if (e.data.type === 'party-burst') celebrate(rand(W * 0.15, W * 0.85), rand(H * 0.15, floorTop));
   else if (e.data.type === 'party-guest') guest();
+  else if (e.data.type === 'party-hacker') popup('hacker');
+  else if (e.data.type === 'party-inspector') popup('inspector');
 });
 
 let resizeTimer = 0;
