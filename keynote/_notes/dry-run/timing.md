@@ -1,12 +1,12 @@
 # Dry-run timing
 
-Generated from keynote/slides.html (fingerprint b775e34800) by keynote/_notes/dry-run/build.mjs. Do not edit by hand; re-run the script after the deck changes.
+Generated from keynote/slides.html (fingerprint cfd78c4678) by keynote/_notes/dry-run/build.mjs. Do not edit by hand; re-run the script after the deck changes.
 
 ## Totals
 
 - Slides in the main run: 51
 - Slides with his spoken notes: 5 (no spoken notes yet: 46)
-- Open TODOs: 44 (23 boxes on slides (orange TODO or blue review), 21 "TODO (Jeremy)" items in notes)
+- Open TODOs: 45 (24 boxes on slides (orange TODO or blue review), 21 "TODO (Jeremy)" items in notes)
 - Words in his spoken notes: 219, which take 1.6 min at 140 words a minute
 - Slot: 40 min; the suggested split below adds up to 40 min and is not decided
 
@@ -74,7 +74,7 @@ Generated from keynote/slides.html (fingerprint b775e34800) by keynote/_notes/dr
 - 50. Coding feels completely different than it did a year ago. (beat 4)
 - 51. A pixel-art party of orange cats dancing under a disco ball, with confetti (beat 4)
 
-## Open TODOs (44)
+## Open TODOs (45)
 
 - Slide 2 (on slide): Jeremy to reviewmoved up to second, 7 Octdisclaimer popup, 7 Oct
 - Slide 3 (on slide): Jeremy to reviewsection names under the strip, 7 Oct
@@ -120,3 +120,4 @@ Generated from keynote/slides.html (fingerprint b775e34800) by keynote/_notes/dr
 - Slide 48 (in notes): which eight; the order; whether the left column should be the team's answers and the right column obot's, as drafted.
 - Slide 49 (in notes): keep them, and if so say where they bit.
 - Slide 50 (on slide): Jeremy to reviewbuilt from your words, 7 Oct
+- Slide 51 (on slide): Jeremy to reviewHacker, Inspector, thumbs and obot Oranges in the crowd; H and I popups. Added 2026-10-07

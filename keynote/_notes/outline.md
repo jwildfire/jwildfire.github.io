@@ -304,12 +304,12 @@ Inspector Orange, added 2026-10-07 (Jeremy: "maybe just popups like the good/bad
 - Slide 10, "What we did, and what we didn't": "Written requirements and a manual test script for every chart. / Automated tests on the R package, run on every pull request." Measured from the public record; sources in the slide's notes
 - Slide 15, "Quality is built into the design": "A test for every requirement" (beside the title)
 - Slide 20, "AI-written code still needs a human owner": "The same tests, and a human owner"
-- Slide 26, "The question, again": no question here; the inspector just says "Oh jeez. I'll check in later." (his words), after Hacker Orange's "Let's mess around and find out."
+- Slide 26, "The question, again": no question here; the inspector just says "Oh jeez. I'll check in later." (his words), after Hacker Orange's "Only one way to find out."
 - Slide 45, "A lot of tests, and still not GxP": "Lots of tests. No sign-off." (beside the title)
 
 Hacker Orange, added 2026-10-07 (his art, `keynote/assets/hex/orange-hacker.png`): a dark bubble with green terminal type. Every line is his
 
-- Slide 26, "The question, again": "Let's mess around and find out." (on the slide, not a popup)
+- Slide 26, "The question, again": "Only one way to find out." (on the slide, not a popup). Until late on 2026-10-07 it was "Let's mess around and find out."; he asked for something "more like 'let's see what we can do'" and picked this from three offered
 - Slide 27, "Modernize safetyGraphics, using the gsm framework": "Open Source ftw" (popup, second press)
 - Slide 30, "OpenClaw" (obot v2): "ugh. so many config files. can't we just build something?" (popup, second press)
 - Slide 33, obot v3's weekend: "thats more like it" (popup, beside the kicker)
