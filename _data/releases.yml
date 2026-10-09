@@ -18,6 +18,66 @@
 # safety.viz ------------------------------------------------------------------
 
 - package: safety.viz
+  version: v1.10.0
+  date: 2026-10-09
+  blurb: "The demo app gains an RBQM tab: gsm's site metrics, worked out by R in your browser and drawn with gsm.viz's…"
+  links:
+    - label: Notes
+      url: https://github.com/jwildfire/safety.viz/releases/tag/v1.10.0
+    - label: Demo
+      url: https://jwildfire.github.io/safety.viz/
+    - label: Walkthrough
+      url: https://jwildfire.github.io/obot.roadmap/reports/sv-v1.10-demo/
+
+- package: safety.viz
+  version: v1.9.2
+  date: 2026-10-07
+  blurb: "A patch release on v1.9.1"
+  links:
+    - label: Notes
+      url: https://github.com/jwildfire/safety.viz/releases/tag/v1.9.2
+    - label: Demo
+      url: https://jwildfire.github.io/safety.viz/
+    - label: Walkthrough
+      url: https://jwildfire.github.io/obot.roadmap/reports/sv-v1.9-demo/#v192
+
+- package: safety.viz
+  version: v1.9.1
+  date: 2026-10-04
+  blurb: "A patch release on v1.9.0"
+  links:
+    - label: Notes
+      url: https://github.com/jwildfire/safety.viz/releases/tag/v1.9.1
+    - label: Demo
+      url: https://jwildfire.github.io/safety.viz/
+    - label: Walkthrough
+      url: https://jwildfire.github.io/obot.roadmap/reports/sv-v1.9-demo/#v191
+
+- package: safety.viz
+  version: v1.9.0
+  date: 2026-10-03
+  blurb: "safety.viz opens to a second chart library"
+  links:
+    - label: Notes
+      url: https://github.com/jwildfire/safety.viz/releases/tag/v1.9.0
+    - label: Demo
+      url: https://jwildfire.github.io/safety.viz/
+    - label: Walkthrough
+      url: https://jwildfire.github.io/obot.roadmap/reports/sv-v1.9-demo/
+
+- package: safety.viz
+  version: v1.8.0
+  date: 2026-10-02
+  blurb: "safety.viz becomes something you can use on your own study"
+  links:
+    - label: Notes
+      url: https://github.com/jwildfire/safety.viz/releases/tag/v1.8.0
+    - label: Demo
+      url: https://jwildfire.github.io/safety.viz/
+    - label: Walkthrough
+      url: https://jwildfire.github.io/obot.roadmap/reports/sv-v1.8-demo/
+
+- package: safety.viz
   version: v1.7.0
   date: 2026-08-15
   blurb: "Time-to-Event Explorer: Kaplan–Meier curves with CIs and an at-risk table, shipped as Experimental"
