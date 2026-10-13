@@ -725,6 +725,20 @@
     .s-feel h2 { font-size: 58px; margin-bottom: 18px; }
     .s-feel .line { font-size: 38px; line-height: 1.25; margin: 0 0 14px; }
     .s-feel .ask { font-family: var(--serif); font-size: 46px; line-height: 1.1; margin: 10px 0 0; }
+
+    /* "What we built": two labelled rows of figures (4 over 3). */
+    .s-built .kicker { margin-bottom: 14px; }
+    .s-built .hd { display: flex; align-items: baseline; justify-content: space-between; gap: 40px; margin: 0 0 14px; }
+    .s-built h2 { font-size: 64px; margin: 0; }
+    .s-built .lbl { font-family: var(--mono); font-size: 20px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--soft); margin: 0 0 10px; }
+    .s-built .tiles { display: grid; gap: 22px; margin: 0 0 16px; }
+    .s-built .tiles.t4 { grid-template-columns: repeat(4, 1fr); }
+    .s-built .tiles.t3 { grid-template-columns: repeat(3, 1fr); }
+    .s-built .tile { background: var(--panel); border: 2px solid var(--rule); border-top: 8px solid var(--hue); border-radius: 20px; padding: 14px 26px 14px; }
+    .s-built .tile .n { font-family: var(--serif); font-size: 72px; line-height: 1; margin: 0 0 6px; color: var(--ink); white-space: nowrap; }
+    .s-built .tile h3 { font-family: var(--mono); font-size: 20px; letter-spacing: 0.1em; white-space: nowrap; text-transform: uppercase; color: var(--hue); margin: 0 0 6px; font-weight: 500; }
+    .s-built .tile p:not(.n) { font-size: 23px; line-height: 1.3; color: var(--soft); margin: 0; }
+    .s-built .foot { font-family: var(--mono); font-size: 19px; color: var(--soft); margin: 0; white-space: nowrap; }
   </style>
 </head>
 <body>
@@ -1094,7 +1108,7 @@
         are draft wording; the slide shortens the question to its first three words.
         <br><br>Where the thread comes back: slide 12 (gsm, "quality built in from the start"; it read "built for GxP from the start" until 7 October),
         slide 15 ("Quality is built into the design"), slide 26 (the opening of the
-        experiment, where Inspector Orange is waved off; "Not GxP" came off that slide on 7 October), and slide 45 ("A lot of tests, and still an experiment"; "still not GxP" until 7 October). A reserve slide, "Is it validated?", asks the same question with a
+        experiment, where Inspector Orange is waved off; "Not GxP" came off that slide on 7 October), and slide 46 ("A lot of tests, and still an experiment"; "still not GxP" until 7 October). A reserve slide, "Is it validated?", asks the same question with a
         then-and-now answer.
         <br><br>Other ideas for the visual, none built: a page of a study report's "wall of
         numbers"; a screenshot of the safetyGraphics Shiny app as it was left.
@@ -2824,6 +2838,101 @@ steps:
       </aside>
     </section>
 
+    <!-- 3 · what we built, in numbers. Jeremy, 2026-10-13: "a 'What we built slide' at the end
+         of the summer experiment section that summarizes what we made ... Put this just after
+         the demo slide." All wording is draft; every figure is sourced in the notes. -->
+    <section class="slide s-built" data-hue="4">
+      <p class="kicker">The payoff · in numbers</p>
+      <div class="hd"><h2>What we built</h2><p class="foot">May to October 2026 · 15 repositories · counted 13 October</p></div>
+      <p class="lbl">Technical</p>
+      <div class="tiles t4">
+        <div class="tile"><p class="n">599</p><h3>Pull requests merged</h3><p>341 on charts and apps, 253 on the scaffold</p></div>
+        <div class="tile"><p class="n">43</p><h3>Releases</h3><p>31 of charts and apps, 17 of them safety.viz</p></div>
+        <div class="tile"><p class="n">345,000</p><h3>Lines of source</h3><p>43% of them are tests</p></div>
+        <div class="tile"><p class="n">5,500</p><h3>Tests</h3><p>2,963 of them in safety.viz</p></div>
+      </div>
+      <p class="lbl">Not technical</p>
+      <div class="tiles t3">
+        <div class="tile"><p class="n">20</p><h3>Interactive charts</h3><p>14 for safety, 6 for biomarkers</p></div>
+        <div class="tile"><p class="n">3</p><h3>Apps</h3><p>The safety.viz demo, the gsm.bio app, open.csr</p></div>
+        <div class="tile"><p class="n">7</p><h3>Clinical guides</h3><p>About 19,000 words on how to read a chart</p></div>
+      </div>
+      <div class="review" style="top: 34px; right: 250px"><b>Jeremy to review</b><br>new slide and every figure, 13 Oct</div>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        Added 2026-10-13 at Jeremy's ask: "I want to add a 'What we built slide' at the end of
+        the summer experiment section that summarizes what we made. Technical Metrics: PRs,
+        lines of code, Releases. tests. Non technical metrics: # of charts/tools, clinical
+        guides. Take some time and get the #s as close as you can. Put this just after the demo
+        slide." Title, kicker, tile labels and the grey lines are draft wording. Every figure
+        was counted on 13 October 2026 between 11:44 and 12:30 UTC; refresh on the morning of
+        the talk if anything is released before then.
+        <br><br>What is counted. The fifteen repositories under github.com/jwildfire that the
+        agents worked in: safety.viz, gsm.safety, bio.viz, gsm.bio, open.csr, open.gismo and
+        demo-301 ("the charts and apps"); obot.agent, obot.roadmap and scaffold ("the
+        scaffold"); and showlist, the old keynote repository, the safetyGraphics and
+        safetyCharts forks and the archived safety-histogram fork. It is diary #9's list plus
+        bio.viz, gsm.bio and safety-histogram. The window opens on 1 May 2026, so that obot v1
+        and v2 (gsm.safety v0.1.0, 15 May) are in it. Diary #9 and the reserve slide "What it
+        took" counted from 10 June; from that date the figures are 593 pull requests and 42
+        releases.
+        <br><br>Pull requests merged: 599. By repository: obot.agent 197, safety.viz 134,
+        gsm.safety 59, obot.roadmap 54, bio.viz 48, gsm.bio 45, open.csr 43, open.gismo 8,
+        demo-301 4, the old keynote repository 4, scaffold 2, safety-histogram 1. Charts and
+        apps 341; scaffold 253; the other 5 are the keynote repository and the fork. For
+        scale: 367 on 6 September (diary #9), 496 on 5 October. Also counted, not on the
+        slide: 925 issues opened and 622 closed in the same window.
+        <br><br>Releases: 43 published. safety.viz 17 (v0.1.0 on 11 July to v1.11.0 on
+        10 October), bio.viz 4, gsm.bio 4, gsm.safety 3, open.csr 3; obot.agent 6,
+        obot.roadmap 5; the old keynote repository 1. Charts and apps 31, scaffold 11.
+        <br><br>Lines of source: about 345,000 (344,591), standing on each repository's
+        integration branch today. Diary #9's method: source and test files only, with
+        generated outputs, rendered pages, built bundles, evidence, vendored code, data files,
+        fixtures, lockfiles and generated R documentation left out. Source 197,168 and tests
+        147,423, so tests are 43%. By repository, source and tests: safety.viz 62,005 and
+        64,571; bio.viz 30,228 and 39,357; open.csr 32,759 and 10,740; gsm.bio 15,623 and
+        16,613; obot.roadmap 26,049 and 1,744; gsm.safety 9,134 and 7,714; open.gismo 8,791
+        and 5,462 (what the fork added since 24 June); demo-301 7,360 and none; showlist
+        3,892 and 706; scaffold 997; obot.agent 330 and 516. Markdown is not in the figure
+        (about 32,000 lines more). Not in the figure either: the scaffolding retired on
+        10 September, which was 64,204 lines of source and tests in obot.agent at its last
+        commit before that day. Counting it, the agents wrote about 409,000 lines that were
+        merged. Diary #9 said 315,000 on 6 September, with that scaffolding in and before
+        bio.viz and gsm.bio existed.
+        <br><br>Tests: about 5,500 (5,552). safety.viz 2,963 (2,515 unit and 448 browser, the
+        v1.11.0 release notes and the check on the released commit). bio.viz 916 (515 unit
+        and 401 browser, v0.4.0 notes). gsm.bio 413 (v0.4.0 notes: 61,643 expectations).
+        gsm.safety 352 test blocks on its development branch (121 at the released v1.1.0).
+        open.csr 631 (465 in JavaScript and 166 in R, counted from the test files).
+        open.gismo 87 added on the fork (146 before, 233 now). obot.roadmap 138,
+        obot.agent 36, showlist 16. Where a release's notes give a count of tests run, that
+        is the figure; elsewhere it is test definitions in the files, which runs a little low
+        because a parameterised test counts once.
+        <br><br>Interactive charts: 20. safety.viz has 14 (8 Exploratory, 5 Experimental and
+        the Patient Journey Explorer, a Prototype on the docs site only); bio.viz has 6. For
+        saying aloud: 19 of the 20 also have an R function (13 in gsm.safety's development
+        branch, 9 of them released in v1.1.0; 6 in gsm.bio). Two of the original sixteen
+        renderers are still to port (Web Codebook and the Paneled Outlier Explorer). Nothing
+        is labelled Qualified.
+        <br><br>Apps: 3. The safety.viz demo app (18 charts on four tabs and an RBQM tab that
+        runs gsm's eight site metrics with R in the browser; v1.11.0, 10 October), gsm.bio's
+        app for the six biomarker charts (v0.4.0, 9 October), and open.csr, the study report
+        app (v0.3.0, 27 August: 30 tables, listings and figures on its development branch, 26
+        in the release). Not counted as apps: the hub site, demo-301's weekly pipeline, the
+        party page.
+        <br><br>Clinical guides: 7, each published beside its chart on the safety.viz site
+        (.../hep-explorer/guide.html and so on): Hepatic Safety Explorer, Hepatic ALT
+        Waterfall, Nephrotoxicity Explorer, Participant Profile, Patient Journey Explorer, QT
+        Safety Explorer and Time-to-Event Explorer. Together 18,762 words. An eighth
+        document, "Choosing a hepatic DILI graphic", is in the repository and not on the
+        site. bio.viz has none.
+        <br><br>For Jeremy to decide: whether 1 May or 10 June is the start; whether the
+        retired scaffolding belongs in the lines figure; whether "Apps" should read "Tools";
+        and whether the hub's own counts (requirements and tasks, on the two tree slides)
+        belong here too.
+      </aside>
+    </section>
+
     <!-- ============================================================
          3.5 · How we built it
          Jeremy, late on 2026-10-05: "3 = Goal + 'What we built' 3.5 = how we built it
@@ -2992,7 +3101,7 @@ steps:
       <h2 style="margin-bottom: 32px">A lot of tests, and still an experiment</h2>
       <div class="cols c3" style="flex: none">
         <div class="col" style="padding-bottom: 12px"><h3>Agents test</h3>
-          <p class="n">2,627</p>
+          <p class="n">2,963</p>
           <p>tests in safety.viz, up from 343 in July.</p></div>
         <div class="col" style="padding-bottom: 12px"><h3>Agents review</h3>
           <p class="n">40 of 52</p>
@@ -3003,7 +3112,7 @@ steps:
       </div>
       <p class="soft" style="margin: 22px 0 0; font-size: 29px">Tests and reviews are cheap now. The signature is not.</p>
       <div class="goodat insp" style="bottom: 36px"><div class="bub"><p class="q">What evidence do you have?</p><p class="a">Lots of tests. No sign-off.</p></div><div class="who"></div></div>
-      <div class="review" style="top: 30px; right: 250px"><b>Jeremy to review</b><br>softened title and card, 7 Oct<br>inspector popup, 7 Oct</div>
+      <div class="review" style="top: 30px; right: 250px"><b>Jeremy to review</b><br>softened title and card, 7 Oct<br>inspector popup, 7 Oct<br>2,963 tests (was 2,627), 13 Oct</div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
         DRAFT, 2026-10-05. Part 3.5, "how we built it". Jeremy's list for this part is
@@ -3013,7 +3122,8 @@ steps:
         ("Quality", under "how do we do this in GxP?") in his first structure. Every word is draft; the numbers are sourced below. It calls back to the
         beat 3 opener (slide 26, where the inspector is waved off) and to beat 2's quality slide (slide 15: every
         requirement has a test, every test has a result, and a person signs the release).
-        <br><br>Column 1, re-measured 2026-10-07. 2,242 unit and 385 browser tests at safety.viz
+        <br><br>Column 1, re-measured 2026-10-13 for the "What we built" slide before this one, so that the two agree: 2,515 unit and 448 browser tests at safety.viz v1.11.0 (released 2026-10-10), from its release notes and the check on the released commit. 2,515 + 448 = 2,963. It read 2,627 from 7 to 13 October.
+        <br><br>Column 1, as re-measured 2026-10-07. 2,242 unit and 385 browser tests at safety.viz
         v1.9.2, from its release notes (released 2026-10-07) and its CI run on the released
         code. 2,242 + 385 = 2,627. (At v1.9.1 on 4 October it was 2,185 and 374, which is the
         2,559 this slide showed until today.) At v1.0.0 in July it was 249 and 94, which is 343 (diary #5). Each
