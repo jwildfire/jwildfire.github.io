@@ -56,3 +56,8 @@ defaults:
       type: post
     values:
       tags: Other
+  # The extended keynote deck is shared by URL only: keep it out of the sitemap.
+  - scope:
+      path: "keynote/keynote_extended.html"
+    values:
+      sitemap: false
