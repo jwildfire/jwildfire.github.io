@@ -539,19 +539,17 @@
     .s-tree .stamp { font-family: var(--mono); font-size: 20px; line-height: 1.3; color: var(--soft); margin: 10px 0 0; white-space: nowrap; }
     /* Beat 4: Orange's answers from the callouts, gathered on one slide. Add "bad" for the
        thumbs-down version. li.next is a dashed cell for a bridge line. */
-    /* "Try it out!" (how to get started, 2026-10-14): two cards for the set-up, then the two
-       prompts as dark prompt lines, full width so the long one breaks once. */
-    .s-start h2 { margin-bottom: 30px; }
-    .s-start .cols { flex: none; gap: 40px; }
-    .s-start .col { padding: 30px 40px 34px; }
-    .s-start .col h3 { margin-bottom: 14px; }
-    .s-start .col p { font-size: 32px; line-height: 1.3; margin: 0; }
-    .s-start .col p.small { font-size: 22px; font-family: var(--mono); letter-spacing: 0.04em; margin-top: 12px; }
-    .s-start .ask { margin-top: 26px; display: grid; gap: 14px; }
-    .s-start .ask div { display: grid; grid-template-columns: 150px 1fr; align-items: baseline; gap: 20px; background: #14181d; border-radius: 18px; padding: 18px 30px 20px; }
-    .s-start .ask b { font-family: var(--mono); font-weight: 500; font-size: 18px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--hue); }
-    .s-start .ask p { margin: 0; padding-left: 1.2em; text-indent: -1.2em; font-family: var(--mono); font-size: 27px; line-height: 1.4; color: #f3f4f1; }
-    .s-start .ask p::before { content: "› "; color: var(--hue); }
+    /* "Try it out!" (how to get started, 2026-10-14): five numbered steps, one row each; the
+       prompts in steps 4 and 5 are dark prompt lines. */
+    .s-start h2 { margin-bottom: 26px; }
+    .s-start ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+    .s-start li { display: grid; grid-template-columns: 58px 380px 1fr; align-items: center; gap: 24px; margin: 0; }
+    .s-start li::before { content: none; }
+    .s-start li i { width: 50px; height: 58px; clip-path: var(--hex-clip); background: var(--hue); color: #fff; display: grid; place-items: center; font-style: normal; font-family: var(--serif); font-size: 30px; }
+    .s-start li b { font-family: var(--serif); font-weight: 400; font-size: 38px; line-height: 1.1; color: var(--ink); }
+    .s-start li span { font-size: 27px; line-height: 1.3; color: var(--soft); }
+    .s-start li .ask { margin: 0; padding: 12px 24px 14px calc(24px + 1.2em); text-indent: -1.2em; background: #14181d; border-radius: 16px; font-family: var(--mono); font-size: 22px; line-height: 1.4; color: #f3f4f1; }
+    .s-start li .ask::before { content: "› "; color: var(--hue); }
     .s-answers h2 { margin-bottom: 30px; max-width: 1040px; }
     .s-answers ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 24px; }
     .s-answers li { background: #fbf1e0; border: 3px solid var(--spec-1); border-radius: 22px; padding: 14px 28px 16px; margin: 0; }
@@ -3348,34 +3346,35 @@ steps:
     </section>
 
     <!-- 4 · how to get started -->
-    <section class="slide s-split s-start" data-hue="6">
+    <section class="slide s-start" data-hue="6">
       <p class="kicker">How to get started</p>
       <h2>Try it out!</h2>
-      <div class="cols">
-        <div class="col"><h3>A development framework</h3>
-          <p>R Packages by Hadley Wickham is a great place to start.</p>
-          <p class="small">Free online at r-pkgs.org</p></div>
-        <div class="col"><h3>GitHub</h3>
-          <p>Use it for version control, GitHub Pages and CI/CD.</p></div>
-      </div>
-      <div class="ask">
-        <div><b>Ask</b><p>Make me an Open Source R package that does X. Follow all of the best practices in Hadley Wickham's R Packages book.</p></div>
-        <div><b>Then ask</b><p>Explain how you did X</p></div>
-      </div>
-      <div class="review" style="top: 34px; right: 140px"><b>Jeremy to review</b><br>new slide from your words, 14 Oct</div>
+      <ol>
+        <li><i>1</i><b>Pick an agent</b><span>Claude or Codex, $20 for a month. Others are fine too.</span></li>
+        <li><i>2</i><b>Set up GitHub</b><span>A free account is fine.</span></li>
+        <li><i>3</i><b>Pick a development process</b><span>For R: Hadley Wickham's R Packages book, free at r-pkgs.org.</span></li>
+        <li><i>4</i><b>Write a prompt</b><p class="ask">Make me an Open Source R package that does X. Include a working example and user guide in GitHub pages. Follow all of the best practices in Hadley Wickham's R Packages book.</p></li>
+        <li><i>5</i><b>Ask questions!</b><p class="ask">Explain how you did X</p></li>
+      </ol>
+      <div class="review" style="top: 34px; right: 140px"><b>Jeremy to review</b><br>five steps from your words, 14 Oct</div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
-        Added 2026-10-14 as slide 49, right after the "What we learned" opener, at Jeremy's
-        ask: "I want to add a 'How to get started' slide as slide 49. 'Try it out!' is the
-        headline. Need a development framework. R Packages by Hadley is a great place to
-        start. Use GitHub with Version Control, GitHub pages and CI/CD. 'Make me an Open Source
-        R package that does X. Follow all of the best practices in Hadley Wickham's R Packages
-        book. ' 'Explain how you did X'"
-        <br><br>The two prompts are his words exactly. The card wording is set from his
-        sentences ("R Packages by Hadley" written out as "R Packages by Hadley Wickham"). The
-        "Ask" / "Then ask" labels and the r-pkgs.org line are additions for him to keep or cut.
-        The book's second edition (2023) is by Hadley Wickham and Jennifer Bryan, free at
-        r-pkgs.org.
+        Added 2026-10-14 as slide 49, right after the "What we learned" opener. Reframed the
+        same day as five steps, at Jeremy's ask: "Frame this as a 5 step process: (1) Pick an
+        agent (Claude or Codex @ $20 for a month. Others fine too. ) (2) Set up GitHub (Free
+        account is fine) (3) Pick a development process (Hadley's R Package. book for R) (4)
+        Write a prompt "Make me an Open Source R package that does X. Include a working example
+        and user guide in GitHub pages. Follow all of the best practices in Hadley Wickham's R
+        Packages book." (5) Ask Questions!"
+        <br><br>The step 4 prompt is his words exactly. Step details are set from his
+        parentheses. "Explain how you did X" under step 5 is carried over from his first version
+        of this slide (also 2026-10-14), as an example question; cut it if step 5 should stand
+        alone. The r-pkgs.org line is an addition. The book's second edition (2023) is by Hadley
+        Wickham and Jennifer Bryan.
+        <br><br>His first version, for the record: headline "Try it out!"; "Need a development
+        framework. R Packages by Hadley is a great place to start. Use GitHub with Version
+        Control, GitHub pages and CI/CD. 'Make me an Open Source R package that does X. Follow
+        all of the best practices in Hadley Wickham's R Packages book.' 'Explain how you did X'"
         <br><br>Every slide after this one moved up a number: good at is 50, bad at 51, how I
         feel 52, the party 53. The deck is 53 slides.
       </aside>
