@@ -21,7 +21,7 @@ GITHUB_TOKEN="$(gh auth token)" node fetch.mjs
 node build.mjs --inject ../beat4-roadmap-tree-draft.html
 ```
 
-- Once the two slides have been copied into the deck, point step 2 at the deck as well: `node build.mjs --inject ../../slides.html`. It only works if the slides were copied with their `roadmap-tree:…:start` and `:end` comment markers; `--inject` may be given more than once.
+- Once the two slides have been copied into the deck, point step 2 at the deck as well: `node build.mjs --inject ../../keynote_extended.html`. It only works if the slides were copied with their `roadmap-tree:…:start` and `:end` comment markers; `--inject` may be given more than once.
 - The date on the slides is the day of step 1, in Eastern time. Step 2 alone redraws from the saved snapshot and keeps its date.
 - Then open the slide and look at it. The numbers in the notes are rewritten; the sentences around them are not, so check the talking points against the new picture.
 

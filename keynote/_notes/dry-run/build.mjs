@@ -1,5 +1,5 @@
 // Dry-run kit generator for the R/Pharma 2026 keynote.
-// Reads ../../slides.html (never edits it) and writes, next to this script:
+// Reads ../../keynote_extended.html (never edits it) and writes, next to this script:
 //   thumbs/01.png ... NN.png   800x450 thumbnail of each main-run slide (with ?reveal)
 //   run-sheet.html             the page to rehearse from (phone and print friendly)
 //   timing.md                  the beat table, slides with no spoken notes, every open TODO
@@ -17,7 +17,7 @@ import crypto from 'crypto';
 import { fileURLToPath, pathToFileURL } from 'url';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
-const DECK = path.resolve(HERE, '../../slides.html');
+const DECK = path.resolve(HERE, '../../keynote_extended.html');
 const THUMBS = path.join(HERE, 'thumbs');
 const NO_THUMBS = process.argv.includes('--no-thumbs');
 
@@ -202,7 +202,7 @@ function beatLine(b) {
   const L = [];
   L.push('# Dry-run timing');
   L.push('');
-  L.push('Generated from keynote/slides.html (fingerprint ' + fingerprint + ') by keynote/_notes/dry-run/build.mjs. Do not edit by hand; re-run the script after the deck changes.');
+  L.push('Generated from keynote/keynote_extended.html (fingerprint ' + fingerprint + ') by keynote/_notes/dry-run/build.mjs. Do not edit by hand; re-run the script after the deck changes.');
   L.push('');
   L.push('## Totals');
   L.push('');
@@ -323,7 +323,7 @@ function slideRow(s) {
     : '';
   const meta = s.hasSay ? '<p class="meta">' + s.words + ' words, about ' + mmss(s.seconds) + ' at ' + WPM + ' a minute</p>' : '';
   return '<article class="slide" id="' + id + '" data-n="' + s.n + '">'
-    + '<div class="thumb"><a href="../../slides.html#' + (s.docIndex + 1) + '"><img src="thumbs/' + pad2(s.n) + '.png" width="800" height="450" loading="lazy" alt="Slide ' + s.n + ': ' + esc(s.title) + '"></a></div>'
+    + '<div class="thumb"><a href="../../keynote_extended.html#' + (s.docIndex + 1) + '"><img src="thumbs/' + pad2(s.n) + '.png" width="800" height="450" loading="lazy" alt="Slide ' + s.n + ': ' + esc(s.title) + '"></a></div>'
     + '<div class="body"><h3><span class="n">' + s.n + '</span><span class="t">' + esc(s.title) + (s.kicker && s.kicker !== s.title ? '<span class="kicker">' + esc(s.kicker) + '</span>' : '') + '</span></h3>'
     + meta + say + todos + bg + '</div>'
     + '<div class="actual">actual time</div></article>';
@@ -440,7 +440,7 @@ const html = `<!doctype html>
 </div>
 <textarea id="summary" readonly hidden aria-label="Timing summary"></textarea>
 <h1>Keynote run sheet</h1>
-<p class="sub">R/Pharma 2026, Wednesday 21 October, 40-minute slot. Built from keynote/slides.html (fingerprint ${fingerprint}); regenerate with node keynote/_notes/dry-run/build.mjs after the deck changes.</p>
+<p class="sub">R/Pharma 2026, Wednesday 21 October, 40-minute slot. Built from keynote/keynote_extended.html (fingerprint ${fingerprint}); regenerate with node keynote/_notes/dry-run/build.mjs after the deck changes.</p>
 <div class="totals">
   <div><span class="v">${totals.slides}</span><span class="l">slides</span></div>
   <div><span class="v">${totals.withSay}</span><span class="l">with his spoken notes (${totals.slidesNoSay} without)</span></div>

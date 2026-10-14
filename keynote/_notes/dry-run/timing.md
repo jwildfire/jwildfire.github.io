@@ -1,6 +1,6 @@
 # Dry-run timing
 
-Generated from keynote/slides.html (fingerprint cfd78c4678) by keynote/_notes/dry-run/build.mjs. Do not edit by hand; re-run the script after the deck changes.
+Generated from keynote/keynote_extended.html (fingerprint cfd78c4678) by keynote/_notes/dry-run/build.mjs. Do not edit by hand; re-run the script after the deck changes.
 
 ## Totals
 

@@ -3,7 +3,7 @@
 //
 //   node build.mjs                                         write treemap.svg, node-link.svg, counts.md
 //   node build.mjs --inject ../beat4-roadmap-tree-draft.html   ...and replace the marked blocks in that file
-//   node build.mjs --inject ../../slides.html              the same for the deck, once the slides are in it
+//   node build.mjs --inject ../../keynote_extended.html              the same for the deck, once the slides are in it
 //
 // Options: --objective 353 (the objective the node-link slide fans out; default 353, Biomarker charts)
 //          --orphans       draw the requirements that sit under no objective as one more block

@@ -1,6 +1,6 @@
 # Keynote working notes
 
-Working material for the R/Pharma 2026 keynote deck (`keynote/slides.html`).
+Working material for the R/Pharma 2026 keynote deck (`keynote/keynote_extended.html`).
 Jekyll skips folders whose names start with `_`, so nothing in `_notes/` is published.
 
 - `inbox/` — drop anything here: outlines, dictation, screenshots, PDFs, links.
@@ -10,7 +10,7 @@ Jekyll skips folders whose names start with `_`, so nothing in `_notes/` is publ
 
 ## Deck template
 
-`keynote/slides.html` uses the site's rainbow hex theme: paper background, Instrument
+`keynote/keynote_extended.html` uses the site's rainbow hex theme: paper background, Instrument
 Serif headings, the seven-hue spectrum through a strip of hex outlines. Each section
 takes the next hue (`data-hue="0"` … `"6"`). Layouts: `s-title`, `s-section`,
 `s-bullets`, `s-quote`, `s-stat`, `s-split`, `s-image`, `s-todo`. Speaker notes go in
