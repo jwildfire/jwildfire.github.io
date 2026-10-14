@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 230" role="img" aria-label="obot-v4: a placeholder robot cat in a hexagon">
+<!-- Placeholder art, drawn 2026-10-05. Jeremy will supply the real hexes. -->
+<polygon points="100,4 196,58 196,172 100,226 4,172 4,58" fill="#988bdd"/>
+<path d="M100 82 V60" stroke="#1f2328" stroke-width="5"/><circle cx="100" cy="54" r="8" fill="#c78a3b" stroke="#1f2328" stroke-width="4"/><polygon points="62,96 66,54 92,86" fill="#f3f4f1" stroke="#1f2328" stroke-width="5" stroke-linejoin="round"/>
+<polygon points="138,96 134,54 108,86" fill="#f3f4f1" stroke="#1f2328" stroke-width="5" stroke-linejoin="round"/>
+<polygon points="68,84 70,66 82,82" fill="#c78a3b"/><polygon points="132,84 130,66 118,82" fill="#c78a3b"/>
+<rect x="50" y="82" width="100" height="80" rx="20" fill="#f3f4f1" stroke="#1f2328" stroke-width="5"/>
+<path d="M88 84 v12 M100 84 v16 M112 84 v12" stroke="#c78a3b" stroke-width="6" stroke-linecap="round"/>
+<circle cx="58" cy="92" r="2.5" fill="#98a0aa"/><circle cx="142" cy="92" r="2.5" fill="#98a0aa"/>
+<polygon points="94,134 106,134 100,141" fill="#d87972"/>
+<path d="M90 147 q5 6 10 0 q5 6 10 0" fill="none" stroke="#1f2328" stroke-width="3" stroke-linecap="round"/>
+<path d="M60 136 L34 130 M60 143 L34 147 M140 136 L166 130 M140 143 L166 147" stroke="#1f2328" stroke-width="3" stroke-linecap="round"/><circle cx="80" cy="118" r="11" fill="#1f2328"/><circle cx="120" cy="118" r="11" fill="#1f2328"/><circle cx="80" cy="118" r="5" fill="#7fe3df"/><circle cx="120" cy="118" r="5" fill="#7fe3df"/><polygon points="100,164 88,172 96,178 100,198 104,178 112,172" fill="#1f2328"/><path d="M70 58 l8 -16 l10 12 l12 -18 l12 18 l10 -12 l8 16 z" fill="#f2c94c" stroke="#1f2328" stroke-width="4" stroke-linejoin="round"/><text x="100" y="217" text-anchor="middle" font-family="IBM Plex Mono, ui-monospace, monospace" font-weight="600" font-size="19" fill="#fff">v4</text>
+</svg>

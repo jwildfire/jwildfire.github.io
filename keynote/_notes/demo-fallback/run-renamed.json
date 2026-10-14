@@ -1,0 +1,259 @@
+{
+  "take": "renamed",
+  "recorded": "2026-10-07T12:08:45.122Z",
+  "app": {
+    "file": "input/safety.viz-app.html",
+    "sha256": "f5196bcdef72ec3d1223c4d315771a8eaf28898f871911efba589e7b497af37e",
+    "version": "safety.viz 1.9.2",
+    "pitch": "This file loads nothing; files you add are read here and never leave this computer.",
+    "url": "file:///Users/jwildfire/Documents/github/jwildfire.github.io/.claude/worktrees/keynote-deck/keynote/_notes/demo-fallback/input/safety.viz-app.html"
+  },
+  "offline": true,
+  "inputs": [
+    {
+      "file": "input/renamed/dm.csv",
+      "sha256": "6bce41f6fd61569283f4a7b5ff9b3c3908101a6f7de5d54781221f467c631bfa"
+    },
+    {
+      "file": "input/renamed/ae.csv",
+      "sha256": "d0401aa762bcd17790cc67c19c913460edcf2a71e2e1cccefc96de4b76eeaf0d"
+    },
+    {
+      "file": "input/renamed/labs_final.csv",
+      "sha256": "85305ea71520fd6fa6b3e2af0ebc5a40de8c8527618f47e902785e00d5faf7ff"
+    },
+    {
+      "file": "input/renamed/ecg.json",
+      "sha256": "f802410605bde305d3d073382c36c4c653cdd43f9736340e373c74e14e2039a4"
+    }
+  ],
+  "video": {
+    "webm": "demo-fallback-renamed.webm",
+    "mp4": "demo-fallback-renamed.mp4",
+    "seconds": 126.24,
+    "clockSeconds": 126.847,
+    "leadSeconds": -0.15200000000000102,
+    "size": {
+      "width": 1600,
+      "height": 900
+    }
+  },
+  "network": {
+    "requests": [
+      "file:///Users/jwildfire/Documents/github/jwildfire.github.io/.claude/worktrees/keynote-deck/keynote/_notes/demo-fallback/input/safety.viz-app.html"
+    ],
+    "requestsOtherThanTheFile": [],
+    "failed": [],
+    "webSockets": [],
+    "offlineProbeAfterTheDemo": {
+      "result": "refused: Failed to fetch",
+      "error": "net::ERR_INTERNET_DISCONNECTED"
+    }
+  },
+  "console": {
+    "errors": [],
+    "pageErrors": [],
+    "all": []
+  },
+  "finalTabs": [
+    "Labs and vitals 8 of 9",
+    "ECG 0 of 1",
+    "Adverse events 1 of 3",
+    "Biomarkers 5 of 5"
+  ],
+  "steps": [
+    {
+      "t": 1.588,
+      "name": "open",
+      "note": "The single file, opened from disk with the network off. Footer: \"This file loads nothing; files you add are read here and never leave this computer.\"",
+      "screenshot": "steps/renamed/01-open.png",
+      "version": "safety.viz 1.9.2",
+      "pitch": "This file loads nothing; files you add are read here and never leave this computer.",
+      "video": 1.435999999999999
+    },
+    {
+      "t": 12.51,
+      "name": "drag",
+      "note": "Dragging 4 files onto the drop zone: dm.csv, ae.csv, labs_final.csv, ecg.json.",
+      "screenshot": "steps/renamed/02-drag.png",
+      "video": 12.357999999999999
+    },
+    {
+      "t": 13.012,
+      "name": "loaded",
+      "note": "Each file is placed in a domain. Sidebar: \"23 guessed, 6 needed by a chart\"; \"12 of 18 charts ready\".",
+      "screenshot": "steps/renamed/03-loaded.png",
+      "loaded": [
+        {
+          "name": "dm.csv",
+          "detail": "Subject-level, 24 rows",
+          "flags": [
+            "1 guessed",
+            "1 needed"
+          ]
+        },
+        {
+          "name": "ae.csv",
+          "detail": "Adverse events, 136 rows",
+          "flags": [
+            "4 guessed",
+            "1 needed"
+          ]
+        },
+        {
+          "name": "labs_final.csv",
+          "detail": "Labs and vitals, 2,223 rows",
+          "flags": [
+            "8 guessed",
+            "3 needed"
+          ]
+        },
+        {
+          "name": "ecg.json",
+          "detail": "ECG, 516 rows",
+          "flags": [
+            "10 guessed",
+            "1 needed"
+          ]
+        }
+      ],
+      "mapping": "23 guessed, 6 needed by a chart",
+      "charts": "12 of 18 charts ready",
+      "count": "12 of 18 charts supported by the loaded data",
+      "tabs": [
+        "Labs and vitals 6 of 9",
+        "ECG 0 of 1",
+        "Adverse events 1 of 3",
+        "Biomarkers 5 of 5"
+      ],
+      "video": 12.86
+    },
+    {
+      "t": 30.356,
+      "name": "guess",
+      "note": "A guessed row in labs_final.csv: Participant is \"SUBJID\" (guessed).",
+      "screenshot": "steps/renamed/04-guess.png",
+      "video": 30.204
+    },
+    {
+      "t": 41.787,
+      "name": "fix-STNRHI",
+      "note": "Set by hand in labs_final.csv: STNRHI was \"not mapped\" (needed by 3 charts); now \"ULN\" (chosen). Sidebar: \"23 guessed, 5 needed by a chart\"; \"13 of 18 charts ready\".",
+      "screenshot": "steps/renamed/05-fix-STNRHI.png",
+      "before": {
+        "value": "",
+        "tag": "needed by 3 charts"
+      },
+      "after": {
+        "value": "ULN",
+        "tag": "chosen"
+      },
+      "video": 41.635
+    },
+    {
+      "t": 53.288,
+      "name": "fix-TB",
+      "note": "Set by hand in labs_final.csv: TB was \"not mapped\" (needed by 1 chart); now \"Tot. Bilirubin\" (chosen). Sidebar: \"23 guessed, 4 needed by a chart\"; \"14 of 18 charts ready\".",
+      "screenshot": "steps/renamed/06-fix-TB.png",
+      "before": {
+        "value": "",
+        "tag": "needed by 1 chart"
+      },
+      "after": {
+        "value": "Tot. Bilirubin",
+        "tag": "chosen"
+      },
+      "video": 53.135999999999996
+    },
+    {
+      "t": 64.926,
+      "name": "labs-tab",
+      "note": "The Labs and vitals tab opens on its first chart: Safety Histogram.",
+      "screenshot": "steps/renamed/07-labs-tab.png",
+      "drawn": {
+        "canvases": 10,
+        "points": 103
+      },
+      "video": 64.774
+    },
+    {
+      "t": 69.83,
+      "name": "hep-explorer",
+      "note": "The Hepatic Explorer draws 24 participants. 24 of 24 participants shown (100.0%).",
+      "screenshot": "steps/renamed/08-hep-explorer.png",
+      "participants": 24,
+      "drawn": {
+        "canvases": 1,
+        "points": 24
+      },
+      "video": 69.678
+    },
+    {
+      "t": 75.976,
+      "name": "hover",
+      "note": "Hovering a point (ALT 1.65 xULN, bilirubin 1.63 xULN) shows its participant.",
+      "screenshot": "steps/renamed/09-hover.png",
+      "video": 75.824
+    },
+    {
+      "t": 80.102,
+      "name": "participant",
+      "note": "Clicking the point selects participant 01-701-1239: the visit path is drawn and the profile opens beside the chart.",
+      "screenshot": "steps/renamed/10-participant.png",
+      "participant": "01-701-1239",
+      "video": 79.95
+    },
+    {
+      "t": 90.895,
+      "name": "profile",
+      "note": "Further down the profile of 01-701-1239: each measure with its range and a sparkline.",
+      "screenshot": "steps/renamed/11-profile.png",
+      "video": 90.743
+    },
+    {
+      "t": 98.958,
+      "name": "biomarkers",
+      "note": "The Biomarkers tab opens on Group comparison: 10 tiles, one per biomarker, a line per arm.",
+      "screenshot": "steps/renamed/12-biomarkers.png",
+      "tiles": 10,
+      "drawn": {
+        "canvases": 10,
+        "points": 300
+      },
+      "video": 98.806
+    },
+    {
+      "t": 105.869,
+      "name": "biomarker-over-time",
+      "note": "A tile opens its biomarker across the visits: ALT (SGPT), the arms side by side, the counts beneath.",
+      "screenshot": "steps/renamed/13-biomarker-over-time.png",
+      "drawn": {
+        "canvases": 1,
+        "points": 30
+      },
+      "video": 105.717
+    },
+    {
+      "t": 113.67,
+      "name": "biomarker-one-visit",
+      "note": "A visit opens alone: ALT (SGPT) at Week 6, a box per arm.",
+      "screenshot": "steps/renamed/14-biomarker-one-visit.png",
+      "drawn": {
+        "canvases": 1,
+        "points": 3
+      },
+      "video": 113.518
+    },
+    {
+      "t": 120.456,
+      "name": "association-scatter",
+      "note": "A second biomarker chart: Association scatter.",
+      "screenshot": "steps/renamed/15-association-scatter.png",
+      "drawn": {
+        "canvases": 1,
+        "points": 23
+      },
+      "video": 120.304
+    }
+  ]
+}

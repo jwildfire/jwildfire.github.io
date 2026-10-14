@@ -1,0 +1,225 @@
+{
+  "take": "pilot",
+  "recorded": "2026-10-07T12:06:27.953Z",
+  "app": {
+    "file": "input/safety.viz-app.html",
+    "sha256": "f5196bcdef72ec3d1223c4d315771a8eaf28898f871911efba589e7b497af37e",
+    "version": "safety.viz 1.9.2",
+    "pitch": "This file loads nothing; files you add are read here and never leave this computer.",
+    "url": "file:///Users/jwildfire/Documents/github/jwildfire.github.io/.claude/worktrees/keynote-deck/keynote/_notes/demo-fallback/input/safety.viz-app.html"
+  },
+  "offline": true,
+  "inputs": [
+    {
+      "file": "input/pilot/adsl.csv",
+      "sha256": "d2d198906aa06ace5e0fda08442ad234c5835ec7cf19378737db7274ffd54f04"
+    },
+    {
+      "file": "input/pilot/adae.csv",
+      "sha256": "6615467075651a3d56ebeb561ccced98450521cf84c127060146d8cde1e9c9a7"
+    },
+    {
+      "file": "input/pilot/adbds.csv",
+      "sha256": "8d35ce8a4727e4bcfb26481ebdfba50c2d666c3c7d39a6092b53a860962140c6"
+    },
+    {
+      "file": "input/pilot/adeg.csv",
+      "sha256": "3ff1ecb915df817b0a937b0c9fc59a9566d49b1f4544dca5b2fe0b4b803b152d"
+    }
+  ],
+  "video": {
+    "webm": "demo-fallback-pilot.webm",
+    "mp4": "demo-fallback-pilot.mp4",
+    "seconds": 109.92,
+    "clockSeconds": 110.444,
+    "leadSeconds": -0.13400000000000034,
+    "size": {
+      "width": 1600,
+      "height": 900
+    }
+  },
+  "network": {
+    "requests": [
+      "file:///Users/jwildfire/Documents/github/jwildfire.github.io/.claude/worktrees/keynote-deck/keynote/_notes/demo-fallback/input/safety.viz-app.html"
+    ],
+    "requestsOtherThanTheFile": [],
+    "failed": [],
+    "webSockets": [],
+    "offlineProbeAfterTheDemo": {
+      "result": "refused: Failed to fetch",
+      "error": "net::ERR_INTERNET_DISCONNECTED"
+    }
+  },
+  "console": {
+    "errors": [],
+    "pageErrors": [],
+    "all": [
+      {
+        "t": 51.997,
+        "type": "warning",
+        "text": "1663 missing or non-numeric results have been removed."
+      }
+    ]
+  },
+  "finalTabs": [
+    "Labs and vitals 9 of 9",
+    "ECG 1 of 1",
+    "Adverse events 3 of 3",
+    "Biomarkers 5 of 5"
+  ],
+  "steps": [
+    {
+      "t": 1.589,
+      "name": "open",
+      "note": "The single file, opened from disk with the network off. Footer: \"This file loads nothing; files you add are read here and never leave this computer.\"",
+      "screenshot": "steps/pilot/01-open.png",
+      "version": "safety.viz 1.9.2",
+      "pitch": "This file loads nothing; files you add are read here and never leave this computer.",
+      "video": 1.4549999999999996
+    },
+    {
+      "t": 12.62,
+      "name": "drag",
+      "note": "Dragging 4 files onto the drop zone: adsl.csv, adae.csv, adbds.csv, adeg.csv.",
+      "screenshot": "steps/pilot/02-drag.png",
+      "video": 12.485999999999999
+    },
+    {
+      "t": 13.252,
+      "name": "loaded",
+      "note": "Each file is placed in a domain. Sidebar: \"4 guessed, 0 needed by a chart\"; \"18 of 18 charts ready\".",
+      "screenshot": "steps/pilot/03-loaded.png",
+      "loaded": [
+        {
+          "name": "adsl.csv",
+          "detail": "Subject-level, 254 rows",
+          "flags": []
+        },
+        {
+          "name": "adae.csv",
+          "detail": "Adverse events, 1,159 rows",
+          "flags": []
+        },
+        {
+          "name": "adbds.csv",
+          "detail": "Labs and vitals, 57,929 rows",
+          "flags": [
+            "4 guessed"
+          ]
+        },
+        {
+          "name": "adeg.csv",
+          "detail": "ECG, 5,361 rows",
+          "flags": []
+        }
+      ],
+      "mapping": "4 guessed, 0 needed by a chart",
+      "charts": "18 of 18 charts ready",
+      "count": "18 of 18 charts supported by the loaded data",
+      "tabs": [
+        "Labs and vitals 9 of 9",
+        "ECG 1 of 1",
+        "Adverse events 3 of 3",
+        "Biomarkers 5 of 5"
+      ],
+      "video": 13.118
+    },
+    {
+      "t": 32.12,
+      "name": "guess",
+      "note": "The guessed rows in adbds.csv: ALT is \"Alanine Aminotransferase\" (guessed); AST is \"Aspartate Aminotransferase\" (guessed); TB is \"Bilirubin\" (guessed); ALP is \"Alkaline Phosphatase\" (guessed). None is wrong, so none is changed.",
+      "screenshot": "steps/pilot/04-guess.png",
+      "video": 31.985999999999997
+    },
+    {
+      "t": 47.735,
+      "name": "labs-tab",
+      "note": "The Labs and vitals tab opens on its first chart: Safety Histogram.",
+      "screenshot": "steps/pilot/05-labs-tab.png",
+      "drawn": {
+        "canvases": 29,
+        "points": 815
+      },
+      "video": 47.601
+    },
+    {
+      "t": 52.781,
+      "name": "hep-explorer",
+      "note": "The Hepatic Explorer draws 318 participants. 318 of 364 participants shown (87.4%).",
+      "screenshot": "steps/pilot/06-hep-explorer.png",
+      "participants": 318,
+      "drawn": {
+        "canvases": 1,
+        "points": 318
+      },
+      "video": 52.647
+    },
+    {
+      "t": 58.93,
+      "name": "hover",
+      "note": "Hovering a point (ALT 3.25 xULN, bilirubin 5.94 xULN) shows its participant.",
+      "screenshot": "steps/pilot/07-hover.png",
+      "video": 58.796
+    },
+    {
+      "t": 63.16,
+      "name": "participant",
+      "note": "Clicking the point selects participant 01-705-1186: the visit path is drawn and the profile opens beside the chart.",
+      "screenshot": "steps/pilot/08-participant.png",
+      "participant": "01-705-1186",
+      "video": 63.025999999999996
+    },
+    {
+      "t": 73.933,
+      "name": "profile",
+      "note": "Further down the profile of 01-705-1186: each measure with its range and a sparkline.",
+      "screenshot": "steps/pilot/09-profile.png",
+      "video": 73.799
+    },
+    {
+      "t": 82.286,
+      "name": "biomarkers",
+      "note": "The Biomarkers tab opens on Group comparison: 28 tiles, one per biomarker, a line per arm.",
+      "screenshot": "steps/pilot/10-biomarkers.png",
+      "tiles": 28,
+      "drawn": {
+        "canvases": 28,
+        "points": 845
+      },
+      "video": 82.152
+    },
+    {
+      "t": 89.303,
+      "name": "biomarker-over-time",
+      "note": "A tile opens its biomarker across the visits: Alanine Aminotransferase, the arms side by side, the counts beneath.",
+      "screenshot": "steps/pilot/11-biomarker-over-time.png",
+      "drawn": {
+        "canvases": 1,
+        "points": 30
+      },
+      "video": 89.169
+    },
+    {
+      "t": 97.165,
+      "name": "biomarker-one-visit",
+      "note": "A visit opens alone: Alanine Aminotransferase at Week 6, a box per arm.",
+      "screenshot": "steps/pilot/12-biomarker-one-visit.png",
+      "drawn": {
+        "canvases": 1,
+        "points": 3
+      },
+      "video": 97.031
+    },
+    {
+      "t": 104.099,
+      "name": "association-scatter",
+      "note": "A second biomarker chart: Association scatter.",
+      "screenshot": "steps/pilot/13-association-scatter.png",
+      "drawn": {
+        "canvases": 1,
+        "points": 230
+      },
+      "video": 103.965
+    }
+  ]
+}

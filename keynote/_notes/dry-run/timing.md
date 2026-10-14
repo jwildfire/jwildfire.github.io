@@ -1,0 +1,123 @@
+# Dry-run timing
+
+Generated from keynote/keynote_extended.html (fingerprint cfd78c4678) by keynote/_notes/dry-run/build.mjs. Do not edit by hand; re-run the script after the deck changes.
+
+## Totals
+
+- Slides in the main run: 51
+- Slides with his spoken notes: 5 (no spoken notes yet: 46)
+- Open TODOs: 45 (24 boxes on slides (orange TODO or blue review), 21 "TODO (Jeremy)" items in notes)
+- Words in his spoken notes: 219, which take 1.6 min at 140 words a minute
+- Slot: 40 min; the suggested split below adds up to 40 min and is not decided
+
+## Beats
+
+| Beat | Slides | Count | Suggested min | Seconds per slide | Spoken-notes slides | Spoken words | Spoken min |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 1 Opening | 1–10 | 10 | 8 | 48 | 5 | 219 | 1.6 |
+| 2a OpenRBQM without AI | 11–15 | 5 | 15 (2a + 2b) | 64 | 0 | 0 | 0.0 |
+| 2b AI layered in | 16–24 | 9 | 15 (2a + 2b) | 64 | 0 | 0 | 0.0 |
+| 3 The obot journey | 25–43 | 19 | 10 | 32 | 0 | 0 | 0.0 |
+| 3.5 How we built it | 44–46 | 3 | none | n/a | 0 | 0 | 0.0 |
+| 4 What we learned | 47–51 | 5 | 7 | 84 | 0 | 0 | 0.0 |
+
+- Beat 2 has one allowance, 15 min, over 2a and 2b together (14 slides, 64 s per slide).
+- Beat 3.5 has no minutes in the suggested split. If beats 3 and 3.5 share the 10 min: 22 slides, 27 s per slide. If 3.5 comes out of beats 3 and 4 together (17 min): 27 slides, 38 s per slide.
+- Seconds per slide is the minutes in the split divided by the slides in the beat; spoken minutes count only the words he has written, at 140 words a minute, so slides with no spoken notes add nothing.
+
+## Slides with no spoken notes (46)
+
+- 4. By working in public (beat 1)
+- 6. “Why can't I do this for work?” (beat 1)
+- 7. A handful of webpages beats a 200-page PDF (beat 1)
+- 9. The hepatic explorer, and a clinical workflow to go with it (beat 1)
+- 10. What we did, and what we didn't (beat 1)
+- 11. OpenRBQM (beat 2a)
+- 12. Monitoring a trial, as software (beat 2a)
+- 13. An ecosystem of packages (beat 2a)
+- 14. A standard development lifecycle (beat 2a)
+- 15. Quality is built into the design (beat 2a)
+- 16. AI in the loop (beat 2b)
+- 17. “We use AI heavily, but it's not autonomous. Humans own the process and all deliverables.” (beat 2b)
+- 18. How much do you hand over? (beat 2b)
+- 19. Same lifecycle; five steps changed hands (beat 2b)
+- 20. AI-written code still needs a human owner (beat 2b)
+- 21. Faster code; planning and operations have to catch up (beat 2b)
+- 22. Agents can help a lot with planning (beat 2b)
+- 23. Agents can help a lot with operations (beat 2b)
+- 24. We're having great success at level 2.5! (beat 2b)
+- 25. From Orange to obot (beat 3)
+- 26. “What can we actually do with AI agents right now?” (beat 3)
+- 27. Modernize safetyGraphics, using the gsm framework (beat 3)
+- 28. A summer down the AI rabbit hole, with obot (beat 3)
+- 29. A personal assistant (beat 3)
+- 30. OpenClaw (beat 3)
+- 31. safetyGraphics, inside a gsm workflow (beat 3)
+- 32. Claude Code, on Fable 5 (beat 3)
+- 33. “The first renderer took a few weeks; the next six took a weekend.” (beat 3)
+- 34. Papers → prompts → prototypes (beat 3)
+- 35. The organisation (beat 3)
+- 36. Four roles, and a timer script (beat 3)
+- 37. One requirement at a time (beat 3)
+- 38. Same workflow, but I just set goals, answer questions and review releases (beat 3)
+- 39. The whole roadmap is one tree of GitHub issues (beat 3)
+- 40. An objective becomes requirements, then tasks (beat 3)
+- 41. Opus 5.5 (beat 3)
+- 42. One orchestrator, one brief, one weekend (beat 3)
+- 43. The safety.viz demo: your own files, nothing uploaded (beat 3)
+- 44. $11,750 at API prices. I paid $200 a month. (beat 3.5)
+- 45. A lot of tests, and still an experiment (beat 3.5)
+- 46. Roughly a year, and I could not keep up (beat 3.5)
+- 47. What we learned (beat 4)
+- 48. What are agents good at now? (beat 4)
+- 49. What are agents bad at now? (beat 4)
+- 50. Coding feels completely different than it did a year ago. (beat 4)
+- 51. A pixel-art party of orange cats dancing under a disco ball, with confetti (beat 4)
+
+## Open TODOs (45)
+
+- Slide 2 (on slide): Jeremy to reviewmoved up to second, 7 Octdisclaimer popup, 7 Oct
+- Slide 3 (on slide): Jeremy to reviewsection names under the strip, 7 Oct
+- Slide 5 (on slide): Jeremy to reviewnow the safetyGraphics transition, 7 Oct
+- Slide 8 (on slide): the contributing companies / Logos to come, from an old slide / Drop the slide or the image in keynote/_notes/inbox/
+- Slide 10 (on slide): Jeremy to reviewcommits chart, added 7 Octinspector popup, added 7 Oct
+- Slide 11 (on slide): Jeremy to reviewsecond line softened, 7 Oct
+- Slide 12 (on slide): Jeremy to reviewreport recording, added 7 Octcaption softened, 7 Oct
+- Slide 13 (on slide): Jeremy to reviewpackage hexes, added 7 Oct
+- Slide 13 (in notes): the hexes. None of these packages has a hex logo in its public repository except qcthat, whose real logo is used. The other seven are plain hexes in the deck's colours with the short name inside. Real hexes, if you have them or want them made, drop into keynote/assets/hex/ and replace the plain ones.
+- Slide 14 (in notes): check the steps against the March all-hands deck's "Standard Development Lifecycle" slide. I did not have that slide; this version is worked back from the merged one by un-marking the agent's steps, dropping the step that only exists with an agent ("Review the plan, then prompt") and shortening "Implement, with a person steering" to "Implement". The headline is that deck's title in sentence case.
+- Slide 15 (on slide): Jeremy to reviewinspector popup, added 7 Octkicker softened, 7 Oct
+- Slide 15 (in notes): vet the qualification sentence and say what a qualified release involves at work, in your words.
+- Slide 15 (in notes): replace it with a screenshot of a real qcthat report if one can be shown.
+- Slide 20 (on slide): Jeremy to reviewmoved up after the levels, 7 Octinspector popup, 7 Oct
+- Slide 22 (in notes): (1) Vet all ten pages; they are public already, but they have not been on a keynote slide. Two things to look at in particular: thumbnail 9 names the other repositories of the side project in small print, and thumbnail 7 shows a scatter plot of the public demo study. (2) Supply or approve real gsm.roadmap artifacts if any can be shown: screenshots you take yourself, cleared for a public talk, would replace some or all of these and the caption line would go. (3) Confirm the caption wording: it tells the room these are not the team's pages. (4) Say whether the callout stays.
+- Slide 23 (on slide): Jeremy to reviewmock schedule, added 7 Oct
+- Slide 23 (in notes): replace the mock rows or keep them; confirm "Plan check", "OK" and "Flagged".
+- Slide 26 (on slide): Jeremy to reviewcallback to slide 3, 7 Octhacker and inspector, 7 Oct
+- Slide 27 (on slide): Jeremy to reviewhacker popup, added 7 Oct
+- Slide 29 (in notes): which tool v1 was, what you asked it for, and what worked and what didn't. There is no public account of it, so this version has one slide and no thumbs yet.
+- Slide 29 (in notes): the ladder level. Level 2 ("you pair with it and still read every line") is a guess to start the climb: 2, 3, 4, 5, then back to 4.
+- Slide 30 (on slide): Jeremy to reviewhacker popup, added 7 Oct
+- Slide 31 (on slide): Jeremy to reviewvisual for the bullets, 7 Oct
+- Slide 33 (on slide): Jeremy to reviewthumbnails and hacker, 7 Oct
+- Slide 34 (on slide): Jeremy to reviewhacker popup, added 7 Oct
+- Slide 36 (on slide): Jeremy to reviewhacker popup, added 7 Oct
+- Slide 37 (in notes): 10 September in your own words. The only record is the hub diary of that day, drafted by an agent: "the fully autonomous multi-agent prototype is shut down. The readout was hard to argue with — the agent structure held, objectives and memory management were poor, most of the effort went into the orchestration itself, he had to redirect it constantly, and it never produced a release for him to review." And: "The replacement is requirement sessions: five objectives broken into requirements and tasks, one requirement per session, running as long as it takes, with him driving rather than reviewing." The placeholder slide for this account is in the reserves.
+- Slide 37 (in notes): the "mixed feelings" promised in diary #8 ("I've honestly got some mixed feelings about the whole thing ... I'll talk about that more in the keynote"). Here, or in beat 4.
+- Slide 39 (on slide): Jeremy to reviewmoved from 47, now v5's evidence, 7 Oct
+- Slide 39 (in notes): the headline. Whether to say out loud which block is which, or let the green carry it. Whether the autonomy block should be on a slide in this beat at all, since beat 3 has already told that story. Whether the keynote deck's own block staying pale is a joke worth making.
+- Slide 40 (on slide): Jeremy to reviewmoved from 48, with v5's callouts, 7 Oct
+- Slide 40 (in notes): the headline. Whether to name bio.viz and gsm.bio here or leave that to the demo. Whether one line of supporting text is wanted under the picture; there is room for one only if the picture is made shorter.
+- Slide 42 (on slide): Jeremy to reviewtiles for the tables, 7 Oct
+- Slide 42 (in notes): a name. The outline calls this "obot v5" as a placeholder only.
+- Slide 42 (in notes): "Still waits on me" is a placeholder: gsm.safety v1.2.0-RC1 has waited on review since 14 September, and the 22 figures in the FDA safety guidance are specified but not drawn. Another candidate from the cost session: each new subagent paid to cache its context from scratch, so cache writes cost more than cache reads.
+- Slide 43 (in notes): confirm.
+- Slide 43 (in notes): which files to drop in on the day.
+- Slide 43 (in notes): the goal's fourth line was "have some fun". A closing line here hands to "how we built it" (part 3.5). In June it was "51% fun and 49% frustrating". What is it now?
+- Slide 44 (in notes): • Settled 2026-10-07: “$200 a month” still describes September and October (Jeremy: "Yes, still $200"). It is the figure in diary #6, #8 and #9; nothing on record confirms it after 6 September. / • The headline's $11,750 and the October bar will be out of date by 21 October. Refresh both from the analytics page the week of the talk. / • The July weekend is mostly missing from the bars. Diary #6 reports $1,273 for 10 to 12 July; the hub's file holds $145.60 for 9 to 12 July. So July is a floor too, by about $1,100, unless the two overlap in a way the record cannot show. Not added to the total. Say it, or leave the July bar as it is? / • v1 and v2 (May and June, the personal assistant and OpenClaw) have no usage data at all. The bottom line says June is not counted; it does not say what June cost. / • 10 September, the day v4 was retired, is counted under v4 ($36.74). / • Keep the three cards, or cut to two? “Two long weekends” repeats beat 3. / • Whether to show the 496 merged pull requests beside the cost (the reserve slide “What it took” did). Left off here to keep one idea on the slide.
+- Slide 45 (on slide): Jeremy to reviewsoftened title and card, 7 Octinspector popup, 7 Oct
+- Slide 46 (in notes): - Settled 7 October: the headline says “Roughly a year” (his choice; the count is eleven months, 24 Nov 2025 to 21 Oct 2026), and “did not try” stays for MCP. / - The sources credit two models for the November turn, Opus 4.5 and GPT-5.1 (diary #1 says “Opus 4.5 and ChatGPT 5.2 in late 2025”). The slide marks only Opus 4.5. / - Diary #1 (dated 10 June) says Fable 5 “came out today”; Willison and Anthropic date it 9 June. The slide uses 9 June. / - v1 and v2 are labelled “assistant” and “OpenClaw” because the model under each is not in the record (diary #2 lists Codex alongside OpenClaw). / - Agent Skills (an open standard since December 2025, diary #9) is one you did use; it could be an eighth label if you want a standard on the chart. / - v5's label says “Fable 5.1”; it also ran on Opus 5 (both names do not fit at a readable size). / - The last label says “today” for 21 October; change it if the deck is read later.
+- Slide 48 (in notes): which eight; the order; whether the left column should be the team's answers and the right column obot's, as drafted.
+- Slide 49 (in notes): keep them, and if so say where they bit.
+- Slide 50 (on slide): Jeremy to reviewbuilt from your words, 7 Oct
+- Slide 51 (on slide): Jeremy to reviewHacker, Inspector, thumbs and obot Oranges in the crowd; H and I popups. Added 2026-10-07

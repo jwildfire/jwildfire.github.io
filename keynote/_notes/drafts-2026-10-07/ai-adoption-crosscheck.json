@@ -1,0 +1,511 @@
+{
+ "started": "2026-10-07T12:54:12.271Z",
+ "finished": "2026-10-07T12:59:20.906Z",
+ "mismatches": 0,
+ "rows": [
+  {
+   "variant": "no_bots",
+   "measure": "issues_opened",
+   "quarter": "2025Q1",
+   "search_total_count": 165,
+   "counted_from_fetch": 165,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:issue created:2025-01-01..2025-03-31 -author:app/dependabot -author:app/github-actions -author:app/cm-operations-bot -author:app/ci-gh-app"
+  },
+  {
+   "variant": "no_bots",
+   "measure": "issues_opened",
+   "quarter": "2025Q2",
+   "search_total_count": 210,
+   "counted_from_fetch": 210,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:issue created:2025-04-01..2025-06-30 -author:app/dependabot -author:app/github-actions -author:app/cm-operations-bot -author:app/ci-gh-app"
+  },
+  {
+   "variant": "no_bots",
+   "measure": "issues_opened",
+   "quarter": "2025Q3",
+   "search_total_count": 104,
+   "counted_from_fetch": 104,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:issue created:2025-07-01..2025-09-30 -author:app/dependabot -author:app/github-actions -author:app/cm-operations-bot -author:app/ci-gh-app"
+  },
+  {
+   "variant": "no_bots",
+   "measure": "issues_opened",
+   "quarter": "2025Q4",
+   "search_total_count": 158,
+   "counted_from_fetch": 158,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:issue created:2025-10-01..2025-12-31 -author:app/dependabot -author:app/github-actions -author:app/cm-operations-bot -author:app/ci-gh-app"
+  },
+  {
+   "variant": "no_bots",
+   "measure": "issues_opened",
+   "quarter": "2026Q1",
+   "search_total_count": 214,
+   "counted_from_fetch": 214,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:issue created:2026-01-01..2026-03-31 -author:app/dependabot -author:app/github-actions -author:app/cm-operations-bot -author:app/ci-gh-app"
+  },
+  {
+   "variant": "no_bots",
+   "measure": "issues_opened",
+   "quarter": "2026Q2",
+   "search_total_count": 199,
+   "counted_from_fetch": 199,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:issue created:2026-04-01..2026-06-30 -author:app/dependabot -author:app/github-actions -author:app/cm-operations-bot -author:app/ci-gh-app"
+  },
+  {
+   "variant": "no_bots",
+   "measure": "issues_opened",
+   "quarter": "2026Q3",
+   "search_total_count": 172,
+   "counted_from_fetch": 172,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:issue created:2026-07-01..2026-09-30 -author:app/dependabot -author:app/github-actions -author:app/cm-operations-bot -author:app/ci-gh-app"
+  },
+  {
+   "variant": "no_bots",
+   "measure": "issues_closed",
+   "quarter": "2025Q1",
+   "search_total_count": 137,
+   "counted_from_fetch": 137,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:issue closed:2025-01-01..2025-03-31 -author:app/dependabot -author:app/github-actions -author:app/cm-operations-bot -author:app/ci-gh-app"
+  },
+  {
+   "variant": "no_bots",
+   "measure": "issues_closed",
+   "quarter": "2025Q2",
+   "search_total_count": 151,
+   "counted_from_fetch": 151,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:issue closed:2025-04-01..2025-06-30 -author:app/dependabot -author:app/github-actions -author:app/cm-operations-bot -author:app/ci-gh-app"
+  },
+  {
+   "variant": "no_bots",
+   "measure": "issues_closed",
+   "quarter": "2025Q3",
+   "search_total_count": 134,
+   "counted_from_fetch": 134,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:issue closed:2025-07-01..2025-09-30 -author:app/dependabot -author:app/github-actions -author:app/cm-operations-bot -author:app/ci-gh-app"
+  },
+  {
+   "variant": "no_bots",
+   "measure": "issues_closed",
+   "quarter": "2025Q4",
+   "search_total_count": 102,
+   "counted_from_fetch": 102,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:issue closed:2025-10-01..2025-12-31 -author:app/dependabot -author:app/github-actions -author:app/cm-operations-bot -author:app/ci-gh-app"
+  },
+  {
+   "variant": "no_bots",
+   "measure": "issues_closed",
+   "quarter": "2026Q1",
+   "search_total_count": 193,
+   "counted_from_fetch": 193,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:issue closed:2026-01-01..2026-03-31 -author:app/dependabot -author:app/github-actions -author:app/cm-operations-bot -author:app/ci-gh-app"
+  },
+  {
+   "variant": "no_bots",
+   "measure": "issues_closed",
+   "quarter": "2026Q2",
+   "search_total_count": 164,
+   "counted_from_fetch": 164,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:issue closed:2026-04-01..2026-06-30 -author:app/dependabot -author:app/github-actions -author:app/cm-operations-bot -author:app/ci-gh-app"
+  },
+  {
+   "variant": "no_bots",
+   "measure": "issues_closed",
+   "quarter": "2026Q3",
+   "search_total_count": 106,
+   "counted_from_fetch": 106,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:issue closed:2026-07-01..2026-09-30 -author:app/dependabot -author:app/github-actions -author:app/cm-operations-bot -author:app/ci-gh-app"
+  },
+  {
+   "variant": "no_bots",
+   "measure": "prs_opened",
+   "quarter": "2025Q1",
+   "search_total_count": 150,
+   "counted_from_fetch": 150,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:pr created:2025-01-01..2025-03-31 -author:app/dependabot -author:app/github-actions -author:app/cm-operations-bot -author:app/ci-gh-app"
+  },
+  {
+   "variant": "no_bots",
+   "measure": "prs_opened",
+   "quarter": "2025Q2",
+   "search_total_count": 147,
+   "counted_from_fetch": 147,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:pr created:2025-04-01..2025-06-30 -author:app/dependabot -author:app/github-actions -author:app/cm-operations-bot -author:app/ci-gh-app"
+  },
+  {
+   "variant": "no_bots",
+   "measure": "prs_opened",
+   "quarter": "2025Q3",
+   "search_total_count": 94,
+   "counted_from_fetch": 94,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:pr created:2025-07-01..2025-09-30 -author:app/dependabot -author:app/github-actions -author:app/cm-operations-bot -author:app/ci-gh-app"
+  },
+  {
+   "variant": "no_bots",
+   "measure": "prs_opened",
+   "quarter": "2025Q4",
+   "search_total_count": 67,
+   "counted_from_fetch": 67,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:pr created:2025-10-01..2025-12-31 -author:app/dependabot -author:app/github-actions -author:app/cm-operations-bot -author:app/ci-gh-app"
+  },
+  {
+   "variant": "no_bots",
+   "measure": "prs_opened",
+   "quarter": "2026Q1",
+   "search_total_count": 144,
+   "counted_from_fetch": 144,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:pr created:2026-01-01..2026-03-31 -author:app/dependabot -author:app/github-actions -author:app/cm-operations-bot -author:app/ci-gh-app"
+  },
+  {
+   "variant": "no_bots",
+   "measure": "prs_opened",
+   "quarter": "2026Q2",
+   "search_total_count": 167,
+   "counted_from_fetch": 167,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:pr created:2026-04-01..2026-06-30 -author:app/dependabot -author:app/github-actions -author:app/cm-operations-bot -author:app/ci-gh-app"
+  },
+  {
+   "variant": "no_bots",
+   "measure": "prs_opened",
+   "quarter": "2026Q3",
+   "search_total_count": 171,
+   "counted_from_fetch": 171,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:pr created:2026-07-01..2026-09-30 -author:app/dependabot -author:app/github-actions -author:app/cm-operations-bot -author:app/ci-gh-app"
+  },
+  {
+   "variant": "no_bots",
+   "measure": "prs_merged",
+   "quarter": "2025Q1",
+   "search_total_count": 132,
+   "counted_from_fetch": 132,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:pr merged:2025-01-01..2025-03-31 -author:app/dependabot -author:app/github-actions -author:app/cm-operations-bot -author:app/ci-gh-app"
+  },
+  {
+   "variant": "no_bots",
+   "measure": "prs_merged",
+   "quarter": "2025Q2",
+   "search_total_count": 138,
+   "counted_from_fetch": 138,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:pr merged:2025-04-01..2025-06-30 -author:app/dependabot -author:app/github-actions -author:app/cm-operations-bot -author:app/ci-gh-app"
+  },
+  {
+   "variant": "no_bots",
+   "measure": "prs_merged",
+   "quarter": "2025Q3",
+   "search_total_count": 82,
+   "counted_from_fetch": 82,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:pr merged:2025-07-01..2025-09-30 -author:app/dependabot -author:app/github-actions -author:app/cm-operations-bot -author:app/ci-gh-app"
+  },
+  {
+   "variant": "no_bots",
+   "measure": "prs_merged",
+   "quarter": "2025Q4",
+   "search_total_count": 61,
+   "counted_from_fetch": 61,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:pr merged:2025-10-01..2025-12-31 -author:app/dependabot -author:app/github-actions -author:app/cm-operations-bot -author:app/ci-gh-app"
+  },
+  {
+   "variant": "no_bots",
+   "measure": "prs_merged",
+   "quarter": "2026Q1",
+   "search_total_count": 119,
+   "counted_from_fetch": 119,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:pr merged:2026-01-01..2026-03-31 -author:app/dependabot -author:app/github-actions -author:app/cm-operations-bot -author:app/ci-gh-app"
+  },
+  {
+   "variant": "no_bots",
+   "measure": "prs_merged",
+   "quarter": "2026Q2",
+   "search_total_count": 148,
+   "counted_from_fetch": 148,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:pr merged:2026-04-01..2026-06-30 -author:app/dependabot -author:app/github-actions -author:app/cm-operations-bot -author:app/ci-gh-app"
+  },
+  {
+   "variant": "no_bots",
+   "measure": "prs_merged",
+   "quarter": "2026Q3",
+   "search_total_count": 132,
+   "counted_from_fetch": 132,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:pr merged:2026-07-01..2026-09-30 -author:app/dependabot -author:app/github-actions -author:app/cm-operations-bot -author:app/ci-gh-app"
+  },
+  {
+   "variant": "with_bots",
+   "measure": "issues_opened",
+   "quarter": "2025Q1",
+   "search_total_count": 165,
+   "counted_from_fetch": 165,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:issue created:2025-01-01..2025-03-31"
+  },
+  {
+   "variant": "with_bots",
+   "measure": "issues_opened",
+   "quarter": "2025Q2",
+   "search_total_count": 210,
+   "counted_from_fetch": 210,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:issue created:2025-04-01..2025-06-30"
+  },
+  {
+   "variant": "with_bots",
+   "measure": "issues_opened",
+   "quarter": "2025Q3",
+   "search_total_count": 104,
+   "counted_from_fetch": 104,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:issue created:2025-07-01..2025-09-30"
+  },
+  {
+   "variant": "with_bots",
+   "measure": "issues_opened",
+   "quarter": "2025Q4",
+   "search_total_count": 158,
+   "counted_from_fetch": 158,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:issue created:2025-10-01..2025-12-31"
+  },
+  {
+   "variant": "with_bots",
+   "measure": "issues_opened",
+   "quarter": "2026Q1",
+   "search_total_count": 230,
+   "counted_from_fetch": 230,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:issue created:2026-01-01..2026-03-31"
+  },
+  {
+   "variant": "with_bots",
+   "measure": "issues_opened",
+   "quarter": "2026Q2",
+   "search_total_count": 203,
+   "counted_from_fetch": 203,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:issue created:2026-04-01..2026-06-30"
+  },
+  {
+   "variant": "with_bots",
+   "measure": "issues_opened",
+   "quarter": "2026Q3",
+   "search_total_count": 172,
+   "counted_from_fetch": 172,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:issue created:2026-07-01..2026-09-30"
+  },
+  {
+   "variant": "with_bots",
+   "measure": "issues_closed",
+   "quarter": "2025Q1",
+   "search_total_count": 137,
+   "counted_from_fetch": 137,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:issue closed:2025-01-01..2025-03-31"
+  },
+  {
+   "variant": "with_bots",
+   "measure": "issues_closed",
+   "quarter": "2025Q2",
+   "search_total_count": 151,
+   "counted_from_fetch": 151,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:issue closed:2025-04-01..2025-06-30"
+  },
+  {
+   "variant": "with_bots",
+   "measure": "issues_closed",
+   "quarter": "2025Q3",
+   "search_total_count": 134,
+   "counted_from_fetch": 134,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:issue closed:2025-07-01..2025-09-30"
+  },
+  {
+   "variant": "with_bots",
+   "measure": "issues_closed",
+   "quarter": "2025Q4",
+   "search_total_count": 102,
+   "counted_from_fetch": 102,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:issue closed:2025-10-01..2025-12-31"
+  },
+  {
+   "variant": "with_bots",
+   "measure": "issues_closed",
+   "quarter": "2026Q1",
+   "search_total_count": 195,
+   "counted_from_fetch": 195,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:issue closed:2026-01-01..2026-03-31"
+  },
+  {
+   "variant": "with_bots",
+   "measure": "issues_closed",
+   "quarter": "2026Q2",
+   "search_total_count": 182,
+   "counted_from_fetch": 182,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:issue closed:2026-04-01..2026-06-30"
+  },
+  {
+   "variant": "with_bots",
+   "measure": "issues_closed",
+   "quarter": "2026Q3",
+   "search_total_count": 106,
+   "counted_from_fetch": 106,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:issue closed:2026-07-01..2026-09-30"
+  },
+  {
+   "variant": "with_bots",
+   "measure": "prs_opened",
+   "quarter": "2025Q1",
+   "search_total_count": 151,
+   "counted_from_fetch": 151,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:pr created:2025-01-01..2025-03-31"
+  },
+  {
+   "variant": "with_bots",
+   "measure": "prs_opened",
+   "quarter": "2025Q2",
+   "search_total_count": 147,
+   "counted_from_fetch": 147,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:pr created:2025-04-01..2025-06-30"
+  },
+  {
+   "variant": "with_bots",
+   "measure": "prs_opened",
+   "quarter": "2025Q3",
+   "search_total_count": 97,
+   "counted_from_fetch": 97,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:pr created:2025-07-01..2025-09-30"
+  },
+  {
+   "variant": "with_bots",
+   "measure": "prs_opened",
+   "quarter": "2025Q4",
+   "search_total_count": 68,
+   "counted_from_fetch": 68,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:pr created:2025-10-01..2025-12-31"
+  },
+  {
+   "variant": "with_bots",
+   "measure": "prs_opened",
+   "quarter": "2026Q1",
+   "search_total_count": 151,
+   "counted_from_fetch": 151,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:pr created:2026-01-01..2026-03-31"
+  },
+  {
+   "variant": "with_bots",
+   "measure": "prs_opened",
+   "quarter": "2026Q2",
+   "search_total_count": 178,
+   "counted_from_fetch": 178,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:pr created:2026-04-01..2026-06-30"
+  },
+  {
+   "variant": "with_bots",
+   "measure": "prs_opened",
+   "quarter": "2026Q3",
+   "search_total_count": 207,
+   "counted_from_fetch": 207,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:pr created:2026-07-01..2026-09-30"
+  },
+  {
+   "variant": "with_bots",
+   "measure": "prs_merged",
+   "quarter": "2025Q1",
+   "search_total_count": 133,
+   "counted_from_fetch": 133,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:pr merged:2025-01-01..2025-03-31"
+  },
+  {
+   "variant": "with_bots",
+   "measure": "prs_merged",
+   "quarter": "2025Q2",
+   "search_total_count": 138,
+   "counted_from_fetch": 138,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:pr merged:2025-04-01..2025-06-30"
+  },
+  {
+   "variant": "with_bots",
+   "measure": "prs_merged",
+   "quarter": "2025Q3",
+   "search_total_count": 85,
+   "counted_from_fetch": 85,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:pr merged:2025-07-01..2025-09-30"
+  },
+  {
+   "variant": "with_bots",
+   "measure": "prs_merged",
+   "quarter": "2025Q4",
+   "search_total_count": 62,
+   "counted_from_fetch": 62,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:pr merged:2025-10-01..2025-12-31"
+  },
+  {
+   "variant": "with_bots",
+   "measure": "prs_merged",
+   "quarter": "2026Q1",
+   "search_total_count": 124,
+   "counted_from_fetch": 124,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:pr merged:2026-01-01..2026-03-31"
+  },
+  {
+   "variant": "with_bots",
+   "measure": "prs_merged",
+   "quarter": "2026Q2",
+   "search_total_count": 152,
+   "counted_from_fetch": 152,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:pr merged:2026-04-01..2026-06-30"
+  },
+  {
+   "variant": "with_bots",
+   "measure": "prs_merged",
+   "quarter": "2026Q3",
+   "search_total_count": 156,
+   "counted_from_fetch": 156,
+   "match": true,
+   "query": "org:Gilead-Public org:Gilead-BioStats org:OpenRBQM -repo:Gilead-Public/Open-SMART-PMI -repo:Gilead-Public/CLAIRE -repo:OpenRBQM/openRBQM-workshop-EU25 is:pr merged:2026-07-01..2026-09-30"
+  }
+ ]
+}

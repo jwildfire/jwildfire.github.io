@@ -1,0 +1,156 @@
+{
+ "2026-05-01": {
+  "safety.viz": {
+   "pr": 134,
+   "io": 176,
+   "ic": 134
+  },
+  "gsm.safety": {
+   "pr": 59,
+   "io": 92,
+   "ic": 77
+  },
+  "bio.viz": {
+   "pr": 48,
+   "io": 85,
+   "ic": 44
+  },
+  "gsm.bio": {
+   "pr": 45,
+   "io": 62,
+   "ic": 41
+  },
+  "open.csr": {
+   "pr": 43,
+   "io": 40,
+   "ic": 31
+  },
+  "open.gismo": {
+   "pr": 8,
+   "io": 1,
+   "ic": 0
+  },
+  "demo-301": {
+   "pr": 4,
+   "io": 7,
+   "ic": 4
+  },
+  "obot.agent": {
+   "pr": 197,
+   "io": 161,
+   "ic": 115
+  },
+  "obot.roadmap": {
+   "pr": 54,
+   "io": 301,
+   "ic": 176
+  },
+  "scaffold": {
+   "pr": 2,
+   "io": 0,
+   "ic": 0
+  },
+  "showlist": {
+   "pr": 0,
+   "io": 0,
+   "ic": 0
+  },
+  "RPharma2026-AIKeynote": {
+   "pr": 4,
+   "io": 0,
+   "ic": 0
+  },
+  "safetyGraphics": {
+   "pr": 0,
+   "io": 0,
+   "ic": 0
+  },
+  "safetyCharts": {
+   "pr": 0,
+   "io": 0,
+   "ic": 0
+  },
+  "safety-histogram": {
+   "pr": 1,
+   "io": 0,
+   "ic": 0
+  }
+ },
+ "2026-06-10": {
+  "safety.viz": {
+   "pr": 134,
+   "io": 176,
+   "ic": 134
+  },
+  "gsm.safety": {
+   "pr": 53,
+   "io": 71,
+   "ic": 58
+  },
+  "bio.viz": {
+   "pr": 48,
+   "io": 85,
+   "ic": 44
+  },
+  "gsm.bio": {
+   "pr": 45,
+   "io": 62,
+   "ic": 41
+  },
+  "open.csr": {
+   "pr": 43,
+   "io": 40,
+   "ic": 31
+  },
+  "open.gismo": {
+   "pr": 8,
+   "io": 1,
+   "ic": 0
+  },
+  "demo-301": {
+   "pr": 4,
+   "io": 7,
+   "ic": 4
+  },
+  "obot.agent": {
+   "pr": 197,
+   "io": 155,
+   "ic": 115
+  },
+  "obot.roadmap": {
+   "pr": 54,
+   "io": 301,
+   "ic": 176
+  },
+  "scaffold": {
+   "pr": 2,
+   "io": 0,
+   "ic": 0
+  },
+  "showlist": {
+   "pr": 0,
+   "io": 0,
+   "ic": 0
+  },
+  "RPharma2026-AIKeynote": {
+   "pr": 4,
+   "io": 0,
+   "ic": 0
+  },
+  "safetyGraphics": {
+   "pr": 0,
+   "io": 0,
+   "ic": 0
+  },
+  "safetyCharts": {
+   "pr": 0,
+   "io": 0,
+   "ic": 0
+  },
+  "safety-histogram": {
+   "pr": 1,
+   "io": 0,
+   "ic": 0
+  }
+ }
+}
