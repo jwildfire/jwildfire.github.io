@@ -28,6 +28,7 @@
        heavier on every slide. A slide with data-outline also prints those names under the strip.
        Orange's callouts (.goodat) appear on a second press; add ?reveal to the URL to show them all.
        Elements with class .step appear one per press, before anything else on the slide.
+       A slide with data-reveal also takes one press, for its own reveal styles (slide 21).
        Slides with data-reserve="date" are reserves: kept at the end, not counted in the numbers.
        ------------------------------------------------------------------ */
     :root {
@@ -331,6 +332,13 @@
     .levels .lv b { font-size: 29px; font-weight: 600; }
     .levels .lv span { font-size: 25px; color: var(--soft); }
     .levels .lv.here { background: var(--panel); border-color: var(--c); box-shadow: 0 8px 24px rgba(31, 35, 40, 0.07); }
+    /* data-reveal on the slide (slide 21, 2026-10-14): the highlighted levels light up on the press. */
+    .levels .lv { transition: background 220ms ease, border-color 220ms ease, box-shadow 220ms ease; }
+    .levels .lv .tag { transition: opacity 220ms ease; }
+    .slide[data-reveal]:not(.revealed) .levels .lv.here { background: transparent; border-color: transparent; box-shadow: none; }
+    .slide[data-reveal]:not(.revealed) .levels .lv .tag { opacity: 0; }
+    body.overview .slide[data-reveal] .levels .lv.here, body.reveal-all .slide[data-reveal] .levels .lv.here { background: var(--panel); border-color: var(--c); box-shadow: 0 8px 24px rgba(31, 35, 40, 0.07); }
+    body.overview .slide[data-reveal] .levels .lv .tag, body.reveal-all .slide[data-reveal] .levels .lv .tag { opacity: 1; }
     .levels .lv .tag { font-family: var(--mono); font-style: normal; font-size: 19px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c); white-space: nowrap; }
     .levels-src { font-family: var(--mono); font-size: 20px; color: var(--soft); margin: 10px 0 0; }
     .levels-src a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--hue); text-decoration-thickness: 2px; text-underline-offset: 5px; }
@@ -1553,7 +1561,7 @@
       </aside>
     </section>
 
-    <section class="slide" data-hue="3">
+    <section class="slide" data-hue="3" data-reveal>
       <p class="kicker">Levels of AI usage</p>
       <h2>How much do you hand over?</h2>
       <div class="levels">
@@ -1581,6 +1589,9 @@
         <br><br>Settled 2026-10-07 (Jeremy, asked whether to box levels 2 and 3 here as on
         slides 22 and 27: "Box 2 and 3"). Both rows carry the marker and the "the day job" tag;
         until then only level 3 did. The tag appearing twice is my draft reading of "level 2.5".
+        <br><br>2026-10-14 (Jeremy: "Add the highlights on level 2+3 on click"): the slide opens with
+        all six levels plain; the first press lights up levels 2 and 3 with their "the day job"
+        tags, and the next press moves on.
       </aside>
     </section>
 
@@ -4719,7 +4730,7 @@ steps:
 
       // Forward: the first press on a slide with a callout reveals it; the next one advances.
       // Back: hides a revealed callout first, then steps back to the previous slide fully shown.
-      function hasCallout() { return !!slides[i].querySelector('.goodat:not(.now)') || slides[i].hasAttribute('data-outline'); }
+      function hasCallout() { return !!slides[i].querySelector('.goodat:not(.now)') || slides[i].hasAttribute('data-outline') || slides[i].hasAttribute('data-reveal'); }
       // Stepped content (.step): each press shows the next one before anything else happens;
       // back hides them again in reverse order.
       function next() {
