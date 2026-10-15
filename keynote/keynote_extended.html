@@ -260,6 +260,11 @@
     .goodat { opacity: 0; transform: translateY(14px) scale(0.96); transition: opacity 220ms ease, transform 220ms ease; pointer-events: none; }
     .slide.revealed .goodat, body.overview .goodat, body.reveal-all .goodat { opacity: 1; transform: none; }
     @media print { .goodat { opacity: 1 !important; transform: none !important; } }
+    /* The outline slide's section names work the same way: hidden until the next press (2026-10-14). */
+    .slide .hexlabel, .slide .hexstem { transition: opacity 220ms ease; }
+    .slide[data-outline]:not(.revealed) .hexlabel, .slide[data-outline]:not(.revealed) .hexstem { opacity: 0; }
+    body.overview .slide .hexlabel, body.overview .slide .hexstem, body.reveal-all .slide .hexlabel, body.reveal-all .slide .hexstem { opacity: 1; }
+    @media print { .slide .hexlabel { opacity: 1 !important; } .slide .hexstem { opacity: 0.6 !important; } }
 
     /* Thumbs-down version: add class "bad". Muted red, an unimpressed Orange, and it sits in the
        bottom-left corner facing the other way, so a slide can carry one of each. */
@@ -840,6 +845,9 @@
         also names them: Orange, safetyGraphics, OpenRBQM, AI in the loop, obot, What we learned.
         The names are drafts, set on each transition slide as data-section. The costs, quality
         and pace slides have no transition slide, so they have no marker.
+        <br><br>2026-10-14, at Jeremy's word ("S3: show the annotations on click"): the section
+        names and their stems start hidden and appear on the next press, like Orange's callouts.
+        The press after that moves on to slide 4.
       </aside>
     </section>
 
@@ -4458,7 +4466,7 @@ steps:
 
       // Forward: the first press on a slide with a callout reveals it; the next one advances.
       // Back: hides a revealed callout first, then steps back to the previous slide fully shown.
-      function hasCallout() { return !!slides[i].querySelector('.goodat'); }
+      function hasCallout() { return !!slides[i].querySelector('.goodat') || slides[i].hasAttribute('data-outline'); }
       function next() {
         if (hasCallout() && !slides[i].classList.contains('revealed')) slides[i].classList.add('revealed');
         else if (i < slides.length - 1) go(i + 1);
