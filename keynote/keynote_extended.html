@@ -3086,21 +3086,40 @@ steps:
     <!-- 3 · what we built, in numbers. Jeremy, 2026-10-13: "a 'What we built slide' at the end
          of the summer experiment section that summarizes what we made ... Put this just after
          the demo slide." All wording is draft; every figure is sourced in the notes. -->
-    <section class="slide s-image" data-hue="4">
+    <section class="slide s-demo" data-hue="4">
       <p class="kicker">The payoff · what I built</p>
       <h2>The safety.viz demo: your own files, nothing uploaded</h2>
-      <div class="pair">
-        <figure>
-          <div class="frame"><img src="assets/safety-viz-demo-data.jpg" alt="The safety.viz demo app's Data view: a drop zone for CSV or JSON files and a table mapping each file's columns to what the charts need" /></div>
-          <figcaption>Load your files and map the columns · every guess is labelled</figcaption>
-        </figure>
-        <figure>
-          <div class="frame"><img src="assets/safety-viz-demo-chart.png" alt="The safety.viz demo app showing histograms of every lab measure, with tabs for each chart the data supports" /></div>
-          <figcaption>Then every chart the data supports · jwildfire.github.io/safety.viz/demo</figcaption>
-        </figure>
-      </div>
+      <figure>
+        <div class="frame"><video data-demo muted loop playsinline preload="none" poster="assets/safety-viz-demo-poster.png" src="assets/safety-viz-demo.mp4" aria-label="Screen recording of the safety.viz demo app, with Orange's notes popping up: four study files are dropped in, the app says which RBQM metrics it cannot run and why, labels its guessed lab columns, opens the hepatic explorer on one participant, runs gsm's metrics with R in the browser and shows site 705 flagged for adverse events"></video></div>
+        <div class="cap">
+          <p>The live app · Orange's notes added for the talk</p>
+          <p><a href="https://jwildfire.github.io/safety.viz/demo/" target="_blank" rel="noopener">jwildfire.github.io/safety.viz/demo</a></p>
+        </div>
+      </figure>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
+        Rebuilt 2026-10-14 (Jeremy: "Sub agent to create a demo gif. spend some time making this
+        good. Maybe add orange pop-up narration to highlight key features?"). A 40-second
+        recording of the live app (safety.viz 1.11.1) replaces the two screenshots, which stay in
+        assets (safety-viz-demo-data.jpg, safety-viz-demo-chart.png). It plays from the start
+        whenever the slide opens; click it to pause. The same cut is also a GIF,
+        assets/safety-viz-demo.gif (1440 by 810, 6.9 MB), if a GIF is wanted anywhere else.
+        <br><br>What it shows, with Orange's six notes (seconds into the clip): four pilot files
+        (adsl, adae, adbds, adeg) dropped in, "Your files never leave the browser" (1 s); the
+        RBQM panel listing why 5 of 8 metrics cannot run, "It names what's missing" (8 s); the
+        lab columns tagged GUESSED, "Every guess is labelled" (12 s); the Hepatic Explorer with
+        participant 01-705-1186 clicked, "Click a participant to dig in" (22 s); RBQM with R
+        started in the browser (about 25 seconds of R starting is sped up about ten times, and
+        labelled so on screen), "R, running in your browser" (31 s); the adverse event rate by
+        site, "Site 705 stands out" (36 s). Every screen is the real app; only the notes, the
+        pointer and the speed-up are added.
+        <br><br>Things to know before showing it: RBQM runs 3 of 8 metrics on these files (no PD,
+        LB, SDRGCOMP or ENROLL data), which the app says itself. The Hepatic Explorer shows two
+        red lines about removed results and dropped participants, true of the sample data. On
+        the AE bar chart a hover tooltip shows "null" fields, so the recording keeps the pointer
+        off it. In one of four takes the page froze for about 26 seconds after R finished; that
+        take was not used. The recording scripts are in the session scratchpad, not the repo.
+        <br><br>
         The payoff of the beat (Jeremy's outline, 2026-10-05: "What I built: gsm.viz demo (this
         is the payoff)"). Read here as the safety.viz demo app; gsm.viz is the RBQM chart
         library. TODO (Jeremy): confirm.
