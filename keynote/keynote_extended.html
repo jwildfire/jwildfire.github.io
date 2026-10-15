@@ -253,6 +253,16 @@
     .s-qc .qcfoot { margin: 16px 0 0; display: flex; align-items: center; justify-content: center; gap: 22px; font-family: var(--mono); color: var(--soft); }
     .s-qc .qcfoot b { font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; font-size: 15px; }
     .s-qc .qcfoot code { font-family: var(--mono); font-size: 20px; color: var(--ink); background: var(--rail); border-radius: 10px; padding: 8px 16px; }
+    /* Registry (2026-10-14): one big number on the left, sample rows of the release registry on the right. */
+    .s-reg .reg { flex: none; display: grid; grid-template-columns: 330px 1fr; gap: 56px; align-items: start; }
+    .s-reg .stat .n { font-family: var(--serif); font-size: 170px; line-height: 0.9; margin: 0; color: var(--ink); }
+    .s-reg .stat p { font-size: 32px; line-height: 1.25; margin: 12px 0 0; }
+    .s-reg .stat p.small { font-family: var(--mono); font-size: 19px; color: var(--soft); margin-top: 22px; }
+    .s-reg table { font-size: 19px; }
+    .s-reg th { font-size: 15px; padding-bottom: 6px; }
+    .s-reg td { padding: 3px 12px 3px 0; }
+    .s-reg td b { font-weight: 600; }
+    .s-reg .src { margin: 10px 0 0; font-family: var(--mono); font-size: 17px; color: var(--soft); }
     .s-split img.qcr { display: block; height: 575px; width: auto; margin: 0 auto; border-radius: 14px; }
     .s-split .col p.small { font-size: 26px; color: var(--soft); margin-top: 20px; }
 
