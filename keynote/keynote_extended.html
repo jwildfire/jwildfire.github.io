@@ -342,7 +342,8 @@
     .life .s::before { content: ""; flex: none; width: 18px; height: 21px; clip-path: var(--hex-clip); background: var(--ink); }
     .life .s.ai { background: #e6f6f5; border-color: var(--hue); font-weight: 600; }
     .life .s.ai::before { background: var(--hue); }
-    .life .s.both::before { background: linear-gradient(90deg, var(--ink) 50%, var(--hue) 50%); }
+    .life .s.both { background: linear-gradient(90deg, var(--panel), #e6f6f5); border-color: var(--hue); }
+    .life .s.both::before, .chain-key i.both { background: linear-gradient(90deg, var(--ink) 50%, var(--hue) 50%); }
     .life .s.auto { background: var(--rail); color: var(--soft); }
     .life .s.auto::before { background: var(--faint); }
     .chain-key i.auto { background: var(--faint); }
@@ -375,7 +376,8 @@
     .lvside li.hd { display: block; opacity: 1; padding: 0 0 8px 26px; font-family: var(--mono); font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); }
     .slide:has(> .lvside) { padding-right: 420px; }
     .slide:has(> .lvside) .num { z-index: 1; }
-    .slide:has(> .lvside) .chain-key { margin-bottom: 30px; font-size: 19px; gap: 28px; }
+    .slide:has(> .lvside) .chain-key { margin-bottom: 30px; font-size: 19px; gap: 10px 28px; flex-wrap: wrap; }
+    .slide:has(> .lvside) .chain-key span { white-space: nowrap; }
     .slide:has(> .lvside) .life { gap: 22px; }
     .slide:has(> .lvside) .life .s { font-size: 22px; padding: 7px 14px; gap: 12px; }
     .s-version:has(> .lvside) { padding-right: 790px; }
@@ -1594,18 +1596,18 @@
       </ol>
       <p class="kicker">What AI in the loop looks like</p>
       <h2>Same lifecycle; five steps changed hands</h2>
-      <p class="chain-key"><span><i class="who"></i>a person</span><span><i></i>the agent, where a person used to be</span><span><i class="auto"></i>automated, as before</span></p>
+      <p class="chain-key"><span><i class="who"></i>a person</span><span><i class="both"></i>a person and the agent</span><span><i></i>the agent, where a person used to be</span><span><i class="auto"></i>automated, as before</span></p>
       <div class="life">
         <div><h3>Design</h3>
-          <div class="s">Gather requirements</div>
-          <div class="s">Write the work item</div>
+          <div class="s both">Gather requirements</div>
+          <div class="s both">Write the work item</div>
           <div class="s ai">Draft the technical plan</div>
           <div class="s">Review the plan, then prompt</div>
         </div>
         <div><h3>Build</h3>
           <div class="s ai">Write the tests</div>
           <div class="s">Review the tests</div>
-          <div class="s ai both">Implement, with a person steering</div>
+          <div class="s both">Write code</div>
           <div class="s ai">Draft the change summary</div>
           <div class="s auto">Check code quality</div>
           <div class="s">Approve</div>
@@ -1639,6 +1641,12 @@
         <br><br>Optional slide (Jeremy: "possibly"). It shows the March state. The slide that
         said how it has moved since ("we just let the coding agent deal with it") went to the
         reserves on 2026-10-06.
+        <br><br>Changed 2026-10-14 (Jeremy: "change Gather requirements and Write work items to a
+        hybrid Person/Agent. Add that to the legend at the top. Change Implement, With a person
+        steering to Write Code"). Three steps are now marked as shared between a person and the
+        agent: Gather requirements, Write the work item and Write code (until then
+        "Implement, with a person steering", the only shared step). The legend has a fourth
+        entry for them, "a person and the agent", with the half-and-half hexagon.
       </aside>
     </section>
 
