@@ -291,6 +291,21 @@
     .goodat.now { opacity: 1; transform: none; }
     .step { opacity: 0; transform: translateY(14px); transition: opacity 220ms ease, transform 220ms ease; }
     .step.on, body.overview .step, body.reveal-all .step { opacity: 1; transform: none; }
+    /* A callout with .step comes in on its own press, in order, instead of with the others. */
+    .goodat.step.on { opacity: 1; transform: none; }
+
+    /* The lifecycle slide's two callouts (2026-10-14): one at a time, in the same place at the
+       bottom right, over the dimmed lower levels; the second press swaps the first for the second. */
+    .slide .goodat.lc-sdlc, .slide .goodat.lc-ev { right: 30px; bottom: 24px; gap: 10px; z-index: 3; }
+    .slide .lc-sdlc .bub, .slide .lc-ev .bub { padding: 12px 24px 14px; box-shadow: 0 18px 50px rgba(31, 35, 40, 0.22); }
+    .slide .lc-sdlc .q, .slide .lc-ev .q { font-size: 15px; }
+    .slide .lc-sdlc .a { font-size: 36px; }
+    .slide .goodat.insp .lc-ev-a, .slide .goodat.insp.lc-ev .a { font-size: 30px; line-height: 1.08; }
+    .lc-sdlc .when { font-size: 15px; }
+    .slide .lc-sdlc .who, .slide .goodat.insp.lc-ev .who { width: 120px; height: 138px; }
+    .slide .lc-sdlc.on:has(~ .lc-ev.on), body.overview .lc-sdlc, body.reveal-all .lc-sdlc { opacity: 0; }
+    .lvside li { transition: opacity 220ms ease; }
+    .slide:has(.lc-sdlc.on) .lvside li:nth-last-child(-n+2), body.overview .slide:has(.lc-ev) .lvside li:nth-last-child(-n+2), body.reveal-all .slide:has(.lc-ev) .lvside li:nth-last-child(-n+2) { opacity: 0; }
     @media print { .step { opacity: 1 !important; transform: none !important; } }
 
     /* Slide 12 as a dialogue (2026-10-14): Inspector Orange on the left, Jeremy on the right. */
@@ -403,7 +418,7 @@
     .s-life5 .life .s { padding: 5px 14px; margin-bottom: 7px; }
     .s-life5 .life h3 { margin-bottom: 8px; }
 
-    /* Five columns (slide 24): the standard lifecycle in the middle, the work before and
+    /* Five columns (slide 23): the standard lifecycle in the middle, the work before and
        after it called out on either side. The callout sits on the middle panel's lower edge. */
     .s-five h2 { font-size: 72px; margin-bottom: 34px; }
     .five { display: grid; grid-template-columns: 1.12fr 3fr 1.12fr; gap: 46px; align-items: stretch; margin-top: 4px; height: 376px; }
@@ -707,7 +722,7 @@
     .pvr.cy .ct { font-family: var(--mono); font-size: 22px; letter-spacing: .1em; text-transform: uppercase; fill: var(--soft); }
     .pvr.cy .an { font-size: 26px; fill: var(--ink); text-anchor: middle; }
     .pvr.cy .br { stroke: var(--ink); stroke-width: 2; fill: none; }
-    /* Study operations schedule (slide 26), mock data. Scoped to .s-ops .sched. */
+    /* Study operations schedule (slide 25), mock data. Scoped to .s-ops .sched. */
     .s-ops .lab { font-size: 22px; display: flex; align-items: center; justify-content: space-between; }
     .s-ops .lab .mock { font-family: var(--mono); font-size: 22px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); border: 2px solid var(--ink); border-radius: 999px; padding: 1px 16px; }
     .s-ops .sched svg { display: block; width: 100%; height: auto; }
@@ -771,7 +786,7 @@
     .s-quote .terms li { position: relative; padding-left: 38px; font-size: 38px; line-height: 1.25; }
     .s-quote .terms li::before { content: ""; position: absolute; left: 0; top: 0.3em; width: 22px; height: 25px; background: var(--hue); clip-path: var(--hex-clip); }
     .s-quote .terms b { font-weight: 600; }
-    /* Hacker Orange (2026-10-07) answers the returning question on slide 29: a hex and a dark
+    /* Hacker Orange (2026-10-07) answers the returning question on slide 28: a hex and a dark
        speech bubble under the quote, shown with the slide. The art is Jeremy's,
        assets/hex/orange-hacker.png (original in _notes/inbox/). .terms above is no longer
        used on that slide and is kept. A callout with no .q line is a plain remark. */
@@ -792,7 +807,7 @@
     .goodat.hack.sm .who { width: 124px; height: 143px; }
     .goodat.hack.sm .a { font-size: 34px; }
     .goodat.hack.sm .a.three { font-size: 27px; }
-    /* Four across: the wall of what a version built (slide 36), a sibling of the goal slide's wall. */
+    /* Four across: the wall of what a version built (slide 35), a sibling of the goal slide's wall. */
     .gallery.four { grid-template-columns: repeat(4, 1fr); gap: 14px 20px; }
     .gallery.four img { height: 172px; }
     .gallery.four.short img { height: 148px; }
@@ -917,7 +932,7 @@
         and answered "quite a lot" in diary #9. The talk answers it and ends on it.
         <br><br>2026-10-14, at Jeremy's word ("S3 remove the quotes and the diary reference"): the
         quotation marks and the line under the question ("— developer diary #1, 10 June 2026")
-        are off the slide. The callback on slide 29 is unchanged.
+        are off the slide. The callback on slide 28 is unchanged.
         <br><br>Outline of the talk, added 2026-10-07 (Jeremy: "Can we add emphasis for the hexes
         representing transition slides in the header. On slide 3 annotate the sections (will use
         it to give a quick outline of the talk)"). Every slide now draws the strip hex of each
@@ -1457,7 +1472,7 @@
         requirement").
         <br><br>Pays off in beat 3: safety.viz and gsm.safety borrow exactly this (diary #4:
         "Instead of inventing a new quality framework, we plug the safety graphics into a quality
-        framework that already exists"), and slide 29, where the experiment opens without any of this, is the contrast.
+        framework that already exists"), and slide 28, where the experiment opens without any of this, is the contrast.
         <br><br>2026-10-07: the kicker read "GxP · qcthat" and became "Quality · qcthat" under
         Jeremy's rule of that day, no reference to GxP on any slide. Draft wording.
       </aside>
@@ -1557,7 +1572,7 @@
         2026-10-06 from "We just let the coding agent deal with it", which went to the reserves
         (Jeremy: "Move the 'good at writing code call out to slide 20'"). The small line
         "as of Q4 2025" was added the same day (Jeremy: "Add (As of Q4 2025) for 'good at
-        writing code'"); it pairs with "as of Q2 2026" on slide 24's callout.
+        writing code'"); it pairs with "as of Q2 2026" on the first callout on slide 22 (moved there from "Where we put the effort" on 14 October).
       </aside>
     </section>
 
@@ -1631,6 +1646,8 @@
           <div class="s auto">Publish</div>
         </div>
       </div>
+      <div class="goodat step lc-sdlc"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">The standard SDLC</p><p class="when">as of Q2 2026</p></div><div class="who"><i>👍</i></div></div>
+      <div class="goodat insp step lc-ev"><div class="bub"><p class="q">What evidence do you have?</p><p class="a">The same tests,<br>and a human owner</p></div><div class="who"></div></div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
         From the March all-hands deck, which showed this as two slides: "Standard Development
@@ -1660,29 +1677,16 @@
         entry for them, "a person and the agent", with the half-and-half hexagon.
         <br><br>Legend wording changed 2026-10-14 (Jeremy): "the agent, where a person used to be"
         is now "the agent, with human review".
-      </aside>
-    </section>
-
-    <section class="slide s-bullets" data-hue="3">
-      <p class="kicker">The rule that doesn't change</p>
-      <h2>AI-written code still needs a human owner</h2>
-      <ul>
-        <li>A person owns the requirements.</li>
-        <li>A person owns the risk decision.</li>
-        <li>A person must be able to explain why the code works.</li>
-        <li>A person must be able to explain why it is safe enough for medical research.</li>
-      </ul>
-      <div class="goodat insp"><div class="bub"><p class="q">What evidence do you have?</p><p class="a">The same tests, and a human owner</p></div><div class="who"></div></div>
-      <aside class="notes">
-        <strong class="say">&lt;none yet&gt;</strong>
-        The four lines are verbatim from the 6 June deck draft (RPharma2026-AIKeynote), which came
-        from Jeremy's dictation. Same idea in the abstract: scaffolding that keeps AI behaviour
-        "repeatable, auditable, and governed by the humans who remain responsible for every line of code."
-        <br><br>Old deck's guardrail grid, if a second slide is wanted: Evidence, Permissions,
-        Traceability, Humans.
-        <br><br>Moved up on 2026-10-07 (Jeremy: "move slide 26 after 19."): it now follows the
-        levels slide and comes before "Where we put the effort"; until then it sat after the
-        operations slide, just before the wrap-up.
+        <br><br>Two callouts added 2026-10-14 (Jeremy: "s23 to reserves. Move the SDLC call out
+        from 24 and the Evidence callout from 23 to 22."). One press each, in that order: Orange
+        thumbs-up, "What are agents good at now? The standard SDLC, as of Q2 2026" (from
+        "Where we put the effort"); then Inspector Orange, "What evidence do you have? The same
+        tests, and a human owner" (from "AI-written code still needs a human owner", now in
+        Reserves with its four lines: a person owns the requirements; a person owns the risk
+        decision; a person must be able to explain why the code works; a person must be able to
+        explain why it is safe enough for medical research).
+        Both sit in the same place at the bottom right, over the dimmed lower levels, so the
+        second replaces the first; the overview shows the second.
       </aside>
     </section>
 
@@ -1722,7 +1726,6 @@
           <div class="s">Monitoring plan checks</div>
         </div>
       </div>
-      <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">The standard SDLC</p><p class="when">as of Q2 2026</p></div><div class="who"><i>👍</i></div></div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
         Jeremy's message for this slide (2026-10-06): "messaging is that agents have sped
@@ -1744,7 +1747,8 @@
         help a lot upstream and downstream".
         <br><br>Callout, second click (Jeremy: "Add a agents are good at standard SDLC (as of Q2
         2026 in small text below)"): what are agents good at now? The standard SDLC, as of Q2
-        2026.
+        2026. Moved to the lifecycle slide on 2026-10-14 (Jeremy: "Move the SDLC call out from
+        24 ... to 22."); this slide has no callout now.
         <br><br>Nothing new is on the slide: the items in the outer columns and the line under
         the middle label are the words of the earlier version ("checks against the monitoring
         plan" is shortened to fit); the middle items are shortened from slide 16.
@@ -1754,7 +1758,7 @@
         and sub-issues that coding consumes; coding produces releases that operations deploys to studies.
         <br><br>Why both ends: they are company-specific process that no vendor will build. The
         middle is commodity and improving monthly.
-        <br><br>Vet before publishing: everything on slides 24 and 26, and the Planning cell on slide 25, comes from that internal deck. (The artifact grid on slide 25 is from the side project's public hub.)
+        <br><br>Vet before publishing: everything on slides 23 and 25, and the Planning cell on slide 24, comes from that internal deck. (The artifact grid on slide 24 is from the side project's public hub.)
       </aside>
     </section>
 
@@ -3278,7 +3282,7 @@ steps:
         here as the SDLC slide (tests, review, sign-off), ahead of the two roadmap pictures.
         Settled 2026-10-07: asked whether it belongs in "what we learned" instead, Jeremy chose "Stay in how we built it". It was drafted as s5
         ("Quality", under "how do we do this in GxP?") in his first structure. Every word is draft; the numbers are sourced below. It calls back to the
-        beat 3 opener (slide 29, where the inspector is waved off) and to beat 2's quality slide (slide 17: every
+        beat 3 opener (slide 28, where the inspector is waved off) and to beat 2's quality slide (slide 17: every
         requirement has a test, every test has a result, and a person signs the release).
         <br><br>Column 1, re-measured 2026-10-13 for the "What we built" slide before this one, so that the two agree: 2,515 unit and 448 browser tests at safety.viz v1.11.0 (released 2026-10-10), from its release notes and the check on the released commit. 2,515 + 448 = 2,963. It read 2,627 from 7 to 13 October.
         <br><br>Column 1, as re-measured 2026-10-07. 2,242 unit and 385 browser tests at safety.viz
@@ -3580,13 +3584,13 @@ steps:
         callout's; the small label under it says where it came up. All of it is draft for
         Jeremy to rewrite.
         <br><br>Where each one comes from:
-        <br>Teaching me things: slide 52 (moved there from slide 6 on 2026-10-14).
+        <br>Teaching me things: slide 51 (moved there from slide 6 on 2026-10-14).
         <br>Writing code: slide 20.
-        <br>Drafting documents: slide 25.
-        <br>Designing pages: was the callout on slide 25 (the artifacts) until 2026-10-06; no longer on a slide before this one.
-        <br>Porting old code: slide 36 (v3, the weekend of renderers).
-        <br>Translating research into software: slide 37 (v3; Jeremy's wording).
-        <br>Reviewing its own work: slide 45 (v5.5; the reviewer agents).
+        <br>Drafting documents: slide 24.
+        <br>Designing pages: was the callout on slide 24 (the artifacts) until 2026-10-06; no longer on a slide before this one.
+        <br>Porting old code: slide 35 (v3, the weekend of renderers).
+        <br>Translating research into software: slide 36 (v3; Jeremy's wording).
+        <br>Reviewing its own work: slide 44 (v5.5; the reviewer agents).
         <br>Running experiments: not a callout in the main deck. It is from Jeremy's steer of
         5 October ("Agents are great at experiments") and from a slide now in the reserves. If
         it stays here it probably wants a callout in beat 3, on the v5.5 slide.
@@ -3622,17 +3626,17 @@ steps:
         build as the slide before: Orange's thumbs-down answers gathered. Draft wording
         throughout.
         <br><br>Where each one comes from:
-        <br>Setting priorities: slide 25.
-        <br>Working without me: three callouts folded into one. "Autonomy" (v2, slide 34),
-        "Working without me" (v3, slide 36) and "Still waits on me" (v5.5, slide 45, which is a
+        <br>Setting priorities: slide 24.
+        <br>Working without me: three callouts folded into one. "Autonomy" (v2, slide 33),
+        "Working without me" (v3, slide 35) and "Still waits on me" (v5.5, slide 44, which is a
         placeholder Jeremy has not confirmed).
-        <br>Knowing when it has failed: no longer a callout on a slide. The v4 quote slide went to the reserves on 2026-10-07 and its contents are in the notes for slide 39 (v4; "Nine cases in one night of something
+        <br>Knowing when it has failed: no longer a callout on a slide. The v4 quote slide went to the reserves on 2026-10-07 and its contents are in the notes for slide 38 (v4; "Nine cases in one night of something
         reporting success while having done nothing", diary #8).
         <br>Being concise and Remembering: from Jeremy's close-out list in the outline
         ("Communicating: being concise", "Remembering"). Neither is a callout anywhere in the
         deck yet, and the label "Every day" is a guess at a tag. TODO (Jeremy): keep them, and
         if so say where they bit.
-        <br><br>Left out: "No chart releases" (v5, slide 43). It is true of September, but
+        <br><br>Left out: "No chart releases" (v5, slide 42). It is true of September, but
         October shipped six releases in a weekend, so it does not read as something agents are
         bad at.
         <br><br>Until late on 5 October a sixth, dashed cell bridged to "So how do we do this in
@@ -3660,7 +3664,7 @@ steps:
         working less. But, what's now? Orange callouts - Good: More medicines, faster! (small)
         And no more powerpoint! Bad: Data Centers. Rouge Agents. Quality: So. Much. Change.
         Hacker: 100 years of innovation! Trials on a chip! Robots folding my clothes!" (He
-        gave the number in the 54-slide count; this was slide 51 of 52 then; it was slide 50 of 51 on 7 October was slide 52 of 53 from 14 October, was slide 54 of 55 after the two JSM 2019 slides went in later that day, and is slide 55 of 56 since the registry slide followed.) Every word on the
+        gave the number in the 54-slide count; this was slide 51 of 52 then; it was slide 50 of 51 on 7 October was slide 52 of 53 from 14 October, was slide 54 of 55 after the two JSM 2019 slides went in later that day, was slide 55 of 56 once the registry slide followed, and is slide 54 of 55 since "AI-written code still needs a human owner" went to the reserves.) Every word on the
         slide is his, with one spelling changed: "Rouge Agents" is set as "Rogue Agents".
         "But, what's now?" is as he typed it; it may have been meant as "what's next?". His
         three sentences show with the slide; the four Oranges arrive together on the second
@@ -4636,6 +4640,32 @@ steps:
       </aside>
     </section>
 
+    <section class="slide s-bullets" data-reserve="14 October 2026" data-hue="3">
+      <p class="kicker">The rule that doesn't change</p>
+      <h2>AI-written code still needs a human owner</h2>
+      <ul>
+        <li>A person owns the requirements.</li>
+        <li>A person owns the risk decision.</li>
+        <li>A person must be able to explain why the code works.</li>
+        <li>A person must be able to explain why it is safe enough for medical research.</li>
+      </ul>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        Demoted 14 October 2026 (Jeremy: "s23 to reserves. Move the SDLC call out from 24 and
+        the Evidence callout from 23 to 22."). Its Inspector Orange callout ("What evidence do
+        you have?" / "The same tests, and a human owner") moved to the lifecycle slide with it.
+        <br><br>
+        The four lines are verbatim from the 6 June deck draft (RPharma2026-AIKeynote), which came
+        from Jeremy's dictation. Same idea in the abstract: scaffolding that keeps AI behaviour
+        "repeatable, auditable, and governed by the humans who remain responsible for every line of code."
+        <br><br>Old deck's guardrail grid, if a second slide is wanted: Evidence, Permissions,
+        Traceability, Humans.
+        <br><br>Moved up on 2026-10-07 (Jeremy: "move slide 26 after 19."): it now follows the
+        levels slide and comes before "Where we put the effort"; until then it sat after the
+        operations slide, just before the wrap-up.
+      </aside>
+    </section>
+
   </div>
 
   <div class="notes-panel" id="notes" aria-live="polite"></div>
@@ -4732,7 +4762,7 @@ steps:
 
       // Forward: the first press on a slide with a callout reveals it; the next one advances.
       // Back: hides a revealed callout first, then steps back to the previous slide fully shown.
-      function hasCallout() { return !!slides[i].querySelector('.goodat:not(.now)') || slides[i].hasAttribute('data-outline') || slides[i].hasAttribute('data-reveal'); }
+      function hasCallout() { return !!slides[i].querySelector('.goodat:not(.now):not(.step)') || slides[i].hasAttribute('data-outline') || slides[i].hasAttribute('data-reveal'); }
       // Stepped content (.step): each press shows the next one before anything else happens;
       // back hides them again in reverse order.
       function next() {
