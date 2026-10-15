@@ -190,8 +190,7 @@
     .s-image h2 { margin-bottom: 32px; font-size: 64px; }
     /* Two screenshots side by side: wrap two <figure>s in .pair. */
     /* The standard AE table (slide 8): a subhead under the title, the table as large as it goes. */
-    .s-aetable h2 { margin-bottom: 8px; }
-    .s-aetable .sub { margin: 0 0 22px; font-size: 34px; color: var(--soft); }
+    .s-aetable h2 { margin-bottom: 30px; }
     .s-aetable .frame img { inset: 10px; width: calc(100% - 20px); height: calc(100% - 20px); }
     .s-image .pair { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
     /* A frame that holds code in place of a picture: <div class="frame code"><pre>…</pre></div>.
@@ -1024,9 +1023,8 @@
 
     <!-- 1 · what we improved on, from the JSM 2019 deck -->
     <section class="slide s-image s-aetable" data-hue="1">
-      <p class="kicker">What we started from</p>
+      <p class="kicker">Page 1 of 18</p>
       <h2>A standard adverse events table</h2>
-      <p class="sub">Page 1 of 18</p>
       <figure>
         <div class="frame"><img src="assets/jsm2019/standard-ae-table.jpg" alt="A standard adverse events table: preferred terms down the side, counts, percentages and p-values by group across" /></div>
       </figure>
@@ -1041,6 +1039,8 @@
         alone, without the orange "Page 1 of 18 …" banner, and "Page 1 of 18" is the line under
         the headline. The crop also stops at Viral skin infection (17 of the original 20 rows) so
         the table can fill the width of the slide.
+        <br><br>Then (Jeremy: "replace 'what we started from' with 'Page 1 of 18'"): "Page 1 of 18"
+        is the kicker, and the line under the headline is gone so it does not say it twice.
       </aside>
     </section>
 
