@@ -189,6 +189,10 @@
     .s-image figcaption { margin-top: 20px; font-family: var(--mono); font-size: 22px; color: var(--soft); }
     .s-image h2 { margin-bottom: 32px; font-size: 64px; }
     /* Two screenshots side by side: wrap two <figure>s in .pair. */
+    /* The standard AE table (slide 8): a subhead under the title, the table as large as it goes. */
+    .s-aetable h2 { margin-bottom: 8px; }
+    .s-aetable .sub { margin: 0 0 22px; font-size: 34px; color: var(--soft); }
+    .s-aetable .frame img { inset: 10px; width: calc(100% - 20px); height: calc(100% - 20px); }
     .s-image .pair { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
     /* A frame that holds code in place of a picture: <div class="frame code"><pre>…</pre></div>.
        <i> inside the pre marks lines left out. Added 2026-10-07 for the "what I built" slides,
@@ -1019,19 +1023,24 @@
     </section>
 
     <!-- 1 · what we improved on, from the JSM 2019 deck -->
-    <section class="slide s-image" data-hue="1">
+    <section class="slide s-image s-aetable" data-hue="1">
       <p class="kicker">What we started from</p>
       <h2>A standard adverse events table</h2>
+      <p class="sub">Page 1 of 18</p>
       <figure>
-        <div class="frame"><img src="assets/jsm2019/standard-ae-table.jpg" alt="A standard adverse events table: preferred terms down the side, counts, percentages and p-values by group across, and a banner reading Page 1 of 18" /></div>
-        <figcaption>Page 1 of 18</figcaption>
+        <div class="frame"><img src="assets/jsm2019/standard-ae-table.jpg" alt="A standard adverse events table: preferred terms down the side, counts, percentages and p-values by group across" /></div>
       </figure>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
         Added 2026-10-14 at Jeremy's word: "put in slide 5 from the new deck as an example of what
         we improved on before the s7 gif." Slide 5 of his JSM 2019 talk, "Background: Standard
         Adverse Events Table", with its "Page 1 of 18 …" banner. The next slide is the AE Explorer
-        GIF: the same table, interactive. Kicker and caption are drafts.
+        GIF: the same table, interactive. The kicker is a draft.
+        <br><br>Later on 2026-10-14 (Jeremy: "crop the photo on 8 to make the table bigger. remove
+        the orange box. Move 'Page 1 of 18' to the subhead"): the image is cropped to the table
+        alone, without the orange "Page 1 of 18 …" banner, and "Page 1 of 18" is the line under
+        the headline. The crop also stops at Viral skin infection (17 of the original 20 rows) so
+        the table can fill the width of the slide.
       </aside>
     </section>
 
