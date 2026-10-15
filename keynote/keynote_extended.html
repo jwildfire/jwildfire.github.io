@@ -295,7 +295,7 @@
     .goodat.step.on { opacity: 1; transform: none; }
 
     /* The lifecycle slide's two callouts (2026-10-14), modelled on the pair on the planning
-       slide (.s-artifacts): side by side along the bottom, one press each, Orange on the outside
+       slide (.s-artifacts): side by side along the bottom, both on one press, Orange on the outside
        of each. The first covers the legend (his call: "fine to overwrite legend"), the second
        the dimmed lower levels. */
     .slide .goodat.lc-sdlc, .slide .goodat.lc-ev { bottom: 72px; gap: 20px; z-index: 3; }
@@ -306,8 +306,8 @@
     .slide .lc-sdlc .a, .slide .goodat.insp.lc-ev .a { font-size: 40px; line-height: 1.05; }
     .slide .lc-sdlc .who, .slide .goodat.insp.lc-ev .who { width: 130px; height: 150px; }
     .lvside li, .slide:has(.lc-sdlc) .chain-key { transition: opacity 220ms ease; }
-    .slide:has(.lc-sdlc.on) .chain-key, body.overview .slide:has(.lc-sdlc) .chain-key, body.reveal-all .slide:has(.lc-sdlc) .chain-key { opacity: 0; }
-    .slide:has(.lc-ev.on) .lvside li:nth-last-child(-n+2), body.overview .slide:has(.lc-ev) .lvside li:nth-last-child(-n+2), body.reveal-all .slide:has(.lc-ev) .lvside li:nth-last-child(-n+2) { opacity: 0; }
+    .slide.revealed:has(.lc-sdlc) .chain-key, body.overview .slide:has(.lc-sdlc) .chain-key, body.reveal-all .slide:has(.lc-sdlc) .chain-key { opacity: 0; }
+    .slide.revealed:has(.lc-ev) .lvside li:nth-last-child(-n+2), body.overview .slide:has(.lc-ev) .lvside li:nth-last-child(-n+2), body.reveal-all .slide:has(.lc-ev) .lvside li:nth-last-child(-n+2) { opacity: 0; }
     @media print { .step { opacity: 1 !important; transform: none !important; } }
 
     /* Slide 12 as a dialogue (2026-10-14): Inspector Orange on the left, Jeremy on the right. */
@@ -1648,8 +1648,8 @@
         </div>
       </div>
       <p class="chain-key" style="margin: 18px 0 0"><span><i class="who"></i>a person</span><span><i class="both"></i>a person and the agent</span><span><i></i>the agent, with human review</span><span><i class="auto"></i>automated, as before</span></p>
-      <div class="goodat step lc-sdlc"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">The standard SDLC</p><p class="when">as of Q2 2026</p></div><div class="who"><i>👍</i></div></div>
-      <div class="goodat insp step lc-ev"><div class="bub"><p class="q">What evidence do you have?</p><p class="a">The same tests,<br>and a human owner</p></div><div class="who"></div></div>
+      <div class="goodat lc-sdlc"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">The standard SDLC</p><p class="when">as of Q2 2026</p></div><div class="who"><i>👍</i></div></div>
+      <div class="goodat insp lc-ev"><div class="bub"><p class="q">What evidence do you have?</p><p class="a">The same tests,<br>and a human owner</p></div><div class="who"></div></div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
         From the March all-hands deck, which showed this as two slides: "Standard Development
@@ -1692,7 +1692,8 @@
         dimmed lower levels. Both sit just above the footer, and the legend fades out with the
         first press.
         Restyled the same day (Jeremy: "model comments after 24") to match the pair on the
-        planning slide: the same size, Orange on the outside of each bubble.
+        planning slide: the same size, Orange on the outside of each bubble. Then both on one
+        press (Jeremy: "1 click for both comments"), as on that slide.
         <br><br>Headline changed 2026-10-14 (Jeremy: "five steps changed hands" -&gt; "Directly
         Responsible Humans"): it was "Same lifecycle; five steps changed hands". His
         capitals are kept, since it is a name. Set at 63 px (the deck's headlines are 76 px)
