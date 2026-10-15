@@ -852,6 +852,18 @@
     .s-built .tile .n { font-family: var(--serif); font-size: 72px; line-height: 1; margin: 0 0 6px; color: var(--ink); white-space: nowrap; }
     .s-built .tile h3 { font-family: var(--mono); font-size: 20px; letter-spacing: 0.1em; white-space: nowrap; text-transform: uppercase; color: var(--hue); margin: 0 0 6px; font-weight: 500; }
     .s-built .tile p:not(.n) { font-size: 23px; line-height: 1.3; color: var(--soft); margin: 0; }
+    /* 2026-10-14 (Jeremy): the clinical trial tools on top and larger; the technical
+       metrics below, smaller and quieter. */
+    .s-built .tiles.t3 .tile { padding: 20px 30px 22px; }
+    .s-built .tiles.t3 .tile .n { font-size: 104px; margin-bottom: 10px; }
+    .s-built .tiles.t3 .tile h3 { font-size: 22px; }
+    .s-built .tiles.t3 .tile p:not(.n) { font-size: 26px; }
+    .s-built .lbl.tech { margin-top: 30px; font-size: 16px; color: var(--faint); }
+    .s-built .tiles.tech { gap: 30px; }
+    .s-built .tiles.tech .tile { background: none; border: 0; border-top: 2px solid var(--rule); border-radius: 0; padding: 10px 0 0; }
+    .s-built .tiles.tech .tile .n { font-size: 40px; color: var(--soft); margin-bottom: 4px; }
+    .s-built .tiles.tech .tile h3 { font-size: 15px; color: var(--soft); }
+    .s-built .tiles.tech .tile p:not(.n) { font-size: 18px; color: var(--faint); }
     .s-built .foot { font-family: var(--mono); font-size: 19px; color: var(--soft); margin: 0; white-space: nowrap; }
   </style>
 </head>
@@ -2975,70 +2987,21 @@ steps:
     </section>
 
     <!-- 3 · the payoff -->
-    <section class="slide s-image" data-hue="4">
-      <p class="kicker">The payoff · what I built</p>
-      <h2>The safety.viz demo: your own files, nothing uploaded</h2>
-      <div class="pair">
-        <figure>
-          <div class="frame"><img src="assets/safety-viz-demo-data.jpg" alt="The safety.viz demo app's Data view: a drop zone for CSV or JSON files and a table mapping each file's columns to what the charts need" /></div>
-          <figcaption>Load your files and map the columns · every guess is labelled</figcaption>
-        </figure>
-        <figure>
-          <div class="frame"><img src="assets/safety-viz-demo-chart.png" alt="The safety.viz demo app showing histograms of every lab measure, with tabs for each chart the data supports" /></div>
-          <figcaption>Then every chart the data supports · jwildfire.github.io/safety.viz/demo</figcaption>
-        </figure>
-      </div>
-      <aside class="notes">
-        <strong class="say">&lt;none yet&gt;</strong>
-        The payoff of the beat (Jeremy's outline, 2026-10-05: "What I built: gsm.viz demo (this
-        is the payoff)"). Read here as the safety.viz demo app; gsm.viz is the RBQM chart
-        library. TODO (Jeremy): confirm.
-        <br><br>The safety.viz demo app, released in v1.8.0 on 2 October. Headline is draft wording.
-        <br><br>What it does (v1.8.0 and v1.9.1 release notes): drop CSV or JSON files; each is
-        placed in a data domain and its columns mapped, "with every guess labelled"; tabs by
-        domain say how many charts the data supports; "a chart that cannot draw names what it is
-        missing". "Nothing is uploaded." The whole app is also one HTML file of about 1.4 MB (since v1.9.2; 1.2 MB before) that
-        runs offline: "This file loads nothing; files you add are read here and never leave this
-        computer."
-        <br><br>Draft demo script, about two minutes: open the single file from the desktop with
-        wifi off; drop four CSVs; show one guessed mapping and fix it; open the hepatic explorer
-        and click a participant; open the Biomarkers tab.
-        <br><br>Settled 2026-10-07: live, with the recording as backup (Jeremy: "Live, video as
-        backup"). The recording and its input files are in keynote/_notes/demo-fallback/.
-        TODO (Jeremy): which files to drop in on the day.
-        <br><br>Record a fallback
-        either way; these two screenshots are the fallback of the fallback. The Data view image
-        is from the hub's v1.8.0 demo page; the chart image is the live app on 2026-10-05.
-        <br><br>TODO (Jeremy): the goal's fourth line was "have some fun". A closing line here
-        hands to "how we built it" (part 3.5). In June it was "51% fun and 49% frustrating". What is it now?
-        <br><br>Ruled out: demo-301 (its weekly pipeline failed on 28 September and 5 October),
-        the live audience-ideas demo (its tooling was retired on 10 September), and the Patient
-        Journey Explorer (a Prototype with known issues).
-        <br><br>Where it stands, to say over the demo (checked 2026-10-07): 15 releases of
-        safety.viz since 11 July, the latest v1.9.2 on 7 October; 13 charts, 8 stable and 5
-        marked Experimental; 2,242 unit and 385 browser tests; released gsm.safety carries 9 of the 13 in R. The slides with these
-        numbers ("Where it stands today", "Is it validated?", "What it took") are in the reserves.
-      </aside>
-    </section>
-
-    <!-- 3 · what we built, in numbers. Jeremy, 2026-10-13: "a 'What we built slide' at the end
-         of the summer experiment section that summarizes what we made ... Put this just after
-         the demo slide." All wording is draft; every figure is sourced in the notes. -->
     <section class="slide s-built" data-hue="4">
       <p class="kicker">The payoff · in numbers</p>
       <div class="hd"><h2>What we built</h2><p class="foot">May to October 2026 · 15 repositories · counted 13 October</p></div>
-      <p class="lbl">Technical</p>
-      <div class="tiles t4">
-        <div class="tile"><p class="n">599</p><h3>Pull requests merged</h3><p>341 on charts and apps, 253 on the scaffold</p></div>
-        <div class="tile"><p class="n">43</p><h3>Releases</h3><p>31 of charts and apps, 17 of them safety.viz</p></div>
-        <div class="tile"><p class="n">345,000</p><h3>Lines of source</h3><p>43% of them are tests</p></div>
-        <div class="tile"><p class="n">5,500</p><h3>Tests</h3><p>2,963 of them in safety.viz</p></div>
-      </div>
-      <p class="lbl">Not technical</p>
+      <p class="lbl">Clinical Trial Tools</p>
       <div class="tiles t3">
         <div class="tile"><p class="n">20</p><h3>Interactive charts</h3><p>14 for safety, 6 for biomarkers</p></div>
         <div class="tile"><p class="n">3</p><h3>Apps</h3><p>The safety.viz demo, the gsm.bio app, open.csr</p></div>
         <div class="tile"><p class="n">7</p><h3>Clinical guides</h3><p>About 19,000 words on how to read a chart</p></div>
+      </div>
+      <p class="lbl tech">Technical</p>
+      <div class="tiles t4 tech">
+        <div class="tile"><p class="n">599</p><h3>Pull requests merged</h3><p>341 on charts and apps, 253 on the scaffold</p></div>
+        <div class="tile"><p class="n">43</p><h3>Releases</h3><p>31 of charts and apps, 17 of them safety.viz</p></div>
+        <div class="tile"><p class="n">345,000</p><h3>Lines of source</h3><p>43% of them are tests</p></div>
+        <div class="tile"><p class="n">5,500</p><h3>Tests</h3><p>2,963 of them in safety.viz</p></div>
       </div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
@@ -3112,6 +3075,60 @@ steps:
         retired scaffolding belongs in the lines figure; whether "Apps" should read "Tools";
         and whether the hub's own counts (requirements and tasks, on the two tree slides)
         belong here too.
+        <br><br>Reworked 2026-10-14 (Jeremy: "Not Technical -&gt; Clinical Trial Tools. But that
+        section on top. Shrink/de-emphasize the technical metrics."). The three tool tiles
+        are first and larger; the four technical figures sit below as a small grey row. The
+        figures are unchanged. Also on that day, this slide and the demo slide swapped places,
+        so the numbers now come before the demo.
+      </aside>
+    </section>
+
+    <!-- 3 · what we built, in numbers. Jeremy, 2026-10-13: "a 'What we built slide' at the end
+         of the summer experiment section that summarizes what we made ... Put this just after
+         the demo slide." All wording is draft; every figure is sourced in the notes. -->
+    <section class="slide s-image" data-hue="4">
+      <p class="kicker">The payoff · what I built</p>
+      <h2>The safety.viz demo: your own files, nothing uploaded</h2>
+      <div class="pair">
+        <figure>
+          <div class="frame"><img src="assets/safety-viz-demo-data.jpg" alt="The safety.viz demo app's Data view: a drop zone for CSV or JSON files and a table mapping each file's columns to what the charts need" /></div>
+          <figcaption>Load your files and map the columns · every guess is labelled</figcaption>
+        </figure>
+        <figure>
+          <div class="frame"><img src="assets/safety-viz-demo-chart.png" alt="The safety.viz demo app showing histograms of every lab measure, with tabs for each chart the data supports" /></div>
+          <figcaption>Then every chart the data supports · jwildfire.github.io/safety.viz/demo</figcaption>
+        </figure>
+      </div>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        The payoff of the beat (Jeremy's outline, 2026-10-05: "What I built: gsm.viz demo (this
+        is the payoff)"). Read here as the safety.viz demo app; gsm.viz is the RBQM chart
+        library. TODO (Jeremy): confirm.
+        <br><br>The safety.viz demo app, released in v1.8.0 on 2 October. Headline is draft wording.
+        <br><br>What it does (v1.8.0 and v1.9.1 release notes): drop CSV or JSON files; each is
+        placed in a data domain and its columns mapped, "with every guess labelled"; tabs by
+        domain say how many charts the data supports; "a chart that cannot draw names what it is
+        missing". "Nothing is uploaded." The whole app is also one HTML file of about 1.4 MB (since v1.9.2; 1.2 MB before) that
+        runs offline: "This file loads nothing; files you add are read here and never leave this
+        computer."
+        <br><br>Draft demo script, about two minutes: open the single file from the desktop with
+        wifi off; drop four CSVs; show one guessed mapping and fix it; open the hepatic explorer
+        and click a participant; open the Biomarkers tab.
+        <br><br>Settled 2026-10-07: live, with the recording as backup (Jeremy: "Live, video as
+        backup"). The recording and its input files are in keynote/_notes/demo-fallback/.
+        TODO (Jeremy): which files to drop in on the day.
+        <br><br>Record a fallback
+        either way; these two screenshots are the fallback of the fallback. The Data view image
+        is from the hub's v1.8.0 demo page; the chart image is the live app on 2026-10-05.
+        <br><br>TODO (Jeremy): the goal's fourth line was "have some fun". A closing line here
+        hands to "how we built it" (part 3.5). In June it was "51% fun and 49% frustrating". What is it now?
+        <br><br>Ruled out: demo-301 (its weekly pipeline failed on 28 September and 5 October),
+        the live audience-ideas demo (its tooling was retired on 10 September), and the Patient
+        Journey Explorer (a Prototype with known issues).
+        <br><br>Where it stands, to say over the demo (checked 2026-10-07): 15 releases of
+        safety.viz since 11 July, the latest v1.9.2 on 7 October; 13 charts, 8 stable and 5
+        marked Experimental; 2,242 unit and 385 browser tests; released gsm.safety carries 9 of the 13 in R. The slides with these
+        numbers ("Where it stands today", "Is it validated?", "What it took") are in the reserves.
       </aside>
     </section>
 
