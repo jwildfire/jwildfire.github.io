@@ -117,14 +117,16 @@
     }
     .slide .hexlabel.low { top: 66px; }
     .slide .hexstem { position: absolute; top: 20px; width: 2px; height: 40px; margin-left: -1px; background: var(--faint); opacity: 0.6; }
-    .slide[data-outline] .num { top: 108px; }
     .s-party .hexmark, .s-party .hexlabel, .s-party .hexstem { display: none; }
-    /* Footer: talk name (filled by JS). The slide number sits in the header, top right. */
+    /* Footer (filled by JS): talk name, URL and slide number in one line, bottom left. The number
+       moved down from the header on 2026-10-14, when the footer text also went from 20px to 16px;
+       it sits at the end of the line, clear of Orange's callouts in the bottom right. Photo slides
+       break the line in two so it stays left of the photo. The .num span stays for scripts. */
     .slide::after {
       content: attr(data-foot); position: absolute; left: 140px; right: 140px; bottom: 44px;
-      font-family: var(--mono); font-size: 20px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint);
+      font-family: var(--mono); font-size: 16px; letter-spacing: 0.1em; line-height: 1.5; white-space: pre-line; color: var(--faint);
     }
-    .slide .num { position: absolute; right: 140px; top: 48px; font-family: var(--mono); font-size: 20px; color: var(--faint); }
+    .slide .num { display: none; }
 
     .kicker { font-family: var(--mono); font-size: 24px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--hue); margin: 0 0 28px; display: flex; align-items: center; gap: 16px; }
     .kicker::before { content: ""; width: 22px; height: 25px; background: var(--hue); clip-path: var(--hex-clip); flex: none; }
@@ -676,6 +678,8 @@
        Its poster is what the overview and a printed deck show. */
     .s-demo { padding: 40px 140px 34px; }
     .s-demo::after { display: none; }
+    /* No footer here (the caption takes its place), so the number stays top right. */
+    .s-demo .num { display: block; position: absolute; right: 140px; top: 44px; font-family: var(--mono); font-size: 16px; letter-spacing: 0.1em; color: var(--faint); }
     .s-demo .kicker { margin-bottom: 8px; }
     .s-demo h2 { font-size: 54px; margin-bottom: 14px; }
     .s-demo figure { margin: 0; flex: 1; min-height: 0; display: flex; flex-direction: column; }
@@ -4381,14 +4385,14 @@ steps:
       var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
       var notes = document.getElementById('notes');
       var i = 0;
-      var foot = 'R/Pharma 2026 · Jeremy Wildfire';
+      var foot = 'R/PHARMA 2026 · JEREMY WILDFIRE', url = 'jwildfire.github.io/keynote';
 
       // Reserve slides (data-reserve) stay in the file but are left out of the count and the progress strip.
       var counted = slides.filter(function (s) { return !s.hasAttribute('data-reserve'); });
       var sections = counted.map(function (s, p) { return { pos: p, name: s.getAttribute('data-section') }; }).filter(function (x) { return x.name; });
       slides.forEach(function (s, k) {
-        if (!s.classList.contains('s-title')) s.setAttribute('data-foot', foot);
         var pos = counted.indexOf(s), n = document.createElement('span');
+        if (!s.classList.contains('s-title')) s.setAttribute('data-foot', foot + (s.classList.contains('s-photo') ? '\n' : ' · ') + url + (pos < 0 ? '' : ' · ' + (pos + 1) + ' / ' + counted.length));
         n.className = pos < 0 ? 'rsv' : 'num';
         n.textContent = pos < 0 ? (s.getAttribute('data-reserve') === 'section' ? 'Reserves' : s.getAttribute('data-reserve') === 'template' ? 'Template sample' : 'Reserve · demoted ' + s.getAttribute('data-reserve')) : (pos + 1) + ' / ' + counted.length;
         s.appendChild(n);
