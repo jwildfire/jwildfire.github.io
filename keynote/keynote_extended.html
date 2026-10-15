@@ -721,6 +721,9 @@
     .s-eco .pk div.hx span { font-family: var(--mono); font-weight: 600; font-size: 16px; color: #fff; }
     .s-eco .pk img.hx { object-fit: contain; mix-blend-mode: multiply; }
     .s-eco .pk .t { min-width: 0; }
+    .s-eco a.pk { color: inherit; text-decoration: none; }
+    .s-eco a.pk .t b { text-decoration: underline; text-decoration-color: var(--c); text-decoration-thickness: 3px; text-underline-offset: 6px; }
+    .s-eco .kicker a { color: inherit; text-decoration: underline; text-underline-offset: 6px; }
     .s-eco .pk .t b { display: block; font-size: 27px; font-weight: 600; line-height: 1.15; white-space: nowrap; }
     .s-eco .pk .t i { display: block; margin-top: 6px; font-family: var(--mono); font-style: normal; font-size: 20px; line-height: 1.25; letter-spacing: 0.06em; text-transform: uppercase; color: var(--soft); }
     .s-eco .pk .d { grid-column: 1 / -1; margin: 0; font-size: 24px; line-height: 1.3; color: var(--ink); max-width: none; }
@@ -1281,17 +1284,17 @@
 
     <!-- 2a · OpenRBQM in more detail: Jeremy's to fill -->
     <section class="slide s-eco" data-hue="3">
-      <p class="kicker">OpenRBQM · openrbqm.github.io</p>
+      <p class="kicker">OpenRBQM · <a href="https://openrbqm.github.io/" target="_blank" rel="noopener">openrbqm.github.io</a></p>
       <h2>An ecosystem of packages</h2>
       <div class="eco">
-        <div class="pk" style="--c: var(--spec-0)"><div class="hx"><span>core</span></div><div class="t"><b>gsm.core</b><i>The engine</i></div><p class="d">Builds and scores every metric</p></div>
-        <div class="pk" style="--c: var(--spec-1)"><div class="hx"><span>kri</span></div><div class="t"><b>gsm.kri</b><i>Metrics</i></div><p class="d">Key risk indicators, with their charts and reports</p></div>
-        <div class="pk" style="--c: var(--spec-2)"><div class="hx"><span>app</span></div><div class="t"><b>gsm.app</b><i>Apps</i></div><p class="d">Shiny applications for gsm assessments</p></div>
-        <div class="pk" style="--c: var(--spec-3)"><div class="hx"><span>qtl</span></div><div class="t"><b>gsm.qtl</b><i>Limits</i></div><p class="d">Quality tolerance limits, and their reports</p></div>
-        <div class="pk" style="--c: var(--spec-4)"><div class="hx"><span>simaerep</span></div><div class="t"><b>gsm.simaerep</b><i>From IMPALA</i></div><p class="d">Finds sites that under-report adverse events</p></div>
-        <div class="pk" style="--c: var(--spec-5)"><div class="hx"><span>workr</span></div><div class="t"><b>workr</b><i>Workflows</i></div><p class="d">Runs every step from a YAML workflow</p></div>
-        <div class="pk" style="--c: var(--spec-6)"><div class="hx"><span>datasim</span></div><div class="t"><b>gsm.datasim</b><i>Test data</i></div><p class="d">Simulates trial data to test against</p></div>
-        <div class="pk" style="--c: var(--spec-3)"><img class="hx" src="assets/hex/qcthat.png" alt="" /><div class="t"><b>qcthat</b><i>Quality</i></div><p class="d">Quality control for clinical trial packages</p></div>
+        <a class="pk" href="https://gilead-public.github.io/gsm.core/" target="_blank" rel="noopener" style="--c: var(--spec-0)"><div class="hx"><span>core</span></div><div class="t"><b>gsm.core</b><i>The engine</i></div><p class="d">Builds and scores every metric</p></a>
+        <a class="pk" href="https://gilead-public.github.io/gsm.kri/" target="_blank" rel="noopener" style="--c: var(--spec-1)"><div class="hx"><span>kri</span></div><div class="t"><b>gsm.kri</b><i>Metrics</i></div><p class="d">Key risk indicators, with their charts and reports</p></a>
+        <a class="pk" href="https://gilead-biostats.github.io/gsm.app/" target="_blank" rel="noopener" style="--c: var(--spec-2)"><div class="hx"><span>app</span></div><div class="t"><b>gsm.app</b><i>Apps</i></div><p class="d">Shiny applications for gsm assessments</p></a>
+        <a class="pk" href="https://gilead-public.github.io/gsm.qtl/" target="_blank" rel="noopener" style="--c: var(--spec-3)"><div class="hx"><span>qtl</span></div><div class="t"><b>gsm.qtl</b><i>Limits</i></div><p class="d">Quality tolerance limits, and their reports</p></a>
+        <a class="pk" href="https://impala-consortium.github.io/gsm.simaerep/" target="_blank" rel="noopener" style="--c: var(--spec-4)"><div class="hx"><span>simaerep</span></div><div class="t"><b>gsm.simaerep</b><i>From IMPALA</i></div><p class="d">Finds sites that under-report adverse events</p></a>
+        <a class="pk" href="https://gilead-public.github.io/workr/" target="_blank" rel="noopener" style="--c: var(--spec-5)"><div class="hx"><span>workr</span></div><div class="t"><b>workr</b><i>Workflows</i></div><p class="d">Runs every step from a YAML workflow</p></a>
+        <a class="pk" href="https://gilead-public.github.io/gsm.datasim/" target="_blank" rel="noopener" style="--c: var(--spec-6)"><div class="hx"><span>datasim</span></div><div class="t"><b>gsm.datasim</b><i>Test data</i></div><p class="d">Simulates trial data to test against</p></a>
+        <a class="pk" href="https://gilead-public.github.io/qcthat/" target="_blank" rel="noopener" style="--c: var(--spec-3)"><img class="hx" src="assets/hex/qcthat.png" alt="" /><div class="t"><b>qcthat</b><i>Quality</i></div><p class="d">Quality control for clinical trial packages</p></a>
       </div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
@@ -1320,6 +1323,12 @@
         packages page, so it is off the slide. gsm.qtl's line is from its package description,
         "functions, workflows, and document template to generate reports for QTL" (quality
         tolerance limits); its tag, "Limits", is draft wording.
+        <br><br>Links added 2026-10-14 (Jeremy: "add links to everything on slide 15"). Each
+        package card opens its package site, and the address in the kicker opens
+        openrbqm.github.io. All nine loaded on that date. Seven sites are under
+        gilead-public.github.io; gsm.app's is gilead-biostats.github.io/gsm.app (its repository
+        is still in Gilead-BioStats) and gsm.simaerep's is
+        impala-consortium.github.io/gsm.simaerep.
         <br><br>TODO (Jeremy): the hexes. None of these packages has a hex logo in its public
         repository except qcthat, whose real logo is used. The other seven are plain hexes in
         the deck's colours with the short name inside. Real hexes, if you have them or want
