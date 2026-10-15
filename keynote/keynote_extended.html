@@ -245,6 +245,16 @@
     .s-split .cols.qc .col { padding: 26px 34px 28px !important; }
     .s-split .cols.qc .col h3 { margin-bottom: 14px; font-size: 21px; }
     .s-split .cols.qc pre { font-size: 22px; }
+    /* Registry (2026-10-14): one big number on the left, sample rows of the release registry on the right. */
+    .s-reg .reg { flex: none; display: grid; grid-template-columns: 330px 1fr; gap: 56px; align-items: start; }
+    .s-reg .stat .n { font-family: var(--serif); font-size: 170px; line-height: 0.9; margin: 0; color: var(--ink); }
+    .s-reg .stat p { font-size: 32px; line-height: 1.25; margin: 12px 0 0; }
+    .s-reg .stat p.small { font-family: var(--mono); font-size: 19px; color: var(--soft); margin-top: 22px; }
+    .s-reg table { font-size: 19px; }
+    .s-reg th { font-size: 15px; padding-bottom: 6px; }
+    .s-reg td { padding: 3px 12px 3px 0; }
+    .s-reg td b { font-weight: 600; }
+    .s-reg .src { margin: 10px 0 0; font-family: var(--mono); font-size: 17px; color: var(--soft); }
     .s-split img.qcr { display: block; max-width: 100%; max-height: 318px; width: auto; height: auto; margin: 0 auto; border-radius: 12px; }
     .s-split .col p.small { font-size: 26px; color: var(--soft); margin-top: 20px; }
 
@@ -312,14 +322,14 @@
     .s-split .cols.c3 .col { padding: 40px; }
     .s-split .cols.c3 .col p:not(.n) { font-size: 31px; }
 
-    /* Level strip: slide 20's ladder as six small hexes, top right, the current level filled.
+    /* Level strip: slide 21's ladder as six small hexes, top right, the current level filled.
        <div class="lvstrip" style="--c: var(--spec-4)"><i>0</i>…<i class="on">4</i><i>5</i><b>Label</b></div> */
     .lvstrip { position: absolute; right: 140px; top: 98px; display: flex; align-items: center; gap: 8px; }
     .lvstrip i { width: 30px; height: 35px; clip-path: var(--hex-clip); background: var(--rule); color: var(--faint); display: grid; place-items: center; font-style: normal; font-family: var(--serif); font-size: 19px; }
     .lvstrip i.on { width: 48px; height: 55px; background: var(--c); color: #fff; font-size: 30px; }
     .lvstrip b { order: -1; margin-right: 12px; font-family: var(--mono); font-weight: 500; font-size: 19px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c); }
 
-    /* Level sidebar (2026-10-06, replaces the level strip on the main deck): slide 20's ladder
+    /* Level sidebar (2026-10-06, replaces the level strip on the main deck): slide 21's ladder
        down the right edge, the current level boxed. <ol class="lvside"> with six <li>, the
        current one class="on"; an optional <small> inside its <b> adds a second line. */
     .lvside { position: absolute; right: 0; top: 18px; bottom: 0; width: 330px; margin: 0; padding: 0 22px 0 0; list-style: none; display: flex; flex-direction: column; justify-content: center; gap: 10px; background: var(--panel); border-left: 2px solid var(--rule); z-index: 0; }
@@ -353,7 +363,7 @@
     .s-life5 .life .s { padding: 5px 14px; margin-bottom: 7px; }
     .s-life5 .life h3 { margin-bottom: 8px; }
 
-    /* Five columns (slide 23): the standard lifecycle in the middle, the work before and
+    /* Five columns (slide 24): the standard lifecycle in the middle, the work before and
        after it called out on either side. The callout sits on the middle panel's lower edge. */
     .s-five h2 { font-size: 72px; margin-bottom: 34px; }
     .five { display: grid; grid-template-columns: 1.12fr 3fr 1.12fr; gap: 46px; align-items: stretch; margin-top: 4px; height: 376px; }
@@ -376,7 +386,7 @@
     .s-five .goodat .a { font-size: 44px; }
     .s-five .goodat .who { width: 140px; height: 162px; }
     .goodat .when { font-family: var(--mono); font-size: 17px; color: var(--soft); margin: 6px 0 0; }
-    /* Two levels boxed at once in the sidebar (slide 21: "more level 2.5"). */
+    /* Two levels boxed at once in the sidebar (slide 22: "more level 2.5"). */
     .lvside li.on + li.on { margin-top: -6px; }
 
     /* A pillar from the five-column slide shown again beside other content: add class
@@ -653,7 +663,7 @@
     .pvr.cy .ct { font-family: var(--mono); font-size: 22px; letter-spacing: .1em; text-transform: uppercase; fill: var(--soft); }
     .pvr.cy .an { font-size: 26px; fill: var(--ink); text-anchor: middle; }
     .pvr.cy .br { stroke: var(--ink); stroke-width: 2; fill: none; }
-    /* Study operations schedule (slide 25), mock data. Scoped to .s-ops .sched. */
+    /* Study operations schedule (slide 26), mock data. Scoped to .s-ops .sched. */
     .s-ops .lab { font-size: 22px; display: flex; align-items: center; justify-content: space-between; }
     .s-ops .lab .mock { font-family: var(--mono); font-size: 22px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); border: 2px solid var(--ink); border-radius: 999px; padding: 1px 16px; }
     .s-ops .sched svg { display: block; width: 100%; height: auto; }
@@ -714,7 +724,7 @@
     .s-quote .terms li { position: relative; padding-left: 38px; font-size: 38px; line-height: 1.25; }
     .s-quote .terms li::before { content: ""; position: absolute; left: 0; top: 0.3em; width: 22px; height: 25px; background: var(--hue); clip-path: var(--hex-clip); }
     .s-quote .terms b { font-weight: 600; }
-    /* Hacker Orange (2026-10-07) answers the returning question on slide 28: a hex and a dark
+    /* Hacker Orange (2026-10-07) answers the returning question on slide 29: a hex and a dark
        speech bubble under the quote, shown with the slide. The art is Jeremy's,
        assets/hex/orange-hacker.png (original in _notes/inbox/). .terms above is no longer
        used on that slide and is kept. A callout with no .q line is a plain remark. */
@@ -735,7 +745,7 @@
     .goodat.hack.sm .who { width: 124px; height: 143px; }
     .goodat.hack.sm .a { font-size: 34px; }
     .goodat.hack.sm .a.three { font-size: 27px; }
-    /* Four across: the wall of what a version built (slide 35), a sibling of the goal slide's wall. */
+    /* Four across: the wall of what a version built (slide 36), a sibling of the goal slide's wall. */
     .gallery.four { grid-template-columns: repeat(4, 1fr); gap: 14px 20px; }
     .gallery.four img { height: 172px; }
     .gallery.four.short img { height: 148px; }
@@ -860,7 +870,7 @@
         and answered "quite a lot" in diary #9. The talk answers it and ends on it.
         <br><br>2026-10-14, at Jeremy's word ("S3 remove the quotes and the diary reference"): the
         quotation marks and the line under the question ("— developer diary #1, 10 June 2026")
-        are off the slide. The callback on slide 28 is unchanged.
+        are off the slide. The callback on slide 29 is unchanged.
         <br><br>Outline of the talk, added 2026-10-07 (Jeremy: "Can we add emphasis for the hexes
         representing transition slides in the header. On slide 3 annotate the sections (will use
         it to give a quick outline of the talk)"). Every slide now draws the strip hex of each
@@ -988,7 +998,7 @@
         weeks off to learn JavaScript; the first of the recurring callouts, so say the question out loud here.
         <br><br>2026-10-14: the callout moved to the "Try it out!" slide (49) at Jeremy's word ("S6:
         move the 'Teaching me things' call out to later in the deck. Put it on the new getting
-        started slide for now"). The first "What are agents good at now?" callout is now slide 19's.
+        started slide for now"). The first "What are agents good at now?" callout is now slide 20's.
       </aside>
     </section>
 
@@ -1195,8 +1205,8 @@
         isn't fully GxP-compliant." The column heading and "In every talk. The answer then:"
         are draft wording; the slide shortens the question to its first three words.
         <br><br>Where the thread comes back: slide 14 (gsm, "quality built in from the start"; it read "built for GxP from the start" until 7 October),
-        slide 17 ("Quality is built into the design"), slide 28 (the opening of the
-        experiment, where Inspector Orange is waved off; "Not GxP" came off that slide on 7 October), and slide 48 ("A lot of tests, and still an experiment"; "still not GxP" until 7 October). A reserve slide, "Is it validated?", asks the same question with a
+        slide 17 ("Quality is built into the design"), slide 29 (the opening of the
+        experiment, where Inspector Orange is waved off; "Not GxP" came off that slide on 7 October), and slide 49 ("A lot of tests, and still an experiment"; "still not GxP" until 7 October). A reserve slide, "Is it validated?", asks the same question with a
         then-and-now answer.
         <br><br>Other ideas for the visual, none built: a page of a study report's "wall of
         numbers"; a screenshot of the safetyGraphics Shiny app as it was left.
@@ -1373,7 +1383,7 @@
         <strong class="say">&lt;none yet&gt;</strong>
         Added 2026-10-06 (Jeremy: "immediately intro SDLC (s15 without the AI overlay)"). It is
         the lifecycle slide with the agent taken out: every step is a person or automated. The
-        same picture returns on slide 21 with five steps handed over.
+        same picture returns on slide 22 with five steps handed over.
         <br><br>TODO (Jeremy): check the steps against the March all-hands deck's "Standard
         Development Lifecycle" slide. I did not have that slide; this version is worked back
         from the merged one by un-marking the agent's steps, dropping the step that only exists
@@ -1430,9 +1440,56 @@
         The test name on the left now ends "(#19)", the bracketed form the report shows.
         <br><br>Pays off in beat 3: safety.viz and gsm.safety borrow exactly this (diary #4:
         "Instead of inventing a new quality framework, we plug the safety graphics into a quality
-        framework that already exists"), and slide 28, where the experiment opens without any of this, is the contrast.
+        framework that already exists"), and slide 29, where the experiment opens without any of this, is the contrast.
         <br><br>2026-10-07: the kicker read "GxP · qcthat" and became "Quality · qcthat" under
         Jeremy's rule of that day, no reference to GxP on any slide. Draft wording.
+      </aside>
+    </section>
+
+    <!-- 2a · quality, follow-up: the release registry -->
+    <section class="slide s-split s-reg" data-hue="3">
+      <p class="kicker pkg" style="--pkg: url(assets/hex/qcthat.png)">Quality · qcthat</p>
+      <h2 style="margin-bottom: 30px; font-size: 66px">Quality scales across full package ecosystem</h2>
+      <div class="reg">
+        <div class="stat">
+          <p class="n">76</p>
+          <p>qualified releases across 9 packages</p>
+          <p class="small">Every release, its qualification, and the date of each, in one registry</p>
+        </div>
+        <div>
+          <table>
+            <tr><th>Package</th><th>Version</th><th>Released</th><th>Qualified</th></tr>
+            <tr><td><b>gsm</b></td><td>v1.6.0</td><td>2023-04-05</td><td>2023-08-28</td></tr>
+            <tr><td><b>gsm</b></td><td>v1.7.1</td><td>2023-04-28</td><td>2023-08-28</td></tr>
+            <tr><td><b>gsm.app</b></td><td>v2.5.3</td><td>2025-08-20</td><td>2025-08-22</td></tr>
+            <tr><td><b>gsm.app</b></td><td>v2.6.1</td><td>2025-09-24</td><td>2025-10-01</td></tr>
+            <tr><td><b>gsm.core</b></td><td>v1.0.0</td><td>2025-03-14</td><td>2025-04-21</td></tr>
+            <tr><td><b>gsm.core</b></td><td>v1.1.0</td><td>2025-04-11</td><td>2025-04-21</td></tr>
+            <tr><td><b>gsm.kri</b></td><td>v1.0.0</td><td>2025-03-14</td><td>2025-03-14</td></tr>
+            <tr><td><b>gsm.kri</b></td><td>v1.1.0</td><td>2025-04-14</td><td>2025-04-21</td></tr>
+            <tr><td><b>gsm.mapping</b></td><td>v1.0.0</td><td>2025-03-14</td><td>2025-03-14</td></tr>
+            <tr><td><b>gsm.mapping</b></td><td>v1.0.1</td><td>2025-04-11</td><td>2025-04-21</td></tr>
+            <tr><td><b>gsm.reporting</b></td><td>v1.0.0</td><td>2025-03-14</td><td>2025-03-14</td></tr>
+            <tr><td><b>gsm.reporting</b></td><td>v1.0.1</td><td>2025-04-15</td><td>2025-04-21</td></tr>
+          </table>
+          <p class="src">Sample rows from qualified-releases.csv</p>
+        </div>
+      </div>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        Added 2026-10-14 as the follow-up to the qcthat slide, at Jeremy's word: "Follow up
+        quality slide: 'Quality scales across full package ecosystem'", with the link
+        gilead-public.github.io/qcthat/pr/333/dev/slides/introduction.html#/registry. The headline
+        is his, word for word.
+        <br><br>Source: the "Registry" slide of qcthat's introduction deck, rebuilt here as a table.
+        Its caption: "Sample rows from qualified-releases.csv: 76 qualified internal releases across
+        9 packages". The twelve rows are its rows, every one Gilead-BioStats and internal; the org,
+        internal, release-url and qualification-url columns are left off the slide. Each row
+        links, on the source slide, to the GitHub release and to a qualification document in
+        Gilead-BioStats/r-qualification (lib/{package}/qualification_v{version}.md).
+        <br><br>The small line under the number is draft wording. The same deck's other slides
+        frame it as "Packages are qualified continuously" and "Qualification is a byproduct of
+        development, not a separate phase".
       </aside>
     </section>
 
@@ -1475,9 +1532,9 @@
         code review, qualification, and everything else. But we use AI as a power tool throughout."
         <br><br>Callout, second click: what are agents good at now? Writing code. Moved here on
         2026-10-06 from "We just let the coding agent deal with it", which went to the reserves
-        (Jeremy: "Move the 'good at writing code call out to slide 19'"). The small line
+        (Jeremy: "Move the 'good at writing code call out to slide 20'"). The small line
         "as of Q4 2025" was added the same day (Jeremy: "Add (As of Q4 2025) for 'good at
-        writing code'"); it pairs with "as of Q2 2026" on slide 23's callout.
+        writing code'"); it pairs with "as of Q2 2026" on slide 24's callout.
       </aside>
     </section>
 
@@ -1507,7 +1564,7 @@
         (danshapiro.com/blog/2026/01/the-five-levels-from-spicy-autocomplete-to-the-software-factory/)
         and Simon Willison's write-up of it (simonwillison.net/2026/Jan/28/the-five-levels/).
         <br><br>Settled 2026-10-07 (Jeremy, asked whether to box levels 2 and 3 here as on
-        slides 21 and 26: "Box 2 and 3"). Both rows carry the marker and the "the day job" tag;
+        slides 22 and 27: "Box 2 and 3"). Both rows carry the marker and the "the day job" tag;
         until then only level 3 did. The tag appearing twice is my draft reading of "level 2.5".
       </aside>
     </section>
@@ -1561,10 +1618,10 @@
         <br><br>From 2026-10-06 the before picture is its own slide again (slide 16, "A standard
         development lifecycle"), shown before any AI; this slide is the same picture with the
         overlay.
-        <br><br>Level sidebar added 2026-10-06 (Jeremy: "add levels sidebar on slide 21."), at
-        level 3, the level slide 20 marks as the day job.
+        <br><br>Level sidebar added 2026-10-06 (Jeremy: "add levels sidebar on slide 22."), at
+        level 3, the level slide 21 marks as the day job.
         Later the same day he asked for both 2 and 3 to be boxed: "Call out both 2 and 3 in the
-        sidebar on 19 (i really think we're more level 2.5 than full level 3)." Slide 20 still
+        sidebar on 19 (i really think we're more level 2.5 than full level 3)." Slide 21 still
         marks level 3 alone as the day job, and the wrap-up slide still says level 3.
         <br><br>Optional slide (Jeremy: "possibly"). It shows the March state. The slide that
         said how it has moved since ("we just let the coding agent deal with it") went to the
@@ -1589,7 +1646,7 @@
         "repeatable, auditable, and governed by the humans who remain responsible for every line of code."
         <br><br>Old deck's guardrail grid, if a second slide is wanted: Evidence, Permissions,
         Traceability, Humans.
-        <br><br>Moved up on 2026-10-07 (Jeremy: "move slide 25 after 19."): it now follows the
+        <br><br>Moved up on 2026-10-07 (Jeremy: "move slide 26 after 19."): it now follows the
         levels slide and comes before "Where we put the effort"; until then it sat after the
         operations slide, just before the wrap-up.
       </aside>
@@ -1663,7 +1720,7 @@
         and sub-issues that coding consumes; coding produces releases that operations deploys to studies.
         <br><br>Why both ends: they are company-specific process that no vendor will build. The
         middle is commodity and improving monthly.
-        <br><br>Vet before publishing: everything on slides 23 and 25, and the Planning cell on slide 24, comes from that internal deck. (The artifact grid on slide 24 is from the side project's public hub.)
+        <br><br>Vet before publishing: everything on slides 24 and 26, and the Planning cell on slide 25, comes from that internal deck. (The artifact grid on slide 25 is from the side project's public hub.)
       </aside>
     </section>
 
@@ -1712,7 +1769,7 @@
         <br><br>This slide's own callout, "Designing pages!", came off to make room for those
         two. It is still a card on the good-at wrap-up slide; say if it should come back here.
         <br><br>
-        Added to beat 2 on 2026-10-05 as slide 23, straight after "Agents draft; people approve",
+        Added to beat 2 on 2026-10-05 as slide 24, straight after "Agents draft; people approve",
         which says there is an artifact at each stage; this is the picture of that sentence.
         A worker session drafted it; the pages and what was left out are listed in
         keynote/_notes/beat2-artifacts-sources.md.
@@ -1852,7 +1909,7 @@
       </div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
-        Imported 2026-10-07 at his pick ("Slide 24 option A"); the blue box marks it as not yet reviewed.
+        Imported 2026-10-07 at his pick ("Slide 25 option A"); the blue box marks it as not yet reviewed.
         DRAFT, 2026-10-07, option A: the two cards stay, tightened, and a three-row schedule
         takes the place of the orange TODO box. The schedule is made up (three study names,
         eight weeks, one study flagged) and labelled "mock data" on the slide. Nothing is
@@ -1901,7 +1958,7 @@
         Level changed 2026-10-06 (Jeremy: "s27 becomes L2.5 (instead of L3)"; earlier the same
         day, of the lifecycle slide: "i really think we're more level 2.5 than full level 3").
         The title was "We're having great success at level 3!" and the sidebar boxed level 3
-        alone; it now boxes 2 and 3, as on slide 21. Slide 20 does the same since 2026-10-07.
+        alone; it now boxes 2 and 3, as on slide 22. Slide 21 does the same since 2026-10-07.
         <br><br>
         Beat 2 wrap-up, added 2026-10-05 from Jeremy's outline: "We're having great success at
         level 3! Efficiency gains. Fully compliant! But what's next …". The headline and the
@@ -1915,11 +1972,11 @@
         His expectation, to be tested there: "we really started adopting AI in q1/q2 this year
         ... I expect that PR creation and definitely issue creation/close should be up.
         probably also releases".
-        <br><br>Compliant: slide 19 ("Humans own the process and all deliverables"), the quality
+        <br><br>Compliant: slide 20 ("Humans own the process and all deliverables"), the quality
         slide (15) and the human-owner rule (23). Settled 2026-10-07: his outline's "Fully compliant!" was a claim
         about the day job on a public slide; asked, he chose to soften it and picked "Same
         process!" from three options.
-        <br><br>Level 3 is slide 20's marker, "the day job". The strip in the corner is the same
+        <br><br>Level 3 is slide 21's marker, "the day job". The strip in the corner is the same
         ladder; it comes back on every obot version in beat 3.
         <br><br>"But what's next …" hands to beat 3. It replaces the bridge slide ("Open,
         software-shaped workflows are agent-ready"), which is now in the reserves. The honest
@@ -1966,7 +2023,7 @@
       <div class="goodat insp"><div class="bub"><p class="a">Oh jeez. I'll check in later.</p></div><div class="who"></div></div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
-        Changed again 2026-10-07 (Jeremy: "Add this guy on slide 28: 'Let's mess around and find
+        Changed again 2026-10-07 (Jeremy: "Add this guy on slide 29: 'Let's mess around and find
         out.' remove 'Open source, Not GxP, Let's experiment and have some fun …' keep inspector
         orange. He can just say 'Oh jeez. I'll check in later.'"). Both lines are his. Hacker
         Orange shows with the slide; Inspector Orange arrives on the second press and no
@@ -1974,13 +2031,13 @@
         source. Not GxP (his bold). Let's experiment and have some fun … "Not GxP" is now for
         him to say aloud if he wants it; it is not on this slide.
         <br><br>
-        Reformatted 2026-10-07 (Jeremy: "reformat slide 28 to call back to slide 2."). It now
+        Reformatted 2026-10-07 (Jeremy: "reformat slide 29 to call back to slide 2."). It now
         uses slide 3's layout and slide 3's exact words, so the question visibly returns; his
         three lines sit where slide 3 has its source line. Until then this was a bullet slide
         headed "What are these tools good at right now?" (his outline's wording for the same
         question). The kicker, "The question, again", is draft wording.
         <br><br>
-        Moved up one place on 2026-10-06 (Jeremy: "switch slides 33/32"); it now follows the
+        Moved up one place on 2026-10-06 (Jeremy: "switch slides 34/32"); it now follows the
         Orange transition. Later the same day the goal slide was placed straight after it, then
         the journey row ("question/goal/hexes/v1").
         <br><br>Kicker changed 2026-10-07 (Jeremy: "I want to remove the mad scientist
@@ -2058,7 +2115,7 @@
         exists." That slide is in the reserves.
         <br><br>From diary #3: modernizing it "always felt like it needed a team and a budget I
         no longer have — but with AI agents, I'm honestly not sure that's true anymore."
-        <br><br>Hacker Orange popup, second press (Jeremy, 2026-10-07: "Slide 29 - hacker orange:
+        <br><br>Hacker Orange popup, second press (Jeremy, 2026-10-07: "Slide 30 - hacker orange:
         Open Source ftw"). The words are his.
       </aside>
     </section>
@@ -2094,7 +2151,7 @@
         paperclip (probably just a footnote). v3 fable 5. v4 org. v5 opus 5.5." Later the same
         day he split the last one: "a v5 (after retiring factory, before opus 5.5) and 5.5
         (opus 5.5 work)". So the row has five versions and a half.
-        <br><br>Order changed 2026-10-06 (Jeremy: "switch slides 33/32"): the "Not GxP"
+        <br><br>Order changed 2026-10-06 (Jeremy: "switch slides 34/32"): the "Not GxP"
         slide now comes first, straight after the Orange transition. Later the same day the
         goal slide was placed between that slide and this row ("question/goal/hexes/v1"), so
         this row now leads straight into obot v1.
@@ -2166,7 +2223,7 @@
         <br><br>It came online on 11 May 2026 (the old hub's diary). Ladder: level 3, the same
         rung as the day job: it wrote the code and Jeremy reviewed all of it. "What changed" is
         draft wording.
-        <br><br>Hacker Orange popup, second press (Jeremy, 2026-10-07: "slide 32: hacker 'ugh. so
+        <br><br>Hacker Orange popup, second press (Jeremy, 2026-10-07: "slide 33: hacker 'ugh. so
         many config files. can't we just build something?'"). The words are his, lower case
         as he wrote them.
         <br><br>"What is it?" bubble, added 2026-10-12. Jeremy (2026-10-12): "I want to add 'What is it?' bubbles to each of the obot iterations." It stands where the set-up paragraph was. The words are his: "Open claw running on a laptop with custom config files and a few Agent.md". "Open claw" is set as "OpenClaw" to match the title; "Agent.md" is as he typed it. The paragraph it replaced, for saying aloud: "An agent on a clean-room laptop with none of my credentials. I text it on Telegram; it works on GitHub under its own name."
@@ -2595,9 +2652,9 @@ steps:
       </div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
-        Added 2026-10-06 (Jeremy: "Let's re-use slide 21 to show how obot v5/v5.5 works. Add a
+        Added 2026-10-06 (Jeremy: "Let's re-use slide 22 to show how obot v5/v5.5 works. Add a
         slide after 44 that turns most of the boxes purple. Add a 'Set's Goal' box (human)
-        before gathers requirements (AI)."). It is slide 21's lifecycle with the same steps in
+        before gathers requirements (AI)."). It is slide 22's lifecycle with the same steps in
         the same order, one new box at the front ("Set the goal", a person), and purple for
         every step an agent does. Ten are purple, two are his, five are automated as before.
         <br><br>Confirmed 2026-10-07 (Jeremy: "Yes, two are mine"): his boxes are "Set the goal" and "Finalize and release"; the ten purple ones are the agents'. Before that it was a draft: which boxes are purple was my reading of the slide
@@ -2616,7 +2673,7 @@ steps:
         <br><br>Title changed 2026-10-07 to Jeremy's words ("Same workflow, but I just set
         goals, answer questions and review releases") when the slide before it, "the scaffold
         that stayed", was folded into this one and sent to the reserves. Until then it read
-        "Same lifecycle; I kept two steps", written to echo slide 21 ("Same lifecycle; five
+        "Same lifecycle; I kept two steps", written to echo slide 22 ("Same lifecycle; five
         steps changed hands"). The sidebar is at level 4, as on both version title slides.
       </aside>
     </section>
@@ -2631,7 +2688,7 @@ steps:
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
         Moved here 2026-10-07 (Jeremy: "I think 47/48 become the evidence for obot 5.0. can
-        probably replace slide 43."). The two roadmap trees were numbers 47 and 48 in "how we
+        probably replace slide 44."). The two roadmap trees were numbers 47 and 48 in "how we
         built it"; they now stand as what obot v5 built, in place of the three-bullet slide
         "A new scaffold, a candidate and an experiment", which is in the reserves with its
         notes. The kicker changed from "SDLC · the roadmap" to match the other "what I built"
@@ -3187,7 +3244,7 @@ steps:
         here as the SDLC slide (tests, review, sign-off), ahead of the two roadmap pictures.
         Settled 2026-10-07: asked whether it belongs in "what we learned" instead, Jeremy chose "Stay in how we built it". It was drafted as s5
         ("Quality", under "how do we do this in GxP?") in his first structure. Every word is draft; the numbers are sourced below. It calls back to the
-        beat 3 opener (slide 28, where the inspector is waved off) and to beat 2's quality slide (slide 17: every
+        beat 3 opener (slide 29, where the inspector is waved off) and to beat 2's quality slide (slide 17: every
         requirement has a test, every test has a result, and a person signs the release).
         <br><br>Column 1, re-measured 2026-10-13 for the "What we built" slide before this one, so that the two agree: 2,515 unit and 448 browser tests at safety.viz v1.11.0 (released 2026-10-10), from its release notes and the check on the released commit. 2,515 + 448 = 2,963. It read 2,627 from 7 to 13 October.
         <br><br>Column 1, as re-measured 2026-10-07. 2,242 unit and 385 browser tests at safety.viz
@@ -3442,7 +3499,7 @@ steps:
       <div class="goodat" style="top: 64px; bottom: auto"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Teaching me things!</p></div><div class="who"><i>👍</i></div></div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
-        Added 2026-10-14 as slide 51, right after the "What we learned" opener. Reframed the
+        Added 2026-10-14 as slide 52, right after the "What we learned" opener. Reframed the
         same day as five steps, at Jeremy's ask: "Frame this as a 5 step process: (1) Pick an
         agent (Claude or Codex @ $20 for a month. Others fine too. ) (2) Set up GitHub (Free
         account is fine) (3) Pick a development process (Hadley's R Package. book for R) (4)
@@ -3489,13 +3546,13 @@ steps:
         callout's; the small label under it says where it came up. All of it is draft for
         Jeremy to rewrite.
         <br><br>Where each one comes from:
-        <br>Teaching me things: slide 51 (moved there from slide 6 on 2026-10-14).
-        <br>Writing code: slide 19.
-        <br>Drafting documents: slide 24.
-        <br>Designing pages: was the callout on slide 24 (the artifacts) until 2026-10-06; no longer on a slide before this one.
-        <br>Porting old code: slide 35 (v3, the weekend of renderers).
-        <br>Translating research into software: slide 36 (v3; Jeremy's wording).
-        <br>Reviewing its own work: slide 44 (v5.5; the reviewer agents).
+        <br>Teaching me things: slide 52 (moved there from slide 6 on 2026-10-14).
+        <br>Writing code: slide 20.
+        <br>Drafting documents: slide 25.
+        <br>Designing pages: was the callout on slide 25 (the artifacts) until 2026-10-06; no longer on a slide before this one.
+        <br>Porting old code: slide 36 (v3, the weekend of renderers).
+        <br>Translating research into software: slide 37 (v3; Jeremy's wording).
+        <br>Reviewing its own work: slide 45 (v5.5; the reviewer agents).
         <br>Running experiments: not a callout in the main deck. It is from Jeremy's steer of
         5 October ("Agents are great at experiments") and from a slide now in the reserves. If
         it stays here it probably wants a callout in beat 3, on the v5.5 slide.
@@ -3531,17 +3588,17 @@ steps:
         build as the slide before: Orange's thumbs-down answers gathered. Draft wording
         throughout.
         <br><br>Where each one comes from:
-        <br>Setting priorities: slide 24.
-        <br>Working without me: three callouts folded into one. "Autonomy" (v2, slide 33),
-        "Working without me" (v3, slide 35) and "Still waits on me" (v5.5, slide 44, which is a
+        <br>Setting priorities: slide 25.
+        <br>Working without me: three callouts folded into one. "Autonomy" (v2, slide 34),
+        "Working without me" (v3, slide 36) and "Still waits on me" (v5.5, slide 45, which is a
         placeholder Jeremy has not confirmed).
-        <br>Knowing when it has failed: no longer a callout on a slide. The v4 quote slide went to the reserves on 2026-10-07 and its contents are in the notes for slide 38 (v4; "Nine cases in one night of something
+        <br>Knowing when it has failed: no longer a callout on a slide. The v4 quote slide went to the reserves on 2026-10-07 and its contents are in the notes for slide 39 (v4; "Nine cases in one night of something
         reporting success while having done nothing", diary #8).
         <br>Being concise and Remembering: from Jeremy's close-out list in the outline
         ("Communicating: being concise", "Remembering"). Neither is a callout anywhere in the
         deck yet, and the label "Every day" is a guess at a tag. TODO (Jeremy): keep them, and
         if so say where they bit.
-        <br><br>Left out: "No chart releases" (v5, slide 42). It is true of September, but
+        <br><br>Left out: "No chart releases" (v5, slide 43). It is true of September, but
         October shipped six releases in a weekend, so it does not read as something agents are
         bad at.
         <br><br>Until late on 5 October a sixth, dashed cell bridged to "So how do we do this in
@@ -3569,7 +3626,7 @@ steps:
         working less. But, what's now? Orange callouts - Good: More medicines, faster! (small)
         And no more powerpoint! Bad: Data Centers. Rouge Agents. Quality: So. Much. Change.
         Hacker: 100 years of innovation! Trials on a chip! Robots folding my clothes!" (He
-        gave the number in the 54-slide count; this was slide 51 of 52 then; it was slide 50 of 51 on 7 October was slide 52 of 53 from 14 October, and is slide 54 of 55 since the two JSM 2019 slides went in later that day.) Every word on the
+        gave the number in the 54-slide count; this was slide 51 of 52 then; it was slide 50 of 51 on 7 October was slide 52 of 53 from 14 October, was slide 54 of 55 after the two JSM 2019 slides went in later that day, and is slide 55 of 56 since the registry slide followed.) Every word on the
         slide is his, with one spelling changed: "Rouge Agents" is set as "Rogue Agents".
         "But, what's now?" is as he typed it; it may have been meant as "what's next?". His
         three sentences show with the slide; the four Oranges arrive together on the second

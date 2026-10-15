@@ -25,11 +25,11 @@ const NO_THUMBS = process.argv.includes('--no-thumbs');
 const WPM = 140;
 const BEATS = [
   { id: '1',   name: 'Opening',                from: 1,  to: 12, group: '1' },
-  { id: '2a',  name: 'OpenRBQM without AI',    from: 13, to: 17, group: '2' },
-  { id: '2b',  name: 'AI layered in',          from: 18, to: 26, group: '2' },
-  { id: '3',   name: 'The obot journey',       from: 27, to: 46, group: '3' },
-  { id: '3.5', name: 'How we built it',        from: 47, to: 49, group: '3.5' },
-  { id: '4',   name: 'What we learned',        from: 50, to: 55, group: '4' },
+  { id: '2a',  name: 'OpenRBQM without AI',    from: 13, to: 18, group: '2' },
+  { id: '2b',  name: 'AI layered in',          from: 19, to: 27, group: '2' },
+  { id: '3',   name: 'The obot journey',       from: 28, to: 47, group: '3' },
+  { id: '3.5', name: 'How we built it',        from: 48, to: 50, group: '3.5' },
+  { id: '4',   name: 'What we learned',        from: 51, to: 56, group: '4' },
 ];
 // Suggested split on record (not decided): minutes per group. Beat 2 covers 2a and 2b together.
 // 3.5 was carved out of 3 and 4 afterwards and has no minutes of its own.
