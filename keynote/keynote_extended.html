@@ -27,6 +27,7 @@
        A slide with data-section="Short name" is a transition: its hex in the strip is drawn
        heavier on every slide. A slide with data-outline also prints those names under the strip.
        Orange's callouts (.goodat) appear on a second press; add ?reveal to the URL to show them all.
+       Elements with class .step appear one per press, before anything else on the slide.
        Slides with data-reserve="date" are reserves: kept at the end, not counted in the numbers.
        ------------------------------------------------------------------ */
     :root {
@@ -277,6 +278,26 @@
     @media print { .goodat { opacity: 1 !important; transform: none !important; } }
     /* .goodat.now is on screen from the start and takes no press (slide 7, 2026-10-14). */
     .goodat.now { opacity: 1; transform: none; }
+    .step { opacity: 0; transform: translateY(14px); transition: opacity 220ms ease, transform 220ms ease; }
+    .step.on, body.overview .step, body.reveal-all .step { opacity: 1; transform: none; }
+    @media print { .step { opacity: 1 !important; transform: none !important; } }
+
+    /* Slide 12 as a dialogue (2026-10-14): Inspector Orange on the left, Jeremy on the right. */
+    .s-chat h2 { margin-bottom: 16px; }
+    .s-chat .chat { display: flex; flex-direction: column; gap: 10px; }
+    .s-chat .turn { display: flex; align-items: center; gap: 24px; }
+    .s-chat .turn.j { justify-content: flex-end; }
+    .s-chat .av { flex: none; width: 96px; height: 111px; }
+    .s-chat .o .av { background: url(assets/hex/orange-inspector.png) center / contain no-repeat; }
+    .s-chat .j .av { clip-path: var(--hex-clip); background: var(--ink); color: #fff; display: grid; place-items: center; font-family: var(--mono); font-size: 30px; letter-spacing: 0.06em; }
+    .s-chat .bub { position: relative; border: 3px solid; border-radius: 26px; padding: 12px 28px 14px; max-width: 1080px; }
+    .s-chat .bub::after { content: ""; position: absolute; top: 50%; width: 24px; height: 24px; margin-top: -12px; transform: rotate(45deg); }
+    .s-chat .o .bub { background: #e9f3ea; border-color: #5f9a72; }
+    .s-chat .o .bub::after { left: -15px; background: #e9f3ea; border-left: 3px solid #5f9a72; border-bottom: 3px solid #5f9a72; }
+    .s-chat .j .bub { background: #fff; border-color: var(--ink); }
+    .s-chat .j .bub::after { right: -15px; background: #fff; border-right: 3px solid var(--ink); border-top: 3px solid var(--ink); }
+    .s-chat .bub p { margin: 0; font-family: var(--serif); font-size: 42px; line-height: 1.08; color: var(--ink); }
+    .s-chat .bub p.two { font-size: 32px; line-height: 1.22; }
     /* The outline slide's section names work the same way: hidden until the next press (2026-10-14). */
     .slide .hexlabel, .slide .hexstem { transition: opacity 220ms ease; }
     .slide[data-outline]:not(.revealed) .hexlabel, .slide[data-outline]:not(.revealed) .hexstem { opacity: 0; }
@@ -1164,97 +1185,29 @@
       </aside>
     </section>
 
-    <section class="slide s-split s-quiet" data-hue="1" style="padding-bottom: 84px">
+<section class="slide s-chat" data-hue="1">
       <p class="kicker">A few quiet years</p>
-      <h2>What we did, and what we didn't</h2>
-      <div class="cols c3" style="flex: none">
-        <div class="col"><h3>We showed</h3><p>Open-source, interactive graphics work in clinical trials.</p></div>
-        <div class="col"><h3>We didn't</h3><p>Change the industry standard for how people monitor safety.</p></div>
-        <div class="col"><h3>The first question</h3><p>Is it validated?</p><p class="small">In every talk. The answer then: Not really. It's exploratory</p></div>
+      <h2>The first question, in every talk</h2>
+      <div class="chat">
+        <div class="turn o"><div class="av"></div><div class="bub"><p>What evidence do you have?</p></div></div>
+        <div class="turn j step"><div class="bub"><p class="two">Written requirements and a manual test script for every chart.<br>Automated tests on the R package, run on every pull request.</p></div><div class="av">JW</div></div>
+        <div class="turn o step"><div class="av"></div><div class="bub"><p>But is it validated?</p></div></div>
+        <div class="turn j step"><div class="bub"><p>Not really. It&rsquo;s exploratory.</p></div><div class="av">JW</div></div>
       </div>
-      <div class="pvr cy">
-        <svg viewBox="0 0 1320 210" role="img" aria-label="Bar chart of commits per year to four safetyGraphics repositories, 2016 to 2025. 35 in 2016, 47 in 2017, 491 in 2018, 807 in 2019, 169 in 2020, 359 in 2021, 96 in 2022, 79 in 2023, 2 in 2024 and none in 2025.">
-          <text class="ct" x="0" y="24">Commits a year,</text>
-          <text class="ct" x="0" y="54">four repositories</text>
-          <g><title>2016: 35 commits (safety-histogram 35)</title><rect class="bar" x="22" y="166.8" width="88" height="5.2"/><text class="v" x="66" y="156.8">35</text></g>
-          <text class="yr" x="66" y="202">2016</text>
-          <g><title>2017: 47 commits (safety-histogram 47)</title><rect class="bar" x="154" y="165.0" width="88" height="7.0"/><text class="v" x="198" y="155.0">47</text></g>
-          <text class="yr" x="198" y="202">2017</text>
-          <g><title>2018: 491 commits (safetyGraphics 179, hep-explorer 264, safety-histogram 48)</title><path class="bar" d="M286,172V103.0Q286,99.0 290,99.0H370Q374,99.0 374,103.0V172Z"/><text class="v" x="330" y="89.0">491</text></g>
-          <text class="yr" x="330" y="202">2018</text>
-          <g><title>2019: 807 commits (safetyGraphics 544, hep-explorer 164, safety-histogram 99)</title><path class="bar" d="M418,172V56.0Q418,52.0 422,52.0H502Q506,52.0 506,56.0V172Z"/><text class="v" x="462" y="42.0">807</text></g>
-          <text class="yr" x="462" y="202">2019</text>
-          <g><title>2020: 169 commits (safetyGraphics 104, safetyCharts 55, hep-explorer 8, safety-histogram 2)</title><path class="bar" d="M550,172V150.9Q550,146.9 554,146.9H634Q638,146.9 638,150.9V172Z"/><text class="v" x="594" y="136.9">169</text></g>
-          <text class="yr" x="594" y="202">2020</text>
-          <g><title>2021: 359 commits (safetyGraphics 261, safetyCharts 87, hep-explorer 11)</title><path class="bar" d="M682,172V122.6Q682,118.6 686,118.6H766Q770,118.6 770,122.6V172Z"/><text class="v" x="726" y="108.6">359</text></g>
-          <text class="yr" x="726" y="202">2021</text>
-          <g><title>2022: 96 commits (safetyGraphics 51, safetyCharts 37, hep-explorer 8)</title><path class="bar" d="M814,172V161.7Q814,157.7 818,157.7H898Q902,157.7 902,161.7V172Z"/><text class="v" x="858" y="147.7">96</text></g>
-          <text class="yr" x="858" y="202">2022</text>
-          <g><title>2023: 79 commits (safetyGraphics 28, safetyCharts 51)</title><path class="bar" d="M946,172V164.3Q946,160.3 950,160.3H1030Q1034,160.3 1034,164.3V172Z"/><text class="v" x="990" y="150.3">79</text></g>
-          <text class="yr" x="990" y="202">2023</text>
-          <g><title>2024: 2 commits (safetyCharts 2)</title><rect class="bar" x="1078" y="170.0" width="88" height="2.0"/><text class="v" x="1122" y="160.0">2</text></g>
-          <text class="yr" x="1122" y="202">2024</text>
-          <g><title>2025: 0 commits</title><text class="v" x="1254" y="162.0">0</text></g>
-          <text class="yr" x="1254" y="202">2025</text>
-          <line class="base" x1="0" x2="1320" y1="172" y2="172"/>
-          <!-- the stretch after 2021: a bracket over 2022 to 2025 -->
-          <path class="br" d="M806,98V86H1306V98"/>
-          <text class="an" x="1056" y="70">After 2021 job change</text>
-        </svg>
-      </div>
-      <div class="goodat insp"><div class="bub"><p class="q">What evidence do you have?</p><p class="a two">Written requirements and a manual test script for every chart.<br>Automated tests on the R package, run on every pull request.</p></div><div class="who"></div></div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
-        Imported 2026-10-07 at his pick ("Slide 12 commits chart"); the blue box marks it as not yet reviewed. DRAFT visual, 2026-10-07 (replaces the orange TODO box; Jeremy, 2026-10-06: "slide 12
-        needs a visual add a todo"). The three columns keep their words and their place; their
-        padding is tightened to make room. The chart's two labels ("Commits a year, four
-        repositories") are draft wording; "After 2021 job change" is Jeremy's, 7 October.
-        <br><br>What the bars are: commits per calendar year, by author date, merge commits
-        included, on the default branch of four repositories as they stood on GitHub on
-        2026-10-07: SafetyGraphics/safetyGraphics (dev), SafetyGraphics/safetyCharts (dev),
-        SafetyGraphics/hep-explorer (master) and RhoInc/safety-histogram (master). 2,085
-        commits in all. By year: 2016, 35; 2017, 47; 2018, 491; 2019, 807; 2020, 169; 2021,
-        359; 2022, 96; 2023, 79; 2024, 2; 2025, 0. Hover a bar for the split by repository.
-        <br><br>Things to know before saying it out loud: the last commit on any of the four
-        default branches is 20 September 2024 (safetyCharts v0.4.0). safetyGraphics itself
-        was last released on 14 December 2022 (v2.1.1) and last committed to on 14 September
-        2023. One commit in 2025 sits on a side branch of safetyCharts and is not counted. The
-        2024 bar is drawn 2 pixels high so it can be seen; at the chart's scale it would be
-        under a third of a pixel. These are four of the project's repositories, not all of them; the
-        other renderers were not counted. Commands and the per-repository table are in
-        keynote/_notes/drafts-2026-10-07/sources.md.
-        <br><br>
-        The GxP thread starts here (Jeremy, 2026-10-06: "I want to set up the GxP thread on
-        slide 12. safetyGraphics was non-gxp, and that was the first question in every talk
-        about the project."). The third column is new. Its question and answer are from diary
-        #5 (2026-07-12): "The most frequently asked question about {safetyGraphics} has always
-        been: 'Is it validated? Can I use it on actual studies?' The original answer was, 'Not
-        really. It's exploratory'." Diary #3 says the same of the package: "{safetyGraphics}
-        isn't fully GxP-compliant." The column heading and "In every talk. The answer then:"
-        are draft wording; the slide shortens the question to its first three words.
-        <br><br>Where the thread comes back: slide 14 (gsm, "quality built in from the start"; it read "built for GxP from the start" until 7 October),
-        slide 17 ("Quality is built into the design"), slide 29 (the opening of the
-        experiment, where Inspector Orange is waved off; "Not GxP" came off that slide on 7 October), and slide 49 ("A lot of tests, and still an experiment"; "still not GxP" until 7 October). A reserve slide, "Is it validated?", asks the same question with a
-        then-and-now answer.
-        <br><br>Other ideas for the visual, none built: a page of a study report's "wall of
-        numbers"; a screenshot of the safetyGraphics Shiny app as it was left.
-        <br><br>
-        Source: diary #3, "A Few Quiet Years". Jeremy stopped active work on safetyGraphics on
-        moving to Gilead in 2021 to work on RBQM. "Those 200-page walls of text still exist in
-        Clinical Study Reports, and safetyGraphics isn't fully GxP-compliant."
-        <br><br>The turn into beat 2: "Doing safetyGraphics justice always felt like it needed a
-        team and a budget I no longer have — but with AI agents, I'm honestly not sure that's true
-        anymore. Figuring out whether it is, is what this whole keynote experiment is about."
-        Then: the OpenRBQM team "is already dragging clinical monitoring toward something more modern."
-        <br><br>Inspector popup, measured 7 October 2026 from the public record. Requirements and
-        manual scripts: each renderer's wiki has a Technical Documentation page; the AE Explorer's
-        (github.com/RhoInc/aeexplorer/wiki/Technical-Documentation) lists 18 user requirements and
-        41 manual regression steps, written 2017–2018. Automated tests: the safetyGraphics R
-        package has 46 testthat tests in 12 files on its dev branch (31 unit tests, 15 browser
-        tests through shinytest), 60 at v1.0.0, run by R CMD check on every pull request. What
-        was missing, left off the popup on purpose: no automated tests on the JavaScript charts,
-        and nothing connecting a requirement to the test that proves it. No public record of
-        the user testing was found; it is not on the popup.
+        Rebuilt 14 October 2026 as a dialogue (Jeremy: "reformat slide 12 into a discussion
+        between me and Inspector Orange Asking what evidence do you have?. My response ...
+        written requirements ... etc Orange: But is it validated? Me: Not really. It's
+        exploratory."). Orange's question shows with the slide; each press adds the next turn
+        (three presses), and a press after the last turn moves on.
+        <br><br>Jeremy's answer is the wording of the inspector callout on the old slide. The
+        headline is drafted from the old slide's third column ("The first question" / "In every
+        talk"). The JW hexagon stands in for a photo of Jeremy; swap in a picture if he has
+        one he likes.
+        <br><br>The old slide (kicker "A few quiet years", headline "What we did, and what we
+        didn't", the three columns and the commits-a-year chart) is archived in Reserves,
+        dated 14 October 2026, with its notes.
       </aside>
     </section>
 
@@ -4542,6 +4495,105 @@ steps:
       <aside class="notes"><strong class="say">&lt;none yet&gt;</strong></aside>
     </section>
 
+        <section class="slide s-split s-quiet" data-reserve="14 October 2026" data-hue="1" style="padding-bottom: 84px">
+      <p class="kicker">A few quiet years</p>
+      <h2>What we did, and what we didn't</h2>
+      <div class="cols c3" style="flex: none">
+        <div class="col"><h3>We showed</h3><p>Open-source, interactive graphics work in clinical trials.</p></div>
+        <div class="col"><h3>We didn't</h3><p>Change the industry standard for how people monitor safety.</p></div>
+        <div class="col"><h3>The first question</h3><p>Is it validated?</p><p class="small">In every talk. The answer then: Not really. It's exploratory</p></div>
+      </div>
+      <div class="pvr cy">
+        <svg viewBox="0 0 1320 210" role="img" aria-label="Bar chart of commits per year to four safetyGraphics repositories, 2016 to 2025. 35 in 2016, 47 in 2017, 491 in 2018, 807 in 2019, 169 in 2020, 359 in 2021, 96 in 2022, 79 in 2023, 2 in 2024 and none in 2025.">
+          <text class="ct" x="0" y="24">Commits a year,</text>
+          <text class="ct" x="0" y="54">four repositories</text>
+          <g><title>2016: 35 commits (safety-histogram 35)</title><rect class="bar" x="22" y="166.8" width="88" height="5.2"/><text class="v" x="66" y="156.8">35</text></g>
+          <text class="yr" x="66" y="202">2016</text>
+          <g><title>2017: 47 commits (safety-histogram 47)</title><rect class="bar" x="154" y="165.0" width="88" height="7.0"/><text class="v" x="198" y="155.0">47</text></g>
+          <text class="yr" x="198" y="202">2017</text>
+          <g><title>2018: 491 commits (safetyGraphics 179, hep-explorer 264, safety-histogram 48)</title><path class="bar" d="M286,172V103.0Q286,99.0 290,99.0H370Q374,99.0 374,103.0V172Z"/><text class="v" x="330" y="89.0">491</text></g>
+          <text class="yr" x="330" y="202">2018</text>
+          <g><title>2019: 807 commits (safetyGraphics 544, hep-explorer 164, safety-histogram 99)</title><path class="bar" d="M418,172V56.0Q418,52.0 422,52.0H502Q506,52.0 506,56.0V172Z"/><text class="v" x="462" y="42.0">807</text></g>
+          <text class="yr" x="462" y="202">2019</text>
+          <g><title>2020: 169 commits (safetyGraphics 104, safetyCharts 55, hep-explorer 8, safety-histogram 2)</title><path class="bar" d="M550,172V150.9Q550,146.9 554,146.9H634Q638,146.9 638,150.9V172Z"/><text class="v" x="594" y="136.9">169</text></g>
+          <text class="yr" x="594" y="202">2020</text>
+          <g><title>2021: 359 commits (safetyGraphics 261, safetyCharts 87, hep-explorer 11)</title><path class="bar" d="M682,172V122.6Q682,118.6 686,118.6H766Q770,118.6 770,122.6V172Z"/><text class="v" x="726" y="108.6">359</text></g>
+          <text class="yr" x="726" y="202">2021</text>
+          <g><title>2022: 96 commits (safetyGraphics 51, safetyCharts 37, hep-explorer 8)</title><path class="bar" d="M814,172V161.7Q814,157.7 818,157.7H898Q902,157.7 902,161.7V172Z"/><text class="v" x="858" y="147.7">96</text></g>
+          <text class="yr" x="858" y="202">2022</text>
+          <g><title>2023: 79 commits (safetyGraphics 28, safetyCharts 51)</title><path class="bar" d="M946,172V164.3Q946,160.3 950,160.3H1030Q1034,160.3 1034,164.3V172Z"/><text class="v" x="990" y="150.3">79</text></g>
+          <text class="yr" x="990" y="202">2023</text>
+          <g><title>2024: 2 commits (safetyCharts 2)</title><rect class="bar" x="1078" y="170.0" width="88" height="2.0"/><text class="v" x="1122" y="160.0">2</text></g>
+          <text class="yr" x="1122" y="202">2024</text>
+          <g><title>2025: 0 commits</title><text class="v" x="1254" y="162.0">0</text></g>
+          <text class="yr" x="1254" y="202">2025</text>
+          <line class="base" x1="0" x2="1320" y1="172" y2="172"/>
+          <!-- the stretch after 2021: a bracket over 2022 to 2025 -->
+          <path class="br" d="M806,98V86H1306V98"/>
+          <text class="an" x="1056" y="70">After 2021 job change</text>
+        </svg>
+      </div>
+      <div class="goodat insp"><div class="bub"><p class="q">What evidence do you have?</p><p class="a two">Written requirements and a manual test script for every chart.<br>Automated tests on the R package, run on every pull request.</p></div><div class="who"></div></div>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        Demoted 14 October 2026: the original version of slide 12, archived at Jeremy's request
+        ("archive the original version") when slide 12 became a dialogue between him and
+        Inspector Orange. Restore it by moving it back in place of the dialogue slide and
+        deleting data-reserve.
+        <br><br>
+        Imported 2026-10-07 at his pick ("Slide 12 commits chart"); the blue box marks it as not yet reviewed. DRAFT visual, 2026-10-07 (replaces the orange TODO box; Jeremy, 2026-10-06: "slide 12
+        needs a visual add a todo"). The three columns keep their words and their place; their
+        padding is tightened to make room. The chart's two labels ("Commits a year, four
+        repositories") are draft wording; "After 2021 job change" is Jeremy's, 7 October.
+        <br><br>What the bars are: commits per calendar year, by author date, merge commits
+        included, on the default branch of four repositories as they stood on GitHub on
+        2026-10-07: SafetyGraphics/safetyGraphics (dev), SafetyGraphics/safetyCharts (dev),
+        SafetyGraphics/hep-explorer (master) and RhoInc/safety-histogram (master). 2,085
+        commits in all. By year: 2016, 35; 2017, 47; 2018, 491; 2019, 807; 2020, 169; 2021,
+        359; 2022, 96; 2023, 79; 2024, 2; 2025, 0. Hover a bar for the split by repository.
+        <br><br>Things to know before saying it out loud: the last commit on any of the four
+        default branches is 20 September 2024 (safetyCharts v0.4.0). safetyGraphics itself
+        was last released on 14 December 2022 (v2.1.1) and last committed to on 14 September
+        2023. One commit in 2025 sits on a side branch of safetyCharts and is not counted. The
+        2024 bar is drawn 2 pixels high so it can be seen; at the chart's scale it would be
+        under a third of a pixel. These are four of the project's repositories, not all of them; the
+        other renderers were not counted. Commands and the per-repository table are in
+        keynote/_notes/drafts-2026-10-07/sources.md.
+        <br><br>
+        The GxP thread starts here (Jeremy, 2026-10-06: "I want to set up the GxP thread on
+        slide 12. safetyGraphics was non-gxp, and that was the first question in every talk
+        about the project."). The third column is new. Its question and answer are from diary
+        #5 (2026-07-12): "The most frequently asked question about {safetyGraphics} has always
+        been: 'Is it validated? Can I use it on actual studies?' The original answer was, 'Not
+        really. It's exploratory'." Diary #3 says the same of the package: "{safetyGraphics}
+        isn't fully GxP-compliant." The column heading and "In every talk. The answer then:"
+        are draft wording; the slide shortens the question to its first three words.
+        <br><br>Where the thread comes back: slide 14 (gsm, "quality built in from the start"; it read "built for GxP from the start" until 7 October),
+        slide 17 ("Quality is built into the design"), slide 29 (the opening of the
+        experiment, where Inspector Orange is waved off; "Not GxP" came off that slide on 7 October), and slide 49 ("A lot of tests, and still an experiment"; "still not GxP" until 7 October). A reserve slide, "Is it validated?", asks the same question with a
+        then-and-now answer.
+        <br><br>Other ideas for the visual, none built: a page of a study report's "wall of
+        numbers"; a screenshot of the safetyGraphics Shiny app as it was left.
+        <br><br>
+        Source: diary #3, "A Few Quiet Years". Jeremy stopped active work on safetyGraphics on
+        moving to Gilead in 2021 to work on RBQM. "Those 200-page walls of text still exist in
+        Clinical Study Reports, and safetyGraphics isn't fully GxP-compliant."
+        <br><br>The turn into beat 2: "Doing safetyGraphics justice always felt like it needed a
+        team and a budget I no longer have — but with AI agents, I'm honestly not sure that's true
+        anymore. Figuring out whether it is, is what this whole keynote experiment is about."
+        Then: the OpenRBQM team "is already dragging clinical monitoring toward something more modern."
+        <br><br>Inspector popup, measured 7 October 2026 from the public record. Requirements and
+        manual scripts: each renderer's wiki has a Technical Documentation page; the AE Explorer's
+        (github.com/RhoInc/aeexplorer/wiki/Technical-Documentation) lists 18 user requirements and
+        41 manual regression steps, written 2017–2018. Automated tests: the safetyGraphics R
+        package has 46 testthat tests in 12 files on its dev branch (31 unit tests, 15 browser
+        tests through shinytest), 60 at v1.0.0, run by R CMD check on every pull request. What
+        was missing, left off the popup on purpose: no automated tests on the JavaScript charts,
+        and nothing connecting a requirement to the test that proves it. No public record of
+        the user testing was found; it is not on the popup.
+      </aside>
+    </section>
+
   </div>
 
   <div class="notes-panel" id="notes" aria-live="polite"></div>
@@ -4609,6 +4661,7 @@ steps:
         slides.forEach(function (s, k2) {
           s.classList.toggle('active', k2 === i);
           s.classList.toggle('revealed', k2 === i && !!revealed);
+          s.querySelectorAll('.step').forEach(function (el) { el.classList.toggle('on', k2 === i && !!revealed); });
           s.parentNode.classList.toggle('current', k2 === i);
         });
         // Demo recordings play from the start, only while their slide is showing.
@@ -4638,11 +4691,17 @@ steps:
       // Forward: the first press on a slide with a callout reveals it; the next one advances.
       // Back: hides a revealed callout first, then steps back to the previous slide fully shown.
       function hasCallout() { return !!slides[i].querySelector('.goodat:not(.now)') || slides[i].hasAttribute('data-outline'); }
+      // Stepped content (.step): each press shows the next one before anything else happens;
+      // back hides them again in reverse order.
       function next() {
+        var hid = slides[i].querySelectorAll('.step:not(.on)');
+        if (hid.length) { hid[0].classList.add('on'); return; }
         if (hasCallout() && !slides[i].classList.contains('revealed')) slides[i].classList.add('revealed');
         else if (i < slides.length - 1) go(i + 1);
       }
       function prev() {
+        var on = slides[i].querySelectorAll('.step.on');
+        if (on.length) { on[on.length - 1].classList.remove('on'); return; }
         if (hasCallout() && slides[i].classList.contains('revealed')) slides[i].classList.remove('revealed');
         else if (i > 0) go(i - 1, true);
       }
