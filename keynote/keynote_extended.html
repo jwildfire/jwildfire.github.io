@@ -784,6 +784,24 @@
     .s-demo .review { top: 26px; right: 300px; }
     .s-demo .cap a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--hue); text-decoration-thickness: 3px; text-underline-offset: 6px; }
     /* A quote slide that returns later with terms under it (slide 3 called back at the start of beat 3). */
+    /* The question again near the end (slide 52, 2026-10-14): four Oranges answer under it,
+       one per press. Each keeps its own callout colours from earlier in the deck. */
+    .s-reply blockquote { font-size: 64px; }
+    .s-reply .replies { display: grid; grid-template-columns: 1fr 1fr; gap: 26px 40px; margin: 44px 0 0; }
+    .s-reply .rp { display: flex; align-items: center; gap: 22px; }
+    .s-reply .rp .who { flex: none; width: 130px; height: 150px; background: center / contain no-repeat; }
+    .s-reply .rp.good .who { background-image: url(assets/hex/orange-thumbs-up.png); }
+    .s-reply .rp.bad .who { background-image: url(assets/hex/orange-thumbs-down.png); }
+    .s-reply .rp.insp .who { background-image: url(assets/hex/orange-inspector.png); }
+    .s-reply .rp.hack .who { background-image: url(assets/hex/orange-hacker.png); }
+    .s-reply .rp .bub { position: relative; border: 3px solid; border-radius: 26px; padding: 16px 28px 18px; }
+    .s-reply .rp .bub::after { content: ""; position: absolute; left: -15px; top: 50%; width: 24px; height: 24px; margin-top: -12px; border-left: 3px solid; border-bottom: 3px solid; border-color: inherit; background: inherit; transform: rotate(45deg); }
+    .s-reply .rp .bub p { margin: 0; font-family: var(--serif); font-size: 40px; line-height: 1.08; color: var(--ink); }
+    .s-reply .rp.good .bub { background: #fbf1e0; border-color: var(--spec-1); }
+    .s-reply .rp.bad .bub { background: #fbeceb; border-color: var(--spec-0); }
+    .s-reply .rp.insp .bub { background: #e9f3ea; border-color: #5f9a72; }
+    .s-reply .rp.hack .bub { background: #14181d; border-color: #3fbf5f; }
+    .s-reply .rp.hack .bub p { font-family: var(--mono); font-size: 32px; color: #8cf5a4; white-space: nowrap; }
     .s-quote .terms { list-style: none; margin: 44px 0 0; padding: 0 0 0 66px; display: flex; flex-wrap: wrap; gap: 14px 48px; }
     .s-quote .terms li { position: relative; padding-left: 38px; font-size: 38px; line-height: 1.25; }
     .s-quote .terms li::before { content: ""; position: absolute; left: 0; top: 0.3em; width: 22px; height: 25px; background: var(--hue); clip-path: var(--hex-clip); }
@@ -3397,8 +3415,9 @@ steps:
         drafted" placeholder. Headline is Jeremy's phrase ("what we learned"); the line under it
         is draft wording.
         <br><br>What follows: good at, bad at, mixed feelings (a placeholder for Jeremy), the
-        closing slide (a placeholder for the image he is having made). Since 14 October: how fast it is moving, try it out, good at, mixed feelings and the
-        closing slide; bad at is in the reserves. Best practices is in his
+        closing slide (a placeholder for the image he is having made). Since 14 October: try it out, how fast it is moving, the question one last time (four
+        Oranges answer), mixed feelings and the closing slide; good at and bad at are in the
+        reserves. Best practices is in his
         earlier structure and is not drafted.
         <br><br>Photo: orange-looking-up-agenda.jpg, the outline's option for this spot ("so
         what now?"). The crop keeps the printed agenda on the right of the photo out of frame:
@@ -3406,6 +3425,44 @@ steps:
       </aside>
     </section>
 
+    <section class="slide s-start" data-hue="6">
+      <p class="kicker">How to get started</p>
+      <h2>Try it out!</h2>
+      <ol>
+        <li><i>1</i><b>Pick an agent</b><span>Claude or Codex, $20 for a month. Others are fine too.</span></li>
+        <li><i>2</i><b>Set up GitHub</b><span>A free account is fine.</span></li>
+        <li><i>3</i><b>Pick a development process</b><span>For R: Hadley Wickham's R Packages book, free at r-pkgs.org.</span></li>
+        <li><i>4</i><b>Write a prompt</b><p class="ask">Make me an Open Source R package that does X. Include a working example and user guide in GitHub pages. Follow all of the best practices in Hadley Wickham's R Packages book.</p></li>
+        <li><i>5</i><b>Ask questions!</b><p class="ask">Explain how you did X</p></li>
+      </ol>
+      <div class="goodat" style="top: 64px; bottom: auto"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Teaching me things!</p></div><div class="who"><i>👍</i></div></div>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        Added 2026-10-14 as slide 52, right after the "What we learned" opener. Reframed the
+        same day as five steps, at Jeremy's ask: "Frame this as a 5 step process: (1) Pick an
+        agent (Claude or Codex @ $20 for a month. Others fine too. ) (2) Set up GitHub (Free
+        account is fine) (3) Pick a development process (Hadley's R Package. book for R) (4)
+        Write a prompt "Make me an Open Source R package that does X. Include a working example
+        and user guide in GitHub pages. Follow all of the best practices in Hadley Wickham's R
+        Packages book." (5) Ask Questions!"
+        <br><br>The step 4 prompt is his words exactly. Step details are set from his
+        parentheses. "Explain how you did X" under step 5 is carried over from his first version
+        of this slide (also 2026-10-14), as an example question; cut it if step 5 should stand
+        alone. The r-pkgs.org line is an addition. The book's second edition (2023) is by Hadley
+        Wickham and Jennifer Bryan.
+        <br><br>Callout, moved here from slide 6 on 2026-10-14 ("for now", his words): what are
+        agents good at now? Teaching me things. Its story is in slide 6's notes: in 2012 it took
+        two weeks off to learn JavaScript.
+        <br><br>His first version, for the record: headline "Try it out!"; "Need a development
+        framework. R Packages by Hadley is a great place to start. Use GitHub with Version
+        Control, GitHub pages and CI/CD. 'Make me an Open Source R package that does X. Follow
+        all of the best practices in Hadley Wickham's R Packages book.' 'Explain how you did X'"
+        <br><br>Every slide after this one moved up a number: good at is 50, bad at 51, how I
+        feel 52, the party 53. The deck is 53 slides.
+      </aside>
+    </section>
+
+    <!-- 4 · how to get started -->
     <section class="slide" data-hue="6">
       <p class="kicker">How fast it is moving</p>
       <h2 style="font-size: 64px; margin-bottom: 14px">Roughly a year, and I could not keep up</h2>
@@ -3579,94 +3636,33 @@ steps:
         <br><br>Moved 2026-10-14 (Jeremy: "Move 49 into the what we learned section"): it now
         opens that section, straight after its title slide; until then it closed "How we
         built it", after the tests slide. Its colour changed from that section's to this one's.
-      </aside>
-    </section>
-
-    <!-- 4 · how to get started -->
-    <section class="slide s-start" data-hue="6">
-      <p class="kicker">How to get started</p>
-      <h2>Try it out!</h2>
-      <ol>
-        <li><i>1</i><b>Pick an agent</b><span>Claude or Codex, $20 for a month. Others are fine too.</span></li>
-        <li><i>2</i><b>Set up GitHub</b><span>A free account is fine.</span></li>
-        <li><i>3</i><b>Pick a development process</b><span>For R: Hadley Wickham's R Packages book, free at r-pkgs.org.</span></li>
-        <li><i>4</i><b>Write a prompt</b><p class="ask">Make me an Open Source R package that does X. Include a working example and user guide in GitHub pages. Follow all of the best practices in Hadley Wickham's R Packages book.</p></li>
-        <li><i>5</i><b>Ask questions!</b><p class="ask">Explain how you did X</p></li>
-      </ol>
-      <div class="goodat" style="top: 64px; bottom: auto"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Teaching me things!</p></div><div class="who"><i>👍</i></div></div>
-      <aside class="notes">
-        <strong class="say">&lt;none yet&gt;</strong>
-        Added 2026-10-14 as slide 52, right after the "What we learned" opener. Reframed the
-        same day as five steps, at Jeremy's ask: "Frame this as a 5 step process: (1) Pick an
-        agent (Claude or Codex @ $20 for a month. Others fine too. ) (2) Set up GitHub (Free
-        account is fine) (3) Pick a development process (Hadley's R Package. book for R) (4)
-        Write a prompt "Make me an Open Source R package that does X. Include a working example
-        and user guide in GitHub pages. Follow all of the best practices in Hadley Wickham's R
-        Packages book." (5) Ask Questions!"
-        <br><br>The step 4 prompt is his words exactly. Step details are set from his
-        parentheses. "Explain how you did X" under step 5 is carried over from his first version
-        of this slide (also 2026-10-14), as an example question; cut it if step 5 should stand
-        alone. The r-pkgs.org line is an addition. The book's second edition (2023) is by Hadley
-        Wickham and Jennifer Bryan.
-        <br><br>Callout, moved here from slide 6 on 2026-10-14 ("for now", his words): what are
-        agents good at now? Teaching me things. Its story is in slide 6's notes: in 2012 it took
-        two weeks off to learn JavaScript.
-        <br><br>His first version, for the record: headline "Try it out!"; "Need a development
-        framework. R Packages by Hadley is a great place to start. Use GitHub with Version
-        Control, GitHub pages and CI/CD. 'Make me an Open Source R package that does X. Follow
-        all of the best practices in Hadley Wickham's R Packages book.' 'Explain how you did X'"
-        <br><br>Every slide after this one moved up a number: good at is 50, bad at 51, how I
-        feel 52, the party 53. The deck is 53 slides.
+        <br><br>Swapped with "Try it out!" 2026-10-14 (Jeremy: "Switch 50/51"): it is now the
+        second slide of the section, after "Try it out!".
       </aside>
     </section>
 
     <!-- 4 · s1: the thumbs-up answers, gathered -->
-    <section class="slide s-answers" data-hue="6">
-      <p class="kicker">Lessons · Orange's answers so far</p>
-      <h2>What are agents good at now?</h2>
-      <div class="who"><i>👍</i></div>
-      <ul>
-        <li><span class="a">Writing code</span><span class="w">The team at work · Q4 2025</span></li>
-        <li><span class="a">Porting old code</span><span class="w">obot v3</span></li>
-        <li><span class="a">The standard SDLC</span><span class="w">The team at work · Q2 2026</span></li>
-        <li><span class="a">Translating research into software</span><span class="w">obot v3</span></li>
-        <li><span class="a">Drafting documents</span><span class="w">The team at work</span></li>
-        <li><span class="a">Running experiments</span><span class="w">obot v5.5</span></li>
-        <li><span class="a">Teaching me things</span><span class="w">Getting started</span></li>
-        <li><span class="a">Reviewing its own work</span><span class="w">obot v5.5</span></li>
-      </ul>
+    <section class="slide s-quote s-reply" data-hue="6">
+      <p class="kicker">The question, one last time</p>
+      <blockquote>What can we actually do with AI agents right now?</blockquote>
+      <div class="replies">
+        <div class="rp good step"><div class="who"></div><div class="bub"><p>Quite a lot!</p></div></div>
+        <div class="rp bad step"><div class="who"></div><div class="bub"><p>Not at setting priorities</p></div></div>
+        <div class="rp insp step"><div class="who"></div><div class="bub"><p>Generating evidence, but not judgement</p></div></div>
+        <div class="rp hack step"><div class="who"></div><div class="bub"><p>Software development</p></div></div>
+      </div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
-        DRAFT, 2026-10-05. Beat 4, "what we learned"; s1 in Jeremy's first structure ("revisit our answers to 'What are
-        these tools good at'"). Every answer here is one Orange already gave in a callout earlier
-        in the deck, with one exception noted below. The wording of each answer is the
-        callout's; the small label under it says where it came up. All of it is draft for
-        Jeremy to rewrite.
-        <br><br>Where each one comes from:
-        <br>Teaching me things: slide 51 (moved there from slide 6 on 2026-10-14).
-        <br>Writing code: slide 20.
-        <br>Drafting documents: slide 24.
-        <br>Designing pages: was the callout on slide 24 (the artifacts) until 2026-10-06; no longer on a slide before this one.
-        <br>Porting old code: slide 35 (v3, the weekend of renderers).
-        <br>Translating research into software: slide 36 (v3; Jeremy's wording).
-        <br>Reviewing its own work: slide 44 (v5.5; the reviewer agents).
-        <br>Running experiments: not a callout in the main deck. It is from Jeremy's steer of
-        5 October ("Agents are great at experiments") and from a slide now in the reserves. If
-        it stays here it probably wants a callout in beat 3, on the v5.5 slide.
-        <br><br>Left out, because they are verdicts on a way of working, not on what agents can
-        do: "Real work, by text" (v2), "The structure held" (v4), "A definition of done" (v5).
-        <br><br>From the close-out list in the outline and not placed anywhere yet: busy work
-        (making slides, meeting minutes); syntax (git); catching real errors, including its own
-        (close to "Reviewing its own work").
-        <br><br>TODO (Jeremy): which eight; the order; whether the left column should be the
-        team's answers and the right column obot's, as drafted.
-        <br><br>Synced with the deck 2026-10-14 (Jeremy: "Update 52 and 53 based on the current
-        draft"). Added "The standard SDLC", the callout now on slide 22 (moved there from
-        "Where we put the effort"), labelled Q2 2026 beside "Writing code", Q4 2025, as the two
-        callouts are. Removed "Designing pages", which no slide has said since 6 October. The
-        left column is now the team's answers in deck order (slides 20, 22, 24, 51) and the
-        right column obot's (35, 36, then the two from v5.5). "Running experiments" stays as
-        the one answer with no callout behind it.
+        Rebuilt 2026-10-14 (Jeremy: "Refactor 52. Same question slide as s3. Orange responds.
+        Happy orange Quite a Lot! Thumbs down orange Not at Setting Priorities Inspector Orange
+        Generating Evidence, but not Judgement. Hacker Orange: Software Development"). The
+        question is slide 3's, word for word; the kicker is the outline's name for this beat
+        ("the question, one last time"). Four Oranges answer, one per press, in his order:
+        thumbs-up, thumbs-down, Inspector, Hacker. His words, set in sentence case like the
+        deck's other callouts; the closing full stop on the Inspector's line is dropped to
+        match the others.
+        <br><br>The list version of this slide ("What are agents good at now?", eight answers
+        gathered from the deck's callouts, with its notes) is in Reserves, dated 14 October.
       </aside>
     </section>
 
@@ -4736,6 +4732,58 @@ steps:
         <br><br>Until late on 5 October a sixth, dashed cell bridged to "So how do we do this in
         GxP?". It was removed when Jeremy regrouped the beats: costs, quality, the roadmap and
         the timeline now come before this slide, in part 3.5, and "mixed feelings" comes next.
+      </aside>
+    </section>
+
+    <section class="slide s-answers" data-reserve="14 October 2026" data-hue="6">
+      <p class="kicker">Lessons · Orange's answers so far</p>
+      <h2>What are agents good at now?</h2>
+      <div class="who"><i>👍</i></div>
+      <ul>
+        <li><span class="a">Writing code</span><span class="w">The team at work · Q4 2025</span></li>
+        <li><span class="a">Porting old code</span><span class="w">obot v3</span></li>
+        <li><span class="a">The standard SDLC</span><span class="w">The team at work · Q2 2026</span></li>
+        <li><span class="a">Translating research into software</span><span class="w">obot v3</span></li>
+        <li><span class="a">Drafting documents</span><span class="w">The team at work</span></li>
+        <li><span class="a">Running experiments</span><span class="w">obot v5.5</span></li>
+        <li><span class="a">Teaching me things</span><span class="w">Getting started</span></li>
+        <li><span class="a">Reviewing its own work</span><span class="w">obot v5.5</span></li>
+      </ul>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        Demoted 14 October 2026 when slide 52 became the question again with four Oranges
+        answering (Jeremy: "Refactor 52. Same question slide as s3. Orange responds.").
+        <br><br>
+        DRAFT, 2026-10-05. Beat 4, "what we learned"; s1 in Jeremy's first structure ("revisit our answers to 'What are
+        these tools good at'"). Every answer here is one Orange already gave in a callout earlier
+        in the deck, with one exception noted below. The wording of each answer is the
+        callout's; the small label under it says where it came up. All of it is draft for
+        Jeremy to rewrite.
+        <br><br>Where each one comes from:
+        <br>Teaching me things: slide 51 (moved there from slide 6 on 2026-10-14).
+        <br>Writing code: slide 20.
+        <br>Drafting documents: slide 24.
+        <br>Designing pages: was the callout on slide 24 (the artifacts) until 2026-10-06; no longer on a slide before this one.
+        <br>Porting old code: slide 35 (v3, the weekend of renderers).
+        <br>Translating research into software: slide 36 (v3; Jeremy's wording).
+        <br>Reviewing its own work: slide 44 (v5.5; the reviewer agents).
+        <br>Running experiments: not a callout in the main deck. It is from Jeremy's steer of
+        5 October ("Agents are great at experiments") and from a slide now in the reserves. If
+        it stays here it probably wants a callout in beat 3, on the v5.5 slide.
+        <br><br>Left out, because they are verdicts on a way of working, not on what agents can
+        do: "Real work, by text" (v2), "The structure held" (v4), "A definition of done" (v5).
+        <br><br>From the close-out list in the outline and not placed anywhere yet: busy work
+        (making slides, meeting minutes); syntax (git); catching real errors, including its own
+        (close to "Reviewing its own work").
+        <br><br>TODO (Jeremy): which eight; the order; whether the left column should be the
+        team's answers and the right column obot's, as drafted.
+        <br><br>Synced with the deck 2026-10-14 (Jeremy: "Update 52 and 53 based on the current
+        draft"). Added "The standard SDLC", the callout now on slide 22 (moved there from
+        "Where we put the effort"), labelled Q2 2026 beside "Writing code", Q4 2025, as the two
+        callouts are. Removed "Designing pages", which no slide has said since 6 October. The
+        left column is now the team's answers in deck order (slides 20, 22, 24, 51) and the
+        right column obot's (35, 36, then the two from v5.5). "Running experiments" stays as
+        the one answer with no callout behind it.
       </aside>
     </section>
 
