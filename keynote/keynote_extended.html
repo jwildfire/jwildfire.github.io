@@ -805,6 +805,11 @@
     .s-reply .rp.insp .bub { background: #e9f3ea; border-color: #5f9a72; }
     .s-reply .rp.hack .bub { background: #14181d; border-color: #3fbf5f; }
     .s-reply .rp.hack .bub p { font-family: var(--mono); font-size: 32px; color: #8cf5a4; white-space: nowrap; }
+    /* Acknowledgements (2026-10-15, placeholder): his sentence large, a thumbs-up Orange beside it. */
+    .s-thanks { justify-content: center; }
+    .s-thanks .thx { display: flex; align-items: center; gap: 70px; }
+    .s-thanks .thx p { margin: 0; flex: 1; font-family: var(--serif); font-size: 76px; line-height: 1.12; color: var(--ink); max-width: none; text-wrap: balance; }
+    .s-thanks .who { flex: none; width: 260px; height: 300px; background: url(assets/hex/orange-thumbs-up.png) center / contain no-repeat; }
     .s-quote .terms { list-style: none; margin: 44px 0 0; padding: 0 0 0 66px; display: flex; flex-wrap: wrap; gap: 14px 48px; }
     .s-quote .terms li { position: relative; padding-left: 38px; font-size: 38px; line-height: 1.25; }
     .s-quote .terms li::before { content: ""; position: absolute; left: 0; top: 0.3em; width: 22px; height: 25px; background: var(--hue); clip-path: var(--hex-clip); }
@@ -3694,7 +3699,7 @@ steps:
         working less. But, what's now? Orange callouts - Good: More medicines, faster! (small)
         And no more powerpoint! Bad: Data Centers. Rouge Agents. Quality: So. Much. Change.
         Hacker: 100 years of innovation! Trials on a chip! Robots folding my clothes!" (He
-        gave the number in the 54-slide count; this was slide 51 of 52 then; it was slide 50 of 51 on 7 October was slide 52 of 53 from 14 October, was slide 54 of 55 after the two JSM 2019 slides went in later that day, was slide 55 of 56 once the registry slide followed, was slide 54 of 55 once "AI-written code still needs a human owner" went to the reserves, and is slide 53 of 54 since "What are agents bad at now?" followed it there.) Every word on the
+        gave the number in the 54-slide count; this was slide 51 of 52 then; it was slide 50 of 51 on 7 October was slide 52 of 53 from 14 October, was slide 54 of 55 after the two JSM 2019 slides went in later that day, was slide 55 of 56 once the registry slide followed, was slide 54 of 55 once "AI-written code still needs a human owner" went to the reserves, was slide 53 of 54 once "What are agents bad at now?" followed it there, and is slide 53 of 55 since the acknowledgements slide went in after it.) Every word on the
         slide is his, with one spelling changed: "Rouge Agents" is set as "Rogue Agents".
         "But, what's now?" is as he typed it; it may have been meant as "what's next?". His
         three sentences show with the slide; the four Oranges arrive together on the second
@@ -3725,6 +3730,24 @@ steps:
     <!-- 4 · closing: the orange cat party. A live page (party.html) in an iframe;
          clicks inside it throw confetti instead of advancing. The banner words are the
          ?banner= part of data-src. -->
+    <section class="slide s-thanks" data-hue="6">
+      <p class="kicker">Acknowledgements</p>
+      <div class="thx">
+        <p>Thanks to my amazing co-workers, patient bosses, very patient family and all of my open source collaborators!</p>
+        <div class="who" role="img" aria-label="Orange giving a thumbs up"></div>
+      </div>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        PLACEHOLDER, added 2026-10-15 (Jeremy: "I want to add an acknowledgements slide between
+        53/54. Placeholder is fine for now."). The sentence is his, word for word. The thumbs-up
+        Orange is mine, to keep the slide in the deck's voice until the real version (names,
+        photos or logos) replaces it.
+        <br><br>For when it is filled in: the people named in diary #3's footnotes and on the
+        safetyGraphics slide (slide 10's notes) are a starting list; he names the working-group
+        collaborators aloud rather than showing their companies' logos.
+      </aside>
+    </section>
+
     <section class="slide s-party" data-hue="6" style="--poster: url(assets/orange-party-poster.png)">
       <iframe data-src="party.html?banner=THANK%20YOU!" title="A pixel-art party of orange cats dancing under a disco ball, with confetti" hidden></iframe>
       <aside class="notes">
