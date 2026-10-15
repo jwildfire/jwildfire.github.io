@@ -294,18 +294,20 @@
     /* A callout with .step comes in on its own press, in order, instead of with the others. */
     .goodat.step.on { opacity: 1; transform: none; }
 
-    /* The lifecycle slide's two callouts (2026-10-14): one at a time, in the same place at the
-       bottom right, over the dimmed lower levels; the second press swaps the first for the second. */
-    .slide .goodat.lc-sdlc, .slide .goodat.lc-ev { right: 30px; bottom: 24px; gap: 10px; z-index: 3; }
+    /* The lifecycle slide's two callouts (2026-10-14): side by side along the bottom, one press
+       each; the first sits over the legend (his call: "fine to overwrite legend"), the second
+       over the dimmed lower levels. */
+    .slide .goodat.lc-sdlc, .slide .goodat.lc-ev { right: 30px; bottom: 78px; gap: 10px; z-index: 3; }
+    .slide .goodat.lc-sdlc { right: auto; left: 140px; }
     .slide .lc-sdlc .bub, .slide .lc-ev .bub { padding: 12px 24px 14px; box-shadow: 0 18px 50px rgba(31, 35, 40, 0.22); }
     .slide .lc-sdlc .q, .slide .lc-ev .q { font-size: 15px; }
     .slide .lc-sdlc .a { font-size: 36px; }
     .slide .goodat.insp .lc-ev-a, .slide .goodat.insp.lc-ev .a { font-size: 30px; line-height: 1.08; }
     .lc-sdlc .when { font-size: 15px; }
     .slide .lc-sdlc .who, .slide .goodat.insp.lc-ev .who { width: 120px; height: 138px; }
-    .slide .lc-sdlc.on:has(~ .lc-ev.on), body.overview .lc-sdlc, body.reveal-all .lc-sdlc { opacity: 0; }
-    .lvside li { transition: opacity 220ms ease; }
-    .slide:has(.lc-sdlc.on) .lvside li:nth-last-child(-n+2), body.overview .slide:has(.lc-ev) .lvside li:nth-last-child(-n+2), body.reveal-all .slide:has(.lc-ev) .lvside li:nth-last-child(-n+2) { opacity: 0; }
+    .lvside li, .slide:has(.lc-sdlc) .chain-key { transition: opacity 220ms ease; }
+    .slide:has(.lc-sdlc.on) .chain-key, body.overview .slide:has(.lc-sdlc) .chain-key, body.reveal-all .slide:has(.lc-sdlc) .chain-key { opacity: 0; }
+    .slide:has(.lc-ev.on) .lvside li:nth-last-child(-n+2), body.overview .slide:has(.lc-ev) .lvside li:nth-last-child(-n+2), body.reveal-all .slide:has(.lc-ev) .lvside li:nth-last-child(-n+2) { opacity: 0; }
     @media print { .step { opacity: 1 !important; transform: none !important; } }
 
     /* Slide 12 as a dialogue (2026-10-14): Inspector Orange on the left, Jeremy on the right. */
@@ -1685,8 +1687,10 @@
         Reserves with its four lines: a person owns the requirements; a person owns the risk
         decision; a person must be able to explain why the code works; a person must be able to
         explain why it is safe enough for medical research).
-        Both sit in the same place at the bottom right, over the dimmed lower levels, so the
-        second replaces the first; the overview shows the second.
+        They sit side by side along the bottom and both stay up (Jeremy: "put the orange notes
+        side by side. fine to overwrite legend"): the first covers the legend, the second the
+        dimmed lower levels. Both sit just above the footer, and the legend fades out with the
+        first press.
         <br><br>Headline changed 2026-10-14 (Jeremy: "five steps changed hands" -&gt; "Directly
         Responsible Humans"): it was "Same lifecycle; five steps changed hands". His
         capitals are kept, since it is a name. Set at 63 px (the deck's headlines are 76 px)
