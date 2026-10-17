@@ -999,22 +999,25 @@
     .s-preds .card .big { font-family: var(--serif); font-size: 46px; line-height: 1; margin: 0; }
     .s-preds .card q { font-family: var(--serif); font-size: 27px; line-height: 1.2; color: var(--ink); quotes: "\201C" "\201D"; }
     .s-preds .card .proj { list-style: none; margin: 0; padding: 0; }
-    .s-preds .card .proj li { font-family: var(--mono); font-size: 22px; line-height: 1.45; margin: 0; padding: 0; }
+    .s-preds .card .proj li { font-family: var(--mono); font-size: 20px; line-height: 1.45; margin: 0; padding: 0; }
     .s-preds .card .proj li::before { content: none; }
     .s-preds .card .proj li.lead { font-family: var(--serif); font-size: 27px; line-height: 1.2; margin-bottom: 6px; }
     .s-preds .card .proj b { font-weight: 600; color: var(--c); }
     .s-preds .card cite { margin-top: auto; font-family: var(--mono); font-style: normal; font-size: 18px; line-height: 1.35; color: var(--soft); }
     .salt { font-family: var(--mono); font-size: 20px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--soft); margin: 26px 0 0; }
-    .s-meds .bars { display: grid; grid-template-columns: 330px 1fr; gap: 18px 26px; align-items: center; }
+    .s-meds .bars { display: grid; grid-template-columns: 330px 1fr; gap: 12px 26px; align-items: center; }
     .s-meds .bars .nm { font-size: 28px; line-height: 1.15; text-align: right; }
     .s-meds .bars .nm small { display: block; font-family: var(--mono); font-size: 16px; color: var(--soft); margin-top: 4px; }
     .s-meds .bars .row { display: flex; align-items: center; gap: 22px; }
-    .s-meds .bars .bar { height: 44px; border-radius: 6px; background: var(--c); flex: none; }
+    .s-meds .bars .bar { height: 36px; border-radius: 6px; background: var(--c); flex: none; }
     .s-meds .bars .bar.hatch { background: repeating-linear-gradient(45deg, var(--c) 0 6px, #fff0 6px 13px); border: 3px solid var(--c); }
     .s-meds .bars .v { font-family: var(--serif); font-size: 36px; line-height: 1.05; }
     .s-meds .bars .v small { display: block; font-family: var(--sans); font-size: 20px; color: var(--soft); }
     .s-meds .ruler { grid-column: 2; display: flex; justify-content: space-between; width: 1000px; font-family: var(--mono); font-size: 16px; color: var(--faint); border-top: 2px solid var(--rule); padding-top: 6px; }
     .s-meds .take { font-family: var(--serif); font-size: 44px; margin: 34px 0 0; }
+    .s-meds .meds-pts { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 10px; }
+    .s-meds .meds-pts li { position: relative; padding-left: 40px; font-family: var(--serif); font-size: 32px; line-height: 1.2; }
+    .s-meds .meds-pts li::before { content: ""; position: absolute; left: 0; top: 0.28em; width: 22px; height: 25px; background: var(--hue); clip-path: var(--hex-clip); }
     .s-cent .cbar { position: relative; height: 70px; margin: 0 0 10px; }
     .s-cent .cbar .fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 8px; background: var(--c); }
     .s-cent .cbar .fill.fan { background: linear-gradient(90deg, var(--c) 50%, #fff0); }
@@ -4065,11 +4068,11 @@ steps:
           <text class="gnote" x="1000" y="298" text-anchor="end">that could come sooner</text>
         </g>
         <g class="step">
-          <text class="anote" x="574" y="40">“50–100 years of biology in 5–10”</text>
+          <text class="anote" x="574" y="40">Forecast: 50–100 years of biology in 5–10</text>
           <text class="anote" x="574" y="64">Dario Amodei, 2024</text>
         </g>
         <g class="step">
-          <text class="anote" x="1060" y="392" text-anchor="end">One drug today: ~10 years, billions of dollars</text>
+          <text class="anote" x="1060" y="392" text-anchor="end">Designing one drug today: ~10 years, billions of dollars</text>
         </g>
         <text class="lab" x="540" y="272" text-anchor="end">Frontier capabilities</text>
         <text class="lab" x="1060" y="366" text-anchor="end">Clinical trial tools</text>
@@ -4106,7 +4109,7 @@ steps:
     <section class="slide s-quote" data-hue="6">
       <div class="review"><b>Draft</b> Option B · 1/3</div>
       <p class="kicker">We can think bigger</p>
-      <blockquote>“I think that most people are underestimating just how radical the upside of AI could be.”</blockquote>
+      <blockquote style="font-size: 58px">“I think that most people are underestimating just how radical the upside of AI could be, just as I think most people are underestimating how bad the risks could be.”</blockquote>
       <cite>Dario Amodei · Machines of Loving Grace · October 2024</cite>
       <div class="goodat hack sm step" style="bottom: 84px"><div class="bub" style="max-width: 780px"><p class="a" style="font-size: 27px; line-height: 1.25">Take it with a big grain of salt. Then look at the last year.</p></div><div class="who"></div></div>
       <aside class="notes">
@@ -4138,23 +4141,23 @@ steps:
       <div class="cards">
         <div class="card step" style="--c: var(--spec-4)">
           <p class="big">50–100 years in 5–10</p>
-          <q>compress the progress that human biologists would have achieved over the next 50-100 years into 5-10 years</q>
+          <q>…AI-enabled biology and medicine will allow us to compress the progress that human biologists would have achieved over the next 50-100 years into 5-10 years.</q>
           <cite>Dario Amodei, Anthropic · Machines of Loving Grace · Oct 2024</cite>
         </div>
         <div class="card step" style="--c: var(--spec-3)">
-          <p class="big">Disease, within a decade</p>
-          <q>I think that's within reach. Maybe within the next decade or so, I don't see why not.</q>
-          <cite>Demis Hassabis, Google DeepMind, asked if AI could end disease · 60 Minutes · Apr 2025</cite>
+          <p class="big">The end of disease?</p>
+          <q>I think that’s within reach. Maybe within the next decade or so, I don’t see why not.</q>
+          <cite>Demis Hassabis, Google DeepMind, asked “The end of disease?” · 60 Minutes · Apr 2025</cite>
         </div>
         <div class="card step" style="--c: var(--spec-5)">
           <p class="big">Doubling every 7 months</p>
           <ul class="proj">
-            <li class="lead">How long a task an agent can finish on its own, if the trend holds:</li>
-            <li><b>2027</b> a work day</li>
-            <li><b>2028</b> a work week</li>
-            <li><b>2029</b> a work month</li>
+            <li class="lead">The length of coding tasks agents can finish. If the trend holds:</li>
+            <li><b>2027</b> 1 work day (8 hours)</li>
+            <li><b>2028</b> 1 work week (40 hours)</li>
+            <li><b>2029</b> 1 work month (167 hours)</li>
           </ul>
-          <cite>METR's trend, via AI Digest · theaidigest.org/time-horizons · Mar 2026</cite>
+          <cite>METR's trend since 2019, via AI Digest · theaidigest.org/time-horizons · Mar 2026</cite>
         </div>
       </div>
       <p class="salt">Forecasts, not facts · read with a large grain of salt</p>
@@ -4183,17 +4186,20 @@ steps:
       <p class="kicker">What the gap means</p>
       <h2>The gap is measured in medicines.</h2>
       <div class="bars">
-        <p class="nm">One new drug, today<small>Hassabis, 60 Minutes</small></p>
+        <p class="nm">One drug, today<small>to design it · Hassabis</small></p>
         <div class="row"><div class="bar" style="--c: var(--spec-1); width: 1000px"></div></div>
         <span></span>
-        <p class="v" style="margin: -8px 0 0">~10 years and billions of dollars<small>and about 9 in 10 drugs that reach clinical trials fail (Sun et al., 2022)</small></p>
+        <p class="v" style="margin: -8px 0 0">“ten years and billions of dollars”<small>and about 90% of drug candidates that enter clinical trials fail (Sun et al., 2022)</small></p>
         <p class="nm step">COVID mRNA vaccines<small>the fast case</small></p>
-        <div class="row step"><div class="bar" style="--c: var(--spec-1); width: 75px"></div><p class="v">9 months<small>Amodei: "arguably should have been approved in ~2 months"</small></p></div>
-        <p class="nm step">The frontier's forecast<small>Amodei, 2024</small></p>
-        <div class="row step"><div class="bar hatch" style="--c: var(--spec-4); width: 100px"></div><p class="v">~1 year end-to-end for a drug<small>with many drugs tried in parallel</small></p></div>
+        <div class="row step"><div class="bar" style="--c: var(--spec-1); width: 75px"></div><p class="v">9 months<small>Amodei: they “arguably should have been approved in ~2 months”</small></p></div>
+        <p class="nm step">The forecast<small>Hassabis, 60 Minutes</small></p>
+        <div class="row step"><div class="bar hatch" style="--c: var(--spec-4); width: 40px"></div><p class="v">Months, maybe weeks<small>“We can maybe reduce that down from years to maybe months or maybe even weeks.”</small></p></div>
         <div class="ruler"><span>0</span><span>2 years</span><span>4</span><span>6</span><span>8</span><span>10 years</span></div>
       </div>
-      <p class="take step">Clinical trial tools set the pace. That is where we come in.</p>
+      <ul class="meds-pts">
+        <li class="step">The FDA already reviews with AI: Elsa for all staff since June 2025, agents since December 2025.</li>
+        <li class="step">Clinical trial tools set the pace. That is where we come in.</li>
+      </ul>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
         DRAFT, option B, slide 3 of 3, 2026-10-17. Bars on one scale, 10 years across: one drug
@@ -4201,7 +4207,24 @@ steps:
         mRNA vaccines (9 months, from Amodei's essay, which adds that they "arguably should have
         been approved in ~2 months") and the essay's forecast of "~1 year end-to-end for a drug",
         hatched because it is a forecast. The essay pairs that year with "massive
-        parallelization". The 9-in-10 failure figure is Sun et al. 2022, which analysed trial
+        parallelization".
+        <br><br>Corrected the same day after Jeremy asked for every quote to be checked ("didn't
+        look quite right"). The "~1 year end-to-end" row is gone: in the essay it is the delay
+        Amodei says is compatible with transformation, not a forecast for one drug. The forecast
+        row is now Hassabis's own line from the same 60 Minutes answer ("We can maybe reduce
+        that down from years to maybe months or maybe even weeks"). Hassabis said ten years and
+        billions "to design just one drug", so the row says designing.
+        <br><br>FDA bullet added the same day (Jeremy: "add a bullet around the FDAs current use
+        of AI"). From FDA's own releases: Elsa, a generative AI tool, launched agency-wide on 2
+        June 2025 "ahead of schedule and under budget", used "to accelerate clinical protocol
+        reviews" among other things
+        (https://www.fda.gov/news-events/press-announcements/fda-launches-agency-wide-ai-tool-optimize-performance-american-people);
+        agentic AI capabilities for all employees on 1 December 2025, optional to use (from
+        press coverage, e.g. PharmExec, 2 December 2025); Elsa 4.0 with custom agents, available
+        to all FDA staff, on 6 May 2026, with "human subject matter experts" verifying "all
+        inputs, analytic processes, and output implementation"
+        (https://www.fda.gov/news-events/press-announcements/fda-expands-ai-capabilities-and-completes-data-platform-consolidation).
+        That last line is the human-oversight point, said by the regulator. The 9-in-10 failure figure is Sun et al. 2022, which analysed trial
         data from 2010 to 2017. The take line is draft, for Jeremy to replace; it hands to slide
         54's headline if B goes before 54.
         <br><br>Sources, each checked word for word on 2026-10-17:
