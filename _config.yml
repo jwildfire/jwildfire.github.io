@@ -12,7 +12,6 @@ scholar_url: "https://scholar.google.com/citations?user=Hn0AnpIAAAAJ"
 # Pages listed in the header nav on posts and interior pages (order matters).
 header_pages:
   - projects.html
-  - games.html
   - archive.md
 
 # Email / Social media user names used by the minima theme:

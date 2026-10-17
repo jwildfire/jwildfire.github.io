@@ -1,4 +1,4 @@
-# Games on /games/. `thumb` is a screenshot in assets/img/games/ (800x500).
+# Games section at the foot of /projects/. `thumb` is a screenshot in assets/img/games/ (800x500).
 # Order here is page order.
 - name: "Angry Dudes"
   url: "https://jwildfire.github.io/angry-dudes/"

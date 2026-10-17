@@ -747,9 +747,11 @@ a.footnote:hover { color: var(--kn-accent-deep); }
   .projects-row { grid-template-columns: 1fr; }
 }
 
-/* Games page (/games/) -------------------------------------------------------------*/
+/* Games section on the Projects page (/projects/#games) ----------------------------*/
 
-.games-intro { color: var(--kn-soft); margin-bottom: 2rem; }
+.games-section { margin-top: 3rem; }
+.games-section > h2 { font-family: var(--kn-serif); font-weight: 400; font-size: 2rem; margin: 0 0 0.4rem; }
+.games-intro { color: var(--kn-soft); margin-bottom: 1.4rem; }
 .games-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
@@ -761,10 +763,10 @@ a.footnote:hover { color: var(--kn-accent-deep); }
 .games-thumb { display: block; border: 1px solid var(--kn-rule); border-radius: 8px; overflow: hidden; }
 .games-thumb img { display: block; width: 100%; height: auto; aspect-ratio: 8 / 5; object-fit: cover; transition: transform 0.2s ease; }
 .games-thumb:hover img { transform: scale(1.03); }
-.games-card h2 { font-family: var(--kn-serif); font-weight: 400; font-size: 1.5rem; line-height: 1.2; margin: 0.9rem 0 0.4rem; }
-.games-card h2 a, .games-card h2 a:visited { color: var(--kn-ink); text-decoration: none; }
-.games-card h2 a:hover { color: var(--kn-accent); }
+.games-card h3 { font-family: var(--kn-serif); font-weight: 400; font-size: 1.5rem; line-height: 1.2; margin: 0.9rem 0 0.4rem; }
+.games-card h3 a, .games-card h3 a:visited { color: var(--kn-ink); text-decoration: none; }
+.games-card h3 a:hover { color: var(--kn-accent); }
 .games-card p { margin: 0; font-size: 0.95rem; }
-.games-links { font-family: var(--kn-mono); font-size: 0.76rem; display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; margin-top: 0.8rem !important; }
+.games-card .games-links { font-family: var(--kn-mono); font-size: 0.76rem; display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; margin-top: 0.8rem !important; }
 .games-links a { text-decoration: none; }
 .games-links a:hover { text-decoration: underline; }
