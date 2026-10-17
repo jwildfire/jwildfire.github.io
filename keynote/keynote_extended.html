@@ -892,6 +892,10 @@
     .s-gap .gapchart .dot.next { opacity: 0.6; }
     .s-gap .gapchart .arrow { fill: var(--spec-4); opacity: 0.55; }
     .s-gap .gapchart .guess { font-family: var(--mono); font-size: 16px; letter-spacing: 0.06em; fill: var(--soft); }
+    .s-gap .gapchart .dim, .s-gap .gapchart .ln.next.dim, .s-gap .gapchart .dot.next.dim, .s-gap .gapchart .arrow.dim { opacity: 0.18; }
+    .s-gap .gapchart .ln.next.pick { opacity: 1; stroke-width: 6; stroke-dasharray: none; }
+    .s-gap .gapchart .dot.next.pick { opacity: 1; }
+    .s-gap .gapchart .guess.pick { fill: var(--ink); font-weight: 600; font-size: 20px; }
     .s-gap .gcards { display: grid; gap: 20px; }
     .s-gap .gcard { background: var(--panel); border: 2px solid var(--rule); border-radius: 18px; padding: 20px 26px; }
     .s-gap .gcard h3 { display: flex; align-items: center; gap: 14px; font-family: var(--mono); font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--soft); font-weight: 500; margin: 0 0 10px; }
@@ -3950,6 +3954,52 @@ steps:
         frontier guess is labelled "Fast", matching the clinical labels.
         <br><br>Kicker reworded 2026-10-17 without "GxP" (Jeremy chose "Reword kickers", keeping
         the deck's 7 October rule of no "GxP" on any slide).
+      </aside>
+    </section>
+
+    <!-- 4 · what's next: my best guess (2026-10-17) -->
+    <section class="slide s-split s-gap" data-hue="6">
+      <p class="kicker">What's next: my best guess</p>
+      <h2>Closing the gap means more medicines faster!</h2>
+      <svg class="gapchart wide" viewBox="0 0 1320 440" role="img" aria-label="Illustration, not data: the same chart as the slide before, with one guess picked on each side. The frontier follows its fast guess; clinical trial tools follow their steady guess. The other guesses are faded.">
+        <text class="cap" x="60" y="18">Illustration, not data · after today, my best guess</text>
+        <line class="base" x1="60" x2="1060" y1="400" y2="400"/>
+        <line class="today" x1="560" x2="560" y1="30" y2="400"/>
+        <path class="wedge" d="M60,375 C300,372 460,352 560,300 L560,360 C450,372 300,380 60,382 Z"/>
+        <path class="ln front" d="M60,375 C300,372 460,352 560,300"/>
+        <path class="ln clin" d="M60,382 C300,380 450,372 560,360"/>
+        <path class="dim ln front next" d="M560,300 L1060,100"/>
+        <path class="pick ln front next" d="M560,300 C680,240 940,150 1060,30"/>
+        <path class="dim ln front next" d="M560,300 C640,258 820,160 930,-10"/>
+        <path class="dim arrow" d="M936.5,-20 L934.5,-2.3 L921.1,-10.9 Z"/>
+        <path class="dim ln clin next" d="M560,360 C720,350 900,342 1060,338"/>
+        <path class="pick ln clin next" d="M560,360 L1060,305"/>
+        <path class="dim ln clin next" d="M560,360 C760,330 940,240 1060,165"/>
+        <circle class="dot front" cx="560" cy="300" r="7"/>
+        <circle class="dot clin" cx="560" cy="360" r="7"/>
+        <circle class="dim dot front next" cx="1060" cy="100" r="6"/>
+        <circle class="pick dot front next" cx="1060" cy="30" r="6"/>
+        <circle class="dim dot clin next" cx="1060" cy="338" r="6"/>
+        <circle class="pick dot clin next" cx="1060" cy="305" r="6"/>
+        <circle class="dim dot clin next" cx="1060" cy="165" r="6"/>
+        <text class="dim guess" x="1076" y="344">Slow</text>
+        <text class="pick guess" x="1076" y="311">Steady</text>
+        <text class="dim guess" x="1076" y="171">Fast</text>
+        <text class="dim guess" x="1076" y="106">Steady</text>
+        <text class="pick guess" x="1076" y="36">Fast</text>
+        <text class="dim guess" x="950" y="0">Exponential</text>
+        <text class="lab" x="540" y="272" text-anchor="end">Frontier capabilities</text>
+        <text class="lab" x="1060" y="374" text-anchor="end">Clinical trial tools</text>
+        <text class="ax" x="60" y="428">A year ago</text>
+        <text class="ax" x="560" y="428" text-anchor="middle">Today</text>
+        <text class="ax" x="1060" y="428" text-anchor="end">A year from now</text>
+      </svg>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        Added 2026-10-17 (Jeremy: "Make a new slide 54 that selects the steady line for trials
+        and the fast line for frontier. subhead = what's next: my best guess. head: Closing the gap
+        means more medicines faster!"). The kicker and headline are his. The chart is slide 53's,
+        with his two picks drawn solid and the other guesses faded. A drawing, not data.
       </aside>
     </section>
 
