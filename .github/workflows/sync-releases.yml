@@ -1,7 +1,9 @@
 # Keeps the homepage release feed (_data/releases.yml) in step with GitHub
 # releases of the tracked packages (see scripts/sync-releases.mjs). Runs nightly
-# and on demand; when something is missing it opens (or refreshes) a pull
-# request with the new entries so the draft blurbs can be edited before merge.
+# and on demand; when something is missing it commits the new entries straight
+# to main, so a release shows on the site within a day with no pull request to
+# merge. The blurb is drafted from the release notes' first sentence: edit
+# _data/releases.yml on main to change one after it posts.
 
 name: Sync release feed
 
@@ -12,7 +14,7 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
+  pages: write
 
 concurrency:
   group: sync-releases
@@ -32,27 +34,22 @@ jobs:
         id: sync
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SYNC_RELEASES_SUMMARY: ${{ runner.temp }}/sync-releases-summary.md
-        run: node scripts/sync-releases.mjs
+        run: SYNC_RELEASES_SUMMARY="$GITHUB_STEP_SUMMARY" node scripts/sync-releases.mjs
 
-      - name: Read the summary for the pull request body
+      - name: Commit the new entries to main
         if: steps.sync.outputs.count != '0'
-        id: summary
         run: |
-          {
-            echo "body<<EOF"
-            cat "${{ runner.temp }}/sync-releases-summary.md"
-            echo "EOF"
-          } >> "$GITHUB_OUTPUT"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898276+github-actions[bot]@users.noreply.github.com"
+          git add _data/releases.yml
+          git commit -m "Release feed: add ${{ steps.sync.outputs.count }} new release(s)"
+          git pull --rebase origin main
+          git push origin HEAD:main
 
-      - name: Open or update the pull request
+      # A push made with GITHUB_TOKEN may not start the Pages build on its own,
+      # so ask for one. Harmless if a build is already running.
+      - name: Rebuild the site
         if: steps.sync.outputs.count != '0'
-        uses: peter-evans/create-pull-request@v7
-        with:
-          branch: auto/sync-releases
-          delete-branch: true
-          commit-message: "Release feed: add ${{ steps.sync.outputs.count }} new release(s)"
-          title: "Release feed: ${{ steps.sync.outputs.count }} new release(s)"
-          body: ${{ steps.summary.outputs.body }}
-          labels: release-feed
-          add-paths: _data/releases.yml
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds"

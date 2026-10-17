@@ -18,6 +18,102 @@
 # safety.viz ------------------------------------------------------------------
 
 - package: safety.viz
+  version: v1.11.2
+  date: 2026-10-15
+  blurb: "Hep Explorer sizes points by the new R ratio (nR), which the original renderer offered"
+  links:
+    - label: Notes
+      url: https://github.com/jwildfire/safety.viz/releases/tag/v1.11.2
+    - label: Demo
+      url: https://jwildfire.github.io/safety.viz/
+    - label: Walkthrough
+      url: https://jwildfire.github.io/obot.roadmap/reports/sv-v1.11.2-demo/
+
+- package: safety.viz
+  version: v1.11.1
+  date: 2026-10-14
+  blurb: "Demo app: Start R from a note on each card, and one colour scheme for notes across the app"
+  links:
+    - label: Notes
+      url: https://github.com/jwildfire/safety.viz/releases/tag/v1.11.1
+    - label: Demo
+      url: https://jwildfire.github.io/safety.viz/
+    - label: Walkthrough
+      url: https://jwildfire.github.io/obot.roadmap/reports/sv-v1.11.1-demo/
+
+- package: safety.viz
+  version: v1.11.0
+  date: 2026-10-10
+  blurb: "Demo app made ready to show: an Exploratory label with status tiers, one R control, review fixes"
+  links:
+    - label: Notes
+      url: https://github.com/jwildfire/safety.viz/releases/tag/v1.11.0
+    - label: Demo
+      url: https://jwildfire.github.io/safety.viz/
+    - label: Walkthrough
+      url: https://jwildfire.github.io/obot.roadmap/reports/sv-v1.11-demo/
+
+- package: safety.viz
+  version: v1.10.0
+  date: 2026-10-09
+  blurb: "RBQM tab in the demo app: gsm's site metrics run by R in your browser, drawn with gsm.viz (Experimental)"
+  links:
+    - label: Notes
+      url: https://github.com/jwildfire/safety.viz/releases/tag/v1.10.0
+    - label: Demo
+      url: https://jwildfire.github.io/safety.viz/
+    - label: Walkthrough
+      url: https://jwildfire.github.io/obot.roadmap/reports/sv-v1.10-demo/
+
+- package: safety.viz
+  version: v1.9.2
+  date: 2026-10-07
+  blurb: "Run the demo app locally with one script; a cross-tabulation chart; group comparison opens on trends"
+  links:
+    - label: Notes
+      url: https://github.com/jwildfire/safety.viz/releases/tag/v1.9.2
+    - label: Demo
+      url: https://jwildfire.github.io/safety.viz/
+    - label: Walkthrough
+      url: https://jwildfire.github.io/obot.roadmap/reports/sv-v1.9-demo/#v192
+
+- package: safety.viz
+  version: v1.9.1
+  date: 2026-10-04
+  blurb: "Demo app says what happens to your data; the histogram's JavaScript p-values are deprecated"
+  links:
+    - label: Notes
+      url: https://github.com/jwildfire/safety.viz/releases/tag/v1.9.1
+    - label: Demo
+      url: https://jwildfire.github.io/safety.viz/
+    - label: Walkthrough
+      url: https://jwildfire.github.io/obot.roadmap/reports/sv-v1.9-demo/#v191
+
+- package: safety.viz
+  version: v1.9.0
+  date: 2026-10-03
+  blurb: "Biomarkers tab: bio.viz's four charts in the demo app, R's tests on request, a shared chart kit"
+  links:
+    - label: Notes
+      url: https://github.com/jwildfire/safety.viz/releases/tag/v1.9.0
+    - label: Demo
+      url: https://jwildfire.github.io/safety.viz/
+    - label: Walkthrough
+      url: https://jwildfire.github.io/obot.roadmap/reports/sv-v1.9-demo/
+
+- package: safety.viz
+  version: v1.8.0
+  date: 2026-10-02
+  blurb: "Demo app: load your own study in the browser, map its columns, draw 13 charts; nine legacy requests"
+  links:
+    - label: Notes
+      url: https://github.com/jwildfire/safety.viz/releases/tag/v1.8.0
+    - label: Demo
+      url: https://jwildfire.github.io/safety.viz/
+    - label: Walkthrough
+      url: https://jwildfire.github.io/obot.roadmap/reports/sv-v1.8-demo/
+
+- package: safety.viz
   version: v1.7.0
   date: 2026-08-15
   blurb: "Time-to-Event Explorer: Kaplan–Meier curves with CIs and an at-risk table, shipped as Experimental"
