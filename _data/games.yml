@@ -1,0 +1,29 @@
+# Games on /games/. `thumb` is a screenshot in assets/img/games/ (800x500).
+# Order here is page order.
+- name: "Angry Dudes"
+  url: "https://jwildfire.github.io/angry-dudes/"
+  source: "https://github.com/jwildfire/angry-dudes"
+  thumb: "/assets/img/games/angry-dudes.jpg"
+  alt: "Angry Dudes: a Roman legionary at the slingshot faces a Greek fort with Archimedes' Claw on the wall"
+  blurb: >-
+    A pixel-art slingshot siege through history. Sling troops, fire cannons and call
+    in air strikes across 10 armies and 37 real battles. Every battle opens with a
+    short piece of real history.
+
+- name: "Magic Friends, Up We Go!"
+  url: "https://jwildfire.github.io/magic-friends/"
+  source: "https://github.com/jwildfire/magic-friends"
+  thumb: "/assets/img/games/magic-friends.jpg"
+  alt: "Magic Friends title screen: a mermaid in the sea and a unicorn on a cloud under a sunrise"
+  blurb: >-
+    A pixel-art climbing game for little kids. A mermaid, a fairy and a unicorn
+    outsmart a grumpy witch across 60 levels to bring back the sunrise.
+
+- name: "Timed Out"
+  url: "https://jwildfire.github.io/timedout/"
+  source: "https://github.com/jwildfire/timedout"
+  thumb: "/assets/img/games/timedout.jpg"
+  alt: "Timed Out title screen: an hourglass and a choice of Easy, Medium or Hard"
+  blurb: >-
+    Put events from Wikipedia in order on a timeline. Three wrong guesses and you're
+    timed out. Pick a difficulty or a topic, or play endless mode.
