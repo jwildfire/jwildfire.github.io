@@ -18,3 +18,11 @@ takes the next hue (`data-hue="0"` … `"6"`). Layouts: `s-title`, `s-section`,
 
 Keys: ← → / space to move · O overview · N notes · F fullscreen · `#7` in the URL
 jumps to slide 7 · print to PDF gives one slide per page.
+
+## Two decks, one source
+
+- `keynote/keynote_extended.html` is the only deck file to edit: every slide, reserves included.
+- `keynote/keynote.html` is the talk: the same deck without the reserve slides
+  (`data-reserve`). It is generated, never edited by hand.
+- After any edit to the extended deck, run `python3 keynote/_notes/build-keynote.py` and
+  commit both files together. `--check` fails when `keynote.html` is stale.
