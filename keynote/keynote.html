@@ -858,6 +858,7 @@
     .s-gap .gapchart .ln.next { opacity: 0.55; stroke-dasharray: 3 9; }
     .s-gap .gapchart .ln.clin.next { stroke-dasharray: 3 9; }
     .s-gap .gapchart .dot.next { opacity: 0.6; }
+    .s-gap .gapchart .guess { font-family: var(--mono); font-size: 16px; letter-spacing: 0.06em; fill: var(--soft); }
     .s-gap .gcards { display: grid; gap: 20px; }
     .s-gap .gcard { background: var(--panel); border: 2px solid var(--rule); border-radius: 18px; padding: 20px 26px; }
     .s-gap .gcard h3 { display: flex; align-items: center; gap: 14px; font-family: var(--mono); font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--soft); font-weight: 500; margin: 0 0 10px; }
@@ -3772,29 +3773,39 @@ steps:
     <!-- 4 · the GxP gap, a year on (2026-10-17) -->
     <section class="slide s-split s-gap" data-hue="6">
       <p class="kicker">The GxP gap, a year from now</p>
-      <h2>If the lines keep going, the gap keeps growing.</h2>
-      <svg class="gapchart wide" viewBox="0 0 1320 440" role="img" aria-label="Illustration, not data: the GxP gap chart, with a year added after today. Past a dotted line at today, each line carries on in a straight line at its current pace, drawn lighter. Frontier capabilities climbs to the top; clinical trial tools rises a little. Brackets at a year from now mark what you will see at work and what you won't see.">
-        <text class="cap" x="60" y="18">Illustration, not data · after today, straight lines</text>
+      <h2>Every guess still leaves a gap.</h2>
+      <svg class="gapchart wide" viewBox="0 0 1320 440" role="img" aria-label="Illustration, not data: the GxP gap chart with a year added after today. After today the frontier line splits into four guesses, drawn lighter: faster, steady, slower and flat, fanning out in a shaded cone. Clinical trial tools carries on in one straight line, below even the flat guess. A bracket over the fan says we don't know; a bracket below the clinical line says what you'll see at work.">
+        <text class="cap" x="60" y="18">Illustration, not data · after today, four guesses</text>
         <line class="base" x1="60" x2="1060" y1="400" y2="400"/>
         <line class="today" x1="560" x2="560" y1="30" y2="400"/>
         <path class="wedge" d="M60,375 C300,372 460,352 560,300 L560,360 C450,372 300,380 60,382 Z"/>
-        <path class="wedge next" d="M560,300 L1060,40 L1060,305 L560,360 Z"/>
+        <path class="wedge next" d="M560,300 C660,248 980,120 1060,20 L1060,245 C760,245 660,250 560,300 Z"/>
         <path class="ln front" d="M60,375 C300,372 460,352 560,300"/>
         <path class="ln clin" d="M60,382 C300,380 450,372 560,360"/>
-        <path class="ln front next" d="M560,300 L1060,40"/>
+        <path class="ln front next" d="M560,300 C660,248 980,120 1060,20"/>
+        <path class="ln front next" d="M560,300 L1060,100"/>
+        <path class="ln front next" d="M560,300 C700,230 880,200 1060,190"/>
+        <path class="ln front next" d="M560,300 C660,250 760,245 1060,245"/>
         <path class="ln clin next" d="M560,360 L1060,305"/>
         <circle class="dot front" cx="560" cy="300" r="7"/>
         <circle class="dot clin" cx="560" cy="360" r="7"/>
-        <circle class="dot front next" cx="1060" cy="40" r="7"/>
-        <circle class="dot clin next" cx="1060" cy="305" r="7"/>
+        <circle class="dot front next" cx="1060" cy="20" r="6"/>
+        <circle class="dot front next" cx="1060" cy="100" r="6"/>
+        <circle class="dot front next" cx="1060" cy="190" r="6"/>
+        <circle class="dot front next" cx="1060" cy="245" r="6"/>
+        <circle class="dot clin next" cx="1060" cy="305" r="6"/>
+        <text class="guess" x="1076" y="26">Faster</text>
+        <text class="guess" x="1076" y="106">Steady</text>
+        <text class="guess" x="1076" y="196">Slower</text>
+        <text class="guess" x="1076" y="251">Flat</text>
         <text class="lab" x="540" y="272" text-anchor="end">Frontier capabilities</text>
         <text class="lab" x="1060" y="374" text-anchor="end">Clinical trial tools</text>
-        <path class="brk" d="M1090,398 h14 V309 h-14"/>
-        <path class="brk hl" d="M1090,299 h14 V44 h-14"/>
-        <text class="blab" x="1124" y="344">What you'll see</text>
-        <text class="blab" x="1124" y="376">at work</text>
-        <text class="blab hl" x="1124" y="160">What you</text>
-        <text class="blab hl" x="1124" y="194">won't see</text>
+        <path class="brk" d="M1180,398 h14 V309 h-14"/>
+        <path class="brk hl" d="M1180,245 h14 V20 h-14"/>
+        <text class="blab" x="1214" y="344">What you'll</text>
+        <text class="blab" x="1214" y="376">see at work</text>
+        <text class="blab hl" x="1214" y="124">We don't</text>
+        <text class="blab hl" x="1214" y="158">know</text>
         <text class="ax" x="60" y="428">A year ago</text>
         <text class="ax" x="560" y="428" text-anchor="middle">Today</text>
         <text class="ax" x="1060" y="428" text-anchor="end">A year from now</text>
@@ -3809,6 +3820,12 @@ steps:
         <br><br>The kicker, headline and bracket wording are draft for him to replace. "Straight
         lines" is the modest guess on purpose: the previous slide's takeaway is that nobody can
         say what next year brings, so this shows what happens even if nothing speeds up.
+        <br><br>Changed 2026-10-17 (Jeremy: "show multiple projections for frontier (we don't
+        know!)"). After today the frontier line splits into four guesses, faster, steady,
+        slower and flat, in a shaded fan, and the upper bracket says "We don't know". The steady
+        guess is the straight line from the first version. Clinical trial tools keeps one
+        straight line, which sits below even the flat guess: that is the headline's point. The
+        headline was "If the lines keep going, the gap keeps growing."
       </aside>
     </section>
 
