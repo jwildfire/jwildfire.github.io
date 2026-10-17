@@ -10,8 +10,9 @@
  * with an annotated demo. Entries are inserted at the top of the package's
  * section so the file stays newest-first and hand-written entries are untouched.
  *
- * The blurb is a starting point: the workflow opens a pull request so it can be
- * tightened by hand before the release shows on the site.
+ * The workflow commits the new entries straight to main, so the blurb posts as
+ * drafted: the first sentence of a release's notes is what the site shows.
+ * Edit _data/releases.yml on main to change one after it posts.
  *
  *   node scripts/sync-releases.mjs             # update the data file in place
  *   node scripts/sync-releases.mjs --dry-run   # print the entries, change nothing
@@ -19,7 +20,7 @@
  * Environment: GITHUB_TOKEN (optional, raises the API rate limit),
  * SYNC_RELEASES_FIXTURE (a JSON file of {package: [release, ...]} used instead
  * of the API, for tests), SYNC_RELEASES_SUMMARY (path to write a Markdown
- * summary for the pull request body).
+ * summary for the workflow run).
  */
 
 import { readFileSync, writeFileSync } from "node:fs";
@@ -200,7 +201,7 @@ if (!added.length) {
 if (process.env.SYNC_RELEASES_SUMMARY) {
   const lines = added.length
     ? [
-        `New releases for the homepage feed. The blurbs are drafted from the first sentence of each release's notes — tighten them to one line (about ${BLURB_MAX} characters) before merging.`,
+        `New releases committed to the homepage feed. The blurbs are drafted from the first sentence of each release's notes; edit _data/releases.yml on main to change one.`,
         "",
         ...added.map(
           (e) => `- **${e.package} ${e.version}** (${e.date}) — ${e.blurb} · ${e.links.map((l) => `[${l.label}](${l.url})`).join(" · ")}`
