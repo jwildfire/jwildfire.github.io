@@ -826,6 +826,8 @@
     .s-verdict .next { font-size: 38px; margin: 40px 0 0; }
     .s-verdict.s-reply { justify-content: center; }
     .s-verdict.s-reply .replies { margin-top: 10px; }
+    .s-verdict.s-reply .rp .bub p.sub { margin-top: 8px; font-family: var(--sans); font-size: 26px; line-height: 1.2; color: var(--soft); white-space: normal; }
+    .s-verdict.s-reply .rp.hack .bub p.sub { font-family: var(--mono); font-size: 22px; color: #5fbf77; }
     /* The GxP gap (2026-10-17). */
     .s-gap h2 { font-size: 64px; margin-bottom: 30px; }
     .s-gap .cols { gap: 48px; flex: none; }
@@ -3480,8 +3482,8 @@ steps:
       <p class="q">What can we actually do with AI agents right now?</p>
       <h2>Real work across the development pipeline.</h2>
       <div class="replies">
-        <div class="rp hack step"><div class="who"></div><div class="bub"><p>Agents write the code.</p></div></div>
-        <div class="rp insp step"><div class="who"></div><div class="bub"><p>Humans own the decisions.</p></div></div>
+        <div class="rp hack step"><div class="who"></div><div class="bub"><p>Agents write code.</p><p class="sub">Packages, tests, config</p></div></div>
+        <div class="rp insp step"><div class="who"></div><div class="bub"><p>Humans own the decisions.</p><p class="sub">Strategy, architecture, judgement</p></div></div>
       </div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
@@ -3490,6 +3492,10 @@ steps:
         headline and both lines are his; "Code" is set in lower case, in the sentence case of
         the deck's other callouts. Hacker Orange answers first, then Inspector Orange, one per
         press, in his order.
+        <br><br>Changed the same day (Jeremy: "Hacker: Agents write code. (Sub text under it)
+        Packages, Test, Config. Inspector subtext = 'strategy, architecture, judgement'"): the
+        Hacker line lost "the", and each bubble has a smaller line under it. "Test" is set as
+        "tests", and both lines in sentence case.
         <br><br>It replaced the four-Oranges answer slide (now in Reserves) and comes before the
         GxP gap slide. The question is slide 3's, word for word, set small: the answer is the
         headline now. The two draft options he did not pick (A and C) are in Reserves, dated 17
