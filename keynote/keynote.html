@@ -993,6 +993,41 @@
     .s-built .tiles.tech .tile h3 { font-size: 15px; color: var(--soft); }
     .s-built .tiles.tech .tile p:not(.n) { font-size: 18px; color: var(--faint); }
     .s-built .foot { font-family: var(--mono); font-size: 19px; color: var(--soft); margin: 0; white-space: nowrap; }
+
+    /* Draft options for "what the gap means", 2026-10-17: predictions cards, drug bars, compressed century. */
+    .s-preds h2, .s-meds h2, .s-cent h2 { margin-bottom: 30px; }
+    .s-preds .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .s-preds .card { border-top: 8px solid var(--c, var(--hue)); background: #fff; border-radius: 0 0 22px 22px; padding: 26px 30px 28px; box-shadow: 0 2px 0 var(--rule); display: flex; flex-direction: column; gap: 14px; }
+    .s-preds .card .big { font-family: var(--serif); font-size: 46px; line-height: 1; margin: 0; }
+    .s-preds .card q { font-family: var(--serif); font-size: 27px; line-height: 1.2; color: var(--ink); quotes: "\201C" "\201D"; }
+    .s-preds .card .proj { list-style: none; margin: 0; padding: 0; }
+    .s-preds .card .proj li { font-family: var(--mono); font-size: 22px; line-height: 1.45; margin: 0; padding: 0; }
+    .s-preds .card .proj li::before { content: none; }
+    .s-preds .card .proj li.lead { font-family: var(--serif); font-size: 27px; line-height: 1.2; margin-bottom: 6px; }
+    .s-preds .card .proj b { font-weight: 600; color: var(--c); }
+    .s-preds .card cite { margin-top: auto; font-family: var(--mono); font-style: normal; font-size: 18px; line-height: 1.35; color: var(--soft); }
+    .salt { font-family: var(--mono); font-size: 20px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--soft); margin: 26px 0 0; }
+    .s-meds .bars { display: grid; grid-template-columns: 330px 1fr; gap: 18px 26px; align-items: center; }
+    .s-meds .bars .nm { font-size: 28px; line-height: 1.15; text-align: right; }
+    .s-meds .bars .nm small { display: block; font-family: var(--mono); font-size: 16px; color: var(--soft); margin-top: 4px; }
+    .s-meds .bars .row { display: flex; align-items: center; gap: 22px; }
+    .s-meds .bars .bar { height: 44px; border-radius: 6px; background: var(--c); flex: none; }
+    .s-meds .bars .bar.hatch { background: repeating-linear-gradient(45deg, var(--c) 0 6px, #fff0 6px 13px); border: 3px solid var(--c); }
+    .s-meds .bars .v { font-family: var(--serif); font-size: 36px; line-height: 1.05; }
+    .s-meds .bars .v small { display: block; font-family: var(--sans); font-size: 20px; color: var(--soft); }
+    .s-meds .ruler { grid-column: 2; display: flex; justify-content: space-between; width: 1000px; font-family: var(--mono); font-size: 16px; color: var(--faint); border-top: 2px solid var(--rule); padding-top: 6px; }
+    .s-meds .take { font-family: var(--serif); font-size: 44px; margin: 34px 0 0; }
+    .s-cent .cbar { position: relative; height: 70px; margin: 0 0 10px; }
+    .s-cent .cbar .fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 8px; background: var(--c); }
+    .s-cent .cbar .fill.fan { background: linear-gradient(90deg, var(--c) 50%, #fff0); }
+    .s-cent .cbar .t { position: absolute; top: 50%; transform: translateY(-50%); font-family: var(--serif); font-size: 38px; white-space: nowrap; }
+    .s-cent .cyr { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 18px; color: var(--faint); border-top: 2px solid var(--rule); padding-top: 8px; margin: 0 0 38px; }
+    .s-cent .clab { font-family: var(--mono); font-size: 20px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--soft); margin: 0 0 10px; }
+    .s-cent blockquote { margin: 18px 0 0; font-family: var(--serif); font-size: 38px; line-height: 1.2; border-left: 8px solid var(--hue); padding-left: 30px; max-width: 1180px; }
+    .s-cent blockquote cite { display: block; margin-top: 12px; font-family: var(--mono); font-style: normal; font-size: 19px; color: var(--soft); }
+    .s-gap .gapchart .wedge.ahead { fill: var(--spec-6); opacity: 0.16; }
+    .s-gap .gapchart .gnote { font-family: var(--serif); font-size: 34px; fill: var(--ink); }
+    .s-gap .gapchart .anote { font-family: var(--sans); font-size: 19px; fill: var(--soft); }
   </style>
 </head>
 <body>
@@ -4003,6 +4038,214 @@ steps:
         and the fast line for frontier. subhead = what's next: my best guess. head: Closing the gap
         means more medicines faster!"). The kicker and headline are his. The chart is slide 53's,
         with his two picks drawn solid and the other guesses faded. A drawing, not data.
+      </aside>
+    </section>
+
+    <!-- DRAFT OPTIONS (2026-10-17): what the gap means. A = 54 annotated; B = a three-slide arc; C = one slide. -->
+    <section class="slide s-split s-gap" data-hue="6">
+      <div class="review"><b>Draft</b> Option A</div>
+      <p class="kicker">What's next: my best guess</p>
+      <h2>Closing the gap means more medicines faster!</h2>
+      <svg class="gapchart wide" viewBox="0 0 1320 440" role="img" aria-label="Illustration, not data: slide 54's chart, with the space between the two picked lines after today shaded and labelled as medicines that could come sooner. A note on the frontier line quotes Dario Amodei's forecast of fifty to a hundred years of biology in five to ten. A note on the clinical line says one drug takes about ten years today.">
+        <text class="cap" x="60" y="18">Illustration, not data · after today, my best guess</text>
+        <line class="base" x1="60" x2="1060" y1="400" y2="400"/>
+        <line class="today" x1="560" x2="560" y1="30" y2="400"/>
+        <path class="wedge" d="M60,375 C300,372 460,352 560,300 L560,360 C450,372 300,380 60,382 Z"/>
+        <path class="wedge ahead step" d="M560,300 C680,240 940,150 1060,30 L1060,305 L560,360 Z"/>
+        <path class="ln front" d="M60,375 C300,372 460,352 560,300"/>
+        <path class="ln clin" d="M60,382 C300,380 450,372 560,360"/>
+        <path class="pick ln front next" d="M560,300 C680,240 940,150 1060,30"/>
+        <path class="pick ln clin next" d="M560,360 L1060,305"/>
+        <circle class="dot front" cx="560" cy="300" r="7"/>
+        <circle class="dot clin" cx="560" cy="360" r="7"/>
+        <circle class="pick dot front next" cx="1060" cy="30" r="6"/>
+        <circle class="pick dot clin next" cx="1060" cy="305" r="6"/>
+        <text class="pick guess" x="1076" y="311">Steady</text>
+        <text class="pick guess" x="1076" y="36">Fast</text>
+        <g class="step">
+          <text class="gnote" x="1000" y="262" text-anchor="end">The gap: medicines</text>
+          <text class="gnote" x="1000" y="298" text-anchor="end">that could come sooner</text>
+        </g>
+        <g class="step">
+          <text class="anote" x="574" y="40">“50–100 years of biology in 5–10”</text>
+          <text class="anote" x="574" y="64">Dario Amodei, 2024</text>
+        </g>
+        <g class="step">
+          <text class="anote" x="1060" y="392" text-anchor="end">One drug today: ~10 years, billions of dollars</text>
+        </g>
+        <text class="lab" x="540" y="272" text-anchor="end">Frontier capabilities</text>
+        <text class="lab" x="1060" y="366" text-anchor="end">Clinical trial tools</text>
+        <text class="ax" x="60" y="428">A year ago</text>
+        <text class="ax" x="560" y="428" text-anchor="middle">Today</text>
+        <text class="ax" x="1060" y="428" text-anchor="end">A year from now</text>
+      </svg>
+      <div class="goodat hack sm step" style="right: auto; left: 140px; bottom: auto; top: 322px"><div class="bub" style="max-width: 400px"><p class="a" style="font-size: 22px; line-height: 1.3">Like Dario says: most people are underestimating just how radical the upside of AI could be.</p></div><div class="who"></div></div>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        DRAFT, option A, 2026-10-17 (Jeremy: "add some more detail to 54 that really explains what
+        the gap means. Maybe some dario quotes from machines of loving grace ... or other well
+        known quotes/predictions. I'll present with a large grain of salt"). Slide 54 with three
+        presses: the space between the two picks after today shades in and is named, then one
+        forecast on the frontier side, then today's pace on the clinical side, then Hacker Orange
+        quotes the essay's opening claim (Jeremy: "Maybe hacker quotes dario? 'Like Dario says:
+        ...'"). The essay's sentence goes on "just as I think most people are underestimating how
+        bad the risks could be". "A decade of
+        innovation in a year" is not in the essay; its own figure is "50-100 years into 5-10
+        years", used here. The note under the clinical line is Hassabis's figure, said on 60
+        Minutes.
+        <br><br>Sources, each checked word for word on 2026-10-17:
+        <br>Dario Amodei, "Machines of Loving Grace", October 2024,
+        https://www.darioamodei.com/essay/machines-of-loving-grace
+        <br>Demis Hassabis on 60 Minutes, CBS, first published 20 April 2025,
+        https://www.cbsnews.com/news/artificial-intelligence-google-deepmind-ceo-demis-hassabis-60-minutes-transcript/
+        <br>AI Digest, "A new Moore's Law for AI agents" (METR's time-horizon trend), last updated
+        March 2026, https://theaidigest.org/time-horizons
+        <br>Sun, Gao, Hu and Zhou, "Why 90% of clinical drug development fails and how to improve
+        it?", Acta Pharmaceutica Sinica B, 2022, https://doi.org/10.1016/j.apsb.2022.02.002
+      </aside>
+    </section>
+
+    <section class="slide s-quote" data-hue="6">
+      <div class="review"><b>Draft</b> Option B · 1/3</div>
+      <p class="kicker">We can think bigger</p>
+      <blockquote>“I think that most people are underestimating just how radical the upside of AI could be.”</blockquote>
+      <cite>Dario Amodei · Machines of Loving Grace · October 2024</cite>
+      <div class="goodat hack sm step" style="bottom: 84px"><div class="bub" style="max-width: 780px"><p class="a" style="font-size: 27px; line-height: 1.25">Take it with a big grain of salt. Then look at the last year.</p></div><div class="who"></div></div>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        DRAFT, option B, slide 1 of 3, 2026-10-17 (Jeremy, mid-draft: "I want to add a we can
+        think bigger quote"). The quote is the essay's opening claim, word for word; the sentence
+        goes on "just as I think most people are underestimating how bad the risks could be",
+        which is worth saying aloud so the quote is not read as cheerleading. A second candidate
+        from the same essay: "the important thing is to have an ambitious vision, to be willing to
+        dream big and try things out" (it comes from the section on governance, not biology).
+        Hacker Orange's line is a stand-in for Jeremy's grain of salt ("I don't think those
+        predictions are crazy based on recent progress"); his to reword.
+        <br><br>Sources, each checked word for word on 2026-10-17:
+        <br>Dario Amodei, "Machines of Loving Grace", October 2024,
+        https://www.darioamodei.com/essay/machines-of-loving-grace
+        <br>Demis Hassabis on 60 Minutes, CBS, first published 20 April 2025,
+        https://www.cbsnews.com/news/artificial-intelligence-google-deepmind-ceo-demis-hassabis-60-minutes-transcript/
+        <br>AI Digest, "A new Moore's Law for AI agents" (METR's time-horizon trend), last updated
+        March 2026, https://theaidigest.org/time-horizons
+        <br>Sun, Gao, Hu and Zhou, "Why 90% of clinical drug development fails and how to improve
+        it?", Acta Pharmaceutica Sinica B, 2022, https://doi.org/10.1016/j.apsb.2022.02.002
+      </aside>
+    </section>
+
+    <section class="slide s-preds" data-hue="6">
+      <div class="review"><b>Draft</b> Option B · 2/3</div>
+      <p class="kicker">What the builders predict</p>
+      <h2>Big forecasts. Not crazy, given the last year.</h2>
+      <div class="cards">
+        <div class="card step" style="--c: var(--spec-4)">
+          <p class="big">50–100 years in 5–10</p>
+          <q>compress the progress that human biologists would have achieved over the next 50-100 years into 5-10 years</q>
+          <cite>Dario Amodei, Anthropic · Machines of Loving Grace · Oct 2024</cite>
+        </div>
+        <div class="card step" style="--c: var(--spec-3)">
+          <p class="big">Disease, within a decade</p>
+          <q>I think that's within reach. Maybe within the next decade or so, I don't see why not.</q>
+          <cite>Demis Hassabis, Google DeepMind, asked if AI could end disease · 60 Minutes · Apr 2025</cite>
+        </div>
+        <div class="card step" style="--c: var(--spec-5)">
+          <p class="big">Doubling every 7 months</p>
+          <ul class="proj">
+            <li class="lead">How long a task an agent can finish on its own, if the trend holds:</li>
+            <li><b>2027</b> a work day</li>
+            <li><b>2028</b> a work week</li>
+            <li><b>2029</b> a work month</li>
+          </ul>
+          <cite>METR's trend, via AI Digest · theaidigest.org/time-horizons · Mar 2026</cite>
+        </div>
+      </div>
+      <p class="salt">Forecasts, not facts · read with a large grain of salt</p>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        DRAFT, option B, slide 2 of 3, 2026-10-17. Three forecasts, one per press: biology
+        (Amodei), disease (Hassabis) and the measured trend under both (METR's task-length
+        doubling, as AI Digest charts it; the page also says the 2024-2025 pace was a doubling
+        every 4 months). The headline is draft wording built from Jeremy's own framing ("I don't
+        think those predictions are crazy based on recent progress"). The Hassabis words are
+        from CBS's transcript; the question he was answering was whether AI could end disease.
+        <br><br>Sources, each checked word for word on 2026-10-17:
+        <br>Dario Amodei, "Machines of Loving Grace", October 2024,
+        https://www.darioamodei.com/essay/machines-of-loving-grace
+        <br>Demis Hassabis on 60 Minutes, CBS, first published 20 April 2025,
+        https://www.cbsnews.com/news/artificial-intelligence-google-deepmind-ceo-demis-hassabis-60-minutes-transcript/
+        <br>AI Digest, "A new Moore's Law for AI agents" (METR's time-horizon trend), last updated
+        March 2026, https://theaidigest.org/time-horizons
+        <br>Sun, Gao, Hu and Zhou, "Why 90% of clinical drug development fails and how to improve
+        it?", Acta Pharmaceutica Sinica B, 2022, https://doi.org/10.1016/j.apsb.2022.02.002
+      </aside>
+    </section>
+
+    <section class="slide s-meds" data-hue="6">
+      <div class="review"><b>Draft</b> Option B · 3/3</div>
+      <p class="kicker">What the gap means</p>
+      <h2>The gap is measured in medicines.</h2>
+      <div class="bars">
+        <p class="nm">One new drug, today<small>Hassabis, 60 Minutes</small></p>
+        <div class="row"><div class="bar" style="--c: var(--spec-1); width: 1000px"></div></div>
+        <span></span>
+        <p class="v" style="margin: -8px 0 0">~10 years and billions of dollars<small>and about 9 in 10 drugs that reach clinical trials fail (Sun et al., 2022)</small></p>
+        <p class="nm step">COVID mRNA vaccines<small>the fast case</small></p>
+        <div class="row step"><div class="bar" style="--c: var(--spec-1); width: 75px"></div><p class="v">9 months<small>Amodei: "arguably should have been approved in ~2 months"</small></p></div>
+        <p class="nm step">The frontier's forecast<small>Amodei, 2024</small></p>
+        <div class="row step"><div class="bar hatch" style="--c: var(--spec-4); width: 100px"></div><p class="v">~1 year end-to-end for a drug<small>with many drugs tried in parallel</small></p></div>
+        <div class="ruler"><span>0</span><span>2 years</span><span>4</span><span>6</span><span>8</span><span>10 years</span></div>
+      </div>
+      <p class="take step">Clinical trial tools set the pace. That is where we come in.</p>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        DRAFT, option B, slide 3 of 3, 2026-10-17. Bars on one scale, 10 years across: one drug
+        today (Hassabis's "ten years and billions of dollars to design just one drug"), the COVID
+        mRNA vaccines (9 months, from Amodei's essay, which adds that they "arguably should have
+        been approved in ~2 months") and the essay's forecast of "~1 year end-to-end for a drug",
+        hatched because it is a forecast. The essay pairs that year with "massive
+        parallelization". The 9-in-10 failure figure is Sun et al. 2022, which analysed trial
+        data from 2010 to 2017. The take line is draft, for Jeremy to replace; it hands to slide
+        54's headline if B goes before 54.
+        <br><br>Sources, each checked word for word on 2026-10-17:
+        <br>Dario Amodei, "Machines of Loving Grace", October 2024,
+        https://www.darioamodei.com/essay/machines-of-loving-grace
+        <br>Demis Hassabis on 60 Minutes, CBS, first published 20 April 2025,
+        https://www.cbsnews.com/news/artificial-intelligence-google-deepmind-ceo-demis-hassabis-60-minutes-transcript/
+        <br>AI Digest, "A new Moore's Law for AI agents" (METR's time-horizon trend), last updated
+        March 2026, https://theaidigest.org/time-horizons
+        <br>Sun, Gao, Hu and Zhou, "Why 90% of clinical drug development fails and how to improve
+        it?", Acta Pharmaceutica Sinica B, 2022, https://doi.org/10.1016/j.apsb.2022.02.002
+      </aside>
+    </section>
+
+    <section class="slide s-cent" data-hue="6">
+      <div class="review"><b>Draft</b> Option C</div>
+      <p class="kicker">We can think bigger</p>
+      <h2>A century of medicine in a decade?</h2>
+      <p class="clab">Biology and medicine at today's pace</p>
+      <div class="cbar"><div class="fill fan" style="--c: var(--spec-1); width: 100%"></div><span class="t" style="left: 24px; color: #fff">50–100 years of progress</span></div>
+      <div class="cyr"><span>2026</span><span>2051</span><span>2076</span><span>2101</span><span>2126</span></div>
+      <div class="step">
+        <p class="clab">The same progress, if the forecast holds</p>
+        <div class="cbar"><div class="fill" style="--c: var(--spec-4); width: 10%"></div><span class="t" style="left: 11.5%">5–10 years: “the compressed 21st century”</span></div>
+      </div>
+      <div class="goodat hack step" style="bottom: 100px"><div class="bub" style="max-width: 820px"><p class="a" style="font-size: 30px; line-height: 1.25">Like Dario says: most people are underestimating just how radical the upside of AI could be.</p><p class="when" style="font-family: var(--mono); font-size: 18px; color: #5fbf77; margin: 8px 0 0">Machines of Loving Grace, 2024 · grain of salt included</p></div><div class="who"></div></div>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        DRAFT, option C, 2026-10-17. One slide instead of three: the essay's central forecast drawn
+        to scale (50-100 years of biology and medicine in 5-10, which the essay calls "the
+        compressed 21st century"), then Hacker Orange quotes the think-bigger line (Jeremy, mid-draft:
+        "Maybe hacker quotes dario? 'Like Dario says: ...'"). The top bar fades out because
+        the essay's range is 50 to 100 years. The question-mark headline is the grain of salt.
+        <br><br>Sources, each checked word for word on 2026-10-17:
+        <br>Dario Amodei, "Machines of Loving Grace", October 2024,
+        https://www.darioamodei.com/essay/machines-of-loving-grace
+        <br>Demis Hassabis on 60 Minutes, CBS, first published 20 April 2025,
+        https://www.cbsnews.com/news/artificial-intelligence-google-deepmind-ceo-demis-hassabis-60-minutes-transcript/
+        <br>AI Digest, "A new Moore's Law for AI agents" (METR's time-horizon trend), last updated
+        March 2026, https://theaidigest.org/time-horizons
+        <br>Sun, Gao, Hu and Zhou, "Why 90% of clinical drug development fails and how to improve
+        it?", Acta Pharmaceutica Sinica B, 2022, https://doi.org/10.1016/j.apsb.2022.02.002
       </aside>
     </section>
 
