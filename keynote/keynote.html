@@ -818,6 +818,29 @@
     .s-thanks .thx { display: flex; align-items: center; gap: 70px; }
     .s-thanks .thx p { margin: 0; flex: 1; font-family: var(--serif); font-size: 76px; line-height: 1.12; color: var(--ink); max-width: none; text-wrap: balance; }
     .s-thanks .who { flex: none; width: 260px; height: 300px; background: url(assets/hex/orange-thumbs-up.png) center / contain no-repeat; }
+    /* The verdict (2026-10-17): the question small, the answer as the headline. */
+    .s-verdict .q { font-family: var(--serif); font-size: 40px; line-height: 1.15; color: var(--soft); border-left: 8px solid var(--hue); padding-left: 30px; margin: 0 0 34px; }
+    .s-verdict h2 { font-size: 80px; max-width: 1280px; text-wrap: balance; margin-bottom: 40px; }
+    .s-verdict .pills-lab { font-family: var(--mono); font-size: 22px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--soft); margin: 0 0 16px; }
+    .s-verdict .pills { display: flex; flex-wrap: wrap; gap: 14px 16px; list-style: none; margin: 0; padding: 0; }
+    .s-verdict .pills li { font-size: 26px; line-height: 1.2; padding: 10px 22px; border-radius: 999px; border: 3px solid var(--spec-2); background: #eef5ea; }
+    .s-verdict .pills li.no { border-color: var(--spec-0); background: #fbeceb; }
+    .s-verdict .next { font-size: 38px; margin: 40px 0 0; }
+    .s-verdict.s-reply .replies { margin-top: 0; }
+    .s-verdict.s-reply .rp .who { width: 110px; height: 128px; }
+    /* The GxP gap (2026-10-17). */
+    .s-gap h2 { font-size: 64px; margin-bottom: 30px; }
+    .s-gap .cols { gap: 48px; flex: none; }
+    .s-gap .col { padding: 30px 40px; }
+    .s-gap .col p { font-size: 31px; margin: 0 0 10px; }
+    .s-gap .take { font-size: 34px; margin: 40px 0 0; }
+    /* The ask (2026-10-17). */
+    .s-ask { justify-content: center; }
+    .s-ask h2 { font-size: 96px; max-width: 1280px; text-wrap: balance; margin-bottom: 26px; }
+    .s-ask .line { font-size: 40px; color: var(--soft); }
+    .s-ask .tease { display: flex; align-items: center; gap: 28px; margin-top: 44px; padding: 22px 32px; border: 2px solid var(--rule); border-radius: 20px; background: var(--panel); max-width: 1180px; }
+    .s-ask .tease img { width: 80px; height: auto; flex: none; }
+    .s-ask .tease p { margin: 0; font-size: 30px; line-height: 1.3; }
     .s-quote .terms { list-style: none; margin: 44px 0 0; padding: 0 0 0 66px; display: flex; flex-wrap: wrap; gap: 14px 48px; }
     .s-quote .terms li { position: relative; padding-left: 38px; font-size: 38px; line-height: 1.25; }
     .s-quote .terms li::before { content: ""; position: absolute; left: 0; top: 0.3em; width: 22px; height: 25px; background: var(--hue); clip-path: var(--hex-clip); }
@@ -3444,46 +3467,76 @@ steps:
         Oranges answer), mixed feelings and the closing slide; good at and bad at are in the
         reserves. Best practices is in his
         earlier structure and is not drafted.
+        <br><br>Since 17 October (Jeremy: "I like the new order"): the verdict (the question one
+        last time, answered in one line), the GxP gap, how fast it is moving, try it on
+        something that's yours, mixed feelings, the ask, acknowledgements and the party.
         <br><br>Photo: orange-looking-up-agenda.jpg, the outline's option for this spot ("so
         what now?"). The crop keeps the printed agenda on the right of the photo out of frame:
         it has people's names on it.
       </aside>
     </section>
 
-    <section class="slide s-start" data-hue="6">
-      <p class="kicker">How to get started</p>
-      <h2>Try it out!</h2>
-      <ol>
-        <li><i>1</i><b>Pick an agent</b><span>Claude or Codex, $20 for a month. Others are fine too.</span></li>
-        <li><i>2</i><b>Set up GitHub</b><span>A free account is fine.</span></li>
-        <li><i>3</i><b>Pick a development process</b><span>For R: Hadley Wickham's R Packages book, free at r-pkgs.org.</span></li>
-        <li><i>4</i><b>Write a prompt</b><p class="ask">Make me an Open Source R package that does X. Include a working example and user guide in GitHub pages. Follow all of the best practices in Hadley Wickham's R Packages book.</p></li>
-        <li><i>5</i><b>Ask questions!</b><p class="ask">Explain how you did X</p></li>
-      </ol>
-      <div class="goodat" style="top: 64px; bottom: auto"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Teaching me things!</p></div><div class="who"><i>👍</i></div></div>
+    <!-- 4 · the verdict, and the GxP gap it sets up (2026-10-17). Option A is in the talk;
+         B and C follow as reserve slides until Jeremy picks one. -->
+    <section class="slide s-verdict" data-hue="6">
+      <p class="kicker">The question, one last time · Draft option A</p>
+      <p class="q">What can we actually do with AI agents right now?</p>
+      <h2>Real work on trials, today. As long as a human owns every decision.</h2>
+      <p class="pills-lab">On trials, today</p>
+      <ul class="pills">
+        <li>👍 Writing software</li>
+        <li>👍 Generating evidence</li>
+        <li class="no">👎 Setting priorities</li>
+        <li class="no">👎 Making judgements</li>
+      </ul>
+      <p class="next step">That's the GxP version. Outside GxP, they can do a lot more.</p>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
-        Added 2026-10-14 as slide 52, right after the "What we learned" opener. Reframed the
-        same day as five steps, at Jeremy's ask: "Frame this as a 5 step process: (1) Pick an
-        agent (Claude or Codex @ $20 for a month. Others fine too. ) (2) Set up GitHub (Free
-        account is fine) (3) Pick a development process (Hadley's R Package. book for R) (4)
-        Write a prompt "Make me an Open Source R package that does X. Include a working example
-        and user guide in GitHub pages. Follow all of the best practices in Hadley Wickham's R
-        Packages book." (5) Ask Questions!"
-        <br><br>The step 4 prompt is his words exactly. Step details are set from his
-        parentheses. "Explain how you did X" under step 5 is carried over from his first version
-        of this slide (also 2026-10-14), as an example question; cut it if step 5 should stand
-        alone. The r-pkgs.org line is an addition. The book's second edition (2023) is by Hadley
-        Wickham and Jennifer Bryan.
-        <br><br>Callout, moved here from slide 6 on 2026-10-14 ("for now", his words): what are
-        agents good at now? Teaching me things. Its story is in slide 6's notes: in 2012 it took
-        two weeks off to learn JavaScript.
-        <br><br>His first version, for the record: headline "Try it out!"; "Need a development
-        framework. R Packages by Hadley is a great place to start. Use GitHub with Version
-        Control, GitHub pages and CI/CD. 'Make me an Open Source R package that does X. Follow
-        all of the best practices in Hadley Wickham's R Packages book.' 'Explain how you did X'"
-        <br><br>Every slide after this one moved up a number: good at is 50, bad at 51, how I
-        feel 52, the party 53. The deck is 53 slides.
+        Added 2026-10-17 in place of the four-Oranges answer slide (now in Reserves). The
+        headline is Jeremy's: "Real work on trials, today. As long as a human owns every
+        decision." He asked for this slide to "set up the gap between gxp and non-gxp" as well,
+        and for options; this is one of three. The other options sit right after it as reserve
+        slides, so they show in keynote_extended.html and drop out of keynote.html. Keep one,
+        delete the other two, and take "Draft option" out of the kicker.
+        <br><br>The question is slide 3's, word for word, set small: the answer is the headline
+        now. The headline has no italic or coloured words (sparing emphasis).
+        <br><br>Option A: the four answers from the old slide as pills under "On trials, today",
+        then one press brings in the hand-off to the next slide. Pill wording is draft, from the
+        old slide's four Orange answers.
+      </aside>
+    </section>
+
+
+
+    <!-- 4 · the GxP gap (2026-10-17) -->
+    <section class="slide s-split s-gap" data-hue="6">
+      <p class="kicker">The GxP gap</p>
+      <h2>Don't judge AI by what you can do on a trial.</h2>
+      <div class="cols">
+        <div class="col">
+          <h3>On a clinical trial</h3>
+          <p>Approved tools and models</p>
+          <p>A person checks every output</p>
+          <p>New capability arrives slowly</p>
+          <p class="soft">Rightly so</p>
+        </div>
+        <div class="col">
+          <h3>On a project of your own</h3>
+          <p>The newest model, the week it ships</p>
+          <p>Agents that write, run, test and fix</p>
+          <p>You can start tonight</p>
+        </div>
+      </div>
+      <p class="take">The rules at work are right. They also show you a fraction of what these tools can do.</p>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        Added 2026-10-17 (Jeremy picked "A is good for GxP gap, move Gxp Gap before how fast").
+        The point is his: there is a growing gap between what AI can do under GxP and outside
+        it, so don't judge AI by what you can do on an active trial; try it on a project of your
+        own. Every word on the slide is draft wording for him to replace.
+        <br><br>The left column keeps the restrictions on screen as the right call, so nobody
+        hears "ignore GxP". The right column hands to "How fast it is moving" and then "Try it
+        on something that's yours."
       </aside>
     </section>
 
@@ -3575,7 +3628,7 @@ steps:
           <text class="k" x="1008" y="446">another release</text>
         </svg>
       </div>
-      <p style="font-size: 32px; margin: 12px 0 0">We cannot keep up, so the gap between capability and adoption keeps widening.</p>
+      <p style="font-size: 32px; margin: 12px 0 0">Nobody can tell you what these tools will do next year. They are not going away.</p>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
         The last slide of part 3.5, "how we built it" (Jeremy, late on 2026-10-05: "3.5 = how
@@ -3661,35 +3714,60 @@ steps:
         <br><br>Moved 2026-10-14 (Jeremy: "Move 49 into the what we learned section"): it now
         opens that section, straight after its title slide; until then it closed "How we
         built it", after the tests slide. Its colour changed from that section's to this one's.
+        <br><br>Changed 2026-10-17, at Jeremy's pick ("B is good for how fast"): the takeaway
+        under the chart was "We cannot keep up, so the gap between capability and adoption keeps
+        widening." It now comes after the GxP gap slide and before "Try it on something that's
+        yours."
         <br><br>Swapped with "Try it out!" 2026-10-14 (Jeremy: "Switch 50/51"): it is now the
         second slide of the section, after "Try it out!".
       </aside>
     </section>
 
-    <!-- 4 · s1: the thumbs-up answers, gathered -->
-    <section class="slide s-quote s-reply" data-hue="6">
-      <p class="kicker">The question, one last time</p>
-      <blockquote>What can we actually do with AI agents right now?</blockquote>
-      <div class="replies">
-        <div class="rp good step"><div class="who"></div><div class="bub"><p>Quite a lot!</p></div></div>
-        <div class="rp bad step"><div class="who"></div><div class="bub"><p>Not at setting priorities</p></div></div>
-        <div class="rp insp step"><div class="who"></div><div class="bub"><p>Generating evidence, but not judgement</p></div></div>
-        <div class="rp hack step"><div class="who"></div><div class="bub"><p>Software development</p></div></div>
-      </div>
+    <section class="slide s-start" data-hue="6">
+      <p class="kicker">How to get started</p>
+      <h2 style="font-size: 62px">Try it on something that's yours.</h2>
+      <ol>
+        <li><i>1</i><b>Pick an agent</b><span>Claude or Codex, $20 for a month. Others are fine too.</span></li>
+        <li><i>2</i><b>Set up GitHub</b><span>A free account is fine.</span></li>
+        <li><i>3</i><b>Pick a development process</b><span>For R: Hadley Wickham's R Packages book, free at r-pkgs.org.</span></li>
+        <li><i>4</i><b>Write a prompt</b><p class="ask">Make me an Open Source R package that does X. Include a working example and user guide in GitHub pages. Follow all of the best practices in Hadley Wickham's R Packages book.</p></li>
+        <li><i>5</i><b>Ask questions!</b><p class="ask">Explain how you did X</p></li>
+      </ol>
+      <div class="goodat" style="top: 64px; bottom: auto"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Teaching me things!</p></div><div class="who"><i>👍</i></div></div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
-        Rebuilt 2026-10-14 (Jeremy: "Refactor 52. Same question slide as s3. Orange responds.
-        Happy orange Quite a Lot! Thumbs down orange Not at Setting Priorities Inspector Orange
-        Generating Evidence, but not Judgement. Hacker Orange: Software Development"). The
-        question is slide 3's, word for word; the kicker is the outline's name for this beat
-        ("the question, one last time"). Four Oranges answer, one per press, in his order:
-        thumbs-up, thumbs-down, Inspector, Hacker. His words, set in sentence case like the
-        deck's other callouts; the closing full stop on the Inspector's line is dropped to
-        match the others.
-        <br><br>The list version of this slide ("What are agents good at now?", eight answers
-        gathered from the deck's callouts, with its notes) is in Reserves, dated 14 October.
+        Added 2026-10-14 as slide 52, right after the "What we learned" opener. Reframed the
+        same day as five steps, at Jeremy's ask: "Frame this as a 5 step process: (1) Pick an
+        agent (Claude or Codex @ $20 for a month. Others fine too. ) (2) Set up GitHub (Free
+        account is fine) (3) Pick a development process (Hadley's R Package. book for R) (4)
+        Write a prompt "Make me an Open Source R package that does X. Include a working example
+        and user guide in GitHub pages. Follow all of the best practices in Hadley Wickham's R
+        Packages book." (5) Ask Questions!"
+        <br><br>The step 4 prompt is his words exactly. Step details are set from his
+        parentheses. "Explain how you did X" under step 5 is carried over from his first version
+        of this slide (also 2026-10-14), as an example question; cut it if step 5 should stand
+        alone. The r-pkgs.org line is an addition. The book's second edition (2023) is by Hadley
+        Wickham and Jennifer Bryan.
+        <br><br>Callout, moved here from slide 6 on 2026-10-14 ("for now", his words): what are
+        agents good at now? Teaching me things. Its story is in slide 6's notes: in 2012 it took
+        two weeks off to learn JavaScript.
+        <br><br>His first version, for the record: headline "Try it out!"; "Need a development
+        framework. R Packages by Hadley is a great place to start. Use GitHub with Version
+        Control, GitHub pages and CI/CD. 'Make me an Open Source R package that does X. Follow
+        all of the best practices in Hadley Wickham's R Packages book.' 'Explain how you did X'"
+        <br><br>Changed 2026-10-17 (Jeremy: "I like the current layout for try it out slide.
+        keep it as is. fine to update header to 'Try it on something that's yours.'"): the
+        headline was "Try it out!". It moved after "How fast it is moving", in the section's new
+        order (see the section opener's notes). A spoken line it can carry, if wanted: experiment
+        in your own repository, and only send to other people's projects what you have read and
+        would defend as your own work.
+        <br><br>Every slide after this one moved up a number: good at is 50, bad at 51, how I
+        feel 52, the party 53. The deck is 53 slides.
       </aside>
     </section>
+
+
+
 
     <!-- 4 · s2: the thumbs-down answers, gathered -->
     <!-- 4 · mixed feelings: Jeremy's to write -->
@@ -3736,6 +3814,26 @@ steps:
         words; "if the models were frozen today" (diary #9).
         <br><br>Changed 2026-10-15 (Jeremy: "But, what's now? -&gt; But, what's next?"): the line
         now reads "But, what's next?".
+      </aside>
+    </section>
+
+    <!-- 4 · the ask (2026-10-17) -->
+    <section class="slide s-ask" data-hue="6">
+      <p class="kicker">So, what now?</p>
+      <h2>Before R/Pharma 2027, build one thing with an agent.</h2>
+      <p class="line">Then come back and tell us how it felt.</p>
+      <div class="tease step">
+        <img src="assets/hex/safetyGraphics.png" alt="safetyGraphics hex logo" />
+        <p>Want somewhere to start? We're talking about restarting the safetyGraphics working group as an AI-first open-source project.</p>
+      </div>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        Added 2026-10-17 (Jeremy picked the dated commitment with the safetyGraphics tease). It
+        follows "Mixed feelings" so the talk ends on one instruction, then the thanks and the
+        party. Every word is draft wording for him to replace.
+        <br><br>The tease comes in on its own press. Its wording is soft on purpose ("we're
+        talking about"): the working group restart is not decided. Cut the press if it should
+        not be said yet.
       </aside>
     </section>
 
