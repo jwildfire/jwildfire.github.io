@@ -442,6 +442,9 @@
     .five .mid .tag { grid-column: 1 / -1; color: var(--soft); }
     .five .mid .tag span { color: var(--faint); }
     .five .mid h3, .five .mid .s { color: var(--soft); }
+    .fivenote { display: grid; grid-template-columns: 1.12fr 3fr 1.12fr; gap: 46px; margin-top: 22px; }
+    .fivenote p { position: relative; margin: 0; padding-top: 14px; border-top: 3px solid var(--hue); font-family: var(--serif); font-size: 36px; line-height: 1.1; text-align: center; color: var(--ink); }
+    .fivenote p + p::after { content: "→"; position: absolute; left: -41px; top: 12px; font-family: var(--sans); font-size: 34px; color: var(--faint); }
     .s-five .goodat { right: 428px; bottom: 76px; }
     .s-five .goodat .a { font-size: 44px; }
     .s-five .goodat .who { width: 140px; height: 162px; }
@@ -1847,6 +1850,11 @@
           <div class="s">Monitoring plan checks</div>
         </div>
       </div>
+      <div class="fivenote">
+        <p>Build roadmap</p>
+        <p>Make R packages</p>
+        <p>Run packages on studies</p>
+      </div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
         Jeremy's message for this slide (2026-10-06): "messaging is that agents have sped
@@ -1880,6 +1888,10 @@
         <br><br>Why both ends: they are company-specific process that no vendor will build. The
         middle is commodity and improving monthly.
         <br><br>Vet before publishing: everything on slides 23 and 25, and the Planning cell on slide 24, comes from that internal deck. (The artifact grid on slide 24 is from the side project's public hub.)
+        <br><br>Annotations added 2026-10-17 (Jeremy: "Add annotations below describing each
+        section. Build Roadmap -&gt; Make R Packages -&gt; Run Packages on Studies"): one line
+        under each of the three blocks, with arrows between them like the blocks above. His
+        words, set in the deck's sentence case.
       </aside>
     </section>
 
@@ -1998,6 +2010,7 @@
     <section class="slide s-ops keep" data-hue="3" style="padding-bottom: 84px">
       <p class="kicker">Downstream · operations</p>
       <h2>Agents can help a lot with operations</h2>
+      <div class="review"><b>TODO</b> Refactor this slide</div>
       <div class="five side-r">
         <div class="ops">
           <p class="lab">One repo per study, one hub to run them<span class="mock">Mock data</span></p>
@@ -2092,6 +2105,8 @@
         <br><br>Production workflows run under a bot identity. The plan-alignment check is fully
         deterministic at runtime; an agent drafted the code and the matching rules.
         <br><br>The deck's screenshots are internal; none is reproduced here.
+        <br><br>TODO box added 2026-10-17 (Jeremy: "TODO S25 - refactor"). Take it off when the
+        slide is reworked.
       </aside>
     </section>
 
