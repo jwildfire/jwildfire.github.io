@@ -17,7 +17,7 @@
 
           <nav class="wf-nav" aria-label="Site sections">
             <a href="#news">News <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
-            <a href="#projects">Key projects <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
+            <a href="{{ "/projects/" | relative_url }}">Projects <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
             <a href="{{ "/keynote/" | relative_url }}">R/Pharma keynote <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
             {%- if site.cv_url -%}
             <a href="{{ site.cv_url }}" rel="noopener">Read my CV <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
@@ -166,31 +166,6 @@
             </nav>
 
           </div>
-        </section>
-
-        <section class="wf-sec" id="projects">
-          <div class="wf-sechead">
-            <h2>Key projects</h2>
-            <span class="wf-count"><a href="{{ "/projects/" | relative_url }}">all projects</a></span>
-          </div>
-
-          <ul class="wf-projlist">
-            {%- for project in site.data.projects -%}
-            <li>
-              <a class="wf-proj-name" href="{{ "/projects/" | relative_url }}#{{ project.name | slugify }}">{{ project.name }}</a>
-              <span class="wf-proj-body">
-                <span class="wf-proj-stub">{{ project.stub }}</span>
-                <span class="wf-proj-links">
-                  {%- for link in project.links -%}
-                  <a href="{{ link.url }}" rel="noopener">{{ link.label }}</a>
-                  {%- endfor -%}
-                </span>
-              </span>
-            </li>
-            {%- endfor -%}
-          </ul>
-
-          <p class="wf-more"><a href="{{ "/projects/" | relative_url }}">What each project is and what I did on it &rarr;</a></p>
         </section>
 
         <footer class="wf-foot">
