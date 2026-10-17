@@ -311,8 +311,8 @@ a.footnote:hover { color: var(--kn-accent-deep); }
 
 /* ==================================================================================
    Homepage: split-rail layout (_layouts/home.html)
-   Light sticky rail (identity + nav + CV) beside a scrolling column of writing,
-   then projects. The rail carries the honeycomb strip along its top edge.
+   Light sticky rail (identity + nav + CV) beside a scrolling column of news.
+   The rail carries the honeycomb strip along its top edge.
    ================================================================================== */
 
 .wf-skip { position: absolute; left: -200vw; top: 0; background: var(--kn-ink); color: var(--kn-bg); padding: 0.6rem 1rem; z-index: 10; }
@@ -455,29 +455,6 @@ a.footnote:hover { color: var(--kn-accent-deep); }
   -webkit-mask: var(--tag-mask) center / contain no-repeat;
   mask: var(--tag-mask) center / contain no-repeat;
 }
-
-.wf-projlist { list-style: none; margin: 0; padding: 0; }
-.wf-projlist li {
-  display: grid;
-  grid-template-columns: 11rem minmax(0, 1fr);
-  gap: 0.25rem 1.4rem;
-  padding: 0.9rem 0;
-  border-bottom: 1px solid var(--kn-rule);
-  align-items: baseline;
-}
-.wf-proj-name, .wf-proj-name:visited {
-  font-family: var(--kn-serif);
-  font-size: 1.25rem;
-  line-height: 1.15;
-  color: var(--kn-ink);
-  text-decoration: none;
-}
-.wf-proj-name:hover { color: var(--kn-accent); text-decoration: none; }
-.wf-proj-body { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.3rem 1.2rem; }
-.wf-proj-stub { color: var(--kn-soft); font-size: 0.94rem; flex: 1 1 22rem; }
-.wf-proj-links { font-family: var(--kn-mono); font-size: 0.74rem; display: flex; gap: 0.9rem; }
-.wf-proj-links a { text-decoration: none; }
-.wf-proj-links a:hover { text-decoration: underline; }
 
 .wf-keynote {
   display: block;
@@ -633,7 +610,6 @@ a.footnote:hover { color: var(--kn-accent-deep); }
 }
 .wf-post-title:hover { color: var(--kn-accent); text-decoration: none; }
 .wf-post-excerpt { display: block; color: var(--kn-soft); font-size: 0.92rem; margin-top: 0.3rem; }
-.wf-more { font-family: var(--kn-mono); font-size: 0.78rem; margin-top: 1.2rem; }
 
 /* Release rows: one compact line per package release, in the same date grid as
    posts but tighter and set in the meta face. Package + version act as the title;
@@ -676,7 +652,20 @@ a.footnote:hover { color: var(--kn-accent-deep); }
 @media screen and (max-width: 900px) {
   .wf-home { grid-template-columns: 1fr; }
   .wf-rail { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--kn-rule); }
-  .wf-posts li, .wf-projlist li { grid-template-columns: 1fr; }
+  /* Stacked rail stays short so News shows on the first screen (iPad portrait):
+     nav links become a wrapping row of chips and the contact links one line. */
+  .wf-rail { padding: 1.6rem clamp(1rem, 4vw, 2rem) 1.2rem; gap: 1rem; }
+  .wf-pitch { margin-bottom: 1rem; }
+  .wf-nav { flex-direction: row; flex-wrap: wrap; gap: 0.4rem; }
+  .wf-nav a, .wf-nav a:visited {
+    border: 1px solid var(--kn-rule);
+    border-radius: 999px;
+    background: var(--kn-card);
+    padding: 0.3rem 0.8rem;
+    gap: 0.5rem;
+  }
+  .wf-contact { flex-direction: row; flex-wrap: wrap; gap: 0.3rem 1.2rem; }
+  .wf-posts li { grid-template-columns: 1fr; }
   .wf-sechead { flex-wrap: wrap; row-gap: 0.5rem; }
   .wf-posts li.wf-item-post { padding: 0.9rem 1rem; }
   .wf-posts li.wf-item-rel { padding: 0.45rem 0.25rem; }

@@ -1,5 +1,4 @@
-# Key projects. `stub` is the one-line version used on the homepage list;
-# `blurb` is the long version used on /projects/. Order here is page order.
+# Projects on /projects/. Order here is page order.
 # `url` is where the card's thumbnail and name link; `thumb` is a screenshot in
 # assets/img/projects/ (800x500).
 - name: "{gsm}"
@@ -7,7 +6,6 @@
   thumb: "/assets/img/projects/gsm.jpg"
   alt: "A gsm study overview report: a table of sites with red and amber flags across key risk indicators"
   role: "Creator · Technical lead, Gilead RBQM · 2022 – present"
-  stub: "Open-source R framework for risk-based quality monitoring, approved for GxP use."
   blurb: >-
     An open-source R framework for risk-based quality monitoring, designed for GxP
     from the first commit. Approved for GxP use and running monitoring oversight on
@@ -26,7 +24,6 @@
   thumb: "/assets/img/projects/safety-viz.jpg"
   alt: "The safety.viz gallery: cards for the Safety Histogram, Safety Outlier Explorer and Safety Results Over Time"
   role: "Creator · 2026 · JavaScript"
-  stub: "Thirteen interactive clinical safety charts, with published test evidence."
   blurb: >-
     A charting library for monitoring clinical trial safety: thirteen interactive
     charts, from safety histograms to the eDISH hepatic explorer, the nephrotoxicity
@@ -46,7 +43,6 @@
   thumb: "/assets/img/projects/safetygraphics.jpg"
   alt: "The safetyGraphics Shiny app showing the Hepatic Safety Explorer scatter plot of ALT against bilirubin"
   role: "Founding technical lead · ASA-DIA Interactive Safety Graphics"
-  stub: "Interactive safety review for clinical trials, in R and Shiny."
   blurb: >-
     The open-source R/Shiny app that replaced the impenetrable safety appendix with
     charts a clinician can actually click. Built over five years by clinicians and
