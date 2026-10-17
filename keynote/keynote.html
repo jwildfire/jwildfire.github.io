@@ -826,8 +826,8 @@
     .s-verdict .pills li { font-size: 26px; line-height: 1.2; padding: 10px 22px; border-radius: 999px; border: 3px solid var(--spec-2); background: #eef5ea; }
     .s-verdict .pills li.no { border-color: var(--spec-0); background: #fbeceb; }
     .s-verdict .next { font-size: 38px; margin: 40px 0 0; }
-    .s-verdict.s-reply .replies { margin-top: 0; }
-    .s-verdict.s-reply .rp .who { width: 110px; height: 128px; }
+    .s-verdict.s-reply { justify-content: center; }
+    .s-verdict.s-reply .replies { margin-top: 10px; }
     /* The GxP gap (2026-10-17). */
     .s-gap h2 { font-size: 64px; margin-bottom: 30px; }
     .s-gap .cols { gap: 48px; flex: none; }
@@ -3476,37 +3476,28 @@ steps:
       </aside>
     </section>
 
-    <!-- 4 · the verdict, and the GxP gap it sets up (2026-10-17). Option A is in the talk;
-         B and C follow as reserve slides until Jeremy picks one. -->
-    <section class="slide s-verdict" data-hue="6">
-      <p class="kicker">The question, one last time · Draft option A</p>
+    <!-- 4 · the verdict, and the GxP gap it sets up (2026-10-17) -->
+    <section class="slide s-verdict s-reply" data-hue="6">
+      <p class="kicker">The question, one last time</p>
       <p class="q">What can we actually do with AI agents right now?</p>
-      <h2>Real work on trials, today. As long as a human owns every decision.</h2>
-      <p class="pills-lab">On trials, today</p>
-      <ul class="pills">
-        <li>👍 Writing software</li>
-        <li>👍 Generating evidence</li>
-        <li class="no">👎 Setting priorities</li>
-        <li class="no">👎 Making judgements</li>
-      </ul>
-      <p class="next step">That's the GxP version. Outside GxP, they can do a lot more.</p>
+      <h2>Real work across the development pipeline.</h2>
+      <div class="replies">
+        <div class="rp hack step"><div class="who"></div><div class="bub"><p>Agents write the code.</p></div></div>
+        <div class="rp insp step"><div class="who"></div><div class="bub"><p>Humans own the decisions.</p></div></div>
+      </div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
-        Added 2026-10-17 in place of the four-Oranges answer slide (now in Reserves). The
-        headline is Jeremy's: "Real work on trials, today. As long as a human owns every
-        decision." He asked for this slide to "set up the gap between gxp and non-gxp" as well,
-        and for options; this is one of three. The other options sit right after it as reserve
-        slides, so they show in keynote_extended.html and drop out of keynote.html. Keep one,
-        delete the other two, and take "Draft option" out of the kicker.
-        <br><br>The question is slide 3's, word for word, set small: the answer is the headline
-        now. The headline has no italic or coloured words (sparing emphasis).
-        <br><br>Option A: the four answers from the old slide as pills under "On trials, today",
-        then one press brings in the hand-off to the next slide. Pill wording is draft, from the
-        old slide's four Orange answers.
+        Picked 2026-10-17 (Jeremy: "I like B For 50. 'Real work across the development
+        pipeline.' Hacker: Agents write the Code. Inspector: Humans own the decisions."). The
+        headline and both lines are his; "Code" is set in lower case, in the sentence case of
+        the deck's other callouts. Hacker Orange answers first, then Inspector Orange, one per
+        press, in his order.
+        <br><br>It replaced the four-Oranges answer slide (now in Reserves) and comes before the
+        GxP gap slide. The question is slide 3's, word for word, set small: the answer is the
+        headline now. The two draft options he did not pick (A and C) are in Reserves, dated 17
+        October.
       </aside>
     </section>
-
-
 
     <!-- 4 · the GxP gap (2026-10-17) -->
     <section class="slide s-split s-gap" data-hue="6">
