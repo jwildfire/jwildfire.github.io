@@ -3778,7 +3778,7 @@ steps:
     <section class="slide s-split s-gap" data-hue="6">
       <p class="kicker">The GxP gap, a year from now</p>
       <h2>We're at the beginning.</h2>
-      <svg class="gapchart wide" viewBox="0 0 1320 440" role="img" aria-label="Illustration, not data: the GxP gap chart with a year added after today. After today the frontier line splits into three guesses, drawn lighter: steady, faster, and exponential, which runs off the top of the chart, fanning out in a shaded cone. Clinical trial tools carries on in two guesses, a straight line and one that bends up a little, both well below all three. A bracket over the fan says we don't know; a bracket below the clinical line says what you'll see at work.">
+      <svg class="gapchart wide" viewBox="0 0 1320 440" role="img" aria-label="Illustration, not data: the GxP gap chart with a year added after today. After today the frontier line splits into three guesses, drawn lighter: steady, faster, and exponential, which runs off the top of the chart, fanning out in a shaded cone. Clinical trial tools carries on in three guesses, slow, steady and fast, all well below the frontier guesses. A bracket over the fan says we don't know; a bracket below the clinical line says what you'll see at work.">
         <text class="cap" x="60" y="18">Illustration, not data · after today, three guesses</text>
         <line class="base" x1="60" x2="1060" y1="400" y2="400"/>
         <line class="today" x1="560" x2="560" y1="30" y2="400"/>
@@ -3790,20 +3790,25 @@ steps:
         <path class="ln front next" d="M560,300 C680,240 940,150 1060,30"/>
         <path class="ln front next" d="M560,300 C640,258 820,160 930,-10"/>
         <path class="arrow" d="M936.5,-20 L934.5,-2.3 L921.1,-10.9 Z"/>
+        <path class="ln clin next" d="M560,360 C720,350 900,342 1060,338"/>
         <path class="ln clin next" d="M560,360 L1060,305"/>
-        <path class="ln clin next" d="M560,360 C740,340 920,310 1060,276"/>
+        <path class="ln clin next" d="M560,360 C740,338 920,300 1060,262"/>
         <circle class="dot front" cx="560" cy="300" r="7"/>
         <circle class="dot clin" cx="560" cy="360" r="7"/>
         <circle class="dot front next" cx="1060" cy="100" r="6"/>
         <circle class="dot front next" cx="1060" cy="30" r="6"/>
+        <circle class="dot clin next" cx="1060" cy="338" r="6"/>
         <circle class="dot clin next" cx="1060" cy="305" r="6"/>
-        <circle class="dot clin next" cx="1060" cy="276" r="6"/>
+        <circle class="dot clin next" cx="1060" cy="262" r="6"/>
+        <text class="guess" x="1076" y="344">Slow</text>
+        <text class="guess" x="1076" y="311">Steady</text>
+        <text class="guess" x="1076" y="268">Fast</text>
         <text class="guess" x="1076" y="106">Steady</text>
         <text class="guess" x="1076" y="36">Faster</text>
         <text class="guess" x="950" y="0">Exponential</text>
         <text class="lab" x="540" y="272" text-anchor="end">Frontier capabilities</text>
         <text class="lab" x="1060" y="374" text-anchor="end">Clinical trial tools</text>
-        <path class="brk" d="M1180,398 h14 V280 h-14"/>
+        <path class="brk" d="M1180,398 h14 V264 h-14"/>
         <path class="brk hl" d="M1180,104 h14 V-16 h-14"/>
         <text class="blab" x="1214" y="344">What you'll</text>
         <text class="blab" x="1214" y="376">see at work</text>
@@ -3842,6 +3847,9 @@ steps:
         <br><br>Changed the same day (Jeremy: "revert to this. just add one more orange projection
         line"): after a try with clustered lines, the chart is back to three dotted frontier
         guesses, and clinical trial tools has a second dotted guess that bends up a little.
+        <br><br>Changed the same day (Jeremy: "3 clinical trial scenarios on what's next. Slow,
+        Steady, Fast."): clinical trial tools has three labelled guesses, slow, steady (the
+        straight line) and fast. Even the fast one ends well below the slowest frontier guess.
       </aside>
     </section>
 
