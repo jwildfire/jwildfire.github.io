@@ -817,6 +817,31 @@
     .s-reply .rp.hack .bub { background: #14181d; border-color: #3fbf5f; }
     .s-reply .rp.hack .bub p { font-family: var(--mono); font-size: 32px; color: #8cf5a4; white-space: nowrap; }
     /* Acknowledgements (2026-10-15, placeholder): his sentence large, a thumbs-up Orange beside it. */
+    /* Outline layout options for slide 3 (2026-10-17). */
+    .s-outl { justify-content: center; }
+    .s-outl blockquote { font-size: 56px; }
+    .s-outl .agenda { list-style: none; padding: 0; margin: 70px 0 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 22px; position: relative; }
+    .s-outl .agenda::before { content: ""; position: absolute; left: 0; right: 0; top: 16px; height: 3px; background: var(--rule); }
+    .s-outl .agenda li { position: relative; font-size: 24px; line-height: 1.2; margin: 0; }
+    .s-outl .agenda i { display: block; width: 30px; height: 35px; clip-path: var(--hex-clip); background: var(--c); margin-bottom: 18px; }
+    .s-outl .agenda b { display: block; font-weight: 600; font-size: 25px; }
+    .s-outl .agenda span, .s-outl .vlist span { display: block; font-family: var(--mono); font-size: 17px; letter-spacing: 0.04em; color: var(--soft); margin-top: 6px; }
+    .s-outl .fork { width: 100%; height: auto; margin-top: 36px; overflow: visible; }
+    .s-outl .fork .trunk, .s-outl .fork .lane { fill: none; stroke-width: 6; stroke-linecap: round; }
+    .s-outl .fork .trunk { stroke: var(--rule); }
+    .s-outl .fork .lane.up { stroke: var(--spec-4); opacity: 0.55; }
+    .s-outl .fork .lane.dn { stroke: var(--spec-1); opacity: 0.55; }
+    .s-outl .fork .n { font-family: var(--sans); font-size: 26px; font-weight: 600; fill: var(--ink); }
+    .s-outl .fork .w { font-family: var(--mono); font-size: 17px; letter-spacing: 0.04em; fill: var(--soft); }
+    .s-outl-d { justify-content: center; }
+    .s-outl-d .qlist { display: grid; grid-template-columns: 1fr 520px; gap: 70px; align-items: center; }
+    .s-outl-d blockquote { font-size: 64px; }
+    .s-outl .vlist { list-style: none; padding: 0 0 0 0; margin: 0; position: relative; display: grid; gap: 20px; }
+    .s-outl .vlist::before { content: ""; position: absolute; left: 14px; top: 18px; bottom: 18px; width: 3px; background: var(--rule); }
+    .s-outl .vlist li { position: relative; display: grid; grid-template-columns: 30px 1fr; column-gap: 20px; align-items: center; font-size: 26px; line-height: 1.15; margin: 0; }
+    .s-outl .vlist i { grid-row: span 2; width: 30px; height: 35px; clip-path: var(--hex-clip); background: var(--c); }
+    .s-outl .vlist b { font-weight: 600; }
+    .s-outl .vlist span { margin-top: 2px; }
     .s-thanks { justify-content: center; }
     .s-thanks .thx { display: flex; align-items: center; gap: 70px; }
     .s-thanks .thx p { margin: 0; flex: 1; font-family: var(--serif); font-size: 76px; line-height: 1.12; color: var(--ink); max-width: none; text-wrap: balance; }
@@ -1058,6 +1083,9 @@
         from data-when on each section's title slide.
       </aside>
     </section>
+
+
+
 
     <section class="slide" data-hue="1">
       <p class="kicker">How I tried to answer it</p>
