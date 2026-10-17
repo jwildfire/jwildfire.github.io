@@ -859,6 +859,7 @@
     .s-gap .gapchart .ln.clin.next { stroke-dasharray: 3 9; }
     .s-gap .gapchart .dot.next { opacity: 0.6; }
     .s-gap .gapchart .ens { fill: none; stroke: var(--spec-4); stroke-width: 2.5; stroke-linecap: round; opacity: 0.38; }
+    .s-gap .gapchart .ens.clin { stroke: var(--spec-1); opacity: 0.55; }
     .s-gap .gapchart .arrow { fill: var(--spec-4); opacity: 0.55; }
     .s-gap .gapchart .guess { font-family: var(--mono); font-size: 16px; letter-spacing: 0.06em; fill: var(--soft); }
     .s-gap .gcards { display: grid; gap: 20px; }
@@ -3810,16 +3811,17 @@ steps:
         <path class="ens" d="M560,300 C634,254 808,151 909,-12"/>
         <path class="ens" d="M560,300 C642,260 824,163 937,-12"/>
         <path class="ens" d="M560,300 C646,262 832,169 951,-12"/>
-        <path class="ln clin next" d="M560,360 L1060,305"/>
+        <path class="ens clin" d="M560,360 C720,346 900,326 1060,292"/>
+        <path class="ens clin" d="M560,360 C720,344 900,326 1060,306"/>
+        <path class="ens clin" d="M560,360 C720,348 900,336 1060,318"/>
         <circle class="dot front" cx="560" cy="300" r="7"/>
         <circle class="dot clin" cx="560" cy="360" r="7"/>
-        <circle class="dot clin next" cx="1060" cy="305" r="6"/>
         <text class="guess" x="1076" y="106">Steady</text>
         <text class="guess" x="1076" y="36">Faster</text>
         <text class="guess" x="972" y="0">Exponential</text>
         <text class="lab" x="540" y="272" text-anchor="end">Frontier capabilities</text>
         <text class="lab" x="1060" y="374" text-anchor="end">Clinical trial tools</text>
-        <path class="brk" d="M1180,398 h14 V309 h-14"/>
+        <path class="brk" d="M1180,398 h14 V290 h-14"/>
         <path class="brk hl" d="M1180,104 h14 V-16 h-14"/>
         <text class="blab" x="1214" y="344">What you'll</text>
         <text class="blab" x="1214" y="376">see at work</text>
@@ -3856,6 +3858,9 @@ steps:
         now a bundle of eight thin lines with slightly different paths, like a forecast
         ensemble, so the projection reads as a spread of possibilities rather than three exact
         lines. The labels name the clusters.
+        <br><br>Changed the same day (Jeremy: "Frontier was fine. Want a couple of orange lines
+        for clinical trial projections."): clinical trial tools also gets a small cluster, three
+        thin amber lines close together, in place of its one straight line.
         <br><br>Changed the same day (Jeremy: "'Nobody can tell you what these tools will do next
         year. They are not going away.' goes on the next slide"): the line moved here from under
         the timeline on "Frontier is moving extremely fast".
