@@ -56,8 +56,12 @@ defaults:
       type: post
     values:
       tags: Other
-  # The extended keynote deck is shared by URL only: keep it out of the sitemap.
+  # Both keynote decks are shared by URL only until the blog post links the talk deck: keep it out of the sitemap.
   - scope:
       path: "keynote/keynote_extended.html"
+    values:
+      sitemap: false
+  - scope:
+      path: "keynote/keynote.html"
     values:
       sitemap: false
