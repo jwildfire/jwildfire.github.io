@@ -842,6 +842,12 @@
     .s-outl .vlist i { grid-row: span 2; width: 30px; height: 35px; clip-path: var(--hex-clip); background: var(--c); }
     .s-outl .vlist b { font-weight: 600; }
     .s-outl .vlist span { margin-top: 2px; }
+    /* Slide 3's fork: on the second press its hexes fly to their strip markers (2026-10-17). */
+    .s-outl .fork polygon { transform-box: fill-box; transform-origin: center; transition: transform 900ms cubic-bezier(.6,0,.25,1); }
+    .s-outl .fork .trunk, .s-outl .fork .lane, .s-outl .fork text { transition: opacity 400ms ease; }
+    .s-outl:has(.fly.on) .fork .trunk, .s-outl:has(.fly.on) .fork .lane, .s-outl:has(.fly.on) .fork text { opacity: 0; }
+    .s-outl .fly { display: none; }
+    @media (prefers-reduced-motion: reduce) { .s-outl .fork polygon { transition: none; } }
     .s-thanks { justify-content: center; }
     .s-thanks .thx { display: flex; align-items: center; gap: 70px; }
     .s-thanks .thx p { margin: 0; flex: 1; font-family: var(--serif); font-size: 76px; line-height: 1.12; color: var(--ink); max-width: none; text-wrap: balance; }
@@ -1051,9 +1057,27 @@
       </aside>
     </section>
 
-    <section class="slide s-quote" data-hue="1" data-outline>
+    <section class="slide s-quote s-outl" data-hue="1">
       <p class="kicker">The question</p>
       <blockquote>What can we actually do with AI agents right now?</blockquote>
+      <svg class="fork step" viewBox="0 0 1320 380" role="img" aria-label="The talk's sections as a path: Orange, safetyGraphics and OpenRBQM in a line; then the path forks into AI Frontier: obot on the upper lane and Clinical Trials: AI in the Pipeline on the lower lane; the lanes meet again at What we learned.">
+        <path class="trunk" d="M40,190 H480"/>
+        <path class="lane up" d="M480,190 C580,190 600,96 700,96 H900 C1000,96 1020,190 1120,190"/>
+        <path class="lane dn" d="M480,190 C580,190 600,284 700,284 H900 C1000,284 1020,190 1120,190"/>
+        <polygon data-sec="0" style="fill: var(--spec-1)" points="40,172 55.6,181.0 55.6,199.0 40,208 24.4,199.0 24.4,181.0"/>
+        <polygon data-sec="1" style="fill: var(--spec-1)" points="260,172 275.6,181.0 275.6,199.0 260,208 244.4,199.0 244.4,181.0"/>
+        <polygon data-sec="2" style="fill: var(--spec-3)" points="480,172 495.6,181.0 495.6,199.0 480,208 464.4,199.0 464.4,181.0"/>
+        <polygon data-sec="4" style="fill: var(--spec-4)" points="800,78 815.6,87.0 815.6,105.0 800,114 784.4,105.0 784.4,87.0"/>
+        <polygon data-sec="3" style="fill: var(--spec-1)" points="800,266 815.6,275.0 815.6,293.0 800,302 784.4,293.0 784.4,275.0"/>
+        <polygon data-sec="5" style="fill: var(--spec-6)" points="1120,172 1135.6,181.0 1135.6,199.0 1120,208 1104.4,199.0 1104.4,181.0"/>
+        <text class="n" x="22" y="246">Orange</text>
+        <text class="n" x="260" y="246" text-anchor="middle">safetyGraphics</text><text class="w" x="260" y="274" text-anchor="middle">2016–2021</text>
+        <text class="n" x="480" y="246" text-anchor="middle">OpenRBQM</text><text class="w" x="480" y="274" text-anchor="middle">2021–2025</text>
+        <text class="n" x="800" y="52" text-anchor="middle">AI Frontier: obot</text><text class="w" x="800" y="24" text-anchor="middle">summer 2026</text>
+        <text class="n" x="800" y="340" text-anchor="middle">Clinical Trials: AI in the Pipeline</text><text class="w" x="800" y="368" text-anchor="middle">Q4 2025</text>
+        <text class="n" x="1150" y="198">What we learned</text><text class="w" x="1150" y="226">now</text>
+      </svg>
+      <span class="step fly" aria-hidden="true"></span>
       <aside class="notes">
         <strong class="say">Today I'm going to talk about what these tools are good at right
         now ... As you'll see, the answer to that question changes on a regular basis.</strong>
@@ -1081,11 +1105,15 @@
         were his picks when asked): safetyGraphics (2016–2021), OpenRBQM (2021–2025), AI in the
         loop (Q4 2025), obot (summer 2026), What we learned (now); Orange has none. They come
         from data-when on each section's title slide.
+        <br><br>Rebuilt 2026-10-17 (Jeremy: "I like C. can you set up a click transition where the
+        hexes shrink and move into their places on the timeline at the top."): the outline is now
+        the fork (option C). First press: the fork comes in. Second press: the lanes and names
+        fade, and the six hexes shrink and fly up to their section markers on the strip at the
+        top, where they stay for the rest of the slide. The fork is written into the slide by
+        hand, so a renamed section must be renamed here too. The strip-label version and options
+        B and D are in Reserves, dated 17 October.
       </aside>
     </section>
-
-
-
 
     <section class="slide" data-hue="1">
       <p class="kicker">How I tried to answer it</p>
@@ -4270,6 +4298,29 @@ steps:
       window.addEventListener('hashchange', function () { go(parseInt(location.hash.slice(1), 10) - 1 || 0); });
       fit();
       go((parseInt(location.hash.slice(1), 10) || 1) - 1);
+    })();
+  </script>
+  <script>
+    // Slide 3's fork (2026-10-17): when its .fly step turns on, each hex shrinks and moves onto
+    // its section marker in the strip; when it turns off, it goes back. Measured at that moment,
+    // because a slide that is not showing has no size.
+    (function () {
+      document.querySelectorAll('.s-outl .fly').forEach(function (fly) {
+        var slide = fly.closest('.slide'), svg = slide.querySelector('svg.fork');
+        function place() {
+          var on = fly.classList.contains('on'), marks = slide.querySelectorAll('.hexmark');
+          var k = svg.getBoundingClientRect().width / 1320;
+          svg.querySelectorAll('polygon[data-sec]').forEach(function (p) {
+            var m = marks[+p.getAttribute('data-sec')];
+            if (!on || !m || !k) { p.style.transform = ''; return; }
+            p.style.transform = '';
+            var a = p.getBoundingClientRect(), b = m.getBoundingClientRect();
+            var dx = (b.left + b.width / 2 - (a.left + a.width / 2)) / k, dy = (b.top + b.height / 2 - (a.top + a.height / 2)) / k;
+            p.style.transform = 'translate(' + dx + 'px,' + dy + 'px) scale(' + (b.width / a.width) + ')';
+          });
+        }
+        new MutationObserver(function () { requestAnimationFrame(place); }).observe(fly, { attributes: true, attributeFilter: ['class'] });
+      });
     })();
   </script>
 </body>
