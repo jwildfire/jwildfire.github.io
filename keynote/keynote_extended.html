@@ -856,6 +856,7 @@
     .s-gap .gapchart .ln.next { opacity: 0.55; stroke-dasharray: 3 9; }
     .s-gap .gapchart .ln.clin.next { stroke-dasharray: 3 9; }
     .s-gap .gapchart .dot.next { opacity: 0.6; }
+    .s-gap .gapchart .ens { fill: none; stroke: var(--spec-4); stroke-width: 2.5; stroke-linecap: round; opacity: 0.38; }
     .s-gap .gapchart .arrow { fill: var(--spec-4); opacity: 0.55; }
     .s-gap .gapchart .guess { font-family: var(--mono); font-size: 16px; letter-spacing: 0.06em; fill: var(--soft); }
     .s-gap .gcards { display: grid; gap: 20px; }
@@ -3775,27 +3776,45 @@ steps:
     <section class="slide s-split s-gap" data-hue="6">
       <p class="kicker">The GxP gap, a year from now</p>
       <h2>We're at the beginning.</h2>
-      <svg class="gapchart wide" viewBox="0 0 1320 440" role="img" aria-label="Illustration, not data: the GxP gap chart with a year added after today. After today the frontier line splits into three guesses, drawn lighter: steady, faster, and exponential, which runs off the top of the chart, fanning out in a shaded cone. Clinical trial tools carries on in one straight line, well below all three. A bracket over the fan says we don't know; a bracket below the clinical line says what you'll see at work.">
-        <text class="cap" x="60" y="18">Illustration, not data · after today, three guesses</text>
+      <svg class="gapchart wide" viewBox="0 0 1320 440" role="img" aria-label="Illustration, not data: the GxP gap chart with a year added after today. After today the frontier line splits into three clusters of guesses, each a bundle of thin lines: steady, faster, and exponential, which runs off the top of the chart, fanning out in a shaded cone. Clinical trial tools carries on in one straight line, well below all three. A bracket over the fan says we don't know; a bracket below the clinical line says what you'll see at work.">
+        <text class="cap" x="60" y="18">Illustration, not data · after today, many guesses</text>
         <line class="base" x1="60" x2="1060" y1="400" y2="400"/>
         <line class="today" x1="560" x2="560" y1="30" y2="400"/>
         <path class="wedge" d="M60,375 C300,372 460,352 560,300 L560,360 C450,372 300,380 60,382 Z"/>
-        <path class="wedge next" d="M560,300 C640,258 820,160 930,-4 L1060,-4 L1060,100 Z"/>
+        <path class="wedge next" d="M560,300 C640,252 804,148 902,-4 L1060,-4 L1060,124 Z"/>
         <path class="ln front" d="M60,375 C300,372 460,352 560,300"/>
         <path class="ln clin" d="M60,382 C300,380 450,372 560,360"/>
-        <path class="ln front next" d="M560,300 L1060,100"/>
-        <path class="ln front next" d="M560,300 C680,240 940,150 1060,30"/>
-        <path class="ln front next" d="M560,300 C640,258 820,160 930,-10"/>
-        <path class="arrow" d="M936.5,-20 L934.5,-2.3 L921.1,-10.9 Z"/>
+        <path class="ens" d="M560,300 C708,226 892,152 1060,76"/>
+        <path class="ens" d="M560,300 C714,231 896,159 1060,88"/>
+        <path class="ens" d="M560,300 C720,236 900,166 1060,100"/>
+        <path class="ens" d="M560,300 C726,241 904,173 1060,112"/>
+        <path class="ens" d="M560,300 C732,246 908,180 1060,124"/>
+        <path class="ens" d="M560,300 C711,228 894,156 1060,82"/>
+        <path class="ens" d="M560,300 C723,238 902,170 1060,106"/>
+        <path class="ens" d="M560,300 C729,244 906,176 1060,118"/>
+        <path class="ens" d="M560,300 C670,232 928,134 1060,14"/>
+        <path class="ens" d="M560,300 C675,236 934,142 1060,23"/>
+        <path class="ens" d="M560,300 C680,240 940,150 1060,32"/>
+        <path class="ens" d="M560,300 C685,244 946,158 1060,41"/>
+        <path class="ens" d="M560,300 C690,248 952,166 1060,50"/>
+        <path class="ens" d="M560,300 C672,234 931,138 1060,18"/>
+        <path class="ens" d="M560,300 C682,242 943,154 1060,36"/>
+        <path class="ens" d="M560,300 C688,246 949,162 1060,46"/>
+        <path class="ens" d="M560,300 C632,252 804,148 902,-12"/>
+        <path class="ens" d="M560,300 C636,255 812,154 916,-12"/>
+        <path class="ens" d="M560,300 C640,258 820,160 930,-12"/>
+        <path class="ens" d="M560,300 C644,261 828,166 944,-12"/>
+        <path class="ens" d="M560,300 C648,264 836,172 958,-12"/>
+        <path class="ens" d="M560,300 C634,254 808,151 909,-12"/>
+        <path class="ens" d="M560,300 C642,260 824,163 937,-12"/>
+        <path class="ens" d="M560,300 C646,262 832,169 951,-12"/>
         <path class="ln clin next" d="M560,360 L1060,305"/>
         <circle class="dot front" cx="560" cy="300" r="7"/>
         <circle class="dot clin" cx="560" cy="360" r="7"/>
-        <circle class="dot front next" cx="1060" cy="100" r="6"/>
-        <circle class="dot front next" cx="1060" cy="30" r="6"/>
         <circle class="dot clin next" cx="1060" cy="305" r="6"/>
         <text class="guess" x="1076" y="106">Steady</text>
         <text class="guess" x="1076" y="36">Faster</text>
-        <text class="guess" x="950" y="0">Exponential</text>
+        <text class="guess" x="972" y="0">Exponential</text>
         <text class="lab" x="540" y="272" text-anchor="end">Frontier capabilities</text>
         <text class="lab" x="1060" y="374" text-anchor="end">Clinical trial tools</text>
         <path class="brk" d="M1180,398 h14 V309 h-14"/>
@@ -3831,6 +3850,10 @@ steps:
         all three.
         <br><br>Retitled the same day (Jeremy: "'Every guess still leaves a gap' -> We're at the
         beginning"). The headline is his; the full stop matches the deck's other headlines.
+        <br><br>Changed the same day (Jeremy: "multiple clustered lines on 53"): each guess is
+        now a bundle of eight thin lines with slightly different paths, like a forecast
+        ensemble, so the projection reads as a spread of possibilities rather than three exact
+        lines. The labels name the clusters.
         <br><br>Changed the same day (Jeremy: "'Nobody can tell you what these tools will do next
         year. They are not going away.' goes on the next slide"): the line moved here from under
         the timeline on "Frontier is moving extremely fast".
