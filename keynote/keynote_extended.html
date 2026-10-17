@@ -830,10 +830,35 @@
     .s-verdict.s-reply .rp.hack .bub p.sub { font-family: var(--mono); font-size: 22px; color: #5fbf77; }
     /* The GxP gap (2026-10-17). */
     .s-gap h2 { font-size: 64px; margin-bottom: 30px; }
-    .s-gap .cols { gap: 48px; flex: none; }
-    .s-gap .col { padding: 30px 40px; }
-    .s-gap .col p { font-size: 31px; margin: 0 0 10px; }
-    .s-gap .take { font-size: 34px; margin: 40px 0 0; }
+    .s-gap .gaprow { display: grid; grid-template-columns: 1fr 470px; gap: 44px; align-items: center; }
+    .s-gap .gapchart { width: 100%; height: auto; display: block; overflow: visible; }
+    .s-gap .gapchart .base { stroke: var(--rule); stroke-width: 2; }
+    .s-gap .gapchart .wedge { fill: var(--hue); opacity: 0.12; }
+    .s-gap .gapchart .ln { fill: none; stroke-width: 5; stroke-linecap: round; }
+    .s-gap .gapchart .ln.front { stroke: var(--spec-4); }
+    .s-gap .gapchart .ln.clin { stroke: var(--spec-1); stroke-dasharray: 14 10; }
+    .s-gap .gapchart .dot { stroke: var(--bg); stroke-width: 3; }
+    .s-gap .gapchart .dot.front { fill: var(--spec-4); }
+    .s-gap .gapchart .dot.clin { fill: var(--spec-1); }
+    .s-gap .gapchart text { font-family: var(--sans); }
+    .s-gap .gapchart .lab { font-size: 26px; font-weight: 600; fill: var(--ink); }
+    .s-gap .gapchart .gap { font-family: var(--serif); font-size: 40px; fill: var(--ink); }
+    .s-gap .gapchart .ax { font-family: var(--mono); font-size: 16px; letter-spacing: 0.08em; fill: var(--soft); }
+    .s-gap .gapchart .cap { font-family: var(--mono); font-size: 15px; letter-spacing: 0.08em; fill: var(--faint); }
+    .s-gap .gapchart.wide { margin-top: 4px; }
+    .s-gap .gapchart .sub { font-size: 22px; fill: var(--soft); }
+    .s-gap .gapchart .today { stroke: var(--faint); stroke-width: 2; stroke-dasharray: 4 8; }
+    .s-gap .gapchart .brk { fill: none; stroke: var(--soft); stroke-width: 3; }
+    .s-gap .gapchart .brk.hl { stroke: var(--hue); }
+    .s-gap .gapchart .blab { font-family: var(--serif); font-size: 32px; fill: var(--ink); }
+    .s-gap .gapchart .blab.hl { fill: var(--ink); }
+    .s-gap .gcards { display: grid; gap: 20px; }
+    .s-gap .gcard { background: var(--panel); border: 2px solid var(--rule); border-radius: 18px; padding: 20px 26px; }
+    .s-gap .gcard h3 { display: flex; align-items: center; gap: 14px; font-family: var(--mono); font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--soft); font-weight: 500; margin: 0 0 10px; }
+    .s-gap .gcard h3::before { content: ""; width: 34px; height: 0; border-top: 5px solid var(--spec-4); flex: none; }
+    .s-gap .gcard.clin h3::before { border-top: 5px dashed var(--spec-1); }
+    .s-gap .gcard p { font-size: 23px; line-height: 1.3; margin: 0 0 4px; }
+    .s-gap .take { font-size: 32px; margin: 26px 0 0; }
     /* The ask (2026-10-17). */
     .s-ask { justify-content: center; }
     .s-ask h2 { font-size: 96px; max-width: 1280px; text-wrap: balance; margin-bottom: 26px; }
@@ -3505,21 +3530,38 @@ steps:
 
     <!-- 4 · the GxP gap (2026-10-17) -->
     <section class="slide s-split s-gap" data-hue="6">
-      <p class="kicker">The GxP gap</p>
+      <p class="kicker">The GxP gap · Draft option A</p>
       <h2>Don't judge AI by what you can do on a trial.</h2>
-      <div class="cols">
-        <div class="col">
-          <h3>On a clinical trial</h3>
-          <p>Approved tools and models</p>
-          <p>A person checks every output</p>
-          <p>New capability arrives slowly</p>
-          <p class="soft">Rightly so</p>
-        </div>
-        <div class="col">
-          <h3>On a project of your own</h3>
-          <p>The newest model, the week it ships</p>
-          <p>Agents that write, run, test and fix</p>
-          <p>You can start tonight</p>
+      <div class="gaprow">
+        <svg class="gapchart" viewBox="0 0 820 400" role="img" aria-label="Illustration, not data: two lines start together on the left. Frontier capabilities climbs steeply to the top right; clinical trial tools rises slowly. The shaded space between them, the gap, widens over time.">
+          <text class="cap" x="40" y="18">Illustration, not data</text>
+          <text class="ax" x="22" y="200" text-anchor="middle" transform="rotate(-90 22 200)">What the tools can do</text>
+          <line class="base" x1="40" x2="800" y1="360" y2="360"/>
+          <path class="wedge" d="M40,300 C300,290 520,220 780,40 L780,250 C560,280 300,300 40,308 Z"/>
+          <path class="ln front" d="M40,300 C300,290 520,220 780,40"/>
+          <path class="ln clin" d="M40,308 C300,300 560,280 780,250"/>
+          <circle class="dot front" cx="780" cy="40" r="7"/>
+          <circle class="dot clin" cx="780" cy="250" r="7"/>
+          <text class="lab" x="760" y="30" text-anchor="end">Frontier capabilities</text>
+          <text class="lab" x="780" y="312" text-anchor="end">Clinical trial tools</text>
+          <text class="gap" x="640" y="190" text-anchor="middle">The gap</text>
+          <text class="ax" x="40" y="388">A year ago</text>
+          <text class="ax" x="800" y="388" text-anchor="end">Today</text>
+        </svg>
+        <div class="gcards">
+          <div class="gcard front">
+            <h3>On a project of your own</h3>
+            <p>The newest model, the week it ships</p>
+            <p>Agents that write, run, test and fix</p>
+            <p>You can start tonight</p>
+          </div>
+          <div class="gcard clin">
+            <h3>On a clinical trial</h3>
+            <p>Approved tools and models</p>
+            <p>A person checks every output</p>
+            <p>New capability arrives slowly</p>
+            <p class="soft">Rightly so</p>
+          </div>
         </div>
       </div>
       <p class="take">The rules at work are right. They also show you a fraction of what these tools can do.</p>
@@ -3529,9 +3571,76 @@ steps:
         The point is his: there is a growing gap between what AI can do under GxP and outside
         it, so don't judge AI by what you can do on an active trial; try it on a project of your
         own. Every word on the slide is draft wording for him to replace.
-        <br><br>The left column keeps the restrictions on screen as the right call, so nobody
+        <br><br>Chart added 2026-10-17 (Jeremy: "51 needs a visual. maybe a line chart with 2
+        diverging lines for 'Frontier capabilities', 'Clinical trial tools'"). It is a drawing,
+        not data: no values on either axis, and it says so in its top-left corner. The two
+        columns became the two cards beside it, each keyed to its line (solid blue, dashed
+        amber), frontier first.
+        <br><br>The clinical card keeps the restrictions on screen as the right call, so nobody
         hears "ignore GxP". The right column hands to "How fast it is moving" and then "Try it
         on something that's yours."
+      </aside>
+    </section>
+
+    <section class="slide s-split s-gap" data-hue="6" data-reserve="17 October 2026">
+      <p class="kicker">The GxP gap · Draft option B</p>
+      <h2>Don't judge AI by what you can do on a trial.</h2>
+      <svg class="gapchart wide" viewBox="0 0 1320 440" role="img" aria-label="Illustration, not data: frontier capabilities climbs steeply while clinical trial tools rise slowly; the shaded gap between them widens.">
+        <text class="cap" x="60" y="18">Illustration, not data</text>
+        <line class="base" x1="60" x2="1180" y1="400" y2="400"/>
+        <path class="wedge" d="M60,340 C520,330 900,250 1180,40 L1180,290 C900,320 520,340 60,350 Z"/>
+        <path class="ln front" d="M60,340 C520,330 900,250 1180,40"/>
+        <path class="ln clin" d="M60,350 C520,340 900,320 1180,290"/>
+        <circle class="dot front" cx="1180" cy="40" r="7"/>
+        <circle class="dot clin" cx="1180" cy="290" r="7"/>
+        <text class="lab" x="1070" y="40" text-anchor="end">Frontier capabilities</text>
+        <text class="sub" x="1070" y="70" text-anchor="end">The newest model, the week it ships</text>
+        <text class="lab" x="1180" y="350" text-anchor="end">Clinical trial tools</text>
+        <text class="sub" x="1180" y="378" text-anchor="end">Approved, validated, slower. Rightly so.</text>
+        <text class="gap" x="930" y="272" text-anchor="middle">The gap</text>
+        <text class="ax" x="60" y="428">A year ago</text>
+        <text class="ax" x="1180" y="428" text-anchor="end">Today</text>
+      </svg>
+      <p class="take">The rules at work are right. They also show you a fraction of what these tools can do.</p>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        Draft option B for slide 51's chart, 2026-10-17 (Jeremy: "Show me a few options"). The
+        chart takes the whole width and the two cards go; each line's label carries one short
+        line of what the cards said. A drawing, not data. Keep one option, delete the others,
+        and take "Draft option" out of the kicker.
+      </aside>
+    </section>
+
+    <section class="slide s-split s-gap" data-hue="6" data-reserve="17 October 2026">
+      <p class="kicker">The GxP gap · Draft option C</p>
+      <h2>Don't judge AI by what you can do on a trial.</h2>
+      <svg class="gapchart wide" viewBox="0 0 1320 440" role="img" aria-label="Illustration, not data: two lines diverge up to today. A bracket from the baseline to the clinical trial tools line is labelled what you see at work; a bracket from there up to the frontier line is labelled what you are not seeing.">
+        <text class="cap" x="60" y="18">Illustration, not data</text>
+        <line class="base" x1="60" x2="1000" y1="400" y2="400"/>
+        <line class="today" x1="1000" x2="1000" y1="30" y2="400"/>
+        <path class="wedge" d="M60,340 C440,330 760,250 1000,40 L1000,290 C760,320 440,340 60,350 Z"/>
+        <path class="ln front" d="M60,340 C440,330 760,250 1000,40"/>
+        <path class="ln clin" d="M60,350 C440,340 760,320 1000,290"/>
+        <circle class="dot front" cx="1000" cy="40" r="7"/>
+        <circle class="dot clin" cx="1000" cy="290" r="7"/>
+        <text class="lab" x="960" y="34" text-anchor="end">Frontier capabilities</text>
+        <text class="lab" x="980" y="364" text-anchor="end">Clinical trial tools</text>
+        <path class="brk" d="M1030,398 h14 V294 h-14"/>
+        <path class="brk hl" d="M1030,286 h14 V44 h-14"/>
+        <text class="blab" x="1066" y="340">What you see</text>
+        <text class="blab" x="1066" y="372">at work</text>
+        <text class="blab hl" x="1066" y="160">What you're</text>
+        <text class="blab hl" x="1066" y="194">not seeing</text>
+        <text class="ax" x="60" y="428">A year ago</text>
+        <text class="ax" x="1000" y="428" text-anchor="end">Today</text>
+      </svg>
+      <p class="take">The rules at work are right. They also show you a fraction of what these tools can do.</p>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        Draft option C for slide 51's chart, 2026-10-17 (Jeremy: "Show me a few options"). The
+        two lines stop at today, and two brackets on the right turn the gap into the headline's
+        point: the lower one is what you see at work, the upper one is what you are not seeing.
+        No gap wedge label; the bracket says it. A drawing, not data.
       </aside>
     </section>
 
