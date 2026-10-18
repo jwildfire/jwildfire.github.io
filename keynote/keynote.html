@@ -705,6 +705,7 @@
     .s-graphic .todo p { font-size: 30px; margin: 0 0 14px; }
     .s-graphic .todo li { font-size: 26px; margin-bottom: 8px; }
     .slide .more { font-family: var(--mono); font-size: 24px; color: var(--soft); margin: 22px 0 8px; }
+    .slide cite a, .slide .salt a, .s-meds small a, .s-meds .meds-pts a, .s-title .byline a { color: inherit; text-decoration: underline; text-decoration-color: var(--hue); text-decoration-thickness: 2px; text-underline-offset: 4px; }
     .slide .more a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--hue); text-decoration-thickness: 3px; text-underline-offset: 6px; }
     /* TODO boxes are filled orange so they cannot be missed (Jeremy, 2026-10-06). A
        <div class="todo"> works in any layout; these rules override the paler ones above. */
@@ -1054,7 +1055,7 @@
       </svg>
       <p class="kicker">R/Pharma 2026 · Keynote</p>
       <h1>Building open-source clinical trial tools with <span class="spectrum">agentic AI</span></h1>
-      <p class="byline"><strong>Jeremy Wildfire</strong> · 21 October 2026 · jwildfire.github.io/keynote</p>
+      <p class="byline"><strong>Jeremy Wildfire</strong> · 21 October 2026 · <a href="https://jwildfire.github.io/keynote/" target="_blank" rel="noopener">jwildfire.github.io/keynote</a></p>
       <aside class="notes">
         <strong class="say">Hi I'm Jeremy and I work on building open source
         tools for clinical trials. I've spent the last few years trying to figure out how AI
@@ -1775,8 +1776,8 @@
 
     <section class="slide s-quote" data-hue="3">
       <p class="kicker">AI in the pipeline</p>
-      <blockquote>We use AI heavily, but it's <em>not autonomous.</em> Humans own the process and all deliverables.</blockquote>
-      <cite>— developer diary #1, 10 June 2026</cite>
+      <blockquote>We use AI heavily, but it's not autonomous. Humans own the process and all deliverables.</blockquote>
+      <cite>— <a href="https://jwildfire.github.io/2026/06/10/rpharma-keynote-developer-diary.html" target="_blank" rel="noopener">developer diary #1, 10 June 2026</a></cite>
       <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Writing code!</p><p class="when">as of Q4 2025</p></div><div class="who"><i>👍</i></div></div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
@@ -3921,7 +3922,7 @@ steps:
           <p class="who">23 Sep · Rails World keynote</p>
           <p class="big"><a href="https://www.youtube.com/watch?v=vDjW_dRyKXY" target="_blank" rel="noopener">Done coding by hand</a></p>
           <q>At 37signals, a couple of weeks ago, we made the decision that it clearly means we’re done writing code by hand.</q>
-          <cite>David Heinemeier Hansson, creator of Ruby on Rails</cite>
+          <cite>David Heinemeier Hansson, creator of Ruby on Rails · as transcribed in <a href="https://newsletter.pragmaticengineer.com/p/the-pulse-ror-creator-sparks-new" target="_blank" rel="noopener">The Pragmatic Engineer</a>, 1 Oct</cite>
         </div>
         <div class="card step" style="--c: var(--spec-4)">
           <p class="who">15 Oct · Claude Code team</p>
@@ -4102,7 +4103,7 @@ steps:
     <section class="slide s-quote" data-hue="6">
       <p class="kicker">We can think bigger</p>
       <blockquote style="font-size: 58px">“I think that most people are underestimating just how radical the upside of AI could be, just as I think most people are underestimating how bad the risks could be.”</blockquote>
-      <cite>Dario Amodei · Machines of Loving Grace · October 2024</cite>
+      <cite>Dario Amodei · <a href="https://www.darioamodei.com/essay/machines-of-loving-grace" target="_blank" rel="noopener">Machines of Loving Grace</a> · October 2024</cite>
       <div class="goodat hack sm step" style="bottom: 84px"><div class="bub" style="max-width: 780px"><p class="a" style="font-size: 27px; line-height: 1.25">Take it with a big grain of salt. Then look at the last year.</p></div><div class="who"></div></div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
@@ -4122,7 +4123,7 @@ steps:
         <br>AI Digest, "A new Moore's Law for AI agents" (METR's time-horizon trend), last updated
         March 2026, https://theaidigest.org/time-horizons
         <br>Sun, Gao, Hu and Zhou, "Why 90% of clinical drug development fails and how to improve
-        it?", Acta Pharmaceutica Sinica B, 2022, https://doi.org/10.1016/j.apsb.2022.02.002
+        it?", Acta Pharmaceutica Sinica B, 2022, https://pmc.ncbi.nlm.nih.gov/articles/PMC9293739/
         <br><br>Chosen 2026-10-18 (Jeremy: "option B for the close. Create and i'll tweak").
         Draft tag removed; wording is still his to tweak. Options A and C are in the reserves.
       </aside>
@@ -4134,23 +4135,23 @@ steps:
       <div class="cards">
         <div class="card step" style="--c: var(--spec-4)">
           <p class="big">50–100 years in 5–10</p>
-          <q>…AI-enabled biology and medicine will allow us to compress the progress that human biologists would have achieved over the next 50-100 years into 5-10 years.</q>
-          <cite>Dario Amodei, Anthropic · Machines of Loving Grace · Oct 2024</cite>
+          <q>…my basic prediction is that AI-enabled biology and medicine will allow us to compress the progress that human biologists would have achieved over the next 50-100 years into 5-10 years.</q>
+          <cite>Dario Amodei, Anthropic · <a href="https://www.darioamodei.com/essay/machines-of-loving-grace" target="_blank" rel="noopener">Machines of Loving Grace</a> · Oct 2024</cite>
         </div>
         <div class="card step" style="--c: var(--spec-3)">
           <p class="big">The end of disease?</p>
           <q>I think that’s within reach. Maybe within the next decade or so, I don’t see why not.</q>
-          <cite>Demis Hassabis, Google DeepMind, asked “The end of disease?” · 60 Minutes · Apr 2025</cite>
+          <cite>Demis Hassabis, Google DeepMind, asked “The end of disease?” · <a href="https://www.cbsnews.com/news/artificial-intelligence-google-deepmind-ceo-demis-hassabis-60-minutes-transcript/" target="_blank" rel="noopener">60 Minutes</a> · Apr 2025</cite>
         </div>
         <div class="card step" style="--c: var(--spec-5)">
           <p class="big">Doubling every 7 months</p>
           <ul class="proj">
-            <li class="lead">The length of coding tasks agents can finish. If the trend holds:</li>
+            <li class="lead">The length of coding tasks agents succeed at 50% of the time. If the trend holds:</li>
             <li><b>2027</b> 1 work day (8 hours)</li>
             <li><b>2028</b> 1 work week (40 hours)</li>
             <li><b>2029</b> 1 work month (167 hours)</li>
           </ul>
-          <cite>METR's trend since 2019, via AI Digest · theaidigest.org/time-horizons · Mar 2026</cite>
+          <cite>METR's trend since 2019, via AI Digest · <a href="https://theaidigest.org/time-horizons" target="_blank" rel="noopener">theaidigest.org/time-horizons</a> · Mar 2026</cite>
         </div>
       </div>
       <p class="salt">Forecasts, not facts · read with a large grain of salt</p>
@@ -4170,7 +4171,7 @@ steps:
         <br>AI Digest, "A new Moore's Law for AI agents" (METR's time-horizon trend), last updated
         March 2026, https://theaidigest.org/time-horizons
         <br>Sun, Gao, Hu and Zhou, "Why 90% of clinical drug development fails and how to improve
-        it?", Acta Pharmaceutica Sinica B, 2022, https://doi.org/10.1016/j.apsb.2022.02.002
+        it?", Acta Pharmaceutica Sinica B, 2022, https://pmc.ncbi.nlm.nih.gov/articles/PMC9293739/
         <br><br>Chosen 2026-10-18 (Jeremy: "option B for the close. Create and i'll tweak").
         Draft tag removed; wording is still his to tweak. Options A and C are in the reserves.
       </aside>
@@ -4180,18 +4181,18 @@ steps:
       <p class="kicker">What the gap means</p>
       <h2>The gap is measured in medicines.</h2>
       <div class="bars">
-        <p class="nm">One drug, today<small>to design it · Hassabis</small></p>
+        <p class="nm">One drug, today<small>to design it · <a href="https://www.cbsnews.com/news/artificial-intelligence-google-deepmind-ceo-demis-hassabis-60-minutes-transcript/" target="_blank" rel="noopener">Hassabis</a></small></p>
         <div class="row"><div class="bar" style="--c: var(--spec-1); width: 1000px"></div></div>
         <span></span>
-        <p class="v" style="margin: -8px 0 0">“ten years and billions of dollars”<small>and about 90% of drug candidates that enter clinical trials fail (Sun et al., 2022)</small></p>
+        <p class="v" style="margin: -8px 0 0">“ten years and billions of dollars”<small>and about 90% of drug candidates that enter clinical trials fail (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9293739/" target="_blank" rel="noopener">Sun et al., 2022</a>)</small></p>
         <p class="nm step">COVID mRNA vaccines<small>the fast case</small></p>
-        <div class="row step"><div class="bar" style="--c: var(--spec-1); width: 75px"></div><p class="v">9 months<small>Amodei: they “arguably should have been approved in ~2 months”</small></p></div>
-        <p class="nm step">The forecast<small>Hassabis, 60 Minutes</small></p>
+        <div class="row step"><div class="bar" style="--c: var(--spec-1); width: 75px"></div><p class="v">9 months<small><a href="https://www.darioamodei.com/essay/machines-of-loving-grace" target="_blank" rel="noopener">Amodei</a>: they “arguably should have been approved in ~2 months”</small></p></div>
+        <p class="nm step">The forecast<small>to design it · <a href="https://www.cbsnews.com/news/artificial-intelligence-google-deepmind-ceo-demis-hassabis-60-minutes-transcript/" target="_blank" rel="noopener">Hassabis</a></small></p>
         <div class="row step"><div class="bar hatch" style="--c: var(--spec-4); width: 40px"></div><p class="v">Months, maybe weeks<small>“We can maybe reduce that down from years to maybe months or maybe even weeks.”</small></p></div>
         <div class="ruler"><span>0</span><span>2 years</span><span>4</span><span>6</span><span>8</span><span>10 years</span></div>
       </div>
       <ul class="meds-pts">
-        <li class="step">The FDA already reviews with AI: Elsa for all staff since June 2025, agents since December 2025.</li>
+        <li class="step">The FDA already reviews with AI: <a href="https://www.fda.gov/news-events/press-announcements/fda-launches-agency-wide-ai-tool-optimize-performance-american-people" target="_blank" rel="noopener">Elsa for all staff since June 2025</a>, <a href="https://www.fda.gov/news-events/press-announcements/fda-expands-artificial-intelligence-capabilities-agentic-ai-deployment" target="_blank" rel="noopener">agents since December 2025</a>.</li>
         <li class="step">Clinical trial tools set the pace. That is where we come in.</li>
       </ul>
       <aside class="notes">
@@ -4213,8 +4214,8 @@ steps:
         June 2025 "ahead of schedule and under budget", used "to accelerate clinical protocol
         reviews" among other things
         (https://www.fda.gov/news-events/press-announcements/fda-launches-agency-wide-ai-tool-optimize-performance-american-people);
-        agentic AI capabilities for all employees on 1 December 2025, optional to use (from
-        press coverage, e.g. PharmExec, 2 December 2025); Elsa 4.0 with custom agents, available
+        agentic AI capabilities "for all agency employees", "entirely optional", on 1 December
+        2025 (https://www.fda.gov/news-events/press-announcements/fda-expands-artificial-intelligence-capabilities-agentic-ai-deployment); Elsa 4.0 with custom agents, available
         to all FDA staff, on 6 May 2026, with "human subject matter experts" verifying "all
         inputs, analytic processes, and output implementation"
         (https://www.fda.gov/news-events/press-announcements/fda-expands-ai-capabilities-and-completes-data-platform-consolidation).
@@ -4229,7 +4230,7 @@ steps:
         <br>AI Digest, "A new Moore's Law for AI agents" (METR's time-horizon trend), last updated
         March 2026, https://theaidigest.org/time-horizons
         <br>Sun, Gao, Hu and Zhou, "Why 90% of clinical drug development fails and how to improve
-        it?", Acta Pharmaceutica Sinica B, 2022, https://doi.org/10.1016/j.apsb.2022.02.002
+        it?", Acta Pharmaceutica Sinica B, 2022, https://pmc.ncbi.nlm.nih.gov/articles/PMC9293739/
         <br><br>Chosen 2026-10-18 (Jeremy: "option B for the close. Create and i'll tweak").
         Draft tag removed; wording is still his to tweak. Options A and C are in the reserves.
       </aside>
@@ -4241,7 +4242,7 @@ steps:
       <ol>
         <li><i>1</i><b>Pick an agent</b><span>Claude or Codex, $20 for a month. Others are fine too.</span></li>
         <li><i>2</i><b>Set up GitHub</b><span>A free account is fine.</span></li>
-        <li><i>3</i><b>Pick a development process</b><span>For R: Hadley Wickham's R Packages book, free at r-pkgs.org.</span></li>
+        <li><i>3</i><b>Pick a development process</b><span>For R: Hadley Wickham's R Packages book, free at <a href="https://r-pkgs.org/" target="_blank" rel="noopener">r-pkgs.org</a>.</span></li>
         <li><i>4</i><b>Write a prompt</b><p class="ask">Make me an Open Source R package that does X. Include a working example and user guide in GitHub pages. Follow all of the best practices in Hadley Wickham's R Packages book.</p></li>
         <li><i>5</i><b>Ask questions!</b><p class="ask">Explain how you did X</p></li>
       </ol>
