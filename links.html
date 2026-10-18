@@ -1,0 +1,39 @@
+---
+layout: default
+title: Links
+permalink: /links/
+---
+{%- comment -%}
+  Every quick hit (_links/), newest first and grouped by month, each with its
+  quote and comment in full. The homepage News feed shows the same items shortened.
+{%- endcomment -%}
+<link href="/css/override.css" rel="stylesheet" type="text/css">
+<div class="qh-list-page">
+  <h1 class="page-heading">Links</h1>
+  <p class="qh-intro">Quick hits: things I've been reading, with a line or two on why. Longer pieces are on the <a href="{{ "/" | relative_url }}">home page</a>. Subscribe to just these <a href="{{ "/feed/links.xml" | relative_url }}">via RSS</a>.</p>
+
+  {%- assign links = site.links | where_exp: "l", "l.published != false" | reverse -%}
+  {%- if links.size == 0 -%}
+  <p class="qh-empty">Nothing here yet.</p>
+  {%- endif -%}
+  {%- assign months = links | group_by_exp: "l", "l.date | date: '%Y-%m'" -%}
+  {%- for month in months -%}
+  <section class="qh-month">
+    <h2 class="qh-month-head">{{ month.items.first.date | date: "%B %Y" }}</h2>
+    <ul class="qh-items">
+      {%- for l in month.items -%}
+      <li class="qh-item" id="{{ l.slug }}">
+        <p class="qh-item-head">
+          <span class="qh-item-date">{{ l.date | date: "%b %-d" }}</span>
+          <a class="qh-item-title" href="{{ l.link }}" rel="noopener">{{ l.title | escape }}<span class="qh-arr" aria-hidden="true">&#8599;</span></a>
+          {%- if l.source %} <span class="qh-src">{{ l.source | escape }}</span>{% endif -%}
+        </p>
+        {%- if l.quote -%}<blockquote class="qh-quote">{{ l.quote | markdownify }}</blockquote>{%- endif -%}
+        <div class="qh-comment">{{ l.content }}</div>
+        <a class="qh-perma" href="{{ l.url | relative_url }}" title="Permalink">#</a>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </section>
+  {%- endfor -%}
+</div>

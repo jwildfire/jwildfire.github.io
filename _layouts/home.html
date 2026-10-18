@@ -17,6 +17,7 @@
 
           <nav class="wf-nav" aria-label="Site sections">
             <a href="#news">News <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
+            <a href="{{ "/links/" | relative_url }}">Links <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
             <a href="{{ "/projects/" | relative_url }}">Projects <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
             <a href="{{ "/keynote/" | relative_url }}">R/Pharma keynote <span class="wf-arr" aria-hidden="true">&rarr;</span></a>
             {%- if site.cv_url -%}
@@ -41,9 +42,10 @@
             <h2>News</h2>
             <div class="wf-toggle" role="group" aria-label="Show in the news feed">
               <button type="button" class="wf-tog" data-kind="posts" aria-pressed="true"><span class="wf-ico wf-ico-post" aria-hidden="true"></span>Writing</button>
+              <button type="button" class="wf-tog" data-kind="links" aria-pressed="true"><span class="wf-ico wf-ico-link" aria-hidden="true"></span>Links</button>
               <button type="button" class="wf-tog" data-kind="releases" aria-pressed="true"><span class="wf-ico wf-ico-rel" aria-hidden="true"></span>Releases</button>
             </div>
-            <span class="wf-count">{{ site.posts | size }} posts &middot; {{ site.data.releases | size }} releases</span>
+            <span class="wf-count">{{ site.posts | size }} posts &middot; {{ site.links | size }} links &middot; {{ site.data.releases | size }} releases</span>
           </div>
 
           {{ content }}
@@ -55,16 +57,18 @@
           </a>
 
           {%- comment -%}
-            One timeline of posts and package releases (_data/releases.yml), grouped by
-            month. Liquid cannot sort a mixed array of posts and data rows, so each item
-            is reduced to a sortable key, "YYYY-MM-DD|kind|rindex": kind is p (post) or
-            r (release) and rindex counts from the end of the source list, so that after
-            the descending sort newer entries sort first within a day. The keys are
+            One timeline of posts, quick hits (_links/) and package releases
+            (_data/releases.yml), grouped by month. Liquid cannot sort a mixed array of
+            posts, documents and data rows, so each item is reduced to a sortable key,
+            "YYYY-MM-DD|kind|index": kind is p (post), l (link) or r (release), and the
+            index is chosen so that after the descending sort newer entries sort first
+            within a day (posts and releases are listed newest first, so they count from
+            the end; links are listed oldest first, so they count from the start). The keys are
             sorted, grouped by their first seven characters (the month), and each is
             decoded back to its post or release when rendered. Each month gets a
             wf-hue-N class (N = position mod 7) that colours its hex marker; the same
             index is used in the "By month" rail so the two stay in step. The Writing /
-            Releases buttons above filter the list client-side (js/news-filter.js).
+            Links / Releases buttons above filter the list client-side (js/news-filter.js).
           {%- endcomment -%}
           {%- assign n_posts = site.posts | size -%}
           {%- assign n_releases = site.data.releases | size -%}
@@ -72,6 +76,11 @@
           {%- for post in site.posts -%}
             {%- assign ri = forloop.rindex0 | prepend: "000" | slice: -3, 3 -%}
             {%- assign key = post.date | date: "%Y-%m-%d" | append: "|p|" | append: ri -%}
+            {%- assign keys = keys | append: key | append: "," -%}
+          {%- endfor -%}
+          {%- for l in site.links -%}
+            {%- assign ri = forloop.index0 | prepend: "000" | slice: -3, 3 -%}
+            {%- assign key = l.date | date: "%Y-%m-%d" | append: "|l|" | append: ri -%}
             {%- assign keys = keys | append: key | append: "," -%}
           {%- endfor -%}
           {%- for rel in site.data.releases -%}
@@ -82,25 +91,26 @@
           {%- assign keys = keys | split: "," | sort | reverse -%}
           {%- assign months = keys | group_by_exp: "k", "k | slice: 0, 7" -%}
 
-          <div class="wf-writing" id="writing" data-show="all">
+          <div class="wf-writing" id="writing" data-hide="">
 
             <div class="wf-writing-list">
               {%- for month in months -%}
               {%- assign first_day = month.items | first | slice: 0, 10 -%}
               {%- assign hue = forloop.index0 | modulo: 7 -%}
-              {%- assign np = 0 -%}{%- assign nr = 0 -%}
+              {%- assign np = 0 -%}{%- assign nl = 0 -%}{%- assign nr = 0 -%}
               {%- for k in month.items -%}
-                {%- if k contains "|p|" -%}{%- assign np = np | plus: 1 -%}{%- else -%}{%- assign nr = nr | plus: 1 -%}{%- endif -%}
+                {%- if k contains "|p|" -%}{%- assign np = np | plus: 1 -%}{%- elsif k contains "|l|" -%}{%- assign nl = nl | plus: 1 -%}{%- else -%}{%- assign nr = nr | plus: 1 -%}{%- endif -%}
               {%- endfor -%}
-              <section class="wf-month wf-hue-{{ hue }}" id="m-{{ month.name }}" aria-labelledby="mh-{{ month.name }}" data-posts="{{ np }}" data-releases="{{ nr }}">
+              <section class="wf-month wf-hue-{{ hue }}" id="m-{{ month.name }}" aria-labelledby="mh-{{ month.name }}" data-posts="{{ np }}" data-links="{{ nl }}" data-releases="{{ nr }}">
                 <h3 class="wf-month-head" id="mh-{{ month.name }}">
                   <span class="wf-hex" aria-hidden="true"></span>
                   {{ first_day | date: "%B %Y" }}
-                  <span class="wf-month-n">
-                    {%- if np > 0 %}<span class="wf-n-posts">{{ np }} post{% if np != 1 %}s{% endif %}</span>{% endif -%}
-                    {%- if np > 0 and nr > 0 %}<span class="wf-n-sep"> &middot; </span>{% endif -%}
-                    {%- if nr > 0 %}<span class="wf-n-releases">{{ nr }} release{% if nr != 1 %}s{% endif %}</span>{% endif -%}
-                  </span>
+                  {%- comment -%} js/news-filter.js rewrites this line to count only the kinds shown. {%- endcomment -%}
+                  {%- assign parts_n = "" | split: "" -%}
+                  {%- if np > 0 -%}{%- capture t -%}{{ np }} post{% if np != 1 %}s{% endif %}{%- endcapture -%}{%- assign parts_n = parts_n | push: t -%}{%- endif -%}
+                  {%- if nl > 0 -%}{%- capture t -%}{{ nl }} link{% if nl != 1 %}s{% endif %}{%- endcapture -%}{%- assign parts_n = parts_n | push: t -%}{%- endif -%}
+                  {%- if nr > 0 -%}{%- capture t -%}{{ nr }} release{% if nr != 1 %}s{% endif %}{%- endcapture -%}{%- assign parts_n = parts_n | push: t -%}{%- endif -%}
+                  <span class="wf-month-n">{{ parts_n | join: " &middot; " }}</span>
                 </h3>
                 <ul class="wf-posts">
                   {%- for k in month.items -%}
@@ -113,6 +123,21 @@
                     <span class="wf-post-body">
                       <a class="wf-post-title" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
                       {%- if post.excerpt -%}<span class="wf-post-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 180 }}</span>{%- endif -%}
+                    </span>
+                  </li>
+                  {%- elsif parts[1] == "l" -%}
+                  {%- assign li = parts[2] | plus: 0 -%}
+                  {%- assign l = site.links[li] -%}
+                  <li class="wf-item-link">
+                    <span class="wf-post-date"><span class="wf-ico wf-ico-link" aria-hidden="true"></span>{{ l.date | date: "%b %-d" }}</span>
+                    <span class="wf-link-body">
+                      <span class="wf-link-head">
+                        <a class="wf-link-title" href="{{ l.link }}" rel="noopener">{{ l.title | escape }}<span class="wf-link-arr" aria-hidden="true">&#8599;</span></a>
+                        {%- if l.source %} <span class="wf-link-src">{{ l.source | escape }}</span>{% endif -%}
+                      </span>
+                      {%- assign note = l.content | strip_html | normalize_whitespace | strip -%}
+                      {%- if note == "" and l.quote -%}{%- assign note = l.quote | strip_html | normalize_whitespace | prepend: "“" | append: "”" -%}{%- endif -%}
+                      <span class="wf-link-note">{{ note | truncate: 200 }} <a class="wf-link-perma" href="{{ l.url | relative_url }}">Note&nbsp;&rarr;</a></span>
                     </span>
                   </li>
                   {%- else -%}
@@ -146,15 +171,15 @@
                 {%- assign first_day = month.items | first | slice: 0, 10 -%}
                 {%- assign year = first_day | slice: 0, 4 -%}
                 {%- assign hue = forloop.index0 | modulo: 7 -%}
-                {%- assign np = 0 -%}{%- assign nr = 0 -%}
+                {%- assign np = 0 -%}{%- assign nl = 0 -%}{%- assign nr = 0 -%}
                 {%- for k in month.items -%}
-                  {%- if k contains "|p|" -%}{%- assign np = np | plus: 1 -%}{%- else -%}{%- assign nr = nr | plus: 1 -%}{%- endif -%}
+                  {%- if k contains "|p|" -%}{%- assign np = np | plus: 1 -%}{%- elsif k contains "|l|" -%}{%- assign nl = nl | plus: 1 -%}{%- else -%}{%- assign nr = nr | plus: 1 -%}{%- endif -%}
                 {%- endfor -%}
                 {%- if year != prev_year -%}
                 <li class="wf-months-year" aria-hidden="true">{{ year }}</li>
                 {%- assign prev_year = year -%}
                 {%- endif -%}
-                <li data-month="m-{{ month.name }}" data-posts="{{ np }}" data-releases="{{ nr }}">
+                <li data-month="m-{{ month.name }}" data-posts="{{ np }}" data-links="{{ nl }}" data-releases="{{ nr }}">
                   <a class="wf-hue-{{ hue }}" href="#m-{{ month.name }}">
                     <span class="wf-hex" aria-hidden="true"></span>
                     <span class="wf-months-m">{{ first_day | date: "%B" }}<span class="wf-months-yr"> {{ year }}</span></span>
@@ -171,6 +196,7 @@
         <footer class="wf-foot">
           <!-- The tagline sits in the rail on this page, so the footer is just links. -->
           <p class="wf-foot-links">
+            <a href="{{ "/links/" | relative_url }}">Links</a>
             <a href="{{ "/projects/" | relative_url }}">Projects</a>
             {%- if site.cv_url -%}<a href="{{ site.cv_url }}" rel="noopener">CV</a>{%- endif -%}
             <a href="mailto:{{ site.email }}">Email</a>
