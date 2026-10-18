@@ -1031,6 +1031,8 @@
     .s-gap .gapchart .wedge.ahead { fill: var(--spec-6); opacity: 0.16; }
     .s-gap .gapchart .gnote { font-family: var(--serif); font-size: 34px; fill: var(--ink); }
     .s-gap .gapchart .anote { font-family: var(--sans); font-size: 19px; fill: var(--soft); }
+    .s-reads .card .big a { color: inherit; text-decoration: underline; text-decoration-color: var(--c); text-decoration-thickness: 3px; text-underline-offset: 6px; }
+    .s-reads .card .who { font-family: var(--mono); font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--soft); margin: 0; }
   </style>
 </head>
 <body>
@@ -3911,6 +3913,59 @@ steps:
     </section>
 
     <!-- 4 · the GxP gap, a year on (2026-10-17) -->
+    <section class="slide s-preds s-reads" data-hue="6">
+      <p class="kicker">How fast it is moving</p>
+      <h2>New ways of working, written up in public.</h2>
+      <div class="cards">
+        <div class="card step" style="--c: var(--spec-0)">
+          <p class="who">23 Sep · Rails World keynote</p>
+          <p class="big"><a href="https://www.youtube.com/watch?v=vDjW_dRyKXY" target="_blank" rel="noopener">Done coding by hand</a></p>
+          <q>At 37signals, a couple of weeks ago, we made the decision that it clearly means we’re done writing code by hand.</q>
+          <cite>David Heinemeier Hansson, creator of Ruby on Rails</cite>
+        </div>
+        <div class="card step" style="--c: var(--spec-4)">
+          <p class="who">15 Oct · Claude Code team</p>
+          <p class="big"><a href="https://claude.dev/blog/solving-code-review-at-anthropic/" target="_blank" rel="noopener">Review, moved to machines</a></p>
+          <q>We didn’t remove review. But we did move most of the reading to machines…</q>
+          <cite>Addy Osmani, Morgan Westlee Lunt and Qing Wang · How the Claude Code team does code review</cite>
+        </div>
+        <div class="card step" style="--c: var(--spec-5)">
+          <p class="who">16 Oct · Anthropic research</p>
+          <p class="big"><a href="https://www.anthropic.com/research/employment-at-anthropic" target="_blank" rel="noopener">Attention is the bottleneck</a></p>
+          <q>This acceleration makes human attention the bottleneck for agent output.</q>
+          <cite>How employment is changing at Anthropic</cite>
+        </div>
+      </div>
+      <p class="salt">From my reading list · all in the four weeks before this talk</p>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        Added 2026-10-18 (Jeremy: "add a few very recent links from my ai reading list in
+        reminders to demonstrate how much active work is being done on frontier ways of working
+        with agents. The addy osmani post, the anthropic ways of working post and the talk from
+        Ruby greators on coding by hand"). Three items from his AI Reading list in Reminders,
+        oldest first, one per press. Each headline is a link. Kicker, headline and card titles
+        are draft wording for him to replace.
+        <br><br>Sources, checked word for word on 2026-10-18:
+        <br>DHH, Rails World 2026 opening keynote, uploaded 23 September 2026,
+        https://www.youtube.com/watch?v=vDjW_dRyKXY. The quote is as transcribed by Gergely
+        Orosz, The Pragmatic Engineer, 1 October 2026 ("RoR creator sparks new 'death of coding
+        by hand' debate",
+        https://newsletter.pragmaticengineer.com/p/the-pulse-ror-creator-sparks-new); the video
+        itself was not watched. It is "for professional work – at 37signals at least", in
+        Orosz's words. In the same talk DHH dates the shift to 24 November 2025, the day the
+        timeline on the slide before starts (Opus 4.5).
+        <br>Addy Osmani, Morgan Westlee Lunt and Qing Wang, "How the Claude Code team does code
+        review", 15 October 2026, https://claude.dev/blog/solving-code-review-at-anthropic/. The
+        sentence goes on: "optimized for human time and attention, and invested heavily in making
+        it fast and easy to undo mistakes."
+        <br>Wilmers, Catipon, Massenkoff and McCrory, "How employment is changing at Anthropic",
+        Anthropic, 16 October 2026, https://www.anthropic.com/research/employment-at-anthropic.
+        The next sentence: reading all the output of their Claude agents would take
+        non-technical employees half their work week. It also reports relatively less hiring for
+        junior technical roles.
+      </aside>
+    </section>
+
     <section class="slide s-split s-gap" data-hue="6">
       <p class="kicker">The gap, a year from now</p>
       <h2>We're at the beginning.</h2>
