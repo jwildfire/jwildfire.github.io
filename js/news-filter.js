@@ -1,11 +1,13 @@
-/* Homepage news feed: Writing / Releases toggles (_layouts/home.html).
+/* Homepage news feed: Writing / Links / Releases toggles (_layouts/home.html).
  *
- * The list is fully rendered by Jekyll with both kinds present. This script
- * only sets data-show on .wf-writing (all | posts | releases), which the CSS
- * uses to hide one kind, then hides any month that has nothing left to show,
- * both in the list and in the "By month" rail, and updates the rail counts.
- * Without JavaScript everything stays visible. The choice is remembered per
- * browser in localStorage and can be preset with ?show=writing|releases.
+ * The list is fully rendered by Jekyll with every kind present. This script
+ * only sets data-hide on .wf-writing (a space-separated list of the kinds
+ * switched off: posts, links, releases), which the CSS uses to hide those
+ * items, then hides any month that has nothing left to show, both in the list
+ * and in the "By month" rail, and rewrites the month counts. Without
+ * JavaScript everything stays visible. The choice is remembered per browser in
+ * localStorage and can be preset with ?show=writing|links|releases|all (or a
+ * comma-separated mix such as ?show=writing,links).
  */
 (function () {
   var wrap = document.querySelector('.wf-writing');
@@ -13,29 +15,28 @@
   if (!wrap || !buttons.length) return;
 
   var KEY = 'wf-news-show';
-  var state = { posts: true, releases: true };
+  var KINDS = ['posts', 'links', 'releases'];
+  var NOUN = { posts: 'post', links: 'link', releases: 'release' };
+  var state = { posts: true, links: true, releases: true };
 
-  function mode() {
-    if (state.posts && state.releases) return 'all';
-    return state.posts ? 'posts' : 'releases';
+  function shown() {
+    return KINDS.filter(function (k) { return state[k]; });
   }
 
   function apply(save) {
-    var m = mode();
-    wrap.setAttribute('data-show', m);
+    wrap.setAttribute('data-hide', KINDS.filter(function (k) { return !state[k]; }).join(' '));
     buttons.forEach(function (b) {
       b.setAttribute('aria-pressed', state[b.getAttribute('data-kind')] ? 'true' : 'false');
     });
 
     // Hide months left empty by the current filter, in the list and the rail.
-    var visible = {};
     wrap.querySelectorAll('.wf-month').forEach(function (sec) {
-      var n = count(sec, m);
-      sec.hidden = n === 0;
-      visible[sec.id] = n;
+      sec.hidden = total(sec) === 0;
+      var out = sec.querySelector('.wf-month-n');
+      if (out) out.textContent = label(sec);
     });
     wrap.querySelectorAll('.wf-months li[data-month]').forEach(function (li) {
-      var n = count(li, m);
+      var n = total(li);
       li.hidden = n === 0;
       var out = li.querySelector('.wf-months-n');
       if (out) out.textContent = n;
@@ -52,24 +53,30 @@
     });
 
     if (save) {
-      try { localStorage.setItem(KEY, m); } catch (e) { /* private mode etc. */ }
+      try { localStorage.setItem(KEY, shown().join(',')); } catch (e) { /* private mode etc. */ }
     }
   }
 
-  function count(el, m) {
-    var p = +el.getAttribute('data-posts') || 0;
-    var r = +el.getAttribute('data-releases') || 0;
-    return m === 'posts' ? p : m === 'releases' ? r : p + r;
+  function n(el, kind) { return +el.getAttribute('data-' + kind) || 0; }
+
+  function total(el) {
+    return shown().reduce(function (sum, k) { return sum + n(el, k); }, 0);
+  }
+
+  // "2 posts · 1 link", counting only the kinds shown.
+  function label(el) {
+    return shown().filter(function (k) { return n(el, k) > 0; }).map(function (k) {
+      var c = n(el, k);
+      return c + ' ' + NOUN[k] + (c === 1 ? '' : 's');
+    }).join(' · ');
   }
 
   buttons.forEach(function (b) {
     b.addEventListener('click', function () {
       var kind = b.getAttribute('data-kind');
-      var other = kind === 'posts' ? 'releases' : 'posts';
-      if (state[kind] && !state[other]) {
-        // Never leave the list empty: switching off the last kind swaps to the other.
-        state[kind] = false;
-        state[other] = true;
+      // Never leave the list empty: switching off the last kind shown brings the others back.
+      if (state[kind] && shown().length === 1) {
+        KINDS.forEach(function (k) { state[k] = k !== kind; });
       } else {
         state[kind] = !state[kind];
       }
@@ -77,18 +84,21 @@
     });
   });
 
-  // Initial state: URL parameter wins, then the remembered choice, then both.
+  // Initial state: URL parameter wins, then the remembered choice, then everything.
+  // Older saved values ("all", "posts", "releases") still read correctly.
+  function parse(v) {
+    if (!v) return null;
+    if (v === 'all') return KINDS.slice();
+    var ks = v.split(',').map(function (s) {
+      s = s.trim();
+      return s === 'writing' ? 'posts' : s;
+    }).filter(function (s) { return KINDS.indexOf(s) !== -1; });
+    return ks.length ? ks : null;
+  }
   var preset = null;
   try {
-    var q = new URLSearchParams(location.search).get('show');
-    if (q === 'writing' || q === 'posts') preset = 'posts';
-    else if (q === 'releases') preset = 'releases';
-    else if (q === 'all') preset = 'all';
-    if (!preset) preset = localStorage.getItem(KEY);
+    preset = parse(new URLSearchParams(location.search).get('show')) || parse(localStorage.getItem(KEY));
   } catch (e) { /* ignore */ }
-  if (preset === 'posts' || preset === 'releases') {
-    state.posts = preset === 'posts';
-    state.releases = preset === 'releases';
-  }
+  if (preset) KINDS.forEach(function (k) { state[k] = preset.indexOf(k) !== -1; });
   apply(false);
 })();

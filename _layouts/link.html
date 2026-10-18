@@ -1,0 +1,34 @@
+---
+layout: default
+---
+{%- comment -%}
+  One quick hit (_links/): the shared page as the title, its source and date, the
+  quote if there is one, and the comment (the file's body). The title links out to
+  the page; this page is the permalink people can share.
+{%- endcomment -%}
+<link href="/css/override.css" rel="stylesheet" type="text/css">
+<article class="post h-entry qh-page" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <p class="qh-kicker"><span class="wf-ico wf-ico-link" aria-hidden="true"></span><a href="{{ "/links/" | relative_url }}">Quick hit</a></p>
+    <h1 class="post-title p-name" itemprop="name headline">
+      <a class="qh-out" href="{{ page.link }}" rel="noopener">{{ page.title | escape }}<span class="qh-arr" aria-hidden="true">&#8599;</span></a>
+    </h1>
+    <p class="post-meta">
+      {%- if page.source -%}<span class="qh-src">{{ page.source | escape }}</span> &middot; {% endif -%}
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
+    </p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {%- if page.quote -%}
+    <blockquote class="qh-quote">{{ page.quote | markdownify }}</blockquote>
+    {%- endif -%}
+    {{ content }}
+    <p class="qh-more"><a href="{{ page.link }}" rel="noopener">Read it{% if page.source %} at {{ page.source | escape }}{% endif %} &rarr;</a></p>
+  </div>
+
+  <p class="qh-back"><a href="{{ "/links/" | relative_url }}">&larr; All quick hits</a></p>
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>

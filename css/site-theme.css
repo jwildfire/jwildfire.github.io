@@ -37,6 +37,8 @@
 
   /* Release marker: a small tag outline, used as a mask so it takes any colour. */
   --tag-mask: url("data:image/svg+xml;utf8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 24 24' fill%3D'none' stroke%3D'%23000' stroke-width%3D'2.6' stroke-linecap%3D'round' stroke-linejoin%3D'round'%3E%3Cpath d%3D'M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z'%2F%3E%3Ccircle cx%3D'7.5' cy%3D'7.5' r%3D'1.2' fill%3D'%23000'%2F%3E%3C%2Fsvg%3E");
+  /* Chain link for a quick hit (_links/). */
+  --link-mask: url("data:image/svg+xml;utf8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 24 24' fill%3D'none' stroke%3D'%23000' stroke-width%3D'2.6' stroke-linecap%3D'round' stroke-linejoin%3D'round'%3E%3Cpath d%3D'M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'%2F%3E%3Cpath d%3D'M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'%2F%3E%3C%2Fsvg%3E");
 
   /* Hex outline tile, one row tall, used as a mask so a colour shows through the strokes. */
   --hex-mask: url("data:image/svg+xml;utf8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' width%3D'6.928' height%3D'9.000' viewBox%3D'0 0 6.928 9.000'%3E%3Cg fill%3D'none' stroke%3D'%23000' stroke-width%3D'0.9'%3E%3Cpolygon points%3D'3.464%2C0.50 6.928%2C2.50 6.928%2C6.50 3.464%2C8.50 0.000%2C6.50 0.000%2C2.50'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
@@ -434,7 +436,8 @@ a.footnote:hover { color: var(--kn-accent-deep); }
 .wf-tog[aria-pressed="true"] .wf-ico { opacity: 1; filter: none; }
 .wf-tog[aria-pressed="true"]:hover { border-color: var(--kn-accent); color: var(--kn-accent); }
 
-/* Item markers: a spectrum-filled hex for a post, a monochrome tag for a release. */
+/* Item markers: a spectrum-filled hex for a post, a plum chain link for a quick hit,
+   a monochrome tag for a release. */
 .wf-ico {
   display: inline-block;
   flex: none;
@@ -447,6 +450,13 @@ a.footnote:hover { color: var(--kn-accent-deep); }
   height: 0.9em;
   background: var(--spec-gradient-diag);
   clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+.wf-ico-link {
+  width: 0.85em;
+  height: 0.85em;
+  background: var(--kn-accent);
+  -webkit-mask: var(--link-mask) center / contain no-repeat;
+  mask: var(--link-mask) center / contain no-repeat;
 }
 .wf-ico-rel {
   width: 0.85em;
@@ -632,15 +642,35 @@ a.footnote:hover { color: var(--kn-accent-deep); }
 .wf-rel-links { font-family: var(--kn-mono); font-size: 0.68rem; white-space: nowrap; margin-left: 0.35rem; }
 .wf-rel-links a { text-decoration: none; margin-left: 0.55rem; }
 .wf-rel-links a:hover { text-decoration: underline; }
-.wf-month-n .wf-n-sep { color: var(--kn-rule); }
 
-/* Filter states, set by js/news-filter.js. Empty months are hidden by the script. */
-.wf-writing[data-show="posts"] .wf-item-rel,
-.wf-writing[data-show="posts"] .wf-n-releases,
-.wf-writing[data-show="posts"] .wf-n-sep,
-.wf-writing[data-show="releases"] .wf-item-post,
-.wf-writing[data-show="releases"] .wf-n-posts,
-.wf-writing[data-show="releases"] .wf-n-sep { display: none; }
+/* Quick-hit rows (_links/): lighter than a post panel, heavier than a release line.
+   The title links out to the page shared; "Note" goes to the quick hit's own page. */
+.wf-posts li.wf-item-link {
+  padding: 0.6rem 1.15rem;
+  margin: 0.35rem 0;
+  border-left: 2px solid var(--kn-accent-soft);
+}
+.wf-link-body { display: block; min-width: 0; }
+.wf-link-head { display: block; }
+.wf-link-title, .wf-link-title:visited {
+  font-family: var(--kn-serif);
+  font-size: 1.15rem;
+  line-height: 1.2;
+  color: var(--kn-ink);
+  text-decoration: none;
+}
+.wf-link-title:hover { color: var(--kn-accent); text-decoration: none; }
+.wf-link-arr { font-family: var(--kn-sans); font-size: 0.8em; color: var(--kn-faint); margin-left: 0.2em; }
+.wf-link-src { font-family: var(--kn-mono); font-size: 0.7rem; color: var(--kn-faint); margin-left: 0.4rem; white-space: nowrap; }
+.wf-link-note { display: block; color: var(--kn-soft); font-size: 0.88rem; margin-top: 0.2rem; overflow-wrap: anywhere; }
+.wf-link-perma, .wf-link-perma:visited { font-family: var(--kn-mono); font-size: 0.68rem; white-space: nowrap; margin-left: 0.3rem; text-decoration: none; }
+.wf-link-perma:hover { text-decoration: underline; }
+
+/* Filter states, set by js/news-filter.js (data-hide lists the kinds switched off).
+   Empty months are hidden, and month counts rewritten, by the script. */
+.wf-writing[data-hide~="posts"] .wf-item-post,
+.wf-writing[data-hide~="links"] .wf-item-link,
+.wf-writing[data-hide~="releases"] .wf-item-rel { display: none; }
 
 /* Homepage footer -------------------------------------------------------------------*/
 
@@ -669,6 +699,7 @@ a.footnote:hover { color: var(--kn-accent-deep); }
   .wf-sechead { flex-wrap: wrap; row-gap: 0.5rem; }
   .wf-posts li.wf-item-post { padding: 0.9rem 1rem; }
   .wf-posts li.wf-item-rel { padding: 0.45rem 0.25rem; }
+  .wf-posts li.wf-item-link { padding: 0.55rem 0.8rem; }
   .wf-toggle { margin-left: 0; order: 3; flex-basis: 100%; }
 
   /* Month rail becomes a wrapping chip row above the list. */
@@ -737,3 +768,33 @@ a.footnote:hover { color: var(--kn-accent-deep); }
 .card .card-links { font-family: var(--kn-mono); font-size: 0.76rem; display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; margin-top: 0.8rem; }
 .card-links a { text-decoration: none; }
 .card-links a:hover { text-decoration: underline; }
+
+/* Quick hits: a single link's page (_layouts/link.html) and the /links/ list -------*/
+
+.qh-kicker { font-family: var(--kn-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; margin: 0 0 0.4rem; }
+.qh-kicker a, .qh-kicker a:visited { color: var(--kn-accent); text-decoration: none; }
+.qh-out, .qh-out:visited { color: inherit; text-decoration: none; }
+.qh-out:hover { color: var(--kn-accent); }
+.qh-arr { font-family: var(--kn-sans); font-size: 0.7em; color: var(--kn-faint); margin-left: 0.2em; }
+.qh-src { font-family: var(--kn-mono); font-size: 0.78em; color: var(--kn-soft); }
+.qh-quote { border-left: 3px solid var(--kn-accent); margin: 0 0 1.2rem; padding: 0.2rem 0 0.2rem 1rem; color: var(--kn-soft); font-style: italic; }
+.qh-quote p:last-child { margin-bottom: 0; }
+.qh-more { font-family: var(--kn-mono); font-size: 0.8rem; }
+.qh-back { font-family: var(--kn-mono); font-size: 0.8rem; margin-top: 2rem; }
+
+.qh-intro { color: var(--kn-soft); }
+.qh-month-head { font-family: var(--kn-serif); font-weight: 400; font-size: 1.3rem; border-bottom: 1px solid var(--kn-rule); padding-bottom: 0.4rem; margin-top: 2.2rem; }
+.qh-items { list-style: none; margin: 0; padding: 0; }
+.qh-item { position: relative; padding: 0.9rem 0 0.9rem; border-bottom: 1px dotted var(--kn-rule); }
+.qh-item:last-child { border-bottom: none; }
+.qh-item-head { margin: 0 0 0.4rem; }
+.qh-item-date { font-family: var(--kn-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--kn-accent); margin-right: 0.6rem; white-space: nowrap; }
+.qh-item-title, .qh-item-title:visited { font-family: var(--kn-serif); font-size: 1.25rem; color: var(--kn-ink); text-decoration: none; }
+.qh-item-title:hover { color: var(--kn-accent); }
+.qh-item .qh-src { margin-left: 0.4rem; white-space: nowrap; }
+.qh-item .qh-quote { margin-bottom: 0.6rem; }
+.qh-comment p { margin-bottom: 0.4rem; }
+.qh-comment { overflow-wrap: anywhere; }
+.qh-perma, .qh-perma:visited { position: absolute; top: 0.95rem; right: 0; font-family: var(--kn-mono); font-size: 0.8rem; color: var(--kn-faint); text-decoration: none; }
+.qh-perma:hover { color: var(--kn-accent); }
+.qh-item-head { padding-right: 1.2rem; }

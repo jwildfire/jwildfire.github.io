@@ -1,0 +1,9 @@
+{
+  "name": "quick-hit",
+  "private": true,
+  "type": "module",
+  "description": "Chrome extension that shares a page to the blog's _links/ collection. Load this folder unpacked in chrome://extensions; this file only tells Node the modules are ES modules for the tests.",
+  "scripts": {
+    "test": "node --test"
+  }
+}

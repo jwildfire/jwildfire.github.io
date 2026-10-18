@@ -12,6 +12,7 @@ scholar_url: "https://scholar.google.com/citations?user=Hn0AnpIAAAAJ"
 # Pages listed in the header nav on posts and interior pages (order matters).
 header_pages:
   - projects.html
+  - links.html
   - archive.md
 
 # Email / Social media user names used by the minima theme:
@@ -41,6 +42,20 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
 
+# Quick hits: one file per shared link in _links/, named YYYY-MM-DD-slug.md and
+# usually written by the Chrome extension in scripts/quick-hit/. Front matter holds
+# title, link (the page shared), source, and an optional quote; the body is the
+# comment. They show in the homepage News feed, on /links/, and at /feed/links.xml.
+collections:
+  links:
+    output: true
+    permalink: /links/:year/:month/:day/:title/
+
+feed:
+  collections:
+    links:
+      path: "/feed/links.xml"
+
 # Not part of the site: build tooling for the release feed (see .github/workflows).
 exclude:
   - scripts
@@ -56,6 +71,11 @@ defaults:
       type: post
     values:
       tags: Other
+  - scope:
+      path: ""
+      type: links
+    values:
+      layout: link
   # Both keynote decks are shared by URL only until the blog post links the talk deck: keep it out of the sitemap.
   - scope:
       path: "keynote/keynote_extended.html"
