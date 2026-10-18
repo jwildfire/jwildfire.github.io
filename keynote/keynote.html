@@ -444,6 +444,9 @@
     .five .mid .tag { grid-column: 1 / -1; color: var(--soft); }
     .five .mid .tag span { color: var(--faint); }
     .five .mid h3, .five .mid .s { color: var(--soft); }
+    .fivenote { display: grid; grid-template-columns: 1.12fr 3fr 1.12fr; gap: 46px; margin-top: 22px; }
+    .fivenote p { position: relative; margin: 0; padding-top: 14px; border-top: 3px solid var(--hue); font-family: var(--serif); font-size: 36px; line-height: 1.1; text-align: center; color: var(--ink); }
+    .fivenote p + p::after { content: "→"; position: absolute; left: -41px; top: 12px; font-family: var(--sans); font-size: 34px; color: var(--faint); }
     .s-five .goodat { right: 428px; bottom: 76px; }
     .s-five .goodat .a { font-size: 44px; }
     .s-five .goodat .who { width: 140px; height: 162px; }
@@ -814,6 +817,37 @@
     .s-reply .rp.hack .bub { background: #14181d; border-color: #3fbf5f; }
     .s-reply .rp.hack .bub p { font-family: var(--mono); font-size: 32px; color: #8cf5a4; white-space: nowrap; }
     /* Acknowledgements (2026-10-15, placeholder): his sentence large, a thumbs-up Orange beside it. */
+    /* Outline layout options for slide 3 (2026-10-17). */
+    .s-outl { justify-content: center; }
+    .s-outl blockquote { font-size: 56px; }
+    .s-outl .agenda { list-style: none; padding: 0; margin: 70px 0 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 22px; position: relative; }
+    .s-outl .agenda::before { content: ""; position: absolute; left: 0; right: 0; top: 16px; height: 3px; background: var(--rule); }
+    .s-outl .agenda li { position: relative; font-size: 24px; line-height: 1.2; margin: 0; }
+    .s-outl .agenda i { display: block; width: 30px; height: 35px; clip-path: var(--hex-clip); background: var(--c); margin-bottom: 18px; }
+    .s-outl .agenda b { display: block; font-weight: 600; font-size: 25px; }
+    .s-outl .agenda span, .s-outl .vlist span { display: block; font-family: var(--mono); font-size: 17px; letter-spacing: 0.04em; color: var(--soft); margin-top: 6px; }
+    .s-outl .fork { width: 100%; height: auto; margin-top: 36px; overflow: visible; }
+    .s-outl .fork .trunk, .s-outl .fork .lane { fill: none; stroke-width: 6; stroke-linecap: round; }
+    .s-outl .fork .trunk { stroke: var(--rule); }
+    .s-outl .fork .lane.up { stroke: var(--spec-4); opacity: 0.55; }
+    .s-outl .fork .lane.dn { stroke: var(--spec-1); opacity: 0.55; }
+    .s-outl .fork .n { font-family: var(--sans); font-size: 26px; font-weight: 600; fill: var(--ink); }
+    .s-outl .fork .w { font-family: var(--mono); font-size: 17px; letter-spacing: 0.04em; fill: var(--soft); }
+    .s-outl-d { justify-content: center; }
+    .s-outl-d .qlist { display: grid; grid-template-columns: 1fr 520px; gap: 70px; align-items: center; }
+    .s-outl-d blockquote { font-size: 64px; }
+    .s-outl .vlist { list-style: none; padding: 0 0 0 0; margin: 0; position: relative; display: grid; gap: 20px; }
+    .s-outl .vlist::before { content: ""; position: absolute; left: 14px; top: 18px; bottom: 18px; width: 3px; background: var(--rule); }
+    .s-outl .vlist li { position: relative; display: grid; grid-template-columns: 30px 1fr; column-gap: 20px; align-items: center; font-size: 26px; line-height: 1.15; margin: 0; }
+    .s-outl .vlist i { grid-row: span 2; width: 30px; height: 35px; clip-path: var(--hex-clip); background: var(--c); }
+    .s-outl .vlist b { font-weight: 600; }
+    .s-outl .vlist span { margin-top: 2px; }
+    /* Slide 3's fork: on the second press its hexes fly to their strip markers (2026-10-17). */
+    .s-outl .fork polygon { transform-box: fill-box; transform-origin: center; transition: transform 900ms cubic-bezier(.6,0,.25,1); }
+    .s-outl .fork .trunk, .s-outl .fork .lane, .s-outl .fork text { transition: opacity 400ms ease; }
+    .s-outl:has(.fly.on) .fork .trunk, .s-outl:has(.fly.on) .fork .lane, .s-outl:has(.fly.on) .fork text { opacity: 0; }
+    .s-outl .fly { display: none; }
+    @media (prefers-reduced-motion: reduce) { .s-outl .fork polygon { transition: none; } }
     .s-thanks { justify-content: center; }
     .s-thanks .thx { display: flex; align-items: center; gap: 70px; }
     .s-thanks .thx p { margin: 0; flex: 1; font-family: var(--serif); font-size: 76px; line-height: 1.12; color: var(--ink); max-width: none; text-wrap: balance; }
@@ -860,6 +894,10 @@
     .s-gap .gapchart .dot.next { opacity: 0.6; }
     .s-gap .gapchart .arrow { fill: var(--spec-4); opacity: 0.55; }
     .s-gap .gapchart .guess { font-family: var(--mono); font-size: 16px; letter-spacing: 0.06em; fill: var(--soft); }
+    .s-gap .gapchart .dim, .s-gap .gapchart .ln.next.dim, .s-gap .gapchart .dot.next.dim, .s-gap .gapchart .arrow.dim { opacity: 0.18; }
+    .s-gap .gapchart .ln.next.pick { opacity: 1; stroke-width: 6; stroke-dasharray: none; }
+    .s-gap .gapchart .dot.next.pick { opacity: 1; }
+    .s-gap .gapchart .guess.pick { fill: var(--ink); font-weight: 600; font-size: 20px; }
     .s-gap .gcards { display: grid; gap: 20px; }
     .s-gap .gcard { background: var(--panel); border: 2px solid var(--rule); border-radius: 18px; padding: 20px 26px; }
     .s-gap .gcard h3 { display: flex; align-items: center; gap: 14px; font-family: var(--mono); font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--soft); font-weight: 500; margin: 0 0 10px; }
@@ -955,6 +993,46 @@
     .s-built .tiles.tech .tile h3 { font-size: 15px; color: var(--soft); }
     .s-built .tiles.tech .tile p:not(.n) { font-size: 18px; color: var(--faint); }
     .s-built .foot { font-family: var(--mono); font-size: 19px; color: var(--soft); margin: 0; white-space: nowrap; }
+
+    /* Draft options for "what the gap means", 2026-10-17: predictions cards, drug bars, compressed century. */
+    .s-preds h2, .s-meds h2, .s-cent h2 { margin-bottom: 30px; }
+    .s-preds .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .s-preds .card { border-top: 8px solid var(--c, var(--hue)); background: #fff; border-radius: 0 0 22px 22px; padding: 26px 30px 28px; box-shadow: 0 2px 0 var(--rule); display: flex; flex-direction: column; gap: 14px; }
+    .s-preds .card .big { font-family: var(--serif); font-size: 46px; line-height: 1; margin: 0; }
+    .s-preds .card q { font-family: var(--serif); font-size: 27px; line-height: 1.2; color: var(--ink); quotes: "\201C" "\201D"; }
+    .s-preds .card .proj { list-style: none; margin: 0; padding: 0; }
+    .s-preds .card .proj li { font-family: var(--mono); font-size: 20px; line-height: 1.45; margin: 0; padding: 0; }
+    .s-preds .card .proj li::before { content: none; }
+    .s-preds .card .proj li.lead { font-family: var(--serif); font-size: 27px; line-height: 1.2; margin-bottom: 6px; }
+    .s-preds .card .proj b { font-weight: 600; color: var(--c); }
+    .s-preds .card cite { margin-top: auto; font-family: var(--mono); font-style: normal; font-size: 18px; line-height: 1.35; color: var(--soft); }
+    .salt { font-family: var(--mono); font-size: 20px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--soft); margin: 26px 0 0; }
+    .s-meds .bars { display: grid; grid-template-columns: 330px 1fr; gap: 12px 26px; align-items: center; }
+    .s-meds .bars .nm { font-size: 28px; line-height: 1.15; text-align: right; }
+    .s-meds .bars .nm small { display: block; font-family: var(--mono); font-size: 16px; color: var(--soft); margin-top: 4px; }
+    .s-meds .bars .row { display: flex; align-items: center; gap: 22px; }
+    .s-meds .bars .bar { height: 36px; border-radius: 6px; background: var(--c); flex: none; }
+    .s-meds .bars .bar.hatch { background: repeating-linear-gradient(45deg, var(--c) 0 6px, #fff0 6px 13px); border: 3px solid var(--c); }
+    .s-meds .bars .v { font-family: var(--serif); font-size: 36px; line-height: 1.05; }
+    .s-meds .bars .v small { display: block; font-family: var(--sans); font-size: 20px; color: var(--soft); }
+    .s-meds .ruler { grid-column: 2; display: flex; justify-content: space-between; width: 1000px; font-family: var(--mono); font-size: 16px; color: var(--faint); border-top: 2px solid var(--rule); padding-top: 6px; }
+    .s-meds .take { font-family: var(--serif); font-size: 44px; margin: 34px 0 0; }
+    .s-meds .meds-pts { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 10px; }
+    .s-meds .meds-pts li { position: relative; padding-left: 40px; font-family: var(--serif); font-size: 32px; line-height: 1.2; }
+    .s-meds .meds-pts li::before { content: ""; position: absolute; left: 0; top: 0.28em; width: 22px; height: 25px; background: var(--hue); clip-path: var(--hex-clip); }
+    .s-cent .cbar { position: relative; height: 70px; margin: 0 0 10px; }
+    .s-cent .cbar .fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 8px; background: var(--c); }
+    .s-cent .cbar .fill.fan { background: linear-gradient(90deg, var(--c) 50%, #fff0); }
+    .s-cent .cbar .t { position: absolute; top: 50%; transform: translateY(-50%); font-family: var(--serif); font-size: 38px; white-space: nowrap; }
+    .s-cent .cyr { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 18px; color: var(--faint); border-top: 2px solid var(--rule); padding-top: 8px; margin: 0 0 38px; }
+    .s-cent .clab { font-family: var(--mono); font-size: 20px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--soft); margin: 0 0 10px; }
+    .s-cent blockquote { margin: 18px 0 0; font-family: var(--serif); font-size: 38px; line-height: 1.2; border-left: 8px solid var(--hue); padding-left: 30px; max-width: 1180px; }
+    .s-cent blockquote cite { display: block; margin-top: 12px; font-family: var(--mono); font-style: normal; font-size: 19px; color: var(--soft); }
+    .s-gap .gapchart .wedge.ahead { fill: var(--spec-6); opacity: 0.16; }
+    .s-gap .gapchart .gnote { font-family: var(--serif); font-size: 34px; fill: var(--ink); }
+    .s-gap .gapchart .anote { font-family: var(--sans); font-size: 19px; fill: var(--soft); }
+    .s-reads .card .big a { color: inherit; text-decoration: underline; text-decoration-color: var(--c); text-decoration-thickness: 3px; text-underline-offset: 6px; }
+    .s-reads .card .who { font-family: var(--mono); font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--soft); margin: 0; }
   </style>
 </head>
 <body>
@@ -1023,9 +1101,27 @@
       </aside>
     </section>
 
-    <section class="slide s-quote" data-hue="1" data-outline>
+    <section class="slide s-quote s-outl" data-hue="1">
       <p class="kicker">The question</p>
       <blockquote>What can we actually do with AI agents right now?</blockquote>
+      <svg class="fork step" viewBox="0 0 1320 380" role="img" aria-label="The talk's sections as a path: Orange, safetyGraphics and OpenRBQM in a line; then the path forks into AI Frontier: obot on the upper lane and Clinical Trials: AI in the Pipeline on the lower lane; the lanes meet again at What we learned.">
+        <path class="trunk" d="M40,190 H480"/>
+        <path class="lane up" d="M480,190 C580,190 600,96 700,96 H900 C1000,96 1020,190 1120,190"/>
+        <path class="lane dn" d="M480,190 C580,190 600,284 700,284 H900 C1000,284 1020,190 1120,190"/>
+        <polygon data-sec="0" style="fill: var(--spec-1)" points="40,172 55.6,181.0 55.6,199.0 40,208 24.4,199.0 24.4,181.0"/>
+        <polygon data-sec="1" style="fill: var(--spec-1)" points="260,172 275.6,181.0 275.6,199.0 260,208 244.4,199.0 244.4,181.0"/>
+        <polygon data-sec="2" style="fill: var(--spec-3)" points="480,172 495.6,181.0 495.6,199.0 480,208 464.4,199.0 464.4,181.0"/>
+        <polygon data-sec="4" style="fill: var(--spec-4)" points="800,78 815.6,87.0 815.6,105.0 800,114 784.4,105.0 784.4,87.0"/>
+        <polygon data-sec="3" style="fill: var(--spec-1)" points="800,266 815.6,275.0 815.6,293.0 800,302 784.4,293.0 784.4,275.0"/>
+        <polygon data-sec="5" style="fill: var(--spec-6)" points="1120,172 1135.6,181.0 1135.6,199.0 1120,208 1104.4,199.0 1104.4,181.0"/>
+        <text class="n" x="22" y="246">Orange</text>
+        <text class="n" x="260" y="246" text-anchor="middle">safetyGraphics</text><text class="w" x="260" y="274" text-anchor="middle">2016–2021</text>
+        <text class="n" x="480" y="246" text-anchor="middle">OpenRBQM</text><text class="w" x="480" y="274" text-anchor="middle">2021–2025</text>
+        <text class="n" x="800" y="52" text-anchor="middle">AI Frontier: obot</text><text class="w" x="800" y="24" text-anchor="middle">summer 2026</text>
+        <text class="n" x="800" y="340" text-anchor="middle">Clinical Trials: AI in the Pipeline</text><text class="w" x="800" y="368" text-anchor="middle">Q4 2025</text>
+        <text class="n" x="1150" y="198">What we learned</text><text class="w" x="1150" y="226">now</text>
+      </svg>
+      <span class="step fly" aria-hidden="true"></span>
       <aside class="notes">
         <strong class="say">Today I'm going to talk about what these tools are good at right
         now ... As you'll see, the answer to that question changes on a regular basis.</strong>
@@ -1053,6 +1149,13 @@
         were his picks when asked): safetyGraphics (2016–2021), OpenRBQM (2021–2025), AI in the
         loop (Q4 2025), obot (summer 2026), What we learned (now); Orange has none. They come
         from data-when on each section's title slide.
+        <br><br>Rebuilt 2026-10-17 (Jeremy: "I like C. can you set up a click transition where the
+        hexes shrink and move into their places on the timeline at the top."): the outline is now
+        the fork (option C). First press: the fork comes in. Second press: the lanes and names
+        fade, and the six hexes shrink and fly up to their section markers on the strip at the
+        top, where they stay for the rest of the slide. The fork is written into the slide by
+        hand, so a renamed section must be renamed here too. The strip-label version and options
+        B and D are in Reserves, dated 17 October.
       </aside>
     </section>
 
@@ -1614,6 +1717,7 @@
           <p class="src">Sample rows from qualified-releases.csv</p>
         </div>
       </div>
+      <div class="goodat insp" style="bottom: 22px"><div class="bub"><p class="a" style="font-size: 36px">Now that's evidence.</p><p class="when" style="font-size: 20px">In use on 20+ trials</p></div><div class="who" style="width: 120px; height: 138px"></div></div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
         Added 2026-10-14 as the follow-up to the qcthat slide, at Jeremy's word: "Follow up
@@ -1634,17 +1738,20 @@
         <br><br>The small line under the number is draft wording. The same deck's other slides
         frame it as "Packages are qualified continuously" and "Qualification is a byproduct of
         development, not a separate phase".
+        <br><br>Inspector Orange callout added 2026-10-17 (Jeremy: "Now that's evidence. &lt;Sub&gt;
+        In use on 20+ trials &lt;/sub&gt;"). His words; it comes in on a press, bottom right under
+        the table.
       </aside>
     </section>
 
     <!-- 2b · How we have layered AI in (Jeremy, 2026-10-06: "Then we talk about how we've layered in AI. then experiments.") -->
 
-    <section class="slide s-photo" data-hue="3" data-section="AI in the loop" data-when="Q4 2025">
+    <section class="slide s-photo" data-hue="3" data-section="Clinical Trials: AI in the Pipeline" data-when="Q4 2025">
       <figure class="photo" style="--focus: 50% 100%">
         <img src="assets/orange/orange-paw-on-trackpad.jpg" alt="Orange lying across a laptop with one paw on the trackpad, seen from above" />
       </figure>
-      <p class="kicker pkg" style="--pkg: url(assets/hex/orange.png)">Orange, in the loop</p>
-      <h2>AI in the loop</h2>
+      <p class="kicker pkg" style="--pkg: url(assets/hex/orange.png)">Orange, in the pipeline</p>
+      <h2>Clinical Trials: AI in the Pipeline</h2>
       <p class="line">Carefully adding agents to our package development process.</p>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
@@ -1659,11 +1766,15 @@
         <br><br>2026-10-14: the line under the title changed from "The same lifecycle, with an agent
         in some of the seats." at Jeremy's word ("Carefully adding Agents to our Package
         Development Process."), set in sentence case like the deck's other lines.
+        <br><br>Renamed 2026-10-17 (Jeremy: "update the section names a bit to distinguish
+        sections more clearly and set up conclusions. 'AI In the loop' becomes 'Clinical Trials:
+        AI in the Pipeline'; obot becomes 'AI Frontier: obot'"). The two names now match the two
+        lines on the closing gap charts (clinical trial tools, frontier capabilities).
       </aside>
     </section>
 
     <section class="slide s-quote" data-hue="3">
-      <p class="kicker">AI in the loop</p>
+      <p class="kicker">AI in the pipeline</p>
       <blockquote>We use AI heavily, but it's <em>not autonomous.</em> Humans own the process and all deliverables.</blockquote>
       <cite>— developer diary #1, 10 June 2026</cite>
       <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Writing code!</p><p class="when">as of Q4 2025</p></div><div class="who"><i>👍</i></div></div>
@@ -1729,7 +1840,7 @@
         <li style="--c: var(--spec-1)"><i>1</i><b>The coding intern</b></li>
         <li style="--c: var(--spec-0)"><i>0</i><b>Spicy autocomplete</b></li>
       </ol>
-      <p class="kicker">What AI in the loop looks like</p>
+      <p class="kicker">What AI in the pipeline looks like</p>
       <h2 style="font-size: 63px; white-space: nowrap">Same lifecycle; Directly Responsible Humans</h2>
       <div class="life">
         <div><h3>Design</h3>
@@ -1845,6 +1956,11 @@
           <div class="s">Monitoring plan checks</div>
         </div>
       </div>
+      <div class="fivenote">
+        <p>Build roadmap</p>
+        <p>Make R packages</p>
+        <p>Run packages on studies</p>
+      </div>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
         Jeremy's message for this slide (2026-10-06): "messaging is that agents have sped
@@ -1878,6 +1994,10 @@
         <br><br>Why both ends: they are company-specific process that no vendor will build. The
         middle is commodity and improving monthly.
         <br><br>Vet before publishing: everything on slides 23 and 25, and the Planning cell on slide 24, comes from that internal deck. (The artifact grid on slide 24 is from the side project's public hub.)
+        <br><br>Annotations added 2026-10-17 (Jeremy: "Add annotations below describing each
+        section. Build Roadmap -&gt; Make R Packages -&gt; Run Packages on Studies"): one line
+        under each of the three blocks, with arrows between them like the blocks above. His
+        words, set in the deck's sentence case.
       </aside>
     </section>
 
@@ -1996,6 +2116,7 @@
     <section class="slide s-ops keep" data-hue="3" style="padding-bottom: 84px">
       <p class="kicker">Downstream · operations</p>
       <h2>Agents can help a lot with operations</h2>
+      <div class="review"><b>TODO</b> Refactor this slide</div>
       <div class="five side-r">
         <div class="ops">
           <p class="lab">One repo per study, one hub to run them<span class="mock">Mock data</span></p>
@@ -2090,6 +2211,8 @@
         <br><br>Production workflows run under a bot identity. The plan-alignment check is fully
         deterministic at runtime; an agent drafted the code and the matching rules.
         <br><br>The deck's screenshots are internal; none is reproduced here.
+        <br><br>TODO box added 2026-10-17 (Jeremy: "TODO S25 - refactor"). Take it off when the
+        slide is reworked.
       </aside>
     </section>
 
@@ -2153,13 +2276,13 @@
          second click. Facts: research-digest.md, section 8. Wording is draft unless the notes
          say it is Jeremy's. Slides that left the main deck are in the reserves, below.
          ============================================================ -->
-<section class="slide s-photo" data-hue="4" data-section="obot" data-when="summer 2026">
+<section class="slide s-photo" data-hue="4" data-section="AI Frontier: obot" data-when="summer 2026">
       <figure class="photo" style="--focus: 50% 100%">
         <img src="assets/orange/orange-paw-on-github.jpg" alt="Orange, seen from behind on Jeremy's lap, with one paw stretched onto the keyboard of a laptop showing GitHub" />
       </figure>
       <p class="kicker pkg" style="--pkg: url(assets/hex/orange.png)">Orange, on GitHub</p>
-      <h2>From Orange to obot</h2>
-      <p class="line">The agent is named after him.</p>
+      <h2>AI Frontier: obot</h2>
+      <p class="line">A summer of public experiments</p>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
         Transition into beat 3: the Orange photo that opens every beat. Headline and line are
@@ -2172,6 +2295,12 @@
         <br><br>Photo check (Jeremy): the laptop screen shows a GitHub feed from the Rho days.
         Three usernames are on it; at this size they are a few pixels tall. Alternatives:
         orange-supervising-laptop.jpg and orange-desk-copilot.jpg, both of which show Jeremy.
+        <br><br>Renamed 2026-10-17 (Jeremy: "update the section names a bit to distinguish
+        sections more clearly and set up conclusions. 'AI In the loop' becomes 'Clinical Trials:
+        AI in the Pipeline'; obot becomes 'AI Frontier: obot'"). The two names now match the two
+        lines on the closing gap charts (clinical trial tools, frontier capabilities).
+        <br><br>Line changed the same day (Jeremy: "From Orange to obot: the agent is named after
+        him. -&gt; A summer of public experiments"). The naming story stays for saying aloud.
       </aside>
     </section>
 
@@ -2229,6 +2358,7 @@
     <section class="slide" data-hue="4">
       <p class="kicker">The goal</p>
       <h2>Modernize safetyGraphics, using the gsm framework</h2>
+      <div class="review"><b>TODO</b> Header wording</div>
       <div class="gallery">
         <figure><img src="assets/legacy/safety-histogram.png" alt="The original Safety Histogram, as shown in its README" /><i>2020</i><figcaption>Safety Histogram</figcaption></figure>
         <figure><img src="assets/legacy/safety-outlier-explorer.png" alt="The original Outlier Explorer, as shown in its README" /><i>2021</i><figcaption>Outlier Explorer</figcaption></figure>
@@ -2279,6 +2409,8 @@
         no longer have — but with AI agents, I'm honestly not sure that's true anymore."
         <br><br>Hacker Orange popup, second press (Jeremy, 2026-10-07: "Slide 30 - hacker orange:
         Open Source ftw"). The words are his.
+        <br><br>TODO box added 2026-10-17 (Jeremy: "Todo s29 - header wording"). Take it off
+        when the headline is settled.
       </aside>
     </section>
 
@@ -2786,6 +2918,7 @@ steps:
       </ol>
       <p class="kicker pkg" style="--pkg: url(assets/hex/obot-v5.png)">obot v5 and v5.5 · how it works</p>
       <h2 style="font-size: 50px; line-height: 1.08">Same workflow, but I just set goals, answer questions and review releases</h2>
+      <div class="review" style="right: 360px"><b>TODO</b> "Full visibility"</div>
       <p class="chain-key"><span><i class="who"></i>me</span><span><i></i>agents</span><span><i class="auto"></i>automated, as before</span></p>
       <div class="frame">
       <p class="lab"><i></i>Review artifacts and answer questions</p>
@@ -2839,6 +2972,8 @@ steps:
         that stayed", was folded into this one and sent to the reserves. Until then it read
         "Same lifecycle; I kept two steps", written to echo slide 22 ("Same lifecycle; five
         steps changed hands"). The sidebar is at level 4, as on both version title slides.
+        <br><br>TODO box added 2026-10-17 (Jeremy: 'todo s40: "Full visibility"'). Take it off
+        when it is done.
       </aside>
     </section>
 
@@ -3675,6 +3810,7 @@ steps:
           <text class="k" x="1008" y="446">another release</text>
         </svg>
       </div>
+      <p class="levels-src">How long a task AI can finish on its own: <a href="https://theaidigest.org/time-horizons" target="_blank" rel="noopener">theaidigest.org/time-horizons</a></p>
       <aside class="notes">
         <strong class="say">&lt;none yet&gt;</strong>
         The last slide of part 3.5, "how we built it" (Jeremy, late on 2026-10-05: "3.5 = how
@@ -3777,6 +3913,59 @@ steps:
     </section>
 
     <!-- 4 · the GxP gap, a year on (2026-10-17) -->
+    <section class="slide s-preds s-reads" data-hue="6">
+      <p class="kicker">How fast it is moving</p>
+      <h2>New ways of working, written up in public.</h2>
+      <div class="cards">
+        <div class="card step" style="--c: var(--spec-0)">
+          <p class="who">23 Sep · Rails World keynote</p>
+          <p class="big"><a href="https://www.youtube.com/watch?v=vDjW_dRyKXY" target="_blank" rel="noopener">Done coding by hand</a></p>
+          <q>At 37signals, a couple of weeks ago, we made the decision that it clearly means we’re done writing code by hand.</q>
+          <cite>David Heinemeier Hansson, creator of Ruby on Rails</cite>
+        </div>
+        <div class="card step" style="--c: var(--spec-4)">
+          <p class="who">15 Oct · Claude Code team</p>
+          <p class="big"><a href="https://claude.dev/blog/solving-code-review-at-anthropic/" target="_blank" rel="noopener">Review, moved to machines</a></p>
+          <q>We didn’t remove review. But we did move most of the reading to machines…</q>
+          <cite>Addy Osmani, Morgan Westlee Lunt and Qing Wang · How the Claude Code team does code review</cite>
+        </div>
+        <div class="card step" style="--c: var(--spec-5)">
+          <p class="who">16 Oct · Anthropic research</p>
+          <p class="big"><a href="https://www.anthropic.com/research/employment-at-anthropic" target="_blank" rel="noopener">Attention is the bottleneck</a></p>
+          <q>This acceleration makes human attention the bottleneck for agent output.</q>
+          <cite>How employment is changing at Anthropic</cite>
+        </div>
+      </div>
+      <p class="salt">From my reading list · all in the four weeks before this talk</p>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        Added 2026-10-18 (Jeremy: "add a few very recent links from my ai reading list in
+        reminders to demonstrate how much active work is being done on frontier ways of working
+        with agents. The addy osmani post, the anthropic ways of working post and the talk from
+        Ruby greators on coding by hand"). Three items from his AI Reading list in Reminders,
+        oldest first, one per press. Each headline is a link. Kicker, headline and card titles
+        are draft wording for him to replace.
+        <br><br>Sources, checked word for word on 2026-10-18:
+        <br>DHH, Rails World 2026 opening keynote, uploaded 23 September 2026,
+        https://www.youtube.com/watch?v=vDjW_dRyKXY. The quote is as transcribed by Gergely
+        Orosz, The Pragmatic Engineer, 1 October 2026 ("RoR creator sparks new 'death of coding
+        by hand' debate",
+        https://newsletter.pragmaticengineer.com/p/the-pulse-ror-creator-sparks-new); the video
+        itself was not watched. It is "for professional work – at 37signals at least", in
+        Orosz's words. In the same talk DHH dates the shift to 24 November 2025, the day the
+        timeline on the slide before starts (Opus 4.5).
+        <br>Addy Osmani, Morgan Westlee Lunt and Qing Wang, "How the Claude Code team does code
+        review", 15 October 2026, https://claude.dev/blog/solving-code-review-at-anthropic/. The
+        sentence goes on: "optimized for human time and attention, and invested heavily in making
+        it fast and easy to undo mistakes."
+        <br>Wilmers, Catipon, Massenkoff and McCrory, "How employment is changing at Anthropic",
+        Anthropic, 16 October 2026, https://www.anthropic.com/research/employment-at-anthropic.
+        The next sentence: reading all the output of their Claude agents would take
+        non-technical employees half their work week. It also reports relatively less hiring for
+        junior technical roles.
+      </aside>
+    </section>
+
     <section class="slide s-split s-gap" data-hue="6">
       <p class="kicker">The gap, a year from now</p>
       <h2>We're at the beginning.</h2>
@@ -3861,6 +4050,188 @@ steps:
         frontier guess is labelled "Fast", matching the clinical labels.
         <br><br>Kicker reworded 2026-10-17 without "GxP" (Jeremy chose "Reword kickers", keeping
         the deck's 7 October rule of no "GxP" on any slide).
+      </aside>
+    </section>
+
+    <!-- 4 · what's next: my best guess (2026-10-17) -->
+    <section class="slide s-split s-gap" data-hue="6">
+      <p class="kicker">What's next: my best guess</p>
+      <h2>Closing the gap means more medicines faster!</h2>
+      <svg class="gapchart wide" viewBox="0 0 1320 440" role="img" aria-label="Illustration, not data: the same chart as the slide before, with one guess picked on each side. The frontier follows its fast guess; clinical trial tools follow their steady guess. The other guesses are faded.">
+        <text class="cap" x="60" y="18">Illustration, not data · after today, my best guess</text>
+        <line class="base" x1="60" x2="1060" y1="400" y2="400"/>
+        <line class="today" x1="560" x2="560" y1="30" y2="400"/>
+        <path class="wedge" d="M60,375 C300,372 460,352 560,300 L560,360 C450,372 300,380 60,382 Z"/>
+        <path class="ln front" d="M60,375 C300,372 460,352 560,300"/>
+        <path class="ln clin" d="M60,382 C300,380 450,372 560,360"/>
+        <path class="dim ln front next" d="M560,300 L1060,100"/>
+        <path class="pick ln front next" d="M560,300 C680,240 940,150 1060,30"/>
+        <path class="dim ln front next" d="M560,300 C640,258 820,160 930,-10"/>
+        <path class="dim arrow" d="M936.5,-20 L934.5,-2.3 L921.1,-10.9 Z"/>
+        <path class="dim ln clin next" d="M560,360 C720,350 900,342 1060,338"/>
+        <path class="pick ln clin next" d="M560,360 L1060,305"/>
+        <path class="dim ln clin next" d="M560,360 C760,330 940,240 1060,165"/>
+        <circle class="dot front" cx="560" cy="300" r="7"/>
+        <circle class="dot clin" cx="560" cy="360" r="7"/>
+        <circle class="dim dot front next" cx="1060" cy="100" r="6"/>
+        <circle class="pick dot front next" cx="1060" cy="30" r="6"/>
+        <circle class="dim dot clin next" cx="1060" cy="338" r="6"/>
+        <circle class="pick dot clin next" cx="1060" cy="305" r="6"/>
+        <circle class="dim dot clin next" cx="1060" cy="165" r="6"/>
+        <text class="dim guess" x="1076" y="344">Slow</text>
+        <text class="pick guess" x="1076" y="311">Steady</text>
+        <text class="dim guess" x="1076" y="171">Fast</text>
+        <text class="dim guess" x="1076" y="106">Steady</text>
+        <text class="pick guess" x="1076" y="36">Fast</text>
+        <text class="dim guess" x="950" y="0">Exponential</text>
+        <text class="lab" x="540" y="272" text-anchor="end">Frontier capabilities</text>
+        <text class="lab" x="1060" y="374" text-anchor="end">Clinical trial tools</text>
+        <text class="ax" x="60" y="428">A year ago</text>
+        <text class="ax" x="560" y="428" text-anchor="middle">Today</text>
+        <text class="ax" x="1060" y="428" text-anchor="end">A year from now</text>
+      </svg>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        Added 2026-10-17 (Jeremy: "Make a new slide 54 that selects the steady line for trials
+        and the fast line for frontier. subhead = what's next: my best guess. head: Closing the gap
+        means more medicines faster!"). The kicker and headline are his. The chart is slide 53's,
+        with his two picks drawn solid and the other guesses faded. A drawing, not data.
+      </aside>
+    </section>
+
+    <section class="slide s-quote" data-hue="6">
+      <p class="kicker">We can think bigger</p>
+      <blockquote style="font-size: 58px">“I think that most people are underestimating just how radical the upside of AI could be, just as I think most people are underestimating how bad the risks could be.”</blockquote>
+      <cite>Dario Amodei · Machines of Loving Grace · October 2024</cite>
+      <div class="goodat hack sm step" style="bottom: 84px"><div class="bub" style="max-width: 780px"><p class="a" style="font-size: 27px; line-height: 1.25">Take it with a big grain of salt. Then look at the last year.</p></div><div class="who"></div></div>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        DRAFT, option B, slide 1 of 3, 2026-10-17 (Jeremy, mid-draft: "I want to add a we can
+        think bigger quote"). The quote is the essay's opening claim, word for word; the sentence
+        goes on "just as I think most people are underestimating how bad the risks could be",
+        which is worth saying aloud so the quote is not read as cheerleading. A second candidate
+        from the same essay: "the important thing is to have an ambitious vision, to be willing to
+        dream big and try things out" (it comes from the section on governance, not biology).
+        Hacker Orange's line is a stand-in for Jeremy's grain of salt ("I don't think those
+        predictions are crazy based on recent progress"); his to reword.
+        <br><br>Sources, each checked word for word on 2026-10-17:
+        <br>Dario Amodei, "Machines of Loving Grace", October 2024,
+        https://www.darioamodei.com/essay/machines-of-loving-grace
+        <br>Demis Hassabis on 60 Minutes, CBS, first published 20 April 2025,
+        https://www.cbsnews.com/news/artificial-intelligence-google-deepmind-ceo-demis-hassabis-60-minutes-transcript/
+        <br>AI Digest, "A new Moore's Law for AI agents" (METR's time-horizon trend), last updated
+        March 2026, https://theaidigest.org/time-horizons
+        <br>Sun, Gao, Hu and Zhou, "Why 90% of clinical drug development fails and how to improve
+        it?", Acta Pharmaceutica Sinica B, 2022, https://doi.org/10.1016/j.apsb.2022.02.002
+        <br><br>Chosen 2026-10-18 (Jeremy: "option B for the close. Create and i'll tweak").
+        Draft tag removed; wording is still his to tweak. Options A and C are in the reserves.
+      </aside>
+    </section>
+
+    <section class="slide s-preds" data-hue="6">
+      <p class="kicker">What the builders predict</p>
+      <h2>Big forecasts. Not crazy, given the last year.</h2>
+      <div class="cards">
+        <div class="card step" style="--c: var(--spec-4)">
+          <p class="big">50–100 years in 5–10</p>
+          <q>…AI-enabled biology and medicine will allow us to compress the progress that human biologists would have achieved over the next 50-100 years into 5-10 years.</q>
+          <cite>Dario Amodei, Anthropic · Machines of Loving Grace · Oct 2024</cite>
+        </div>
+        <div class="card step" style="--c: var(--spec-3)">
+          <p class="big">The end of disease?</p>
+          <q>I think that’s within reach. Maybe within the next decade or so, I don’t see why not.</q>
+          <cite>Demis Hassabis, Google DeepMind, asked “The end of disease?” · 60 Minutes · Apr 2025</cite>
+        </div>
+        <div class="card step" style="--c: var(--spec-5)">
+          <p class="big">Doubling every 7 months</p>
+          <ul class="proj">
+            <li class="lead">The length of coding tasks agents can finish. If the trend holds:</li>
+            <li><b>2027</b> 1 work day (8 hours)</li>
+            <li><b>2028</b> 1 work week (40 hours)</li>
+            <li><b>2029</b> 1 work month (167 hours)</li>
+          </ul>
+          <cite>METR's trend since 2019, via AI Digest · theaidigest.org/time-horizons · Mar 2026</cite>
+        </div>
+      </div>
+      <p class="salt">Forecasts, not facts · read with a large grain of salt</p>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        DRAFT, option B, slide 2 of 3, 2026-10-17. Three forecasts, one per press: biology
+        (Amodei), disease (Hassabis) and the measured trend under both (METR's task-length
+        doubling, as AI Digest charts it; the page also says the 2024-2025 pace was a doubling
+        every 4 months). The headline is draft wording built from Jeremy's own framing ("I don't
+        think those predictions are crazy based on recent progress"). The Hassabis words are
+        from CBS's transcript; the question he was answering was whether AI could end disease.
+        <br><br>Sources, each checked word for word on 2026-10-17:
+        <br>Dario Amodei, "Machines of Loving Grace", October 2024,
+        https://www.darioamodei.com/essay/machines-of-loving-grace
+        <br>Demis Hassabis on 60 Minutes, CBS, first published 20 April 2025,
+        https://www.cbsnews.com/news/artificial-intelligence-google-deepmind-ceo-demis-hassabis-60-minutes-transcript/
+        <br>AI Digest, "A new Moore's Law for AI agents" (METR's time-horizon trend), last updated
+        March 2026, https://theaidigest.org/time-horizons
+        <br>Sun, Gao, Hu and Zhou, "Why 90% of clinical drug development fails and how to improve
+        it?", Acta Pharmaceutica Sinica B, 2022, https://doi.org/10.1016/j.apsb.2022.02.002
+        <br><br>Chosen 2026-10-18 (Jeremy: "option B for the close. Create and i'll tweak").
+        Draft tag removed; wording is still his to tweak. Options A and C are in the reserves.
+      </aside>
+    </section>
+
+    <section class="slide s-meds" data-hue="6">
+      <p class="kicker">What the gap means</p>
+      <h2>The gap is measured in medicines.</h2>
+      <div class="bars">
+        <p class="nm">One drug, today<small>to design it · Hassabis</small></p>
+        <div class="row"><div class="bar" style="--c: var(--spec-1); width: 1000px"></div></div>
+        <span></span>
+        <p class="v" style="margin: -8px 0 0">“ten years and billions of dollars”<small>and about 90% of drug candidates that enter clinical trials fail (Sun et al., 2022)</small></p>
+        <p class="nm step">COVID mRNA vaccines<small>the fast case</small></p>
+        <div class="row step"><div class="bar" style="--c: var(--spec-1); width: 75px"></div><p class="v">9 months<small>Amodei: they “arguably should have been approved in ~2 months”</small></p></div>
+        <p class="nm step">The forecast<small>Hassabis, 60 Minutes</small></p>
+        <div class="row step"><div class="bar hatch" style="--c: var(--spec-4); width: 40px"></div><p class="v">Months, maybe weeks<small>“We can maybe reduce that down from years to maybe months or maybe even weeks.”</small></p></div>
+        <div class="ruler"><span>0</span><span>2 years</span><span>4</span><span>6</span><span>8</span><span>10 years</span></div>
+      </div>
+      <ul class="meds-pts">
+        <li class="step">The FDA already reviews with AI: Elsa for all staff since June 2025, agents since December 2025.</li>
+        <li class="step">Clinical trial tools set the pace. That is where we come in.</li>
+      </ul>
+      <aside class="notes">
+        <strong class="say">&lt;none yet&gt;</strong>
+        DRAFT, option B, slide 3 of 3, 2026-10-17. Bars on one scale, 10 years across: one drug
+        today (Hassabis's "ten years and billions of dollars to design just one drug"), the COVID
+        mRNA vaccines (9 months, from Amodei's essay, which adds that they "arguably should have
+        been approved in ~2 months") and the essay's forecast of "~1 year end-to-end for a drug",
+        hatched because it is a forecast. The essay pairs that year with "massive
+        parallelization".
+        <br><br>Corrected the same day after Jeremy asked for every quote to be checked ("didn't
+        look quite right"). The "~1 year end-to-end" row is gone: in the essay it is the delay
+        Amodei says is compatible with transformation, not a forecast for one drug. The forecast
+        row is now Hassabis's own line from the same 60 Minutes answer ("We can maybe reduce
+        that down from years to maybe months or maybe even weeks"). Hassabis said ten years and
+        billions "to design just one drug", so the row says designing.
+        <br><br>FDA bullet added the same day (Jeremy: "add a bullet around the FDAs current use
+        of AI"). From FDA's own releases: Elsa, a generative AI tool, launched agency-wide on 2
+        June 2025 "ahead of schedule and under budget", used "to accelerate clinical protocol
+        reviews" among other things
+        (https://www.fda.gov/news-events/press-announcements/fda-launches-agency-wide-ai-tool-optimize-performance-american-people);
+        agentic AI capabilities for all employees on 1 December 2025, optional to use (from
+        press coverage, e.g. PharmExec, 2 December 2025); Elsa 4.0 with custom agents, available
+        to all FDA staff, on 6 May 2026, with "human subject matter experts" verifying "all
+        inputs, analytic processes, and output implementation"
+        (https://www.fda.gov/news-events/press-announcements/fda-expands-ai-capabilities-and-completes-data-platform-consolidation).
+        That last line is the human-oversight point, said by the regulator. The 9-in-10 failure figure is Sun et al. 2022, which analysed trial
+        data from 2010 to 2017. The take line is draft, for Jeremy to replace; it hands to slide
+        54's headline if B goes before 54.
+        <br><br>Sources, each checked word for word on 2026-10-17:
+        <br>Dario Amodei, "Machines of Loving Grace", October 2024,
+        https://www.darioamodei.com/essay/machines-of-loving-grace
+        <br>Demis Hassabis on 60 Minutes, CBS, first published 20 April 2025,
+        https://www.cbsnews.com/news/artificial-intelligence-google-deepmind-ceo-demis-hassabis-60-minutes-transcript/
+        <br>AI Digest, "A new Moore's Law for AI agents" (METR's time-horizon trend), last updated
+        March 2026, https://theaidigest.org/time-horizons
+        <br>Sun, Gao, Hu and Zhou, "Why 90% of clinical drug development fails and how to improve
+        it?", Acta Pharmaceutica Sinica B, 2022, https://doi.org/10.1016/j.apsb.2022.02.002
+        <br><br>Chosen 2026-10-18 (Jeremy: "option B for the close. Create and i'll tweak").
+        Draft tag removed; wording is still his to tweak. Options A and C are in the reserves.
       </aside>
     </section>
 
@@ -3957,25 +4328,6 @@ steps:
       </aside>
     </section>
 
-    <!-- 4 · the ask (2026-10-17) -->
-    <section class="slide s-ask" data-hue="6">
-      <p class="kicker">So, what now?</p>
-      <h2>Before R/Pharma 2027, build one thing with an agent.</h2>
-      <p class="line">Then come back and tell us how it felt.</p>
-      <div class="tease step">
-        <img src="assets/hex/safetyGraphics.png" alt="safetyGraphics hex logo" />
-        <p>Want somewhere to start? We're talking about restarting the safetyGraphics working group as an AI-first open-source project.</p>
-      </div>
-      <aside class="notes">
-        <strong class="say">&lt;none yet&gt;</strong>
-        Added 2026-10-17 (Jeremy picked the dated commitment with the safetyGraphics tease). It
-        follows "Mixed feelings" so the talk ends on one instruction, then the thanks and the
-        party. Every word is draft wording for him to replace.
-        <br><br>The tease comes in on its own press. Its wording is soft on purpose ("we're
-        talking about"): the working group restart is not decided. Cut the press if it should
-        not be said yet.
-      </aside>
-    </section>
 
     <!-- 4 · closing: the orange cat party. A live page (party.html) in an iframe;
          clicks inside it throw confetti instead of advancing. The banner words are the
@@ -4207,6 +4559,29 @@ steps:
       window.addEventListener('hashchange', function () { go(parseInt(location.hash.slice(1), 10) - 1 || 0); });
       fit();
       go((parseInt(location.hash.slice(1), 10) || 1) - 1);
+    })();
+  </script>
+  <script>
+    // Slide 3's fork (2026-10-17): when its .fly step turns on, each hex shrinks and moves onto
+    // its section marker in the strip; when it turns off, it goes back. Measured at that moment,
+    // because a slide that is not showing has no size.
+    (function () {
+      document.querySelectorAll('.s-outl .fly').forEach(function (fly) {
+        var slide = fly.closest('.slide'), svg = slide.querySelector('svg.fork');
+        function place() {
+          var on = fly.classList.contains('on'), marks = slide.querySelectorAll('.hexmark');
+          var k = svg.getBoundingClientRect().width / 1320;
+          svg.querySelectorAll('polygon[data-sec]').forEach(function (p) {
+            var m = marks[+p.getAttribute('data-sec')];
+            if (!on || !m || !k) { p.style.transform = ''; return; }
+            p.style.transform = '';
+            var a = p.getBoundingClientRect(), b = m.getBoundingClientRect();
+            var dx = (b.left + b.width / 2 - (a.left + a.width / 2)) / k, dy = (b.top + b.height / 2 - (a.top + a.height / 2)) / k;
+            p.style.transform = 'translate(' + dx + 'px,' + dy + 'px) scale(' + (b.width / a.width) + ')';
+          });
+        }
+        new MutationObserver(function () { requestAnimationFrame(place); }).observe(fly, { attributes: true, attributeFilter: ['class'] });
+      });
     })();
   </script>
 </body>
