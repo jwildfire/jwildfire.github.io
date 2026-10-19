@@ -78,3 +78,5 @@ Read the console after step 2. It prints the counts, and it flags what did not f
 | `font-widths.json` | Character widths of Instrument Sans at weights 400 and 600, in em. Only needs redoing if the deck's body font changes. |
 | `treemap.svg`, `node-link.svg` | The two pictures as standalone files, the same as the ones in the slides. |
 | `counts.md` | The counts and the readable text of the last build. |
+| `plan-timeline.mjs` | The animated plan slide (talk slide 39, 2026-10-18): `node plan-timeline.mjs --fetch` reads the hub's objectives, the Biomarker charts requirements and tasks with their open and close times, and the bio.viz and gsm.bio releases with the gh CLI (reads only) into `plan-timeline.json`; `node plan-timeline.mjs --inject ../../keynote_extended.html` writes the slide's markup between the `roadmap-tree:plan-timeline` markers. The deck's own script plays it. It does not touch `model.json` or the pictures above. |
+| `plan-timeline.json` | That slide's snapshot: open and close times, statuses and public titles. |

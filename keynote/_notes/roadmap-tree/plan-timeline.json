@@ -1,0 +1,901 @@
+{
+ "source": "jwildfire/obot.roadmap sub-issues and the GitHub releases of jwildfire/bio.viz, jwildfire/gsm.bio, read with the gh CLI",
+ "readAt": "2026-10-19T03:31:08.269Z",
+ "objectives": [
+  {
+   "number": 78,
+   "short": "Chart coverage",
+   "state": "OPEN",
+   "requirements": 36,
+   "byStatus": {
+    "released": 10,
+    "backlog": 20,
+    "review": 4,
+    "ready": 2
+   }
+  },
+  {
+   "number": 79,
+   "short": "Portfolio view",
+   "state": "OPEN",
+   "requirements": 5,
+   "byStatus": {
+    "backlog": 4,
+    "released": 1
+   }
+  },
+  {
+   "number": 328,
+   "short": "Static parity",
+   "state": "OPEN",
+   "requirements": 2,
+   "byStatus": {
+    "backlog": 2
+   }
+  },
+  {
+   "number": 329,
+   "short": "Data loading and mapping",
+   "state": "OPEN",
+   "requirements": 5,
+   "byStatus": {
+    "backlog": 4,
+    "released": 1
+   }
+  },
+  {
+   "number": 330,
+   "short": "A local-only desktop tool",
+   "state": "OPEN",
+   "requirements": 3,
+   "byStatus": {
+    "backlog": 3
+   }
+  },
+  {
+   "number": 342,
+   "short": "Program operations",
+   "state": "OPEN",
+   "requirements": 3,
+   "byStatus": {
+    "ready": 1,
+    "backlog": 2
+   }
+  },
+  {
+   "number": 353,
+   "short": "Biomarker charts",
+   "state": "OPEN",
+   "requirements": 17,
+   "byStatus": {
+    "released": 16,
+    "backlog": 1
+   }
+  },
+  {
+   "number": 375,
+   "short": "RBQM in the browser",
+   "state": "OPEN",
+   "requirements": 12,
+   "byStatus": {
+    "released": 3,
+    "backlog": 9
+   }
+  },
+  {
+   "number": 401,
+   "short": "A demo app ready to show",
+   "state": "OPEN",
+   "requirements": 7,
+   "byStatus": {
+    "released": 7
+   }
+  },
+  {
+   "number": 412,
+   "short": "A fast check",
+   "state": "OPEN",
+   "requirements": 2,
+   "byStatus": {
+    "released": 1,
+    "ready": 1
+   }
+  },
+  {
+   "number": 72,
+   "short": "R/Pharma 2026 keynote deck",
+   "state": "OPEN",
+   "requirements": 3,
+   "byStatus": {
+    "backlog": 3
+   }
+  },
+  {
+   "number": 73,
+   "short": "increased autonomy in obot.agent",
+   "state": "OPEN",
+   "requirements": 34,
+   "byStatus": {
+    "released": 28,
+    "backlog": 5,
+    "review": 1
+   }
+  },
+  {
+   "number": 112,
+   "short": "open.csr",
+   "state": "OPEN",
+   "requirements": 5,
+   "byStatus": {
+    "backlog": 5
+   }
+  }
+ ],
+ "focus": {
+  "number": 353,
+  "short": "Biomarker charts",
+  "requirements": [
+   {
+    "n": 354,
+    "title": "safety.viz's shared parts opened to a second library",
+    "status": "released",
+    "state": "closed",
+    "opened": "2026-10-02T10:33:36Z",
+    "closed": "2026-10-03T01:07:35Z",
+    "tasks": [
+     {
+      "repo": "safety.viz",
+      "n": 154,
+      "title": "Expose the shared chart parts as a kit",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-02T10:49:47Z",
+      "closed": "2026-10-03T00:56:51Z"
+     }
+    ]
+   },
+   {
+    "n": 355,
+    "title": "Group comparison, the picture: bio.viz's first chart, drawn and drillable",
+    "status": "released",
+    "state": "closed",
+    "opened": "2026-10-02T10:33:39Z",
+    "closed": "2026-10-02T17:02:46Z",
+    "tasks": [
+     {
+      "repo": "bio.viz",
+      "n": 7,
+      "title": "Vendor the synthetic study and add the gallery, evidence pages and API reference to the site",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-02T13:33:41Z",
+      "closed": "2026-10-02T14:19:46Z"
+     },
+     {
+      "repo": "bio.viz",
+      "n": 8,
+      "title": "Add the variable and one-row-per-participant core",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-02T13:33:43Z",
+      "closed": "2026-10-02T14:42:00Z"
+     },
+     {
+      "repo": "bio.viz",
+      "n": 9,
+      "title": "Add the group comparison chart with its requirement matrix and evidence",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-02T13:33:45Z",
+      "closed": "2026-10-02T16:57:00Z"
+     }
+    ]
+   },
+   {
+    "n": 356,
+    "title": "Group comparison, the tests: R's results on the chart, and the chart from R",
+    "status": "released",
+    "state": "closed",
+    "opened": "2026-10-02T10:33:41Z",
+    "closed": "2026-10-02T19:47:58Z",
+    "tasks": [
+     {
+      "repo": "bio.viz",
+      "n": 16,
+      "title": "Print R's tests on the group comparison chart, with the waiting state and the display rules",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-02T16:53:17Z",
+      "closed": "2026-10-02T18:26:19Z"
+     },
+     {
+      "repo": "gsm.bio",
+      "n": 9,
+      "title": "Add the group comparison widget with precomputed statistics",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-02T16:53:19Z",
+      "closed": "2026-10-02T19:44:02Z"
+     },
+     {
+      "repo": "bio.viz",
+      "n": 17,
+      "title": "Open the group comparison chart on all biomarkers and all visits",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-02T17:06:40Z",
+      "closed": "2026-10-02T19:26:18Z"
+     }
+    ]
+   },
+   {
+    "n": 357,
+    "title": "Association scatter and correlation matrix",
+    "status": "released",
+    "state": "closed",
+    "opened": "2026-10-02T10:33:44Z",
+    "closed": "2026-10-03T00:37:05Z",
+    "tasks": [
+     {
+      "repo": "gsm.bio",
+      "n": 12,
+      "title": "Add the fitted-line function for the association scatter",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-02T19:40:53Z",
+      "closed": "2026-10-02T20:08:30Z"
+     },
+     {
+      "repo": "bio.viz",
+      "n": 26,
+      "title": "Add the association scatter with its requirement matrix and evidence",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-02T19:40:55Z",
+      "closed": "2026-10-02T21:42:19Z"
+     },
+     {
+      "repo": "bio.viz",
+      "n": 27,
+      "title": "Add the correlation matrix with its drill into the scatter",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-02T19:40:57Z",
+      "closed": "2026-10-02T23:39:59Z"
+     },
+     {
+      "repo": "gsm.bio",
+      "n": 13,
+      "title": "Add the association scatter and correlation matrix widgets",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-02T19:40:59Z",
+      "closed": "2026-10-03T00:10:53Z"
+     }
+    ]
+   },
+   {
+    "n": 358,
+    "title": "Biomarker screen: one row per biomarker",
+    "status": "released",
+    "state": "closed",
+    "opened": "2026-10-02T10:33:46Z",
+    "closed": "2026-10-03T02:50:59Z",
+    "tasks": [
+     {
+      "repo": "bio.viz",
+      "n": 36,
+      "title": "Add the biomarker screen with its drill into the single charts",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-03T00:10:21Z",
+      "closed": "2026-10-03T02:05:23Z"
+     },
+     {
+      "repo": "gsm.bio",
+      "n": 16,
+      "title": "Add the biomarker screen widget",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-03T00:10:23Z",
+      "closed": "2026-10-03T02:45:10Z"
+     }
+    ]
+   },
+   {
+    "n": 359,
+    "title": "Cross-tabulation and the shared cut rule",
+    "status": "released",
+    "state": "closed",
+    "opened": "2026-10-02T10:33:49Z",
+    "closed": "2026-10-04T03:22:14Z",
+    "tasks": [
+     {
+      "repo": "bio.viz",
+      "n": 43,
+      "title": "Add the shared cut rule to the core and to the group comparison",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-03T03:21:54Z",
+      "closed": "2026-10-03T22:07:23Z"
+     },
+     {
+      "repo": "bio.viz",
+      "n": 44,
+      "title": "Add the cross-tabulation chart",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-03T03:22:00Z",
+      "closed": "2026-10-04T02:57:23Z"
+     },
+     {
+      "repo": "gsm.bio",
+      "n": 18,
+      "title": "Add the cut rule to the frame code and the cross-tabulation widget",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-03T03:22:02Z",
+      "closed": "2026-10-04T03:21:39Z"
+     }
+    ]
+   },
+   {
+    "n": 360,
+    "title": "Stratified survival, and survival rows in the biomarker screen",
+    "status": "released",
+    "state": "closed",
+    "opened": "2026-10-02T10:33:52Z",
+    "closed": "2026-10-04T10:05:49Z",
+    "tasks": [
+     {
+      "repo": "bio.viz",
+      "n": 61,
+      "title": "Add the stratified survival chart on the kit's estimator",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-04T03:23:11Z",
+      "closed": "2026-10-04T07:42:55Z"
+     },
+     {
+      "repo": "bio.viz",
+      "n": 62,
+      "title": "Add hazard-ratio rows to the biomarker screen",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-04T03:23:13Z",
+      "closed": "2026-10-04T07:57:31Z"
+     },
+     {
+      "repo": "gsm.bio",
+      "n": 35,
+      "title": "Add the stratified survival widget and the screen's hazard rows",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-04T03:23:14Z",
+      "closed": "2026-10-04T10:05:16Z"
+     }
+    ]
+   },
+   {
+    "n": 361,
+    "title": "Results out of the browser: titles, footnotes, PNG and specifications",
+    "status": "released",
+    "state": "closed",
+    "opened": "2026-10-02T10:33:54Z",
+    "closed": "2026-10-04T17:33:58Z",
+    "tasks": [
+     {
+      "repo": "bio.viz",
+      "n": 66,
+      "title": "Add titles, footnotes and the automatic footnote to every chart",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-04T07:59:15Z",
+      "closed": "2026-10-04T11:54:26Z"
+     },
+     {
+      "repo": "bio.viz",
+      "n": 67,
+      "title": "Add the PNG and CSV downloads to every chart",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-04T07:59:17Z",
+      "closed": "2026-10-04T15:30:01Z"
+     },
+     {
+      "repo": "bio.viz",
+      "n": 68,
+      "title": "Add specification write and read to every chart",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-04T07:59:19Z",
+      "closed": "2026-10-04T15:56:21Z"
+     }
+    ]
+   },
+   {
+    "n": 362,
+    "title": "Results out of R: static twins, RTF tables and batch runs",
+    "status": "released",
+    "state": "closed",
+    "opened": "2026-10-02T10:33:56Z",
+    "closed": "2026-10-04T17:48:33Z",
+    "tasks": [
+     {
+      "repo": "gsm.bio",
+      "n": 37,
+      "title": "Add the static figure functions with snapshots and the gallery",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-04T09:57:31Z",
+      "closed": "2026-10-04T12:21:40Z"
+     },
+     {
+      "repo": "gsm.bio",
+      "n": 38,
+      "title": "Add the table functions with RTF output",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-04T09:57:32Z",
+      "closed": "2026-10-04T11:41:09Z"
+     },
+     {
+      "repo": "gsm.bio",
+      "n": 39,
+      "title": "Add the batch runner with per-biomarker expansion",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-04T09:57:34Z",
+      "closed": "2026-10-04T17:43:29Z"
+     }
+    ]
+   },
+   {
+    "n": 363,
+    "title": "R in the browser, measured: the connection a chart uses to ask R for a statistic",
+    "status": "released",
+    "state": "closed",
+    "opened": "2026-10-02T10:51:20Z",
+    "closed": "2026-10-02T13:29:05Z",
+    "tasks": [
+     {
+      "repo": "bio.viz",
+      "n": 1,
+      "title": "Set up the repository: build, tests, requirement checks, CI and a site with a dev build",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-02T11:42:11Z",
+      "closed": "2026-10-02T13:05:27Z"
+     },
+     {
+      "repo": "bio.viz",
+      "n": 2,
+      "title": "Add the connection to R with its precomputed and browser forms, and the p-value formatter",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-02T11:42:13Z",
+      "closed": "2026-10-02T13:08:58Z"
+     },
+     {
+      "repo": "bio.viz",
+      "n": 3,
+      "title": "Add the R check page with desktop-R fixtures and the size and timing readout",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-02T11:42:15Z",
+      "closed": "2026-10-02T13:19:10Z"
+     }
+    ]
+   },
+   {
+    "n": 364,
+    "title": "gsm.bio's statistics: the package, a synthetic biomarker study and every test the charts will print",
+    "status": "released",
+    "state": "closed",
+    "opened": "2026-10-02T10:51:22Z",
+    "closed": "2026-10-02T13:46:47Z",
+    "tasks": [
+     {
+      "repo": "gsm.bio",
+      "n": 1,
+      "title": "Set up the package: checks, tests, CI and the reference site",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-02T11:42:17Z",
+      "closed": "2026-10-02T13:09:04Z"
+     },
+     {
+      "repo": "gsm.bio",
+      "n": 2,
+      "title": "Add the seeded synthetic biomarker study",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-02T11:42:19Z",
+      "closed": "2026-10-02T13:17:37Z"
+     },
+     {
+      "repo": "gsm.bio",
+      "n": 3,
+      "title": "Add the group, correlation and contingency statistics functions",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-02T11:42:21Z",
+      "closed": "2026-10-02T13:28:47Z"
+     },
+     {
+      "repo": "gsm.bio",
+      "n": 4,
+      "title": "Add the survival and screen statistics functions",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-02T11:42:23Z",
+      "closed": "2026-10-02T13:42:56Z"
+     }
+    ]
+   },
+   {
+    "n": 366,
+    "title": "The demo app hosts the biomarker charts, on the files and mapping a study already has",
+    "status": "released",
+    "state": "closed",
+    "opened": "2026-10-02T21:53:38Z",
+    "closed": "2026-10-03T06:27:05Z",
+    "tasks": [
+     {
+      "repo": "safety.viz",
+      "n": 181,
+      "title": "Let the manifest and the demo app take a second chart library",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-02T22:08:13Z",
+      "closed": "2026-10-03T02:03:15Z"
+     },
+     {
+      "repo": "bio.viz",
+      "n": 32,
+      "title": "Publish the chart list in the portfolio manifest's format",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-02T22:08:15Z",
+      "closed": "2026-10-03T03:50:57Z"
+     },
+     {
+      "repo": "safety.viz",
+      "n": 182,
+      "title": "Carry the biomarker charts in the demo page and the single file, in their own tab",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-02T22:08:16Z",
+      "closed": "2026-10-03T05:39:18Z"
+     },
+     {
+      "repo": "safety.viz",
+      "n": 183,
+      "title": "Start R on request for the biomarker charts in the hosted demo app",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-02T22:08:18Z",
+      "closed": "2026-10-03T06:25:49Z"
+     },
+     {
+      "repo": "bio.viz",
+      "n": 37,
+      "title": "Re-copy safety.viz's bundle from safety.viz dev now that the kit has merged",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-03T01:07:38Z",
+      "closed": "2026-10-03T03:34:18Z"
+     }
+    ]
+   },
+   {
+    "n": 367,
+    "title": "The group comparison chart opens on trends over time and drills down to one visit",
+    "status": "released",
+    "state": "closed",
+    "opened": "2026-10-05T23:13:08Z",
+    "closed": "2026-10-07T11:40:35Z",
+    "tasks": [
+     {
+      "repo": "bio.viz",
+      "n": 84,
+      "title": "Open the group comparison on trend tiles, and leave unscheduled visits out",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-05T23:14:06Z",
+      "closed": "2026-10-06T01:32:07Z"
+     },
+     {
+      "repo": "bio.viz",
+      "n": 85,
+      "title": "Draw one biomarker across the visits, with R's test under each visit",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-05T23:14:09Z",
+      "closed": "2026-10-06T10:10:04Z"
+     },
+     {
+      "repo": "gsm.bio",
+      "n": 52,
+      "title": "Answer a row of visits, and a grid of biomarkers by visits, in one call each",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-05T23:13:56Z",
+      "closed": "2026-10-06T00:17:14Z"
+     },
+     {
+      "repo": "gsm.bio",
+      "n": 53,
+      "title": "Rebuild the group comparison widget for the chart's three levels",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-05T23:14:12Z",
+      "closed": "2026-10-06T12:54:36Z"
+     },
+     {
+      "repo": "safety.viz",
+      "n": 212,
+      "title": "Rebuild the demo app on bio.viz v0.3.0",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-06T00:55:31Z",
+      "closed": "2026-10-07T04:46:02Z"
+     },
+     {
+      "repo": "bio.viz",
+      "n": 99,
+      "title": "The chart list attributes the biomarker screen's outcomes columns to the results table, and a host refuses the chart",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-06T10:18:09Z",
+      "closed": "2026-10-06T11:43:16Z"
+     }
+    ]
+   },
+   {
+    "n": 369,
+    "title": "bio.viz's site is laid out and styled as safety.viz's is",
+    "status": "released",
+    "state": "closed",
+    "opened": "2026-10-06T00:55:34Z",
+    "closed": "2026-10-07T03:45:59Z",
+    "tasks": [
+     {
+      "repo": "bio.viz",
+      "n": 91,
+      "title": "Rebuild the site on safety.viz's site styles",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-06T00:55:49Z",
+      "closed": "2026-10-06T07:17:40Z"
+     },
+     {
+      "repo": "bio.viz",
+      "n": 96,
+      "title": "Cut the gallery cards' descriptions to the length of safety.viz's",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-06T06:50:37Z",
+      "closed": "2026-10-06T18:20:30Z"
+     },
+     {
+      "repo": "bio.viz",
+      "n": 97,
+      "title": "The site's table rules reach the tables inside a chart on a demo page",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-06T07:45:15Z",
+      "closed": "2026-10-06T13:20:08Z"
+     }
+    ]
+   },
+   {
+    "n": 371,
+    "title": "the group comparison's difference grid as a second opening view",
+    "status": "backlog",
+    "state": "open",
+    "opened": "2026-10-06T10:40:18Z",
+    "closed": null,
+    "tasks": [
+     {
+      "repo": "bio.viz",
+      "n": 86,
+      "title": "Offer the difference grid as a second opening view",
+      "state": "open",
+      "reason": null,
+      "opened": "2026-10-05T23:14:10Z",
+      "closed": null
+     }
+    ]
+   },
+   {
+    "n": 399,
+    "title": "an R app for the biomarker charts — a user's own data, every statistic from the server's R, ready for Posit Connect",
+    "status": "released",
+    "state": "closed",
+    "opened": "2026-10-08T12:03:09Z",
+    "closed": "2026-10-09T12:02:14Z",
+    "tasks": [
+     {
+      "repo": "bio.viz",
+      "n": 122,
+      "title": "Say where R ran: word an answer from a server under the chart",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-08T12:07:10Z",
+      "closed": "2026-10-08T19:01:42Z"
+     },
+     {
+      "repo": "gsm.bio",
+      "n": 71,
+      "title": "Draw the widgets in a Shiny page and answer their statistics from its R session",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-08T12:07:11Z",
+      "closed": "2026-10-08T19:37:22Z"
+     },
+     {
+      "repo": "gsm.bio",
+      "n": 72,
+      "title": "Add RunApp(): the six charts in one Shiny app, on the tables it is given",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-08T12:07:13Z",
+      "closed": "2026-10-08T21:26:25Z"
+     },
+     {
+      "repo": "gsm.bio",
+      "n": 73,
+      "title": "Read a user's own files in the app: upload, and say which column is which",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-08T12:07:15Z",
+      "closed": "2026-10-09T01:01:57Z"
+     },
+     {
+      "repo": "gsm.bio",
+      "n": 74,
+      "title": "Write the article on the app and putting it on Posit Connect",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-08T12:07:17Z",
+      "closed": "2026-10-09T01:27:16Z"
+     },
+     {
+      "repo": "bio.viz",
+      "n": 124,
+      "title": "Prepare the v0.4.0 release: version, bundles and release notes",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-09T01:31:58Z",
+      "closed": "2026-10-09T02:42:00Z"
+     },
+     {
+      "repo": "gsm.bio",
+      "n": 79,
+      "title": "Prepare the v0.4.0 release: version, bio.viz copy and release notes",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-09T01:31:59Z",
+      "closed": "2026-10-09T03:45:35Z"
+     },
+     {
+      "repo": "gsm.bio",
+      "n": 80,
+      "title": "Show what is loaded in the app's Data view: the tables, ten rows at a time",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-09T02:31:08Z",
+      "closed": "2026-10-09T03:31:56Z"
+     },
+     {
+      "repo": "gsm.bio",
+      "n": 86,
+      "title": "Fix what the v0.4.0 release review found: a .csv read short, a false reason after a slow first ask, and claims past their proof",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-09T04:05:52Z",
+      "closed": "2026-10-09T05:00:43Z"
+     },
+     {
+      "repo": "bio.viz",
+      "n": 127,
+      "title": "Fix what the v0.4.0 release review found in the server form: one shared start, an unreadable answer, and the wording",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-09T04:05:54Z",
+      "closed": "2026-10-09T05:11:51Z"
+     },
+     {
+      "repo": "gsm.bio",
+      "n": 93,
+      "title": "Prepare the v0.4.0 release again: the bio.viz copy and the notes, after the review and the redesign",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-09T05:30:26Z",
+      "closed": "2026-10-09T06:33:17Z"
+     },
+     {
+      "repo": "gsm.bio",
+      "n": 97,
+      "title": "Fix what the second v0.4.0 release review found: a file input a page can forge, a quote out of place, and file controls with no visible focus",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-09T07:07:50Z",
+      "closed": "2026-10-09T09:12:34Z"
+     }
+    ]
+   },
+   {
+    "n": 400,
+    "title": "the biomarker app as a web app — a designed shell, navigation and Data page",
+    "status": "released",
+    "state": "closed",
+    "opened": "2026-10-09T03:33:10Z",
+    "closed": "2026-10-09T12:02:18Z",
+    "tasks": [
+     {
+      "repo": "gsm.bio",
+      "n": 84,
+      "title": "Give the app a designed shell: header, pills for the charts, a study chip and a footer",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-09T04:04:21Z",
+      "closed": "2026-10-09T05:29:59Z"
+     },
+     {
+      "repo": "gsm.bio",
+      "n": 85,
+      "title": "Lay out the app's Data page: a step rail, a card per file, tags on the column questions",
+      "state": "closed",
+      "reason": "completed",
+      "opened": "2026-10-09T04:04:22Z",
+      "closed": "2026-10-09T06:17:38Z"
+     }
+    ]
+   }
+  ]
+ },
+ "releases": [
+  {
+   "repo": "bio.viz",
+   "tag": "v0.4.0",
+   "at": "2026-10-09T11:52:05Z"
+  },
+  {
+   "repo": "bio.viz",
+   "tag": "v0.3.0",
+   "at": "2026-10-07T03:42:43Z"
+  },
+  {
+   "repo": "bio.viz",
+   "tag": "v0.2.0",
+   "at": "2026-10-05T00:21:09Z"
+  },
+  {
+   "repo": "bio.viz",
+   "tag": "v0.1.0",
+   "at": "2026-10-03T14:55:13Z"
+  },
+  {
+   "repo": "gsm.bio",
+   "tag": "v0.4.0",
+   "at": "2026-10-09T11:52:06Z"
+  },
+  {
+   "repo": "gsm.bio",
+   "tag": "v0.3.0",
+   "at": "2026-10-07T03:43:34Z"
+  },
+  {
+   "repo": "gsm.bio",
+   "tag": "v0.2.0",
+   "at": "2026-10-05T03:04:46Z"
+  },
+  {
+   "repo": "gsm.bio",
+   "tag": "v0.1.0",
+   "at": "2026-10-03T14:55:14Z"
+  }
+ ]
+}
