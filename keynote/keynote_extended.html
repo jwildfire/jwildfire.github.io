@@ -477,6 +477,40 @@
     .s-split .five .cols .col { padding: 30px 32px; }
     .s-split .five .cols .col p { font-size: 29px; }
 
+    /* obot v4 machinery (class "s-spiral", 2026-10-18): files in obot.agent over time, the v4
+       climb drawn in when the slide opens, the 10 September cut and the v5 lines on the press
+       (data-reveal). Two cards on the right, obot.agent and obot.roadmap, v4 then v5. */
+    .s-spiral h2 { margin-bottom: 30px; }
+    .s-spiral .sp { display: grid; grid-template-columns: 740px 1fr; gap: 40px; flex: 1; min-height: 0; }
+    .s-spiral .chart { background: var(--panel); border: 2px solid var(--rule); border-radius: 22px; padding: 18px 20px 10px; display: flex; flex-direction: column; min-height: 0; }
+    .s-spiral .chart h3, .s-spiral .card h3 { font-family: var(--mono); font-size: 18px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--soft); font-weight: 500; margin: 0 0 6px; }
+    .s-spiral .chart svg { flex: 1; min-height: 0; width: 100%; display: block; }
+    .s-spiral svg text { font-family: var(--sans); }
+    .s-spiral .ax { font-family: var(--mono) !important; font-size: 15px; fill: var(--faint); }
+    .s-spiral .vl { font-family: var(--mono) !important; font-size: 17px; letter-spacing: .08em; fill: var(--soft); text-anchor: middle; }
+    .s-spiral .an { font-size: 24px; font-weight: 600; fill: var(--ink); }
+    .s-spiral .an2 { font-size: 18px; fill: var(--soft); }
+    .s-spiral .line { fill: none; stroke-width: 6; stroke-linejoin: round; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 0; }
+    .s-spiral .climb { stroke: var(--spec-0); }
+    .s-spiral .cut { stroke: var(--spec-2); }
+    .s-spiral.active .climb { animation: spdraw 2.4s ease-in-out both; }
+    .s-spiral.active .peak { animation: spfade .4s 2.2s both; }
+    .s-spiral:not(.revealed) .cut { stroke-dashoffset: 1; }
+    .s-spiral.revealed .cut { animation: spdraw 1.4s ease-in-out both; }
+    @keyframes spdraw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+    @keyframes spfade { from { opacity: 0; } to { opacity: 1; } }
+    .s-spiral .cards { display: grid; grid-template-rows: 1fr 1fr; gap: 22px; min-height: 0; }
+    .s-spiral .card { background: var(--panel); border: 2px solid var(--rule); border-left: 10px solid var(--hue); border-radius: 22px; padding: 18px 26px; display: flex; flex-direction: column; gap: 10px; }
+    .s-spiral .card h3 span { text-transform: none; letter-spacing: 0; font-family: var(--sans); font-size: 20px; color: var(--faint); margin-left: 8px; }
+    .s-spiral .card p { position: relative; margin: 0; padding-left: 66px; font-size: 23px; line-height: 1.3; }
+    .s-spiral .card p b { display: inline-block; min-width: 46px; font-family: var(--mono); font-size: 17px; font-weight: 600; color: #fff; background: var(--spec-0); border-radius: 8px; padding: 2px 8px; position: absolute; left: 0; top: 3px; text-align: center; }
+    .s-spiral .card p.v5 b { background: var(--spec-2); }
+    .s-spiral .card p small { display: block; font-size: 18px; color: var(--soft); margin: 4px 0 0; }
+    .s-spiral .v5 { transition: opacity 400ms ease 300ms; }
+    .s-spiral:not(.revealed) .v5 { opacity: 0; }
+    body.overview .s-spiral .v5, body.reveal-all .s-spiral .v5 { opacity: 1; }
+    body.overview .s-spiral .line, body.reveal-all .s-spiral .line, body.overview .s-spiral .peak, body.reveal-all .s-spiral .peak { animation: none; }
+
     /* Org chart (obot v4): boxes and arrows in an SVG inside .pvr. */
     .pvr.org .t { font-size: 25px; font-weight: 600; fill: var(--ink); }
     .pvr.org .s { font-size: 17px; fill: var(--soft); }
@@ -986,6 +1020,18 @@
     .s-gap .gapchart .ln.next.pick { opacity: 1; stroke-width: 6; stroke-dasharray: none; }
     .s-gap .gapchart .dot.next.pick { opacity: 1; }
     .s-gap .gapchart .guess.pick { fill: var(--ink); font-weight: 600; font-size: 20px; }
+    /* The close's gap slide (2026-10-18, it replaced the medicines slide): on the press Hacker
+       Orange says it is time to close the gap and the trials line moves from its steady guess to
+       its fast one (CSS d transition; browsers without it jump to the end). */
+    .s-gap .gapchart .ln.clin.move { transition: d 1.6s ease-in-out 0.2s; }
+    .s-gap.revealed .gapchart .ln.clin.move, body.overview .s-gap .gapchart .ln.clin.move, body.reveal-all .s-gap .gapchart .ln.clin.move { d: path("M560,360 C760,330 940,240 1060,165"); }
+    .s-gap .gapchart .dot.clin.move { transition: transform 1.6s ease-in-out 0.2s; }
+    .s-gap.revealed .gapchart .dot.clin.move, body.overview .s-gap .gapchart .dot.clin.move, body.reveal-all .s-gap .gapchart .dot.clin.move { transform: translateY(-140px); }
+    .s-gap .gapchart .guess.swap { transition: opacity 0.6s ease 1.2s, font-size 0.6s ease 1.2s; }
+    .s-gap.revealed .gapchart .guess.was, body.overview .s-gap .gapchart .guess.was, body.reveal-all .s-gap .gapchart .guess.was { opacity: 0.18; font-weight: 400; font-size: 16px; fill: var(--soft); }
+    .s-gap.revealed .gapchart .guess.now, body.overview .s-gap .gapchart .guess.now, body.reveal-all .s-gap .gapchart .guess.now { opacity: 1; fill: var(--ink); font-weight: 600; font-size: 20px; }
+    .s-gap .fda { font-size: 26px; color: var(--soft); margin: 18px 0 0; }
+    .s-gap .fda a { color: inherit; text-decoration: underline; text-decoration-color: var(--hue); text-decoration-thickness: 2px; text-underline-offset: 4px; }
     .s-gap .gcards { display: grid; gap: 20px; }
     .s-gap .gcard { background: var(--panel); border: 2px solid var(--rule); border-radius: 18px; padding: 20px 26px; }
     .s-gap .gcard h3 { display: flex; align-items: center; gap: 14px; font-family: var(--mono); font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--soft); font-weight: 500; margin: 0 0 10px; }
@@ -2801,6 +2847,66 @@ steps:
       </aside>
     </section>
 
+    <section class="slide s-spiral" data-hue="4" data-reveal>
+      <p class="kicker pkg" style="--pkg: url(assets/hex/obot-v4.png)">obot v4 · what it built</p>
+      <h2>The machinery spiraled, then we cut it back</h2>
+      <div class="sp">
+        <div class="chart">
+          <h3>Files in obot.agent, June to October</h3>
+          <svg viewBox="0 0 740 470" role="img" aria-label="Files in the obot.agent repository: about 40 through June, 100 by the end of July, then a climb in August to 472 files. On 10 September it drops to 7, and it is 11 today.">
+            <rect x="64" y="56" width="141.6" height="374" fill="#f3f4f1"/>
+            <rect x="205.6" y="56" width="207.6" height="374" fill="#fafaf8"/>
+            <rect x="413.2" y="56" width="127.5" height="374" fill="#fbecea"/>
+            <rect class="v5" x="540.7" y="56" width="179.3" height="374" fill="#eef5e9"/>
+            <g stroke="#e4e6e3" stroke-width="2">
+              <path d="M64 430 H720"/><path d="M64 355.2 H720"/><path d="M64 280.4 H720"/><path d="M64 205.6 H720"/><path d="M64 130.8 H720"/><path d="M64 56 H720"/>
+            </g>
+            <g class="ax" text-anchor="end">
+              <text x="54" y="435">0</text><text x="54" y="360">100</text><text x="54" y="285">200</text><text x="54" y="210">300</text><text x="54" y="136">400</text><text x="54" y="61">500</text>
+            </g>
+            <g class="ax" text-anchor="middle">
+              <text x="70" y="458">Jun</text><text x="205.6" y="458">Jul</text><text x="351.9" y="458">Aug</text><text x="498.2" y="458">Sep</text><text x="639.8" y="458">Oct</text>
+            </g>
+            <text class="vl" x="134.8" y="38">v1–v2</text><text class="vl" x="309.4" y="38">v3</text><text class="vl" x="477" y="38" style="fill: #d87972">v4</text><text class="vl v5" x="630.4" y="38" style="fill: #77a95b">v5</text>
+            <path class="line climb" pathLength="1" d="M64 400.8 L205.6 400.8 L347.2 355.2 L403.8 351.5 L422.7 264.7 L441.6 111.4 L479.3 77.7 L536 77.7"/>
+            <path class="line cut" pathLength="1" d="M536 77.7 L540.7 424.8 L639.8 422.5 L720 421.8"/>
+            <g class="peak">
+              <circle cx="536" cy="77.7" r="8" fill="#d87972"/>
+              <text class="an" x="428" y="96" text-anchor="end">472 files</text>
+              <text class="an2" x="428" y="122" text-anchor="end">80,000 lines</text>
+            </g>
+            <g class="v5">
+              <circle cx="540.7" cy="424.8" r="8" fill="#77a95b"/>
+              <text class="an2" x="560" y="368">10 September</text>
+              <text class="an" x="560" y="398">Cut to 7</text>
+            </g>
+          </svg>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <h3>obot.agent <span>the playbook</span></h3>
+            <p><b>v4</b>472 files: 27 home-made tools, 115 drafts, 26 skills, 39 scripts<small>A dashboard, a morning digest, car audio briefings, a spend guard</small></p>
+            <p class="v5"><b>v5</b>7 files: the instructions, one skill, a daily standup</p>
+          </div>
+          <div class="card">
+            <h3>obot.roadmap <span>the hub</span></h3>
+            <p><b>v4</b>Scripts went from 4 to 79<small>Audits, decision logs, status pages</small></p>
+            <p class="v5"><b>v5</b>Scripts trimmed to 61; reports keep growing, 36 to 810</p>
+          </div>
+        </div>
+      </div>
+      <aside class="notes">
+        <ul class="hits"><li>What v4 actually built: machinery</li><li>472 files, 27 home-made tools</li><li>[press] 10 September: cut to seven files</li><li>The hub kept shipping</li></ul>
+        <strong class="say">Here's what v4 actually built. obot.agent is the playbook: the agent's instructions and tools. Through June it was about forty files. In August it climbed to 472, about 80,000 lines: 27 tools it built for itself, a dashboard, a morning digest, even audio briefings for the car. Almost none of it built a chart. [press] On 10 September we cut it to seven files: the instructions, one skill and a daily standup. The hub, obot.roadmap, went the same way: its scripts were trimmed, and the reports it publishes kept growing, from 36 to more than 800.</strong>
+        <br>Added 2026-10-18; not yet rehearsed. These notes: about 0:40 at dry run pace.<br><br>
+        Added 2026-10-18 (Jeremy: "I also want to add a slide on what we actually did for V4. I want to provide a brief overview the 476 files that got deleted (and what stayed). Make a slide giving an overview of obot.agent and obot.roadmap. Show how it spiraled in v4 and then got back under control in v5."). Headline is draft wording.
+        <br><br>The numbers, measured from git history on 2026-10-18. obot.agent files: 39 through June; 100 by 31 July; 105 on 12 August; 221 on 16 August; 426 on 20 August; 472 from 28 August to 9 September; 7 on 10 September (PR #334, commit cc0e47b: 475 files changed, 89,654 lines deleted; 468 files went and 7 stayed); 10 in October; 11 today. The 476 in the ask is the 475 files PR #334 touched.
+        <br><br>What went (about 80,000 lines): 229 tool files, about 61,700 lines, in 27 home-built tools (an operations dashboard, a navigator, a morning digest, voice briefings for the car, a session hub, a spend guard and spend-cap hook, blocker, constraint and delivery logs, a worker-id tool and more); 115 drafts; 39 scripts; 26 skills; 18 docs; 15 commands.
+        <br>What stayed (840 lines): AGENTS.md, README.md, NEWS.md, .gitignore, docs/cloud-environments.md, routines/standup.md, skills/requirement-session/SKILL.md.
+        <br><br>obot.roadmap: scripts/ went 4 (July) to 35 (late July) to 79 (early September), 61 after the cleanup, 65 today. reports/ went 36 (July) to 377 (early September) to 810 (mid October). The machinery shrank while the output kept growing.
+      </aside>
+    </section>
+
     <!-- 3 · obot v5 -->
     <section class="slide s-version" data-hue="4">
       <ol class="lvside">
@@ -3925,52 +4031,6 @@ steps:
     </section>
 
     <!-- 4 · what's next: my best guess (2026-10-17) -->
-    <section class="slide s-split s-gap" data-hue="6">
-      <p class="kicker">What's next: my best guess</p>
-      <h2>Closing the gap means more medicines faster!</h2>
-      <svg class="gapchart wide" viewBox="0 0 1320 440" role="img" aria-label="Illustration, not data: the same chart as the slide before, with one guess picked on each side. The frontier follows its fast guess; clinical trial tools follow their steady guess. The other guesses are faded.">
-        <text class="cap" x="60" y="18">Illustration, not data · after today, my best guess</text>
-        <line class="base" x1="60" x2="1060" y1="400" y2="400"/>
-        <line class="today" x1="560" x2="560" y1="30" y2="400"/>
-        <path class="wedge" d="M60,375 C300,372 460,352 560,300 L560,360 C450,372 300,380 60,382 Z"/>
-        <path class="ln front" d="M60,375 C300,372 460,352 560,300"/>
-        <path class="ln clin" d="M60,382 C300,380 450,372 560,360"/>
-        <path class="dim ln front next" d="M560,300 L1060,100"/>
-        <path class="pick ln front next" d="M560,300 C680,240 940,150 1060,30"/>
-        <path class="dim ln front next" d="M560,300 C640,258 820,160 930,-10"/>
-        <path class="dim arrow" d="M936.5,-20 L934.5,-2.3 L921.1,-10.9 Z"/>
-        <path class="dim ln clin next" d="M560,360 C720,350 900,342 1060,338"/>
-        <path class="pick ln clin next" d="M560,360 L1060,305"/>
-        <path class="dim ln clin next" d="M560,360 C760,330 940,240 1060,165"/>
-        <circle class="dot front" cx="560" cy="300" r="7"/>
-        <circle class="dot clin" cx="560" cy="360" r="7"/>
-        <circle class="dim dot front next" cx="1060" cy="100" r="6"/>
-        <circle class="pick dot front next" cx="1060" cy="30" r="6"/>
-        <circle class="dim dot clin next" cx="1060" cy="338" r="6"/>
-        <circle class="pick dot clin next" cx="1060" cy="305" r="6"/>
-        <circle class="dim dot clin next" cx="1060" cy="165" r="6"/>
-        <text class="dim guess" x="1076" y="344">Slow</text>
-        <text class="pick guess" x="1076" y="311">Steady</text>
-        <text class="dim guess" x="1076" y="171">Fast</text>
-        <text class="dim guess" x="1076" y="106">Steady</text>
-        <text class="pick guess" x="1076" y="36">Fast</text>
-        <text class="dim guess" x="950" y="0">Exponential</text>
-        <text class="lab" x="540" y="272" text-anchor="end">Frontier capabilities</text>
-        <text class="lab" x="1060" y="374" text-anchor="end">Clinical trial tools</text>
-        <text class="ax" x="60" y="428">A year ago</text>
-        <text class="ax" x="560" y="428" text-anchor="middle">Today</text>
-        <text class="ax" x="1060" y="428" text-anchor="end">A year from now</text>
-      </svg>
-      <aside class="notes">
-        <ul class="hits"><li>My guess: frontier fast, trials steady</li><li>Closing the gap: more medicines, faster</li></ul>
-        <strong class="say">&lt;none yet&gt;</strong>
-        Added 2026-10-17 (Jeremy: "Make a new slide 54 that selects the steady line for trials
-        and the fast line for frontier. subhead = what's next: my best guess. head: Closing the gap
-        means more medicines faster!"). The kicker and headline are his. The chart is slide 53's,
-        with his two picks drawn solid and the other guesses faded. A drawing, not data.
-      </aside>
-    </section>
-
     <section class="slide s-quote" data-hue="6">
       <p class="kicker">We can think bigger</p>
       <blockquote style="font-size: 58px">“I think that most people are underestimating just how radical the upside of AI could be, just as I think most people are underestimating how bad the risks could be.”</blockquote>
@@ -4044,65 +4104,63 @@ steps:
       </aside>
     </section>
 
-    <section class="slide s-meds" data-hue="6">
-      <p class="kicker">What the gap means</p>
-      <h2>The gap is measured in medicines.</h2>
-      <div class="bars">
-        <p class="nm">One drug, today<small>to design it · <a href="https://www.cbsnews.com/news/artificial-intelligence-google-deepmind-ceo-demis-hassabis-60-minutes-transcript/" target="_blank" rel="noopener">Hassabis</a></small></p>
-        <div class="row"><div class="bar" style="--c: var(--spec-1); width: 1000px"></div></div>
-        <span></span>
-        <p class="v" style="margin: -8px 0 0">“ten years and billions of dollars”<small>and about 90% of drug candidates that enter clinical trials fail (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9293739/" target="_blank" rel="noopener">Sun et al., 2022</a>)</small></p>
-        <p class="nm step">COVID mRNA vaccines<small>the fast case</small></p>
-        <div class="row step"><div class="bar" style="--c: var(--spec-1); width: 75px"></div><p class="v">9 months<small><a href="https://www.darioamodei.com/essay/machines-of-loving-grace" target="_blank" rel="noopener">Amodei</a>: they “arguably should have been approved in ~2 months”</small></p></div>
-        <p class="nm step">The forecast<small>to design it · <a href="https://www.cbsnews.com/news/artificial-intelligence-google-deepmind-ceo-demis-hassabis-60-minutes-transcript/" target="_blank" rel="noopener">Hassabis</a></small></p>
-        <div class="row step"><div class="bar hatch" style="--c: var(--spec-4); width: 40px"></div><p class="v">Months, maybe weeks<small>“We can maybe reduce that down from years to maybe months or maybe even weeks.”</small></p></div>
-        <div class="ruler"><span>0</span><span>2 years</span><span>4</span><span>6</span><span>8</span><span>10 years</span></div>
-      </div>
-      <ul class="meds-pts">
-        <li class="step">The FDA already reviews with AI: <a href="https://www.fda.gov/news-events/press-announcements/fda-launches-agency-wide-ai-tool-optimize-performance-american-people" target="_blank" rel="noopener">Elsa for all staff since June 2025</a>, <a href="https://www.fda.gov/news-events/press-announcements/fda-expands-artificial-intelligence-capabilities-agentic-ai-deployment" target="_blank" rel="noopener">agents since December 2025</a>.</li>
-        <li class="step">Clinical trial tools set the pace. That is where we come in.</li>
-      </ul>
+    <section class="slide s-split s-gap" data-hue="6">
+      <p class="kicker">What's next: my best guess</p>
+      <h2>Closing the gap means more medicines faster!</h2>
+      <svg class="gapchart wide" viewBox="0 0 1320 440" role="img" aria-label="Illustration, not data: the same chart as the slide before, with one guess picked on each side. The frontier follows its fast guess; clinical trial tools follow their steady guess. The other guesses are faded.">
+        <text class="cap" x="60" y="18">Illustration, not data · after today, my best guess</text>
+        <line class="base" x1="60" x2="1060" y1="400" y2="400"/>
+        <line class="today" x1="560" x2="560" y1="30" y2="400"/>
+        <path class="wedge" d="M60,375 C300,372 460,352 560,300 L560,360 C450,372 300,380 60,382 Z"/>
+        <path class="ln front" d="M60,375 C300,372 460,352 560,300"/>
+        <path class="ln clin" d="M60,382 C300,380 450,372 560,360"/>
+        <path class="dim ln front next" d="M560,300 L1060,100"/>
+        <path class="pick ln front next" d="M560,300 C680,240 940,150 1060,30"/>
+        <path class="dim ln front next" d="M560,300 C640,258 820,160 930,-10"/>
+        <path class="dim arrow" d="M936.5,-20 L934.5,-2.3 L921.1,-10.9 Z"/>
+        <path class="dim ln clin next" d="M560,360 C720,350 900,342 1060,338"/>
+        <path class="dim ln clin next" d="M560,360 L1060,305"/>
+        <path class="pick ln clin next move" d="M560,360 C726.7,341.7 893.3,323.3 1060,305"/>
+        <path class="dim ln clin next" d="M560,360 C760,330 940,240 1060,165"/>
+        <circle class="dot front" cx="560" cy="300" r="7"/>
+        <circle class="dot clin" cx="560" cy="360" r="7"/>
+        <circle class="dim dot front next" cx="1060" cy="100" r="6"/>
+        <circle class="pick dot front next" cx="1060" cy="30" r="6"/>
+        <circle class="dim dot clin next" cx="1060" cy="338" r="6"/>
+        <circle class="dim dot clin next" cx="1060" cy="305" r="6"/>
+        <circle class="pick dot clin next move" cx="1060" cy="305" r="6"/>
+        <circle class="dim dot clin next" cx="1060" cy="165" r="6"/>
+        <text class="dim guess" x="1076" y="344">Slow</text>
+        <text class="pick guess swap was" x="1076" y="311">Steady</text>
+        <text class="dim guess swap now" x="1076" y="171">Fast</text>
+        <text class="dim guess" x="1076" y="106">Steady</text>
+        <text class="pick guess" x="1076" y="36">Fast</text>
+        <text class="dim guess" x="950" y="0">Exponential</text>
+        <text class="lab" x="540" y="272" text-anchor="end">Frontier capabilities</text>
+        <text class="lab" x="1060" y="374" text-anchor="end">Clinical trial tools</text>
+        <text class="ax" x="60" y="428">A year ago</text>
+        <text class="ax" x="560" y="428" text-anchor="middle">Today</text>
+        <text class="ax" x="1060" y="428" text-anchor="end">A year from now</text>
+      </svg>
+      <p class="fda">The FDA already reviews with AI: <a href="https://www.fda.gov/news-events/press-announcements/fda-launches-agency-wide-ai-tool-optimize-performance-american-people" target="_blank" rel="noopener">Elsa for all staff since June 2025</a>, <a href="https://www.fda.gov/news-events/press-announcements/fda-expands-artificial-intelligence-capabilities-agentic-ai-deployment" target="_blank" rel="noopener">agents since December 2025</a>.</p>
+      <div class="goodat hack" style="left: 200px; right: auto; bottom: auto; top: 330px"><div class="bub"><p class="a">Time to close the gap</p></div><div class="who"></div></div>
       <aside class="notes">
-        <ul class="hits"><li>The gap is measured in medicines</li><li>One drug: 10 years today; COVID vaccines: 9 months</li><li>FDA already reviews with AI</li><li>Trial tools set the pace: that's us</li></ul>
+        <ul class="hits"><li>My guess: frontier fast, trials steady</li><li>FDA already reviews with AI</li><li>[press] Time to close the gap</li><li>Closing the gap: more medicines, faster</li></ul>
         <strong class="say">&lt;none yet&gt;</strong>
-        DRAFT, option B, slide 3 of 3, 2026-10-17. Bars on one scale, 10 years across: one drug
-        today (Hassabis's "ten years and billions of dollars to design just one drug"), the COVID
-        mRNA vaccines (9 months, from Amodei's essay, which adds that they "arguably should have
-        been approved in ~2 months") and the essay's forecast of "~1 year end-to-end for a drug",
-        hatched because it is a forecast. The essay pairs that year with "massive
-        parallelization".
-        <br><br>Corrected the same day after Jeremy asked for every quote to be checked ("didn't
-        look quite right"). The "~1 year end-to-end" row is gone: in the essay it is the delay
-        Amodei says is compatible with transformation, not a forecast for one drug. The forecast
-        row is now Hassabis's own line from the same 60 Minutes answer ("We can maybe reduce
-        that down from years to maybe months or maybe even weeks"). Hassabis said ten years and
-        billions "to design just one drug", so the row says designing.
-        <br><br>FDA bullet added the same day (Jeremy: "add a bullet around the FDAs current use
-        of AI"). From FDA's own releases: Elsa, a generative AI tool, launched agency-wide on 2
-        June 2025 "ahead of schedule and under budget", used "to accelerate clinical protocol
-        reviews" among other things
-        (https://www.fda.gov/news-events/press-announcements/fda-launches-agency-wide-ai-tool-optimize-performance-american-people);
-        agentic AI capabilities "for all agency employees", "entirely optional", on 1 December
-        2025 (https://www.fda.gov/news-events/press-announcements/fda-expands-artificial-intelligence-capabilities-agentic-ai-deployment); Elsa 4.0 with custom agents, available
-        to all FDA staff, on 6 May 2026, with "human subject matter experts" verifying "all
-        inputs, analytic processes, and output implementation"
-        (https://www.fda.gov/news-events/press-announcements/fda-expands-ai-capabilities-and-completes-data-platform-consolidation).
-        That last line is the human-oversight point, said by the regulator. The 9-in-10 failure figure is Sun et al. 2022, which analysed trial
-        data from 2010 to 2017. The take line is draft, for Jeremy to replace; it hands to slide
-        54's headline if B goes before 54.
-        <br><br>Sources, each checked word for word on 2026-10-17:
-        <br>Dario Amodei, "Machines of Loving Grace", October 2024,
-        https://www.darioamodei.com/essay/machines-of-loving-grace
-        <br>Demis Hassabis on 60 Minutes, CBS, first published 20 April 2025,
-        https://www.cbsnews.com/news/artificial-intelligence-google-deepmind-ceo-demis-hassabis-60-minutes-transcript/
-        <br>AI Digest, "A new Moore's Law for AI agents" (METR's time-horizon trend), last updated
-        March 2026, https://theaidigest.org/time-horizons
-        <br>Sun, Gao, Hu and Zhou, "Why 90% of clinical drug development fails and how to improve
-        it?", Acta Pharmaceutica Sinica B, 2022, https://pmc.ncbi.nlm.nih.gov/articles/PMC9293739/
-        <br><br>Chosen 2026-10-18 (Jeremy: "option B for the close. Create and i'll tweak").
-        Draft tag removed; wording is still his to tweak. Options A and C are in the reserves.
+        Added 2026-10-17 (Jeremy: "Make a new slide 54 that selects the steady line for trials
+        and the fast line for frontier. subhead = what's next: my best guess. head: Closing the gap
+        means more medicines faster!"). The kicker and headline are his. The chart is slide 53's,
+        with his two picks drawn solid and the other guesses faded. A drawing, not data.
+        <br><br>Moved 2026-10-18 to replace the medicines slide, which went to the Reserves (Jeremy:
+        "I want to replace 54 with 51. Additions: Keep the FDA note. On click, add a hacker orange
+        note saying "Time to close the gap" and animate the trial line shifting from steady to
+        fast."). The FDA line and its two links are the medicines slide's bullet, word for word.
+        On the press Hacker Orange appears and the clinical trial tools line moves from its steady
+        guess to its fast one, about 1.6 seconds; the labels swap at the end. The press replaces the
+        old slide's FDA sources, which stay in that slide's notes in the Reserves.
       </aside>
     </section>
+
 
     <section class="slide s-start" data-hue="6">
       <p class="kicker">Closing the gap</p>
@@ -6061,6 +6119,69 @@ steps:
         the one answer with no callout behind it.
       </aside>
     </section>
+
+    <section class="slide s-meds" data-hue="6" data-reserve="2026-10-18">
+      <p class="kicker">What the gap means</p>
+      <h2>The gap is measured in medicines.</h2>
+      <div class="bars">
+        <p class="nm">One drug, today<small>to design it · <a href="https://www.cbsnews.com/news/artificial-intelligence-google-deepmind-ceo-demis-hassabis-60-minutes-transcript/" target="_blank" rel="noopener">Hassabis</a></small></p>
+        <div class="row"><div class="bar" style="--c: var(--spec-1); width: 1000px"></div></div>
+        <span></span>
+        <p class="v" style="margin: -8px 0 0">“ten years and billions of dollars”<small>and about 90% of drug candidates that enter clinical trials fail (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9293739/" target="_blank" rel="noopener">Sun et al., 2022</a>)</small></p>
+        <p class="nm step">COVID mRNA vaccines<small>the fast case</small></p>
+        <div class="row step"><div class="bar" style="--c: var(--spec-1); width: 75px"></div><p class="v">9 months<small><a href="https://www.darioamodei.com/essay/machines-of-loving-grace" target="_blank" rel="noopener">Amodei</a>: they “arguably should have been approved in ~2 months”</small></p></div>
+        <p class="nm step">The forecast<small>to design it · <a href="https://www.cbsnews.com/news/artificial-intelligence-google-deepmind-ceo-demis-hassabis-60-minutes-transcript/" target="_blank" rel="noopener">Hassabis</a></small></p>
+        <div class="row step"><div class="bar hatch" style="--c: var(--spec-4); width: 40px"></div><p class="v">Months, maybe weeks<small>“We can maybe reduce that down from years to maybe months or maybe even weeks.”</small></p></div>
+        <div class="ruler"><span>0</span><span>2 years</span><span>4</span><span>6</span><span>8</span><span>10 years</span></div>
+      </div>
+      <ul class="meds-pts">
+        <li class="step">The FDA already reviews with AI: <a href="https://www.fda.gov/news-events/press-announcements/fda-launches-agency-wide-ai-tool-optimize-performance-american-people" target="_blank" rel="noopener">Elsa for all staff since June 2025</a>, <a href="https://www.fda.gov/news-events/press-announcements/fda-expands-artificial-intelligence-capabilities-agentic-ai-deployment" target="_blank" rel="noopener">agents since December 2025</a>.</li>
+        <li class="step">Clinical trial tools set the pace. That is where we come in.</li>
+      </ul>
+      <aside class="notes">
+        <ul class="hits"><li>The gap is measured in medicines</li><li>One drug: 10 years today; COVID vaccines: 9 months</li><li>FDA already reviews with AI</li><li>Trial tools set the pace: that's us</li></ul>
+        <strong class="say">&lt;none yet&gt;</strong>
+        DRAFT, option B, slide 3 of 3, 2026-10-17. Bars on one scale, 10 years across: one drug
+        today (Hassabis's "ten years and billions of dollars to design just one drug"), the COVID
+        mRNA vaccines (9 months, from Amodei's essay, which adds that they "arguably should have
+        been approved in ~2 months") and the essay's forecast of "~1 year end-to-end for a drug",
+        hatched because it is a forecast. The essay pairs that year with "massive
+        parallelization".
+        <br><br>Corrected the same day after Jeremy asked for every quote to be checked ("didn't
+        look quite right"). The "~1 year end-to-end" row is gone: in the essay it is the delay
+        Amodei says is compatible with transformation, not a forecast for one drug. The forecast
+        row is now Hassabis's own line from the same 60 Minutes answer ("We can maybe reduce
+        that down from years to maybe months or maybe even weeks"). Hassabis said ten years and
+        billions "to design just one drug", so the row says designing.
+        <br><br>FDA bullet added the same day (Jeremy: "add a bullet around the FDAs current use
+        of AI"). From FDA's own releases: Elsa, a generative AI tool, launched agency-wide on 2
+        June 2025 "ahead of schedule and under budget", used "to accelerate clinical protocol
+        reviews" among other things
+        (https://www.fda.gov/news-events/press-announcements/fda-launches-agency-wide-ai-tool-optimize-performance-american-people);
+        agentic AI capabilities "for all agency employees", "entirely optional", on 1 December
+        2025 (https://www.fda.gov/news-events/press-announcements/fda-expands-artificial-intelligence-capabilities-agentic-ai-deployment); Elsa 4.0 with custom agents, available
+        to all FDA staff, on 6 May 2026, with "human subject matter experts" verifying "all
+        inputs, analytic processes, and output implementation"
+        (https://www.fda.gov/news-events/press-announcements/fda-expands-ai-capabilities-and-completes-data-platform-consolidation).
+        That last line is the human-oversight point, said by the regulator. The 9-in-10 failure figure is Sun et al. 2022, which analysed trial
+        data from 2010 to 2017. The take line is draft, for Jeremy to replace; it hands to slide
+        54's headline if B goes before 54.
+        <br><br>Sources, each checked word for word on 2026-10-17:
+        <br>Dario Amodei, "Machines of Loving Grace", October 2024,
+        https://www.darioamodei.com/essay/machines-of-loving-grace
+        <br>Demis Hassabis on 60 Minutes, CBS, first published 20 April 2025,
+        https://www.cbsnews.com/news/artificial-intelligence-google-deepmind-ceo-demis-hassabis-60-minutes-transcript/
+        <br>AI Digest, "A new Moore's Law for AI agents" (METR's time-horizon trend), last updated
+        March 2026, https://theaidigest.org/time-horizons
+        <br>Sun, Gao, Hu and Zhou, "Why 90% of clinical drug development fails and how to improve
+        it?", Acta Pharmaceutica Sinica B, 2022, https://pmc.ncbi.nlm.nih.gov/articles/PMC9293739/
+        <br><br>Chosen 2026-10-18 (Jeremy: "option B for the close. Create and i'll tweak").
+        Draft tag removed; wording is still his to tweak. Options A and C are in the reserves.
+        <br><br>To the Reserves 2026-10-18: the gap slide (frontier fast, trials steady) took its
+        place, with this slide's FDA line and a Hacker Orange press.
+      </aside>
+    </section>
+
 
   </div>
 
