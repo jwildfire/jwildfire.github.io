@@ -490,6 +490,7 @@
     .s-spiral svg text { font-family: var(--sans); }
     .s-spiral .ax { font-family: var(--mono) !important; font-size: 15px; fill: var(--faint); }
     .s-spiral .vl { font-family: var(--mono) !important; font-size: 17px; letter-spacing: .08em; fill: var(--soft); text-anchor: middle; }
+    .s-spiral .vc { font-family: var(--mono) !important; font-size: 16px; fill: var(--ink); text-anchor: middle; }
     .s-spiral .an { font-size: 24px; font-weight: 600; fill: var(--ink); }
     .s-spiral .an2 { font-size: 18px; fill: var(--soft); }
     .s-spiral .line { fill: none; stroke-width: 6; stroke-linejoin: round; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 0; }
@@ -1245,7 +1246,7 @@
     <section class="slide s-quote s-outl" data-hue="1">
       <p class="kicker">The question</p>
       <blockquote>What can we actually do with AI agents right now?</blockquote>
-      <svg class="fork step" viewBox="0 0 1320 380" role="img" aria-label="The talk's sections as a path: Orange, safetyGraphics and OpenRBQM in a line; then the path forks into Experiments on the AI Frontier on the upper lane and AI in the Clinical Trial Pipeline on the lower lane; the lanes meet again at What we learned.">
+      <svg class="fork step" viewBox="0 0 1320 380" role="img" aria-label="The talk's sections as a path: Orange, SafetyGraphics and OpenRBQM in a line; then the path forks into Experiments on the AI Frontier on the upper lane and AI in the Clinical Trial Pipeline on the lower lane; the lanes meet again at What we learned.">
         <path class="trunk" d="M40,190 H480"/>
         <path class="lane up" d="M480,190 C580,190 600,96 700,96 H900 C1000,96 1020,190 1120,190"/>
         <path class="lane dn" d="M480,190 C580,190 600,284 700,284 H900 C1000,284 1020,190 1120,190"/>
@@ -1256,7 +1257,7 @@
         <polygon data-sec="3" style="fill: var(--spec-1)" points="800,266 815.6,275.0 815.6,293.0 800,302 784.4,293.0 784.4,275.0"/>
         <polygon data-sec="5" style="fill: var(--spec-6)" points="1120,172 1135.6,181.0 1135.6,199.0 1120,208 1104.4,199.0 1104.4,181.0"/>
         <text class="n" x="22" y="246">Orange</text>
-        <text class="n" x="260" y="246" text-anchor="middle">safetyGraphics</text><text class="w" x="260" y="274" text-anchor="middle">2016–2021</text>
+        <text class="n" x="260" y="246" text-anchor="middle">SafetyGraphics</text><text class="w" x="260" y="274" text-anchor="middle">2016–2021</text>
         <text class="n" x="480" y="246" text-anchor="middle">OpenRBQM</text><text class="w" x="480" y="274" text-anchor="middle">2021–2025</text>
         <text class="n" x="800" y="52" text-anchor="middle">Experiments on the AI Frontier</text><text class="w" x="800" y="24" text-anchor="middle">summer 2026</text>
         <text class="n" x="800" y="340" text-anchor="middle">AI in the Clinical Trial Pipeline</text><text class="w" x="800" y="368" text-anchor="middle">Q4 2025</text>
@@ -1264,8 +1265,8 @@
       </svg>
       <span class="step fly" aria-hidden="true"></span>
       <aside class="notes">
-        <ul class="hits"><li>What can we actually do with AI agents right now?</li><li>Outline: safetyGraphics → OpenRBQM → AI in the pipeline → the frontier → what we learned</li></ul>
-        <strong class="say">As these AI tools have come into all of our lives, the question I wrestle with most is: what can we actually do with AI agents right now? That's what I'm going to try to answer today. [press] We've already met Orange. Next is safetyGraphics and OpenRBQM, two big projects I've worked on for the last decade or more. Then how we use AI in the pipeline on my team today, then my experiments at the frontier this summer, and finally what we learned and what comes next.</strong>
+        <ul class="hits"><li>What can we actually do with AI agents right now?</li><li>Outline: SafetyGraphics → OpenRBQM → AI in the pipeline → the frontier → what we learned</li></ul>
+        <strong class="say">As these AI tools have come into all of our lives, the question I wrestle with most is: what can we actually do with AI agents right now? That's what I'm going to try to answer today. [press] We've already met Orange. Next is SafetyGraphics and OpenRBQM, two big projects I've worked on for the last decade or more. Then how we use AI in the pipeline on my team today, then my experiments at the frontier this summer, and finally what we learned and what comes next.</strong>
         <br>Dry run 1, 14 October: about 0:43 on this slide. These notes: about 0:35 at the same pace.<br><br>Earlier spoken notes, replaced by the dry-run version on 18 October: Today I'm going to talk about what these tools are good at right now ... As you'll see, the answer to that question changes on a regular basis.<br><br>
         The second half of Jeremy's intro (2026-10-06), moved here from slide 1 at his request.
         <br><br>The question the whole talk hangs on. It is the title of diary #1 ("What Can We Actually
@@ -1376,7 +1377,7 @@
         <img src="assets/orange/orange-asleep-on-trackpad.jpg" alt="Orange asleep with his head on a laptop while Jeremy works the trackpad around him" />
       </figure>
       <p class="kicker pkg" style="--pkg: url(assets/hex/orange.png)">Orange, at work</p>
-      <h2>Open Source Safety Graphics</h2>
+      <h2>Open Source SafetyGraphics</h2>
       <p class="line">Such a helpful coworker</p>
       <aside class="notes">
         <ul class="hits"><li>Two projects, then how AI changed everything</li></ul>
@@ -1506,9 +1507,9 @@
 
     <section class="slide s-graphic" data-hue="1">
       <p class="kicker">ASA–DIA Safety Working Group</p>
-      <h2>safetyGraphics, and the people who built it</h2>
+      <h2>SafetyGraphics, and the people who built it</h2>
       <div class="gfx">
-        <img src="assets/hex/safetyGraphics.png" alt="The safetyGraphics hex sticker: a heart with a pulse line through it" />
+        <img src="assets/hex/safetyGraphics.png" alt="The SafetyGraphics hex sticker: a heart with a pulse line through it" />
         <div class="sxs">
           <figure><img src="assets/jsm2019/sxs-ae-explorer.png" alt="AE Explorer" /><figcaption>AE Explorer</figcaption></figure>
           <figure><img src="assets/jsm2019/sxs-outlier-explorer.png" alt="Safety Outlier Explorer" /><figcaption>Outlier Explorer</figcaption></figure>
@@ -1521,10 +1522,10 @@
           <p>The Safety Explorer Suite · <a href="https://doi.org/10.1177/2168479018754846" target="_blank" rel="noopener">Therapeutic Innovation &amp; Regulatory Science, 2018</a></p>
         </div>
       </div>
-      <p class="more">At R/Pharma in 2020: <a href="https://www.youtube.com/watch?v=2Ykw1jwSw5M" target="_blank" rel="noopener">safetyGraphics v2.0, the talk</a></p>
+      <p class="more">At R/Pharma in 2020: <a href="https://www.youtube.com/watch?v=2Ykw1jwSw5M" target="_blank" rel="noopener">SafetyGraphics v2.0, the talk</a></p>
       <aside class="notes">
-        <ul class="hits"><li>safetyGraphics: a consortium</li><li>Name the collaborators</li></ul>
-        <strong class="say">That was the first interactive graphic in the safetyGraphics project, a consortium of collaborators who built a series of interactive graphics for monitoring safety.</strong>
+        <ul class="hits"><li>SafetyGraphics: a consortium</li><li>Name the collaborators</li></ul>
+        <strong class="say">That was the first interactive graphic in the SafetyGraphics project, a consortium of collaborators who built a series of interactive graphics for monitoring safety.</strong>
         <br>Dry run 1, 14 October: about 0:15 on this slide. These notes: about 0:10 at the same pace.<br><br>Earlier spoken notes, replaced by the dry-run version on 18 October: • Clinicians and data scientists, dozens of companies, five years: papers, conferences, the FDA. <br>• One open-source R package: a Shiny app for exploring a trial's safety data in the browser. <br>• Jim Buchanan, Susan Mayo, Xiao Ni, Melvin Munsaka, Frank Harrell. <br>• Agustin Calatroni, Herman Mitchell, Russ Helms and the Rho Graphics Group.<br><br>
         These four points are what the slide said until 2026-10-06, moved here at Jeremy's request.
         <br><br>2026-10-14: the logo box is gone. Jeremy: "use the thumbnails from slide 7 on our
@@ -1648,12 +1649,12 @@
     </section>
 
     <section class="slide s-demo" data-hue="3">
-      <p class="kicker">gsm · Good Statistical Monitoring</p>
+      <p class="kicker">OpenRBQM · Good Statistical Monitoring</p>
       <h2>Monitoring a trial, as software</h2>
       <figure>
-        <div class="frame"><video data-demo data-rate="2.75" muted loop playsinline preload="none" poster="assets/gsm-kri-report-demo-poster.png" src="assets/gsm-kri-report-demo.mp4" aria-label="Screen recording of a gsm site report on example data: a table of sites by key risk indicator with red and amber flags, then the charts for one indicator"></video></div>
+        <div class="frame"><video data-demo data-rate="2.75" muted loop playsinline preload="none" poster="assets/gsm-kri-report-demo-poster.png" src="assets/gsm-kri-report-demo.mp4" aria-label="Screen recording of an OpenRBQM site report on example data: a table of sites by key risk indicator with red and amber flags, then the charts for one indicator"></video></div>
         <div class="cap">
-          <p>A {gsm} site report on example data · quality built in from the start</p>
+          <p>An OpenRBQM site report on example data · quality built in from the start</p>
           <p><a href="https://openrbqm.github.io/" target="_blank" rel="noopener">OpenRBQM</a>, a <a href="https://advance.hub.phuse.global/wiki/spaces/WEL/pages/26811224/OpenRBQM+Pre-Competitive+Collaboration+on+Open-Source+Software+for+RBQM" target="_blank" rel="noopener">PHUSE working group</a></p>
         </div>
       </figure>
@@ -1695,7 +1696,7 @@
       <div class="eco">
         <a class="pk" href="https://gilead-public.github.io/gsm.core/" target="_blank" rel="noopener" style="--c: var(--spec-0)"><div class="hx"><span>core</span></div><div class="t"><b>gsm.core</b><i>The engine</i></div><p class="d">Builds and scores every metric</p></a>
         <a class="pk" href="https://gilead-public.github.io/gsm.kri/" target="_blank" rel="noopener" style="--c: var(--spec-1)"><div class="hx"><span>kri</span></div><div class="t"><b>gsm.kri</b><i>Metrics</i></div><p class="d">Key risk indicators, with their charts and reports</p></a>
-        <a class="pk" href="https://gilead-biostats.github.io/gsm.app/" target="_blank" rel="noopener" style="--c: var(--spec-2)"><div class="hx"><span>app</span></div><div class="t"><b>gsm.app</b><i>Apps</i></div><p class="d">Shiny applications for gsm assessments</p></a>
+        <a class="pk" href="https://gilead-biostats.github.io/gsm.app/" target="_blank" rel="noopener" style="--c: var(--spec-2)"><div class="hx"><span>app</span></div><div class="t"><b>gsm.app</b><i>Apps</i></div><p class="d">Shiny applications for OpenRBQM assessments</p></a>
         <a class="pk" href="https://gilead-public.github.io/gsm.qtl/" target="_blank" rel="noopener" style="--c: var(--spec-3)"><div class="hx"><span>qtl</span></div><div class="t"><b>gsm.qtl</b><i>Limits</i></div><p class="d">Quality tolerance limits, and their reports</p></a>
         <a class="pk" href="https://impala-consortium.github.io/gsm.simaerep/" target="_blank" rel="noopener" style="--c: var(--spec-4)"><div class="hx"><span>simaerep</span></div><div class="t"><b>gsm.simaerep</b><i>From IMPALA</i></div><p class="d">Finds sites that under-report adverse events</p></a>
         <a class="pk" href="https://gilead-public.github.io/workr/" target="_blank" rel="noopener" style="--c: var(--spec-5)"><div class="hx"><span>workr</span></div><div class="t"><b>workr</b><i>Workflows</i></div><p class="d">Runs every step from a YAML workflow</p></a>
@@ -1801,7 +1802,7 @@
       <p class="qcfoot"><b>The issue number goes in the test name</b><code>test_that("Flags sites above the upper limit (#19)", { ... })</code></p>
       <aside class="notes">
         <ul class="hits"><li>qcthat: a traceability matrix</li><li>Issue number in the test name</li><li>Evidence on every PR and release</li><li>See John and Natalia's talk</li></ul>
-        <strong class="say">We also spent a lot of time on quality, since that question was top of mind after safetyGraphics. One thing OpenRBQM does really well is ship with a traceability matrix. We built a package called qcthat, which John and Natalia from my team talked about yesterday; I recommend checking it out. We use GitHub issues as our requirements, and each testthat test names its issue number, just like you would in a pull request. qcthat builds a nested list: each milestone has a set of issues, and each issue has one or more tests as its evidence. It all runs in CI/CD, and the evidence attaches automatically to pull requests and releases.</strong>
+        <strong class="say">We also spent a lot of time on quality, since that question was top of mind after SafetyGraphics. One thing OpenRBQM does really well is ship with a traceability matrix. We built a package called qcthat, which John and Natalia from my team talked about yesterday; I recommend checking it out. We use GitHub issues as our requirements, and each testthat test names its issue number, just like you would in a pull request. qcthat builds a nested list: each milestone has a set of issues, and each issue has one or more tests as its evidence. It all runs in CI/CD, and the evidence attaches automatically to pull requests and releases.</strong>
         <br>Dry run 1, 14 October: about 1:20 on this slide. These notes: about 0:45 at the same pace.<br><br>
         Moved up on 2026-10-06 to sit in the first half of beat 2, before any AI (Jeremy:
         "immediately intro SDLC (s15 without the AI overlay) and GxP QC that (s24 - 'OpenRBQM
@@ -2325,7 +2326,7 @@
 
     <section class="slide" data-hue="4">
       <p class="kicker">The goal</p>
-      <h2>Modernize safetyGraphics, using the OpenRBQM framework</h2>
+      <h2>Modernize SafetyGraphics, using the OpenRBQM framework</h2>
       <div class="gallery">
         <figure><img src="assets/legacy/safety-histogram.png" alt="The original Safety Histogram, as shown in its README" /><i>2020</i><figcaption>Safety Histogram</figcaption></figure>
         <figure><img src="assets/legacy/safety-outlier-explorer.png" alt="The original Outlier Explorer, as shown in its README" /><i>2021</i><figcaption>Outlier Explorer</figcaption></figure>
@@ -2341,8 +2342,8 @@
       <p class="soft" style="font-family: var(--mono); font-size: 21px; margin: 18px 0 0">10 original charts · last commit, top right · 25,400 lines of JavaScript · all on D3 v3</p>
       <div class="goodat hack" style="bottom: 22px"><div class="bub"><p class="a">Open Source ftw</p></div><div class="who"></div></div>
       <aside class="notes">
-        <ul class="hits"><li>Goal: modernize safetyGraphics on OpenRBQM</li><li>Ten old D3 charts</li></ul>
-        <strong class="say">I had this robust OpenRBQM framework, with pipelines, qcthat and real evidence. And I had these old safety renderers, JavaScript from six or seven years ago. Could AI agents help me bring safetyGraphics into the modern age? Here's what I've been able to do this summer, off in open-source land.</strong>
+        <ul class="hits"><li>Goal: modernize SafetyGraphics on OpenRBQM</li><li>Ten old D3 charts</li></ul>
+        <strong class="say">I had this robust OpenRBQM framework, with pipelines, qcthat and real evidence. And I had these old safety renderers, JavaScript from six or seven years ago. Could AI agents help me bring SafetyGraphics into the modern age? Here's what I've been able to do this summer, off in open-source land.</strong>
         <br>Dry run 1, 14 October: about 0:42 on this slide. These notes: about 0:21 at the same pace.<br><br>
         Order set 2026-10-06 (Jeremy: "i want 28/31/29/30. question/goal/hexes/v1"): the
         question, then this goal slide, then the row of version hexes, then obot v1. (An
@@ -2503,7 +2504,7 @@
 
     <section class="slide s-image" data-hue="4">
       <p class="kicker pkg" style="--pkg: url(assets/hex/obot-v2.png)">obot v2 · what I built</p>
-      <h2>safetyGraphics, inside a gsm workflow</h2>
+      <h2>SafetyGraphics, inside an OpenRBQM workflow</h2>
       <div class="pair" style="grid-template-columns: 5fr 7fr">
         <figure>
           <div class="frame code"><pre>meta:
@@ -2532,8 +2533,8 @@ steps:
       </div>
       <div class="goodat"><div class="bub"><p class="q">What worked</p><p class="a">Real work, by text</p></div><div class="who"><i>👍</i></div></div>
       <aside class="notes">
-        <ul class="hits"><li>Old charts inside gsm: a first step</li><li>Couldn't get much done without me</li><li>Probably faster by hand</li></ul>
-        <strong class="say">It did get one thing working: the old safetyGraphics charts, running inside our new gsm framework. [press] A good first step. But it couldn't get much done without me, and I wasn't climbing the ladder at all. I'd probably have been faster by hand.</strong>
+        <ul class="hits"><li>Old charts inside OpenRBQM: a first step</li><li>Couldn't get much done without me</li><li>Probably faster by hand</li></ul>
+        <strong class="say">It did get one thing working: the old SafetyGraphics charts, running inside our new OpenRBQM framework. [press] A good first step. But it couldn't get much done without me, and I wasn't climbing the ladder at all. I'd probably have been faster by hand.</strong>
         <br>Dry run 1, 14 October: about 0:35 on this slide. These notes: about 0:20 at the same pace.<br><br>
         Rebuilt 2026-10-07 (Jeremy: "would like to have each of these evidence slides show a
         visual of the work - text moves to notes. this one probably pulls from gsm.safety?").
@@ -2695,7 +2696,7 @@ steps:
       <div class="goodat hack sm" style="bottom: auto; top: 78px"><div class="bub"><p class="a" style="font-size: 44px; letter-spacing: 0.08em">🚀🔥💪</p></div><div class="who"></div></div>
       <aside class="notes">
         <ul class="hits"><li>Jim: have a look</li><li>FDA paper: build figure 3</li><li>Hours later: the composite view</li><li>QT explorer: another night</li><li>Not qualified, but passes the sniff test</li></ul>
-        <strong class="say">Then I sent it to Jim Buchanan, safetyGraphics' clinical lead. He hadn't worked on it in a couple of years, and he was excited; he's an amazing advocate for this work. He sent me a couple of papers from colleagues at FDA, including a newer one that changes how the eDISH analysis works. It had some cool new figures, so I asked obot: take a look at this paper; can you build figure 3? A few hours later we had this composite view, a new way of analyzing liver toxicity, working, with a clinical workflow. Then the QT explorer, which we'd worked on but never taken to production: modernize that old repo. Done, another night. [press] Translating research into software like that blew my mind, with tests and quality documentation too. It's not qualified; nobody has gone through those steps. But it passes the sniff test from people who've spent a lot of time with these charts. I have not had time to build these without these tools.</strong>
+        <strong class="say">Then I sent it to Jim Buchanan, SafetyGraphics' clinical lead. He hadn't worked on it in a couple of years, and he was excited; he's an amazing advocate for this work. He sent me a couple of papers from colleagues at FDA, including a newer one that changes how the eDISH analysis works. It had some cool new figures, so I asked obot: take a look at this paper; can you build figure 3? A few hours later we had this composite view, a new way of analyzing liver toxicity, working, with a clinical workflow. Then the QT explorer, which we'd worked on but never taken to production: modernize that old repo. Done, another night. [press] Translating research into software like that blew my mind, with tests and quality documentation too. It's not qualified; nobody has gone through those steps. But it passes the sniff test from people who've spent a lot of time with these charts. I have not had time to build these without these tools.</strong>
         <br>Dry run 1, 14 October: about 2:21 on this slide. These notes: about 1:08 at the same pace.<br><br>
         Source: diary #7, "Papers → Prompts → Prototypes" (2026-07-17). "I demoed safety.viz for
         safetyGraphics' clinical lead, Jim Buchanan, this week and asked if he had any
@@ -2869,7 +2870,8 @@ steps:
             <g class="ax" text-anchor="middle">
               <text x="70" y="458">Jun</text><text x="205.6" y="458">Jul</text><text x="351.9" y="458">Aug</text><text x="498.2" y="458">Sep</text><text x="639.8" y="458">Oct</text>
             </g>
-            <text class="vl" x="134.8" y="38">v1–v2</text><text class="vl" x="309.4" y="38">v3</text><text class="vl" x="477" y="38" style="fill: #d87972">v4</text><text class="vl v5" x="630.4" y="38" style="fill: #77a95b">v5</text>
+            <text class="vl" x="134.8" y="22">v1–v2</text><text class="vl" x="309.4" y="22">v3</text><text class="vl" x="477" y="22" style="fill: #d87972">v4</text><text class="vl v5" x="630.4" y="22" style="fill: #77a95b">v5</text>
+            <text class="vc" x="134.8" y="46">0 charts</text><text class="vc" x="309.4" y="46">11 charts</text><text class="vc" x="477" y="46">2 charts</text><text class="vc v5" x="630.4" y="46">7 charts</text>
             <path class="line climb" pathLength="1" d="M64 400.8 L205.6 400.8 L347.2 355.2 L403.8 351.5 L422.7 264.7 L441.6 111.4 L479.3 77.7 L536 77.7"/>
             <path class="line cut" pathLength="1" d="M536 77.7 L540.7 424.8 L639.8 422.5 L720 421.8"/>
             <g class="peak">
@@ -2907,6 +2909,7 @@ steps:
         <br><br>What went (about 80,000 lines): 229 tool files, about 61,700 lines, in 27 home-built tools (an operations dashboard, a navigator, a morning digest, voice briefings for the car, a session hub, a spend guard and spend-cap hook, blocker, constraint and delivery logs, a worker-id tool and more); 115 drafts; 39 scripts; 26 skills; 18 docs; 15 commands.
         <br>What stayed (840 lines): AGENTS.md, README.md, NEWS.md, .gitignore, docs/cloud-environments.md, routines/standup.md, skills/requirement-session/SKILL.md.
         <br><br>obot.roadmap: scripts/ went 4 (July) to 35 (late July) to 79 (early September), 61 after the cleanup, 65 today. reports/ went 36 (July) to 377 (early September) to 810 (mid October). The machinery shrank while the output kept growing.
+        <br><br>Charts released under each version (Jeremy, 2026-10-18: "can we also show the # of charts released for each obot version on 37. Just add the numbers under the versions in the header."). Counted from release tags, a chart counted in the version when it first shipped: v1–v2 (June), none; v3 (July), 11, safety.viz v1.0.0 on 11 July (histogram, AE timelines, delta-delta, outlier explorer, results over time, shift plot), v1.2.0 hepatic explorer, v1.3.0 AE explorer, v1.4.0 QT explorer, v1.5.0 hepatic waterfall and participant profile; v4 (August to 10 September), 2, safety.viz v1.6.0 NEP explorer (14 August) and v1.7.0 time to event (15 August); v5, 7, safety.viz v1.8.0 patient journey explorer (2 October) and bio.viz v0.1.0 and v0.2.0 (3 and 4 October: association scatter, biomarker screen, correlation matrix, group comparison, cross-tab, stratified survival). Total 20, matching the What we built slide. The v5 count comes on the press with the rest of v5.
         <br><br>Hacker Orange popup on the press, with the cut (Jeremy, 2026-10-18: "37: hacker: thank goodness"). The words are his.
       </aside>
     </section>
@@ -3201,7 +3204,7 @@ steps:
       </div>
       <aside class="notes">
         <ul class="hits"><li>20 charts, 3 apps, 7 clinical guides</li><li>About 600 pull requests</li><li>One person, nights and weekends</li></ul>
-        <strong class="say">In the end, from May to October, we built 20 interactive charts, 3 apps and 7 clinical guides. Some new, some from papers, some from the old safetyGraphics work. About 600 pull requests. This was nights and weekends, maybe 8 hours a week (I didn't keep track), alongside my day job. One person, in their spare time, with a $200 a month plan.</strong>
+        <strong class="say">In the end, from May to October, we built 20 interactive charts, 3 apps and 7 clinical guides. Some new, some from papers, some from the old SafetyGraphics work. About 600 pull requests. This was nights and weekends, maybe 8 hours a week (I didn't keep track), alongside my day job. One person, in their spare time, with a $200 a month plan.</strong>
         <br>Dry run 1, 14 October: about 0:46 on this slide. These notes: about 0:25 at the same pace.<br><br>
         Added 2026-10-13 at Jeremy's ask: "I want to add a 'What we built slide' at the end of
         the summer experiment section that summarizes what we made. Technical Metrics: PRs,
@@ -3288,7 +3291,7 @@ steps:
       <p class="kicker">The payoff · what I built</p>
       <h2>The safety.viz demo: your own files, nothing uploaded</h2>
       <figure>
-        <div class="frame"><video data-demo muted loop playsinline preload="none" poster="assets/safety-viz-demo-poster.png" src="assets/safety-viz-demo.mp4" aria-label="Screen recording of the safety.viz demo app, with Orange's notes popping up: four study files are dropped in, the app says which RBQM metrics it cannot run and why, labels its guessed lab columns, opens the hepatic explorer on one participant, runs gsm's metrics with R in the browser and shows site 705 flagged for adverse events"></video></div>
+        <div class="frame"><video data-demo muted loop playsinline preload="none" poster="assets/safety-viz-demo-poster.png" src="assets/safety-viz-demo.mp4" aria-label="Screen recording of the safety.viz demo app, with Orange's notes popping up: four study files are dropped in, the app says which RBQM metrics it cannot run and why, labels its guessed lab columns, opens the hepatic explorer on one participant, runs OpenRBQM's metrics with R in the browser and shows site 705 flagged for adverse events"></video></div>
         <div class="cap">
           <p>The live app · Orange's notes added for the talk</p>
           <a class="qrlink" href="https://jwildfire.github.io/safety.viz/demo/" target="_blank" rel="noopener"><span>Try it yourself<b>jwildfire.github.io/safety.viz/demo</b></span><svg viewBox="0 0 37 37" role="img" aria-label="QR code for jwildfire.github.io/safety.viz/demo" shape-rendering="crispEdges"><rect width="37" height="37" fill="#fff"/><path d="M2 2h7v1h-7zM10 2h1v1h-1zM12 2h5v1h-5zM18 2h2v1h-2zM24 2h3v1h-3zM29 2h2v1h-2zM2 3h1v1h-1zM8 3h1v1h-1zM12 3h7v1h-7zM20 3h1v1h-1zM24 3h1v1h-1zM28 3h7v1h-7zM2 4h1v1h-1zM4 4h3v1h-3zM8 4h1v1h-1zM13 4h1v1h-1zM16 4h1v1h-1zM18 4h1v1h-1zM22 4h2v1h-2zM26 4h1v1h-1zM29 4h3v1h-3zM33 4h2v1h-2zM2 5h1v1h-1zM4 5h3v1h-3zM8 5h1v1h-1zM10 5h2v1h-2zM13 5h1v1h-1zM16 5h1v1h-1zM22 5h1v1h-1zM27 5h1v1h-1zM29 5h1v1h-1zM32 5h1v1h-1zM34 5h1v1h-1zM2 6h1v1h-1zM4 6h3v1h-3zM8 6h1v1h-1zM10 6h2v1h-2zM13 6h3v1h-3zM19 6h5v1h-5zM25 6h6v1h-6zM33 6h2v1h-2zM2 7h1v1h-1zM8 7h1v1h-1zM10 7h5v1h-5zM18 7h1v1h-1zM21 7h1v1h-1zM25 7h2v1h-2zM30 7h3v1h-3zM2 8h7v1h-7zM10 8h4v1h-4zM15 8h3v1h-3zM20 8h2v1h-2zM23 8h4v1h-4zM28 8h1v1h-1zM30 8h1v1h-1zM32 8h1v1h-1zM10 9h3v1h-3zM15 9h1v1h-1zM17 9h2v1h-2zM20 9h1v1h-1zM26 9h1v1h-1zM30 9h1v1h-1zM32 9h2v1h-2zM2 10h2v1h-2zM5 10h4v1h-4zM11 10h4v1h-4zM17 10h2v1h-2zM20 10h3v1h-3zM26 10h5v1h-5zM2 11h1v1h-1zM6 11h1v1h-1zM9 11h2v1h-2zM13 11h1v1h-1zM15 11h1v1h-1zM18 11h3v1h-3zM24 11h2v1h-2zM28 11h1v1h-1zM32 11h1v1h-1zM2 12h1v1h-1zM8 12h5v1h-5zM16 12h3v1h-3zM20 12h1v1h-1zM25 12h1v1h-1zM31 12h1v1h-1zM33 12h2v1h-2zM2 13h2v1h-2zM5 13h3v1h-3zM14 13h3v1h-3zM18 13h1v1h-1zM20 13h1v1h-1zM22 13h1v1h-1zM24 13h2v1h-2zM29 13h3v1h-3zM2 14h1v1h-1zM4 14h3v1h-3zM8 14h1v1h-1zM11 14h1v1h-1zM15 14h1v1h-1zM21 14h3v1h-3zM25 14h2v1h-2zM31 14h1v1h-1zM2 15h2v1h-2zM6 15h2v1h-2zM9 15h4v1h-4zM15 15h1v1h-1zM17 15h4v1h-4zM23 15h1v1h-1zM26 15h3v1h-3zM30 15h3v1h-3zM34 15h1v1h-1zM2 16h1v1h-1zM5 16h2v1h-2zM8 16h1v1h-1zM12 16h3v1h-3zM17 16h1v1h-1zM21 16h1v1h-1zM25 16h1v1h-1zM28 16h2v1h-2zM31 16h2v1h-2zM34 16h1v1h-1zM2 17h1v1h-1zM7 17h1v1h-1zM9 17h1v1h-1zM11 17h2v1h-2zM14 17h5v1h-5zM20 17h4v1h-4zM28 17h1v1h-1zM30 17h1v1h-1zM32 17h3v1h-3zM2 18h5v1h-5zM8 18h3v1h-3zM12 18h4v1h-4zM21 18h2v1h-2zM24 18h1v1h-1zM26 18h6v1h-6zM3 19h1v1h-1zM10 19h2v1h-2zM14 19h4v1h-4zM21 19h1v1h-1zM25 19h1v1h-1zM27 19h1v1h-1zM32 19h1v1h-1zM34 19h1v1h-1zM2 20h1v1h-1zM4 20h1v1h-1zM6 20h4v1h-4zM11 20h3v1h-3zM16 20h1v1h-1zM18 20h1v1h-1zM23 20h2v1h-2zM28 20h2v1h-2zM31 20h2v1h-2zM9 21h2v1h-2zM18 21h1v1h-1zM21 21h1v1h-1zM23 21h5v1h-5zM2 22h1v1h-1zM4 22h3v1h-3zM8 22h2v1h-2zM14 22h3v1h-3zM18 22h3v1h-3zM22 22h3v1h-3zM26 22h1v1h-1zM28 22h2v1h-2zM34 22h1v1h-1zM2 23h1v1h-1zM4 23h1v1h-1zM7 23h1v1h-1zM10 23h1v1h-1zM16 23h2v1h-2zM19 23h1v1h-1zM25 23h1v1h-1zM27 23h3v1h-3zM32 23h1v1h-1zM2 24h2v1h-2zM5 24h1v1h-1zM7 24h2v1h-2zM10 24h1v1h-1zM12 24h2v1h-2zM16 24h5v1h-5zM23 24h1v1h-1zM25 24h3v1h-3zM30 24h5v1h-5zM4 25h2v1h-2zM7 25h1v1h-1zM9 25h1v1h-1zM11 25h1v1h-1zM13 25h1v1h-1zM16 25h2v1h-2zM21 25h1v1h-1zM24 25h2v1h-2zM30 25h4v1h-4zM2 26h1v1h-1zM5 26h6v1h-6zM12 26h2v1h-2zM16 26h2v1h-2zM19 26h1v1h-1zM21 26h2v1h-2zM25 26h3v1h-3zM30 26h1v1h-1zM32 26h3v1h-3zM11 27h1v1h-1zM15 27h1v1h-1zM20 27h3v1h-3zM25 27h1v1h-1zM2 28h7v1h-7zM10 28h1v1h-1zM12 28h1v1h-1zM14 28h1v1h-1zM16 28h1v1h-1zM18 28h1v1h-1zM20 28h1v1h-1zM22 28h1v1h-1zM24 28h1v1h-1zM26 28h1v1h-1zM28 28h7v1h-7zM2 29h1v1h-1zM8 29h1v1h-1zM13 29h2v1h-2zM19 29h2v1h-2zM22 29h2v1h-2zM25 29h1v1h-1zM28 29h1v1h-1zM34 29h1v1h-1zM2 30h1v1h-1zM4 30h3v1h-3zM8 30h1v1h-1zM10 30h2v1h-2zM16 30h2v1h-2zM20 30h1v1h-1zM22 30h2v1h-2zM25 30h2v1h-2zM28 30h1v1h-1zM30 30h3v1h-3zM34 30h1v1h-1zM2 31h1v1h-1zM4 31h3v1h-3zM8 31h1v1h-1zM12 31h2v1h-2zM26 31h1v1h-1zM28 31h1v1h-1zM30 31h3v1h-3zM34 31h1v1h-1zM2 32h1v1h-1zM4 32h3v1h-3zM8 32h1v1h-1zM10 32h2v1h-2zM14 32h1v1h-1zM18 32h5v1h-5zM24 32h1v1h-1zM28 32h1v1h-1zM30 32h3v1h-3zM34 32h1v1h-1zM2 33h1v1h-1zM8 33h1v1h-1zM10 33h1v1h-1zM12 33h1v1h-1zM18 33h2v1h-2zM21 33h4v1h-4zM26 33h1v1h-1zM28 33h1v1h-1zM34 33h1v1h-1zM2 34h7v1h-7zM10 34h1v1h-1zM13 34h1v1h-1zM16 34h1v1h-1zM20 34h1v1h-1zM24 34h1v1h-1zM28 34h7v1h-7z" fill="#1f2328"/></svg></a>
@@ -3296,7 +3299,7 @@ steps:
       </figure>
       <aside class="notes">
         <ul class="hits"><li>Your files, nothing uploaded</li><li>R in the browser</li><li>Play with it, file issues, fork it</li></ul>
-        <strong class="say">Here's the demo. You load your own files, and nothing is uploaded. R launches in the browser, and you get the RBQM components, the new biomarker charts and all the safetyGraphics work, old and new, in one demo site. Please play with it and file issues, and maybe I'll let Claude get to work on them. Or fork it; it's all open source.</strong>
+        <strong class="say">Here's the demo. You load your own files, and nothing is uploaded. R launches in the browser, and you get the RBQM components, the new biomarker charts and all the SafetyGraphics work, old and new, in one demo site. Please play with it and file issues, and maybe I'll let Claude get to work on them. Or fork it; it's all open source.</strong>
         <br>Dry run 1, 14 October: about 0:52 on this slide. These notes: about 0:25 at the same pace.<br><br>
         Rebuilt 2026-10-14 (Jeremy: "Sub agent to create a demo gif. spend some time making this
         good. Maybe add orange pop-up narration to highlight key features?"). A 40-second
