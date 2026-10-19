@@ -599,12 +599,23 @@
     /* Presenter window (P opens it; ?presenter in the URL): the notes fill the window, for a
        second screen. It follows the deck window and sends its key presses back to it. */
     body.presenter .notes-panel { display: block; top: 0; max-height: none; font-size: 18px; padding: 28px 40px; background: #1f2328; }
+    body.presenter .notes-panel .pnext { padding-right: 240px; min-height: 40px; align-items: center; }
     body.presenter .notes-panel .pnext { font-family: var(--mono); font-size: 13px; color: #8d938c; margin: 0 0 22px; display: flex; flex-wrap: wrap; gap: 6px 24px; }
     /* Teleprompter: only the spoken words, one sentence a line; [press] cues as small marks. */
-    body.presenter .notes-panel .tp { margin: 0 0 16px; font-size: 32px; line-height: 1.35; font-weight: 600; color: #fff; max-width: 34em; }
-    body.presenter .notes-panel .tp.cue { font-family: var(--mono); font-size: 15px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: var(--spec-3); margin: 6px 0 14px; }
+    .notes-panel ul.hits { margin: 0 0 12px; padding-left: 1.1em; font-weight: 700; font-size: 20px; line-height: 1.4; color: #fff; }
+    body.presenter .notes-panel ul.hits { font-size: 38px; line-height: 1.3; margin: 0 0 26px; padding-left: 1em; display: grid; gap: 10px; }
+    body.presenter .notes-panel ul.hits li::marker { color: var(--spec-3); }
+    body.presenter .notes-panel .tpsay { border-top: 1px solid rgba(243, 244, 241, 0.25); padding-top: 18px; }
+    body.presenter .notes-panel .tp { margin: 0 0 8px; font-size: 21px; line-height: 1.45; font-weight: 400; color: #b9beb6; max-width: 48em; }
+    body.presenter .notes-panel .tp.cue { font-family: var(--mono); font-size: 13px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: var(--spec-3); margin: 4px 0 8px; }
     body.presenter .notes-panel .tp.none { color: #8d938c; font-weight: 400; }
     body.presenter .hint { display: none; }
+    #ptimer { position: fixed; top: 14px; right: 20px; z-index: 6; display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-variant-numeric: tabular-nums; }
+    #ptimer .ptime { font-size: 34px; font-weight: 500; color: #fff; min-width: 3.2em; text-align: right; }
+    #ptimer.paused .ptime { color: #e0a23a; }
+    #ptimer button { font: inherit; font-size: 16px; width: 40px; height: 40px; border-radius: 6px; border: 1px solid rgba(243, 244, 241, 0.3); background: #2b3036; color: #f3f4f1; cursor: pointer; }
+    #ptimer button:hover { background: #3a4048; }
+    #ptimer button:focus-visible { outline: 2px solid var(--spec-3); }
 
 
     .thumb { display: contents; }
@@ -1064,6 +1075,7 @@
       <h1>Building open-source clinical trial tools with <span class="spectrum">agentic AI</span></h1>
       <p class="byline"><strong>Jeremy Wildfire</strong> · 21 October 2026 · <a href="https://jwildfire.github.io/keynote/" target="_blank" rel="noopener">jwildfire.github.io/keynote</a></p>
       <aside class="notes">
+        <ul class="hits"><li>Hi, I'm Jeremy</li><li>Open-source tools for clinical trials</li><li>How AI fits into this world</li></ul>
         <strong class="say">Hi I'm Jeremy and I work on building open source
         tools for clinical trials. I've spent the last few years trying to figure out how AI
         fits into this world.</strong>
@@ -1091,6 +1103,7 @@
         <div class="who"></div>
       </div>
       <aside class="notes">
+        <ul class="hits"><li>Orange: our Chilean street cat</li><li>Worked with me for years</li><li>Disclaimer: Gilead, but my opinions</li></ul>
         <strong class="say">Orange was our Chilean street cat. We met him when we lived in Chile for five years, and he worked with me for a lot of my career. I'm going to talk a little about the work Orange and I did together, and then we'll get into the AI part of the talk. [press] A quick disclaimer: I work at Gilead, and I'll talk a little about what we do at work, but this is all just my opinion.</strong>
         <br>Dry run 1, 14 October: about 0:41 on this slide. These notes: about 0:32 at the same pace.<br><br>Earlier spoken notes, replaced by the dry-run version on 18 October: But, first I want to introduce a key collaborator, Orange! He was a Chilean street cat and was very silly. One time he fell from our 7th story window into the parking lot and survived! He loved sitting with me while I worked. He really was a good cat.<br><br>
         Background: Obot is named after Orange (diary #2, 2026-06-12). The Chile / Santiago /
@@ -1130,6 +1143,7 @@
       </svg>
       <span class="step fly" aria-hidden="true"></span>
       <aside class="notes">
+        <ul class="hits"><li>What can we actually do with AI agents right now?</li><li>Outline: safetyGraphics → OpenRBQM → AI in the pipeline → the frontier → what we learned</li></ul>
         <strong class="say">As these AI tools have come into all of our lives, the question I wrestle with most is: what can we actually do with AI agents right now? That's what I'm going to try to answer today. [press] We've already met Orange. Next is safetyGraphics and OpenRBQM, two big projects I've worked on for the last decade or more. Then how we use AI in the pipeline on my team today, then my experiments at the frontier this summer, and finally what we learned and what comes next.</strong>
         <br>Dry run 1, 14 October: about 0:43 on this slide. These notes: about 0:35 at the same pace.<br><br>Earlier spoken notes, replaced by the dry-run version on 18 October: Today I'm going to talk about what these tools are good at right now ... As you'll see, the answer to that question changes on a regular basis.<br><br>
         The second half of Jeremy's intro (2026-10-06), moved here from slide 1 at his request.
@@ -1216,6 +1230,7 @@
         </svg>
       </div>
       <aside class="notes">
+        <ul class="hits"><li>I answered it in public</li><li>Every post is at the QR code</li></ul>
         <strong class="say">When I found out I was giving this talk, back in the spring, I tried to think about how I'd answer that question. Like any good R developer and open-source advocate, I decided to do the work in public. I wrote a series of posts, and everything leading up to this talk is at this QR code.</strong>
         <br>Dry run 1, 14 October: about 0:33 on this slide. These notes: about 0:23 at the same pace.<br><br>
         Talking points (the slide's earlier bullets; Jeremy to reword):
@@ -1243,6 +1258,7 @@
       <h2>Open Source Safety Graphics</h2>
       <p class="line">Such a helpful coworker</p>
       <aside class="notes">
+        <ul class="hits"><li>Two projects, then how AI changed everything</li></ul>
         <strong class="say">I'll talk briefly about two projects, and then about how AI has changed everything.</strong>
         <br>Dry run 1, 14 October: about 0:08 on this slide. These notes: about 0:06 at the same pace.<br><br>Earlier spoken notes, replaced by the dry-run version on 18 October: I want to tell you about some of the work Orange and I did together! He was there both when I learned R and when I learned clinical trials. <br><br>I promise I'm not <i>just</i> going to talk about my cat today. This actually is a talk about AI and how it has completely changed how I do my job over the last year.<br><br>
         The second paragraph is Jeremy's hand-off line to the next slide.
@@ -1265,6 +1281,7 @@
         <figcaption>Interactive graphics in the New York Times</figcaption>
       </figure>
       <aside class="notes">
+        <ul class="hits"><li>2012: biostatistician, SAS and some R</li><li>NYT interactive graphics</li><li>Why can't I do this for work?</li></ul>
         <strong class="say">Back in 2012 I was a biostatistician working on NIH-funded asthma and allergy studies. I knew SAS and some R, and I started seeing interactive graphics in places like the New York Times. This one shows Obama's paths to victory in his re-election, so a while ago. Looking at these, I thought: why can't I do this for work?</strong>
         <br>Dry run 1, 14 October: about 0:33 on this slide. These notes: about 0:24 at the same pace.<br><br>
         Source: diary #3, "Re-Introducing safetyGraphics" (2026-06-16), "A Brief Prehistory".
@@ -1302,6 +1319,7 @@
       <figure><img src="assets/jsm2019/rho-graphics-wall.jpg" alt="A wall of thumbnails of interactive graphics built at Rho: bar charts, timelines, scatter plots, tables, line charts" /></figure>
       <div class="goodat now"><div class="bub"><p class="a">We can!</p></div><div class="who"><i>👍</i></div></div>
       <aside class="notes">
+        <ul class="hits"><li>We can!</li><li>Taught myself JavaScript (D3)</li><li>R graphics plus interactive JS</li></ul>
         <strong class="say">It turns out we can. I taught myself JavaScript (D3 version 2, I think) and we ran a bunch of experiments. We were already making fancy R graphics, mostly in lattice back then, and we started building more and more with JavaScript and interactive graphics.</strong>
         <br>Dry run 1, 14 October: about 0:29 on this slide. These notes: about 0:18 at the same pace.<br><br>
         Added 2026-10-14 at Jeremy's word: "Let's use the slide 4 thumbnail wall as a quick 'We
@@ -1324,6 +1342,7 @@
         <div class="frame"><img src="assets/jsm2019/standard-ae-table.jpg" alt="A standard adverse events table: preferred terms down the side, counts, percentages and p-values by group across" /></div>
       </figure>
       <aside class="notes">
+        <ul class="hits"><li>The AE table: 18 pages, unreadable</li></ul>
         <strong class="say">After some experimenting, we found places in the clinical trial pipeline where this was really useful. Take the adverse event listings that come with every study: horrific, and hard to read.</strong>
         <br>Dry run 1, 14 October: about 0:18 on this slide. These notes: about 0:12 at the same pace.<br><br>
         Added 2026-10-14 at Jeremy's word: "put in slide 5 from the new deck as an example of what
@@ -1348,6 +1367,7 @@
         <figcaption>The Adverse Event Explorer · open source, in the browser</figcaption>
       </figure>
       <aside class="notes">
+        <ul class="hits"><li>A handful of webpages beats a massive table</li></ul>
         <strong class="say">We turned them into a handful of web pages, which is a much better way to review a study's data in lots of ways.</strong>
         <br>Dry run 1, 14 October: about 0:12 on this slide. These notes: about 0:10 at the same pace.<br><br>
         Source: diary #3. The "wall of numbers" in a clinical study report was "100% impenetrable"
@@ -1382,6 +1402,7 @@
       </div>
       <p class="more">At R/Pharma in 2020: <a href="https://www.youtube.com/watch?v=2Ykw1jwSw5M" target="_blank" rel="noopener">safetyGraphics v2.0, the talk</a></p>
       <aside class="notes">
+        <ul class="hits"><li>safetyGraphics: a consortium</li><li>Name the collaborators</li></ul>
         <strong class="say">That was the first interactive graphic in the safetyGraphics project, a consortium of collaborators who built a series of interactive graphics for monitoring safety.</strong>
         <br>Dry run 1, 14 October: about 0:15 on this slide. These notes: about 0:10 at the same pace.<br><br>Earlier spoken notes, replaced by the dry-run version on 18 October: • Clinicians and data scientists, dozens of companies, five years: papers, conferences, the FDA. <br>• One open-source R package: a Shiny app for exploring a trial's safety data in the browser. <br>• Jim Buchanan, Susan Mayo, Xiao Ni, Melvin Munsaka, Frank Harrell. <br>• Agustin Calatroni, Herman Mitchell, Russ Helms and the Rho Graphics Group.<br><br>
         These four points are what the slide said until 2026-10-06, moved here at Jeremy's request.
@@ -1430,6 +1451,7 @@
         </figure>
       </div>
       <aside class="notes">
+        <ul class="hits"><li>Best thing we built: the hepatic explorer</li><li>Half clinicians, half technical</li><li>Jim Buchanan's clinical workflow</li></ul>
         <strong class="say">I think the best thing we built was the hepatic explorer, and the clinical workflow that goes with it. The team was about half technical folks like me and half clinicians. Jim Buchanan, our clinical lead, wrote a detailed workflow for analyzing liver toxicity with eDISH, and we built the chart to support it. Building custom workflows like this, all open source and freely available, and then using them on the trials I was supporting, was eye-opening.</strong>
         <br>Dry run 1, 14 October: about 0:52 on this slide. These notes: about 0:31 at the same pace.<br><br>
         Source: diary #3. "I think the best work we did is this eDISH hepatic explorer … and the
@@ -1453,6 +1475,7 @@
         <div class="turn j step"><div class="bub"><p>Not really. It&rsquo;s exploratory.</p></div><div class="av">JW</div></div>
       </div>
       <aside class="notes">
+        <ul class="hits"><li>Inspector Orange: what evidence?</li><li>Requirements, test scripts, automated tests</li><li>Validated? Not really. Exploratory.</li></ul>
         <strong class="say">We gave a lot of talks, and the first question in every talk was about quality. So here's Inspector Orange, who'll pop up throughout the talk. What evidence did we have? [press] Quite a lot: written requirements and manual test scripts, and automated tests, including Shiny tests. [press] But was it validated? [press] Not really. It was exploratory.</strong>
         <br>Dry run 1, 14 October: about 0:37 on this slide. These notes: about 0:23 at the same pace.<br><br>
         Rebuilt 14 October 2026 as a dialogue (Jeremy: "reformat slide 12 into a discussion
@@ -1485,6 +1508,7 @@
       <h2>OpenRBQM</h2>
       <p class="line">Open-source Risk Based Quality Management.<br>Quality by design.</p>
       <aside class="notes">
+        <ul class="hits"><li>2021: Gilead and RBQM</li><li>OpenRBQM, a PHUSE working group</li></ul>
         <strong class="say">In 2021 I joined Gilead and moved from safety monitoring to a team focused on RBQM, risk-based quality management. We built more open-source software, which we're still building and maintaining today, under OpenRBQM, a PHUSE working group. There's lots more on our website.</strong>
         <br>Dry run 1, 14 October: about 0:31 on this slide. These notes: about 0:17 at the same pace.<br><br>
         Transition into beat 2: the actual current state. This is the day job, not the experiment:
@@ -1513,6 +1537,7 @@
         </div>
       </figure>
       <aside class="notes">
+        <ul class="hits"><li>Safety work = submissions</li><li>RBQM = study conduct and monitoring</li></ul>
         <strong class="say">The safety work had a monitoring component, but it was largely about submissions, which is why the validation question kept coming up. This RBQM work is about study conduct and monitoring.</strong>
         <br>Dry run 1, 14 October: about 0:17 on this slide. These notes: about 0:12 at the same pace.<br><br>
         Sources: diary #1 ("We use the {gsm} tools to monitor actual studies. We wrote a paper and
@@ -1557,6 +1582,7 @@
         <a class="pk" href="https://gilead-public.github.io/qcthat/" target="_blank" rel="noopener" style="--c: var(--spec-3)"><img class="hx" src="assets/hex/qcthat.png" alt="" /><div class="t"><b>qcthat</b><i>Quality</i></div><p class="d">Quality control for clinical trial packages</p></a>
       </div>
       <aside class="notes">
+        <ul class="hits"><li>An ecosystem of packages</li><li>IMPALA contributions</li><li>Our own test data factory</li></ul>
         <strong class="say">We've built an ecosystem of packages that provides a robust monitoring framework. We've collaborated with the IMPALA group, who contributed packages; we've built foundational tools, one of which I'll show in a second; and we've built our own test data factory.</strong>
         <br>Dry run 1, 14 October: about 0:27 on this slide. These notes: about 0:17 at the same pace.<br><br>
         Built 2026-10-07 to Jeremy's brief: "I want the slide to introduce the ecosystem of
@@ -1631,6 +1657,7 @@
         </div>
       </div>
       <aside class="notes">
+        <ul class="hits"><li>Lifecycle: design, build, publish</li><li>Quarterly releases</li><li>Until a year ago: all by hand</li></ul>
         <strong class="say">We've also landed on a standard development lifecycle: design, build and publish, with quarterly releases. Until about a year ago, people owned all of this. We had some CI/CD, shown in grey, but we wrote the requirements, filed the issues, programmed the tests and wrote the code, all by hand.</strong>
         <br>Dry run 1, 14 October: about 0:42 on this slide. These notes: about 0:20 at the same pace.<br><br>
         Added 2026-10-06 (Jeremy: "immediately intro SDLC (s15 without the AI overlay)"). It is
@@ -1652,6 +1679,7 @@
       <img class="qcr" src="assets/qcthat-pr-report.png" alt="A qcthat report posted on a pull request: milestone v1.2.0, three issues, nine tests, every test passed, every issue has at least one test" />
       <p class="qcfoot"><b>The issue number goes in the test name</b><code>test_that("Flags sites above the upper limit (#19)", { ... })</code></p>
       <aside class="notes">
+        <ul class="hits"><li>qcthat: a traceability matrix</li><li>Issue number in the test name</li><li>Evidence on every PR and release</li><li>See John and Natalia's talk</li></ul>
         <strong class="say">We also spent a lot of time on quality, since that question was top of mind after safetyGraphics. One thing OpenRBQM does really well is ship with a traceability matrix. We built a package called qcthat, which John and Natalia from my team talked about yesterday; I recommend checking it out. We use GitHub issues as our requirements, and each testthat test names its issue number, just like you would in a pull request. qcthat builds a nested list: each milestone has a set of issues, and each issue has one or more tests as its evidence. It all runs in CI/CD, and the evidence attaches automatically to pull requests and releases.</strong>
         <br>Dry run 1, 14 October: about 1:20 on this slide. These notes: about 0:45 at the same pace.<br><br>
         Moved up on 2026-10-06 to sit in the first half of beat 2, before any AI (Jeremy:
@@ -1733,6 +1761,7 @@
       </div>
       <div class="goodat insp" style="bottom: 22px"><div class="bub"><p class="a" style="font-size: 36px">Now that's evidence.</p><p class="when" style="font-size: 20px">In use on 20+ trials</p></div><div class="who" style="width: 120px; height: 138px"></div></div>
       <aside class="notes">
+        <ul class="hits"><li>It scales across the ecosystem</li><li>Review the evidence, sign off: qualified</li><li>Now that's evidence</li></ul>
         <strong class="say">And this scales really quickly. Once you're in the habit of putting issue numbers in your tests, every release ships with robust evidence, publicly, with the packages. You'll still have to do the work at your own company, but for us, we review that evidence and sign off, and soon after each release we have what we consider a qualified tool. [press: Inspector Orange]</strong>
         <br>Dry run 1, 14 October: about 0:46 on this slide. These notes: about 0:26 at the same pace. The Inspector Orange callout (Now that's evidence) was added on 17 October, after the dry run.<br><br>
         Added 2026-10-14 as the follow-up to the qcthat slide, at Jeremy's word: "Follow up
@@ -1769,6 +1798,7 @@
       <h2>Clinical Trials: AI in the Pipeline</h2>
       <p class="line">Carefully adding agents to our package development process.</p>
       <aside class="notes">
+        <ul class="hits"><li>Q4 2025: coding agents crossed a threshold</li></ul>
         <strong class="say">That brings us to about a year ago, when the AI models got really good. We'd been watching them and using code assistants since ChatGPT took off, but last November, in Q4, we crossed a threshold: coding agents could write code well enough that you weren't going back to correct them all the time.</strong>
         <br>Dry run 1, 14 October: about 0:39 on this slide. These notes: about 0:22 at the same pace.<br><br>
         Section break added 2026-10-06 (Jeremy: "Add a new orange section break between 15 +
@@ -1795,6 +1825,7 @@
       <cite>— <a href="https://jwildfire.github.io/2026/06/10/rpharma-keynote-developer-diary.html" target="_blank" rel="noopener">developer diary #1, 10 June 2026</a></cite>
       <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Writing code!</p><p class="when">as of Q4 2025</p></div><div class="who"><i>👍</i></div></div>
       <aside class="notes">
+        <ul class="hits"><li>January: experiment · Q2: adopt · Q3: build out</li><li>Heavy AI, not autonomous</li><li>A responsible human for every task</li><li>How much can you safely hand over?</li></ul>
         <strong class="say">So in January I told my team it was time to start experimenting. By Q2, after three months of experiments, we'd adopted coding agents in our day-to-day work and started setting our workflows and best practices. In Q3 we're building that out. We use AI heavily, but we're not using autonomous agents. Humans own the process and every deliverable; there's a directly responsible person for every task an agent does. The question we're wrestling with now is: how much can you safely hand over to agents?</strong>
         <br>Dry run 1, 14 October: about 0:54 on this slide. These notes: about 0:35 at the same pace.<br><br>
         Source: diary #1. The team "uses agentic AI, mostly via GitHub Copilot, to create
@@ -1826,6 +1857,7 @@
       </div>
       <p class="levels-src">Levels: <a href="https://www.danshapiro.com/blog/2026/01/the-five-levels-from-spicy-autocomplete-to-the-software-factory/">Dan Shapiro, <i>The Five Levels</i></a> · via <a href="https://simonwillison.net/2026/Jan/28/the-five-levels/">Simon Willison's write-up</a> · January 2026</p>
       <aside class="notes">
+        <ul class="hits"><li>The ladder: autocomplete to dark factory</li><li>Just the ends, not every rung</li><li>We sit at 2 to 3</li></ul>
         <strong class="say">This is a hierarchy I really like. It starts with spicy autocomplete: you write the code and hit tab to finish a line. It goes up through the intern and the junior developer, where you still read every line; the developer, where you trust it but review all the code; the engineering team, where you write the specs and plans and don't read much code; and the dark software factory, where nobody reads the code at all. I don't recommend that for the kind of work we do, but it is happening out in the world. [press] We've landed between the junior developer and the developer, depending on the task: closer to 2 for the code itself, closer to 3 for design and filing issues.</strong>
         <br>Dry run 1, 14 October: about 1:42 on this slide. These notes: about 0:50 at the same pace.<br><br>
         From the March all-hands deck ("Levels of AI Usage", with "We are here" at level 3 and,
@@ -1887,6 +1919,7 @@
       <div class="goodat lc-sdlc"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">The standard SDLC</p><p class="when">as of Q2 2026</p></div><div class="who"><i>👍</i></div></div>
       <div class="goodat insp lc-ev"><div class="bub"><p class="q">What evidence do you have?</p><p class="a">The same tests,<br>and a human owner</p></div><div class="who"></div></div>
       <aside class="notes">
+        <ul class="hits"><li>Same SOPs, same roles</li><li>Humans own every line, test and issue</li><li>Q2: good coders became good developers</li></ul>
         <strong class="say">This is how our lifecycle looks now. The coloured steps have been handed to agents, in part or in whole. We have the same SOPs and the same roles and responsibilities. Agents are another tool, and we are responsible for all the code. For our qualified frameworks, a human has read every line of code, every qcthat test and every issue, and owns how it all fits together. [press] As of Q2 or so, agents went from good coders to good developers: gathering requirements, filing issues, version control, drafting PRs, reviewing code. [press: Inspector Orange] The evidence is the same as before, and a human still owns it. We're just not sitting at the keyboard typing for loops anymore.</strong>
         <br>Dry run 1, 14 October: about 1:34 on this slide. These notes: about 0:48 at the same pace.<br><br>
         From the March all-hands deck, which showed this as two slides: "Standard Development
@@ -1981,6 +2014,7 @@
         <p>Run packages on studies</p>
       </div>
       <aside class="notes">
+        <ul class="hits"><li>Faster code: planning and ops lag behind</li><li>Planning: artifacts; bad at priorities</li><li>Ops: a repo per study, a hub for 20–30 studies</li></ul>
         <strong class="say">As agents got good at the standard lifecycle, the parts upstream and downstream needed more attention. Code got faster, and planning and operations started to lag behind. So we've spent the last several months building out our planning process and our operations scaffold, so we can deploy these packages on studies at scale. Agents help a lot with both. For planning, they're really good at creating artifacts: an implementation plan, an interactive demo, three designs to choose from, release notes. They're good at drafting documents, but bad at setting priorities; we still tell them what matters next. For operations, every study has its own repo, and a hub repo runs the snapshot schedule through GitHub Actions for 20 to 30 studies. We moved from spreadsheets to GitHub, and agents helped us set that up, keep it running and fix it.</strong>
         <br>Dry run 1, 14 October: about 3:49 on this slide and the two after it (planning, operations), which went to the Reserves on 18 October. These notes: about 0:56 at the same pace.<br><br>
         Jeremy's message for this slide (2026-10-06): "messaging is that agents have sped
@@ -2039,6 +2073,7 @@
         <li>But what's next …</li>
       </ul>
       <aside class="notes">
+        <ul class="hits"><li>Nine months in: efficiency gains</li><li>Same process, human oversight</li><li>But what's next?</li></ul>
         <strong class="say">That's where we are at work. We're nine months into adopting these tools, and we're seeing efficiency gains. We haven't changed our process; we brought AI into the loop with robust human oversight, and I'm happy with where we are. But what's next?</strong>
         <br>Dry run 1, 14 October: about 0:29 on this slide. These notes: about 0:17 at the same pace.<br><br>
         Level changed 2026-10-06 (Jeremy: "s27 becomes L2.5 (instead of L3)"; earlier the same
@@ -2090,6 +2125,7 @@
       <h2>AI Frontier: obot</h2>
       <p class="line">A summer of public experiments</p>
       <aside class="notes">
+        <ul class="hits"><li>Further up the ladder</li><li>What can we actually do right now?</li></ul>
         <strong class="say">As I've worked on making this better in the day job, I've been watching videos and listening to podcasts from people much further up that ladder. So when I was asked to give this talk, I wanted to find out: what can we actually do with AI agents right now?</strong>
         <br>Dry run 1, 14 October: about 0:29 on this slide. These notes: about 0:20 at the same pace.<br><br>
         Transition into beat 3: the Orange photo that opens every beat. Headline and line are
@@ -2117,6 +2153,7 @@
       <div class="says"><div class="who" role="img" aria-label="Orange in a black hoodie at a laptop, green code falling behind him"></div><div class="bub"><p class="a">Only one way to find out.</p></div></div>
       <div class="goodat insp"><div class="bub"><p class="a">Oh jeez. I'll check in later.</p></div><div class="who"></div></div>
       <aside class="notes">
+        <ul class="hits"><li>Hacker Orange: only one way to find out</li><li>Old open-source work, not studies</li><li>Inspector sits this one out</li></ul>
         <strong class="say">Here's Hacker Orange. I decided to play around on some of my old open-source work. We're intentionally very careful with the work we do on actual studies, but I think the models' capabilities are way past that now. [press] Inspector Orange isn't really involved in this next section. This is me experimenting, to see what I can build.</strong>
         <br>Dry run 1, 14 October: about 0:38 on this slide. These notes: about 0:23 at the same pace.<br><br>
         Changed again 2026-10-07 (Jeremy: "Add this guy on slide 29: 'Let's mess around and find
@@ -2182,6 +2219,7 @@
       <p class="soft" style="font-family: var(--mono); font-size: 21px; margin: 18px 0 0">10 original charts · last commit, top right · 25,400 lines of JavaScript · all on D3 v3</p>
       <div class="goodat hack" style="bottom: 22px"><div class="bub"><p class="a">Open Source ftw</p></div><div class="who"></div></div>
       <aside class="notes">
+        <ul class="hits"><li>Goal: modernize safetyGraphics on gsm</li><li>Ten old D3 charts</li></ul>
         <strong class="say">I had this robust gsm framework for RBQM, with pipelines, qcthat and real evidence. And I had these old safety renderers, JavaScript from six or seven years ago. Could AI agents help me bring safetyGraphics into the modern age? Here's what I've been able to do this summer, off in open-source land.</strong>
         <br>Dry run 1, 14 October: about 0:42 on this slide. These notes: about 0:21 at the same pace.<br><br>
         Order set 2026-10-06 (Jeremy: "i want 28/31/29/30. question/goal/hexes/v1"): the
@@ -2236,6 +2274,7 @@
         <div class="st"><img class="vx" src="assets/hex/obot-v5-5.png" alt="obot v5.5 as a robot cat in sunglasses" /><b>v5.5</b><span>Opus 5.5</span></div>
       </div>
       <aside class="notes">
+        <ul class="hits"><li>Down the rabbit hole</li><li>Named after Orange: obot</li><li>Five-ish versions</li></ul>
         <strong class="say">I went down the rabbit hole this summer and built several frameworks for using AI on these open-source tools. The real Orange passed away a few years ago, so when I was naming my agents, I called them obot. There were five-ish versions. I'll go through them quickly, and then show you what I built.</strong>
         <br>Dry run 1, 14 October: about 0:34 on this slide. These notes: about 0:22 at the same pace.<br><br>
         Title from Jeremy's outline (2026-10-05): "What's next? A summer down the
@@ -2279,6 +2318,7 @@
       <div class="whatis"><b>What is it?</b><p>A personal assistant running locally on my own laptop</p></div>
       <p class="chg"><b>Where it started</b>The first commit is signed Orange.</p>
       <aside class="notes">
+        <ul class="hits"><li>v1: a personal assistant, signed as Orange</li></ul>
         <strong class="say">The first was a personal assistant running on my laptop in Claude Code. I asked it little questions and had it check my email, and it signed everything as Orange.</strong>
         <br>Dry run 1, 14 October: about 0:17 on this slide. These notes: about 0:12 at the same pace.<br><br>
         Jeremy (2026-10-05): "v1 was actually a local personal assistant who drafted a
@@ -2315,6 +2355,7 @@
       <p class="chg"><b>What changed</b>It got its own machine, its own account and a job.</p>
       <div class="goodat hack" style="right: 360px; bottom: 40px"><div class="bub"><p class="a two">ugh. so many config files.<br>can't we just build something?</p></div><div class="who"></div></div>
       <aside class="notes">
+        <ul class="hits"><li>v2: OpenClaw on a wiped laptop</li><li>Texting it on Telegram</li><li>Too much fiddling</li></ul>
         <strong class="say">When I found out about this talk, I decided to have obot do some real work. I wiped an old laptop and installed OpenClaw, a long-running agent framework with a lot of communication plugins. I got to where I could text the agent on Telegram and have it do stuff, which was a bit mind-bending; there are a few posts about it on the blog. But it was a lot of time fiddling with OpenClaw and configuring the laptop, and modernizing safetyGraphics didn't go very fast.</strong>
         <br>Dry run 1, 14 October: about 0:55 on this slide. These notes: about 0:35 at the same pace.<br><br>
         Source: diary #2, "Introducing Obot" (2026-06-12), an interview over Telegram. Obot: "I'm
@@ -2368,6 +2409,7 @@ steps:
       <div class="goodat"><div class="bub"><p class="q">What worked</p><p class="a">Real work, by text</p></div><div class="who"><i>👍</i></div></div>
       <div class="goodat bad"><div class="bub"><p class="q">What didn't</p><p class="a">Autonomy</p></div><div class="who"><i>👎</i></div></div>
       <aside class="notes">
+        <ul class="hits"><li>Old widgets inside gsm: baby steps</li><li>Not climbing the ladder</li></ul>
         <strong class="say">I did get the old htmlwidgets running inside the gsm framework, so, baby steps. But after a month I decided that while it was cool to text my obot, it was too fiddly, and it wasn't getting anything done without me. I wasn't climbing the ladder much at all.</strong>
         <br>Dry run 1, 14 October: about 0:35 on this slide. These notes: about 0:20 at the same pace.<br><br>
         Rebuilt 2026-10-07 (Jeremy: "would like to have each of these evidence slides show a
@@ -2432,6 +2474,7 @@ steps:
       <div class="whatis"><b>What is it?</b><p>Claude Code on Fable 5, with a public roadmap, a set of skills and a bot account</p></div>
       <p class="chg"><b>What changed</b>Fable 5 came out, and I moved everything into Claude Code.</p>
       <aside class="notes">
+        <ul class="hits"><li>July: Fable 5 and Claude Code</li><li>$200 a month Max plan</li></ul>
         <strong class="say">Then in July, Fable 5 came out, with all the drama about whether it was available. Enough fiddling with the laptop: I installed Claude Code, got the $200 a month Max plan, and started prompting to see what it could do.</strong>
         <br>Dry run 1, 14 October: about 0:24 on this slide. These notes: about 0:17 at the same pace.<br><br>
         Source: diary #6, "Obot v3: How I Used a Billion Tokens in a Weekend" (2026-07-13). "My
@@ -2467,6 +2510,7 @@ steps:
       <div class="goodat hack sm" style="bottom: auto; top: 78px"><div class="bub"><p class="a">thats more like it</p></div><div class="who"></div></div>
       <div class="goodat"><div class="bub"><p class="q">What worked</p><p class="a">Porting old code</p></div><div class="who"><i>👍</i></div></div>
       <aside class="notes">
+        <ul class="hits"><li>Saturday: now do the rest</li><li>One chart to six in a day, hepatic on Sunday</li><li>A billion tokens, during the World Cup</li><li>3 developers × 6 months → one weekend</li><li>Good at porting old code</li></ul>
         <strong class="say">That's when things opened up. I finished the first renderer from the OpenClaw days in another week or two: a modern JavaScript library for the safety histogram, with a test framework and evidence, on Chart.js, the same tools we use for OpenRBQM. I was happy with it, so one Saturday morning I said: you did the first one, now do the rest. By that night I'd gone from one working renderer to six, and by Sunday night the hepatic explorer too. It used a billion tokens, and I was mostly watching the World Cup and saying: yes, do that, do the next thing. I'd have expected that to take a team of three developers about six months without AI. I did it in a weekend. [press] That's more like it. To be fair, this was old working code, with good documentation of what we wanted. AI is really good at porting old code.</strong>
         <br>Dry run 1, 14 October: about 1:43 on this slide. These notes: about 1:02 at the same pace.<br><br>
         Rebuilt 2026-10-07 (Jeremy: "s33: Hacker. 'thats more like it' Add thumbnails for
@@ -2525,6 +2569,7 @@ steps:
       <div class="goodat"><div class="bub"><p class="q">What worked</p><p class="a" style="font-size: 42px">Translating research into software</p></div><div class="who"><i>👍</i></div></div>
       <div class="goodat hack sm" style="bottom: auto; top: 78px"><div class="bub"><p class="a" style="font-size: 44px; letter-spacing: 0.08em">🚀🔥💪</p></div><div class="who"></div></div>
       <aside class="notes">
+        <ul class="hits"><li>Jim: have a look</li><li>FDA paper: build figure 3</li><li>Hours later: the composite view</li><li>QT explorer: another night</li><li>Not qualified, but passes the sniff test</li></ul>
         <strong class="say">Then I sent it to Jim Buchanan, safetyGraphics' clinical lead. He hadn't worked on it in a couple of years, and he was excited; he's an amazing advocate for this work. He sent me a couple of papers from colleagues at FDA, including a newer one that changes how the eDISH analysis works. It had some cool new figures, so I asked obot: take a look at this paper; can you build figure 3? A few hours later we had this composite view, a new way of analyzing liver toxicity, working, with a clinical workflow. Then the QT explorer, which we'd worked on but never taken to production: modernize that old repo. Done, another night. [press] Translating research into software like that blew my mind, with tests and quality documentation too. It's not qualified; nobody has gone through those steps. But it passes the sniff test from people who've spent a lot of time with these charts. I have not had time to build these without these tools.</strong>
         <br>Dry run 1, 14 October: about 2:21 on this slide. These notes: about 1:08 at the same pace.<br><br>
         Source: diary #7, "Papers → Prompts → Prototypes" (2026-07-17). "I demoed safety.viz for
@@ -2564,6 +2609,7 @@ steps:
       <div class="whatis"><b>What is it?</b><p>Claude Code on Opus 5, with four standing roles and a timer script, built to run without me</p></div>
       <p class="chg"><b>What changed</b>I asked how far it could get without me in the loop at all.</p>
       <aside class="notes">
+        <ul class="hits"><li>Got greedy: what do you need me for?</li><li>Tiptoeing to the dark factory</li></ul>
         <strong class="say">Coming off that success, I got a bit greedy. If you can take a paper and make charts, Claude, what do you need me for? There was all this talk of loop engineering, so I started tiptoeing from the engineering team, where I set the direction and review the output, towards the dark software factory: I tell it what to do, and I don't look at the code.</strong>
         <br>Dry run 1, 14 October: about 0:56 on this slide. These notes: about 0:27 at the same pace.<br><br>
         Source: diary #8, "A Second Interview with Obot" (2026-08-20). Obot: "v4 is the version
@@ -2615,6 +2661,7 @@ steps:
       </div>
       <div class="goodat hack sm" style="left: 140px; right: auto; bottom: 258px"><div class="bub"><p class="a three">whaaa? can the concierge orchestrate<br>a fleet of treats for me?<br>I thought we were building stuff ...</p></div><div class="who"></div></div>
       <aside class="notes">
+        <ul class="hits"><li>A small company of agents</li><li>Spun my wheels for weeks</li><li>The OpenClaw days again</li></ul>
         <strong class="say">So we set up a small company: several agents with different roles, a fleet of workers, an operating officer, a concierge and a fleet manager, plus some scripts. I spun my wheels on it for a few weeks. [press] Hacker Orange was right: it was the OpenClaw days again, all configuring and no building.</strong>
         <br>Dry run 1, 14 October: about 0:35 on this slide. These notes: about 0:22 at the same pace.<br><br>
         Source: diary #8, "A Second Interview with Obot" (2026-08-20). The diagram is the post's,
@@ -2694,6 +2741,7 @@ steps:
       <div class="whatis"><b>What is it?</b><p>Claude Code with a tree of GitHub issues: one session per requirement, each with a definition of done</p></div>
       <p class="chg"><b>What changed</b>On 10 September I shut v4 down. 468 files of scaffolding went; seven stayed.</p>
       <aside class="notes">
+        <ul class="hits"><li>September: shut the dark factory down</li><li>It only improved itself</li><li>Back to Claude Code</li></ul>
         <strong class="say">In early September I shut that dark factory down. All it really did was work on improving its own process; it wasn't building much. Maybe I just wasn't good enough at working that way, but that's where the experiment ended. I went back to Claude Code, with a bit more autonomy than before.</strong>
         <br>Dry run 1, 14 October: about 0:35 on this slide. These notes: about 0:21 at the same pace.<br><br>
         Jeremy (2026-10-05): "I think we might want to split out a v5 (after retiring factory,
@@ -2767,6 +2815,7 @@ steps:
       </div>
       </div>
       <aside class="notes">
+        <ul class="hits"><li>I set goals and review releases</li><li>Agents do everything else</li><li>Ask me questions, multiple choice</li></ul>
         <strong class="say">This time the deal was: I set the goals and review releases, and you do everything else. Gather requirements, build everything, draft the pull requests, merge to dev whenever you want. Merges to main, for actual releases, I review. I wanted a demo for everything it built, and solid release notes, and I built skills and an AGENTS.md with Claude to say exactly what I wanted. And: ask me questions whenever you're stuck. Multiple choice when you can; if it's a big question, make an artifact. That's how I've worked for the last month, and it's been pretty darn productive.</strong>
         <br>Dry run 1, 14 October: about 1:14 on this slide. These notes: about 0:40 at the same pace.<br><br>
         Added 2026-10-06 (Jeremy: "Let's re-use slide 22 to show how obot v5/v5.5 works. Add a
@@ -2805,6 +2854,7 @@ steps:
       <p class="stamp">obot.roadmap · as of 7 October 2026 · 44 retired requirements and 25 with no objective not shown</p>
       <!-- roadmap-tree:treemap:end -->
       <aside class="notes">
+        <ul class="hits"><li>The roadmap is GitHub issues</li><li>Objectives → requirements → tasks</li></ul>
         <strong class="say">It all sits on a roadmap captured as GitHub issues. Objectives are the goals: increased autonomy, better chart coverage, a new biomarker explorer, even this talk. Each objective has requirements, and each requirement has tasks, with tests. This is the whole roadmap as of about a month ago.</strong>
         <br>Dry run 1, 14 October: about 0:50 on this slide. These notes: about 0:19 at the same pace.<br><br>
         Moved here 2026-10-07 (Jeremy: "I think 47/48 become the evidence for obot 5.0. can
@@ -2877,6 +2927,7 @@ steps:
       <div class="goodat"><div class="bub"><p class="q">What worked</p><p class="a">A definition of done</p></div><div class="who"><i>👍</i></div></div>
       <div class="goodat bad"><div class="bub"><p class="q">What didn't</p><p class="a">No chart releases</p></div><div class="who"><i>👎</i></div></div>
       <aside class="notes">
+        <ul class="hits"><li>One objective: biomarker charts</li><li>Agents filed it and ground through it</li></ul>
         <strong class="say">Here's one objective, the biomarker charts: its requirements, and one to six tasks under each. The agent ground through all of it, and created most of it. I signed off on the objectives and reviewed some of the requirements, depending on how complicated they were. Once the structure was well defined, the agents worked well inside it.</strong>
         <br>Dry run 1, 14 October: about 0:49 on this slide. These notes: about 0:23 at the same pace.<br><br>
         Moved here 2026-10-07 with the slide before it, at Jeremy's instruction; see that
@@ -2939,6 +2990,7 @@ steps:
       <div class="whatis"><b>What is it?</b><p>The same tree of issues on Opus 5.5, with one orchestrator working from a plain brief</p></div>
       <p class="chg"><b>What changed</b>The model got better. Orchestration now works from a plain brief.</p>
       <aside class="notes">
+        <ul class="hits"><li>Opus 5.5: cheaper, less wordy</li><li>Twice the work for the same cost</li></ul>
         <strong class="say">Then Opus 5.5 came out, and I've been really impressed; it's what I use for almost everything now. It got cheaper and a little less wordy, and it's really good at software development and at answering my questions. Not as big a jump as last Q4, but a big one: I can do roughly twice as much work for the same cost.</strong>
         <br>Dry run 1, 14 October: about 0:41 on this slide. These notes: about 0:25 at the same pace.<br><br>
         Jeremy's steers (2026-10-05): "Capabilities keep improving and Opus 5.5 moved the goal
@@ -2975,6 +3027,7 @@ steps:
       <div class="goodat"><div class="bub"><p class="q">What worked</p><p class="a">Reviewing its own work</p></div><div class="who"><i>👍</i></div></div>
       <div class="goodat bad"><div class="bub"><p class="q">What didn't</p><p class="a">Still waits on me</p></div><div class="who"><i>👎</i></div></div>
       <aside class="notes">
+        <ul class="hits"><li>Orchestration: one brief, one weekend</li><li>webR: never used it before</li><li>3.9 billion tokens, 22 prompts</li><li>Still steering: not a dark factory</li></ul>
         <strong class="say">So I moved to orchestration sessions. Instead of long-running agents, I work with Claude to define an objective and draft a robust design prompt, have it file all the issues, and then a second agent builds the thing: complete every requirement and task in this objective. It built the whole biomarker explorer, on webR, R running in the browser, which I'd never used; everything before was mostly Shiny. 3.9 billion tokens in a weekend, from about 22 prompts of mine. That's a lot more automation, but it's not a dark factory: I still look at the code, set the objectives and steer.</strong>
         <br>Dry run 1, 14 October: about 1:44 on this slide. These notes: about 0:41 at the same pace.<br><br>
         Rebuilt 2026-10-07 (Jeremy: "do 41 and 43 the same way", after "would like to have each
@@ -3058,6 +3111,7 @@ steps:
         <div class="tile"><p class="n">5,500</p><h3>Tests</h3><p>2,963 of them in safety.viz</p></div>
       </div>
       <aside class="notes">
+        <ul class="hits"><li>20 charts, 3 apps, 7 clinical guides</li><li>About 600 pull requests</li><li>One person, nights and weekends</li></ul>
         <strong class="say">In the end, from May to October, we built 20 interactive charts, 3 apps and 7 clinical guides. Some new, some from papers, some from the old safetyGraphics work. About 600 pull requests. This was nights and weekends, maybe 8 hours a week (I didn't keep track), alongside my day job. One person, in their spare time, with a $200 a month plan.</strong>
         <br>Dry run 1, 14 October: about 0:46 on this slide. These notes: about 0:25 at the same pace.<br><br>
         Added 2026-10-13 at Jeremy's ask: "I want to add a 'What we built slide' at the end of
@@ -3152,6 +3206,7 @@ steps:
         </div>
       </figure>
       <aside class="notes">
+        <ul class="hits"><li>Your files, nothing uploaded</li><li>R in the browser</li><li>Play with it, file issues, fork it</li></ul>
         <strong class="say">Here's the demo. You load your own files, and nothing is uploaded. R launches in the browser, and you get the RBQM components, the new biomarker charts and all the safetyGraphics work, old and new, in one demo site. Please play with it and file issues, and maybe I'll let Claude get to work on them. Or fork it; it's all open source.</strong>
         <br>Dry run 1, 14 October: about 0:52 on this slide. These notes: about 0:25 at the same pace.<br><br>
         Rebuilt 2026-10-14 (Jeremy: "Sub agent to create a demo gif. spend some time making this
@@ -3293,6 +3348,7 @@ steps:
       </div>
       <p style="font-size: 32px; margin: 12px 0 0">The record has holes: June is not counted, and most of September is missing.</p>
       <aside class="notes">
+        <ul class="hits"><li>$200 a month; about $12,000 at API prices</li><li>Cheap next to building without AI</li></ul>
         <strong class="say">All told, I paid $200 a month for the Claude Max plan. At API prices this would have cost about $12,000 in tokens. That's a lot of money, but not compared to what it would have cost to build without AI. Claude isn't the cheapest option, but the Max plan is a pretty decent deal.</strong>
         <br>Dry run 1, 14 October: about 0:45 on this slide. These notes: about 0:22 at the same pace.<br><br>
         Part 3.5, "how we built it": costs. Drafted on 2026-10-05 as beat 4's costs point and
@@ -3392,6 +3448,7 @@ steps:
       <p class="soft" style="margin: 22px 0 0; font-size: 29px">Tests and reviews are cheap now. The signature is not.</p>
       <div class="goodat insp" style="bottom: 36px"><div class="bub"><p class="q">What evidence do you have?</p><p class="a">Lots of tests. No sign-off.</p></div><div class="who"></div></div>
       <aside class="notes">
+        <ul class="hits"><li>About 3,000 tests, agent review on every PR</li><li>No sign-off: not qualified</li></ul>
         <strong class="say">For Inspector Orange: about 3,000 tests written along the way, and agents reviewed everything; every PR in the last few months had several layers of review. [press] But no sign-off. This is not qualified. Don't use it on your actual study, and if you do, validate anything you find.</strong>
         <br>Dry run 1, 14 October: about 0:28 on this slide. These notes: about 0:20 at the same pace.<br><br>
         DRAFT, 2026-10-05. Part 3.5, "how we built it". Jeremy's list for this part is
@@ -3454,6 +3511,7 @@ steps:
       <h2>What we learned</h2>
       <p class="line">What can we do today?<br>What's next?<br>Is it a good thing?</p>
       <aside class="notes">
+        <ul class="hits"><li>What can we do today?</li><li>What's next?</li><li>Is it a good thing?</li></ul>
         <strong class="say">Okay, wrapping up.</strong>
         <br>Dry run 1, 14 October: about 0:02 on this slide. These notes: about 0:01 at the same pace.<br><br>
         Transition into beat 4, added 2026-10-05; it takes the place of the "Beat 4 to be
@@ -3486,6 +3544,7 @@ steps:
         <div class="rp insp step"><div class="who"></div><div class="bub"><p>Humans own the decisions.</p><p class="sub">Strategy, architecture, judgement</p></div></div>
       </div>
       <aside class="notes">
+        <ul class="hits"><li>Real work across the pipeline</li><li>Agents write code</li><li>Humans own the decisions</li></ul>
         <strong class="say">[press] Here's what agents are good at right now. It's a lot: most of the coding work. [press] They're not good at decisions, and not especially good at strategy. But they're good at a lot, and we'll use them more and more as they mature.</strong>
         <br>Dry run 1, 14 October: about 0:34 on this slide. These notes: about 0:18 at the same pace. These words were said on the dry run's good-at slide (now in the reserves); they fit this verdict slide's two callouts.<br><br>
         Picked 2026-10-17 (Jeremy: "I like B For 50. 'Real work across the development
@@ -3530,6 +3589,7 @@ steps:
       </svg>
       <p class="take">The rules at work are right. They also show you a fraction of what these tools can do.</p>
       <aside class="notes">
+        <ul class="hits"><li>Don't judge AI by what you can do on a trial</li><li>The rules at work are right</li><li>They show a fraction of what's possible</li></ul>
         <strong class="say">&lt;none yet&gt;</strong>
         Added 2026-10-17 (Jeremy picked "A is good for GxP gap, move Gxp Gap before how fast").
         Every word on the slide is draft wording for him to replace.
@@ -3642,6 +3702,7 @@ steps:
       </div>
       <p class="levels-src">How long a task AI can finish on its own: <a href="https://theaidigest.org/time-horizons" target="_blank" rel="noopener">theaidigest.org/time-horizons</a></p>
       <aside class="notes">
+        <ul class="hits"><li>Moving extremely fast</li><li>What I didn't try: MCP, assistants, open weights</li><li>At work, we're behind</li></ul>
         <strong class="say">This is all moving extremely fast. I spent four or five months really experimenting, and in that time there were several new innovations. There's a lot I didn't try: I didn't go deep into MCP, though Claude uses it under the hood; I haven't played with the new personal assistants; no open-weights models, which are getting good; and no decision models, which I think will be really valuable for clinical trials. I couldn't try everything, and at work we're behind on all of it. It's a little disorienting.</strong>
         <br>Dry run 1, 14 October: about 1:00 on this slide. These notes: about 0:35 at the same pace. Said on the dry run's version of this slide. He named two personal assistants that the transcript renders as Muse and Dots; the names are left out here until checked.<br><br>
         The last slide of part 3.5, "how we built it" (Jeremy, late on 2026-10-05: "3.5 = how
@@ -3769,6 +3830,7 @@ steps:
       </div>
       <p class="salt">From my reading list · all in the four weeks before this talk</p>
       <aside class="notes">
+        <ul class="hits"><li>DHH: done coding by hand</li><li>Claude Code team: review moved to machines</li><li>Anthropic: attention is the bottleneck</li></ul>
         <strong class="say">&lt;none yet&gt;</strong>
         Added 2026-10-18 (Jeremy: "add a few very recent links from my ai reading list in
         reminders to demonstrate how much active work is being done on frontier ways of working
@@ -3835,6 +3897,7 @@ steps:
       </svg>
       <div class="goodat hack sm" style="right: auto; left: 140px; bottom: auto; top: 318px"><div class="bub" style="max-width: 395px"><p class="a" style="font-size: 25px; line-height: 1.3">Nobody can tell you what these tools will do next year. They are not going away.</p></div><div class="who"></div></div>
       <aside class="notes">
+        <ul class="hits"><li>We're at the beginning</li><li>Nobody knows next year</li><li>They're not going away</li></ul>
         <strong class="say">&lt;none yet&gt;</strong>
         Added 2026-10-17 (Jeremy: "a new Slide taking slide 51 out another year with roughly
         linear projections"). It is the GxP gap slide's drawing with a year added: the past year
@@ -3922,6 +3985,7 @@ steps:
         <text class="ax" x="1060" y="428" text-anchor="end">A year from now</text>
       </svg>
       <aside class="notes">
+        <ul class="hits"><li>My guess: frontier fast, trials steady</li><li>Closing the gap: more medicines, faster</li></ul>
         <strong class="say">&lt;none yet&gt;</strong>
         Added 2026-10-17 (Jeremy: "Make a new slide 54 that selects the steady line for trials
         and the fast line for frontier. subhead = what's next: my best guess. head: Closing the gap
@@ -3936,6 +4000,7 @@ steps:
       <cite>Dario Amodei · <a href="https://www.darioamodei.com/essay/machines-of-loving-grace" target="_blank" rel="noopener">Machines of Loving Grace</a> · October 2024</cite>
       <div class="goodat hack sm step" style="bottom: 84px"><div class="bub" style="max-width: 780px"><p class="a" style="font-size: 27px; line-height: 1.25">Take it with a big grain of salt. Then look at the last year.</p></div><div class="who"></div></div>
       <aside class="notes">
+        <ul class="hits"><li>Think bigger: Amodei</li><li>Huge upside, huge risks</li><li>Grain of salt, then look at the last year</li></ul>
         <strong class="say">&lt;none yet&gt;</strong>
         DRAFT, option B, slide 1 of 3, 2026-10-17 (Jeremy, mid-draft: "I want to add a we can
         think bigger quote"). The quote is the essay's opening claim, word for word; the sentence
@@ -3986,6 +4051,7 @@ steps:
       </div>
       <p class="salt">Forecasts, not facts · read with a large grain of salt</p>
       <aside class="notes">
+        <ul class="hits"><li>Biology: 50–100 years in 5–10</li><li>Hassabis: the end of disease is within reach</li><li>Agent task length doubles every 7 months</li></ul>
         <strong class="say">&lt;none yet&gt;</strong>
         DRAFT, option B, slide 2 of 3, 2026-10-17. Three forecasts, one per press: biology
         (Amodei), disease (Hassabis) and the measured trend under both (METR's task-length
@@ -4026,6 +4092,7 @@ steps:
         <li class="step">Clinical trial tools set the pace. That is where we come in.</li>
       </ul>
       <aside class="notes">
+        <ul class="hits"><li>The gap is measured in medicines</li><li>One drug: 10 years today; COVID vaccines: 9 months</li><li>FDA already reviews with AI</li><li>Trial tools set the pace: that's us</li></ul>
         <strong class="say">&lt;none yet&gt;</strong>
         DRAFT, option B, slide 3 of 3, 2026-10-17. Bars on one scale, 10 years across: one drug
         today (Hassabis's "ten years and billions of dollars to design just one drug"), the COVID
@@ -4078,6 +4145,7 @@ steps:
       </ol>
       <div class="goodat" style="top: 64px; bottom: auto"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Teaching me things!</p></div><div class="who"><i>👍</i></div></div>
       <aside class="notes">
+        <ul class="hits"><li>Try it on something that's yours</li><li>An agent, GitHub, a development process</li><li>Ask a million questions</li></ul>
         <strong class="say">My advice, and Joe talked about this yesterday too: try it out. I don't think there's a better investment in your career right now. Pick an agent: $20 for a month of Claude or Codex; they're all pretty good now. Get a GitHub account. Pick a development framework, because these things work better with structure: Hadley's R Packages book, or the Shiny book. Then: make me an open-source R package that does X, with a working example, following all the best practices in the book. Or a web app; I make games for my kids all the time now. [press] And then ask it a million questions. I've learned more in the last year than since grad school. They're amazing at explaining things, but you have to ask.</strong>
         <br>Dry run 1, 14 October: about 1:23 on this slide. These notes: about 0:52 at the same pace. In the dry run this came before the good-at slide, straight after How fast it is moving.<br><br>
         Added 2026-10-14 as slide 52, right after the "What we learned" opener. Reframed the
@@ -4126,6 +4194,7 @@ steps:
         <div class="cell hack"><div class="who"></div><div class="bub"><p class="a">100 years of innovation!<br>Trials on a chip!<br>Robots folding my clothes!</p></div></div>
       </div>
       <aside class="notes">
+        <ul class="hits"><li>Coding feels completely different</li><li>Fun, but not working less</li><li>Four Oranges: hope, fear, change, excitement</li></ul>
         <strong class="say">Coding feels completely different than it did a year ago, and so does my job. It's kind of fun, but I'm certainly not working less, and it hasn't been less stressful. So what's next? [press] Thumbs-up Orange says more medicines, faster, and no more PowerPoint: I made these slides with Claude, and throwing in all the Orange nonsense was really fun. Thumbs-down: environmental concerns, data centers, rogue agents, all sorts of scary stuff. Inspector Orange is going to be stressed for a long time: there's a lot of change now, and more coming. And Hacker Orange is in heaven: 100 years of innovation in the next 10, trials on a chip, robots folding my clothes. We live in interesting times.</strong>
         <br>Dry run 1, 14 October: about 1:24 on this slide. These notes: about 0:48 at the same pace. In the dry run this was the last slide before the party; acknowledgements (slide 61) came after the dry run.<br><br>
         Written 2026-10-07 by Jeremy, replacing the orange TODO box: "s53 wrapup: Coding feels
@@ -4172,6 +4241,7 @@ steps:
         <div class="who" role="img" aria-label="Orange giving a thumbs up"></div>
       </div>
       <aside class="notes">
+        <ul class="hits"><li>Co-workers, bosses, family, collaborators</li></ul>
         <strong class="say">&lt;none yet&gt;</strong>
         PLACEHOLDER, added 2026-10-15 (Jeremy: "I want to add an acknowledgements slide between
         53/54. Placeholder is fine for now."). The sentence is his, word for word. The thumbs-up
@@ -4186,6 +4256,7 @@ steps:
     <section class="slide s-party" data-hue="6" style="--poster: url(assets/orange-party-poster.png)">
       <iframe data-src="party.html?banner=THANK%20YOU!" title="A pixel-art party of orange cats dancing under a disco ball, with confetti" hidden></iframe>
       <aside class="notes">
+        <ul class="hits"><li>Credit Simon Willison</li><li>Thank you!</li></ul>
         <strong class="say">Here's our Orange party. Credit to Simon Willison, my favorite blogger; I've borrowed a bunch of his ideas in this deck. Thank you all for your time.</strong>
         <br>Dry run 1, 14 October: about 0:12 on this slide. These notes: about 0:11 at the same pace.<br><br>
         The closing slide, built 2026-10-06 at Jeremy's request: "an orange cat dance party
@@ -5838,7 +5909,7 @@ steps:
       var i = 0;
       // Presenter window: P in the deck opens a second window that shows only the notes and
       // follows the deck; keys pressed there are sent back to the deck. T restarts its clock.
-      var presenter = /[?&]presenter\b/.test(location.search), pwin = null, t0 = Date.now();
+      var presenter = /[?&]presenter\b/.test(location.search), pwin = null, acc = 0, t0 = null;
       if (presenter) document.body.classList.add('presenter');
       function sync() {
         if (pwin && !pwin.closed) pwin.postMessage({ type: 'deck-state', i: i, revealed: slides[i].classList.contains('revealed'), steps: slides[i].querySelectorAll('.step.on').length }, '*');
@@ -5850,18 +5921,19 @@ steps:
       // The spoken words only, split into one sentence a line, with each [press] cue on its own.
       function prompter(a) {
         var say = a && a.querySelector('.say'), t = say ? say.textContent.replace(/\s+/g, ' ').trim() : '';
-        if (!t || t === '<none yet>') return '<p class="tp none">No spoken notes.</p>';
-        return t.split(/(\[press[^\]]*\])/).map(function (part) {
+        var hits = a && a.querySelector('ul.hits'), top = hits ? hits.outerHTML : '';
+        if (!t || t === '<none yet>') return top + '<div class="tpsay"><p class="tp none">No spoken notes.</p></div>';
+        return top + '<div class="tpsay">' + t.split(/(\[press[^\]]*\])/).map(function (part) {
           part = part.trim();
           if (!part) return '';
           if (/^\[press/.test(part)) return '<p class="tp cue">' + part.slice(1, -1) + '</p>';
           return part.split(/(?<=[.!?])\s+(?=[A-Z0-9$“"(])/).map(function (x) {
             return '<p class="tp">' + x.replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</p>';
           }).join('');
-        }).join('');
+        }).join('') + '</div>';
       }
       function clock() {
-        var t = Math.floor((Date.now() - t0) / 1000);
+        var t = Math.floor((acc + (t0 ? Date.now() - t0 : 0)) / 1000);
         return Math.floor(t / 60) + ':' + ('0' + t % 60).slice(-2);
       }
       var foot = 'R/PHARMA 2026 · JEREMY WILDFIRE', url = 'jwildfire.github.io/keynote';
@@ -5947,13 +6019,38 @@ steps:
         });
         var a = slides[i].querySelector('.notes');
         if (presenter) {
-          notes.innerHTML = '<div class="pnext"><span>Slide ' + (i + 1) + '</span><span>Next: ' + (titleOf(slides[i + 1]) || '—') + '</span><span class="pclock">' + clock() + '</span></div>' + prompter(a);
+          notes.innerHTML = '<div class="pnext"><span>Slide ' + (i + 1) + '</span><span>Next: ' + (titleOf(slides[i + 1]) || '—') + '</span></div>' + prompter(a);
           notes.scrollTop = 0;
         } else notes.innerHTML = '<b>Notes · slide ' + (i + 1) + '</b>' + (a ? a.innerHTML : '<i>No notes.</i>');
         if (location.hash !== '#' + (i + 1)) history.replaceState(null, '', '#' + (i + 1));
         sync();
       }
-      if (presenter) setInterval(function () { var c = notes.querySelector('.pclock'); if (c) c.textContent = clock(); }, 1000);
+      // The timer, top right of the presenter window: it runs from the moment the window opens,
+      // with play/pause and restart buttons. T in either window plays or pauses it.
+      var ptime = null, pplay = null;
+      function drawTimer() {
+        if (!ptime) return;
+        ptime.textContent = clock();
+        pplay.textContent = t0 ? '❚❚' : '▶';
+        pplay.title = t0 ? 'Pause' : 'Play';
+        ptime.parentNode.classList.toggle('paused', !t0);
+      }
+      function toggleTimer() {
+        if (t0) { acc += Date.now() - t0; t0 = null; } else t0 = Date.now();
+        drawTimer();
+      }
+      function resetTimer() { acc = 0; if (t0) t0 = Date.now(); drawTimer(); }
+      if (presenter) {
+        var pt = document.createElement('div'); pt.id = 'ptimer';
+        pt.innerHTML = '<span class="ptime"></span><button type="button" class="pplay"></button><button type="button" class="preset" title="Restart from zero">↺</button>';
+        document.body.appendChild(pt);
+        ptime = pt.querySelector('.ptime'); pplay = pt.querySelector('.pplay');
+        pplay.addEventListener('click', function () { toggleTimer(); pplay.blur(); });
+        pt.querySelector('.preset').addEventListener('click', function (e) { resetTimer(); e.currentTarget.blur(); });
+        t0 = Date.now();
+        drawTimer();
+        setInterval(drawTimer, 250);
+      }
 
       // Forward: the first press on a slide with a callout reveals it; the next one advances.
       // Back: hides a revealed callout first, then steps back to the previous slide fully shown.
@@ -5983,12 +6080,13 @@ steps:
         if (e.metaKey || e.ctrlKey || e.altKey) return;
         var k = e.key;
         if (presenter) {
-          if (k === 't' || k === 'T') { t0 = Date.now(); return; }
+          if (k === 't' || k === 'T') { toggleTimer(); return; }
           if (k === 'f' || k === 'F' || !window.opener) return;
           e.preventDefault();
           window.opener.postMessage({ type: 'deck-key', key: k }, '*');
           return;
         }
+        if ((k === 't' || k === 'T') && pwin && !pwin.closed) { pwin.postMessage({ type: 'deck-timer' }, '*'); return; }
         if (k === 'p' || k === 'P') {
           pwin = window.open(location.href.split('#')[0].split('?')[0] + '?presenter#' + (i + 1), 'keynote-presenter', 'width=1000,height=700');
           return;
@@ -6022,6 +6120,7 @@ steps:
         }
         // The presenter window says hello when it loads; the deck answers with where it is.
         if (e.data && e.data.type === 'deck-hello' && !presenter) { pwin = e.source; sync(); }
+        if (e.data && e.data.type === 'deck-timer' && presenter) toggleTimer();
         if (e.data && e.data.type === 'deck-state' && presenter) {
           go(e.data.i);
           slides[i].classList.toggle('revealed', !!e.data.revealed);
