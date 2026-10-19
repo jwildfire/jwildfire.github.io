@@ -45,8 +45,12 @@ const MIN = 18;                 // nothing meant to be read is smaller than this
 // A requirement's title is written on the treemap only if all of it fits at 18px. --keep 20 also
 // allows a cut title that keeps at least 20 characters; the default writes no fragments.
 const KEEP = Number(values('keep')[0] ?? Infinity);
-const W = 1320, H = 488;        // the drawing's box on a 1600 x 900 slide
-const LEG = 40;                 // the legend band along the bottom
+// --size 620x560 --suffix half draws a smaller pair for a two-column slide, into the markers
+// roadmap-tree:treemap-half and roadmap-tree:node-link-half (2026-10-18, the merged v5 slide).
+const SIZE = (values('size')[0] ?? '1320x488').split('x').map(Number), SUFFIX = values('suffix')[0] ?? '';
+const W = SIZE[0], H = SIZE[1];  // the drawing's box on a 1600 x 900 slide
+const NOLEG = flag('no-legend');  // --no-legend: the slide draws one legend for a pair of pictures
+const LEG = NOLEG ? 0 : 40;     // the legend band along the bottom
 
 // ---------------------------------------------------------------- helpers
 const stageIdx = (s) => STAGES.indexOf(s);
@@ -121,6 +125,7 @@ function tally(gs) {
 const retiredHidden = (objs) => (SHOW_RETIRED ? 0 : sum(objs, (o) => o.requirements.filter((r) => r.stage === 'Retired').length));
 
 function legend(gs, shapes) {
+  if (NOLEG) return '';
   const t = tally(gs), y = H - 26, GAP = 24;
   let x = 0, s = '';
   const item = (mark, label, advance) => { s += mark(x) + text(x + advance, y + 19, label, 20); x += advance + tw(label, 20) + GAP; };
@@ -269,8 +274,8 @@ const all = SHOW_ORPHANS && orphans.reqs.length ? objectives.concat([orphans]) :
 const one = objectives.find((g) => g.number === OBJECTIVE);
 if (!one) throw new Error(`build: objective #${OBJECTIVE} is not in model.json`);
 
-PIC = 'a'; const A = treemap(all);
-PIC = 'b'; const B = nodeLink(one);
+PIC = SUFFIX ? 'c' : 'a'; const A = treemap(all);
+PIC = SUFFIX ? 'd' : 'b'; const B = nodeLink(one);
 const tA = tally(all), tB = tally([one]);
 const hiddenRetired = retiredHidden(M.objectives) + (SHOW_ORPHANS ? retiredHidden([{ requirements: M.unparented }]) : 0);
 const hiddenOrphans = SHOW_ORPHANS ? 0 : M.unparented.length;
@@ -289,15 +294,20 @@ const counts = [
   `Drawn on the tree: ${one.short}, ${tB.nReq} requirements (${stageList(tB)}), ${tB.nTask} tasks (${taskList(tB)}).`,
 ];
 
+const sfx = SUFFIX ? `-${SUFFIX}` : '';
 const blocks = {
-  treemap: `<div class="tree">${A.svg}</div>\n      <p class="stamp">${esc(stampA)}</p>`,
-  'node-link': `<div class="tree">${B.svg}</div>\n      <p class="stamp">${esc(stampB)}</p>`,
+  [`treemap${sfx}`]: `<div class="tree">${A.svg}</div>\n      <p class="stamp">${esc(stampA)}</p>`,
+  [`node-link${sfx}`]: `<div class="tree">${B.svg}</div>\n      <p class="stamp">${esc(stampB)}</p>`,
   counts: counts.map(esc).join('\n        <br>'),
 };
 
-await fs.writeFile(path.join(HERE, 'treemap.svg'), A.svg.replace('<svg ', '<svg xmlns="http://www.w3.org/2000/svg" ') + '\n');
-await fs.writeFile(path.join(HERE, 'node-link.svg'), B.svg.replace('<svg ', '<svg xmlns="http://www.w3.org/2000/svg" ') + '\n');
-await fs.writeFile(path.join(HERE, 'counts.md'), `# Roadmap tree snapshot\n\n${counts.map((c) => `- ${c}`).join('\n')}\n- Slide A caption: ${stampA}\n- Slide B caption: ${stampB}\n\n## Readable on slide A\n\nObjective names: ${A.report.objectives.join('; ')}\n\nObjectives too small for a name at 18px: ${A.report.unlabelledObjectives.join('; ') || 'none'}\n\nObjectives drawn at the minimum size instead of their true size: ${A.report.floored.join('; ') || 'none'}\n\nRequirement titles:\n\n${A.report.requirements.map((r) => `- ${r}`).join('\n')}\n\n## Readable on slide B\n\n${one.reqs.map((r) => `- #${r.n} ${r.title}`).join('\n')}\n`);
+if (SUFFIX) delete blocks.counts;
+// --only treemap (or node-link) injects just that picture, so the two can be drawn at different sizes.
+const ONLY = values('only')[0];
+if (ONLY) for (const k of Object.keys(blocks)) if (k !== ONLY + sfx) delete blocks[k];
+if (!SUFFIX) await fs.writeFile(path.join(HERE, 'treemap.svg'), A.svg.replace('<svg ', '<svg xmlns="http://www.w3.org/2000/svg" ') + '\n');
+if (!SUFFIX) await fs.writeFile(path.join(HERE, 'node-link.svg'), B.svg.replace('<svg ', '<svg xmlns="http://www.w3.org/2000/svg" ') + '\n');
+if (!SUFFIX) await fs.writeFile(path.join(HERE, 'counts.md'), `# Roadmap tree snapshot\n\n${counts.map((c) => `- ${c}`).join('\n')}\n- Slide A caption: ${stampA}\n- Slide B caption: ${stampB}\n\n## Readable on slide A\n\nObjective names: ${A.report.objectives.join('; ')}\n\nObjectives too small for a name at 18px: ${A.report.unlabelledObjectives.join('; ') || 'none'}\n\nObjectives drawn at the minimum size instead of their true size: ${A.report.floored.join('; ') || 'none'}\n\nRequirement titles:\n\n${A.report.requirements.map((r) => `- ${r}`).join('\n')}\n\n## Readable on slide B\n\n${one.reqs.map((r) => `- #${r.n} ${r.title}`).join('\n')}\n`);
 
 for (const target of values('inject')) {
   const file = path.resolve(target);
