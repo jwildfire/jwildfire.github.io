@@ -19,7 +19,8 @@ Chrome loads the extension from this folder, so it updates when the folder does.
 - The cursor is in the comment box. Write a line or two (Markdown works) and press ⌘↵ to publish.
 - Title, link and source are filled in from the page. Edit them if the page's own title is noisy.
 - Save as draft commits the file with `published: false`, so it does not appear on the site. Delete that line on GitHub to publish it.
-- Add to ai-links (⌘⇧↵) puts the page in the Reminders list instead: the title as the reminder, the link plus any comment and quote in its notes. A link already open in the list is not added twice. The list name is a setting.
+- "Also add to ai-links" (ticked by default, remembered) sends every published quick hit and draft to the Reminders list too: the title as the reminder, the link plus any comment, quote and quick-hit page in its notes.
+- "Only add to ai-links" (⌘⇧↵) puts the page in the Reminders list and publishes nothing, for a reading queue. A link already open in the list is not added twice. The list name is a setting.
 - Whatever you type is kept for that page until it is published, so closing the popup by accident loses nothing.
 
 Working through the Reminders list: open each link, press ⌥⇧L, comment, publish, and tick the reminder off.

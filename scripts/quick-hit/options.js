@@ -9,8 +9,11 @@ function say(text, kind = "") {
   status.textContent = text;
 }
 
+// The text settings on this page (alsoRemind is a checkbox in the popup, not here).
+const fields = keys.filter((k) => typeof DEFAULTS[k] === "string");
+
 function values() {
-  return Object.fromEntries(keys.map((k) => [k, $(k).value.trim()]));
+  return Object.fromEntries(fields.map((k) => [k, $(k).value.trim()]));
 }
 
 // Asks GitHub whether the token can push to the repository.
@@ -50,7 +53,7 @@ function checkHelper() {
 
 async function init() {
   const s = await loadSettings();
-  for (const k of keys) $(k).value = s[k];
+  for (const k of fields) $(k).value = s[k];
   $("form").addEventListener("submit", async (e) => {
     e.preventDefault();
     await saveSettings(values());

@@ -18,15 +18,19 @@ in the notes, where Reminders makes it clickable.) An open reminder in the same
 list whose notes already hold the URL counts as a duplicate and is left alone.
 
 Values reach AppleScript as arguments, never pasted into the script text.
+Each request and its outcome is appended to ~/Library/Logs/wildfiring-quick-hit.log.
 The first run makes macOS ask whether Google Chrome may control Reminders.
 """
+import datetime
 import json
+import os
 import re
 import struct
 import subprocess
 import sys
 
-VERSION = "0.2.0"
+VERSION = "0.2.1"
+LOG = os.path.expanduser("~/Library/Logs/wildfiring-quick-hit.log")
 
 ADD_SCRIPT = """
 on run argv
@@ -46,6 +50,14 @@ on run argv
   return "added"
 end run
 """
+
+
+def log(*parts):
+    try:
+        with open(LOG, "a", encoding="utf-8") as f:
+            f.write(datetime.datetime.now().isoformat(timespec="seconds") + " " + " | ".join(str(p) for p in parts) + "\n")
+    except OSError:
+        pass  # logging must never stop the helper
 
 
 def read_message():
@@ -88,6 +100,7 @@ def add(msg):
         )
     except subprocess.TimeoutExpired:
         return {"ok": False, "error": "Reminders took too long to answer. Is a permission prompt waiting?"}
+    log("osascript", "exit=%s" % res.returncode, "out=%r" % res.stdout.strip(), "err=%r" % res.stderr.strip())
     if res.returncode != 0:
         return {"ok": False, "error": explain(res.stderr)}
     return {"ok": True, "duplicate": res.stdout.strip() == "duplicate", "list": list_name}
@@ -99,13 +112,17 @@ def main():
         if msg is None:
             return
         action = msg.get("action")
+        log("request", action, msg.get("list", ""), msg.get("url", ""))
         if action == "ping":
-            send({"ok": True, "version": VERSION})
+            reply = {"ok": True, "version": VERSION}
         elif action == "add":
-            send(add(msg))
+            reply = add(msg)
         else:
-            send({"ok": False, "error": "Unknown action: %s" % action})
+            reply = {"ok": False, "error": "Unknown action: %s" % action}
+        log("reply", json.dumps(reply))
+        send(reply)
     except Exception as exc:  # report, don't crash: Chrome only sees a closed pipe otherwise
+        log("crash", repr(exc))
         send({"ok": False, "error": "Helper error: %s" % exc})
 
 
