@@ -1202,6 +1202,10 @@
     .s-reads .card .big { font-size: 38px; }
     .s-reads .card q { font-size: 23px; }
     .s-reads .card cite { font-size: 16px; }
+    .s-reads .card { position: relative; }
+    .s-reads .card .logo { position: absolute; top: 22px; right: 22px; height: 40px; width: auto; opacity: 0.85; }
+    .s-reads .card .logo.txt { height: auto; font-family: var(--sans); font-weight: 800; font-size: 30px; line-height: 40px; letter-spacing: 0.02em; color: var(--ink); }
+    .s-reads .card .who { padding-right: 56px; }
     .s-reads .card .who { font-family: var(--mono); font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--soft); margin: 0; }
   </style>
 </head>
@@ -3928,25 +3932,25 @@ steps:
       <h2>New ways of working, written up in public.</h2>
       <div class="cards">
         <div class="card step" style="--c: var(--spec-2)">
-          <p class="who">6 May · US FDA</p>
+          <span class="logo txt" aria-label="US FDA">FDA</span><p class="who">6 May · US FDA</p>
           <p class="big"><a href="https://www.fda.gov/news-events/press-announcements/fda-expands-ai-capabilities-and-completes-data-platform-consolidation" target="_blank" rel="noopener">Elsa 4.0, with custom agents</a></p>
           <q>…the agency’s internal AI tool available to all FDA staff, from scientific reviewers to investigators.</q>
           <cite>FDA press release · Elsa 4.0 and a consolidated data platform</cite>
         </div>
         <div class="card step" style="--c: var(--spec-0)">
-          <p class="who">23 Sep · Rails World keynote</p>
+          <img class="logo" src="assets/logos/rubyonrails.svg" alt="Ruby on Rails logo" /><p class="who">23 Sep · Rails World keynote</p>
           <p class="big"><a href="https://www.youtube.com/watch?v=vDjW_dRyKXY" target="_blank" rel="noopener">Done coding by hand</a></p>
           <q>At 37signals, a couple of weeks ago, we made the decision that it clearly means we’re done writing code by hand.</q>
           <cite>David Heinemeier Hansson, creator of Ruby on Rails · as transcribed in <a href="https://newsletter.pragmaticengineer.com/p/the-pulse-ror-creator-sparks-new" target="_blank" rel="noopener">The Pragmatic Engineer</a>, 1 Oct</cite>
         </div>
         <div class="card step" style="--c: var(--spec-4)">
-          <p class="who">15 Oct · Claude Code team</p>
+          <img class="logo" src="assets/logos/claude.svg" alt="Claude logo" /><p class="who">15 Oct · Claude Code team</p>
           <p class="big"><a href="https://claude.dev/blog/solving-code-review-at-anthropic/" target="_blank" rel="noopener">Review, moved to machines</a></p>
           <q>We didn’t remove review. But we did move most of the reading to machines…</q>
           <cite>Addy Osmani, Morgan Westlee Lunt and Qing Wang · How the Claude Code team does code review</cite>
         </div>
         <div class="card step" style="--c: var(--spec-5)">
-          <p class="who">16 Oct · Anthropic research</p>
+          <img class="logo" src="assets/logos/anthropic.svg" alt="Anthropic logo" /><p class="who">16 Oct · Anthropic research</p>
           <p class="big"><a href="https://www.anthropic.com/research/employment-at-anthropic" target="_blank" rel="noopener">Agents outwork people</a></p>
           <q>Agent hours worked outnumber human hours 6 to 1.</q>
           <cite>How employment is changing at Anthropic</cite>
@@ -3982,6 +3986,7 @@ steps:
         junior technical roles.
       <br><br>18 October 2026 (Jeremy, after dry run 2: "'Six times as many agent hours as human hours' update the quote there"): the Anthropic card's quote is now the article's own sentence, from its introduction, checked word for word that night: "Agent hours worked outnumber human hours 6 to 1." The key findings say it as "By August interactive AI agent hours outnumbered employees' six to one." The card's headline (Agents outwork people) is draft wording. It replaces the attention-is-the-bottleneck quote.
         <br><br>18 October 2026 (Jeremy: "move FDA/ elsa 4.0 ref to slide 50 (so 4 items instead of 3)"): the FDA card is first, as the oldest of the four. It replaces the FDA line under the gap chart. Source: FDA press release, 6 May 2026, https://www.fda.gov/news-events/press-announcements/fda-expands-ai-capabilities-and-completes-data-platform-consolidation, checked word for word on 18 October. The quote is the end of its sentence "The agency launched Elsa 4.0, a significant upgrade to the agency’s internal AI tool available to all FDA staff, from scientific reviewers to investigators." Custom agents is the first item in the release's list of new features. The same release says "human subject matter experts verify all inputs, analytic processes, and output implementation." Earlier steps: Elsa launched agency-wide 2 June 2025; agentic AI for all employees 1 December 2025. The full timeline is on the FDA and AI briefing (https://claude.ai/artifact/Mu9KRXNHPfmLFqn6RnhnqD). The salt line no longer says the four weeks before the talk, since the FDA item is from May.
+        <br><br>Logos added 2026-10-19 (Jeremy: "add logos to 50."): Ruby on Rails and Claude from simple-icons 13.21.0 (CC0, downloaded with his OK), Anthropic as on the forecasts slide. The FDA card has a plain FDA text mark, since the FDA logo is for FDA use only.
       </aside>
     </section>
 
@@ -4121,7 +4126,6 @@ steps:
           <cite>Demis Hassabis, Google DeepMind, asked “The end of disease?” · <a href="https://www.cbsnews.com/news/artificial-intelligence-google-deepmind-ceo-demis-hassabis-60-minutes-transcript/" target="_blank" rel="noopener">60 Minutes</a> · Apr 2025</cite>
         </div>
       </div>
-      <p class="salt">Forecasts, not facts · read with a large grain of salt</p>
       <aside class="notes">
         <ul class="hits"><li>Biology: 50–100 years in 5–10</li><li>Hassabis: the end of disease is within reach</li></ul>
         <strong class="say">&lt;none yet&gt;</strong>
@@ -4144,6 +4148,7 @@ steps:
         Draft tag removed; wording is still his to tweak. Options A and C are in the reserves.
       <br><br>18 October 2026 (Jeremy: "drop the 3rd point around time horizons"): the METR time-horizon card (Doubling every 7 months: 2027 a work day, 2028 a work week, 2029 a work month; METR via AI Digest, theaidigest.org/time-horizons, March 2026) is off the slide; two forecasts remain, one per press.
       <br><br>Logos added 18 October 2026 (Jeremy: "Add anthropic and google logos", then "download them"): assets/logos/anthropic.svg and google.svg, the one-colour marks from the simple-icons set (CC0), version 13.21.0, from cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/. simple-icons has no Google DeepMind mark, so the Hassabis card carries the Google G.
+        <br><br>19 October 2026: the line under the cards, Forecasts, not facts · read with a large grain of salt, came off the slide (Jeremy: "remove it (I'll say it)").
       </aside>
     </section>
 
