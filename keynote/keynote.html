@@ -1173,6 +1173,11 @@
     .s-gap .gapchart .gnote { font-family: var(--serif); font-size: 34px; fill: var(--ink); }
     .s-gap .gapchart .anote { font-family: var(--sans); font-size: 19px; fill: var(--soft); }
     .s-reads .card .big a { color: inherit; text-decoration: underline; text-decoration-color: var(--c); text-decoration-thickness: 3px; text-underline-offset: 6px; }
+    .s-reads .cards { grid-template-columns: repeat(4, 1fr); gap: 22px; }
+    .s-reads .card { padding: 22px 24px 24px; }
+    .s-reads .card .big { font-size: 38px; }
+    .s-reads .card q { font-size: 23px; }
+    .s-reads .card cite { font-size: 16px; }
     .s-reads .card .who { font-family: var(--mono); font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--soft); margin: 0; }
   </style>
 </head>
@@ -3898,6 +3903,12 @@ steps:
       <p class="kicker">How fast it is moving</p>
       <h2>New ways of working, written up in public.</h2>
       <div class="cards">
+        <div class="card step" style="--c: var(--spec-2)">
+          <p class="who">6 May · US FDA</p>
+          <p class="big"><a href="https://www.fda.gov/news-events/press-announcements/fda-expands-ai-capabilities-and-completes-data-platform-consolidation" target="_blank" rel="noopener">Elsa 4.0, with custom agents</a></p>
+          <q>…the agency’s internal AI tool available to all FDA staff, from scientific reviewers to investigators.</q>
+          <cite>FDA press release · Elsa 4.0 and a consolidated data platform</cite>
+        </div>
         <div class="card step" style="--c: var(--spec-0)">
           <p class="who">23 Sep · Rails World keynote</p>
           <p class="big"><a href="https://www.youtube.com/watch?v=vDjW_dRyKXY" target="_blank" rel="noopener">Done coding by hand</a></p>
@@ -3917,9 +3928,9 @@ steps:
           <cite>How employment is changing at Anthropic</cite>
         </div>
       </div>
-      <p class="salt">From my reading list · all in the four weeks before this talk</p>
+      <p class="salt">From my reading list, and the FDA</p>
       <aside class="notes">
-        <ul class="hits"><li>DHH: done coding by hand</li><li>Claude Code team: review moved to machines</li><li>Anthropic: agent hours outnumber human hours 6 to 1</li></ul>
+        <ul class="hits"><li>FDA: Elsa 4.0, agents for all staff</li><li>DHH: done coding by hand</li><li>Claude Code team: review moved to machines</li><li>Anthropic: agent hours outnumber human hours 6 to 1</li></ul>
         <strong class="say">&lt;none yet&gt;</strong>
         Added 2026-10-18 (Jeremy: "add a few very recent links from my ai reading list in
         reminders to demonstrate how much active work is being done on frontier ways of working
@@ -3946,6 +3957,7 @@ steps:
         non-technical employees half their work week. It also reports relatively less hiring for
         junior technical roles.
       <br><br>18 October 2026 (Jeremy, after dry run 2: "'Six times as many agent hours as human hours' update the quote there"): the Anthropic card's quote is now the article's own sentence, from its introduction, checked word for word that night: "Agent hours worked outnumber human hours 6 to 1." The key findings say it as "By August interactive AI agent hours outnumbered employees' six to one." The card's headline (Agents outwork people) is draft wording. It replaces the attention-is-the-bottleneck quote.
+        <br><br>18 October 2026 (Jeremy: "move FDA/ elsa 4.0 ref to slide 50 (so 4 items instead of 3)"): the FDA card is first, as the oldest of the four. It replaces the FDA line under the gap chart. Source: FDA press release, 6 May 2026, https://www.fda.gov/news-events/press-announcements/fda-expands-ai-capabilities-and-completes-data-platform-consolidation, checked word for word on 18 October. The quote is the end of its sentence "The agency launched Elsa 4.0, a significant upgrade to the agency’s internal AI tool available to all FDA staff, from scientific reviewers to investigators." Custom agents is the first item in the release's list of new features. The same release says "human subject matter experts verify all inputs, analytic processes, and output implementation." Earlier steps: Elsa launched agency-wide 2 June 2025; agentic AI for all employees 1 December 2025. The full timeline is on the FDA and AI briefing (https://claude.ai/artifact/Mu9KRXNHPfmLFqn6RnhnqD). The salt line no longer says the four weeks before the talk, since the FDA item is from May.
       </aside>
     </section>
 
@@ -4149,10 +4161,9 @@ steps:
         <text class="ax" x="560" y="428" text-anchor="middle">Today</text>
         <text class="ax" x="1060" y="428" text-anchor="end">A year from now</text>
       </svg>
-      <p class="fda">The FDA already reviews with AI: <a href="https://www.fda.gov/news-events/press-announcements/fda-launches-agency-wide-ai-tool-optimize-performance-american-people" target="_blank" rel="noopener">Elsa for all staff since June 2025</a>, <a href="https://www.fda.gov/news-events/press-announcements/fda-expands-artificial-intelligence-capabilities-agentic-ai-deployment" target="_blank" rel="noopener">agents since December 2025</a>.</p>
       <div class="goodat hack" style="left: 200px; right: auto; bottom: auto; top: 330px"><div class="bub"><p class="a">Time to close the gap</p></div><div class="who"></div></div>
       <aside class="notes">
-        <ul class="hits"><li>My guess: frontier fast, trials steady</li><li>FDA already reviews with AI</li><li>[press] Time to close the gap</li><li>Closing the gap: more medicines, faster</li></ul>
+        <ul class="hits"><li>My guess: frontier fast, trials steady</li><li>[press] Time to close the gap</li><li>Closing the gap: more medicines, faster</li></ul>
         <strong class="say">&lt;none yet&gt;</strong>
         Added 2026-10-17 (Jeremy: "Make a new slide 54 that selects the steady line for trials
         and the fast line for frontier. subhead = what's next: my best guess. head: Closing the gap
@@ -4165,6 +4176,7 @@ steps:
         On the press Hacker Orange appears and the clinical trial tools line moves from its steady
         guess to its fast one, about 1.6 seconds; the labels swap at the end. The press replaces the
         old slide's FDA sources, which stay in that slide's notes in the Reserves.
+        <br><br>18 October 2026: the FDA line moved to the New ways of working slide as its Elsa 4.0 card (Jeremy: "move FDA/ elsa 4.0 ref to slide 50").
       </aside>
     </section>
 
