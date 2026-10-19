@@ -4,7 +4,7 @@
 //
 //   node plan-timeline.mjs --fetch                          read GitHub with the gh CLI (reads only)
 //                                                           and save plan-timeline.json
-//   node plan-timeline.mjs --inject ../../keynote_extended.html
+//   node plan-timeline.mjs --inject ../../keynote_notes.html
 //                                                           write the slide's markup between the
 //                                                           roadmap-tree:plan-timeline:start/end markers
 //
