@@ -1060,6 +1060,7 @@
     .s-gap3 .g3 .hide { opacity: 0; transition: opacity 500ms ease 0.6s; }
     .s-gap3:has(.st1.on) .g3 .b1, .s-gap3:has(.st2.on) .g3 .b2, body.overview .s-gap3 .g3 .hide, body.reveal-all .s-gap3 .g3 .hide { opacity: 1; }
     .s-gap3 .g3 .rv.sm { font-size: 20px; }
+    .s-gap3 .g3 .rs.src { font-size: 16px; }
     .s-gap3 .g3 .strike { fill: none; stroke: var(--ink); stroke-width: 3; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 0.8s ease-in-out 0.2s; }
     .s-gap3:has(.st2.on) .g3 .strike, body.overview .s-gap3 .g3 .strike, body.reveal-all .s-gap3 .g3 .strike { stroke-dashoffset: 0; }
     .s-gap3:has(.st2.on) .g3 .b1 { opacity: 0.45; transition-delay: 0.9s; }
@@ -4190,7 +4191,7 @@ steps:
     <section class="slide s-split s-gap s-gap3" data-hue="6">
       <p class="kicker">What's next: my best guess</p>
       <h2>Closing the gap means more medicines faster!</h2>
-      <svg class="gapchart g3" viewBox="0 0 1320 548" role="img" aria-label="Illustration, not data. Top: frontier capabilities and clinical trial tools from a year ago to a year from now. Bottom: time to develop one drug. Today, 10 to 15 years and 1 to 2 billion dollars. Next year, slow: a real but marginal improvement, still years. Next year, fast: a paradigm change. Some day soon: months, maybe weeks.">
+      <svg class="gapchart g3" viewBox="0 0 1320 548" role="img" aria-label="Illustration, not data. Top: frontier capabilities and clinical trial tools from a year ago to a year from now. Bottom: time to develop one drug. Today, more than 10 years and 1 to 2.6 billion dollars per approved drug. Next year, slow: a real but marginal improvement, still years. Next year, fast: a paradigm change. Some day soon: months, maybe weeks.">
         <defs><pattern id="g3-hatch" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="12" height="12" fill="#fbf1e0"/><line x1="0" y1="0" x2="0" y2="12" stroke="#c78a3b" stroke-width="5"/></pattern><pattern id="g3-hatchb" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="12" height="12" fill="#e6f1fb"/><line x1="0" y1="0" x2="0" y2="12" stroke="#519fdd" stroke-width="5"/></pattern></defs>
         <text class="cap" x="1060" y="10" text-anchor="end">Illustration, not data</text>
         <g class="key"><path class="ln front" d="M60,24 L120,24"/><text class="lab" x="134" y="32">Frontier capabilities</text><path class="ln clin" d="M60,64 L120,64"/><text class="lab" x="134" y="72">Clinical trial tools</text></g>
@@ -4231,13 +4232,14 @@ steps:
         </g>
 
         <text class="bh" x="0" y="302">Time to develop one drug</text>
+        <text class="rs src" x="1310" y="302" text-anchor="end">Sources: <a href="https://go.bio.org/rs/490-EHZ-999/images/ClinicalDevelopmentSuccessRates2011_2020.pdf" target="_blank" rel="noopener">BIO 2021</a> · <a href="https://jamanetwork.com/journals/jama/fullarticle/2762311" target="_blank" rel="noopener">Wouters 2020</a> · <a href="https://doi.org/10.1016/j.jhealeco.2016.01.012" target="_blank" rel="noopener">DiMasi 2016</a></text>
         <g class="row">
           <text class="rl" x="0" y="344">Today</text>
-          <rect x="300" y="324" width="580" height="28" rx="6" fill="#c78a3b"/>
-          <rect x="880" y="324" width="290" height="28" rx="6" fill="#c78a3b" opacity="0.4"/>
-          <text class="rv" x="316" y="345" fill="#fff">10–15 years · $1–2 billion</text>
-          <text class="rs" x="1184" y="336"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9293739/" target="_blank" rel="noopener">Sun et al., 2022</a></text>
-          <text class="rs" x="1184" y="357">90% of candidates fail</text>
+          <rect x="300" y="324" width="609" height="28" rx="6" fill="#c78a3b"/>
+          <rect x="909" y="324" width="261" height="28" rx="6" fill="#c78a3b" opacity="0.4"/>
+          <text class="rv" x="316" y="345" fill="#fff">10+ years · $1–2.6 billion per approved drug</text>
+          <text class="rs" x="1184" y="336">90% of candidates fail</text>
+          <text class="rs" x="1184" y="357"><a href="https://go.bio.org/rs/490-EHZ-999/images/ClinicalDevelopmentSuccessRates2011_2020.pdf" target="_blank" rel="noopener">BIO 2021</a>: 7.9% reach approval</text>
         </g>
         <g class="row hide b1">
           <text class="rl" x="0" y="392">Next year, slow</text>
@@ -4265,7 +4267,7 @@ steps:
       </svg>
       <div class="goodat hack sm now hold3" style="left: 170px; right: auto; bottom: auto; top: 345px"><div class="bub"><p class="a">Time to close the gap</p></div><div class="who"></div></div>
       <aside class="notes">
-        <ul class="hits"><li>Today: 10 to 15 years, 1 to 2 billion dollars a drug</li><li>[press] Slow: real marginal improvement, but still years</li><li>[press] Fast: a paradigm change, soon</li><li>[press] Some day soon: months, maybe weeks</li><li>Time to close the gap</li></ul>
+        <ul class="hits"><li>Today: 10+ years, $1 to 2.6 billion per approved drug; 9 in 10 fail</li><li>[press] Slow: real marginal improvement, but still years</li><li>[press] Fast: a paradigm change, soon</li><li>[press] Some day soon: months, maybe weeks</li><li>Time to close the gap</li></ul>
         <strong class="say">&lt;none yet&gt;</strong>
         Added 2026-10-17 (Jeremy: "Make a new slide 54 that selects the steady line for trials
         and the fast line for frontier. subhead = what's next: my best guess. head: Closing the gap
@@ -4283,6 +4285,11 @@ steps:
         <br><br>Sources, checked word for word: Sun, Gao, Hu and Zhou, 2022, https://pmc.ncbi.nlm.nih.gov/articles/PMC9293739/ ("Drug discovery and development is a long, costly, and high-risk process that takes over 10–15 years with an average cost of over $1–2 billion for each new drug to be approved for clinical use", rechecked 19 October; the 90% failure figure is its title). Hassabis on 60 Minutes, CBS, 20 April 2025 ("We can maybe reduce that down from years to maybe months or maybe even weeks"). Amodei, Machines of Loving Grace, October 2024 (the COVID mRNA vaccines took 9 months; they "arguably should have been approved in ~2 months"). The previous version of this slide is in the Reserves, dated 2026-10-19.
         <br><br>Reworked 2026-10-19 (Jeremy: "s54: Click 1. “Real Marginal Improvement, but still years”. Click 2. Cross through slow. “Next year fast” Paradigm change, soon. Add click 3 that projects the clinical trial line out into the future with continued growth. “some day soon” “Months, Maybe weeks”"). Now three presses. One: frontier fast and trials slow, with the Real marginal improvement, but still years bar. Two: the slow row is struck through and fades, trials fast is drawn, and the Next year, fast row says Paradigm change, soon (a 7-year hatched bar, an illustration). Three: the trials line is projected past a year from now, labelled Some day soon, the Months, maybe weeks row appears with its sources, and Hacker Orange says Time to close the gap (moved from the second press).
         <br><br>19 October 2026 (Jeremy: "s54. continue both lines all the way to the top of the slide with arrows into the distance on click 3."): on the third press both lines run on past a year from now to the top of the slide, ending in arrowheads, and their Fast labels fade.
+        <br><br>Today bar hardened 2026-10-19 (Jeremy: "Update slide 54's Today bar to 10+ years · $1–2.6 billion per approved drug, cite BIO 2021, Wouters 2020 and DiMasi 2016 on the slide, and cite BIO 2021 for the 90%."). Why: Sun et al. cite their 10–15 years and $1–2 billion to Hinkson et al. 2020, which states neither (it gives five and a half years for preclinical discovery and over $2 billion), and no primary source gives 15 years. The solid bar now runs to 10.5 years. Sources, checked 19 October:
+        <br>BIO, Informa and QLS, Clinical Development Success Rates 2011–2020 (February 2021), https://go.bio.org/rs/490-EHZ-999/images/ClinicalDevelopmentSuccessRates2011_2020.pdf: "it takes 10.5 years for a Phase I asset to progress to regulatory approval" (p. 3); "only 7.9% of drug development programs (n=12,728) successfully make it to market" (p. 14).
+        <br>Wouters, McKee and Luyten, JAMA 2020, corrected 20 September 2022, https://jamanetwork.com/journals/jama/fullarticle/2762311: median $1,141.7 million and mean $1,559.1 million capitalized per new drug, including failures (2018 dollars, SEC filings, 63 drugs approved 2009–2018). The PMC copy still shows the pre-correction $985 million and $1.3 billion.
+        <br>DiMasi, Grabowski and Hansen, J Health Econ 2016, https://doi.org/10.1016/j.jhealeco.2016.01.012: $2,558 million capitalized pre-approval cost (2013 dollars, Tufts CSDD survey of 10 firms, 106 drugs); $1,395 million out of pocket.
+        <br>If asked: "Isn't it $2.6 billion?" That's the Tufts figure, the top of the range; independent estimates from public filings land nearer $1–1.5 billion (Wouters; Mulcahy et al. 2025, RAND, mean $1.31 billion). "Does it include failures?" Yes, all three include failed programs. "Ten years from when?" From the start of phase I; discovery adds more. Full talking points: https://claude.ai/artifact/HQ2ZaeMV6P1YMv1XhhnUG5
       </aside>
     </section>
 
