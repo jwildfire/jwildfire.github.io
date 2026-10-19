@@ -5,6 +5,11 @@ description: "Jeremy Wildfire builds open-source software for clinical trials. M
 # Shown under the wordmark in the homepage rail and in the footer on other pages.
 tagline: "Modernizing clinical trials with AI and open source."
 
+# Dates and permalinks use Eastern time. GitHub Pages builds in UTC, so without this
+# a quick hit posted in the evening got the next day's date and URL, and the link the
+# Chrome extension copies (worked out in local time) pointed at a page that wasn't there.
+timezone: America/New_York
+
 # Linked from the rail, the site footer, and post pages.
 cv_url: "https://github.com/jwildfire/cv"
 scholar_url: "https://scholar.google.com/citations?user=Hn0AnpIAAAAJ"
