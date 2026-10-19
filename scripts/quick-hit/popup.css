@@ -77,7 +77,10 @@ input:focus, textarea:focus { outline: 2px solid var(--accent-soft); border-colo
 .grow { flex: 1; min-width: 0; }
 .source { width: 120px; flex: none; }
 
-.actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 4px; }
+.check { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--soft); margin: 2px 0 8px; cursor: pointer; }
+.check input { width: auto; margin: 0; accent-color: var(--accent); }
+.actions { display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-top: 4px; }
+.actions .spacer { flex: 1; }
 button {
   font: 600 12px/1 var(--sans);
   border-radius: 999px;
@@ -103,3 +106,6 @@ kbd { font: 10px var(--mono); opacity: 0.75; margin-left: 4px; }
 .status .links { display: block; margin-top: 4px; font: 11.5px var(--mono); }
 .status .links a { margin-right: 10px; }
 .done form { display: none; }
+.status .also { display: block; margin-top: 6px; }
+.status .also.ok { color: var(--ok); }
+.status .also.bad { color: var(--bad); }

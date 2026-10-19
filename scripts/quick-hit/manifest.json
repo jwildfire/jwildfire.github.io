@@ -1,20 +1,41 @@
 {
   "manifest_version": 3,
   "name": "Wildfiring Quick Hit",
-  "version": "0.1.0",
-  "description": "Share the page you're on, with a quote and a comment, as a quick hit on the Wildfiring blog.",
+  "version": "0.2.0",
+  "description": "Share the page you're on as a quick hit on the Wildfiring blog, or add it to a Reminders list.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAocCqqzx4AA2Bx/Fu7piS6Gx/uE7fDXIz4esBycLN9el4crogl+tLNvFUUWwPVx3/iaMPVfnbb0UHOw/2GZJJdfE94iMTLajEsDBGYqlAfVVB4bi4GGd/J5puqJJlsSyqxRwMzVw2UD1HNoIlJdmz3WUjPvPjxNYVMhkUN4RtrgZt9b99I6LifnXGCfIPDLpYhiN6KqpuKMcBeEOacQw9u3hfSliBrAwKbttvPfxv622aHksJwHBQojQQWCK7zlJjWjC0bliK97CUqVs+uCY7D4is00UiBj3VuzW6ZFZSnex8b/FaR0OgGsBdjmXrnmaU4Bz3Y9FFHF1QgH0iMjgaDwIDAQAB",
   "action": {
     "default_popup": "popup.html",
     "default_title": "Share as a quick hit",
-    "default_icon": { "16": "icons/16.png", "32": "icons/32.png", "48": "icons/48.png", "128": "icons/128.png" }
+    "default_icon": {
+      "16": "icons/16.png",
+      "32": "icons/32.png",
+      "48": "icons/48.png",
+      "128": "icons/128.png"
+    }
   },
-  "icons": { "16": "icons/16.png", "32": "icons/32.png", "48": "icons/48.png", "128": "icons/128.png" },
+  "icons": {
+    "16": "icons/16.png",
+    "32": "icons/32.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
   "options_page": "options.html",
-  "permissions": ["activeTab", "scripting", "storage"],
-  "host_permissions": ["https://api.github.com/*"],
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "nativeMessaging"
+  ],
+  "host_permissions": [
+    "https://api.github.com/*"
+  ],
   "commands": {
     "_execute_action": {
-      "suggested_key": { "default": "Alt+Shift+L", "mac": "Alt+Shift+L" },
+      "suggested_key": {
+        "default": "Alt+Shift+L",
+        "mac": "Alt+Shift+L"
+      },
       "description": "Open the quick hit popup"
     }
   }
