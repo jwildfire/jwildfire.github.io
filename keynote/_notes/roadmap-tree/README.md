@@ -21,7 +21,7 @@ GITHUB_TOKEN="$(gh auth token)" node fetch.mjs
 node build.mjs --inject ../beat4-roadmap-tree-draft.html
 ```
 
-- Once the two slides have been copied into the deck, point step 2 at the deck as well: `node build.mjs --inject ../../keynote_extended.html`. It only works if the slides were copied with their `roadmap-tree:…:start` and `:end` comment markers; `--inject` may be given more than once.
+- Once the two slides have been copied into the deck, point step 2 at the deck as well: `node build.mjs --inject ../../keynote_notes.html` (the local-only source; then run build-keynote.py). It only works if the slides were copied with their `roadmap-tree:…:start` and `:end` comment markers; `--inject` may be given more than once.
 - The date on the slides is the day of step 1, in Eastern time. Step 2 alone redraws from the saved snapshot and keeps its date.
 - Then open the slide and look at it. The numbers in the notes are rewritten; the sentences around them are not, so check the talking points against the new picture.
 
@@ -78,3 +78,5 @@ Read the console after step 2. It prints the counts, and it flags what did not f
 | `font-widths.json` | Character widths of Instrument Sans at weights 400 and 600, in em. Only needs redoing if the deck's body font changes. |
 | `treemap.svg`, `node-link.svg` | The two pictures as standalone files, the same as the ones in the slides. |
 | `counts.md` | The counts and the readable text of the last build. |
+| `plan-timeline.mjs` | The animated plan slide (talk slide 39, 2026-10-18): `node plan-timeline.mjs --fetch` reads the hub's objectives, the Biomarker charts requirements and tasks with their open and close times, and the bio.viz and gsm.bio releases with the gh CLI (reads only) into `plan-timeline.json`; `node plan-timeline.mjs --inject ../../keynote_extended.html` writes the slide's markup between the `roadmap-tree:plan-timeline` markers. The deck's own script plays it. It does not touch `model.json` or the pictures above. |
+| `plan-timeline.json` | That slide's snapshot: open and close times, statuses and public titles. |
