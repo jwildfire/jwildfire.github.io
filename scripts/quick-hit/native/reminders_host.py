@@ -9,7 +9,7 @@ install.sh registers it with Chrome; nothing else runs it.
 Messages:
   {"action": "ping"}
       -> {"ok": true, "version": ...}
-  {"action": "add", "list": "ai-links", "title": ..., "url": ..., "notes": ...}
+  {"action": "add", "list": "AI Reading", "title": ..., "url": ..., "notes": ...}
       -> {"ok": true} | {"ok": true, "duplicate": true} | {"ok": false, "error": ...}
 
 The reminder's name is the page title; its notes are the URL, then the comment
@@ -29,7 +29,7 @@ import struct
 import subprocess
 import sys
 
-VERSION = "0.2.1"
+VERSION = "0.2.2"
 LOG = os.path.expanduser("~/Library/Logs/wildfiring-quick-hit.log")
 
 ADD_SCRIPT = """
@@ -92,7 +92,7 @@ def add(msg):
         return {"ok": False, "error": "No link to add."}
     notes = str(msg.get("notes") or "").strip()
     body = url + ("\n\n" + notes if notes else "")
-    list_name = str(msg.get("list") or "ai-links")
+    list_name = str(msg.get("list") or "AI Reading")
     try:
         res = subprocess.run(
             ["/usr/bin/osascript", "-e", ADD_SCRIPT, list_name, title, url, body],

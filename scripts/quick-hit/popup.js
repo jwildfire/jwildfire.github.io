@@ -4,9 +4,9 @@
  * one file to _links/ through the GitHub contents API. GitHub Pages rebuilds the
  * site from that commit, so the quick hit is live a minute or so later.
  *
- * The page can also go to an Apple Reminders list (ai-links by default) through the
+ * The page can also go to an Apple Reminders list (AI Reading by default) through the
  * helper in native/ (Chrome native messaging), with the comment and quote as notes:
- * "Only add to ai-links" does just that and publishes nothing, and the "Also add"
+ * "Only add to AI Reading" does just that and publishes nothing, and the "Also add"
  * checkbox (on by default) sends every published quick hit and draft there too.
  *
  * What you type is kept per page in session storage until it is published, so
@@ -159,7 +159,7 @@ function toReminders(extraNotes = "") {
   });
 }
 
-// "Only add to ai-links": the reading queue, nothing published.
+// "Only add to AI Reading": the reading queue, nothing published.
 async function remind() {
   const button = $("remind");
   button.disabled = true;

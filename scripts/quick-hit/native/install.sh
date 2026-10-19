@@ -1,6 +1,6 @@
 #!/bin/sh
 # Registers the Reminders helper with Google Chrome, so the Quick Hit popup's
-# "Add to ai-links" button can reach Apple Reminders. Run once per Mac:
+# "Add to AI Reading" button can reach Apple Reminders. Run once per Mac:
 #
 #   sh scripts/quick-hit/native/install.sh
 #
