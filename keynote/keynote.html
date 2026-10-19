@@ -601,8 +601,12 @@
     /* Presenter window (P opens it; ?presenter in the URL): the notes fill the window, for a
        second screen. It follows the deck window and sends its key presses back to it. */
     body.presenter .notes-panel { display: block; top: 0; max-height: none; font-size: 18px; padding: 28px 40px; background: #1f2328; }
-    body.presenter .notes-panel strong.say { font-size: 28px; line-height: 1.45; }
-    body.presenter .notes-panel .pnext { font-family: var(--mono); font-size: 15px; color: #c9cdc6; margin: 0 0 18px; display: flex; flex-wrap: wrap; gap: 6px 24px; }
+    body.presenter .notes-panel .pnext { font-family: var(--mono); font-size: 13px; color: #8d938c; margin: 0 0 22px; display: flex; flex-wrap: wrap; gap: 6px 24px; }
+    /* Teleprompter: only the spoken words, one sentence a line; [press] cues as small marks. */
+    body.presenter .notes-panel .tp { margin: 0 0 16px; font-size: 32px; line-height: 1.35; font-weight: 600; color: #fff; max-width: 34em; }
+    body.presenter .notes-panel .tp.cue { font-family: var(--mono); font-size: 15px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: var(--spec-3); margin: 6px 0 14px; }
+    body.presenter .notes-panel .tp.none { color: #8d938c; font-weight: 400; }
+    body.presenter .hint { display: none; }
 
 
     .thumb { display: contents; }
@@ -4462,6 +4466,19 @@ steps:
         var h = s && s.querySelector('h1, h2');
         return h ? h.textContent.replace(/\s+/g, ' ').trim() : '';
       }
+      // The spoken words only, split into one sentence a line, with each [press] cue on its own.
+      function prompter(a) {
+        var say = a && a.querySelector('.say'), t = say ? say.textContent.replace(/\s+/g, ' ').trim() : '';
+        if (!t || t === '<none yet>') return '<p class="tp none">No spoken notes.</p>';
+        return t.split(/(\[press[^\]]*\])/).map(function (part) {
+          part = part.trim();
+          if (!part) return '';
+          if (/^\[press/.test(part)) return '<p class="tp cue">' + part.slice(1, -1) + '</p>';
+          return part.split(/(?<=[.!?])\s+(?=[A-Z0-9$“"(])/).map(function (x) {
+            return '<p class="tp">' + x.replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</p>';
+          }).join('');
+        }).join('');
+      }
       function clock() {
         var t = Math.floor((Date.now() - t0) / 1000);
         return Math.floor(t / 60) + ':' + ('0' + t % 60).slice(-2);
@@ -4548,7 +4565,10 @@ steps:
           else if (!f.hidden) { f.hidden = true; f.src = 'about:blank'; }
         });
         var a = slides[i].querySelector('.notes');
-        notes.innerHTML = '<b>Notes · slide ' + (i + 1) + '</b>' + (presenter ? '<div class="pnext"><span>' + titleOf(slides[i]) + '</span><span>Next: ' + (titleOf(slides[i + 1]) || '—') + '</span><span class="pclock">' + clock() + '</span></div>' : '') + (a ? a.innerHTML : '<i>No notes.</i>');
+        if (presenter) {
+          notes.innerHTML = '<div class="pnext"><span>Slide ' + (i + 1) + '</span><span>Next: ' + (titleOf(slides[i + 1]) || '—') + '</span><span class="pclock">' + clock() + '</span></div>' + prompter(a);
+          notes.scrollTop = 0;
+        } else notes.innerHTML = '<b>Notes · slide ' + (i + 1) + '</b>' + (a ? a.innerHTML : '<i>No notes.</i>');
         if (location.hash !== '#' + (i + 1)) history.replaceState(null, '', '#' + (i + 1));
         sync();
       }
