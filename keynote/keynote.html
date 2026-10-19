@@ -1077,6 +1077,25 @@
     .s-gap3:has(.st3.on) .g3 .fastlab, body.overview .s-gap3 .g3 .fastlab, body.reveal-all .s-gap3 .g3 .fastlab { opacity: 0; }
     .s-gap3 .goodat.hold3 { opacity: 0; transform: translateY(14px) scale(0.96); transition: opacity 300ms ease 1.2s, transform 300ms ease 1.2s; }
     .s-gap3:has(.st3.on) .goodat.hold3, body.overview .s-gap3 .goodat.hold3, body.reveal-all .s-gap3 .goodat.hold3 { opacity: 1; transform: none; }
+    /* Smoother motion (2026-10-19): steps here appear without the deck's slide-up, so the lines
+       never jump; lines draw with one easing; labels and dots follow the line; bars grow from zero. */
+    .s-gap3 .g3 .step, .s-gap3 .g3 .step.on { transform: none; transition: none; }
+    .s-gap3 .g3 .draw { transition: stroke-dashoffset 1.6s cubic-bezier(0.45, 0, 0.2, 1); }
+    .s-gap3 .g3 .proj { transition-duration: 1.9s; }
+    .s-gap3 .g3 .step text, .s-gap3 .g3 .step circle { opacity: 0; transition: opacity 0.4s ease 1.3s; }
+    .s-gap3 .g3 .step.on text, .s-gap3 .g3 .step.on circle, body.overview .s-gap3 .g3 .step text, body.overview .s-gap3 .g3 .step circle, body.reveal-all .s-gap3 .g3 .step text, body.reveal-all .s-gap3 .g3 .step circle { opacity: 1; }
+    .s-gap3:has(.st3.on) .g3 .endpt { opacity: 0; transition-delay: 0s; }
+    .s-gap3:has(.st3.on) .g3 .step .fastlab { transition: opacity 0.3s ease 0s; }
+    .s-gap3 .g3 .ahead { transition: opacity 0.3s ease 1.7s; }
+    .s-gap3 .g3 .far { transition: opacity 0.4s ease 1.8s; }
+    .s-gap3 .g3 .hide { transition: opacity 0.25s ease; }
+    .s-gap3 .g3 .hide rect { transform-box: fill-box; transform-origin: 0 50%; transform: scaleX(0); transition: transform 1s cubic-bezier(0.45, 0, 0.2, 1) 0.2s; }
+    .s-gap3 .g3 .hide text, .s-gap3 .g3 .hide .covid { opacity: 0; transition: opacity 0.4s ease 1.1s; }
+    .s-gap3 .g3 .hide .rl { transition-delay: 0.1s; }
+    .s-gap3:has(.st1.on) .g3 .b1 rect, .s-gap3:has(.st2.on) .g3 .b2 rect, .s-gap3:has(.st3.on) .g3 .b3 rect, body.overview .s-gap3 .g3 .hide rect, body.reveal-all .s-gap3 .g3 .hide rect { transform: none; }
+    .s-gap3:has(.st1.on) .g3 .b1 text, .s-gap3:has(.st2.on) .g3 .b2 text, .s-gap3:has(.st3.on) .g3 .b3 text, .s-gap3:has(.st3.on) .g3 .b3 .covid, body.overview .s-gap3 .g3 .hide text, body.reveal-all .s-gap3 .g3 .hide text, body.overview .s-gap3 .g3 .hide .covid, body.reveal-all .s-gap3 .g3 .hide .covid { opacity: 1; }
+    .s-gap3:has(.st2.on) .g3 .b1 { opacity: 0.45; transition: opacity 0.6s ease 0.9s; }
+    .s-gap3 .goodat.hold3 { transition-delay: 2s; }
     .s-gap .gcards { display: grid; gap: 20px; }
     .s-gap .gcard { background: var(--panel); border: 2px solid var(--rule); border-radius: 18px; padding: 20px 26px; }
     .s-gap .gcard h3 { display: flex; align-items: center; gap: 14px; font-family: var(--mono); font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--soft); font-weight: 500; margin: 0 0 10px; }
@@ -4196,20 +4215,20 @@ steps:
         <text class="ax" x="1060" y="275.8" text-anchor="end">A year from now</text>
         <g class="step st1">
           <path class="ln front pick draw" pathLength="1" d="M560,193.8 C680,159.0 940,106.8 1060,37.2"/>
-          <circle class="dot front" cx="1060" cy="37.2" r="6"/><text class="guess pick fastlab" x="1076" y="43.2">Fast</text>
+          <circle class="dot front endpt" cx="1060" cy="37.2" r="6"/><text class="guess pick fastlab" x="1076" y="43.2">Fast</text>
           <path class="ln clin pick draw slowln" pathLength="1" d="M560,228.6 C720,222.8 900,218.2 1060,215.8"/>
           <circle class="dot clin slowln" cx="1060" cy="215.8" r="6"/><text class="guess pick slowln" x="1076" y="221.8">Slow</text>
         </g>
         <g class="step st2">
           <path class="ln clin pick draw" pathLength="1" d="M560,228.6 C760,211.2 940,159.0 1060,115.5"/>
-          <circle class="dot clin" cx="1060" cy="115.5" r="6"/><text class="guess pick fastlab" x="1076" y="121.5">Fast</text>
+          <circle class="dot clin endpt" cx="1060" cy="115.5" r="6"/><text class="guess pick fastlab" x="1076" y="121.5">Fast</text>
         </g>
 
         <g class="step st3">
-          <path class="ln front pick draw proj" pathLength="1" d="M1060,37.2 C1110,0 1150,-110 1175,-225"/>
-          <path class="ln clin pick draw proj" pathLength="1" d="M1060,115.5 C1150,60 1220,-60 1255,-225"/>
-          <polygon class="ahead front" points="1178.4,-240.6 1184.8,-222.9 1165.2,-227.1"/>
-          <polygon class="ahead clin" points="1258.3,-240.7 1264.8,-222.9 1245.2,-227.1"/>
+          <path class="ln front pick draw proj" pathLength="1" d="M1060,37.2 C1120,2.4 1155,-110 1175,-225"/>
+          <path class="ln clin pick draw proj" pathLength="1" d="M1060,115.5 C1120,93.8 1215,-40 1255,-225"/>
+          <polygon class="ahead front" points="1177.7,-240.8 1184.9,-223.3 1165.1,-226.7"/>
+          <polygon class="ahead clin" points="1258.4,-240.6 1264.8,-222.9 1245.2,-227.1"/>
           <text class="guess pick far" x="1282" y="-140">Some day</text><text class="guess pick far" x="1282" y="-116">soon</text>
         </g>
 
