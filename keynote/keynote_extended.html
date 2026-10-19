@@ -806,6 +806,9 @@
     body:not(.overview):not(.reveal-all) .s-plan:not(:has(.ps1.on)) .all li.me .g { font-weight: 400; }
     body:not(.overview):not(.reveal-all) .s-plan:not(:has(.ps2.on)) :is(.h-task, .rq .bd) { opacity: 0; }
     body:not(.overview):not(.reveal-all) .s-plan:not(:has(.ps3.on)) :is(.rq .ln, .ax > span, .ov) { opacity: 0; }
+    /* The objectives' requirement counts wait for the week to play (2026-10-19, Jeremy). */
+    .s-plan .all .c { transition: opacity 450ms ease; }
+    body:not(.overview):not(.reveal-all) .s-plan:not(:has(.ps3.on)) .all .c { opacity: 0; }
     @media print { .s-plan .one, .s-plan .h-task, .s-plan .rq > span, .s-plan .ax > span, .s-plan .ov { opacity: 1 !important; } }
     /* Beat 4: Orange's answers from the callouts, gathered on one slide. Add "bad" for the
        thumbs-down version. li.next is a dashed cell for a bridge line. */
