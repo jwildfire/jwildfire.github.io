@@ -149,6 +149,11 @@ hr {
 .post-content h2, .post-content h3 { margin-top: 2rem; }
 /* Keynote slides are near-white on the near-white page: a light frame sets them off. */
 .post-content img[src*="/assets/img/rpharma-2026-keynote/"] { display: block; border: 1px solid #d9dcd7; border-radius: 6px; }
+/* The animations behind those slides (GIFs and screen recordings), each under its slide. */
+.post-content figure.kn-anim { margin: 0 0 1.5em; }
+.post-content figure.kn-anim img, .post-content figure.kn-anim video { display: block; max-width: 100%; height: auto; margin: 0 auto; border: 1px solid #d9dcd7; border-radius: 6px; }
+.post-content figure.kn-anim video { width: 100%; }
+.post-content figure.kn-anim figcaption { margin-top: 0.4em; font-size: 0.85em; color: var(--kn-soft); text-align: center; }
 
 blockquote {
   color: var(--kn-soft);

@@ -66,6 +66,11 @@ When I found out I was giving this talk, back in the spring, I tried to think ab
 
 [![2012: Why can't I do this for work? Interactive graphics in the New York Times.](/assets/img/rpharma-2026-keynote/slide-06.jpg)](https://jwildfire.github.io/keynote/keynote.html#6)
 
+<figure class="kn-anim">
+  <img src="/keynote/assets/nyt-512-paths.gif" alt="The New York Times interactive 512 Paths to the White House, 2012: choosing a winner in each swing state prunes a tree of paths to victory." loading="lazy">
+  <figcaption>The New York Times, <em>512 Paths to the White House</em> (2012).</figcaption>
+</figure>
+
 Back in 2012 I was a biostatistician working on NIH-funded asthma and allergy studies. I knew SAS and some R, and I started seeing interactive graphics in places like the New York Times. This one shows Obama's paths to victory in his re-election, so it was a while ago. Looking at these, I thought: why can't I do this for work?
 
 It turns out we can. I taught myself JavaScript (D3 version 2, I think), and we ran a bunch of experiments. We were already making fancy R graphics, mostly in lattice back then, and we started building more and more with JavaScript, and deploying it with R through htmlwidgets and Shiny.
@@ -77,6 +82,11 @@ It turns out we can. I taught myself JavaScript (D3 version 2, I think), and we 
 After some experimenting, we found places in the clinical trial pipeline where this was really useful. As a study statistician it always drove me nuts to make dense, five-point-font, 18-page adverse event tables. They come with every study, and they're horrific to read.
 
 [![The Rho Graphics Group: a handful of webpages beats a massive table. The Adverse Event Explorer, open source, in the browser.](/assets/img/rpharma-2026-keynote/slide-09.jpg)](https://jwildfire.github.io/keynote/keynote.html#9)
+
+<figure class="kn-anim">
+  <img src="/assets/img/fig2_aeexplorer.gif" alt="The Adverse Event Explorer: adverse event rates by body system and preferred term, filtered and expanded in the browser." loading="lazy">
+  <figcaption>The Adverse Event Explorer. Today's version is <a href="https://jwildfire.github.io/safety.viz/ae-explorer/">in safety.viz</a>.</figcaption>
+</figure>
 
 So we turned them into a handful of web pages, which is a much better way to review a study's data in lots of ways. Everybody liked it more. We liked making them more, and the users liked using them more.
 
@@ -90,6 +100,11 @@ Thanks to everyone who built it with us, including Jim Buchanan, Susan Mayo, Xia
 
 [![The best thing we built: the hepatic explorer, and a clinical workflow to go with it. The explorer (eDISH) and step 1 of 9 of the workflow, as it reads in safety.viz today.](/assets/img/rpharma-2026-keynote/slide-11.jpg)](https://jwildfire.github.io/keynote/keynote.html#11)
 
+<figure class="kn-anim">
+  <img src="/assets/img/fig3_hepexplorer.gif" alt="The eDISH hepatic explorer: peak ALT against peak bilirubin for each participant, with one participant's lab timeline opened." loading="lazy">
+  <figcaption>The hepatic explorer, the SafetyGraphics version. Today's is <a href="https://jwildfire.github.io/safety.viz/hep-explorer/">in safety.viz</a>.</figcaption>
+</figure>
+
 I think the best thing we built was the hepatic explorer, and the clinical workflow that goes with it. The team was about half technical folks like me and half clinicians. Jim Buchanan, our clinical lead, wrote a detailed workflow for analyzing liver toxicity with eDISH, and we built the chart to support it. The workflow tells you how to use the tool, and the tool is updated as the workflow evolves.
 
 Building custom workflows like this, all open source and freely available, and then using them on the trials I was supporting, was eye-opening.
@@ -101,6 +116,11 @@ We gave a lot of talks, and the first question at every one was about quality. S
 What evidence did we have? Quite a lot: written requirements, manual test scripts, and automated tests, including Shiny tests, run on every pull request. But was it validated? Not really. It was exploratory.
 
 [![Monitoring a trial, as software: an OpenRBQM site report on example data, with quality built in from the start. OpenRBQM, a PHUSE working group.](/assets/img/rpharma-2026-keynote/slide-14.jpg)](https://jwildfire.github.io/keynote/keynote.html#14)
+
+<figure class="kn-anim">
+  <video src="/keynote/assets/gsm-kri-report-demo.mp4" poster="/keynote/assets/gsm-kri-report-demo-poster.png" autoplay muted loop playsinline controls preload="none" aria-label="Screen recording of an OpenRBQM site report on example data: a table of sites by key risk indicator with red and amber flags, then the charts for one indicator"></video>
+  <figcaption>An OpenRBQM site report, on example data.</figcaption>
+</figure>
 
 In 2021 I joined Gilead and moved from safety monitoring to a team focused on RBQM, risk-based quality management. We built more open-source software, which we're still building and maintaining today, under [OpenRBQM](https://openrbqm.github.io/), a [PHUSE working group](https://advance.hub.phuse.global/wiki/spaces/WEL/pages/26811224/OpenRBQM+Pre-Competitive+Collaboration+on+Open-Source+Software+for+RBQM).
 
@@ -214,6 +234,16 @@ I'd have expected that to take a team of three developers about six months witho
 
 [![obot v3, 17 July: Papers → prompts → prototypes. A hepatic composite view from a 2024 paper, and a QT explorer from a clinical workflow. What worked: translating research into software.](/assets/img/rpharma-2026-keynote/slide-34.jpg)](https://jwildfire.github.io/keynote/keynote.html#34)
 
+<figure class="kn-anim">
+  <img src="/assets/img/hep-explorer-composite.gif" alt="The hepatic composite view: baseline and on-treatment eDISH scatters, a four-panel shift plot, and a migration table with a by-arm summary." loading="lazy">
+  <figcaption>The hepatic composite view. <a href="https://jwildfire.github.io/safety.viz/hep-explorer/">Try it live</a>.</figcaption>
+</figure>
+
+<figure class="kn-anim">
+  <img src="/assets/img/qt-explorer-demo.gif" alt="The QT explorer: central tendency with a confidence band, the outlier scatter, and the by-arm categorical exceedance table." loading="lazy">
+  <figcaption>The QT explorer. <a href="https://jwildfire.github.io/safety.viz/qt-explorer/">Try it live</a>.</figcaption>
+</figure>
+
 Then I sent it to Jim Buchanan, SafetyGraphics' clinical lead. He hadn't worked on it in a couple of years, and he was excited; he's an amazing advocate for this work. He sent me a couple of papers from colleagues at FDA, including a newer one that changes how the eDISH analysis works. It had some cool new figures, so I asked obot: take a look at this paper; can you build figure 3? A few hours later we had this composite view, a new way of analyzing liver toxicity, working, with a clinical workflow. Then the QT explorer, which we'd worked on but never taken to production: modernize that old repo. Done, another night.
 
 Translating research into software like that blew my mind, with tests and quality documentation too. It's not qualified; nobody has gone through those steps. But it passes the sniff test from people who've spent a lot of time with these charts. This wasn't something I had time to do, or funding to do. This new technology made it possible. The full story is in [diary #7](https://jwildfire.github.io/2026/07/17/papers-prompts-prototypes.html).
@@ -262,11 +292,14 @@ In the end, from May to October, we built 20 interactive charts, 3 apps and 7 cl
 
 [![The safety.viz demo: your own files, nothing uploaded. The live app, with Orange's notes added for the talk, and a QR code for jwildfire.github.io/safety.viz/demo.](/assets/img/rpharma-2026-keynote/slide-43.jpg)](https://jwildfire.github.io/keynote/keynote.html#43)
 
+<figure class="kn-anim">
+  <video src="/keynote/assets/safety-viz-demo.mp4" poster="/keynote/assets/safety-viz-demo-poster.png" autoplay muted loop playsinline controls preload="none" aria-label="Screen recording of the safety.viz demo app, with Orange's notes popping up: study files are dropped in, the app maps them, opens the hepatic explorer on one participant, and runs the OpenRBQM metrics with R in the browser"></video>
+  <figcaption>The demo in 40 seconds, with Orange's notes added for the talk. <a href="https://jwildfire.github.io/safety.viz/demo/">Try it yourself</a>.</figcaption>
+</figure>
+
 Here's [the demo](https://jwildfire.github.io/safety.viz/demo/). You load your own files, and nothing is uploaded. It works out how your data maps to what the charts need, and lets you tweak it. R launches in the browser (I'd never done that before; the agents figured it out), and you get the RBQM components, the new biomarker charts and all the SafetyGraphics work, old and new, in one place.
 
 Please play with it and file issues, and maybe I'll let Claude get to work on them. Or fork it; it's all open source.
-
-<!-- JW: embed the 40-second demo video (keynote/assets/safety-viz-demo.mp4) here instead of the still? -->
 
 [![Costs: $11,750 at API prices. I paid $200 a month. Spend by obot version: v3 $3,330; v4 $6,020 or more; v5 $450 or more; v5.5 $1,955. The record has holes: June is not counted, and most of September is missing.](/assets/img/rpharma-2026-keynote/slide-44.jpg)](https://jwildfire.github.io/keynote/keynote.html#44)
 
