@@ -148,24 +148,28 @@ function build(D) {
   const read = new Date(D.readAt);
   const readOn = inET(read, { day: 'numeric', month: 'long', year: 'numeric' });
   const readShort = inET(read, { day: 'numeric', month: 'short', year: 'numeric' });
+  // Three columns, left to right: Objectives, then the focus objective's Requirements, then
+  // their Tasks with the week on a time axis. Three presses (2026-10-19): the requirements, the
+  // tasks, then the week plays. The .ps markers are the deck's steps; the CSS and the script read them.
   const html = `
       <div class="plan" data-t0="${new Date(T0).toISOString()}" data-t1="${new Date(T1).toISOString()}">
-        <div class="one">
-          <p class="lab"><span>One goal · ${esc(F.short)}</span><span class="cnt"><b data-k="req">${doneReq}</b> of <b data-k="rtot">${nReq}</b> requirements done · <b data-k="task">${doneTask}</b> of <b data-k="ttot">${nTask}</b> tasks</span></p>
-          <div class="gant" style="grid-template-rows: repeat(${nReq}, 1fr) auto auto">
-          ${rows}
-          <div class="ax rel"><span class="t">Releases · bio.viz and gsm.bio</span><span class="ln">${rels}</span></div>
-          <div class="ax day"><span class="t"></span><span class="ln">${ticks}${days}</span></div>
-          <div class="ov" style="grid-row: 1 / ${nReq + 1}">${wk}</div>
-          <div class="ov" style="grid-row: 1 / ${nReq + 2}"><u class="ph"></u></div>
-          </div>
-        </div>
+        <i class="step ps ps1"></i><i class="step ps ps2"></i><i class="step ps ps3"></i>
         <aside class="all">
-          <p class="lab">Every goal · ${D.objectives.length}</p>
+          <p class="lab"><span>Objectives</span><span class="cnt"><b>${D.objectives.length}</b></span></p>
           <ul>
             ${goals}
           </ul>
         </aside>
+        <div class="one">
+          <div class="gant" style="grid-template-rows: auto repeat(${nReq}, 1fr) auto auto">
+          <div class="hd"><p class="lab h-req"><span>Requirements</span><span class="cnt"><span class="all-n"><b>${nReq}</b></span><span class="run-n"><b data-k="req">${doneReq}</b> of <b data-k="rtot">${nReq}</b> done</span></span></p><p class="lab h-task"><span>Tasks</span><span class="cnt"><span class="all-n"><b>${nTask}</b></span><span class="run-n"><b data-k="task">${doneTask}</b> of <b data-k="ttot">${nTask}</b> done</span></span></p></div>
+          ${rows}
+          <div class="ax rel"><span class="t">Releases · bio.viz and gsm.bio</span><span class="ln">${rels}</span></div>
+          <div class="ax day"><span class="t"></span><span class="ln">${ticks}${days}</span></div>
+          <div class="ov" style="grid-row: 2 / ${nReq + 2}">${wk}</div>
+          <div class="ov" style="grid-row: 2 / ${nReq + 3}"><u class="ph"></u></div>
+          </div>
+        </div>
       </div>
       <p class="leg2"><span><i style="background:#86efac"></i>Done · released</span><span><i style="background:#6c3270"></i>In review</span><span><i style="background:#d3aed3"></i>Ready</span><span><i style="background:#efe4ef"></i>Open · backlog</span><span><i class="hx"></i>Release</span><span class="st2">obot.roadmap · GitHub releases · ${readShort}</span></p>
       `;

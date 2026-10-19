@@ -579,6 +579,11 @@
     .gallery figure { margin: 0; position: relative; }
     .gallery img { display: block; width: 100%; height: 170px; object-fit: contain; background: var(--panel); border: 2px solid var(--rule); border-radius: 12px; padding: 6px; }
     .gallery figcaption { font-size: 21px; margin-top: 6px; white-space: nowrap; }
+    /* Slide 27, the goal (2026-10-19, footer fix): the longer headline on one line, smaller
+       thumbnails, and Hacker Orange's callout below the source line, clear of the deck footer. */
+    .s-goal h2 { font-size: 64px; white-space: nowrap; margin-bottom: 34px; }
+    .s-goal .gallery img { height: 162px; }
+    .s-goal .goodat.hack { bottom: 30px; }
     .gallery figure i { position: absolute; right: 8px; top: 8px; font-family: var(--mono); font-style: normal; font-size: 15px; background: var(--rail); color: var(--soft); border-radius: 999px; padding: 1px 9px; }
 
     /* Capability timeline (beat 4): a month ruler with releases above and the obot versions below. */
@@ -721,7 +726,7 @@
     .s-plan { padding-top: 100px; padding-bottom: 84px; }
     .s-plan .kicker { margin-bottom: 12px; }
     .s-plan h2 { line-height: 1.05; margin-bottom: 14px; }
-    .s-plan .plan { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 300px; gap: 44px; }
+    .s-plan .plan { flex: 1; min-height: 0; display: grid; grid-template-columns: 290px 1fr; gap: 40px; }
     .s-plan .one, .s-plan .all { display: flex; flex-direction: column; min-height: 0; min-width: 0; }
     .s-plan .lab { font-family: var(--mono); font-size: 20px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--soft); margin: 0 0 8px; display: flex; justify-content: space-between; align-items: baseline; gap: 20px; white-space: nowrap; }
     .s-plan .lab .cnt { font-family: var(--sans); font-size: 20px; letter-spacing: 0; text-transform: none; color: var(--soft); }
@@ -763,16 +768,48 @@
     .s-plan .all li.me { background: var(--panel); box-shadow: 0 0 0 2.5px var(--hue), 0 8px 22px rgba(31, 35, 40, 0.08); }
     .s-plan .all li.me .g { font-weight: 600; }
     .s-plan .all li.me .c { color: var(--ink); }
-    .s-plan .all li.me::before { content: ""; position: absolute; left: -15px; top: 50%; margin-top: -11px; border: 11px solid transparent; border-right: 13px solid var(--hue); border-left: 0; }
+    .s-plan .all li.me::before { content: ""; position: absolute; right: -15px; top: 50%; margin-top: -11px; border: 11px solid transparent; border-left: 13px solid var(--hue); border-right: 0; }
     .s-plan .leg2 { display: flex; flex-wrap: nowrap; align-items: center; gap: 8px 24px; margin: 12px 0 0; font-size: 18px; color: var(--ink); white-space: nowrap; }
     .s-plan .leg2 span { display: inline-flex; align-items: center; gap: 8px; }
     .s-plan .leg2 i { width: 20px; height: 20px; border-radius: 4px; border: 1px solid rgba(0,0,0,.22); }
     .s-plan .leg2 .st2 { font-family: var(--mono); font-size: 18px; color: var(--soft); margin-left: auto; }
     /* Playing (.run): what has not happened yet is hidden; the playhead shows. */
     .s-plan .run .ph { opacity: 0.75; }
-    .s-plan .run .rq.pre > span { opacity: 0; }
-    .s-plan .run .bd i.pre { opacity: 0; transform: scale(0.3); }
+    .s-plan .run .rq.pre > span { opacity: 0.28; }
+    .s-plan .run .bd i.pre { opacity: 0.28; }
     .s-plan .run .rl.pre { opacity: 0; transform: translate(-8px, -50%) scale(0.3); }
+
+    /* Slide 40's three columns and three presses (2026-10-19, Jeremy: "First show the goals.
+       click 1- Then show the requirements for bio-viz. click 2- populate the tasks. click 3.
+       animated updates. ... for the 3 columns "Objectives" - "Requirements" - "Tasks"").
+       .ps1 to .ps3 are the deck's steps. Before the week plays, a not-yet-filed requirement or
+       task is drawn faint (above), so the picture never shows work before it was filed. */
+    .s-plan i.ps { display: none; }
+    .s-plan .hd { display: contents; }
+    .s-plan .lab > span:first-child { color: var(--ink); font-weight: 500; }
+    .s-plan .lab .cnt b { font-family: var(--mono); }
+    .s-plan .h-req { grid-column: 1; margin-bottom: 10px; }
+    .s-plan .h-task { grid-column: 2 / 4; margin-bottom: 10px; }
+    .s-plan .gant { grid-template-columns: 314px 170px 1fr; column-gap: 22px; }
+    /* The last release sits near the right edge: its label goes to the left of its hex. */
+    .s-plan .rl:last-child { flex-direction: row-reverse; transform: translate(calc(-100% + 8px), -50%); }
+    .s-plan .run .rl.pre:last-child { transform: translate(calc(-100% + 8px), -50%) scale(0.3); }
+    .s-plan .all .lab { margin-bottom: 10px; }
+    .s-plan .run-n { display: none; }
+    .s-plan:has(.ps3.on) .run-n { display: inline; }
+    .s-plan:has(.ps3.on) .all-n { display: none; }
+    .s-plan .one, .s-plan .h-task, .s-plan .rq .bd, .s-plan .rq .ln, .s-plan .ax > span, .s-plan .ov { transition: opacity 450ms ease; }
+    .s-plan .all li.me, .s-plan .all li.me::before { transition: background-color 300ms ease, box-shadow 300ms ease, opacity 300ms ease; }
+    body:not(.overview):not(.reveal-all) .s-plan:not(:has(.ps1.on)) .one { opacity: 0; }
+    body:not(.overview):not(.reveal-all) .s-plan:not(:has(.ps1.on)) .all li.me { background: transparent; box-shadow: none; }
+    body:not(.overview):not(.reveal-all) .s-plan:not(:has(.ps1.on)) .all li.me::before { opacity: 0; }
+    body:not(.overview):not(.reveal-all) .s-plan:not(:has(.ps1.on)) .all li.me .g { font-weight: 400; }
+    body:not(.overview):not(.reveal-all) .s-plan:not(:has(.ps2.on)) :is(.h-task, .rq .bd) { opacity: 0; }
+    body:not(.overview):not(.reveal-all) .s-plan:not(:has(.ps3.on)) :is(.rq .ln, .ax > span, .ov) { opacity: 0; }
+    /* The objectives' requirement counts wait for the week to play (2026-10-19, Jeremy). */
+    .s-plan .all .c { transition: opacity 450ms ease; }
+    body:not(.overview):not(.reveal-all) .s-plan:not(:has(.ps3.on)) .all .c { opacity: 0; }
+    @media print { .s-plan .one, .s-plan .h-task, .s-plan .rq > span, .s-plan .ax > span, .s-plan .ov { opacity: 1 !important; } }
     /* Beat 4: Orange's answers from the callouts, gathered on one slide. Add "bad" for the
        thumbs-down version. li.next is a dashed cell for a bridge line. */
     /* "Try it out!" (how to get started, 2026-10-14): five numbered steps, one row each; the
@@ -1514,22 +1551,6 @@
       </figure>
     </section>
 
-    <!-- 2a · OpenRBQM in more detail: Jeremy's to fill -->
-    <section class="slide s-eco" data-hue="3">
-      <p class="kicker">OpenRBQM · <a href="https://openrbqm.github.io/" target="_blank" rel="noopener">openrbqm.github.io</a></p>
-      <h2>An ecosystem of packages</h2>
-      <div class="eco">
-        <a class="pk" href="https://gilead-public.github.io/gsm.core/" target="_blank" rel="noopener" style="--c: var(--spec-0)"><div class="hx"><span>core</span></div><div class="t"><b>gsm.core</b><i>The engine</i></div><p class="d">Builds and scores every metric</p></a>
-        <a class="pk" href="https://gilead-public.github.io/gsm.kri/" target="_blank" rel="noopener" style="--c: var(--spec-1)"><div class="hx"><span>kri</span></div><div class="t"><b>gsm.kri</b><i>Metrics</i></div><p class="d">Key risk indicators, with their charts and reports</p></a>
-        <a class="pk" href="https://gilead-biostats.github.io/gsm.app/" target="_blank" rel="noopener" style="--c: var(--spec-2)"><div class="hx"><span>app</span></div><div class="t"><b>gsm.app</b><i>Apps</i></div><p class="d">Shiny applications for OpenRBQM assessments</p></a>
-        <a class="pk" href="https://gilead-public.github.io/gsm.qtl/" target="_blank" rel="noopener" style="--c: var(--spec-3)"><div class="hx"><span>qtl</span></div><div class="t"><b>gsm.qtl</b><i>Limits</i></div><p class="d">Quality tolerance limits, and their reports</p></a>
-        <a class="pk" href="https://impala-consortium.github.io/gsm.simaerep/" target="_blank" rel="noopener" style="--c: var(--spec-4)"><div class="hx"><span>simaerep</span></div><div class="t"><b>gsm.simaerep</b><i>From IMPALA</i></div><p class="d">Finds sites that under-report adverse events</p></a>
-        <a class="pk" href="https://gilead-public.github.io/workr/" target="_blank" rel="noopener" style="--c: var(--spec-5)"><div class="hx"><span>workr</span></div><div class="t"><b>workr</b><i>Workflows</i></div><p class="d">Runs every step from a YAML workflow</p></a>
-        <a class="pk" href="https://gilead-public.github.io/gsm.datasim/" target="_blank" rel="noopener" style="--c: var(--spec-6)"><div class="hx"><span>datasim</span></div><div class="t"><b>gsm.datasim</b><i>Test data</i></div><p class="d">Simulates trial data to test against</p></a>
-        <a class="pk" href="https://gilead-public.github.io/qcthat/" target="_blank" rel="noopener" style="--c: var(--spec-3)"><img class="hx" src="assets/hex/qcthat.png" alt="" /><div class="t"><b>qcthat</b><i>Quality</i></div><p class="d">Quality control for clinical trial packages</p></a>
-      </div>
-    </section>
-
     <!-- 2a · the lifecycle before AI: the same picture as the "AI in the loop" slide, without the overlay -->
     <section class="slide" data-hue="3">
       <p class="kicker">How the software gets made</p>
@@ -1556,6 +1577,22 @@
           <div class="s">Finalize and release</div>
           <div class="s auto">Publish</div>
         </div>
+      </div>
+    </section>
+
+    <!-- 2a · OpenRBQM in more detail: Jeremy's to fill -->
+    <section class="slide s-eco" data-hue="3">
+      <p class="kicker">OpenRBQM · <a href="https://openrbqm.github.io/" target="_blank" rel="noopener">openrbqm.github.io</a></p>
+      <h2>An ecosystem of packages</h2>
+      <div class="eco">
+        <a class="pk" href="https://gilead-public.github.io/gsm.core/" target="_blank" rel="noopener" style="--c: var(--spec-0)"><div class="hx"><span>core</span></div><div class="t"><b>gsm.core</b><i>The engine</i></div><p class="d">Builds and scores every metric</p></a>
+        <a class="pk" href="https://gilead-public.github.io/gsm.kri/" target="_blank" rel="noopener" style="--c: var(--spec-1)"><div class="hx"><span>kri</span></div><div class="t"><b>gsm.kri</b><i>Metrics</i></div><p class="d">Key risk indicators, with their charts and reports</p></a>
+        <a class="pk" href="https://gilead-biostats.github.io/gsm.app/" target="_blank" rel="noopener" style="--c: var(--spec-2)"><div class="hx"><span>app</span></div><div class="t"><b>gsm.app</b><i>Apps</i></div><p class="d">Shiny applications for OpenRBQM assessments</p></a>
+        <a class="pk" href="https://gilead-public.github.io/gsm.qtl/" target="_blank" rel="noopener" style="--c: var(--spec-3)"><div class="hx"><span>qtl</span></div><div class="t"><b>gsm.qtl</b><i>Limits</i></div><p class="d">Quality tolerance limits, and their reports</p></a>
+        <a class="pk" href="https://impala-consortium.github.io/gsm.simaerep/" target="_blank" rel="noopener" style="--c: var(--spec-4)"><div class="hx"><span>simaerep</span></div><div class="t"><b>gsm.simaerep</b><i>From IMPALA</i></div><p class="d">Finds sites that under-report adverse events</p></a>
+        <a class="pk" href="https://gilead-public.github.io/workr/" target="_blank" rel="noopener" style="--c: var(--spec-5)"><div class="hx"><span>workr</span></div><div class="t"><b>workr</b><i>Workflows</i></div><p class="d">Runs every step from a YAML workflow</p></a>
+        <a class="pk" href="https://gilead-public.github.io/gsm.datasim/" target="_blank" rel="noopener" style="--c: var(--spec-6)"><div class="hx"><span>datasim</span></div><div class="t"><b>gsm.datasim</b><i>Test data</i></div><p class="d">Simulates trial data to test against</p></a>
+        <a class="pk" href="https://gilead-public.github.io/qcthat/" target="_blank" rel="noopener" style="--c: var(--spec-3)"><img class="hx" src="assets/hex/qcthat.png" alt="" /><div class="t"><b>qcthat</b><i>Quality</i></div><p class="d">Quality control for clinical trial packages</p></a>
       </div>
     </section>
 
@@ -1757,7 +1794,7 @@
       <div class="goodat insp"><div class="bub"><p class="a">Oh jeez. I'll check in later.</p></div><div class="who"></div></div>
     </section>
 
-    <section class="slide" data-hue="4">
+    <section class="slide s-goal" data-hue="4">
       <p class="kicker">The goal</p>
       <h2>Modernize SafetyGraphics, using the OpenRBQM framework</h2>
       <div class="gallery">
@@ -1773,7 +1810,7 @@
         <figure><img src="assets/legacy/hep-explorer.png" alt="The original Hepatic Explorer, as shown in its README" /><i>2022</i><figcaption>Hepatic Explorer</figcaption></figure>
       </div>
       <p class="soft" style="font-family: var(--mono); font-size: 21px; margin: 18px 0 0">10 original charts · last commit, top right · 25,400 lines of JavaScript · all on D3 v3</p>
-      <div class="goodat hack" style="bottom: 22px"><div class="bub"><p class="a">Open Source ftw</p></div><div class="who"></div></div>
+      <div class="goodat hack sm"><div class="bub"><p class="a">Open Source ftw</p></div><div class="who"></div></div>
     </section>
 
     <section class="slide" data-hue="4">
@@ -2082,9 +2119,28 @@ steps:
       <h2>Every goal becomes requirements, then tasks</h2>
       <!-- roadmap-tree:plan-timeline:start -->
       <div class="plan" data-t0="2026-10-02T10:00:00.000Z" data-t1="2026-10-10T00:00:00.000Z">
+        <i class="step ps ps1"></i><i class="step ps ps2"></i><i class="step ps ps3"></i>
+        <aside class="all">
+          <p class="lab"><span>Objectives</span><span class="cnt"><b>13</b></span></p>
+          <ul>
+            <li><span class="g">Chart coverage</span><span class="c">10/36</span><span class="br"><i class="k-released" style="width:27.78%"></i><i class="k-review" style="width:11.11%"></i><i class="k-ready" style="width:5.56%"></i><i class="k-backlog" style="width:55.56%"></i></span></li>
+            <li><span class="g">Portfolio view</span><span class="c">1/5</span><span class="br"><i class="k-released" style="width:20%"></i><i class="k-backlog" style="width:80%"></i></span></li>
+            <li><span class="g">Static parity</span><span class="c">0/2</span><span class="br"><i class="k-backlog" style="width:100%"></i></span></li>
+            <li><span class="g">Data loading and mapping</span><span class="c">1/5</span><span class="br"><i class="k-released" style="width:20%"></i><i class="k-backlog" style="width:80%"></i></span></li>
+            <li><span class="g">A local-only desktop tool</span><span class="c">0/3</span><span class="br"><i class="k-backlog" style="width:100%"></i></span></li>
+            <li><span class="g">Program operations</span><span class="c">0/3</span><span class="br"><i class="k-ready" style="width:33.33%"></i><i class="k-backlog" style="width:66.67%"></i></span></li>
+            <li class="me"><span class="g">Biomarker charts</span><span class="c"><b data-k="greq">16</b>/<b data-k="gtot">17</b></span><span class="br"><i class="k-released" style="width:94.12%"></i><i class="k-backlog" style="width:5.88%"></i></span></li>
+            <li><span class="g">RBQM in the browser</span><span class="c">3/12</span><span class="br"><i class="k-released" style="width:25%"></i><i class="k-backlog" style="width:75%"></i></span></li>
+            <li><span class="g">A demo app ready to show</span><span class="c">7/7</span><span class="br"><i class="k-released" style="width:100%"></i></span></li>
+            <li><span class="g">A fast check</span><span class="c">1/2</span><span class="br"><i class="k-released" style="width:50%"></i><i class="k-ready" style="width:50%"></i></span></li>
+            <li><span class="g">R/Pharma keynote deck</span><span class="c">0/3</span><span class="br"><i class="k-backlog" style="width:100%"></i></span></li>
+            <li><span class="g">Autonomy in obot.agent</span><span class="c">28/34</span><span class="br"><i class="k-released" style="width:82.35%"></i><i class="k-review" style="width:2.94%"></i><i class="k-backlog" style="width:14.71%"></i></span></li>
+            <li><span class="g">open.csr</span><span class="c">0/5</span><span class="br"><i class="k-backlog" style="width:100%"></i></span></li>
+          </ul>
+        </aside>
         <div class="one">
-          <p class="lab"><span>One goal · Biomarker charts</span><span class="cnt"><b data-k="req">16</b> of <b data-k="rtot">17</b> requirements done · <b data-k="task">60</b> of <b data-k="ttot">61</b> tasks</span></p>
-          <div class="gant" style="grid-template-rows: repeat(17, 1fr) auto auto">
+          <div class="gant" style="grid-template-rows: auto repeat(17, 1fr) auto auto">
+          <div class="hd"><p class="lab h-req"><span>Requirements</span><span class="cnt"><span class="all-n"><b>17</b></span><span class="run-n"><b data-k="req">16</b> of <b data-k="rtot">17</b> done</span></span></p><p class="lab h-task"><span>Tasks</span><span class="cnt"><span class="all-n"><b>61</b></span><span class="run-n"><b data-k="task">60</b> of <b data-k="ttot">61</b> done</span></span></p></div>
           <div class="rq" data-f="2026-10-02T10:51:20Z" data-c="2026-10-02T13:29:05Z"><span class="t" title="#363 R in the browser, measured: the connection a chart uses to ask R for a statistic">R in the browser, measured</span><span class="bd"><i data-f="2026-10-02T11:42:11Z" data-c="2026-10-02T13:05:27Z" title="bio.viz#1"></i><i data-f="2026-10-02T11:42:13Z" data-c="2026-10-02T13:08:58Z" title="bio.viz#2"></i><i data-f="2026-10-02T11:42:15Z" data-c="2026-10-02T13:19:10Z" title="bio.viz#3"></i></span><span class="ln"><b style="left:0.47%;width:1.44%"></b></span></div>
           <div class="rq" data-f="2026-10-02T10:51:22Z" data-c="2026-10-02T13:46:47Z"><span class="t" title="#364 gsm.bio's statistics: the package, a synthetic biomarker study and every test the charts will print">gsm.bio's statistics</span><span class="bd"><i data-f="2026-10-02T11:42:17Z" data-c="2026-10-02T13:09:04Z" title="gsm.bio#1"></i><i data-f="2026-10-02T11:42:19Z" data-c="2026-10-02T13:17:37Z" title="gsm.bio#2"></i><i data-f="2026-10-02T11:42:21Z" data-c="2026-10-02T13:28:47Z" title="gsm.bio#3"></i><i data-f="2026-10-02T11:42:23Z" data-c="2026-10-02T13:42:56Z" title="gsm.bio#4"></i></span><span class="ln"><b style="left:0.47%;width:1.61%"></b></span></div>
           <div class="rq" data-f="2026-10-02T10:33:39Z" data-c="2026-10-02T17:02:46Z"><span class="t" title="#355 Group comparison, the picture: bio.viz's first chart, drawn and drillable">Group comparison, the picture</span><span class="bd"><i data-f="2026-10-02T13:33:41Z" data-c="2026-10-02T14:19:46Z" title="bio.viz#7"></i><i data-f="2026-10-02T13:33:43Z" data-c="2026-10-02T14:42:00Z" title="bio.viz#8"></i><i data-f="2026-10-02T13:33:45Z" data-c="2026-10-02T16:57:00Z" title="bio.viz#9"></i></span><span class="ln"><b style="left:0.31%;width:3.56%"></b></span></div>
@@ -2104,28 +2160,10 @@ steps:
           <div class="rq open" data-f="2026-10-06T10:40:18Z"><span class="t" title="#371 the group comparison's difference grid as a second opening view">The difference grid, a second view</span><span class="bd"><i data-f="2026-10-05T23:14:10Z" class="open" title="bio.viz#86"></i></span><span class="ln"><b style="left:53.12%;width:46.88%"></b></span></div>
           <div class="ax rel"><span class="t">Releases · bio.viz and gsm.bio</span><span class="ln"><span class="rl" data-f="2026-10-03T14:55:13.000Z" style="left:15.89%" title="bio.viz Sat 3 Oct, 10:55 Eastern; gsm.bio Sat 3 Oct, 10:55 Eastern"><i></i>v0.1.0</span><span class="rl" data-f="2026-10-05T00:21:09.000Z" style="left:34.26%" title="bio.viz Sun 4 Oct, 20:21 Eastern; gsm.bio Sun 4 Oct, 23:04 Eastern"><i></i>v0.2.0</span><span class="rl" data-f="2026-10-07T03:42:43.000Z" style="left:62.48%" title="bio.viz Tue 6 Oct, 23:42 Eastern; gsm.bio Tue 6 Oct, 23:43 Eastern"><i></i>v0.3.0</span><span class="rl" data-f="2026-10-09T11:52:05.000Z" style="left:93.33%" title="bio.viz Fri 9 Oct, 07:52 Eastern; gsm.bio Fri 9 Oct, 07:52 Eastern"><i></i>v0.4.0</span></span></div>
           <div class="ax day"><span class="t"></span><span class="ln"><s style="left:9.89%"></s><s style="left:23.08%"></s><s style="left:36.26%"></s><s style="left:49.45%"></s><s style="left:62.64%"></s><s style="left:75.82%"></s><s style="left:89.01%"></s><span data-a="2026-10-02T10:00:00.000Z" data-b="2026-10-03T04:00:00.000Z" style="left:4.95%">Fri 2</span><span data-a="2026-10-03T04:00:00.000Z" data-b="2026-10-04T04:00:00.000Z" style="left:16.48%">Sat 3</span><span data-a="2026-10-04T04:00:00.000Z" data-b="2026-10-05T04:00:00.000Z" style="left:29.67%">Sun 4</span><span data-a="2026-10-05T04:00:00.000Z" data-b="2026-10-06T04:00:00.000Z" style="left:42.86%">Mon 5</span><span data-a="2026-10-06T04:00:00.000Z" data-b="2026-10-07T04:00:00.000Z" style="left:56.04%">Tue 6</span><span data-a="2026-10-07T04:00:00.000Z" data-b="2026-10-08T04:00:00.000Z" style="left:69.23%">Wed 7</span><span data-a="2026-10-08T04:00:00.000Z" data-b="2026-10-09T04:00:00.000Z" style="left:82.42%">Thu 8</span><span data-a="2026-10-09T04:00:00.000Z" data-b="2026-10-10T00:00:00.000Z" style="left:94.51%">Fri 9</span></span></div>
-          <div class="ov" style="grid-row: 1 / 18"><em class="wk" style="left:0;width:36.26%"><span>One weekend, 2–4 October</span></em></div>
-          <div class="ov" style="grid-row: 1 / 19"><u class="ph"></u></div>
+          <div class="ov" style="grid-row: 2 / 19"><em class="wk" style="left:0;width:36.26%"><span>One weekend, 2–4 October</span></em></div>
+          <div class="ov" style="grid-row: 2 / 20"><u class="ph"></u></div>
           </div>
         </div>
-        <aside class="all">
-          <p class="lab">Every goal · 13</p>
-          <ul>
-            <li><span class="g">Chart coverage</span><span class="c">10/36</span><span class="br"><i class="k-released" style="width:27.78%"></i><i class="k-review" style="width:11.11%"></i><i class="k-ready" style="width:5.56%"></i><i class="k-backlog" style="width:55.56%"></i></span></li>
-            <li><span class="g">Portfolio view</span><span class="c">1/5</span><span class="br"><i class="k-released" style="width:20%"></i><i class="k-backlog" style="width:80%"></i></span></li>
-            <li><span class="g">Static parity</span><span class="c">0/2</span><span class="br"><i class="k-backlog" style="width:100%"></i></span></li>
-            <li><span class="g">Data loading and mapping</span><span class="c">1/5</span><span class="br"><i class="k-released" style="width:20%"></i><i class="k-backlog" style="width:80%"></i></span></li>
-            <li><span class="g">A local-only desktop tool</span><span class="c">0/3</span><span class="br"><i class="k-backlog" style="width:100%"></i></span></li>
-            <li><span class="g">Program operations</span><span class="c">0/3</span><span class="br"><i class="k-ready" style="width:33.33%"></i><i class="k-backlog" style="width:66.67%"></i></span></li>
-            <li class="me"><span class="g">Biomarker charts</span><span class="c"><b data-k="greq">16</b>/<b data-k="gtot">17</b></span><span class="br"><i class="k-released" style="width:94.12%"></i><i class="k-backlog" style="width:5.88%"></i></span></li>
-            <li><span class="g">RBQM in the browser</span><span class="c">3/12</span><span class="br"><i class="k-released" style="width:25%"></i><i class="k-backlog" style="width:75%"></i></span></li>
-            <li><span class="g">A demo app ready to show</span><span class="c">7/7</span><span class="br"><i class="k-released" style="width:100%"></i></span></li>
-            <li><span class="g">A fast check</span><span class="c">1/2</span><span class="br"><i class="k-released" style="width:50%"></i><i class="k-ready" style="width:50%"></i></span></li>
-            <li><span class="g">R/Pharma keynote deck</span><span class="c">0/3</span><span class="br"><i class="k-backlog" style="width:100%"></i></span></li>
-            <li><span class="g">Autonomy in obot.agent</span><span class="c">28/34</span><span class="br"><i class="k-released" style="width:82.35%"></i><i class="k-review" style="width:2.94%"></i><i class="k-backlog" style="width:14.71%"></i></span></li>
-            <li><span class="g">open.csr</span><span class="c">0/5</span><span class="br"><i class="k-backlog" style="width:100%"></i></span></li>
-          </ul>
-        </aside>
       </div>
       <p class="leg2"><span><i style="background:#86efac"></i>Done · released</span><span><i style="background:#6c3270"></i>In review</span><span><i style="background:#d3aed3"></i>Ready</span><span><i style="background:#efe4ef"></i>Open · backlog</span><span><i class="hx"></i>Release</span><span class="st2">obot.roadmap · GitHub releases · 18 Oct 2026</span></p>
       <!-- roadmap-tree:plan-timeline:end -->
@@ -2424,7 +2462,6 @@ steps:
           <text class="k" x="1008" y="446">another release</text>
         </svg>
       </div>
-      <p class="levels-src">How long a task AI can finish on its own: <a href="https://theaidigest.org/time-horizons" target="_blank" rel="noopener">theaidigest.org/time-horizons</a></p>
     </section>
 
     <!-- 4 · the GxP gap, a year on (2026-10-17) -->
@@ -2432,25 +2469,25 @@ steps:
       <p class="kicker">How fast it is moving</p>
       <h2>New ways of working, written up in public.</h2>
       <div class="cards">
-        <div class="card step" style="--c: var(--spec-2)">
+        <div class="card" style="--c: var(--spec-2)">
           <span class="logo txt" aria-label="US FDA">FDA</span><p class="who">6 May · US FDA</p>
           <p class="big"><a href="https://www.fda.gov/news-events/press-announcements/fda-expands-ai-capabilities-and-completes-data-platform-consolidation" target="_blank" rel="noopener">Elsa 4.0, with custom agents</a></p>
           <q>…the agency’s internal AI tool available to all FDA staff, from scientific reviewers to investigators.</q>
           <cite>FDA press release · Elsa 4.0 and a consolidated data platform</cite>
         </div>
-        <div class="card step" style="--c: var(--spec-0)">
+        <div class="card" style="--c: var(--spec-0)">
           <img class="logo" src="assets/logos/rubyonrails.svg" alt="Ruby on Rails logo" /><p class="who">23 Sep · Rails World keynote</p>
           <p class="big"><a href="https://www.youtube.com/watch?v=vDjW_dRyKXY" target="_blank" rel="noopener">Done coding by hand</a></p>
           <q>At 37signals, a couple of weeks ago, we made the decision that it clearly means we’re done writing code by hand.</q>
           <cite>David Heinemeier Hansson, creator of Ruby on Rails · as transcribed in <a href="https://newsletter.pragmaticengineer.com/p/the-pulse-ror-creator-sparks-new" target="_blank" rel="noopener">The Pragmatic Engineer</a>, 1 Oct</cite>
         </div>
-        <div class="card step" style="--c: var(--spec-4)">
+        <div class="card" style="--c: var(--spec-4)">
           <img class="logo" src="assets/logos/claude.svg" alt="Claude logo" /><p class="who">15 Oct · Claude Code team</p>
           <p class="big"><a href="https://claude.dev/blog/solving-code-review-at-anthropic/" target="_blank" rel="noopener">Review, moved to machines</a></p>
           <q>We didn’t remove review. But we did move most of the reading to machines…</q>
           <cite>Addy Osmani, Morgan Westlee Lunt and Qing Wang · How the Claude Code team does code review</cite>
         </div>
-        <div class="card step" style="--c: var(--spec-5)">
+        <div class="card" style="--c: var(--spec-5)">
           <img class="logo" src="assets/logos/anthropic.svg" alt="Anthropic logo" /><p class="who">16 Oct · Anthropic research</p>
           <p class="big"><a href="https://www.anthropic.com/research/employment-at-anthropic" target="_blank" rel="noopener">Agents outwork people</a></p>
           <q>Agent hours worked outnumber human hours 6 to 1.</q>
@@ -2504,20 +2541,19 @@ steps:
       <p class="kicker">We can think bigger</p>
       <blockquote style="font-size: 58px">“I think that most people are underestimating just how radical the upside of AI could be, just as I think most people are underestimating how bad the risks could be.”</blockquote>
       <cite>Dario Amodei · <a href="https://www.darioamodei.com/essay/machines-of-loving-grace" target="_blank" rel="noopener">Machines of Loving Grace</a> · October 2024</cite>
-      <div class="goodat hack sm step" style="bottom: 84px"><div class="bub" style="max-width: 780px"><p class="a" style="font-size: 27px; line-height: 1.25">Take it with a big grain of salt. Then look at the last year.</p></div><div class="who"></div></div>
     </section>
 
     <section class="slide s-preds s-preds2" data-hue="6">
       <p class="kicker">What the builders predict</p>
       <h2>Big forecasts. Not crazy, given the last year.</h2>
       <div class="cards">
-        <div class="card step" style="--c: var(--spec-4)">
+        <div class="card" style="--c: var(--spec-4)">
           <img class="logo" src="assets/logos/anthropic.svg" alt="Anthropic" />
           <p class="big">50–100 years in 5–10</p>
           <q>…my basic prediction is that AI-enabled biology and medicine will allow us to compress the progress that human biologists would have achieved over the next 50-100 years into 5-10 years.</q>
           <cite>Dario Amodei, Anthropic · <a href="https://www.darioamodei.com/essay/machines-of-loving-grace" target="_blank" rel="noopener">Machines of Loving Grace</a> · Oct 2024</cite>
         </div>
-        <div class="card step" style="--c: var(--spec-3)">
+        <div class="card" style="--c: var(--spec-3)">
           <img class="logo" src="assets/logos/google.svg" alt="Google" />
           <p class="big">The end of disease?</p>
           <q>I think that’s within reach. Maybe within the next decade or so, I don’t see why not.</q>
@@ -3530,7 +3566,7 @@ steps:
         var t = Math.floor((acc + (t0 ? Date.now() - t0 : 0)) / 1000);
         return Math.floor(t / 60) + ':' + ('0' + t % 60).slice(-2);
       }
-      var foot = 'R/PHARMA 2026 · JEREMY WILDFIRE', url = 'jwildfire.github.io/keynote';
+      var foot = 'R/Pharma 2026 · Jeremy Wildfire', url = 'jwildfire.github.io/keynote';
 
       // Reserve slides (data-reserve) stay in the file but are left out of the count and the progress strip.
       var counted = slides.filter(function (s) { return !s.hasAttribute('data-reserve'); });
@@ -3765,11 +3801,14 @@ steps:
     })();
   </script>
   <script>
-    // The plan slide (slide 39, 2026-10-18): when it comes up, it plays the objective's week from
-    // the start (about 16 seconds) and ends on the finished picture, which is what its markup
-    // already shows. Stepped back to (revealed), in the overview, with ?reveal, in the presenter
-    // window, when printing, or with reduced motion, it shows the finished picture and does not
-    // play. Leaving the slide stops it. Nothing here touches the deck's keys or steps.
+    // The plan slide (slide 40; animated 2026-10-18, three presses 2026-10-19). It opens on the
+    // objectives; press 1 shows the focus objective's requirements and press 2 their tasks, both
+    // as planned (requirements in ink, tasks not yet done); press 3 plays the objective's week
+    // from the start (about 16 seconds) and ends on the finished picture, which is what its
+    // markup already shows. Stepped back to (revealed), in the overview, with ?reveal, in the
+    // presenter window, when printing, or with reduced motion, it shows the finished picture and
+    // does not play. Leaving the slide stops it. The presses are the deck's own steps (.ps1 to
+    // .ps3); this script only watches the third.
     (function () {
       document.querySelectorAll('.s-plan').forEach(function (slide) {
         var plan = slide.querySelector('.plan');
@@ -3838,6 +3877,18 @@ steps:
           plan.classList.remove('run');
           paint(T1);
         }
+        // planned(): presses 1 and 2. Every requirement in ink with no bar yet, every task not done.
+        function planned() {
+          if (raf) cancelAnimationFrame(raf);
+          raf = 0;
+          plan.classList.remove('run');
+          rows.forEach(function (r) {
+            r.el.classList.remove('pre', 'open');
+            r.bar.style.width = '0%';
+            r.beads.forEach(function (b) { b.el.classList.remove('pre'); b.el.classList.add('open'); });
+          });
+        }
+        var p3 = slide.querySelector('.ps3');
         function still() {
           var b = document.body.classList;
           return slide.classList.contains('revealed') || b.contains('reveal-all') || b.contains('overview') || b.contains('presenter') || reduce.matches;
@@ -3858,14 +3909,17 @@ steps:
         }
         // For checking: slide.planAt(0.5) shows the picture halfway through and holds it.
         slide.planAt = function (x) { if (raf) cancelAnimationFrame(raf); raf = 0; plan.classList.add('run'); paint(clockAt(x)); };
+        var played = false;
         function check() {
-          var on = slide.classList.contains('active');
-          if (on && !was) { if (still()) finish(); else start(); }
-          else if (!on && was) finish();
-          else if (on && still() && raf) finish();
+          var on = slide.classList.contains('active'), go3 = !!(p3 && p3.classList.contains('on'));
+          if (!on) { if (was) finish(); played = false; }
+          else if (still()) finish();
+          else if (!go3) { played = false; planned(); }
+          else if (!played) { played = true; start(); }
           was = on;
         }
         new MutationObserver(check).observe(slide, { attributes: true, attributeFilter: ['class'] });
+        if (p3) new MutationObserver(check).observe(p3, { attributes: true, attributeFilter: ['class'] });
         new MutationObserver(function () { if (raf && still()) finish(); }).observe(document.body, { attributes: true, attributeFilter: ['class'] });
         window.addEventListener('beforeprint', finish);
         finish();
