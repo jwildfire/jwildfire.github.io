@@ -1065,6 +1065,12 @@
     .s-gap3:has(.st2.on) .g3 .b1 { opacity: 0.45; transition-delay: 0.9s; }
     .s-gap3:has(.st3.on) .g3 .b3, body.overview .s-gap3 .g3 .b3, body.reveal-all .s-gap3 .g3 .b3 { opacity: 1; }
     .s-gap3 .g3 .proj { stroke-dasharray: 1; }
+    .s-gap3 .g3 .ahead { opacity: 0; transition: opacity 0.3s ease 1.3s; }
+    .s-gap3 .g3 .ahead.front { fill: var(--spec-4); }
+    .s-gap3 .g3 .ahead.clin { fill: var(--spec-1); }
+    .s-gap3 .g3 .st3.on .ahead, body.overview .s-gap3 .g3 .ahead, body.reveal-all .s-gap3 .g3 .ahead { opacity: 1; }
+    .s-gap3 .g3 .far { opacity: 0; transition: opacity 0.4s ease 1.3s; }
+    .s-gap3 .g3 .st3.on .far, body.overview .s-gap3 .g3 .far, body.reveal-all .s-gap3 .g3 .far { opacity: 1; }
     .s-gap3 .g3 .fastlab { transition: opacity 0.4s ease; }
     .s-gap3:has(.st3.on) .g3 .fastlab, body.overview .s-gap3 .g3 .fastlab, body.reveal-all .s-gap3 .g3 .fastlab { opacity: 0; }
     .s-gap3 .goodat.hold3 { opacity: 0; transform: translateY(14px) scale(0.96); transition: opacity 300ms ease 1.2s, transform 300ms ease 1.2s; }
@@ -4188,7 +4194,7 @@ steps:
         <text class="ax" x="1060" y="275.8" text-anchor="end">A year from now</text>
         <g class="step st1">
           <path class="ln front pick draw" pathLength="1" d="M560,193.8 C680,159.0 940,106.8 1060,37.2"/>
-          <circle class="dot front" cx="1060" cy="37.2" r="6"/><text class="guess pick" x="1076" y="43.2">Fast</text>
+          <circle class="dot front" cx="1060" cy="37.2" r="6"/><text class="guess pick fastlab" x="1076" y="43.2">Fast</text>
           <path class="ln clin pick draw slowln" pathLength="1" d="M560,228.6 C720,222.8 900,218.2 1060,215.8"/>
           <circle class="dot clin slowln" cx="1060" cy="215.8" r="6"/><text class="guess pick slowln" x="1076" y="221.8">Slow</text>
         </g>
@@ -4198,8 +4204,11 @@ steps:
         </g>
 
         <g class="step st3">
-          <path class="ln clin pick draw proj" pathLength="1" d="M1060,115.5 C1120,89.4 1180,74.9 1235,55.8"/>
-          <circle class="dot clin" cx="1235" cy="55.8" r="6"/><text class="guess pick" x="1249" y="61.8">Some day soon</text>
+          <path class="ln front pick draw proj" pathLength="1" d="M1060,37.2 C1110,0 1150,-110 1175,-225"/>
+          <path class="ln clin pick draw proj" pathLength="1" d="M1060,115.5 C1150,60 1220,-60 1255,-225"/>
+          <polygon class="ahead front" points="1178.4,-240.6 1184.8,-222.9 1165.2,-227.1"/>
+          <polygon class="ahead clin" points="1258.3,-240.7 1264.8,-222.9 1245.2,-227.1"/>
+          <text class="guess pick far" x="1282" y="-140">Some day</text><text class="guess pick far" x="1282" y="-116">soon</text>
         </g>
 
         <text class="bh" x="0" y="302">Time to develop one drug</text>
@@ -4254,6 +4263,7 @@ steps:
         <br><br>Rebuilt 2026-10-19 (Jeremy: "S54. I want to combine the timeline and the previous version with development time. 3 step animation: Today (X years, x millions - use prev ref (Sun?). next year slow (marginal decrease - still years). Fast - Months! show me a mock up. thinking timeline on top, bars on bottom. keep the references."; then "structure is good. build it then i'll tweak"). Three states: on open, today, the history only, with the guesses faint, and the Today bar; first press, frontier fast and trials slow are drawn in and the Still years bar appears; second press, trials fast is drawn in, the slow line fades, the Months bar appears and Hacker Orange says Time to close the gap. Top is the same drawing as before, scaled down: an illustration, not data. The Still years and Months bars are illustrations too (hatched); only the Today bar is a figure.
         <br><br>Sources, checked word for word: Sun, Gao, Hu and Zhou, 2022, https://pmc.ncbi.nlm.nih.gov/articles/PMC9293739/ ("Drug discovery and development is a long, costly, and high-risk process that takes over 10–15 years with an average cost of over $1–2 billion for each new drug to be approved for clinical use", rechecked 19 October; the 90% failure figure is its title). Hassabis on 60 Minutes, CBS, 20 April 2025 ("We can maybe reduce that down from years to maybe months or maybe even weeks"). Amodei, Machines of Loving Grace, October 2024 (the COVID mRNA vaccines took 9 months; they "arguably should have been approved in ~2 months"). The previous version of this slide is in the Reserves, dated 2026-10-19.
         <br><br>Reworked 2026-10-19 (Jeremy: "s54: Click 1. “Real Marginal Improvement, but still years”. Click 2. Cross through slow. “Next year fast” Paradigm change, soon. Add click 3 that projects the clinical trial line out into the future with continued growth. “some day soon” “Months, Maybe weeks”"). Now three presses. One: frontier fast and trials slow, with the Real marginal improvement, but still years bar. Two: the slow row is struck through and fades, trials fast is drawn, and the Next year, fast row says Paradigm change, soon (a 7-year hatched bar, an illustration). Three: the trials line is projected past a year from now, labelled Some day soon, the Months, maybe weeks row appears with its sources, and Hacker Orange says Time to close the gap (moved from the second press).
+        <br><br>19 October 2026 (Jeremy: "s54. continue both lines all the way to the top of the slide with arrows into the distance on click 3."): on the third press both lines run on past a year from now to the top of the slide, ending in arrowheads, and their Fast labels fade.
       </aside>
     </section>
 
