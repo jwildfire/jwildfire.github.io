@@ -214,6 +214,9 @@
     .s-photo { justify-content: center; padding-right: 880px; }
     .s-photo h2 { font-size: 104px; margin-bottom: 28px; }
     .s-photo p { color: var(--soft); }
+    /* Orange's years under his name (2026-10-19, Jeremy: people were sad when his death came up near the end). */
+    .s-photo h2:has(+ .dates) { margin-bottom: 10px; }
+    .s-photo .dates { font-family: var(--mono); font-size: 32px; letter-spacing: 0.12em; margin: 0 0 30px; }
     .s-photo .line { font-family: var(--serif); font-style: italic; font-size: 56px; line-height: 1.2; color: var(--ink); }
     .s-photo .photo { position: absolute; right: 0; top: 18px; bottom: 0; width: 780px; margin: 0; border-left: 10px solid var(--hue); background: var(--rail); }
     .s-photo .photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: var(--focus, 50% 50%); }
@@ -1311,6 +1314,7 @@
       </figure>
       <p class="kicker pkg" style="--pkg: url(assets/hex/orange.png)">First, a key collaborator</p>
       <h2>Introducing Orange</h2>
+      <p class="dates">2008–2022</p>
       <p class="line">He was a very good cat.</p>
       <div class="goodat plain">
         <div class="bub">
