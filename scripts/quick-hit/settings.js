@@ -6,12 +6,20 @@ export const DEFAULTS = {
   repo: "jwildfire/jwildfire.github.io",
   branch: "main",
   siteUrl: "https://jwildfire.github.io",
+  remindersList: "AI Reading",
+  alsoRemind: true, // Publish and Save as draft also add the page to the Reminders list
 };
+
+// Native messaging host registered by native/install.sh (adds links to Reminders).
+export const HELPER = "com.wildfiring.quick_hit";
 
 export async function loadSettings() {
   const saved = await chrome.storage.local.get(Object.keys(DEFAULTS));
   const out = { ...DEFAULTS };
-  for (const k of Object.keys(DEFAULTS)) if (saved[k]) out[k] = saved[k];
+  // Keep a saved false (alsoRemind), but let an emptied text field fall back to its default.
+  for (const k of Object.keys(DEFAULTS)) if (saved[k] !== undefined && saved[k] !== "") out[k] = saved[k];
+  // 0.2.0 shipped "ai-links" as the default list name, but the list is called "AI Reading".
+  if (out.remindersList === "ai-links") out.remindersList = DEFAULTS.remindersList;
   return out;
 }
 

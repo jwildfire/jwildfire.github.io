@@ -38,6 +38,10 @@
       <span class="lab">Site address</span>
       <input id="siteUrl" type="url" required>
     </label>
+    <label class="field">
+      <span class="lab">Reminders list <span class="hint">for the "Add to" button</span></span>
+      <input id="remindersList" type="text" required>
+    </label>
     <div class="actions">
       <button type="button" id="check" class="secondary">Check token</button>
       <button type="submit" class="primary">Save</button>
@@ -45,7 +49,10 @@
   </form>
   <div class="status" id="status" role="status" aria-live="polite"></div>
 
-  <p class="hint" style="margin-top:18px">Shortcut: <kbd>⌥⇧L</kbd> opens the popup. Change it at <code>chrome://extensions/shortcuts</code>.</p>
+  <p>The "Add to" button needs a small helper on this Mac that lets Chrome reach Reminders. Install it once from the blog checkout with <code>sh scripts/quick-hit/native/install.sh</code>, then allow Chrome to control Reminders when macOS asks. <button type="button" id="checkHelper" class="secondary">Check helper</button></p>
+  <div class="status" id="helperStatus" role="status" aria-live="polite"></div>
+
+  <p class="hint" style="margin-top:18px">Shortcuts: <kbd>⌥⇧L</kbd> opens the popup (change it at <code>chrome://extensions/shortcuts</code>); in the popup, <kbd>⌘↵</kbd> publishes and <kbd>⌘⇧↵</kbd> adds to the Reminders list.</p>
 
   <script type="module" src="options.js"></script>
 </body>

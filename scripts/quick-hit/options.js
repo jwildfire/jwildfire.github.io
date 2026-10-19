@@ -1,4 +1,4 @@
-import { DEFAULTS, loadSettings, saveSettings } from "./settings.js";
+import { DEFAULTS, HELPER, loadSettings, saveSettings } from "./settings.js";
 
 const $ = (id) => document.getElementById(id);
 const keys = Object.keys(DEFAULTS);
@@ -9,8 +9,11 @@ function say(text, kind = "") {
   status.textContent = text;
 }
 
+// The text settings on this page (alsoRemind is a checkbox in the popup, not here).
+const fields = keys.filter((k) => typeof DEFAULTS[k] === "string");
+
 function values() {
-  return Object.fromEntries(keys.map((k) => [k, $(k).value.trim()]));
+  return Object.fromEntries(fields.map((k) => [k, $(k).value.trim()]));
 }
 
 // Asks GitHub whether the token can push to the repository.
@@ -32,15 +35,32 @@ async function check() {
   }
 }
 
+// Asks the Reminders helper (native/install.sh) to answer.
+function checkHelper() {
+  const out = $("helperStatus");
+  out.className = "status";
+  out.textContent = "Checking…";
+  chrome.runtime.sendNativeMessage(HELPER, { action: "ping" }, (reply) => {
+    if (chrome.runtime.lastError || !reply?.ok) {
+      out.className = "status bad";
+      out.textContent = "The helper isn't installed. Run sh scripts/quick-hit/native/install.sh, then restart Chrome if this persists.";
+    } else {
+      out.className = "status ok";
+      out.textContent = `Good: the helper answered (version ${reply.version}).`;
+    }
+  });
+}
+
 async function init() {
   const s = await loadSettings();
-  for (const k of keys) $(k).value = s[k];
+  for (const k of fields) $(k).value = s[k];
   $("form").addEventListener("submit", async (e) => {
     e.preventDefault();
     await saveSettings(values());
     say("Saved.", "ok");
   });
   $("check").addEventListener("click", check);
+  $("checkHelper").addEventListener("click", checkHelper);
 }
 
 init();
