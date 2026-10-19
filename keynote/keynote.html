@@ -1028,6 +1028,9 @@
     .s-preds .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
     .s-preds .card { border-top: 8px solid var(--c, var(--hue)); background: #fff; border-radius: 0 0 22px 22px; padding: 26px 30px 28px; box-shadow: 0 2px 0 var(--rule); display: flex; flex-direction: column; gap: 14px; }
     .s-preds2 .cards { grid-template-columns: repeat(2, 1fr); }
+    .s-preds2 .card { position: relative; }
+    .s-preds2 .card .logo { position: absolute; top: 26px; right: 30px; height: 44px; width: auto; opacity: 0.85; }
+    .s-preds2 .card .big { padding-right: 70px; }
     .s-preds .card .big { font-family: var(--serif); font-size: 46px; line-height: 1; margin: 0; }
     .s-preds .card q { font-family: var(--serif); font-size: 27px; line-height: 1.2; color: var(--ink); quotes: "\201C" "\201D"; }
     .s-preds .card .proj { list-style: none; margin: 0; padding: 0; }
@@ -2367,8 +2370,8 @@
       <p class="chg"><b>What changed</b>It got its own machine, its own account and a job.</p>
       <div class="goodat hack" style="right: 360px; bottom: 40px"><div class="bub"><p class="a two">ugh. so many config files.<br>can't we just build something?</p></div><div class="who"></div></div>
       <aside class="notes">
-        <ul class="hits"><li>v2: OpenClaw on a wiped laptop</li><li>Texting it on Telegram</li><li>Too much fiddling</li></ul>
-        <strong class="say">When I found out about this talk, I decided to have obot do some real work. I wiped an old laptop and installed OpenClaw, a long-running agent framework with a lot of communication plugins. I got to where I could text the agent on Telegram and have it do stuff, which was a bit mind-bending; there are a few posts about it on the blog. But it was a lot of time fiddling with OpenClaw and configuring the laptop, and modernizing safetyGraphics didn't go very fast.</strong>
+        <ul class="hits"><li>A real job: OpenClaw on a wiped laptop</li><li>Texting it on Telegram: mind-bending</li><li>A month of config, not building</li></ul>
+        <strong class="say">When I found out about this talk, I gave obot a real job. I wiped an old laptop and installed OpenClaw, an agent that runs around the clock and that you can talk to from anywhere. I'd text it on Telegram, and it would go do the work on GitHub. That part was mind-bending. [press: Hacker Orange] The rest was config files. I spent most of a month setting it up instead of building.</strong>
         <br>Dry run 1, 14 October: about 0:55 on this slide. These notes: about 0:35 at the same pace.<br><br>
         Source: diary #2, "Introducing Obot" (2026-06-12), an interview over Telegram. Obot: "I'm
         obot: a small autonomous development agent living in OpenClaw on your MacBook… part
@@ -2386,6 +2389,7 @@
         many config files. can't we just build something?'"). The words are his, lower case
         as he wrote them.
         <br><br>"What is it?" bubble, added 2026-10-12. Jeremy (2026-10-12): "I want to add 'What is it?' bubbles to each of the obot iterations." It stands where the set-up paragraph was. The words are his: "Open claw running on a laptop with custom config files and a few Agent.md". "Open claw" is set as "OpenClaw" to match the title; "Agent.md" is as he typed it. The paragraph it replaced, for saying aloud: "An agent on a clean-room laptop with none of my credentials. I text it on Telegram; it works on GitHub under its own name."
+      <br><br>Tightened script, 18 October 2026, at Jeremy's ask after dry run 2 (the OpenClaw part took 1:35 and wandered). Drafted from his own words in both dry runs. Before: When I found out about this talk, I decided to have obot do some real work. I wiped an old laptop and installed OpenClaw, a long-running agent framework with a lot of communication plugins. I got to where I could text the agent on Telegram and have it do stuff, which was a bit mind-bending; there are a few posts about it on the blog. But it was a lot of time fiddling with OpenClaw and configuring the laptop, and modernizing safetyGraphics didn't go very fast.
       </aside>
     </section>
 
@@ -2420,8 +2424,8 @@ steps:
       </div>
       <div class="goodat"><div class="bub"><p class="q">What worked</p><p class="a">Real work, by text</p></div><div class="who"><i>👍</i></div></div>
       <aside class="notes">
-        <ul class="hits"><li>Old widgets inside gsm: baby steps</li><li>Not climbing the ladder</li></ul>
-        <strong class="say">I did get the old htmlwidgets running inside the gsm framework, so, baby steps. But after a month I decided that while it was cool to text my obot, it was too fiddly, and it wasn't getting anything done without me. I wasn't climbing the ladder much at all.</strong>
+        <ul class="hits"><li>Old charts inside gsm: a first step</li><li>Couldn't get much done without me</li><li>Probably faster by hand</li></ul>
+        <strong class="say">It did get one thing working: the old safetyGraphics charts, running inside our new gsm framework. [press] A good first step. But it couldn't get much done without me, and I wasn't climbing the ladder at all. I'd probably have been faster by hand.</strong>
         <br>Dry run 1, 14 October: about 0:35 on this slide. These notes: about 0:20 at the same pace.<br><br>
         Rebuilt 2026-10-07 (Jeremy: "would like to have each of these evidence slides show a
         visual of the work - text moves to notes. this one probably pulls from gsm.safety?").
@@ -2466,6 +2470,7 @@ steps:
         hex for it (assets/hex/obot-v2-5.png, the paperclip) if it earns a mention on screen.
         <br><br>Both callout wordings are draft; Jeremy to confirm.
       <br><br>Thumbs-down callout (What didn't: Autonomy) removed 2026-10-18. Jeremy, 18 October, after dry run 2: "I might just combine v5 and 5.5 into a single positive v5 narrative (after the v4 misstep)"; then "Keep both roadmap slides. Or maybe combine them? Right hand side showing overview with all the goals. LHS drilldown?" and "get rid of all the thumbs down except for the how we feel".
+      <br><br>Tightened script, 18 October 2026, at Jeremy's ask after dry run 2 (the OpenClaw part took 1:35 and wandered). Drafted from his own words in both dry runs. Before: I did get the old htmlwidgets running inside the gsm framework, so, baby steps. But after a month I decided that while it was cool to text my obot, it was too fiddly, and it wasn't getting anything done without me. I wasn't climbing the ladder much at all.
       </aside>
     </section>
 
@@ -3905,11 +3910,13 @@ steps:
       <h2>Big forecasts. Not crazy, given the last year.</h2>
       <div class="cards">
         <div class="card step" style="--c: var(--spec-4)">
+          <img class="logo" src="assets/logos/anthropic.svg" alt="Anthropic" />
           <p class="big">50–100 years in 5–10</p>
           <q>…my basic prediction is that AI-enabled biology and medicine will allow us to compress the progress that human biologists would have achieved over the next 50-100 years into 5-10 years.</q>
           <cite>Dario Amodei, Anthropic · <a href="https://www.darioamodei.com/essay/machines-of-loving-grace" target="_blank" rel="noopener">Machines of Loving Grace</a> · Oct 2024</cite>
         </div>
         <div class="card step" style="--c: var(--spec-3)">
+          <img class="logo" src="assets/logos/google.svg" alt="Google" />
           <p class="big">The end of disease?</p>
           <q>I think that’s within reach. Maybe within the next decade or so, I don’t see why not.</q>
           <cite>Demis Hassabis, Google DeepMind, asked “The end of disease?” · <a href="https://www.cbsnews.com/news/artificial-intelligence-google-deepmind-ceo-demis-hassabis-60-minutes-transcript/" target="_blank" rel="noopener">60 Minutes</a> · Apr 2025</cite>
@@ -3937,6 +3944,7 @@ steps:
         <br><br>Chosen 2026-10-18 (Jeremy: "option B for the close. Create and i'll tweak").
         Draft tag removed; wording is still his to tweak. Options A and C are in the reserves.
       <br><br>18 October 2026 (Jeremy: "drop the 3rd point around time horizons"): the METR time-horizon card (Doubling every 7 months: 2027 a work day, 2028 a work week, 2029 a work month; METR via AI Digest, theaidigest.org/time-horizons, March 2026) is off the slide; two forecasts remain, one per press.
+      <br><br>Logos added 18 October 2026 (Jeremy: "Add anthropic and google logos", then "download them"): assets/logos/anthropic.svg and google.svg, the one-colour marks from the simple-icons set (CC0), version 13.21.0, from cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/. simple-icons has no Google DeepMind mark, so the Hassabis card carries the Google G.
       </aside>
     </section>
 
