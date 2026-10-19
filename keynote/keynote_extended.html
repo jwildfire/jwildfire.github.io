@@ -579,6 +579,11 @@
     .gallery figure { margin: 0; position: relative; }
     .gallery img { display: block; width: 100%; height: 170px; object-fit: contain; background: var(--panel); border: 2px solid var(--rule); border-radius: 12px; padding: 6px; }
     .gallery figcaption { font-size: 21px; margin-top: 6px; white-space: nowrap; }
+    /* Slide 27, the goal (2026-10-19, footer fix): the longer headline on one line, smaller
+       thumbnails, and Hacker Orange's callout below the source line, clear of the deck footer. */
+    .s-goal h2 { font-size: 64px; white-space: nowrap; margin-bottom: 34px; }
+    .s-goal .gallery img { height: 162px; }
+    .s-goal .goodat.hack { bottom: 30px; }
     .gallery figure i { position: absolute; right: 8px; top: 8px; font-family: var(--mono); font-style: normal; font-size: 15px; background: var(--rail); color: var(--soft); border-radius: 999px; padding: 1px 9px; }
 
     /* Capability timeline (beat 4): a month ruler with releases above and the obot versions below. */
@@ -1786,7 +1791,7 @@
       <div class="goodat insp"><div class="bub"><p class="a">Oh jeez. I'll check in later.</p></div><div class="who"></div></div>
     </section>
 
-    <section class="slide" data-hue="4">
+    <section class="slide s-goal" data-hue="4">
       <p class="kicker">The goal</p>
       <h2>Modernize SafetyGraphics, using the OpenRBQM framework</h2>
       <div class="gallery">
@@ -1802,7 +1807,7 @@
         <figure><img src="assets/legacy/hep-explorer.png" alt="The original Hepatic Explorer, as shown in its README" /><i>2022</i><figcaption>Hepatic Explorer</figcaption></figure>
       </div>
       <p class="soft" style="font-family: var(--mono); font-size: 21px; margin: 18px 0 0">10 original charts · last commit, top right · 25,400 lines of JavaScript · all on D3 v3</p>
-      <div class="goodat hack" style="bottom: 22px"><div class="bub"><p class="a">Open Source ftw</p></div><div class="who"></div></div>
+      <div class="goodat hack sm"><div class="bub"><p class="a">Open Source ftw</p></div><div class="who"></div></div>
     </section>
 
     <section class="slide" data-hue="4">
