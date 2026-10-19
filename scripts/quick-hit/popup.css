@@ -77,7 +77,8 @@ input:focus, textarea:focus { outline: 2px solid var(--accent-soft); border-colo
 .grow { flex: 1; min-width: 0; }
 .source { width: 120px; flex: none; }
 
-.actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 4px; }
+.actions { display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-top: 4px; }
+.actions .spacer { flex: 1; }
 button {
   font: 600 12px/1 var(--sans);
   border-radius: 999px;

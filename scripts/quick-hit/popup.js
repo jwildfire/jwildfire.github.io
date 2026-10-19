@@ -4,11 +4,15 @@
  * one file to _links/ through the GitHub contents API. GitHub Pages rebuilds the
  * site from that commit, so the quick hit is live a minute or so later.
  *
+ * "Add to ai-links" instead sends the page to an Apple Reminders list through the
+ * helper in native/ (Chrome native messaging), with the comment and quote as notes.
+ * Nothing is published; the list is a reading queue.
+ *
  * What you type is kept per page in session storage until it is published, so
  * closing the popup by accident loses nothing.
  */
 import { buildFile, cleanUrl, filePath, permalink, sourceFromUrl, toBase64 } from "./lib.js";
-import { loadSettings } from "./settings.js";
+import { HELPER, loadSettings } from "./settings.js";
 
 const $ = (id) => document.getElementById(id);
 const fields = ["comment", "quote", "title", "link", "source"];
@@ -129,6 +133,27 @@ async function publish(draft) {
   }
 }
 
+// Sends the page to the Reminders list through the native helper. Needs only a link.
+function remind() {
+  const link = cleanUrl($("link").value);
+  if (!/^https?:\/\//i.test(link)) return say("Only web pages can go to Reminders.", "bad");
+  const quote = $("quote").value.trim();
+  const notes = [$("comment").value.trim(), quote && `“${quote}”`].filter(Boolean).join("\n\n");
+  const list = settings.remindersList;
+  const button = $("remind");
+  button.disabled = true;
+  say(`Adding to ${esc(list)}…`);
+  chrome.runtime.sendNativeMessage(HELPER, { action: "add", list, title: $("title").value, url: link, notes }, (reply) => {
+    button.disabled = false;
+    if (chrome.runtime.lastError) {
+      return say("Can't reach the Reminders helper. Install it once: <code>sh scripts/quick-hit/native/install.sh</code> in the blog checkout.", "bad");
+    }
+    if (!reply?.ok) return say(esc(reply?.error || "The helper didn't say what went wrong."), "bad");
+    say(reply.duplicate ? `Already in ${esc(list)}.` : `Added to ${esc(list)}.`, "ok");
+    setTimeout(() => window.close(), 1200);
+  });
+}
+
 async function init() {
   settings = await loadSettings();
   if (!settings.token) {
@@ -156,13 +181,17 @@ async function init() {
   fields.forEach((f) => $(f).addEventListener("input", saveDraft));
   $("comment").focus();
 
-  $("form").addEventListener("submit", (e) => { e.preventDefault(); publish(false); });
+  // Enter in a field must not publish: only the button or ⌘↵ does.
+  $("form").addEventListener("submit", (e) => e.preventDefault());
+  $("publish").addEventListener("click", () => publish(false));
   $("draft").addEventListener("click", () => publish(true));
+  $("remind-list").textContent = settings.remindersList;
+  $("remind").addEventListener("click", remind);
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" && (e.metaKey || e.ctrlKey) && !$("publish").disabled) {
-      e.preventDefault();
-      publish(false);
-    }
+    if (e.key !== "Enter" || !(e.metaKey || e.ctrlKey)) return;
+    e.preventDefault();
+    if (e.shiftKey) { if (!$("remind").disabled) remind(); }
+    else if (!$("publish").disabled) publish(false);
   });
 }
 

@@ -6,7 +6,11 @@ export const DEFAULTS = {
   repo: "jwildfire/jwildfire.github.io",
   branch: "main",
   siteUrl: "https://jwildfire.github.io",
+  remindersList: "ai-links",
 };
+
+// Native messaging host registered by native/install.sh (adds links to Reminders).
+export const HELPER = "com.wildfiring.quick_hit";
 
 export async function loadSettings() {
   const saved = await chrome.storage.local.get(Object.keys(DEFAULTS));
