@@ -24,7 +24,7 @@
        .s-stat, .s-split, .s-image, .s-todo. Speaker notes go in
        <aside class="notes">. Each aside opens with <strong class="say">: Jeremy's own spoken
        notes, or "<none yet>"; background notes follow.
-       Keys: ← → / space / PgUp PgDn · Home End · O overview · N notes · F fullscreen.
+       Keys: ← → / space / PgUp PgDn · Home End · O overview · N notes · P presenter window · F fullscreen.
        The slide number is top right; the hex strip fills in with progress through the talk.
        A slide with data-section="Short name" is a transition: its hex in the strip is drawn
        (data-when="2016–2021" adds a date under its name on the outline slide);
@@ -598,6 +598,11 @@
        he has not given any. Everything after it is background for him, not for the room. */
     .notes-panel strong.say { display: block; font-weight: 700; font-size: 19px; line-height: 1.5; color: #fff; margin: 0 0 10px; padding: 0 0 10px; border-bottom: 1px solid rgba(243, 244, 241, 0.25); }
     .notes-panel b { font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--spec-3); display: block; margin-bottom: 6px; }
+    /* Presenter window (P opens it; ?presenter in the URL): the notes fill the window, for a
+       second screen. It follows the deck window and sends its key presses back to it. */
+    body.presenter .notes-panel { display: block; top: 0; max-height: none; font-size: 18px; padding: 28px 40px; background: #1f2328; }
+    body.presenter .notes-panel strong.say { font-size: 28px; line-height: 1.45; }
+    body.presenter .notes-panel .pnext { font-family: var(--mono); font-size: 15px; color: #c9cdc6; margin: 0 0 18px; display: flex; flex-wrap: wrap; gap: 6px 24px; }
 
 
     .thumb { display: contents; }
@@ -4439,13 +4444,28 @@ steps:
   </div>
 
   <div class="notes-panel" id="notes" aria-live="polite"></div>
-  <div class="hint">← → · O overview · N notes · F fullscreen</div>
+  <div class="hint">← → · O overview · N notes · P presenter · F fullscreen</div>
 
   <script>
     (function () {
       var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
       var notes = document.getElementById('notes');
       var i = 0;
+      // Presenter window: P in the deck opens a second window that shows only the notes and
+      // follows the deck; keys pressed there are sent back to the deck. T restarts its clock.
+      var presenter = /[?&]presenter\b/.test(location.search), pwin = null, t0 = Date.now();
+      if (presenter) document.body.classList.add('presenter');
+      function sync() {
+        if (pwin && !pwin.closed) pwin.postMessage({ type: 'deck-state', i: i, revealed: slides[i].classList.contains('revealed'), steps: slides[i].querySelectorAll('.step.on').length }, '*');
+      }
+      function titleOf(s) {
+        var h = s && s.querySelector('h1, h2');
+        return h ? h.textContent.replace(/\s+/g, ' ').trim() : '';
+      }
+      function clock() {
+        var t = Math.floor((Date.now() - t0) / 1000);
+        return Math.floor(t / 60) + ':' + ('0' + t % 60).slice(-2);
+      }
       var foot = 'R/PHARMA 2026 · JEREMY WILDFIRE', url = 'jwildfire.github.io/keynote';
 
       // Reserve slides (data-reserve) stay in the file but are left out of the count and the progress strip.
@@ -4512,7 +4532,7 @@ steps:
         slides.forEach(function (s, k2) {
           var v = s.querySelector('video[data-demo]');
           if (!v) return;
-          if (k2 === i && !document.body.classList.contains('overview')) {
+          if (k2 === i && !presenter && !document.body.classList.contains('overview')) {
             try { v.currentTime = 0; } catch (e) {}
             // data-rate="1.5" plays the recording faster than it was captured.
             var rate = parseFloat(v.getAttribute('data-rate')) || 1;
@@ -4524,13 +4544,15 @@ steps:
         slides.forEach(function (s, k2) {
           var f = s.querySelector('iframe[data-src]');
           if (!f) return;
-          if (k2 === i) { if (f.hidden) { f.src = f.getAttribute('data-src'); f.hidden = false; } }
+          if (k2 === i && !presenter) { if (f.hidden) { f.src = f.getAttribute('data-src'); f.hidden = false; } }
           else if (!f.hidden) { f.hidden = true; f.src = 'about:blank'; }
         });
         var a = slides[i].querySelector('.notes');
-        notes.innerHTML = '<b>Notes · slide ' + (i + 1) + '</b>' + (a ? a.innerHTML : '<i>No notes.</i>');
+        notes.innerHTML = '<b>Notes · slide ' + (i + 1) + '</b>' + (presenter ? '<div class="pnext"><span>' + titleOf(slides[i]) + '</span><span>Next: ' + (titleOf(slides[i + 1]) || '—') + '</span><span class="pclock">' + clock() + '</span></div>' : '') + (a ? a.innerHTML : '<i>No notes.</i>');
         if (location.hash !== '#' + (i + 1)) history.replaceState(null, '', '#' + (i + 1));
+        sync();
       }
+      if (presenter) setInterval(function () { var c = notes.querySelector('.pclock'); if (c) c.textContent = clock(); }, 1000);
 
       // Forward: the first press on a slide with a callout reveals it; the next one advances.
       // Back: hides a revealed callout first, then steps back to the previous slide fully shown.
@@ -4539,14 +4561,14 @@ steps:
       // back hides them again in reverse order.
       function next() {
         var hid = slides[i].querySelectorAll('.step:not(.on)');
-        if (hid.length) { hid[0].classList.add('on'); return; }
-        if (hasCallout() && !slides[i].classList.contains('revealed')) slides[i].classList.add('revealed');
+        if (hid.length) { hid[0].classList.add('on'); sync(); return; }
+        if (hasCallout() && !slides[i].classList.contains('revealed')) { slides[i].classList.add('revealed'); sync(); }
         else if (i < slides.length - 1) go(i + 1);
       }
       function prev() {
         var on = slides[i].querySelectorAll('.step.on');
-        if (on.length) { on[on.length - 1].classList.remove('on'); return; }
-        if (hasCallout() && slides[i].classList.contains('revealed')) slides[i].classList.remove('revealed');
+        if (on.length) { on[on.length - 1].classList.remove('on'); sync(); return; }
+        if (hasCallout() && slides[i].classList.contains('revealed')) { slides[i].classList.remove('revealed'); sync(); }
         else if (i > 0) go(i - 1, true);
       }
 
@@ -4559,6 +4581,17 @@ steps:
       document.addEventListener('keydown', function (e) {
         if (e.metaKey || e.ctrlKey || e.altKey) return;
         var k = e.key;
+        if (presenter) {
+          if (k === 't' || k === 'T') { t0 = Date.now(); return; }
+          if (k === 'f' || k === 'F' || !window.opener) return;
+          e.preventDefault();
+          window.opener.postMessage({ type: 'deck-key', key: k }, '*');
+          return;
+        }
+        if (k === 'p' || k === 'P') {
+          pwin = window.open(location.href.split('#')[0].split('?')[0] + '?presenter#' + (i + 1), 'keynote-presenter', 'width=1000,height=700');
+          return;
+        }
         if (k === 'ArrowRight' || k === 'PageDown' || k === ' ' || k === 'ArrowDown') { e.preventDefault(); next(); }
         else if (k === 'ArrowLeft' || k === 'PageUp' || k === 'ArrowUp') { e.preventDefault(); prev(); }
         else if (k === 'Home') go(0);
@@ -4586,12 +4619,20 @@ steps:
         if (e.data && e.data.type === 'deck-key' && typeof e.data.key === 'string') {
           document.dispatchEvent(new KeyboardEvent('keydown', { key: e.data.key, cancelable: true }));
         }
+        // The presenter window says hello when it loads; the deck answers with where it is.
+        if (e.data && e.data.type === 'deck-hello' && !presenter) { pwin = e.source; sync(); }
+        if (e.data && e.data.type === 'deck-state' && presenter) {
+          go(e.data.i);
+          slides[i].classList.toggle('revealed', !!e.data.revealed);
+          slides[i].querySelectorAll('.step').forEach(function (el, j) { el.classList.toggle('on', j < e.data.steps); });
+        }
       });
 
       // Click / tap: right two-thirds advances, left third goes back.
       document.getElementById('deck').addEventListener('click', function (e) {
         if (document.body.classList.contains('overview')) return;
         if (e.target.closest('a')) return;
+        if (presenter) return;
         // A demo recording pauses and resumes on a click instead of changing slide.
         var dv = e.target.closest('video[data-demo]');
         if (dv) { if (dv.paused) { var pr = dv.play(); if (pr && pr.catch) pr.catch(function () {}); } else dv.pause(); return; }
@@ -4603,6 +4644,7 @@ steps:
       window.addEventListener('hashchange', function () { go(parseInt(location.hash.slice(1), 10) - 1 || 0); });
       fit();
       go((parseInt(location.hash.slice(1), 10) || 1) - 1);
+      if (presenter && window.opener) window.opener.postMessage({ type: 'deck-hello' }, '*');
     })();
   </script>
   <script>
