@@ -147,6 +147,8 @@ hr {
 .post-title { font-family: var(--kn-serif); font-weight: 400; letter-spacing: -0.01em; }
 .post-content { color: var(--kn-ink); }
 .post-content h2, .post-content h3 { margin-top: 2rem; }
+/* Keynote slides are near-white on the near-white page: a light frame sets them off. */
+.post-content img[src*="/assets/img/rpharma-2026-keynote/"] { display: block; border: 1px solid #d9dcd7; border-radius: 6px; }
 
 blockquote {
   color: var(--kn-soft);
