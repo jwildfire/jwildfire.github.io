@@ -1061,6 +1061,16 @@
     .s-gap3:has(.st2.on) .goodat.hold, body.overview .s-gap3 .goodat.hold, body.reveal-all .s-gap3 .goodat.hold { opacity: 1; transform: none; }
     .s-gap3 .g3 .hide { opacity: 0; transition: opacity 500ms ease 0.6s; }
     .s-gap3:has(.st1.on) .g3 .b1, .s-gap3:has(.st2.on) .g3 .b2, body.overview .s-gap3 .g3 .hide, body.reveal-all .s-gap3 .g3 .hide { opacity: 1; }
+    .s-gap3 .g3 .rv.sm { font-size: 20px; }
+    .s-gap3 .g3 .strike { fill: none; stroke: var(--ink); stroke-width: 3; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 0.8s ease-in-out 0.2s; }
+    .s-gap3:has(.st2.on) .g3 .strike, body.overview .s-gap3 .g3 .strike, body.reveal-all .s-gap3 .g3 .strike { stroke-dashoffset: 0; }
+    .s-gap3:has(.st2.on) .g3 .b1 { opacity: 0.45; transition-delay: 0.9s; }
+    .s-gap3:has(.st3.on) .g3 .b3, body.overview .s-gap3 .g3 .b3, body.reveal-all .s-gap3 .g3 .b3 { opacity: 1; }
+    .s-gap3 .g3 .proj { stroke-dasharray: 1; }
+    .s-gap3 .g3 .fastlab { transition: opacity 0.4s ease; }
+    .s-gap3:has(.st3.on) .g3 .fastlab, body.overview .s-gap3 .g3 .fastlab, body.reveal-all .s-gap3 .g3 .fastlab { opacity: 0; }
+    .s-gap3 .goodat.hold3 { opacity: 0; transform: translateY(14px) scale(0.96); transition: opacity 300ms ease 1.2s, transform 300ms ease 1.2s; }
+    .s-gap3:has(.st3.on) .goodat.hold3, body.overview .s-gap3 .goodat.hold3, body.reveal-all .s-gap3 .goodat.hold3 { opacity: 1; transform: none; }
     .s-gap .gcards { display: grid; gap: 20px; }
     .s-gap .gcard { background: var(--panel); border: 2px solid var(--rule); border-radius: 18px; padding: 20px 26px; }
     .s-gap .gcard h3 { display: flex; align-items: center; gap: 14px; font-family: var(--mono); font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--soft); font-weight: 500; margin: 0 0 10px; }
@@ -4157,8 +4167,8 @@ steps:
     <section class="slide s-split s-gap s-gap3" data-hue="6">
       <p class="kicker">What's next: my best guess</p>
       <h2>Closing the gap means more medicines faster!</h2>
-      <svg class="gapchart g3" viewBox="0 0 1320 540" role="img" aria-label="Illustration, not data. Top: frontier capabilities and clinical trial tools from a year ago to a year from now. Bottom: time to develop one drug. Today, 10 to 15 years and 1 to 2 billion dollars. If trial tools move slowly, still years next year. If they move fast, months.">
-        <defs><pattern id="g3-hatch" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="12" height="12" fill="#fbf1e0"/><line x1="0" y1="0" x2="0" y2="12" stroke="#c78a3b" stroke-width="5"/></pattern></defs>
+      <svg class="gapchart g3" viewBox="0 0 1320 548" role="img" aria-label="Illustration, not data. Top: frontier capabilities and clinical trial tools from a year ago to a year from now. Bottom: time to develop one drug. Today, 10 to 15 years and 1 to 2 billion dollars. Next year, slow: a real but marginal improvement, still years. Next year, fast: a paradigm change. Some day soon: months, maybe weeks.">
+        <defs><pattern id="g3-hatch" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="12" height="12" fill="#fbf1e0"/><line x1="0" y1="0" x2="0" y2="12" stroke="#c78a3b" stroke-width="5"/></pattern><pattern id="g3-hatchb" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="12" height="12" fill="#e6f1fb"/><line x1="0" y1="0" x2="0" y2="12" stroke="#519fdd" stroke-width="5"/></pattern></defs>
         <text class="cap" x="1060" y="10" text-anchor="end">Illustration, not data</text>
         <g class="key"><path class="ln front" d="M60,24 L120,24"/><text class="lab" x="134" y="32">Frontier capabilities</text><path class="ln clin" d="M60,64 L120,64"/><text class="lab" x="134" y="72">Clinical trial tools</text></g>
         <line class="base" x1="60" x2="1060" y1="251.8" y2="251.8"/>
@@ -4186,38 +4196,50 @@ steps:
         </g>
         <g class="step st2">
           <path class="ln clin pick draw" pathLength="1" d="M560,228.6 C760,211.2 940,159.0 1060,115.5"/>
-          <circle class="dot clin" cx="1060" cy="115.5" r="6"/><text class="guess pick" x="1076" y="121.5">Fast</text>
+          <circle class="dot clin" cx="1060" cy="115.5" r="6"/><text class="guess pick fastlab" x="1076" y="121.5">Fast</text>
         </g>
 
-        <text class="bh" x="0" y="318">Time to develop one drug</text>
-        <g class="ruler">
-          <line x1="300" x2="1170" y1="520" y2="520"/>
-          <line x1="300" x2="300" y1="514" y2="526"/><text x="300" y="548" text-anchor="middle">0</text><line x1="590" x2="590" y1="514" y2="526"/><text x="590" y="548" text-anchor="middle">5</text><line x1="880" x2="880" y1="514" y2="526"/><text x="880" y="548" text-anchor="middle">10</text><line x1="1170" x2="1170" y1="514" y2="526"/><text x="1170" y="548" text-anchor="middle">15 years</text>
+        <g class="step st3">
+          <path class="ln clin pick draw proj" pathLength="1" d="M1060,115.5 C1120,89.4 1180,74.9 1235,55.8"/>
+          <circle class="dot clin" cx="1235" cy="55.8" r="6"/><text class="guess pick" x="1249" y="61.8">Some day soon</text>
         </g>
+
+        <text class="bh" x="0" y="302">Time to develop one drug</text>
         <g class="row">
-          <text class="rl" x="0" y="364">Today</text>
-          <rect x="300" y="342" width="580" height="30" rx="6" fill="#c78a3b"/>
-          <rect x="880" y="342" width="290" height="30" rx="6" fill="#c78a3b" opacity="0.4"/>
-          <text class="rv" x="316" y="364" fill="#fff">10–15 years · $1–2 billion</text>
-          <text class="rs" x="1184" y="356"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9293739/" target="_blank" rel="noopener">Sun et al., 2022</a></text>
-          <text class="rs" x="1184" y="378">90% of candidates fail</text>
+          <text class="rl" x="0" y="344">Today</text>
+          <rect x="300" y="324" width="580" height="28" rx="6" fill="#c78a3b"/>
+          <rect x="880" y="324" width="290" height="28" rx="6" fill="#c78a3b" opacity="0.4"/>
+          <text class="rv" x="316" y="345" fill="#fff">10–15 years · $1–2 billion</text>
+          <text class="rs" x="1184" y="336"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9293739/" target="_blank" rel="noopener">Sun et al., 2022</a></text>
+          <text class="rs" x="1184" y="357">90% of candidates fail</text>
         </g>
         <g class="row hide b1">
-          <text class="rl" x="0" y="420">Next year, slow</text>
-          <rect x="300" y="398" width="783.0" height="30" rx="6" fill="url(#g3-hatch)" stroke="#c78a3b" stroke-width="3"/>
-          <text class="rv dk" x="1097" y="420">Still years</text>
+          <text class="rl" x="0" y="392">Next year, slow</text>
+          <rect x="300" y="372" width="696" height="28" rx="6" fill="url(#g3-hatch)" stroke="#c78a3b" stroke-width="3"/>
+          <text class="rv dk sm" x="1010" y="383">Real marginal improvement,</text>
+          <text class="rv dk sm" x="1010" y="404">but still years</text>
+          <path class="strike draw2" pathLength="1" d="M0,386 L1296,386"/>
         </g>
         <g class="row hide b2">
-          <text class="rl" x="0" y="476">Next year, fast</text>
-          <rect x="300" y="454" width="29.0" height="30" rx="6" fill="url(#g3-hatch)" stroke="#519fdd" stroke-width="3"/>
-          <line class="covid" x1="343.5" x2="343.5" y1="448" y2="490"/>
-          <text class="rv dk" x="361.5" y="468">Months, maybe weeks</text>
-          <text class="rs" x="361.5" y="490"><a href="https://www.cbsnews.com/news/artificial-intelligence-google-deepmind-ceo-demis-hassabis-60-minutes-transcript/" target="_blank" rel="noopener">Hassabis</a> · the COVID mRNA vaccines took 9 months (<a href="https://www.darioamodei.com/essay/machines-of-loving-grace" target="_blank" rel="noopener">Amodei</a>)</text>
+          <text class="rl" x="0" y="440">Next year, fast</text>
+          <rect x="300" y="420" width="406" height="28" rx="6" fill="url(#g3-hatchb)" stroke="#519fdd" stroke-width="3"/>
+          <text class="rv dk" x="720" y="441">Paradigm change, soon</text>
+        </g>
+        <g class="row hide b3">
+          <text class="rl" x="0" y="488">Some day soon</text>
+          <rect x="300" y="468" width="29.0" height="28" rx="6" fill="url(#g3-hatchb)" stroke="#519fdd" stroke-width="3"/>
+          <line class="covid" x1="343.5" x2="343.5" y1="462" y2="502"/>
+          <text class="rv dk" x="361.5" y="483">Months, maybe weeks</text>
+          <text class="rs" x="361.5" y="504"><a href="https://www.cbsnews.com/news/artificial-intelligence-google-deepmind-ceo-demis-hassabis-60-minutes-transcript/" target="_blank" rel="noopener">Hassabis</a> · the COVID mRNA vaccines took 9 months (<a href="https://www.darioamodei.com/essay/machines-of-loving-grace" target="_blank" rel="noopener">Amodei</a>)</text>
+        </g>
+        <g class="ruler">
+          <line x1="300" x2="1170" y1="522" y2="522"/>
+          <line x1="300" x2="300" y1="516" y2="528"/><text x="300" y="546" text-anchor="middle">0</text><line x1="590" x2="590" y1="516" y2="528"/><text x="590" y="546" text-anchor="middle">5</text><line x1="880" x2="880" y1="516" y2="528"/><text x="880" y="546" text-anchor="middle">10</text><line x1="1170" x2="1170" y1="516" y2="528"/><text x="1170" y="546" text-anchor="middle">15 years</text>
         </g>
       </svg>
-      <div class="goodat hack sm now hold" style="left: 170px; right: auto; bottom: auto; top: 345px"><div class="bub"><p class="a">Time to close the gap</p></div><div class="who"></div></div>
+      <div class="goodat hack sm now hold3" style="left: 170px; right: auto; bottom: auto; top: 345px"><div class="bub"><p class="a">Time to close the gap</p></div><div class="who"></div></div>
       <aside class="notes">
-        <ul class="hits"><li>Today: 10 to 15 years, 1 to 2 billion dollars a drug</li><li>[press] Frontier fast, trials slow: still years</li><li>[press] Trials fast too: months, maybe weeks</li><li>Time to close the gap</li></ul>
+        <ul class="hits"><li>Today: 10 to 15 years, 1 to 2 billion dollars a drug</li><li>[press] Slow: real marginal improvement, but still years</li><li>[press] Fast: a paradigm change, soon</li><li>[press] Some day soon: months, maybe weeks</li><li>Time to close the gap</li></ul>
         <strong class="say">&lt;none yet&gt;</strong>
         Added 2026-10-17 (Jeremy: "Make a new slide 54 that selects the steady line for trials
         and the fast line for frontier. subhead = what's next: my best guess. head: Closing the gap
@@ -4233,6 +4255,7 @@ steps:
         <br><br>18 October 2026: the FDA line moved to the New ways of working slide as its Elsa 4.0 card (Jeremy: "move FDA/ elsa 4.0 ref to slide 50").
         <br><br>Rebuilt 2026-10-19 (Jeremy: "S54. I want to combine the timeline and the previous version with development time. 3 step animation: Today (X years, x millions - use prev ref (Sun?). next year slow (marginal decrease - still years). Fast - Months! show me a mock up. thinking timeline on top, bars on bottom. keep the references."; then "structure is good. build it then i'll tweak"). Three states: on open, today, the history only, with the guesses faint, and the Today bar; first press, frontier fast and trials slow are drawn in and the Still years bar appears; second press, trials fast is drawn in, the slow line fades, the Months bar appears and Hacker Orange says Time to close the gap. Top is the same drawing as before, scaled down: an illustration, not data. The Still years and Months bars are illustrations too (hatched); only the Today bar is a figure.
         <br><br>Sources, checked word for word: Sun, Gao, Hu and Zhou, 2022, https://pmc.ncbi.nlm.nih.gov/articles/PMC9293739/ ("Drug discovery and development is a long, costly, and high-risk process that takes over 10–15 years with an average cost of over $1–2 billion for each new drug to be approved for clinical use", rechecked 19 October; the 90% failure figure is its title). Hassabis on 60 Minutes, CBS, 20 April 2025 ("We can maybe reduce that down from years to maybe months or maybe even weeks"). Amodei, Machines of Loving Grace, October 2024 (the COVID mRNA vaccines took 9 months; they "arguably should have been approved in ~2 months"). The previous version of this slide is in the Reserves, dated 2026-10-19.
+        <br><br>Reworked 2026-10-19 (Jeremy: "s54: Click 1. “Real Marginal Improvement, but still years”. Click 2. Cross through slow. “Next year fast” Paradigm change, soon. Add click 3 that projects the clinical trial line out into the future with continued growth. “some day soon” “Months, Maybe weeks”"). Now three presses. One: frontier fast and trials slow, with the Real marginal improvement, but still years bar. Two: the slow row is struck through and fades, trials fast is drawn, and the Next year, fast row says Paradigm change, soon (a 7-year hatched bar, an illustration). Three: the trials line is projected past a year from now, labelled Some day soon, the Months, maybe weeks row appears with its sources, and Hacker Orange says Time to close the gap (moved from the second press).
       </aside>
     </section>
 
