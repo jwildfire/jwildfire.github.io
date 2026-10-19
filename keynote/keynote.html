@@ -257,6 +257,8 @@
     .s-qc { padding-top: 90px; }
     .s-qc .qchead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
     .s-qc .qchead .kicker { margin: 0; }
+    .s-qc h2.qch { font-size: 62px; margin: 0 0 22px; }
+    .s-qc img.qcr { height: 500px; }
     .s-qc .qchead a { font-family: var(--mono); font-size: 22px; color: var(--ink); text-decoration: underline; text-decoration-color: var(--hue); text-decoration-thickness: 3px; text-underline-offset: 6px; }
     .s-qc .qcfoot { margin: 16px 0 0; display: flex; align-items: center; justify-content: center; gap: 22px; font-family: var(--mono); color: var(--soft); }
     .s-qc .qcfoot b { font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; font-size: 15px; }
@@ -1529,6 +1531,7 @@
         <p class="kicker pkg" style="--pkg: url(assets/hex/qcthat.png)">Quality · qcthat</p>
         <a href="https://gilead-public.github.io/qcthat/" target="_blank" rel="noopener">gilead-public.github.io/qcthat</a>
       </div>
+      <h2 class="qch">Continuous Qualification with qcthat</h2>
       <img class="qcr" src="assets/qcthat-pr-report.png" alt="A qcthat report posted on a pull request: milestone v1.2.0, three issues, nine tests, every test passed, every issue has at least one test" />
       <p class="qcfoot"><b>The issue number goes in the test name</b><code>test_that("Flags sites above the upper limit (#19)", { ... })</code></p>
     </section>
