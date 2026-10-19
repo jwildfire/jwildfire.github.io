@@ -1033,6 +1033,20 @@
     .s-outl .fork .trunk, .s-outl .fork .lane, .s-outl .fork text { transition: opacity 400ms ease; }
     .s-outl:has(.fly.on) .fork .trunk, .s-outl:has(.fly.on) .fork .lane, .s-outl:has(.fly.on) .fork text { opacity: 0; }
     .s-outl .fly { display: none; }
+    /* Slide 3's fork in three presses (2026-10-19, Jeremy: "click 1 with 2021 - 2025 stuff then a
+       second click with the fork in the road. 3rd click what we learned"), then the fly. */
+    .s-outl i.pk { display: none; }
+    .s-outl .fork .fk { transition: opacity 400ms ease; }
+    body:not(.overview):not(.reveal-all) .s-outl:not(:has(.pk1.on)) .fk1,
+    body:not(.overview):not(.reveal-all) .s-outl:not(:has(.pk2.on)) .fk2,
+    body:not(.overview):not(.reveal-all) .s-outl:not(:has(.pk3.on)) .fk3 { opacity: 0; }
+    @media print { .s-outl .fork .fk { opacity: 1 !important; } }
+    .s-outl .fork .sign rect { fill: var(--ink); }
+    .s-outl .fork .sign .post { stroke: var(--ink); stroke-width: 4; }
+    .s-outl .fork .sign .st { font-family: var(--sans); font-size: 22px; font-weight: 600; fill: #fff; }
+    .s-outl .fork .arw { fill: none; stroke: var(--soft); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    .s-outl .fork .why { font-family: var(--mono); font-size: 18px; letter-spacing: 0.04em; fill: var(--soft); }
+    .s-outl:has(.fly.on) .fork .sign, .s-outl:has(.fly.on) .fork .arw { opacity: 0; transition: opacity 400ms ease; }
     @media (prefers-reduced-motion: reduce) { .s-outl .fork polygon { transition: none; } }
     .s-thanks { justify-content: center; }
     .s-thanks .thx { display: flex; align-items: center; gap: 70px; }
@@ -1365,22 +1379,41 @@
     <section class="slide s-quote s-outl" data-hue="1">
       <p class="kicker">The question</p>
       <blockquote>What can we actually do with AI agents right now?</blockquote>
-      <svg class="fork step" viewBox="0 0 1320 380" role="img" aria-label="The talk's sections as a path: Orange, SafetyGraphics and OpenRBQM in a line; then the path forks into Experiments on the AI Frontier on the upper lane and AI in the Clinical Trial Pipeline on the lower lane; the lanes meet again at What we learned.">
-        <path class="trunk" d="M40,190 H480"/>
-        <path class="lane up" d="M480,190 C580,190 600,96 700,96 H900 C1000,96 1020,190 1120,190"/>
-        <path class="lane dn" d="M480,190 C580,190 600,284 700,284 H900 C1000,284 1020,190 1120,190"/>
-        <polygon data-sec="0" style="fill: var(--spec-1)" points="40,172 55.6,181.0 55.6,199.0 40,208 24.4,199.0 24.4,181.0"/>
-        <polygon data-sec="1" style="fill: var(--spec-1)" points="260,172 275.6,181.0 275.6,199.0 260,208 244.4,199.0 244.4,181.0"/>
-        <polygon data-sec="2" style="fill: var(--spec-3)" points="480,172 495.6,181.0 495.6,199.0 480,208 464.4,199.0 464.4,181.0"/>
-        <polygon data-sec="4" style="fill: var(--spec-4)" points="800,78 815.6,87.0 815.6,105.0 800,114 784.4,105.0 784.4,87.0"/>
-        <polygon data-sec="3" style="fill: var(--spec-1)" points="800,266 815.6,275.0 815.6,293.0 800,302 784.4,293.0 784.4,275.0"/>
-        <polygon data-sec="5" style="fill: var(--spec-6)" points="1120,172 1135.6,181.0 1135.6,199.0 1120,208 1104.4,199.0 1104.4,181.0"/>
-        <text class="n" x="22" y="246">Orange</text>
-        <text class="n" x="260" y="246" text-anchor="middle">SafetyGraphics</text><text class="w" x="260" y="274" text-anchor="middle">2016–2021</text>
-        <text class="n" x="480" y="246" text-anchor="middle">OpenRBQM</text><text class="w" x="480" y="274" text-anchor="middle">2021–2025</text>
-        <text class="n" x="800" y="52" text-anchor="middle">Experiments on the AI Frontier</text><text class="w" x="800" y="24" text-anchor="middle">summer 2026</text>
-        <text class="n" x="800" y="340" text-anchor="middle">AI in the Clinical Trial Pipeline</text><text class="w" x="800" y="368" text-anchor="middle">Q4 2025</text>
-        <text class="n" x="1150" y="198">What we learned</text><text class="w" x="1150" y="226">now</text>
+      <i class="step pk pk1"></i><i class="step pk pk2"></i><i class="step pk pk3"></i>
+      <svg class="fork" viewBox="0 0 1320 380" role="img" aria-label="The talk's sections as a path: Orange, SafetyGraphics and OpenRBQM in a line, 2016 to 2025; a road marker, Opus 4.5 and GPT-5.1 in November 2025; then the path forks, the day job down to AI in the Clinical Trial Pipeline and spare time up to Experiments on the AI Frontier; the lanes meet again at What we learned.">
+        <g class="fk fk1">
+          <path class="trunk" d="M40,190 H420"/>
+          <polygon data-sec="0" style="fill: var(--spec-1)" points="40,172 55.6,181 55.6,199 40,208 24.4,199 24.4,181"/>
+          <polygon data-sec="1" style="fill: var(--spec-1)" points="230,172 245.6,181 245.6,199 230,208 214.4,199 214.4,181"/>
+          <polygon data-sec="2" style="fill: var(--spec-3)" points="420,172 435.6,181 435.6,199 420,208 404.4,199 404.4,181"/>
+          <text class="n" x="22" y="246">Orange</text>
+          <text class="n" x="230" y="246" text-anchor="middle">SafetyGraphics</text><text class="w" x="230" y="274" text-anchor="middle">2016–2021</text>
+          <text class="n" x="420" y="246" text-anchor="middle">OpenRBQM</text><text class="w" x="420" y="274" text-anchor="middle">2021–2025</text>
+        </g>
+        <g class="fk fk2">
+          <path class="trunk" d="M445,190 H600"/>
+          <path class="lane up" d="M600,190 C690,190 710,96 800,96 H900 C990,96 1010,190 1100,190"/>
+          <path class="lane dn" d="M600,190 C690,190 710,284 800,284 H900 C990,284 1010,190 1100,190"/>
+          <g class="sign">
+            <path class="post" d="M532,150 V190"/>
+            <rect x="462" y="74" width="140" height="78" rx="10"/>
+            <text class="st" x="532" y="106" text-anchor="middle">Opus 4.5</text>
+            <text class="st" x="532" y="138" text-anchor="middle">GPT-5.1</text>
+            <text class="w" x="532" y="62" text-anchor="middle">Nov 2025</text>
+          </g>
+          <polygon data-sec="4" style="fill: var(--spec-4)" points="850,78 865.6,87 865.6,105 850,114 834.4,105 834.4,87"/>
+          <polygon data-sec="3" style="fill: var(--spec-1)" points="850,266 865.6,275 865.6,293 850,302 834.4,293 834.4,275"/>
+          <text class="n" x="850" y="52" text-anchor="middle">Experiments on the AI Frontier</text><text class="w" x="850" y="24" text-anchor="middle">summer 2026</text>
+          <text class="n" x="850" y="340" text-anchor="middle">AI in the Clinical Trial Pipeline</text><text class="w" x="850" y="368" text-anchor="middle">Q4 2025</text>
+          <path class="arw" d="M850,152 V124 M841,133 L850,122 L859,133"/>
+          <text class="why" x="850" y="174" text-anchor="middle">spare time</text>
+          <text class="why" x="850" y="216" text-anchor="middle">day job</text>
+          <path class="arw" d="M850,228 V256 M841,247 L850,258 L859,247"/>
+        </g>
+        <g class="fk fk3">
+          <polygon data-sec="5" style="fill: var(--spec-6)" points="1100,172 1115.6,181 1115.6,199 1100,208 1084.4,199 1084.4,181"/>
+          <text class="n" x="1128" y="198">What we learned</text><text class="w" x="1128" y="226">now</text>
+        </g>
       </svg>
       <span class="step fly" aria-hidden="true"></span>
     </section>
