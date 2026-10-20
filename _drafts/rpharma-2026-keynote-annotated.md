@@ -293,8 +293,8 @@ In the end, from May to October, we built 20 interactive charts, 3 apps and 7 cl
 [![The safety.viz demo: your own files, nothing uploaded. The live app, with Orange's notes added for the talk, and a QR code for jwildfire.github.io/safety.viz/demo.](/assets/img/rpharma-2026-keynote/slide-43.jpg)](https://jwildfire.github.io/keynote/keynote.html#43)
 
 <figure class="kn-anim">
-  <video src="/keynote/assets/safety-viz-demo.mp4" poster="/keynote/assets/safety-viz-demo-poster.png" autoplay muted loop playsinline controls preload="none" aria-label="Screen recording of the safety.viz demo app, with Orange's notes popping up: study files are dropped in, the app maps them, opens the hepatic explorer on one participant, and runs the OpenRBQM metrics with R in the browser"></video>
-  <figcaption>The demo in 40 seconds, with Orange's notes added for the talk. <a href="https://jwildfire.github.io/safety.viz/demo/">Try it yourself</a>.</figcaption>
+  <video src="/keynote/assets/safety-viz-demo.mp4" poster="/keynote/assets/safety-viz-demo-poster.png" autoplay muted loop playsinline controls preload="none" aria-label="Screen recording of the safety.viz demo app, with Orange's notes popping up: study files are dropped in, the app maps them, opens the hepatic explorer on one participant, runs the OpenRBQM metrics with R in the browser, then opens the bio.viz correlation matrix and clicks one cell through to its scatter plot"></video>
+  <figcaption>The demo in 50 seconds, with Orange's notes added for the talk. It ends in the bio.viz biomarker charts: one click on the correlation matrix opens the scatter behind it. <a href="https://jwildfire.github.io/safety.viz/demo/">Try it yourself</a>.</figcaption>
 </figure>
 
 Here's [the demo](https://jwildfire.github.io/safety.viz/demo/). You load your own files, and nothing is uploaded. It works out how your data maps to what the charts need, and lets you tweak it. R launches in the browser (I'd never done that before; the agents figured it out), and you get the RBQM components, the new biomarker charts and all the SafetyGraphics work, old and new, in one place.
