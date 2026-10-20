@@ -200,7 +200,7 @@ I had this robust OpenRBQM framework, with pipelines, qcthat and real evidence. 
 
 Open source for the win: all of it was publicly available, so I could spend my own time updating it.
 
-[![A summer down the AI rabbit hole, with obot: Orange the original, then v1 a personal assistant, v2 OpenClaw, v3 Fable 5, v4 the organisation, v5 goals, on Opus 5.5.](/assets/img/rpharma-2026-keynote/slide-28.jpg)](https://jwildfire.github.io/keynote/keynote.html#28)
+[![A summer down the AI rabbit hole, with obot: Orange the original, then v1 a personal assistant, v2 OpenClaw, v3 Fable 5, v4 the organisation, v5 goals, on Opus 5 then 5.5.](/assets/img/rpharma-2026-keynote/slide-28.jpg)](https://jwildfire.github.io/keynote/keynote.html#28)
 
 I went down the rabbit hole this summer and built several frameworks for using AI on these open-source tools. The real Orange passed away a few years ago, and I think about him a lot, so when I was naming my agents I called them obot. There were five-ish versions. Here they are, quickly, and then what I built.
 
@@ -262,13 +262,13 @@ Here's what v4 actually built. obot.agent is the playbook: the agent's instructi
 
 On 10 September we cut it to seven files: the instructions, one skill and a daily standup. The hub, [obot.roadmap](https://jwildfire.github.io/obot.roadmap/), went the same way: its scripts were trimmed, and the reports it publishes kept growing, from 36 to more than 800.
 
-[![obot v5, September to October: Back to building. Claude Code on Opus 5.5, with a roadmap of GitHub issues: I set the goal, and agents do the rest. On 10 September I shut v4 down. 468 files of scaffolding went; seven stayed.](/assets/img/rpharma-2026-keynote/slide-38.jpg)](https://jwildfire.github.io/keynote/keynote.html#38)
+[![obot v5, September to October: Back to building. Claude Code on Opus 5, then 5.5, with a roadmap of GitHub issues: I set the goal, and agents do the rest. On 10 September I shut v4 down. 468 files of scaffolding went; seven stayed.](/assets/img/rpharma-2026-keynote/slide-38.jpg)](https://jwildfire.github.io/keynote/keynote.html#38)
 
 In September I shut the dark factory down: 468 files of scaffolding went, and seven stayed. Maybe it was me; I don't know the best way to do that yet, and maybe it's coming. But for now I don't recommend going that route. Even in your experiments, I'd focus on something you want to build, and then build it.
 
 So I went back to Claude Code with one change. I set the goal and review the release, and the agents do everything in between.
 
-[![obot v5 and v5.5, how it works: Same workflow, but I just set goals, answer questions and review releases.](/assets/img/rpharma-2026-keynote/slide-39.jpg)](https://jwildfire.github.io/keynote/keynote.html#39)
+[![obot v5, how it works: Same workflow, but I just set goals, answer questions and review releases.](/assets/img/rpharma-2026-keynote/slide-39.jpg)](https://jwildfire.github.io/keynote/keynote.html#39)
 
 This time the deal was: I set the goals and review releases, and you do everything else. Gather requirements, build everything, draft the pull requests, merge to dev whenever you want. Merges to main, for actual releases, I review. I wanted a demo for everything it built, and solid release notes, and I built skills and an AGENTS.md with Claude to say exactly what I wanted.
 
@@ -276,7 +276,7 @@ And: ask me questions whenever you're stuck. Multiple choice when you can; if it
 
 [![obot v5, the plan: Every goal becomes requirements, then tasks. Thirteen objectives, and one goal, biomarker charts, broken into 17 requirements and 61 tasks.](/assets/img/rpharma-2026-keynote/slide-40.jpg)](https://jwildfire.github.io/keynote/keynote.html#40)
 
-The whole roadmap lives in GitHub issues, on the [obot.roadmap hub](https://jwildfire.github.io/obot.roadmap/). Every goal becomes requirements, and every requirement becomes tasks, each with a definition of done. Here's every goal at once, and one of them, the biomarker charts, broken down. The agents filed most of this, and I signed off on the goals. Getting that clear definition of done worked really well.
+The whole roadmap lives in GitHub issues, on the [obot.roadmap hub](https://jwildfire.github.io/obot.roadmap/). Here's every goal at once. Every goal becomes requirements (this is one goal, the biomarker charts), and every requirement becomes tasks, each with a definition of done. The last panel shows how it filled in, 2 to 9 October. The agents filed most of this, and I signed off on the goals. Getting that clear definition of done worked really well.
 
 [![obot v5, 2–4 October: One orchestrator, one brief, one weekend. In: one brief of about 800 words, about 22 messages from me, Claude Code as shipped. Out: 52 agents, 40 of them reviewers; 3.9 billion tokens, $1,640 at API rates; 6 releases. What worked: reviewing its own work.](/assets/img/rpharma-2026-keynote/slide-41.jpg)](https://jwildfire.github.io/keynote/keynote.html#41)
 
@@ -301,9 +301,9 @@ Here's [the demo](https://jwildfire.github.io/safety.viz/demo/). You load your o
 
 Please play with it and file issues, and maybe I'll let Claude get to work on them. Or fork it; it's all open source.
 
-[![Costs: $11,750 at API prices. I paid $200 a month. Spend by obot version: v3 $3,330; v4 $6,020 or more; v5 $450 or more; v5.5 $1,955. The record has holes: June is not counted, and most of September is missing.](/assets/img/rpharma-2026-keynote/slide-44.jpg)](https://jwildfire.github.io/keynote/keynote.html#44)
+[![Costs: At least $11,750 at API prices. I paid $200 a month. Spend by obot version: v3, July, $3,330; v4, August to 10 September, $6,020 or more; v5, 11 September to 6 October, $2,410 or more. A floor: no June, most of September missing, and the July weekend about $1,100 short.](/assets/img/rpharma-2026-keynote/slide-44.jpg)](https://jwildfire.github.io/keynote/keynote.html#44)
 
-All told, I paid $200 a month for the Claude Max plan. At API prices this would have cost about $12,000 in tokens, and the record has holes, so that's a floor ([the numbers](https://jwildfire.github.io/obot.roadmap/analytics/)). That's a lot of money, but not compared to what it would have cost to build without AI. Claude isn't the cheapest option, but the Max plan is a pretty decent deal.
+All told, I paid $200 a month for the Claude Max plan. At API prices this would have cost at least $11,750 in tokens; the record has holes, so the real figure is higher ([the numbers](https://jwildfire.github.io/obot.roadmap/analytics/)). That's a lot of money, but not compared to what it would have cost to build without AI. Claude isn't the cheapest option, but the Max plan is a pretty decent deal.
 
 [![A lot of tests, and still an experiment. Agents test: 2,963 tests in safety.viz, up from 343 in July. Agents review: 40 of 52 agents on the October weekend were reviewers; one caught a bad p-value. A person signs: not yet. Tests and reviews are cheap now. The signature is not.](/assets/img/rpharma-2026-keynote/slide-45.jpg)](https://jwildfire.github.io/keynote/keynote.html#45)
 
@@ -325,7 +325,7 @@ Here's what I'd say: don't judge AI by what you can do in your day job, on a tri
 
 The rules we work by are right. We have to keep people safe, and we have to use tools we trust. But those rules also limit our view of what AI can do.
 
-[![Frontier is moving extremely fast: a timeline from November 2025 to October 2026 of model releases above the line and six obot versions below, with a list of things never tried.](/assets/img/rpharma-2026-keynote/slide-49.jpg)](https://jwildfire.github.io/keynote/keynote.html#49)
+[![Frontier is moving extremely fast: a timeline from November 2025 to October 2026 of model releases above the line and five obot versions below, with a list of things never tried.](/assets/img/rpharma-2026-keynote/slide-49.jpg)](https://jwildfire.github.io/keynote/keynote.html#49)
 
 This is all moving extremely fast. I spent four or five months really experimenting, and in that time there were several new innovations. There's a lot I didn't try. I didn't go deep into MCP, though Claude uses it under the hood. I haven't played with the new personal assistants beyond OpenClaw. No open-weights models, which are getting good, and no decision models, which I think will be really valuable for clinical trials. I couldn't try everything, and at work we're behind on all of it. It's a little disorienting.
 
@@ -350,11 +350,11 @@ We're a highly regulated industry, for good reason, and we tend to focus on the 
 
 [![What the builders predict: big forecasts, not crazy given the last year. Dario Amodei on compressing 50–100 years of progress in biology and medicine into 5–10, and Demis Hassabis on the end of disease.](/assets/img/rpharma-2026-keynote/slide-53.jpg)](https://jwildfire.github.io/keynote/keynote.html#53)
 
-Take these with a big grain of salt. Amodei predicts that AI-enabled biology and medicine could [compress 50 to 100 years of progress into 5 to 10](https://www.darioamodei.com/essay/machines-of-loving-grace). Demis Hassabis, who runs Google DeepMind, told 60 Minutes that [the end of disease](https://www.cbsnews.com/news/artificial-intelligence-google-deepmind-ceo-demis-hassabis-60-minutes-transcript/) could be within reach, maybe within a decade. Then look at the last year. After using this stuff to build what I've built, these big forecasts don't feel as crazy to me as they used to.
+Take these with a big grain of salt. Amodei predicts that once powerful AI arrives, AI-enabled biology and medicine could [compress 50 to 100 years of progress into 5 to 10](https://www.darioamodei.com/essay/machines-of-loving-grace). Demis Hassabis, who runs Google DeepMind, told 60 Minutes that [the end of disease](https://www.cbsnews.com/news/artificial-intelligence-google-deepmind-ceo-demis-hassabis-60-minutes-transcript/) could be within reach, maybe within a decade. Then look at the last year. After using this stuff to build what I've built, these big forecasts don't feel as crazy to me as they used to.
 
-[![What's next, my best guess: Closing the gap means more medicines faster! Illustration, not data. Time to develop one drug: today, more than 10 years and $1 to 2.6 billion per approved drug; next year, slow, a real but marginal improvement; next year, fast, a paradigm change; some day soon, months, maybe weeks.](/assets/img/rpharma-2026-keynote/slide-54.jpg)](https://jwildfire.github.io/keynote/keynote.html#54)
+[![What's next, my best guess: Closing the gap means more medicines faster! Illustration, not data. Time to develop one drug: today, multiple years and more than $1 billion per drug, and 90% of candidates fail; next year, slow, a real but marginal improvement; next year, fast, a paradigm change; some day? Months, maybe weeks.](/assets/img/rpharma-2026-keynote/slide-54.jpg)](https://jwildfire.github.io/keynote/keynote.html#54)
 
-The gap is measured in medicines. A drug today takes more than ten years and [one](https://jamanetwork.com/journals/jama/fullarticle/2762311) to [2.6 billion dollars](https://doi.org/10.1016/j.jhealeco.2016.01.012) per approval, and [about nine in ten drugs that enter clinical trials fail](https://go.bio.org/rs/490-EHZ-999/images/ClinicalDevelopmentSuccessRates2011_2020.pdf). The COVID-19 mRNA vaccines were done extremely quickly; with AI, that could be the new normal, and maybe faster than that.
+The gap is measured in medicines. A drug today takes multiple years and more than a billion dollars ([Wouters 2020](https://jamanetwork.com/journals/jama/fullarticle/2762311), [DiMasi 2016](https://doi.org/10.1016/j.jhealeco.2016.01.012)), and [about nine in ten candidates fail](https://go.bio.org/rs/490-EHZ-999/images/ClinicalDevelopmentSuccessRates2011_2020.pdf). The COVID-19 mRNA vaccines took about nine months. With AI, that could be the new normal, and some day maybe faster than that.
 
 Closing the gap between clinical trial tools and the frontier means more medicines, faster. These changes are already starting; the FDA is already reviewing with AI. And we're the ones who can make this happen. The tools we make set the pace.
 
