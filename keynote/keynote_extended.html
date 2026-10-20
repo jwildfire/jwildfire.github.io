@@ -1117,68 +1117,69 @@
     .s-gap.revealed .gapchart .guess.now, body.overview .s-gap .gapchart .guess.now, body.reveal-all .s-gap .gapchart .guess.now { opacity: 1; fill: var(--ink); font-weight: 600; font-size: 20px; }
     .s-gap .fda { font-size: 26px; color: var(--soft); margin: 18px 0 0; }
     .s-gap .fda a { color: inherit; text-decoration: underline; text-decoration-color: var(--hue); text-decoration-thickness: 2px; text-underline-offset: 4px; }
-    /* The gap and the medicines, in three states (class "s-gap3", 2026-10-19): today on open; the
-       first press draws frontier fast and trials slow and adds the still-years bar; the second
-       draws trials fast, adds the months bar and Hacker Orange. Steps are .st1/.st1b, .st2/.st2b. */
+    /* The gap and the medicines (class "s-gap3", slide 54): today on open, then three presses.
+       One: frontier fast and trials slow, with the still-years bar. Two: the slow row is struck
+       and fades, trials fast is drawn, with the paradigm-change bar. Three: both lines run on to
+       the top of the slide, the Some day? bar and Hacker Orange. */
     .s-gap3 h2 { margin-bottom: 18px; }
     .s-gap3 .g3 { width: 100%; height: auto; display: block; overflow: visible; }
     .s-gap3 .g3 text { font-family: var(--sans); }
     .s-gap3 .g3 .ghost .ln { opacity: 0.16; stroke-dasharray: 3 9; }
     .s-gap3 .g3 .ln.pick { stroke-width: 6; }
-    .s-gap3 .g3 .ln.clin.pick { stroke-dasharray: none; }
-    .s-gap3 .g3 .draw { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.4s ease-in-out; }
-    .s-gap3 .g3 .step.on .draw, body.overview .s-gap3 .g3 .draw, body.reveal-all .s-gap3 .g3 .draw { stroke-dashoffset: 0; }
-    .s-gap3 .g3 .slowln { transition: opacity 0.6s ease 0.8s; }
-    .s-gap3:has(.st2.on) .g3 .slowln, body.reveal-all .s-gap3 .g3 .slowln, body.overview .s-gap3 .g3 .slowln { opacity: 0.18; }
     .s-gap3 .g3 .bh { font-family: var(--mono); font-size: 18px; letter-spacing: 0.12em; text-transform: uppercase; fill: var(--soft); }
     .s-gap3 .g3 .rl { font-size: 24px; font-weight: 600; fill: var(--ink); }
     .s-gap3 .g3 .rv { font-size: 22px; font-weight: 600; }
     .s-gap3 .g3 .rv.dk { fill: var(--ink); }
+    .s-gap3 .g3 .rv.sm { font-size: 20px; }
     .s-gap3 .g3 .rs { font-size: 18px; fill: var(--soft); }
+    .s-gap3 .g3 .rs.src { font-size: 16px; }
     .s-gap3 .g3 .rs a { fill: var(--soft); text-decoration: underline; }
     .s-gap3 .g3 .ruler line { stroke: var(--faint); stroke-width: 2; }
     .s-gap3 .g3 .ruler text { font-family: var(--mono); font-size: 16px; fill: var(--soft); }
     .s-gap3 .g3 .covid { stroke: var(--ink); stroke-width: 3; stroke-dasharray: 4 4; }
-    .s-gap3 .goodat.hold { opacity: 0; transform: translateY(14px) scale(0.96); transition: opacity 300ms ease 1.2s, transform 300ms ease 1.2s; }
-    .s-gap3:has(.st2.on) .goodat.hold, body.overview .s-gap3 .goodat.hold, body.reveal-all .s-gap3 .goodat.hold { opacity: 1; transform: none; }
-    .s-gap3 .g3 .hide { opacity: 0; transition: opacity 500ms ease 0.6s; }
-    .s-gap3:has(.st1.on) .g3 .b1, .s-gap3:has(.st2.on) .g3 .b2, body.overview .s-gap3 .g3 .hide, body.reveal-all .s-gap3 .g3 .hide { opacity: 1; }
-    .s-gap3 .g3 .rv.sm { font-size: 20px; }
-    .s-gap3 .g3 .rs.src { font-size: 16px; }
-    .s-gap3 .g3 .strike { fill: none; stroke: var(--ink); stroke-width: 3; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 0.8s ease-in-out 0.2s; }
-    .s-gap3:has(.st2.on) .g3 .strike, body.overview .s-gap3 .g3 .strike, body.reveal-all .s-gap3 .g3 .strike { stroke-dashoffset: 0; }
-    .s-gap3:has(.st2.on) .g3 .b1 { opacity: 0.45; transition-delay: 0.9s; }
-    .s-gap3:has(.st3.on) .g3 .b3, body.overview .s-gap3 .g3 .b3, body.reveal-all .s-gap3 .g3 .b3 { opacity: 1; }
-    .s-gap3 .g3 .proj { stroke-dasharray: 1; }
-    .s-gap3 .g3 .ahead { opacity: 0; transition: opacity 0.3s ease 1.3s; }
+    .s-gap3 .g3 .strike { fill: none; stroke: var(--ink); stroke-width: 3; }
     .s-gap3 .g3 .ahead.front { fill: var(--spec-4); }
     .s-gap3 .g3 .ahead.clin { fill: var(--spec-1); }
-    .s-gap3 .g3 .st3.on .ahead, body.overview .s-gap3 .g3 .ahead, body.reveal-all .s-gap3 .g3 .ahead { opacity: 1; }
-    .s-gap3 .g3 .far { opacity: 0; transition: opacity 0.4s ease 1.3s; }
-    .s-gap3 .g3 .st3.on .far, body.overview .s-gap3 .g3 .far, body.reveal-all .s-gap3 .g3 .far { opacity: 1; }
-    .s-gap3 .g3 .fastlab { transition: opacity 0.4s ease; }
-    .s-gap3:has(.st3.on) .g3 .fastlab, body.overview .s-gap3 .g3 .fastlab, body.reveal-all .s-gap3 .g3 .fastlab { opacity: 0; }
-    .s-gap3 .goodat.hold3 { opacity: 0; transform: translateY(14px) scale(0.96); transition: opacity 300ms ease 1.2s, transform 300ms ease 1.2s; }
-    .s-gap3:has(.st3.on) .goodat.hold3, body.overview .s-gap3 .goodat.hold3, body.reveal-all .s-gap3 .goodat.hold3 { opacity: 1; transform: none; }
-    /* Smoother motion (2026-10-19): steps here appear without the deck's slide-up, so the lines
-       never jump; lines draw with one easing; labels and dots follow the line; bars grow from zero. */
+    /* Motion, rebuilt 2026-10-19 (Jeremy: "Animations are out of sync. make sure lines
+       transitions are all animated and appears happen in sync"). One clock per press: what leaves
+       goes first (0 to --go); then every new line draws and every new bar grows together, over
+       --dr with one easing; then every new dot, label and arrowhead fades in at the same moment
+       (--go + --dr), Hacker Orange with them on the last press. The trials lines used to skip
+       their draw: their solid style (stroke-dasharray: none) beat the draw's dash, so they
+       appeared at once. A back press resets at once (.stepped-back, set by the deck script). */
+    .s-gap3 { --e: cubic-bezier(0.45, 0, 0.2, 1); --fd: 0.4s; }
+    .s-gap3 .st1, .s-gap3 .b1 { --go: 0s; --dr: 1.6s; }
+    .s-gap3 .st2, .s-gap3 .b2 { --go: 0.6s; --dr: 1.6s; }
+    .s-gap3 .st3, .s-gap3 .b3, .s-gap3 .goodat.hold3 { --go: 0.4s; --dr: 1.9s; }
     .s-gap3 .g3 .step, .s-gap3 .g3 .step.on { transform: none; transition: none; }
-    .s-gap3 .g3 .draw { transition: stroke-dashoffset 1.6s cubic-bezier(0.45, 0, 0.2, 1); }
-    .s-gap3 .g3 .proj { transition-duration: 1.9s; }
-    .s-gap3 .g3 .step text, .s-gap3 .g3 .step circle { opacity: 0; transition: opacity 0.4s ease 1.3s; }
-    .s-gap3 .g3 .step.on text, .s-gap3 .g3 .step.on circle, body.overview .s-gap3 .g3 .step text, body.overview .s-gap3 .g3 .step circle, body.reveal-all .s-gap3 .g3 .step text, body.reveal-all .s-gap3 .g3 .step circle { opacity: 1; }
-    .s-gap3:has(.st3.on) .g3 .endpt { opacity: 0; transition-delay: 0s; }
-    .s-gap3:has(.st3.on) .g3 .step .fastlab { transition: opacity 0.3s ease 0s; }
-    .s-gap3 .g3 .ahead { transition: opacity 0.3s ease 1.7s; }
-    .s-gap3 .g3 .far { transition: opacity 0.4s ease 1.8s; }
-    .s-gap3 .g3 .hide { transition: opacity 0.25s ease; }
-    .s-gap3 .g3 .hide rect { transform-box: fill-box; transform-origin: 0 50%; transform: scaleX(0); transition: transform 1s cubic-bezier(0.45, 0, 0.2, 1) 0.2s; }
-    .s-gap3 .g3 .hide text, .s-gap3 .g3 .hide .covid { opacity: 0; transition: opacity 0.4s ease 1.1s; }
-    .s-gap3 .g3 .hide .rl { transition-delay: 0.1s; }
-    .s-gap3:has(.st1.on) .g3 .b1 rect, .s-gap3:has(.st2.on) .g3 .b2 rect, .s-gap3:has(.st3.on) .g3 .b3 rect, body.overview .s-gap3 .g3 .hide rect, body.reveal-all .s-gap3 .g3 .hide rect { transform: none; }
-    .s-gap3:has(.st1.on) .g3 .b1 text, .s-gap3:has(.st2.on) .g3 .b2 text, .s-gap3:has(.st3.on) .g3 .b3 text, .s-gap3:has(.st3.on) .g3 .b3 .covid, body.overview .s-gap3 .g3 .hide text, body.reveal-all .s-gap3 .g3 .hide text, body.overview .s-gap3 .g3 .hide .covid, body.reveal-all .s-gap3 .g3 .hide .covid { opacity: 1; }
-    .s-gap3:has(.st2.on) .g3 .b1 { opacity: 0.45; transition: opacity 0.6s ease 0.9s; }
-    .s-gap3 .goodat.hold3 { transition-delay: 2s; }
+    .s-gap3 .g3 .ln.pick.draw, .s-gap3 .g3 .strike { stroke-dasharray: 1; stroke-dashoffset: 1; }
+    .s-gap3 .g3 .step :is(circle, text, polygon), .s-gap3 .g3 .hide :is(text, .covid) { opacity: 0; }
+    .s-gap3 .g3 .hide rect { transform-box: fill-box; transform-origin: 0 50%; transform: scaleX(0); }
+    .s-gap3 .goodat.hold3 { opacity: 0; transform: translateY(14px) scale(0.96); }
+    /* Draw and grow. */
+    .s-gap3 .g3 .step.on .draw { stroke-dashoffset: 0; transition: stroke-dashoffset var(--dr) var(--e) var(--go); }
+    .s-gap3:has(.st1.on) .g3 .b1 rect, .s-gap3:has(.st2.on) .g3 .b2 rect, .s-gap3:has(.st3.on) .g3 .b3 rect { transform: none; transition: transform var(--dr) var(--e) var(--go); }
+    /* The row's name comes in as its bar starts. */
+    .s-gap3:has(.st1.on) .g3 .b1 .rl, .s-gap3:has(.st2.on) .g3 .b2 .rl, .s-gap3:has(.st3.on) .g3 .b3 .rl { opacity: 1; transition: opacity var(--fd) ease var(--go); }
+    /* Everything else lands together when the lines and bars finish. */
+    .s-gap3 .g3 .step.on :is(circle, text, polygon),
+    .s-gap3:has(.st1.on) .g3 .b1 :is(text:not(.rl), .covid), .s-gap3:has(.st2.on) .g3 .b2 :is(text:not(.rl), .covid), .s-gap3:has(.st3.on) .g3 .b3 :is(text:not(.rl), .covid) { opacity: 1; transition: opacity var(--fd) ease calc(var(--go) + var(--dr)); }
+    .s-gap3:has(.st3.on) .goodat.hold3 { opacity: 1; transform: none; transition: opacity 300ms ease calc(var(--go) + var(--dr)), transform 300ms ease calc(var(--go) + var(--dr)); }
+    /* Press two leaves first: the strike draws, then the slow line, its dot and label, and its row fade back as trials fast starts. */
+    .s-gap3:has(.st2.on) .g3 .strike { stroke-dashoffset: 0; transition: stroke-dashoffset 0.6s var(--e); }
+    .s-gap3:has(.st2.on) .g3 .step .slowln { opacity: 0.18; transition: opacity 0.6s ease 0.6s; }
+    .s-gap3:has(.st2.on) .g3 .b1 { opacity: 0.45; transition: opacity 0.6s ease 0.6s; }
+    /* Press three leaves first: the Fast labels and end dots go before the lines run on. */
+    .s-gap3:has(.st3.on) .g3 .step :is(.fastlab, .endpt) { opacity: 0; transition: opacity 0.4s ease; }
+    .s-gap3.stepped-back *, .s-gap3.stepped-back .goodat { transition: none !important; }
+    /* Overview and ?reveal: the finished state. */
+    body:is(.overview, .reveal-all) .s-gap3 .g3 .ln.pick.draw, body:is(.overview, .reveal-all) .s-gap3 .g3 .strike { stroke-dashoffset: 0; }
+    body:is(.overview, .reveal-all) .s-gap3 .g3 .step :is(circle, text, polygon), body:is(.overview, .reveal-all) .s-gap3 .g3 .hide :is(text, .covid) { opacity: 1; }
+    body:is(.overview, .reveal-all) .s-gap3 .g3 .hide rect { transform: none; }
+    body:is(.overview, .reveal-all) .s-gap3 .g3 .step .slowln { opacity: 0.18; }
+    body:is(.overview, .reveal-all) .s-gap3 .g3 .b1 { opacity: 0.45; }
+    body:is(.overview, .reveal-all) .s-gap3 .g3 .step :is(.fastlab, .endpt) { opacity: 0; }
+    body:is(.overview, .reveal-all) .s-gap3 .goodat.hold3 { opacity: 1; transform: none; }
     .s-gap .gcards { display: grid; gap: 20px; }
     .s-gap .gcard { background: var(--panel); border: 2px solid var(--rule); border-radius: 18px; padding: 20px 26px; }
     .s-gap .gcard h3 { display: flex; align-items: center; gap: 14px; font-family: var(--mono); font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--soft); font-weight: 500; margin: 0 0 10px; }
@@ -2600,7 +2601,7 @@ steps:
     <section class="slide s-split s-gap s-gap3" data-hue="6">
       <p class="kicker">What's next: my best guess</p>
       <h2>Closing the gap means more medicines faster!</h2>
-      <svg class="gapchart g3" viewBox="0 0 1320 548" role="img" aria-label="Illustration, not data. Top: frontier capabilities and clinical trial tools from a year ago to a year from now. Bottom: time to develop one drug. Today, more than 10 years and 1 to 2.6 billion dollars per approved drug. Next year, slow: a real but marginal improvement, still years. Next year, fast: a paradigm change. Some day soon: months, maybe weeks.">
+      <svg class="gapchart g3" viewBox="0 0 1320 548" role="img" aria-label="Illustration, not data. Top: frontier capabilities and clinical trial tools from a year ago to a year from now. Bottom: time to develop one drug. Today, more than 10 years and 1 to 2.6 billion dollars per approved drug. Next year, slow: a real but marginal improvement, still years. Next year, fast: a paradigm change. Some day? Months, maybe weeks.">
         <defs><pattern id="g3-hatch" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="12" height="12" fill="#fbf1e0"/><line x1="0" y1="0" x2="0" y2="12" stroke="#c78a3b" stroke-width="5"/></pattern><pattern id="g3-hatchb" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="12" height="12" fill="#e6f1fb"/><line x1="0" y1="0" x2="0" y2="12" stroke="#519fdd" stroke-width="5"/></pattern></defs>
         <text class="cap" x="1060" y="10" text-anchor="end">Illustration, not data</text>
         <g class="key"><path class="ln front" d="M60,24 L120,24"/><text class="lab" x="134" y="32">Frontier capabilities</text><path class="ln clin" d="M60,64 L120,64"/><text class="lab" x="134" y="72">Clinical trial tools</text></g>
@@ -2637,7 +2638,7 @@ steps:
           <path class="ln clin pick draw proj" pathLength="1" d="M1060,115.5 C1120,93.8 1215,-40 1255,-225"/>
           <polygon class="ahead front" points="1177.7,-240.8 1184.9,-223.3 1165.1,-226.7"/>
           <polygon class="ahead clin" points="1258.4,-240.6 1264.8,-222.9 1245.2,-227.1"/>
-          <text class="guess pick far" x="1282" y="-140">Some day</text><text class="guess pick far" x="1282" y="-116">soon</text>
+          <text class="guess pick far" x="1282" y="-128">Some day?</text>
         </g>
 
         <text class="bh" x="0" y="302">Time to develop one drug</text>
@@ -2663,7 +2664,7 @@ steps:
           <text class="rv dk" x="720" y="441">Paradigm change, soon</text>
         </g>
         <g class="row hide b3">
-          <text class="rl" x="0" y="488">Some day soon</text>
+          <text class="rl" x="0" y="488">Some day?</text>
           <rect x="300" y="468" width="29.0" height="28" rx="6" fill="url(#g3-hatchb)" stroke="#519fdd" stroke-width="3"/>
           <line class="covid" x1="343.5" x2="343.5" y1="462" y2="502"/>
           <text class="rv dk" x="361.5" y="483">Months, maybe weeks</text>
@@ -3723,13 +3724,17 @@ steps:
       function hasCallout() { return !!slides[i].querySelector('.goodat:not(.now):not(.step)') || slides[i].hasAttribute('data-outline') || slides[i].hasAttribute('data-reveal'); }
       // Stepped content (.step): each press shows the next one before anything else happens;
       // back hides them again in reverse order.
+      // .stepped-back marks a slide a back press just changed, so a slide can skip its motion
+      // going back (slide 54, 2026-10-19); the next forward press clears it.
       function next() {
+        slides[i].classList.remove('stepped-back');
         var hid = slides[i].querySelectorAll('.step:not(.on)');
         if (hid.length) { hid[0].classList.add('on'); sync(); return; }
         if (hasCallout() && !slides[i].classList.contains('revealed')) { slides[i].classList.add('revealed'); sync(); }
         else if (i < slides.length - 1) go(i + 1);
       }
       function prev() {
+        slides[i].classList.add('stepped-back');
         var on = slides[i].querySelectorAll('.step.on');
         if (on.length) { on[on.length - 1].classList.remove('on'); sync(); return; }
         if (hasCallout() && slides[i].classList.contains('revealed')) { slides[i].classList.remove('revealed'); sync(); }
