@@ -12,7 +12,7 @@ date: "2026-10-21"
 
 This series started in June with one question: [what can we actually do with AI agents right now?](https://jwildfire.github.io/2026/06/10/rpharma-keynote-developer-diary.html) The keynote is my answer, and this post is the tenth and last entry in the [developer diary](https://jwildfire.github.io/keynote/). I've borrowed the format from Simon Willison's [annotated talks](https://simonwillison.net/tags/annotated-talks/). You can also click through [the slides themselves](https://jwildfire.github.io/keynote/keynote.html) (arrow keys to move; each image below links to its slide).
 
-[![Building open-source clinical trial tools with agentic AI. Jeremy Wildfire, 21 October 2026](/assets/img/rpharma-2026-keynote/slide-01.jpg)](https://jwildfire.github.io/keynote/keynote.html#1)
+[![What can we actually do with AI agents right now? Jeremy Wildfire, 21 October 2026](/assets/img/rpharma-2026-keynote/slide-01.jpg)](https://jwildfire.github.io/keynote/keynote.html#1)
 
 I build open-source tools for clinical trials, and I've spent the last few years trying to figure out how AI fits into that world. That's what this talk is about.
 
