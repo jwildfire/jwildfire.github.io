@@ -84,40 +84,39 @@
     .side-foot a:hover { color: var(--accent); }
 
     main.feed { padding: clamp(2rem, 5vw, 4rem); max-width: 52rem; }
-    .feed-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; border-bottom: 1px solid var(--rule); padding-bottom: 1rem; margin-bottom: 1.8rem; }
+    .feed-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; border-bottom: 1px solid var(--rule); padding-bottom: 0.8rem; margin-bottom: 1.2rem; }
     .feed-head h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.7rem, 3vw, 2.2rem); margin: 0; }
     .feed-head .count { font-family: var(--mono); font-size: 0.76rem; color: var(--faint); }
 
     .card {
       background: var(--card); border: 1px solid var(--rule); border-radius: 16px;
-      padding: 1.8rem 2rem; margin-bottom: 1.2rem;
+      padding: 1.3rem 1.6rem; margin-bottom: 0.8rem;
       transition: border-color 140ms ease, box-shadow 140ms ease;
     }
     .card:hover { border-color: var(--accent); box-shadow: 0 10px 30px rgba(31, 35, 40, 0.07); }
-    .card .date { font-family: var(--mono); font-size: 0.74rem; color: var(--accent-deep); margin: 0 0 0.6rem; letter-spacing: 0.06em; text-transform: uppercase; }
-    .card h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.5rem, 2.6vw, 1.95rem); line-height: 1.15; margin: 0 0 0.6rem; }
+    .card .date { font-family: var(--mono); font-size: 0.74rem; color: var(--accent-deep); margin: 0 0 0.4rem; letter-spacing: 0.06em; text-transform: uppercase; }
+    .card h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.5rem, 2.6vw, 1.95rem); line-height: 1.15; margin: 0 0 0.45rem; }
     .card h3 a { color: var(--ink); text-decoration: none; }
     .card h3 a:hover { color: var(--accent-deep); }
-    .card p.excerpt { color: var(--soft); margin: 0 0 1rem; }
+    .card p.excerpt { color: var(--soft); margin: 0 0 0.7rem; }
     .card .links { font-family: var(--mono); font-size: 0.78rem; display: flex; gap: 1.4rem; }
     .card .links a { text-decoration: none; }
     /* The talk's entry carries Orange's hex. */
     .card.has-hex { display: grid; grid-template-columns: 1fr 76px; column-gap: 1.4rem; }
     .card.has-hex > * { grid-column: 1; }
     .card.has-hex > .hex { grid-column: 2; grid-row: 1 / span 4; align-self: start; width: 76px; height: auto; }
-    .feed-note { font-family: var(--mono); font-size: 0.74rem; color: var(--faint); margin-top: 2rem; }
     /* The diary opens on the latest entry, the talk; "Show all" opens the rest (Jeremy, 2026-10-21). */
-    details.older > summary { list-style: none; cursor: pointer; display: inline-block; font-family: var(--mono); font-size: 0.82rem; color: var(--accent-deep); border: 1px solid var(--rule); border-radius: 999px; padding: 0.5rem 1.1rem; margin: 0.2rem 0 1.2rem; background: var(--card); }
+    details.older > summary { list-style: none; cursor: pointer; display: inline-block; font-family: var(--mono); font-size: 0.82rem; color: var(--accent-deep); border: 1px solid var(--rule); border-radius: 999px; padding: 0.45rem 1.1rem; margin: 0.1rem 0 0; background: var(--card); }
     details.older > summary::-webkit-details-marker { display: none; }
     details.older > summary:hover { border-color: var(--accent); }
     details.older > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
     details.older .less, details.older[open] .more { display: none; }
     details.older[open] .less { display: inline; }
-    details.older[open] > summary { margin-bottom: 1.4rem; }
+    details.older[open] > summary { margin-bottom: 0.8rem; }
 
     /* Packages (mock-up, 2026-10-21): what the talk built, then where it started. Compact
        cards in a grid above the diary. */
-    #packages { margin-top: 3.5rem; }
+    #packages { margin-top: 2.6rem; }
     .section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; border-bottom: 1px solid var(--rule); padding-bottom: 1rem; margin-bottom: 1.4rem; }
     .section-head h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.7rem, 3vw, 2.2rem); margin: 0; }
     .section-head .count { font-family: var(--mono); font-size: 0.76rem; color: var(--faint); }
@@ -254,12 +253,10 @@
       </article>
       </details>
 
-      <p class="feed-note">Working in public — every entry carries its own AI collaboration note.</p>
-
       <section id="packages" aria-labelledby="packages-h">
         <div class="section-head">
           <h2 id="packages-h">Packages</h2>
-          <span class="count">10 projects</span>
+          <span class="count">9 projects</span>
         </div>
         <p class="pkg-intro">What the talk built with agents between May and October 2026, and the open-source work it grew out of.</p>
 
@@ -284,11 +281,6 @@
           <div class="top"><h3><a href="https://jwildfire.github.io/gsm.bio/">gsm.bio</a></h3><span class="kind">R package</span></div>
           <p class="what">The statistics behind bio.viz, the same functions on the desktop, in the browser and on a server, plus the charts as widgets from R.</p>
           <p class="links"><a href="https://jwildfire.github.io/gsm.bio/">Site ↗</a><a href="https://github.com/jwildfire/gsm.bio">GitHub ↗</a></p>
-        </article>
-        <article class="pkg">
-          <div class="top"><h3><a href="https://jwildfire.github.io/open.csr/">open.csr</a></h3><span class="kind">Web app</span></div>
-          <p class="what">An open-source clinical study report builder that keeps the numbers and the words in one traceable, versioned loop.</p>
-          <p class="links"><a href="https://jwildfire.github.io/open.csr/">Site ↗</a><a href="https://github.com/jwildfire/open.csr">GitHub ↗</a></p>
         </article>
         </div>
 
