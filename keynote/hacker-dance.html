@@ -327,7 +327,24 @@ function render(t, still) {
 
 /* ------------------------------------------------------------ run */
 let last = 0;
+// ?idle: the cats stand still until they are asked to dance, by a click on them or a
+// {type: 'dance'} message from the page around them (the keynote page sends one as it scrolls),
+// and dance for a few seconds each time (Jeremy, 2026-10-21: "keep them still until you scroll
+// or click them, then dance a bit"). Without it they dance all the time, as on slide 55.
+const IDLE = new URLSearchParams(location.search).has('idle');
+let danceUntil = 0, running = false;
+function dance(sec) {
+  if (CALM) return;
+  danceUntil = Math.max(danceUntil, performance.now() + sec * 1000);
+  if (!running) { running = true; requestAnimationFrame(ms => { last = ms; requestAnimationFrame(loop); }); }
+}
+if (IDLE) {
+  document.body.style.cursor = 'pointer';
+  window.addEventListener('click', () => dance(4));
+  window.addEventListener('message', e => { if (e.data && e.data.type === 'dance') dance(Math.min(4, Math.max(1, +e.data.seconds || 2.5))); });
+}
 function loop(ms) {
+  if (IDLE && ms > danceUntil) { running = false; render(tNow, true); return; }
   let dt = (ms - last) / 1000;
   last = ms;
   if (!(dt > 0)) dt = 0;
@@ -355,7 +372,7 @@ let resizeTimer = 0;
 if (window.ResizeObserver) new ResizeObserver(() => { clearTimeout(resizeTimer); resizeTimer = setTimeout(layout, 60); }).observe(stage);
 else window.addEventListener('resize', layout);
 layout();
-if (!CALM) requestAnimationFrame(ms => { last = ms; requestAnimationFrame(loop); });
+if (!CALM && !IDLE) requestAnimationFrame(ms => { last = ms; requestAnimationFrame(loop); });
 })();
 </script>
 </body>
