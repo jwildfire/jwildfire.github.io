@@ -387,7 +387,7 @@ Thanks to my incredible co-workers, my very patient bosses, my extremely patient
 
 [![Thank you! A pixel-art party of Oranges.](/assets/img/rpharma-2026-keynote/slide-57.jpg)](https://jwildfire.github.io/keynote/keynote.html#57)
 
-And here's our [Orange party](https://jwildfire.github.io/keynote/party.html) (click for confetti). It's a fork of Simon Willison's Kākāpō Party, and credit to Simon, my favorite blogger: I've borrowed a bunch of his ideas, this post's format included. Thank you all for your time.[^ai]
+And here's our [Orange party](https://jwildfire.github.io/keynote/party.html) (click for confetti). It's a fork of Simon Willison's Kākāpō Party, and credit to Simon, my favorite ai blogger: I've borrowed a bunch of his ideas, this post's format included. Thank you all for your time.[^ai]
 
 <!-- AFTER THE TALK: add "Here's the video" near the top once R/Pharma posts it, and anything that changed on stage or in Q&A. -->
 
