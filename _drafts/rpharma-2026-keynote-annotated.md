@@ -226,7 +226,7 @@ Then in July, Fable 5 came out, with all the drama about whether it was availabl
 
 That's when things opened up. I finished the first renderer from the OpenClaw days in another week or two: a modern JavaScript library for the safety histogram, on Chart.js, with a test framework and evidence, using the same tools we use for OpenRBQM. I looked closely at how it was built to make sure it followed the best practices we'd set.
 
-I was happy with it, so one Saturday morning I said: you did the first one, now do the rest. By that night I'd gone from one working renderer to six, and by Sunday night the hepatic explorer too, with Jim's workflow document turned into a clinical guide on the website. There's test evidence for every one, with screenshots next to the test code. It used a billion tokens, and I was mostly watching the World Cup and saying: yes, do that, do the next thing.
+I was happy with it, so one Saturday morning I prompted: we did the first one together, now you the rest. By that night I'd gone from one working renderer to six, and by Sunday night the hepatic explorer too, with Jim's workflow document turned into a clinical guide on the website. There's test evidence for every one, with screenshots next to the test code. It used a billion tokens, and I was mostly watching the World Cup and saying: yes, do that, do the next thing.
 
 I'd have expected that to take a team of three developers about six months without AI. I did it in a weekend. To be fair, this was old working code, with good documentation of what we wanted. AI is really good at porting old code. More in [diary #5](https://jwildfire.github.io/2026/07/12/introducing-safety-viz.html) and [diary #6](https://jwildfire.github.io/2026/07/13/obot-v3-billion-tokens.html).
 
