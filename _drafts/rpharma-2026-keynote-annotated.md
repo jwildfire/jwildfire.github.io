@@ -286,7 +286,7 @@ I gave it the biomarker goal and an 800-word brief. Over one weekend: 22 message
 
 [![What we built, May to October 2026: 20 interactive charts, 3 apps, 7 clinical guides; 599 pull requests, 43 releases, 345,000 lines of source, 5,500 tests.](/assets/img/rpharma-2026-keynote/slide-42.jpg)](https://jwildfire.github.io/keynote/keynote.html#42)
 
-Obot and I built 20 interactive charts, 3 apps and 7 clinical guides. Some new, some from papers, some from the old SafetyGraphics work. About 600 pull requests. This was nights and weekends, maybe 8 hours a week (I didn't keep track), alongside my day job. One person, in their spare time, with a $200 a month plan.
+From May to October, Obot and I built 20 interactive charts, 3 apps and 7 clinical guides. Some new, some from papers, some from the old SafetyGraphics work. About 600 pull requests. This was nights and weekends, maybe 8 hours a week (I didn't keep track), alongside my day job. One person, in their spare time, with a $200 a month plan.
 
 <!-- JW: counted 13 October; recount on the morning of the post if anything has shipped since. -->
 
