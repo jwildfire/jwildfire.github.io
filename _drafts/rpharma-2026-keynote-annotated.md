@@ -13,14 +13,14 @@ v0.1 DRAFT, 19 October 2026, for Jeremy's review and edits. Comments like this o
 
 How it was made: the commentary under each slide is your spoken notes from keynote_notes.html
 (rewritten from dry run 1 on 18 October), lightly edited for reading. Where the notes were
-empty (slides 48 and 50 to 54, 57) or dry run 2 said it better, the words come from the dry
+empty (slides 48 and 50 to 53, 56) or dry run 2 said it better, the words come from the dry
 run 2 transcript (18 October). Facts and numbers are the slides' own. Comments starting "JW:"
 are questions for you.
 
 Format: Simon Willison's annotated talks. Slide image (links to that slide in the deck), then
 commentary. No headings in the body; the section slides do that job.
 
-Slides: 54 of the 58. Left out: 5, 7 and 13 (photo and punchline slides, folded into their
+Slides: 53 of the 57. Left out: 5, 7 and 13 (photo and punchline slides, folded into their
 neighbours). Easy cuts if it runs long: 8, 19, 25, 29, 31, 32, 35, 39, 46, 52.
 
 Open choices:
@@ -348,17 +348,13 @@ I really believe we're at the beginning of this trend, not the end. Nobody can t
 
 We're a highly regulated industry, for good reason, and we tend to focus on the risks. But I agree with Dario Amodei in [Machines of Loving Grace](https://www.darioamodei.com/essay/machines-of-loving-grace): most people are underestimating how radical the upside of AI could be, just as they're underestimating the risks. (We've started to wrestle with the risks a little more in recent months.)
 
-[![What the builders predict: big forecasts, not crazy given the last year. Dario Amodei on compressing 50–100 years of progress in biology and medicine into 5–10, and Demis Hassabis on the end of disease.](/assets/img/rpharma-2026-keynote/slide-53.jpg)](https://jwildfire.github.io/keynote/keynote.html#53)
-
-Take these with a big grain of salt. Amodei predicts that once powerful AI arrives, AI-enabled biology and medicine could [compress 50 to 100 years of progress into 5 to 10](https://www.darioamodei.com/essay/machines-of-loving-grace). Demis Hassabis, who runs Google DeepMind, told 60 Minutes that [the end of disease](https://www.cbsnews.com/news/artificial-intelligence-google-deepmind-ceo-demis-hassabis-60-minutes-transcript/) could be within reach, maybe within a decade. Then look at the last year. After using this stuff to build what I've built, these big forecasts don't feel as crazy to me as they used to.
-
-[![What's next, my best guess: Closing the gap means more medicines faster! Illustration, not data. Time to develop one drug: today, multiple years and more than $1 billion per drug, and 90% of candidates fail; next year, slow, a real but marginal improvement; next year, fast, a paradigm change; some day? Months, maybe weeks.](/assets/img/rpharma-2026-keynote/slide-54.jpg)](https://jwildfire.github.io/keynote/keynote.html#54)
+[![What's next, my best guess: Closing the gap means more medicines faster! Illustration, not data. Time to develop one drug: today, multiple years and more than $1 billion per drug, and 90% of candidates fail; next year, slow, a real but marginal improvement; next year, fast, a paradigm change; some day? Months, maybe weeks.](/assets/img/rpharma-2026-keynote/slide-53.jpg)](https://jwildfire.github.io/keynote/keynote.html#53)
 
 The gap is measured in medicines. A drug today takes multiple years and more than a billion dollars ([Wouters 2020](https://jamanetwork.com/journals/jama/fullarticle/2762311), [DiMasi 2016](https://doi.org/10.1016/j.jhealeco.2016.01.012)), and [about nine in ten candidates fail](https://go.bio.org/rs/490-EHZ-999/images/ClinicalDevelopmentSuccessRates2011_2020.pdf). The COVID-19 mRNA vaccines took about nine months. With AI, that could be the new normal, and some day maybe faster than that.
 
 Closing the gap between clinical trial tools and the frontier means more medicines, faster. These changes are already starting; the FDA is already reviewing with AI. And we're the ones who can make this happen. The tools we make set the pace.
 
-[![Closing the gap: Try it on something that's yours. 1 Pick an agent. 2 Set up GitHub. 3 Pick a development process. 4 Write a prompt. 5 Ask questions! What are agents good at now? Teaching me things!](/assets/img/rpharma-2026-keynote/slide-55.jpg)](https://jwildfire.github.io/keynote/keynote.html#55)
+[![Closing the gap: Try it on something that's yours. 1 Pick an agent. 2 Set up GitHub. 3 Pick a development process. 4 Write a prompt. 5 Ask questions! What are agents good at now? Teaching me things!](/assets/img/rpharma-2026-keynote/slide-54.jpg)](https://jwildfire.github.io/keynote/keynote.html#54)
 
 My advice: try it out on something that's yours, and get a sense of where the frontier is, at least a little. I don't think there's a better investment in your career right now.
 
@@ -375,7 +371,7 @@ Or make a web app. I make games for my kids all the time now; it spits out fully
 
 <!-- JW: in the talk you credit Joe's talk from the day before ("Joe talked about this yesterday too"). Add his full name and a link? -->
 
-[![Mixed feelings: Coding feels completely different than it did a year ago. It's kind of fun, but I'm certainly not working less. But, what's next? Four Oranges: More medicines, faster! And no more powerpoint! / Data Centers. Rogue Agents. / So. Much. Change. / 100 years of innovation! Trials on a chip! Robots folding my clothes!](/assets/img/rpharma-2026-keynote/slide-56.jpg)](https://jwildfire.github.io/keynote/keynote.html#56)
+[![Mixed feelings: Coding feels completely different than it did a year ago. It's kind of fun, but I'm certainly not working less. But, what's next? Four Oranges: More medicines, faster! And no more powerpoint! / Data Centers. Rogue Agents. / So. Much. Change. / 100 years of innovation! Trials on a chip! Robots folding my clothes!](/assets/img/rpharma-2026-keynote/slide-55.jpg)](https://jwildfire.github.io/keynote/keynote.html#55)
 
 To be totally honest, I have mixed feelings about all of this. Coding feels completely different than it did a year ago, and so does my job. It's kind of fun, but I'm certainly not working less, and it hasn't been less stressful.
 
@@ -383,11 +379,11 @@ So what's next? Each Orange has a different opinion. Thumbs-up Orange says more 
 
 We live in interesting times.
 
-[![Acknowledgements: Thanks to my amazing co-workers, patient bosses, very patient family and all of my open source collaborators!](/assets/img/rpharma-2026-keynote/slide-57.jpg)](https://jwildfire.github.io/keynote/keynote.html#57)
+[![Acknowledgements: Thanks to my amazing co-workers, patient bosses, very patient family and all of my open source collaborators!](/assets/img/rpharma-2026-keynote/slide-56.jpg)](https://jwildfire.github.io/keynote/keynote.html#56)
 
 Thanks to my incredible co-workers, my very patient bosses, my extremely patient family, and everyone I've worked with on open-source projects. I hope we get to work together more in the coming years.
 
-[![Thank you! A pixel-art party of Oranges.](/assets/img/rpharma-2026-keynote/slide-58.jpg)](https://jwildfire.github.io/keynote/keynote.html#58)
+[![Thank you! A pixel-art party of Oranges.](/assets/img/rpharma-2026-keynote/slide-57.jpg)](https://jwildfire.github.io/keynote/keynote.html#57)
 
 And here's our [Orange party](https://jwildfire.github.io/keynote/party.html) (click for confetti). It's a fork of Simon Willison's Kākāpō Party, and credit to Simon, my favorite blogger: I've borrowed a bunch of his ideas, this post's format included. Thank you all for your time.[^ai]
 
