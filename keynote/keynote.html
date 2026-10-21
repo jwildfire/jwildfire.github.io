@@ -1089,7 +1089,10 @@
     .s-gap .gapchart .wedge { fill: var(--hue); opacity: 0.12; }
     .s-gap .gapchart .ln { fill: none; stroke-width: 5; stroke-linecap: round; }
     .s-gap .gapchart .ln.front { stroke: var(--spec-4); }
-    .s-gap .gapchart .ln.clin { stroke: var(--spec-1); stroke-dasharray: 14 10; }
+    /* Solid since 2026-10-21 (Jeremy: "make the orange line solid for this year on all slides.
+       only dashed lines should be the projections on 51"); was stroke-dasharray: 14 10. The
+       projections keep their own dots (.ln.clin.next, below). */
+    .s-gap .gapchart .ln.clin { stroke: var(--spec-1); }
     .s-gap .gapchart .dot { stroke: var(--bg); stroke-width: 3; }
     .s-gap .gapchart .dot.front { fill: var(--spec-4); }
     .s-gap .gapchart .dot.clin { fill: var(--spec-1); }
