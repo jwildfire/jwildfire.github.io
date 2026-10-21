@@ -343,7 +343,7 @@ We live in interesting times.
 
 Thanks to my incredible co-workers, my very patient bosses, my extremely patient family, and everyone I've worked with on open-source projects. I hope we get to work together more in the coming years.
 
-[![Thank you! A pixel-art party of Oranges.](/assets/img/rpharma-2026-keynote/slide-58.jpg)](https://jwildfire.github.io/keynote/keynote.html#58)
+[![Thank you! A pixel-art party of Oranges, with a QR code for jwildfire.github.io/keynote.](/assets/img/rpharma-2026-keynote/slide-58.jpg)](https://jwildfire.github.io/keynote/keynote.html#58)
 
 And here's our [Orange party](https://jwildfire.github.io/keynote/party.html) (click for confetti). It's a fork of Simon Willison's Kākāpō Party, and credit to Simon, my favorite AI blogger: I've borrowed a bunch of his ideas, this post's format included. Thank you all for your time.[^ai]
 
