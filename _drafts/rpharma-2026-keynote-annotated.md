@@ -352,6 +352,8 @@ We're a highly regulated industry, for good reason, and we tend to focus on the 
 
 The gap is measured in medicines. A drug today takes multiple years and more than a billion dollars ([Wouters 2020](https://jamanetwork.com/journals/jama/fullarticle/2762311), [DiMasi 2016](https://doi.org/10.1016/j.jhealeco.2016.01.012)), and [about nine in ten candidates fail](https://go.bio.org/rs/490-EHZ-999/images/ClinicalDevelopmentSuccessRates2011_2020.pdf). The COVID-19 mRNA vaccines took about nine months. With AI, that could be the new normal, and some day maybe faster than that.
 
+Amodei predicts that once powerful AI arrives, AI-enabled biology and medicine could [compress 50 to 100 years of progress into 5 to 10](https://www.darioamodei.com/essay/machines-of-loving-grace). Demis Hassabis, who runs Google DeepMind, told 60 Minutes that [the end of disease](https://www.cbsnews.com/news/artificial-intelligence-google-deepmind-ceo-demis-hassabis-60-minutes-transcript/) could be within reach, maybe within a decade. Take these with a big grain of salt. Then look at the last year. After using this stuff to build what I've built, these big forecasts don't feel as crazy to me as they used to.
+
 Closing the gap between clinical trial tools and the frontier means more medicines, faster. These changes are already starting; the FDA is already reviewing with AI. And we're the ones who can make this happen. The tools we make set the pace.
 
 [![Closing the gap: Try it on something that's yours. 1 Pick an agent. 2 Set up GitHub. 3 Pick a development process. 4 Write a prompt. 5 Ask questions! What are agents good at now? Teaching me things!](/assets/img/rpharma-2026-keynote/slide-54.jpg)](https://jwildfire.github.io/keynote/keynote.html#54)
