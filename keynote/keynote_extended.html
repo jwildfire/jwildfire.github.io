@@ -1133,6 +1133,8 @@
        and fades, trials fast is drawn, with the paradigm-change bar. Three: both lines run on to
        the top of the slide, the Some day? bar and Hacker Orange. */
     .s-gap3 h2 { margin-bottom: 18px; }
+    /* 2026-10-21: the drug-time bars came off (Jeremy says them aloud), so the lines chart sits lower. */
+    .s-gap3 .g3 { margin-top: 120px; }
     .s-gap3 .g3 { width: 100%; height: auto; display: block; overflow: visible; }
     .s-gap3 .g3 text { font-family: var(--sans); }
     .s-gap3 .g3 .ghost .ln { opacity: 0.16; stroke-dasharray: 3 9; }
@@ -2604,7 +2606,7 @@ steps:
     <section class="slide s-split s-gap s-gap3" data-hue="6">
       <p class="kicker">What's next: my best guess</p>
       <h2>Closing the gap means more medicines faster!</h2>
-      <svg class="gapchart g3" viewBox="0 0 1320 548" role="img" aria-label="Illustration, not data. Top: frontier capabilities and clinical trial tools from a year ago to a year from now. Bottom: time to develop one drug. Today, multiple years and more than 1 billion dollars per drug. Next year, slow: a real but marginal improvement, still years. Next year, fast: a paradigm change. Some day? Months, maybe weeks.">
+      <svg class="gapchart g3" viewBox="0 0 1320 290" role="img" aria-label="Illustration, not data. Top: frontier capabilities and clinical trial tools from a year ago to a year from now. Today the tools trail the frontier; a year from now both may run fast, and some day both climb steeply.">
         <defs><pattern id="g3-hatch" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="12" height="12" fill="#fbf1e0"/><line x1="0" y1="0" x2="0" y2="12" stroke="#c78a3b" stroke-width="5"/></pattern><pattern id="g3-hatchb" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="12" height="12" fill="#e6f1fb"/><line x1="0" y1="0" x2="0" y2="12" stroke="#519fdd" stroke-width="5"/></pattern></defs>
         <text class="cap" x="1060" y="10" text-anchor="end">Illustration, not data</text>
         <g class="key"><path class="ln front" d="M60,24 L120,24"/><text class="lab" x="134" y="32">Frontier capabilities</text><path class="ln clin" d="M60,64 L120,64"/><text class="lab" x="134" y="72">Clinical trial tools</text></g>
@@ -2644,41 +2646,8 @@ steps:
           <text class="guess pick far" x="1282" y="-128">Some day?</text>
         </g>
 
-        <text class="bh" x="0" y="302">Time to develop one drug</text>
-        <text class="rs src" x="1310" y="302" text-anchor="end">Sources: <a href="https://go.bio.org/rs/490-EHZ-999/images/ClinicalDevelopmentSuccessRates2011_2020.pdf" target="_blank" rel="noopener">BIO 2021</a> · <a href="https://jamanetwork.com/journals/jama/fullarticle/2762311" target="_blank" rel="noopener">Wouters 2020</a> · <a href="https://doi.org/10.1016/j.jhealeco.2016.01.012" target="_blank" rel="noopener">DiMasi 2016</a></text>
-        <g class="row">
-          <text class="rl" x="0" y="344">Today</text>
-          <rect x="300" y="324" width="609" height="28" rx="6" fill="#c78a3b"/>
-          <rect x="909" y="324" width="261" height="28" rx="6" fill="#c78a3b" opacity="0.4"/>
-          <text class="rv" x="316" y="345" fill="#fff">Multiple years and &gt;$1 billion per drug</text>
-          <text class="rs" x="1184" y="336">90% of candidates fail</text>
-          <text class="rs" x="1184" y="357"><a href="https://go.bio.org/rs/490-EHZ-999/images/ClinicalDevelopmentSuccessRates2011_2020.pdf" target="_blank" rel="noopener">BIO 2021</a>: 7.9% reach approval</text>
-        </g>
-        <g class="row hide b1">
-          <text class="rl" x="0" y="392">Next year, slow</text>
-          <rect x="300" y="372" width="696" height="28" rx="6" fill="url(#g3-hatch)" stroke="#c78a3b" stroke-width="3"/>
-          <text class="rv dk sm" x="1010" y="383">Real marginal improvement,</text>
-          <text class="rv dk sm" x="1010" y="404">but still years</text>
-          <path class="strike draw2" pathLength="1" d="M0,386 L1296,386"/>
-        </g>
-        <g class="row hide b2">
-          <text class="rl" x="0" y="440">Next year, fast</text>
-          <rect x="300" y="420" width="406" height="28" rx="6" fill="url(#g3-hatchb)" stroke="#519fdd" stroke-width="3"/>
-          <text class="rv dk" x="720" y="441">Paradigm change, soon</text>
-        </g>
-        <g class="row hide b3">
-          <text class="rl" x="0" y="488">Some day?</text>
-          <rect x="300" y="468" width="29.0" height="28" rx="6" fill="url(#g3-hatchb)" stroke="#519fdd" stroke-width="3"/>
-          <line class="covid" x1="343.5" x2="343.5" y1="462" y2="502"/>
-          <text class="rv dk" x="361.5" y="483">Months, maybe weeks</text>
-          <text class="rs" x="361.5" y="504"><a href="https://www.cbsnews.com/news/artificial-intelligence-google-deepmind-ceo-demis-hassabis-60-minutes-transcript/" target="_blank" rel="noopener">Hassabis</a> · the COVID mRNA vaccines took 9 months (<a href="https://www.darioamodei.com/essay/machines-of-loving-grace" target="_blank" rel="noopener">Amodei</a>)</text>
-        </g>
-        <g class="ruler">
-          <line x1="300" x2="1170" y1="522" y2="522"/>
-          <line x1="300" x2="300" y1="516" y2="528"/><text x="300" y="546" text-anchor="middle">0</text><line x1="590" x2="590" y1="516" y2="528"/><text x="590" y="546" text-anchor="middle">5</text><line x1="880" x2="880" y1="516" y2="528"/><text x="880" y="546" text-anchor="middle">10</text><line x1="1170" x2="1170" y1="516" y2="528"/><text x="1170" y="546" text-anchor="middle">15 years</text>
-        </g>
       </svg>
-      <div class="goodat hack sm now hold3" style="left: 170px; right: auto; bottom: auto; top: 345px"><div class="bub"><p class="a">Time to close the gap</p></div><div class="who"></div></div>
+      <div class="goodat hack sm now hold3" style="left: 170px; right: auto; bottom: auto; top: 465px"><div class="bub"><p class="a">Time to close the gap</p></div><div class="who"></div></div>
     </section>
 
 
