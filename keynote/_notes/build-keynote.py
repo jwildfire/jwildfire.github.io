@@ -8,7 +8,7 @@ push it or publish it. Present from it, so the presenter window (P) has the note
 From it this script writes, with every speaker note (<aside class="notes">) taken out:
 
     keynote_extended.html  every slide, reserves included
-    keynote.html           the talk: the reserve slides (every <section> carrying
+    keynote.html           the talk, without the robots noindex: the reserve slides (every <section> carrying
                            data-reserve) and the Reserves banner comments left out too
 
 Run after every edit and commit the two outputs together:
@@ -97,9 +97,19 @@ def drop_reserves(html: str) -> tuple[str, int]:
     return html, n_reserve
 
 
+def findable(html: str) -> str:
+    # The talk deck is linked from the blog post and /keynote (Jeremy, 2026-10-20: "drop
+    # noindex"), so search engines may list it. keynote_extended.html keeps the source's noindex.
+    html, n = re.subn(r"\n[ \t]*<meta name=\"robots\" content=\"noindex\" />[ \t]*(?=\n)", "", html, count=1)
+    if n != 1:
+        sys.exit("build-keynote: keynote_notes.html has no robots noindex line to drop from keynote.html")
+    return html
+
+
 def build(src: str) -> dict:
     bare, n_notes = strip_notes(src)
     talk, n_reserve = drop_reserves(bare)
+    talk = findable(talk)
     head = "<!doctype html>\n"
     return {
         EXTENDED: bare.replace(head, head + generated(EXTENDED.name), 1),
