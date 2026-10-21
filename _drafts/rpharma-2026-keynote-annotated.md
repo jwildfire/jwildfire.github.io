@@ -377,7 +377,7 @@ Or make a web app. I make games for my kids all the time now; it spits out fully
 
 To be totally honest, I have mixed feelings about all of this. Coding feels completely different than it did a year ago, and so does my job. It's kind of fun, but I'm certainly not working less, and it hasn't been less stressful.
 
-So what's next? Each Orange has a different opinion. Thumbs-up Orange says more medicines, faster, and no more PowerPoint: I made these slides with Claude, all web-based, and all the Orange references was really fun. Thumbs-down Orange sees data centers everywhere, rogue agents, all sorts of scary stuff. Inspector Orange is going to be stressed for a long time: there's a lot of change now, and more coming. And Hacker Orange, the one I identify with most, is in heaven: 100 years of innovation in the next 10, trials on a chip, robots folding my clothes.
+So what's next? Each Orange has a different opinion. Thumbs-up Orange says more medicines, faster, and no more PowerPoint: I made these slides with Claude, all web-based, and all the Orange references were really fun. Thumbs-down Orange sees data centers everywhere, rogue agents, all sorts of scary stuff. Inspector Orange is going to be stressed for a long time: there's a lot of change now, and more coming. And Hacker Orange, the one I identify with most, is in heaven: 100 years of innovation in the next 10, trials on a chip, robots folding my clothes.
 
 We live in interesting times.
 
