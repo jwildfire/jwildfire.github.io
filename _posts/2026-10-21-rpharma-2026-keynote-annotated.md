@@ -79,7 +79,7 @@ We gave a lot of talks, and the first question at every one was about quality. S
 
 What evidence did we have? Quite a lot: written requirements, manual test scripts, and automated tests, including Shiny tests, run on every pull request. But was it validated? Not really. It was exploratory.
 
-[![Open Source Monitoring. Flexible Data Pipelines. Interactive Reports. An OpenRBQM site report on example data, with quality built in from the start. OpenRBQM, a PHUSE working group.](/assets/img/rpharma-2026-keynote/slide-14.jpg)](https://jwildfire.github.io/keynote/keynote.html#14)
+[![Open Source Monitoring. Interactive Reports. Flexible Data Pipelines. An OpenRBQM site report on example data, with quality built in from the start. OpenRBQM, a PHUSE working group.](/assets/img/rpharma-2026-keynote/slide-14.jpg)](https://jwildfire.github.io/keynote/keynote.html#14)
 
 <figure class="kn-anim">
   <video src="/keynote/assets/gsm-kri-report-demo.mp4" poster="/keynote/assets/gsm-kri-report-demo-poster.png" autoplay muted loop playsinline controls preload="none" aria-label="Screen recording of an OpenRBQM site report on example data: a table of sites by key risk indicator with red and amber flags, then the charts for one indicator"></video>
