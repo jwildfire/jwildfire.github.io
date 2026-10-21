@@ -12,7 +12,7 @@
   under the Apache License, Version 2.0; that license applies to this file too, and a copy
   is in party-LICENSE.txt beside it (http://www.apache.org/licenses/LICENSE-2.0).
 
-  Changes from party.html: three cats and no scenery, on a white background; the cats scaled
+  Changes from party.html: three cats and no scenery, on a transparent background (the slide's own off-white shows through; it was white until Jeremy: "No div around the oranges. they can just dance on the offwhite slide background"); the cats scaled
   to fill the frame at a whole number of screen pixels per art pixel, side by side in a wide
   frame and two by two in a squarer one; a still frame when reduced motion is asked for; and
   the deck's keys passed up to the deck. The file keeps its first name, hacker-dance.html,
@@ -24,12 +24,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dancing Oranges</title>
 <style>
-  :root { color-scheme: light; background: #ffffff; }
-  html, body { margin: 0; height: 100%; overflow: hidden; background: #ffffff; }
-  #stage { position: relative; width: 100%; height: 100%; overflow: hidden; background: #ffffff; }
+  :root { color-scheme: light; background: transparent; }
+  html, body { margin: 0; height: 100%; overflow: hidden; background: transparent; }
+  #stage { position: relative; width: 100%; height: 100%; overflow: hidden; background: transparent; }
   #cats {
     position: absolute; bottom: 0; left: 0; display: block;
-    background: #ffffff;
+    background: transparent;
     image-rendering: crisp-edges;
     image-rendering: pixelated;
   }
@@ -45,10 +45,9 @@
 
 const stage = document.getElementById('stage');
 const cvs = document.getElementById('cats');
-const ctx = cvs.getContext('2d', { alpha: false });
+const ctx = cvs.getContext('2d');
 const CALM = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
 const BPM = 124, BEAT = 60 / BPM;          // the party's tempo
-const BG = '#ffffff';
 
 /* ------------------------------------------------------------------ helpers (from party.html) */
 const rand = (a, b) => a + Math.random() * (b - a);
@@ -316,8 +315,7 @@ function layout() {
 
 function render(t, still) {
   ctx.setTransform(1, 0, 0, 1, 0, 0);
-  ctx.fillStyle = BG;
-  ctx.fillRect(0, 0, W, H);
+  ctx.clearRect(0, 0, W, H);
   ctx.fillStyle = 'rgba(60,40,20,0.14)';             // a soft shadow under each cat's feet
   for (const k of cats) k.drawShadow();
   for (const k of cats) k.draw(t, still);
