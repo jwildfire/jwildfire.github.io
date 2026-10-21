@@ -94,7 +94,7 @@ The safety work had a monitoring component, but it was largely about submissions
 
 We also landed on a standard development lifecycle: design, build and publish, with quarterly releases. Until about a year ago, people owned all of this. We had some CI/CD, shown in grey, but we wrote the requirements, filed the issues, programmed the tests and wrote the code, all by hand.
 
-[![An ecosystem of packages: gsm.core, gsm.kri, gsm.app, gsm.qtl, gsm.simaerep, workr, gsm.datasim and qcthat.](/assets/img/rpharma-2026-keynote/slide-16.jpg)](https://jwildfire.github.io/keynote/keynote.html#16)
+[![An ecosystem of packages: gsm.core, gsm.kri, gsm.app, gsm.qtl, gsm.simaerep, workr, gsm.viz and qcthat.](/assets/img/rpharma-2026-keynote/slide-16.jpg)](https://jwildfire.github.io/keynote/keynote.html#16)
 
 OpenRBQM is an ecosystem of packages that adds up to a robust monitoring framework: an engine ([gsm.core](https://gilead-public.github.io/gsm.core/)), metrics ([gsm.kri](https://gilead-public.github.io/gsm.kri/)), a Shiny app for deep dives, and [workr](https://gilead-public.github.io/workr/), which I really love: YAML-driven pipelines that are easy to customize for each study. The IMPALA group contributed packages that plug into the framework, and we built our own test data factory, [gsm.datasim](https://gilead-public.github.io/gsm.datasim/). We're using it at Gilead on a lot of studies now.
 
@@ -234,7 +234,7 @@ This time the deal was: I set the goals and review releases, and the agent does 
 
 And: ask me questions whenever you're stuck. Multiple choice when you can; if it's a big question, make an artifact. That's how I've worked for the last month, and it’s been remarkably productive.
 
-[![obot v5, the roadmap: Objective → Requirement → Task issues in GitHub. Thirteen objectives, and one of them, biomarker charts, broken into 17 requirements and 61 tasks.](/assets/img/rpharma-2026-keynote/slide-40.jpg)](https://jwildfire.github.io/keynote/keynote.html#40)
+[![obot v5, the roadmap: Objectives → Requirements → Tasks. Thirteen objectives, and one of them, biomarker charts, broken into 17 requirements and 61 tasks.](/assets/img/rpharma-2026-keynote/slide-40.jpg)](https://jwildfire.github.io/keynote/keynote.html#40)
 
 The whole roadmap lives in GitHub issues, on the [obot.roadmap hub](https://jwildfire.github.io/obot.roadmap/). Here's every goal at once. Every goal becomes requirements (this is one goal, the biomarker charts), and every requirement becomes tasks, each with a definition of done. The last panel shows how it filled in, 2 to 9 October. The agents filed most of this, and I signed off on the goals. Getting that clear definition of done worked really well.
 
