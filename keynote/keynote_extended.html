@@ -552,7 +552,8 @@
     .s-version { justify-content: center; background: var(--rail); padding-right: 640px; }
     .s-version .vhex { position: absolute; right: 150px; top: 50%; width: 380px; height: 437px; margin-top: -200px; }
     .s-version h2 { font-size: 104px; margin: 0 0 28px; }
-    .s-version p:not(.kicker) { color: var(--soft); font-size: 34px; }
+    /* Callout lines (.q, .a) keep the callout's own type (2026-10-21, Jeremy: "css off. match other callouts"). */
+    .s-version p:not(.kicker, .q, .a) { color: var(--soft); font-size: 34px; }
     .s-version p.chg { color: var(--ink); margin: 14px 0 0; }
     .s-version p.chg b { display: block; font-family: var(--mono); font-weight: 500; font-size: 19px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--hue); margin-bottom: 6px; }
     /* "What is it?" bubble on a version title slide (2026-10-12): the set-up in one line, in a
