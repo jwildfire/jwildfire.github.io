@@ -22,7 +22,7 @@ First, a key collaborator. Orange was our Chilean street cat. We found him as a 
 
 A quick disclaimer: I work for the Biostat Innovation Group at Gilead, and I'll talk a little about what we do at work, but this is all just my opinion.
 
-[![The question: What can we actually do with AI agents right now? The talk as a path: Orange, SafetyGraphics and OpenRBQM from 2016 to 2025; a road sign for Opus 4.5 and GPT-5.1 in November 2025; then a fork, the day job to AI in the Clinical Trial Pipeline and spare time to Experiments on the AI Frontier, meeting again at What we learned.](/assets/img/rpharma-2026-keynote/slide-03.jpg)](https://jwildfire.github.io/keynote/keynote.html#3)
+[![The question: What can we actually do with AI agents right now? The talk as a path: SafetyGraphics and OpenRBQM from 2016 to 2025; a road sign for Opus 4.5 and GPT-5.1 in November 2025; then a fork, the day job to AI in the Clinical Trial Pipeline and spare time to Experiments on the AI Frontier, meeting again at What we learned.](/assets/img/rpharma-2026-keynote/slide-03.jpg)](https://jwildfire.github.io/keynote/keynote.html#3)
 
 As these AI tools have come into all of our lives, the question I wrestle with most is: what can we actually do with AI agents right now? That's what I'm trying to answer today.
 
