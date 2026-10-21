@@ -248,7 +248,7 @@ I gave it the biomarker goal and an 800-word brief. Over one weekend: 22 message
 
 From May to October, Obot and I built 20 interactive charts, 3 apps and 7 clinical guides. Some new, some from papers, some from the old SafetyGraphics work. About 600 pull requests. This was nights and weekends, maybe 8 hours a week (I didn't keep track), alongside my day job. One person, in their spare time, with a $200 a month plan.
 
-[![The safety.viz demo: your own files, nothing uploaded. The live app, with Orange's notes added for the talk, and a QR code for jwildfire.github.io/safety.viz/demo.](/assets/img/rpharma-2026-keynote/slide-43.jpg)](https://jwildfire.github.io/keynote/keynote.html#43)
+[![The safety.viz demo: safetyGraphics ❤️ OpenRBQM. The live app, with Orange's notes added for the talk, and a QR code for jwildfire.github.io/safety.viz/demo.](/assets/img/rpharma-2026-keynote/slide-43.jpg)](https://jwildfire.github.io/keynote/keynote.html#43)
 
 <figure class="kn-anim">
   <video src="/keynote/assets/safety-viz-demo.mp4" poster="/keynote/assets/safety-viz-demo-poster.png" autoplay muted loop playsinline controls preload="none" aria-label="Screen recording of the safety.viz demo app, with Orange's notes popping up: study files are dropped in, the app maps them, opens the hepatic explorer on one participant, runs the OpenRBQM metrics with R in the browser, then opens the bio.viz correlation matrix and clicks one cell through to its scatter plot"></video>
