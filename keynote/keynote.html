@@ -1136,7 +1136,7 @@
        the top of the slide, the Some day? bar and Hacker Orange. */
     .s-gap3 h2 { margin-bottom: 18px; }
     /* 2026-10-21: the drug-time bars came off (Jeremy says them aloud), so the lines chart sits lower. */
-    .s-gap3 .g3 { margin-top: 120px; }
+    .s-gap3 .g3 { margin-top: 60px; }
     .s-gap3 .g3 { width: 100%; height: auto; display: block; overflow: visible; }
     .s-gap3 .g3 text { font-family: var(--sans); }
     .s-gap3 .g3 .ghost .ln { opacity: 0.16; stroke-dasharray: 3 9; }
@@ -1164,7 +1164,7 @@
        appeared at once. A back press resets at once (.stepped-back, set by the deck script). */
     .s-gap3 { --e: cubic-bezier(0.45, 0, 0.2, 1); --fd: 0.4s; }
     .s-gap3 .st1, .s-gap3 .b1 { --go: 0s; --dr: 1.6s; }
-    .s-gap3 .st2, .s-gap3 .b2 { --go: 0.6s; --dr: 1.6s; }
+    .s-gap3 .st2, .s-gap3 .b2 { --go: 0.4s; --dr: 1.6s; }
     .s-gap3 .st3, .s-gap3 .b3, .s-gap3 .goodat.hold3 { --go: 0.4s; --dr: 1.9s; }
     .s-gap3 .g3 .step, .s-gap3 .g3 .step.on { transform: none; transition: none; }
     .s-gap3 .g3 .ln.pick.draw, .s-gap3 .g3 .strike { stroke-dasharray: 1; stroke-dashoffset: 1; }
@@ -1182,7 +1182,12 @@
     .s-gap3:has(.st3.on) .goodat.hold3 { opacity: 1; transform: none; transition: opacity 300ms ease calc(var(--go) + var(--dr)), transform 300ms ease calc(var(--go) + var(--dr)); }
     /* Press two leaves first: the strike draws, then the slow line, its dot and label, and its row fade back as trials fast starts. */
     .s-gap3:has(.st2.on) .g3 .strike { stroke-dashoffset: 0; transition: stroke-dashoffset 0.6s var(--e); }
-    .s-gap3:has(.st2.on) .g3 .step .slowln { opacity: 0.18; transition: opacity 0.6s ease 0.6s; }
+    .s-gap3:has(.st2.on) .g3 .step .slowlab { opacity: 0; transition: opacity 0.4s ease; }
+    /* 2026-10-21 (Jeremy: "2nd click should shift the orange line upward, not draw a new line.
+       there are also dots that briefly appear in 2nd and 3rd click that should be removed"):
+       press two bends the slow trials line up into the fast one (a CSS d transition) instead of
+       drawing a second line, and the end-of-line dots are gone. */
+    .s-gap3:has(.st2.on) .g3 .ln.morph { d: path("M560,228.6 C760,211.2 940,159.0 1060,115.5"); transition: d 1.6s var(--e) 0.4s; }
     .s-gap3:has(.st2.on) .g3 .b1 { opacity: 0.45; transition: opacity 0.6s ease 0.6s; }
     /* Press three leaves first: the Fast labels and end dots go before the lines run on. */
     .s-gap3:has(.st3.on) .g3 .step :is(.fastlab, .endpt) { opacity: 0; transition: opacity 0.4s ease; }
@@ -1191,7 +1196,8 @@
     body:is(.overview, .reveal-all) .s-gap3 .g3 .ln.pick.draw, body:is(.overview, .reveal-all) .s-gap3 .g3 .strike { stroke-dashoffset: 0; }
     body:is(.overview, .reveal-all) .s-gap3 .g3 .step :is(circle, text, polygon), body:is(.overview, .reveal-all) .s-gap3 .g3 .hide :is(text, .covid) { opacity: 1; }
     body:is(.overview, .reveal-all) .s-gap3 .g3 .hide rect { transform: none; }
-    body:is(.overview, .reveal-all) .s-gap3 .g3 .step .slowln { opacity: 0.18; }
+    body:is(.overview, .reveal-all) .s-gap3 .g3 .step .slowlab { opacity: 0; }
+    body:is(.overview, .reveal-all) .s-gap3 .g3 .ln.morph { d: path("M560,228.6 C760,211.2 940,159.0 1060,115.5"); }
     body:is(.overview, .reveal-all) .s-gap3 .g3 .b1 { opacity: 0.45; }
     body:is(.overview, .reveal-all) .s-gap3 .g3 .step :is(.fastlab, .endpt) { opacity: 0; }
     body:is(.overview, .reveal-all) .s-gap3 .goodat.hold3 { opacity: 1; transform: none; }
@@ -2631,13 +2637,12 @@ steps:
         <text class="ax" x="1060" y="275.8" text-anchor="end">A year from now</text>
         <g class="step st1">
           <path class="ln front pick draw" pathLength="1" d="M560,193.8 C680,159.0 940,106.8 1060,37.2"/>
-          <circle class="dot front endpt" cx="1060" cy="37.2" r="6"/><text class="guess pick fastlab" x="1076" y="43.2">Fast</text>
-          <path class="ln clin pick draw slowln" pathLength="1" d="M560,228.6 C720,222.8 900,218.2 1060,215.8"/>
-          <circle class="dot clin slowln" cx="1060" cy="215.8" r="6"/><text class="guess pick slowln" x="1076" y="221.8">Slow</text>
+          <text class="guess pick fastlab" x="1076" y="43.2">Fast</text>
+          <path class="ln clin pick draw morph" pathLength="1" d="M560,228.6 C720,222.8 900,218.2 1060,215.8"/>
+          <text class="guess pick slowlab" x="1076" y="221.8">Slow</text>
         </g>
         <g class="step st2">
-          <path class="ln clin pick draw" pathLength="1" d="M560,228.6 C760,211.2 940,159.0 1060,115.5"/>
-          <circle class="dot clin endpt" cx="1060" cy="115.5" r="6"/><text class="guess pick fastlab" x="1076" y="121.5">Fast</text>
+          <text class="guess pick fastlab" x="1076" y="121.5">Fast</text>
         </g>
 
         <g class="step st3">
@@ -2649,7 +2654,7 @@ steps:
         </g>
 
       </svg>
-      <div class="goodat hack sm now hold3" style="left: 170px; right: auto; bottom: auto; top: 465px"><div class="bub"><p class="a">Time to close the gap</p></div><div class="who"></div></div>
+      <div class="goodat hack sm now hold3" style="left: 200px; right: auto; bottom: auto; top: 655px"><div class="bub"><p class="a">Time to close the gap</p></div><div class="who"></div></div>
     </section>
 
 
