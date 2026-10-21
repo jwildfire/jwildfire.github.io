@@ -157,6 +157,16 @@
     .s-title .byline strong { color: var(--ink); font-weight: 600; }
     /* The title's one flourish: two words in the spectrum gradient, matching the logo. */
     .s-title .spectrum { background: var(--spec-gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    /* The spectrum flows through "AI agents" (2026-10-21, Jeremy: "make the colors in AI Agents morph
+       and change over time"). The gradient ends on the colour it starts with and tiles at twice
+       the word's width; moving it one tile (200%) loops with no seam. */
+    .s-title .spectrum {
+      background: linear-gradient(90deg, var(--spec-0), var(--spec-1), var(--spec-2), var(--spec-3), var(--spec-4), var(--spec-5), var(--spec-6), var(--spec-0));
+      background-size: 200% 100%; -webkit-background-clip: text; background-clip: text;
+      animation: spectrum-flow 9s linear infinite;
+    }
+    @keyframes spectrum-flow { from { background-position: 0% 0; } to { background-position: 200% 0; } }
+    @media (prefers-reduced-motion: reduce) { .s-title .spectrum { animation: none; } }
     .s-title .byline { margin-bottom: 0; }
     .s-title .cameo { margin: 10px 0 0; font-size: 24px; color: var(--soft); }
     .s-title .mark { position: absolute; right: 150px; top: 50%; width: 430px; height: 430px; margin-top: -215px; }
