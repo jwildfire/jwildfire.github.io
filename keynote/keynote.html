@@ -831,6 +831,8 @@
     .s-start li .ask::before { content: "› "; color: var(--hue); }
     /* Or do something fun (2026-10-21): the three games from /projects/ and Hacker Orange
        dancing in the fourth cell, a 2x2 grid. */
+    /* Slide 40 (2026-10-21): the public hub's address, top right, level with the kicker. */
+    .s-plan .toplink { position: absolute; top: 118px; right: 140px; font-family: var(--mono); font-size: 22px; color: var(--ink); text-decoration: underline; text-decoration-color: var(--hue); text-decoration-thickness: 3px; text-underline-offset: 6px; }
     .s-fun h2 { margin-bottom: 6px; }
     .s-fun .sub { margin: 0 0 20px; font-size: 28px; color: var(--soft); max-width: none; }
     .s-fun .games { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 219px 219px; gap: 22px 28px; }
@@ -2203,6 +2205,7 @@ steps:
     <section class="slide s-tree s-plan" data-hue="4">
       <p class="kicker pkg" style="--pkg: url(assets/hex/obot-v5.png)">obot v5 · the roadmap</p>
       <h2>Objectives → Requirements → Tasks</h2>
+      <a class="toplink" href="https://jwildfire.github.io/obot.roadmap/" target="_blank" rel="noopener">jwildfire.github.io/obot.roadmap</a>
       <!-- roadmap-tree:plan-timeline:start -->
       <div class="plan" data-t0="2026-10-02T10:00:00.000Z" data-t1="2026-10-10T00:00:00.000Z">
         <i class="step ps ps1"></i><i class="step ps ps2"></i><i class="step ps ps3"></i>
