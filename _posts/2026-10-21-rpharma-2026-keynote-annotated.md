@@ -5,40 +5,10 @@ excerpt: "My R/Pharma 2026 keynote, slide by slide: Orange the cat, ten years of
 tags: RPharma AI Agents OBot ClaudeCode DeveloperDiary
 series: "R/Pharma 2026 developer diary"
 series_part: 10
-date: "2026-10-20"
+date: "2026-10-21"
 ---
 
-<!--
-v0.1 DRAFT, 19 October 2026, for Jeremy's review and edits. Comments like this one don't render.
-
-How it was made: the commentary under each slide is your spoken notes from keynote_notes.html
-(rewritten from dry run 1 on 18 October), lightly edited for reading. Where the notes were
-empty (slides 48 and 50 to 53, 56) or dry run 2 said it better, the words come from the dry
-run 2 transcript (18 October). Facts and numbers are the slides' own. Comments starting "JW:"
-are questions for you.
-
-Format: Simon Willison's annotated talks. Slide image (links to that slide in the deck), then
-commentary. No headings in the body; the section slides do that job.
-
-Slides: 53 of the 57. Left out: 5, 7 and 13 (photo and punchline slides, folded into their
-neighbours). Easy cuts if it runs long: 8, 19, 25, 29, 31, 32, 35, 39, 46, 52.
-
-Open choices:
-  - Title. Alternatives: "What Can We Actually Do With AI Agents Right Now? My R/Pharma 2026
-    keynote, annotated" (no diary prefix), or "Orange, obot and a summer of agents".
-  - Post date: 20 October (the day before) or 21 October (the morning of). Written as "tomorrow".
-  - Video link to add once R/Pharma posts it (placeholder at the end).
-  - keynote_extended.html stays unlinked.
-  - When this goes live, drop noindex from keynote.html (via build-keynote.py) only if you want
-    the deck findable.
-Kept out on purpose: the working-group mention from dry run 2.
-Before publishing: delete every HTML comment, this one included. Kramdown copies them into the
-page source, so they would be public.
--->
-
-*Tomorrow morning I'm giving the keynote at [R/Pharma 2026](https://rinpharma.com/). This is the talk, slide by slide, with what I'll say about each one.*
-
-<!-- JW: confirm the R/Pharma link (rinpharma.com) and whether to name the session time. -->
+*This morning I'm giving the keynote at [R/Pharma 2026](https://rinpharma.com/2026/). This is the talk, slide by slide, with what I'll say about each one.*
 
 This series started in June with one question: [what can we actually do with AI agents right now?](https://jwildfire.github.io/2026/06/10/rpharma-keynote-developer-diary.html) The keynote is my answer, and this post is the tenth and last entry in the [developer diary](https://jwildfire.github.io/keynote/). I've borrowed the format from Simon Willison's [annotated talks](https://simonwillison.net/tags/annotated-talks/). You can also click through [the slides themselves](https://jwildfire.github.io/keynote/keynote.html) (arrow keys to move; each image below links to its slide).
 
@@ -51,8 +21,6 @@ I build open-source tools for clinical trials, and I've spent the last few years
 First, a key collaborator. Orange was our Chilean street cat. We found him as a kitten on Avenida Pedro de Valdivia when we lived in Santiago, and he worked with me for a lot of my career, so he was there for everything in this talk. He'll show up again, in a few different hats.
 
 A quick disclaimer: I work for the Biostat Innovation Group at Gilead, and I'll talk a little about what we do at work, but this is all just my opinion.
-
-<!-- JW: dry run 2 says he lived with you "18 amazing years"; the slide says 2008–2022 (14). Which is right? -->
 
 [![The question: What can we actually do with AI agents right now? The talk as a path: Orange, SafetyGraphics and OpenRBQM from 2016 to 2025; a road sign for Opus 4.5 and GPT-5.1 in November 2025; then a fork, the day job to AI in the Clinical Trial Pipeline and spare time to Experiments on the AI Frontier, meeting again at What we learned.](/assets/img/rpharma-2026-keynote/slide-03.jpg)](https://jwildfire.github.io/keynote/keynote.html#3)
 
@@ -68,14 +36,12 @@ When I found out I was giving this talk, back in the spring, I tried to think ab
 
 <figure class="kn-anim">
   <img src="/keynote/assets/nyt-512-paths.gif" alt="The New York Times interactive 512 Paths to the White House, 2012: choosing a winner in each swing state prunes a tree of paths to victory." loading="lazy">
-  <figcaption>The New York Times, <em>512 Paths to the White House</em> (2012).</figcaption>
+  <figcaption>The New York Times, <a href="https://archive.nytimes.com/www.nytimes.com/interactive/2012/11/02/us/politics/paths-to-the-white-house.html"><em>512 Paths to the White House</em></a> (2012).</figcaption>
 </figure>
 
 Back in 2012 I was a biostatistician working on NIH-funded asthma and allergy studies. I knew SAS and some R, and I started seeing interactive graphics in places like the New York Times. This one shows Obama's paths to victory in his re-election, so it was a while ago. Looking at these, I thought: why can't I do this for work?
 
 It turns out we can. I taught myself JavaScript (D3 version 2, I think), and we ran a bunch of experiments. We were already making fancy R graphics, mostly in lattice back then, and we started building more and more with JavaScript, and deploying it with R through htmlwidgets and Shiny.
-
-<!-- JW: link the NYT piece ("512 Paths to the White House", 2012)? I didn't guess the URL. -->
 
 [![Page 1 of 18: a standard adverse events table.](/assets/img/rpharma-2026-keynote/slide-08.jpg)](https://jwildfire.github.io/keynote/keynote.html#8)
 
@@ -94,9 +60,7 @@ So we turned them into a handful of web pages, which is a much better way to rev
 
 That was the first interactive graphic in the SafetyGraphics project: an R package with a Shiny app full of interactive charts for monitoring safety, built by a consortium of clinical and technical collaborators and co-sponsored by DIA and the ASA Biopharmaceutical Section. There's more in [the 2018 paper](https://doi.org/10.1177/2168479018754846), my [R/Pharma 2020 talk on SafetyGraphics v2.0](https://www.youtube.com/watch?v=2Ykw1jwSw5M), and [diary #3](https://jwildfire.github.io/2026/06/16/reintroducing-safetygraphics.html).
 
-Thanks to everyone who built it with us, including Jim Buchanan, Susan Mayo, Xiao Ni, Melvin Munsaka and Frank Harrell, and Agustin Calatroni, Herman Mitchell, Russ Helms and the Rho Graphics Group.
-
-<!-- JW: the names are from diary #3's footnotes. Keep, trim or expand? -->
+Thanks to everyone who built it with us; they're all named in [diary #3](https://jwildfire.github.io/2026/06/16/reintroducing-safetygraphics.html).
 
 [![The best thing we built: the hepatic explorer, and a clinical workflow to go with it. The explorer (eDISH) and step 1 of 9 of the workflow, as it reads in safety.viz today.](/assets/img/rpharma-2026-keynote/slide-11.jpg)](https://jwildfire.github.io/keynote/keynote.html#11)
 
@@ -136,11 +100,9 @@ OpenRBQM is an ecosystem of packages that adds up to a robust monitoring framewo
 
 [![Continuous Qualification is Embedded in the Lifecycle: a qcthat report, and the rule that the issue number goes in the test name.](/assets/img/rpharma-2026-keynote/slide-17.jpg)](https://jwildfire.github.io/keynote/keynote.html#17)
 
-We also spent a lot of time on quality, since that question was top of mind after SafetyGraphics. We built a package called [qcthat](https://gilead-public.github.io/qcthat/), which John and Natalia from my team talked about at R/Pharma this week; I recommend checking it out.
+We also spent a lot of time on quality, since that question was top of mind after SafetyGraphics. We built a package called [qcthat](https://gilead-public.github.io/qcthat/), which Jon Harmon and Natalia Andriychuk from my team talked about at R/Pharma this week; I recommend checking it out.
 
 The core idea is that your testthat tests are linked to GitHub issues. Each test names its issue number, just like you would in a pull request. Your issues become your requirements, your test results become your evidence, and your traceability matrix becomes an artifact that ties into GitHub workflows, for humans or for agents, in a really natural way. It all runs in CI/CD, and the evidence attaches automatically to pull requests and releases.
-
-<!-- JW: John's and Natalia's surnames, and a link to their talk. -->
 
 [![Quality scales across full package ecosystem: 76 qualified releases across 9 packages. Inspector Orange: Now that's evidence. In use on 20+ trials.](/assets/img/rpharma-2026-keynote/slide-18.jpg)](https://jwildfire.github.io/keynote/keynote.html#18)
 
@@ -230,8 +192,6 @@ I was happy with it, so one Saturday morning I prompted: we did the first one to
 
 I'd have expected that to take a team of three developers about six months without AI. I did it in a weekend. To be fair, this was old working code, with good documentation of what we wanted. AI is really good at porting old code. More in [diary #5](https://jwildfire.github.io/2026/07/12/introducing-safety-viz.html) and [diary #6](https://jwildfire.github.io/2026/07/13/obot-v3-billion-tokens.html).
 
-<!-- JW: the notes say "three developers about six months"; in dry run 2 you said "my team a year". Pick one. -->
-
 [![obot v3, 17 July: Papers → prompts → prototypes. A hepatic composite view from a 2024 paper, and a QT explorer from a clinical workflow. What worked: translating research into software.](/assets/img/rpharma-2026-keynote/slide-34.jpg)](https://jwildfire.github.io/keynote/keynote.html#34)
 
 <figure class="kn-anim">
@@ -287,8 +247,6 @@ I gave it the biomarker goal and an 800-word brief. Over one weekend: 22 message
 [![What we built, May to October 2026: 20 interactive charts, 3 apps, 7 clinical guides; 599 pull requests, 43 releases, 345,000 lines of source, 5,500 tests.](/assets/img/rpharma-2026-keynote/slide-42.jpg)](https://jwildfire.github.io/keynote/keynote.html#42)
 
 From May to October, Obot and I built 20 interactive charts, 3 apps and 7 clinical guides. Some new, some from papers, some from the old SafetyGraphics work. About 600 pull requests. This was nights and weekends, maybe 8 hours a week (I didn't keep track), alongside my day job. One person, in their spare time, with a $200 a month plan.
-
-<!-- JW: counted 13 October; recount on the morning of the post if anything has shipped since. -->
 
 [![The safety.viz demo: your own files, nothing uploaded. The live app, with Orange's notes added for the talk, and a QR code for jwildfire.github.io/safety.viz/demo.](/assets/img/rpharma-2026-keynote/slide-43.jpg)](https://jwildfire.github.io/keynote/keynote.html#43)
 
@@ -371,8 +329,6 @@ My advice: try it out on something that's yours, and get a sense of where the fr
 
 Or make a web app. I make games for my kids all the time now; it spits out fully formed games in hours, and they go play them.
 
-<!-- JW: in the talk you credit Joe's talk from the day before ("Joe talked about this yesterday too"). Add his full name and a link? -->
-
 [![Mixed feelings: Coding feels completely different than it did a year ago. It's kind of fun, but I'm certainly not working less. But, what's next? Four Oranges: More medicines, faster! And no more powerpoint! / Data Centers. Rogue Agents. / So. Much. Change. / 100 years of innovation! Trials on a chip! Robots folding my clothes!](/assets/img/rpharma-2026-keynote/slide-55.jpg)](https://jwildfire.github.io/keynote/keynote.html#55)
 
 To be totally honest, I have mixed feelings about all of this. Coding feels completely different than it did a year ago, and so does my job. It's kind of fun, but I'm certainly not working less, and it hasn't been less stressful.
@@ -389,8 +345,5 @@ Thanks to my incredible co-workers, my very patient bosses, my extremely patient
 
 And here's our [Orange party](https://jwildfire.github.io/keynote/party.html) (click for confetti). It's a fork of Simon Willison's Kākāpō Party, and credit to Simon, my favorite AI blogger: I've borrowed a bunch of his ideas, this post's format included. Thank you all for your time.[^ai]
 
-<!-- AFTER THE TALK: add "Here's the video" near the top once R/Pharma posts it, and anything that changed on stage or in Q&A. -->
+[^ai]: **AI collaboration note**: Obot (Claude Code, using Opus 5.5) drafted this post from my speaker notes and the transcripts of two dry runs, keeping my words where it could. It rendered the slide images, recorded the demo videos and built the slides with me. I edited the post line by line from there.
 
-[^ai]: **AI collaboration note**: Obot (Claude Code, using Opus 5.5) drafted this post from my speaker notes and the transcripts of two dry runs, keeping my words where it could, and rendered the slide images from the deck. I edited it from there.
-
-<!-- JW: rewrite the AI note once you've edited; it follows diary #9's footer. -->

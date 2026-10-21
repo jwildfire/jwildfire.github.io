@@ -81,12 +81,9 @@ defaults:
       type: links
     values:
       layout: link
-  # Both keynote decks are shared by URL only until the blog post links the talk deck: keep it out of the sitemap.
+  # The extended deck (every reserve slide) is shared by URL only: keep it out of the sitemap.
+  # keynote.html, the talk deck, is linked from the annotated post and /keynote, so it is listed.
   - scope:
       path: "keynote/keynote_extended.html"
-    values:
-      sitemap: false
-  - scope:
-      path: "keynote/keynote.html"
     values:
       sitemap: false

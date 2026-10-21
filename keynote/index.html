@@ -98,6 +98,9 @@
       .layout { grid-template-columns: 1fr; }
       aside.side { position: static; height: auto; gap: 2rem; border-right: none; border-bottom: 1px solid var(--rule); }
     }
+    @media (max-width: 520px) {
+      .feed-head { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+    }
   </style>
 </head>
 <body>
@@ -106,15 +109,16 @@
   <div class="layout">
     <aside class="side">
       <div>
-        <p class="side-label">R/Pharma 2026 · Keynote · October</p>
+        <p class="side-label">R/Pharma 2026 · Keynote · 21 October</p>
         <h1>Building open-source clinical trial tools with <em>agentic AI</em></h1>
-        <p class="side-desc">Jeremy Wildfire is preparing his R/Pharma keynote in the open. The developer diary on the right is the live record — experiments, lessons, and honest dead ends, posted right up until the talk.</p>
+        <p class="side-desc">Jeremy Wildfire's R/Pharma 2026 keynote: the slides, the live demo, and the developer diary that led up to it — experiments, lessons, and honest dead ends, written in public since June.</p>
         <nav class="side-nav" aria-label="Talk resources">
           <a href="/keynote/keynote.html">Slides <span class="arr">→</span></a>
           <a href="https://jwildfire.github.io/safety.viz/demo/">Demo: safety.viz <span class="arr">↗</span></a>
           <a href="#diary">Developer diary <span class="arr">→</span></a>
           <a href="/">Blog home <span class="arr">→</span></a>
         </nav>
+        <a class="side-cta" href="/2026/10/21/rpharma-2026-keynote-annotated.html">Read the keynote, annotated →</a>
       </div>
       <p class="side-foot">Also on <a href="https://openrbqm.github.io/">OpenRBQM</a> · <a href="https://rinpharma.com/">R/Pharma</a></p>
     </aside>
@@ -122,8 +126,15 @@
     <main class="feed" id="diary">
       <div class="feed-head">
         <h2>Developer diary</h2>
-        <span class="count">9 entries · more before October</span>
+        <span class="count">10 entries</span>
       </div>
+
+      <article class="card">
+        <p class="date">October 21, 2026 · Part 10</p>
+        <h3><a href="/2026/10/21/rpharma-2026-keynote-annotated.html">What Can We Actually Do With AI Agents Right Now? The Keynote, Annotated</a></h3>
+        <p class="excerpt">My R/Pharma 2026 keynote, slide by slide: Orange the cat, ten years of open-source clinical trial tools, AI in the pipeline at work, and a summer of experiments at the AI frontier.</p>
+        <p class="links"><a href="/2026/10/21/rpharma-2026-keynote-annotated.html">Read entry →</a><a href="/keynote/keynote.html">Slides →</a></p>
+      </article>
 
       <article class="card">
         <p class="date">September 6, 2026 · Part 9</p>
