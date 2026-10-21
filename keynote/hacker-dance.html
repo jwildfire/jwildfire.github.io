@@ -210,7 +210,11 @@ const ROLES = {
   up:        { frames: FRAMES_HOLDING, eyes: 'happy' },
   down:      { frames: FRAMES_HOLDING, eyes: 'meh', lazy: true },
 };
-const ORDER = ['hacker', 'inspector', 'up'];
+// ?cats=hacker,up picks the dancers (the keynote page's sidebar has Hacker Orange alone); the
+// slide's iframe passes none and gets all three.
+const ORDER = (new URLSearchParams(location.search).get('cats') || 'hacker,inspector,up').split(',')
+  .filter(r => ['hacker', 'inspector', 'up'].includes(r));
+if (!ORDER.length) ORDER.push('hacker', 'inspector', 'up');
 
 /* ------------------------------------------------------------ the dance (party.html's Cat) */
 // Each cat hops on the beat; every sixteenth beat is the drop and everyone goes twice as high

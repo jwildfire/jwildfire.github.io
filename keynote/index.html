@@ -71,6 +71,15 @@
     }
     .side-cta:hover { background: var(--accent-deep); color: #fff; }
     .side-foot { font-family: var(--mono); font-size: 0.72rem; color: var(--side-soft); }
+    /* Hacker Orange dances at the foot of the sidebar (Jeremy, 2026-10-21: "very text heavy").
+       hacker-dance.html draws on a transparent canvas, so the sidebar shows through. */
+    .side-bottom { display: flex; flex-direction: column; gap: 0.6rem; }
+    .side-dance { display: block; width: 132px; height: 132px; border: 0; background: transparent; margin-left: -10px; }
+    /* On a short screen the sticky sidebar scrolls, so Orange is never cut off, and he dances smaller. */
+    @media (min-width: 861px) and (max-height: 820px) {
+      aside.side { overflow-y: auto; }
+      .side-dance { width: 100px; height: 100px; }
+    }
     .side-foot a { color: var(--side-soft); text-decoration: none; }
     .side-foot a:hover { color: var(--accent); }
 
@@ -92,6 +101,10 @@
     .card p.excerpt { color: var(--soft); margin: 0 0 1rem; }
     .card .links { font-family: var(--mono); font-size: 0.78rem; display: flex; gap: 1.4rem; }
     .card .links a { text-decoration: none; }
+    /* The talk's entry carries Orange's hex. */
+    .card.has-hex { display: grid; grid-template-columns: 1fr 76px; column-gap: 1.4rem; }
+    .card.has-hex > * { grid-column: 1; }
+    .card.has-hex > .hex { grid-column: 2; grid-row: 1 / span 4; align-self: start; width: 76px; height: auto; }
     .feed-note { font-family: var(--mono); font-size: 0.74rem; color: var(--faint); margin-top: 2rem; }
     /* The diary opens on the latest entry, the talk; "Show all" opens the rest (Jeremy, 2026-10-21). */
     details.older > summary { list-style: none; cursor: pointer; display: inline-block; font-family: var(--mono); font-size: 0.82rem; color: var(--accent-deep); border: 1px solid var(--rule); border-radius: 999px; padding: 0.5rem 1.1rem; margin: 0.2rem 0 1.2rem; background: var(--card); }
@@ -113,8 +126,10 @@
     .pkgs { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 0.9rem; margin: 0 0 2rem; }
     .pkg { background: var(--card); border: 1px solid var(--rule); border-radius: 14px; padding: 1.1rem 1.25rem 1rem; display: flex; flex-direction: column; transition: border-color 140ms ease, box-shadow 140ms ease; }
     .pkg:hover { border-color: var(--accent); box-shadow: 0 10px 30px rgba(31, 35, 40, 0.07); }
-    .pkg .top { display: flex; align-items: baseline; justify-content: space-between; gap: 0.6rem; margin: 0 0 0.4rem; }
+    .pkg .top { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; margin: 0 0 0.4rem; }
     .pkg h3 { font-family: var(--mono); font-weight: 600; font-size: 1rem; margin: 0; }
+    .pkg .top .hex { width: 38px; height: auto; flex: none; margin: -0.2rem 0 -0.3rem; }
+    .pkg .top h3 { margin-right: auto; }
     .pkg h3 a { color: var(--ink); text-decoration: none; }
     .pkg h3 a:hover { color: var(--accent-deep); }
     .pkg .kind { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--soft); background: var(--side-bg); border-radius: 999px; padding: 0.1rem 0.55rem; white-space: nowrap; }
@@ -128,6 +143,8 @@
       aside.side { position: static; height: auto; gap: 2rem; border-right: none; border-bottom: 1px solid var(--rule); }
     }
     @media (max-width: 520px) {
+      .card.has-hex { grid-template-columns: 1fr 56px; column-gap: 1rem; }
+      .card.has-hex > .hex { width: 56px; }
       .feed-head, .section-head { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
     }
   </style>
@@ -150,7 +167,10 @@
         </nav>
         <a class="side-cta" href="/2026/10/21/rpharma-2026-keynote-annotated.html">Read the keynote, annotated →</a>
       </div>
-      <p class="side-foot">Also on <a href="https://openrbqm.github.io/">OpenRBQM</a> · <a href="https://rinpharma.com/">R/Pharma</a></p>
+      <div class="side-bottom">
+        <iframe class="side-dance" src="/keynote/hacker-dance.html?cats=hacker" title="Hacker Orange, dancing" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+        <p class="side-foot">Also on <a href="https://openrbqm.github.io/">OpenRBQM</a> · <a href="https://rinpharma.com/">R/Pharma</a></p>
+      </div>
     </aside>
 
     <main class="feed" id="content">
@@ -159,7 +179,8 @@
         <span class="count">10 entries</span>
       </div>
 
-      <article class="card">
+      <article class="card has-hex">
+        <img class="hex" src="/keynote/assets/hex/sm/orange.png" alt="" width="76" height="88">
         <p class="date">October 21, 2026 · Part 10</p>
         <h3><a href="/2026/10/21/rpharma-2026-keynote-annotated.html">What Can We Actually Do With AI Agents Right Now? The Keynote, Annotated</a></h3>
         <p class="excerpt">My R/Pharma 2026 keynote, slide by slide: Orange the cat, ten years of open-source clinical trial tools, AI in the pipeline at work, and a summer of experiments at the AI frontier.</p>
@@ -274,12 +295,12 @@
         <p class="pkg-group">How we built it</p>
         <div class="pkgs">
         <article class="pkg">
-          <div class="top"><h3><a href="https://jwildfire.github.io/obot.roadmap/">obot.roadmap</a></h3><span class="kind">Project hub</span></div>
+          <div class="top"><img class="hex" src="/keynote/assets/hex/sm/obot-v5.png" alt="" width="38" height="44"><h3><a href="https://jwildfire.github.io/obot.roadmap/">obot.roadmap</a></h3><span class="kind">Project hub</span></div>
           <p class="what">The public hub: every objective, requirement and design, and the standards each agent session works under.</p>
           <p class="links"><a href="https://jwildfire.github.io/obot.roadmap/">Site ↗</a><a href="https://github.com/jwildfire/obot.roadmap">GitHub ↗</a></p>
         </article>
         <article class="pkg">
-          <div class="top"><h3><a href="https://github.com/jwildfire/obot.agent">obot.agent</a></h3><span class="kind">Agent skills</span></div>
+          <div class="top"><img class="hex" src="/keynote/assets/hex/sm/obot-v5.png" alt="" width="38" height="44"><h3><a href="https://github.com/jwildfire/obot.agent">obot.agent</a></h3><span class="kind">Agent skills</span></div>
           <p class="what">The core of obot: the skill each working session runs, and the routine that reports on every objective.</p>
           <p class="links"><a href="https://github.com/jwildfire/obot.agent">GitHub ↗</a></p>
         </article>
@@ -288,7 +309,7 @@
         <p class="pkg-group">Where it started</p>
         <div class="pkgs">
         <article class="pkg">
-          <div class="top"><h3><a href="https://safetygraphics.github.io/safetyGraphics/">safetyGraphics</a></h3><span class="kind">R package</span></div>
+          <div class="top"><img class="hex" src="/keynote/assets/hex/sm/safetyGraphics.png" alt="" width="38" height="44"><h3><a href="https://safetygraphics.github.io/safetyGraphics/">safetyGraphics</a></h3><span class="kind">R package</span></div>
           <p class="what">The original: interactive safety graphics in R and Shiny, from the ASA–DIA Safety Working Group, 2016–2021.</p>
           <p class="links"><a href="https://safetygraphics.github.io/safetyGraphics/">Site ↗</a><a href="https://github.com/SafetyGraphics/safetyGraphics">GitHub ↗</a></p>
         </article>
@@ -298,7 +319,7 @@
           <p class="links"><a href="https://gilead-public.github.io/gsm.core/">gsm.core ↗</a><a href="https://gilead-public.github.io/gsm.kri/">gsm.kri ↗</a><a href="https://gilead-public.github.io/gsm.viz/">gsm.viz ↗</a></p>
         </article>
         <article class="pkg">
-          <div class="top"><h3><a href="https://gilead-public.github.io/qcthat/">qcthat</a></h3><span class="kind">R package</span></div>
+          <div class="top"><img class="hex" src="/keynote/assets/hex/sm/qcthat.png" alt="" width="38" height="44"><h3><a href="https://gilead-public.github.io/qcthat/">qcthat</a></h3><span class="kind">R package</span></div>
           <p class="what">Quality control for R packages used in clinical trials: a traceability matrix from each requirement to the tests that prove it.</p>
           <p class="links"><a href="https://gilead-public.github.io/qcthat/">Site ↗</a><a href="https://github.com/Gilead-Public/qcthat">GitHub ↗</a></p>
         </article>
