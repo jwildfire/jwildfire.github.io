@@ -10,7 +10,7 @@
   <meta name="robots" content="noindex" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&family=Reenie+Beanie&display=swap" rel="stylesheet" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,4 90,27 90,73 50,96 10,73 10,27' fill='%2300afa9'/%3E%3C/svg%3E" />
   <style>
     /* ------------------------------------------------------------------
@@ -1211,6 +1211,15 @@
     .goodat.hack { bottom: 60px; gap: 20px; }
     .goodat.hack .bub { background: #14181d; border-color: #3fbf5f; padding: 16px 28px 18px; }
     .goodat.hack .bub::after { background: #14181d; border-color: #3fbf5f; }
+    /* The question, with a word written in (2026-10-21, Jeremy: "insert the question with an
+       'at work' written above the question with an > to insert"): slide 20 carries the question
+       above his quote with "at work" written in, slide 26 the question with "frontier". .ins is
+       a proofreader's caret, pointing down into the gap between two words (Jeremy: "use downward
+       facing carets"), and stands in for the space (Jeremy: "no need for an added space"); its <b>, in Reenie Beanie (Jeremy: "a scribbly hand written font"), is the word written above the line. */
+    .s-quote .ask { margin: 70px 0 34px; padding-left: 66px; font-family: var(--serif); font-size: 54px; line-height: 1.15; color: var(--soft); }
+    .ins { position: relative; display: inline-block; width: 0.22em; height: 0.6em; }
+    .ins::before { content: ""; position: absolute; left: 50%; bottom: 0.66em; width: 0.22em; height: 0.22em; border-right: 0.055em solid var(--hue); border-bottom: 0.055em solid var(--hue); transform: translateX(-50%) scaleY(1.5) rotate(45deg); }
+    .ins b { position: absolute; left: 50%; bottom: 1.05em; transform: translateX(-50%) rotate(-4deg); white-space: nowrap; font-family: "Reenie Beanie", cursive; font-weight: 400; font-size: 0.95em; line-height: 1; color: var(--hue); }
     .goodat.hack .who { width: 150px; height: 173px; }
     .goodat.hack .who::after { background-image: url(assets/hex/orange-hacker.png); }
     .goodat.hack .a { font-family: var(--mono); font-size: 40px; color: #8cf5a4; }
@@ -1690,6 +1699,7 @@
 
     <section class="slide s-quote" data-hue="3">
       <p class="kicker">AI in the pipeline</p>
+      <p class="ask">What can we actually do with AI agents<span class="ins"><b>at work</b></span>right now?</p>
       <blockquote>We use AI heavily, but it's not autonomous. Humans own the process and all deliverables.</blockquote>
       <cite>— <a href="https://jwildfire.github.io/2026/06/10/rpharma-keynote-developer-diary.html" target="_blank" rel="noopener">developer diary #1, 10 June 2026</a></cite>
       <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Writing code!</p><p class="when">as of Q4 2025</p></div><div class="who"><i>👍</i></div></div>
@@ -1830,7 +1840,7 @@
 
     <section class="slide s-quote" data-hue="4">
       <p class="kicker">Enter Hacker Orange</p>
-      <blockquote>What can we actually do with AI agents right now?</blockquote>
+      <blockquote>What can we actually do with<span class="ins"><b>frontier</b></span>AI agents right now?</blockquote>
       <div class="says"><div class="who" role="img" aria-label="Orange in a black hoodie at a laptop, green code falling behind him"></div><div class="bub"><p class="a">Only one way to find out.</p></div></div>
       <div class="goodat insp"><div class="bub"><p class="a">Oh jeez. I'll check in later.</p></div><div class="who"></div></div>
     </section>
