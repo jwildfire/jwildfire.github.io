@@ -272,7 +272,7 @@ So I went back to Claude Code with one change. I set the goal and review the rel
 
 This time the deal was: I set the goals and review releases, and the agent does everything else. Gather requirements, build everything, draft the pull requests, merge to dev whenever it wants. Merges to main, for actual releases, I review. I wanted a demo for everything it built, and solid release notes, and I built skills and an AGENTS.md with Claude to say exactly what I wanted.
 
-And: ask me questions whenever you're stuck. Multiple choice when you can; if it's a big question, make an artifact. That's how I've worked for the last month, and it's been pretty darn productive.
+And: ask me questions whenever you're stuck. Multiple choice when you can; if it's a big question, make an artifact. That's how I've worked for the last month, and it’s been remarkably productive.
 
 [![obot v5, the plan: Every goal becomes requirements, then tasks. Thirteen objectives, and one goal, biomarker charts, broken into 17 requirements and 61 tasks.](/assets/img/rpharma-2026-keynote/slide-40.jpg)](https://jwildfire.github.io/keynote/keynote.html#40)
 
