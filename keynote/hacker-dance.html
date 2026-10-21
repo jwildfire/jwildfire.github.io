@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<!--
+  Three Oranges, dancing: the deck's cats from the closing party, on their own.
+
+  Derived on 2026-10-21 from party.html beside this file, for keynote slide 55
+  ("Or do something fun!"), where it sits in an iframe. It keeps only what that page needs to
+  draw and dance three of the deck's Oranges: Hacker Orange (hoodie, laptop, earbud),
+  Inspector Orange (magnifying glass, clipboard) and the thumbs-up Orange (the thumbs-down
+  Orange is left out of ORDER since 2026-10-21, Jeremy: "he doesn't show up until the very end now"),
+  with the party's hop on the beat and its choreography. party.html is itself derived from
+  "Kakapo Party" by Simon Willison (https://tools.simonwillison.net/kakapo-party), licensed
+  under the Apache License, Version 2.0; that license applies to this file too, and a copy
+  is in party-LICENSE.txt beside it (http://www.apache.org/licenses/LICENSE-2.0).
+
+  Changes from party.html: three cats and no scenery, on a white background; the cats scaled
+  to fill the frame at a whole number of screen pixels per art pixel, side by side in a wide
+  frame and two by two in a squarer one; a still frame when reduced motion is asked for; and
+  the deck's keys passed up to the deck. The file keeps its first name, hacker-dance.html,
+  because the slide's iframe points at it.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dancing Oranges</title>
+<style>
+  :root { color-scheme: light; background: #ffffff; }
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #ffffff; }
+  #stage { position: relative; width: 100%; height: 100%; overflow: hidden; background: #ffffff; }
+  #cats {
+    position: absolute; bottom: 0; left: 0; display: block;
+    background: #ffffff;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+  }
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="cats" role="img" aria-label="Three pixel-art orange cats hopping to a beat: one in a hoodie with a laptop, one with a magnifying glass and a clipboard, and one giving a thumbs up."></canvas>
+</div>
+<script>
+(() => {
+'use strict';
+
+const stage = document.getElementById('stage');
+const cvs = document.getElementById('cats');
+const ctx = cvs.getContext('2d', { alpha: false });
+const CALM = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+const BPM = 124, BEAT = 60 / BPM;          // the party's tempo
+const BG = '#ffffff';
+
+/* ------------------------------------------------------------------ helpers (from party.html) */
+const rand = (a, b) => a + Math.random() * (b - a);
+const randi = (a, b) => Math.floor(a + Math.random() * (b - a + 1));
+const clamp = (v, a, b) => (v < a ? a : v > b ? b : v);
+const rgbOf = h => { const n = parseInt(h.slice(1), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; };
+const toHex = a => '#' + a.map(v => clamp(Math.round(v), 0, 255).toString(16).padStart(2, '0')).join('');
+const mix = (h1, h2, k) => { const b = rgbOf(h2); return toHex(rgbOf(h1).map((v, i) => v + (b[i] - v) * k)); };
+function mkCanvas(w, h) { const c = document.createElement('canvas'); c.width = w; c.height = h; return c; }
+function paintGrid(g, rows, map, ox, oy) {
+  for (let y = 0; y < rows.length; y++) {
+    const r = rows[y];
+    for (let x = 0; x < r.length; x++) {
+      const ch = r[x];
+      if (ch !== '.') { g.fillStyle = map[ch]; g.fillRect(ox + x, oy + y, 1, 1); }
+    }
+  }
+}
+
+/* ------------------------------------------------------------ the cat (from party.html) */
+// Orange, front-on and upright, 18 px wide.
+// K outline · O ginger · D darker tabby stripe · L cream muzzle, chest and paws · P pink · E W eyes
+const BODY = [
+  '..KK..........KK..',
+  '.KOOK........KOOK.',
+  '.KOPPOKKKKKKOPPOK.',
+  'KOOOOODODDODOOOOOK',
+  'KOOOOOODOODOOOOOOK',
+  'KDOOWEOOOOOOWEOODK',
+  'KOOOEEOLLLLOEEOOOK',
+  'KDOOOOLLPPLLOOOODK',
+  'KOOOOLLKLLKLLOOOOK',
+  '.KOOOOLLKKLLOOOOK.',
+  '..KKOOOLLLLOOOKK..',
+  '...KODOLLLLODOK...',
+  '...KOOLLLLLLOOK...',
+  '...KDOLLLLLLODK...',
+  '...KOOLLLLLLOOK...',
+  '...KDOLLLLLLODK...',
+  '...KOOOLLLLOOOK...',
+  '...KOOOOOOOOOOK...',
+  '...KOOOOKKOOOOK...',
+  '..KLLLLLKKLLLLLK..',
+  '...KKKKK..KKKKK...',
+];
+const AIR_LEGS = [
+  '...KOOOKKKKOOOK...',
+  '....KOOK..KOOK....',
+  '....KLLK..KLLK....',
+  '.....KK....KK.....',
+];
+// The tail comes out behind the right hip: curled up when standing, flung out in the air.
+const TAIL_CURL = ['...KK.', '..KOOK', '..KDDK', '.KOOK.', 'KDDK..', 'OOK...', 'KK....'];
+const TAIL_OUT  = ['....KKK.', '..KKODOK', 'KKODOKK.', 'OODKK...', 'KKK.....'];
+const PAL = { K: '#4a1e08', O: '#e8872a', D: '#bd5e16', L: '#f7d9ae', P: '#f29ca4', E: '#1a0f0a', W: '#ffffff', F: '#e8872a' };
+
+const OX = 7, FW = 32;           // body sits 7 px in from the left of each frame canvas
+function widen(rows, a, b) {     // chubbier rows for the squash
+  return rows.map((r, i) => {
+    if (i < a || i >= b) return [0, r];
+    let L = 0, R = r.length - 1;
+    while (r[L] === '.') L++;
+    while (r[R] === '.') R--;
+    return [-1, r.slice(0, L + 1) + r[L + 1] + r.slice(L + 1, R) + r[R - 1] + r.slice(R)];
+  });
+}
+// All three are holding something, so they keep their front legs to themselves (no paws).
+function buildFrames(pal, body = BODY, airLegs = AIR_LEGS) {
+  const plain = rows => rows.map(r => [0, r]);
+  const defs = {
+    STAND:  [plain(body), TAIL_CURL, 14, 11],
+    SQUASH: [widen(body.slice(0, 13).concat([body[14]], body.slice(16)), 11, 16), TAIL_CURL, 15, 9],
+    UP:     [plain(body.slice(0, 14).concat([body[13]], body.slice(14, 18), airLegs)), TAIL_OUT, 14, 14],
+    DOWN:   [plain(body.slice(0, 18).concat(airLegs)), TAIL_OUT, 14, 12],
+  };
+  const out = {};
+  for (const k in defs) {
+    const [rows, tail, tx, ty] = defs[k];
+    const c = mkCanvas(FW, rows.length), g = c.getContext('2d');
+    paintGrid(g, tail, pal, OX + tx, ty);               // behind the body, so the hip overlaps it
+    rows.forEach(([dx, r], y) => paintGrid(g, [r], pal, OX + dx, y));
+    g.fillStyle = '#fff4d6';                             // whiskers, two a side
+    for (const [wxx, wyy] of [[-2, 7], [-1, 7], [-1, 9], [-2, 10]]) { g.fillRect(OX + wxx, wyy, 1, 1); g.fillRect(OX + 17 - wxx, wyy, 1, 1); }
+    out[k] = { c, h: rows.length };
+  }
+  return out;
+}
+const FRAMES_HOLDING = buildFrames(PAL);
+
+// Hacker Orange's hoodie: black, green piping, open at the chest, hood down behind the neck.
+// h hoodie · j pocket · g green piping
+const HOOD_BODY = BODY.slice(0, 10).concat([
+  '.KhKOOOLLLLOOOKhK.',
+  '..KhhhgLLLLghhhK..',
+  '...KhhhgLLghhhK...',
+  '...KhhhhgghhhhK...',
+  '...KhhhhhhhhhhK...',
+  '...KhjjjjjjjjhK...',
+  '...KhhhhhhhhhhK...',
+  '...KhhhhhhhhhhK...',
+  '...KhhhhKKhhhhK...',
+  '..KLLLLLKKLLLLLK..',
+  '...KKKKK..KKKKK...',
+]);
+const HOOD_LEGS = ['...KhhhKKKKhhhK...', '....KhhK..KhhK....', '....KLLK..KLLK....', '.....KK....KK.....'];
+const FRAMES_HOOD = buildFrames(Object.assign({ h: '#20242c', j: '#2c323c', g: '#35e07a' }, PAL), HOOD_BODY, HOOD_LEGS);
+
+/* ------------------------------------------------------------ the Oranges from the deck (from party.html) */
+const LAPTOP = ['.KKKKKKKK.', 'KmmmmmmmmK', 'KmmmggmmmK', 'KnnnnnnnnK', 'GGGGGGGGGG'];
+const LAPTOP_PAL = { K: '#0a0d10', m: '#2b3038', n: '#1f242b', g: '#5dff9c', G: '#1fbf62' };
+const LENS = ['..SSS..', '.SwffS.', 'SfWEEfs', 'SfEEEfs', 'SfEEEfs', '.sfffs.', '..sss..'];
+const GRIP = ['KKKK.', 'KLLOK', 'KLLOO', '.KKKK'];
+const CLIPBOARD = ['..cCCc..', 'BBBccBBB', 'BppppppB', 'BvpssspB', 'BppppppB', 'BvpssspB', 'BppppppB', 'BvpssspB', 'BBBBBBBB'];
+const CLIPBOARD_PAL = { B: '#7a4a22', p: '#fbf3df', c: '#8d939e', C: '#c9ced6', v: '#2aa15a', s: '#b9b2a2' };
+const THUMB_UP = [
+  '..KK......', '.KOOK.....', '.KOOK.....', 'KKOOKK....', 'KOOOOK....', 'KODOOK....',
+  'KOOOOK....', '.KKKOOK...', '....KOOKK.', '.....KOOOK', '......KKKK',
+];
+const THUMB_DOWN = [
+  '.KKKK.....', 'KOOOOKKKK.', 'KODOOOOOOK', 'KOOOOKKKKK', 'KKOOKK....', '.KOOK.....', '.KOOK.....', '..KK......',
+];
+
+function drawGear(g, role, x0, y0, pal) {
+  if (role === 'hacker') {
+    g.fillStyle = '#5dff9c'; g.fillRect(x0 + 14, y0 + 1, 2, 1);          // earbud, and its cable
+    g.fillStyle = '#1fbf62'; g.fillRect(x0 + 18, y0 + 2, 1, 3);
+    paintGrid(g, LAPTOP, LAPTOP_PAL, x0 + 4, y0 + 15);
+    g.fillStyle = pal.L; g.fillRect(x0 + 2, y0 + 17, 2, 2); g.fillRect(x0 + 14, y0 + 17, 2, 2);
+  } else if (role === 'inspector') {
+    paintGrid(g, CLIPBOARD, CLIPBOARD_PAL, x0 + 9, y0 + 11);
+    g.fillStyle = pal.L; g.fillRect(x0 + 15, y0 + 17, 2, 2);
+    paintGrid(g, LENS, { S: '#e3e8f0', s: '#9aa1ad', f: mix(pal.F, '#ffffff', 0.5), w: '#ffffff', W: '#ffffff', E: '#1a0f0a' }, x0 - 1, y0 + 3);
+    g.fillStyle = '#5a3a1c'; g.fillRect(x0 + 1, y0 + 10, 1, 2);
+    paintGrid(g, GRIP, pal, x0 - 1, y0 + 12);
+  } else if (role === 'up') {
+    paintGrid(g, THUMB_UP, pal, x0 - 6, y0 + 3);
+  } else if (role === 'down') {
+    paintGrid(g, THUMB_DOWN, pal, x0 - 6, y0 + 10);
+  }
+}
+function drawEyes(g, x0, y0, mode, face) {
+  g.fillStyle = face;
+  g.fillRect(x0 + 4, y0 + 5, 2, 2); g.fillRect(x0 + 12, y0 + 5, 2, 2);
+  g.fillStyle = '#120d0a';
+  if (mode === 'blink') {
+    g.fillRect(x0 + 4, y0 + 6, 2, 1); g.fillRect(x0 + 12, y0 + 6, 2, 1);
+  } else if (mode === 'meh') {     // half-lidded: not impressed, here anyway
+    g.fillRect(x0 + 3, y0 + 5, 4, 1); g.fillRect(x0 + 11, y0 + 5, 4, 1);
+    g.fillRect(x0 + 4, y0 + 6, 2, 1); g.fillRect(x0 + 12, y0 + 6, 2, 1);
+  } else {                         // happy ^ ^
+    g.fillRect(x0 + 3, y0 + 6, 1, 1); g.fillRect(x0 + 4, y0 + 5, 2, 1); g.fillRect(x0 + 6, y0 + 6, 1, 1);
+    g.fillRect(x0 + 11, y0 + 6, 1, 1); g.fillRect(x0 + 12, y0 + 5, 2, 1); g.fillRect(x0 + 14, y0 + 6, 1, 1);
+  }
+}
+// As in party.html's ROLES: the inspector and the thumbs-down Orange are half-lidded and lazy
+// (they skip every other beat).
+const ROLES = {
+  hacker:    { frames: FRAMES_HOOD },
+  inspector: { frames: FRAMES_HOLDING, eyes: 'meh', lazy: true },
+  up:        { frames: FRAMES_HOLDING, eyes: 'happy' },
+  down:      { frames: FRAMES_HOLDING, eyes: 'meh', lazy: true },
+};
+const ORDER = ['hacker', 'inspector', 'up'];
+
+/* ------------------------------------------------------------ the dance (party.html's Cat) */
+// Each cat hops on the beat; every sixteenth beat is the drop and everyone goes twice as high
+// for two beats. A hop is ballistic: y = y0 + v0·τ − ½gτ². UP on the way up, DOWN on the way
+// down, a squash (with happy eyes) just before take-off and just after landing, and a blink
+// now and then. As at the party, each 8-beat phrase picks how the hops are offset within the
+// beat, so they are never quite in step (the party's "everyone together" is left out).
+const MODES = [
+  k => k.xn,                                        // a wave, left to right
+  k => (k.idx & 1) * 0.5,                           // every other cat
+  k => k.rnd,                                       // free-for-all
+  k => Math.min(0.95, Math.abs(k.xn - (ORDER.length - 1) / ORDER.length / 2) * 1.8),// ripple out from the middle
+];
+let mode = 0, beatIdx = -1;
+const BASE_H = 7;                       // art pixels; a little under the party's 8 to 13
+const SLOT_W = 30, SLOT_H = 40;         // each cat's box: thumbs and tail included, room for the drop's big hop
+
+class Cat {
+  constructor(role, idx) {
+    const R = ROLES[role];
+    this.role = role; this.idx = idx; this.frames = R.frames; this.eyes = R.eyes || null; this.lazy = !!R.lazy;
+    this.xn = idx / ORDER.length; this.rnd = Math.random();
+    this.baseH = BASE_H * rand(0.9, 1.1);
+    this.x = 0; this.gy = 0;
+    this.y = 0; this.air = false; this.rising = false; this.launchT = 0; this.airT = BEAT; this.peakH = BASE_H; this.landT = -9;
+    this.jt0 = 0; this.jy0 = 0; this.jv0 = 1; this.jg = 1;
+    this.nextBlink = rand(0.4, 4); this.blinkEnd = 0;
+    this.schedule(rand(0, 0.3));
+  }
+  schedule(now) {
+    const off = MODES[mode](this);
+    let n = Math.ceil((now + 0.1) / BEAT - off);
+    if (this.lazy && (n & 1)) n++;
+    let beats = 1, h = this.baseH * rand(0.85, 1.15);
+    if (n % 16 === 0) { beats = 2; h = this.baseH * 2.1; }      // the drop: everyone goes big
+    this.launchT = (n + off) * BEAT;
+    this.airT = beats * BEAT - 0.13;
+    this.peakH = h;
+  }
+  update(t) {
+    if (t > this.nextBlink) { this.blinkEnd = t + 0.13; this.nextBlink = t + rand(1.5, 5); }
+    if (this.air) {
+      const tau = t - this.jt0, y = this.jy0 + this.jv0 * tau - 0.5 * this.jg * tau * tau;
+      this.rising = tau < this.jv0 / this.jg;
+      if (!this.rising && y <= 0) { this.air = false; this.y = 0; this.landT = t; this.schedule(t); }
+      else this.y = Math.max(0, y);
+    } else if (t >= this.launchT) {
+      const T = this.airT, h = this.peakH;
+      this.air = true; this.rising = true;
+      this.jt0 = this.launchT; this.jy0 = 0; this.jv0 = 4 * h / T; this.jg = 8 * h / (T * T);
+    }
+  }
+  drawShadow() {
+    const w = Math.max(3, Math.round(7 - this.y * 0.2)), x = this.x, y = this.gy;
+    ctx.fillRect(x - w + 1, y - 1, 2 * w - 2, 1);
+    ctx.fillRect(x - w - 1, y, 2 * w + 2, 1);
+    ctx.fillRect(x - w + 1, y + 1, 2 * w - 2, 1);
+  }
+  draw(t, still) {
+    let fk = 'STAND', eyes = null;
+    if (!still) {
+      if (this.air) fk = this.rising ? 'UP' : 'DOWN';
+      else if (t - this.landT < 0.09 || this.launchT - t < 0.1) { fk = 'SQUASH'; eyes = 'happy'; }
+      if (!eyes && t < this.blinkEnd) eyes = 'blink';
+    }
+    if (!eyes) eyes = this.eyes;
+    const f = this.frames[fk];
+    const left = this.x - OX - 9;
+    const top = this.gy - Math.round(this.y) - f.h + 1;
+    ctx.drawImage(f.c, left, top);
+    const x0 = left + OX;
+    if (eyes) drawEyes(ctx, x0, top, eyes, PAL.F);
+    drawGear(ctx, this.role, x0, top, PAL);
+  }
+}
+const cats = ORDER.map((role, i) => new Cat(role, i));
+
+/* ------------------------------------------------------------ layout */
+// Side by side (4 × 1) or two by two, whichever lets the cats be bigger in this frame.
+// Whole screen pixels per art pixel, so the pixels stay square and crisp.
+let S = 1, W = SLOT_W * 4, H = SLOT_H, tNow = 0;
+function layout() {
+  const r = stage.getBoundingClientRect();
+  const vw = Math.max(16, r.width), vh = Math.max(16, r.height);
+  const fit = (cols, rows) => Math.min(vw / (SLOT_W * cols + 2), vh / (SLOT_H * rows));
+  const n = ORDER.length, cols = fit(n, 1) >= fit(2, Math.ceil(n / 2)) ? n : 2, rows = Math.ceil(n / cols);
+  S = Math.max(1, Math.floor(fit(cols, rows)));
+  W = Math.ceil(vw / S); H = Math.ceil(vh / S);
+  cvs.width = W; cvs.height = H;
+  cvs.style.width = W * S + 'px'; cvs.style.height = H * S + 'px';
+  cvs.style.left = Math.round((vw - W * S) / 2) + 'px';
+  ctx.imageSmoothingEnabled = false;
+  // The group is centred across the frame and stands on the bottom of it.
+  const gx = Math.round((W - SLOT_W * cols) / 2), gTop = H - SLOT_H * rows;
+  cats.forEach((k, i) => {
+    const c = i % cols, rr = Math.floor(i / cols);
+    k.x = gx + c * SLOT_W + 17;          // body centre; the thumb sticks out left, the tail right
+    k.gy = gTop + (rr + 1) * SLOT_H - 2;
+  });
+  render(tNow, CALM);
+}
+
+function render(t, still) {
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  ctx.fillStyle = BG;
+  ctx.fillRect(0, 0, W, H);
+  ctx.fillStyle = 'rgba(60,40,20,0.14)';             // a soft shadow under each cat's feet
+  for (const k of cats) k.drawShadow();
+  for (const k of cats) k.draw(t, still);
+}
+
+/* ------------------------------------------------------------ run */
+let last = 0;
+function loop(ms) {
+  let dt = (ms - last) / 1000;
+  last = ms;
+  if (!(dt > 0)) dt = 0;
+  if (dt > 0.05) dt = 0.05;
+  tNow += dt;
+  const b = Math.floor(tNow / BEAT);
+  while (beatIdx < b) { if (++beatIdx % 8 === 0 && beatIdx > 0) mode = (mode + randi(1, MODES.length - 1)) % MODES.length; }
+  for (const k of cats) k.update(tNow);
+  render(tNow, false);
+  requestAnimationFrame(loop);
+}
+
+// The page has no keys of its own, so when it has the focus the deck's keys go up to the deck,
+// as they do from party.html. Nothing else that is typed is passed on.
+const NAV_KEYS = ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', 'Escape',
+  ' ', 'o', 'O', 'n', 'N', 'f', 'F', 'p', 'P', 't', 'T'];
+window.addEventListener('keydown', e => {
+  if (window.parent !== window && NAV_KEYS.includes(e.key) && !e.metaKey && !e.ctrlKey && !e.altKey) {
+    if (e.key === ' ') e.preventDefault();
+    window.parent.postMessage({ type: 'deck-key', key: e.key }, '*');
+  }
+});
+
+let resizeTimer = 0;
+if (window.ResizeObserver) new ResizeObserver(() => { clearTimeout(resizeTimer); resizeTimer = setTimeout(layout, 60); }).observe(stage);
+else window.addEventListener('resize', layout);
+layout();
+if (!CALM) requestAnimationFrame(ms => { last = ms; requestAnimationFrame(loop); });
+})();
+</script>
+</body>
+</html>
