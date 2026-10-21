@@ -94,17 +94,37 @@
     .card .links a { text-decoration: none; }
     .feed-note { font-family: var(--mono); font-size: 0.74rem; color: var(--faint); margin-top: 2rem; }
 
+    /* Packages (mock-up, 2026-10-21): what the talk built, then where it started. Compact
+       cards in a grid above the diary. */
+    .section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; border-bottom: 1px solid var(--rule); padding-bottom: 1rem; margin-bottom: 1.4rem; }
+    .section-head h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.7rem, 3vw, 2.2rem); margin: 0; }
+    .section-head .count { font-family: var(--mono); font-size: 0.76rem; color: var(--faint); }
+    .pkg-intro { color: var(--soft); margin: 0 0 1.6rem; }
+    .pkg-group { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-deep); margin: 0 0 0.8rem; }
+    .pkgs { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 0.9rem; margin: 0 0 2rem; }
+    .pkg { background: var(--card); border: 1px solid var(--rule); border-radius: 14px; padding: 1.1rem 1.25rem 1rem; display: flex; flex-direction: column; transition: border-color 140ms ease, box-shadow 140ms ease; }
+    .pkg:hover { border-color: var(--accent); box-shadow: 0 10px 30px rgba(31, 35, 40, 0.07); }
+    .pkg .top { display: flex; align-items: baseline; justify-content: space-between; gap: 0.6rem; margin: 0 0 0.4rem; }
+    .pkg h3 { font-family: var(--mono); font-weight: 600; font-size: 1rem; margin: 0; }
+    .pkg h3 a { color: var(--ink); text-decoration: none; }
+    .pkg h3 a:hover { color: var(--accent-deep); }
+    .pkg .kind { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--soft); background: var(--side-bg); border-radius: 999px; padding: 0.1rem 0.55rem; white-space: nowrap; }
+    .pkg p.what { color: var(--soft); font-size: 0.94rem; line-height: 1.5; margin: 0 0 0.8rem; flex: 1; }
+    .pkg .links { font-family: var(--mono); font-size: 0.76rem; display: flex; flex-wrap: wrap; gap: 0.3rem 1.1rem; }
+    .pkg .links a { text-decoration: none; }
+    .pkg-note { font-family: var(--mono); font-size: 0.74rem; color: var(--faint); margin: -0.8rem 0 3rem; }
+
     @media (max-width: 860px) {
       .layout { grid-template-columns: 1fr; }
       aside.side { position: static; height: auto; gap: 2rem; border-right: none; border-bottom: 1px solid var(--rule); }
     }
     @media (max-width: 520px) {
-      .feed-head { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+      .feed-head, .section-head { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
     }
   </style>
 </head>
 <body>
-  <a class="skip" href="#diary">Skip to content</a>
+  <a class="skip" href="#content">Skip to content</a>
 
   <div class="layout">
     <aside class="side">
@@ -115,6 +135,7 @@
         <nav class="side-nav" aria-label="Talk resources">
           <a href="/keynote/keynote.html">Slides <span class="arr">→</span></a>
           <a href="https://jwildfire.github.io/safety.viz/demo/">Demo: safety.viz <span class="arr">↗</span></a>
+          <a href="#packages">Packages <span class="arr">→</span></a>
           <a href="#diary">Developer diary <span class="arr">→</span></a>
           <a href="/">Blog home <span class="arr">→</span></a>
         </nav>
@@ -123,8 +144,79 @@
       <p class="side-foot">Also on <a href="https://openrbqm.github.io/">OpenRBQM</a> · <a href="https://rinpharma.com/">R/Pharma</a></p>
     </aside>
 
-    <main class="feed" id="diary">
-      <div class="feed-head">
+    <main class="feed" id="content">
+      <section id="packages" aria-labelledby="packages-h">
+        <div class="section-head">
+          <h2 id="packages-h">Packages</h2>
+          <span class="count">10 projects</span>
+        </div>
+        <p class="pkg-intro">What the talk built with agents between May and October 2026, and the open-source work it grew out of.</p>
+
+        <p class="pkg-group">Built for the talk</p>
+        <div class="pkgs">
+        <article class="pkg">
+          <div class="top"><h3><a href="https://jwildfire.github.io/safety.viz/">safety.viz</a></h3><span class="kind">JavaScript</span></div>
+          <p class="what">The safetyGraphics charts, rebuilt: interactive safety charts for labs, vitals, ECGs and adverse events, with a demo app that runs on your own files in the browser.</p>
+          <p class="links"><a href="https://jwildfire.github.io/safety.viz/">Site ↗</a><a href="https://jwildfire.github.io/safety.viz/demo/">Demo ↗</a><a href="https://github.com/jwildfire/safety.viz">GitHub ↗</a></p>
+        </article>
+        <article class="pkg">
+          <div class="top"><h3><a href="https://jwildfire.github.io/gsm.safety/">gsm.safety</a></h3><span class="kind">R package</span></div>
+          <p class="what">The safety.viz charts in R, as htmlwidgets for R Markdown, Shiny and gsm reports.</p>
+          <p class="links"><a href="https://jwildfire.github.io/gsm.safety/">Site ↗</a><a href="https://github.com/jwildfire/gsm.safety">GitHub ↗</a></p>
+        </article>
+        <article class="pkg">
+          <div class="top"><h3><a href="https://jwildfire.github.io/bio.viz/">bio.viz</a></h3><span class="kind">JavaScript</span></div>
+          <p class="what">Biomarker charts for comparing groups and relating variables, where every statistical test is computed by R.</p>
+          <p class="links"><a href="https://jwildfire.github.io/bio.viz/">Site ↗</a><a href="https://github.com/jwildfire/bio.viz">GitHub ↗</a></p>
+        </article>
+        <article class="pkg">
+          <div class="top"><h3><a href="https://jwildfire.github.io/gsm.bio/">gsm.bio</a></h3><span class="kind">R package</span></div>
+          <p class="what">The statistics behind bio.viz, the same functions on the desktop, in the browser and on a server, plus the charts as widgets from R.</p>
+          <p class="links"><a href="https://jwildfire.github.io/gsm.bio/">Site ↗</a><a href="https://github.com/jwildfire/gsm.bio">GitHub ↗</a></p>
+        </article>
+        <article class="pkg">
+          <div class="top"><h3><a href="https://jwildfire.github.io/open.csr/">open.csr</a></h3><span class="kind">Web app</span></div>
+          <p class="what">An open-source clinical study report builder that keeps the numbers and the words in one traceable, versioned loop.</p>
+          <p class="links"><a href="https://jwildfire.github.io/open.csr/">Site ↗</a><a href="https://github.com/jwildfire/open.csr">GitHub ↗</a></p>
+        </article>
+        </div>
+
+        <p class="pkg-group">How we built it</p>
+        <div class="pkgs">
+        <article class="pkg">
+          <div class="top"><h3><a href="https://jwildfire.github.io/obot.roadmap/">obot.roadmap</a></h3><span class="kind">Project hub</span></div>
+          <p class="what">The public hub: every objective, requirement and design, and the standards each agent session works under.</p>
+          <p class="links"><a href="https://jwildfire.github.io/obot.roadmap/">Site ↗</a><a href="https://github.com/jwildfire/obot.roadmap">GitHub ↗</a></p>
+        </article>
+        <article class="pkg">
+          <div class="top"><h3><a href="https://github.com/jwildfire/obot.agent">obot.agent</a></h3><span class="kind">Agent skills</span></div>
+          <p class="what">The core of obot: the skill each working session runs, and the routine that reports on every objective.</p>
+          <p class="links"><a href="https://github.com/jwildfire/obot.agent">GitHub ↗</a></p>
+        </article>
+        </div>
+
+        <p class="pkg-group">Where it started</p>
+        <div class="pkgs">
+        <article class="pkg">
+          <div class="top"><h3><a href="https://safetygraphics.github.io/safetyGraphics/">safetyGraphics</a></h3><span class="kind">R package</span></div>
+          <p class="what">The original: interactive safety graphics in R and Shiny, from the ASA–DIA Safety Working Group, 2016–2021.</p>
+          <p class="links"><a href="https://safetygraphics.github.io/safetyGraphics/">Site ↗</a><a href="https://github.com/SafetyGraphics/safetyGraphics">GitHub ↗</a></p>
+        </article>
+        <article class="pkg">
+          <div class="top"><h3><a href="https://gilead-public.github.io/gsm.core/">gsm</a></h3><span class="kind">R packages</span></div>
+          <p class="what">Good Statistical Monitoring from the OpenRBQM working group: gsm.core for the analytics, gsm.kri for metrics and reports, gsm.viz for the charts.</p>
+          <p class="links"><a href="https://gilead-public.github.io/gsm.core/">gsm.core ↗</a><a href="https://gilead-public.github.io/gsm.kri/">gsm.kri ↗</a><a href="https://gilead-public.github.io/gsm.viz/">gsm.viz ↗</a></p>
+        </article>
+        <article class="pkg">
+          <div class="top"><h3><a href="https://gilead-public.github.io/qcthat/">qcthat</a></h3><span class="kind">R package</span></div>
+          <p class="what">Quality control for R packages used in clinical trials: a traceability matrix from each requirement to the tests that prove it.</p>
+          <p class="links"><a href="https://gilead-public.github.io/qcthat/">Site ↗</a><a href="https://github.com/Gilead-Public/qcthat">GitHub ↗</a></p>
+        </article>
+        </div>
+        <p class="pkg-note">Everything built for the talk is exploratory: none of it is qualified for use on a trial.</p>
+      </section>
+
+      <div class="feed-head" id="diary">
         <h2>Developer diary</h2>
         <span class="count">10 entries</span>
       </div>
