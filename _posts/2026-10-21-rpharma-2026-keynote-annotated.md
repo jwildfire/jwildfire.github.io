@@ -234,7 +234,7 @@ This time the deal was: I set the goals and review releases, and the agent does 
 
 And: ask me questions whenever you're stuck. Multiple choice when you can; if it's a big question, make an artifact. That's how I've worked for the last month, and it’s been remarkably productive.
 
-[![obot v5, the roadmap: Objectives → Requirements → Tasks. Thirteen objectives, and one of them, biomarker charts, broken into 17 requirements and 61 tasks.](/assets/img/rpharma-2026-keynote/slide-40.jpg)](https://jwildfire.github.io/keynote/keynote.html#40)
+[![obot v5, the roadmap: Objectives → Requirements → Tasks, at jwildfire.github.io/obot.roadmap. Thirteen objectives, and one of them, biomarker charts, broken into 17 requirements and 61 tasks.](/assets/img/rpharma-2026-keynote/slide-40.jpg)](https://jwildfire.github.io/keynote/keynote.html#40)
 
 The whole roadmap lives in GitHub issues, on the [obot.roadmap hub](https://jwildfire.github.io/obot.roadmap/). Here's every goal at once. Every goal becomes requirements (this is one goal, the biomarker charts), and every requirement becomes tasks, each with a definition of done. The last panel shows how it filled in, 2 to 9 October. The agents filed most of this, and I signed off on the goals. Getting that clear definition of done worked really well.
 
