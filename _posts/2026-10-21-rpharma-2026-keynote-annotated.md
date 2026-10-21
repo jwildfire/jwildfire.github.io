@@ -56,7 +56,7 @@ After some experimenting, we found places in the clinical trial pipeline where t
 
 So we turned them into a handful of web pages, which is a much better way to review a study's data in lots of ways. Everybody liked it more. We liked making them more, and the users liked using them more.
 
-[![SafetyGraphics, and the people who built it: the Safety Explorer Suite (Therapeutic Innovation & Regulatory Science, 2018) and SafetyGraphics v2.0 at R/Pharma 2020.](/assets/img/rpharma-2026-keynote/slide-10.jpg)](https://jwildfire.github.io/keynote/keynote.html#10)
+[![Open Source Safety. Interactive Reports. Shiny Modules. The safetyGraphics hex beside the Safety Explorer Suite (Therapeutic Innovation & Regulatory Science, 2018) and SafetyGraphics v2.0 at R/Pharma 2020.](/assets/img/rpharma-2026-keynote/slide-10.jpg)](https://jwildfire.github.io/keynote/keynote.html#10)
 
 That was the first interactive graphic in the SafetyGraphics project: an R package with a Shiny app full of interactive charts for monitoring safety, built by a consortium of clinical and technical collaborators and co-sponsored by DIA and the ASA Biopharmaceutical Section. There's more in [the 2018 paper](https://doi.org/10.1177/2168479018754846), my [R/Pharma 2020 talk on SafetyGraphics v2.0](https://www.youtube.com/watch?v=2Ykw1jwSw5M), and [diary #3](https://jwildfire.github.io/2026/06/16/reintroducing-safetygraphics.html).
 
