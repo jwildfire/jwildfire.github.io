@@ -317,7 +317,7 @@ Okay, wrapping up. What can we do today, what's next, and how do we feel about a
 
 [![The question, one last time: What can we actually do with AI agents right now? Real work across the development pipeline. Agents write code: packages, tests, config. Humans own the decisions: strategy, architecture, judgement.](/assets/img/rpharma-2026-keynote/slide-47.jpg)](https://jwildfire.github.io/keynote/keynote.html#47)
 
-So what can we actually do with AI agents right now? Real work across the development pipeline. It's a lot: most of the coding work. They're not good at decisions, and not especially good at strategy. Agents write the code, humans own the decisions, and that works great today. We'll use them more and more as they mature.
+So what can we actually do with AI agents right now? Real work across the development pipeline. It's a lot: most of the coding work. I didn't have much luck at having Agents make strategic decisions or prioritizing, though I suspect they will improve quickly. Agents write the code, humans own the decisions, and that works great today. We'll use them more and more as they mature.
 
 [![The gap: Don't judge AI by what you can do on a trial. Illustration, not data: two lines diverging up to today, clinical trial tools below and frontier capabilities above. The rules at work are right. They also show you a fraction of what these tools can do.](/assets/img/rpharma-2026-keynote/slide-48.jpg)](https://jwildfire.github.io/keynote/keynote.html#48)
 
