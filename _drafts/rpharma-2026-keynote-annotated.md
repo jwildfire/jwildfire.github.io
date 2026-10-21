@@ -250,7 +250,7 @@ Translating research into software like that blew my mind, with tests and qualit
 
 [![obot v4, August to 10 September: The organisation. Claude Code on Opus 5, with four standing roles and a timer script, built to run without me.](/assets/img/rpharma-2026-keynote/slide-35.jpg)](https://jwildfire.github.io/keynote/keynote.html#35)
 
-Coming off that success, I got a bit greedy. If you can take a paper and make charts, Claude, what do you need me for? There was all this talk of loop engineering, so I started tiptoeing from the engineering team, where I set the direction and review the output, towards the dark software factory: I tell it what to do, and I don't look at the code.
+Coming off that success, I got a bit greedy. OK, Obot, If you can take a paper and make charts, what do you need me for? There was all this talk of loop engineering, so I started tiptoeing from the engineering team, where I set the direction and review the output, towards the dark software factory: I tell it what to do, and I don't look at the code.
 
 [![obot v4: Four roles, and a timer script. Jeremy talks to a concierge, which directs an operating officer, which dispatches workers; a timer script launches a fleet manager to clear stalled workers. Hacker Orange: whaaa? I thought we were building stuff…](/assets/img/rpharma-2026-keynote/slide-36.jpg)](https://jwildfire.github.io/keynote/keynote.html#36)
 
