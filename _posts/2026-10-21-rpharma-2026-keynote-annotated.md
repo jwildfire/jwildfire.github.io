@@ -170,13 +170,13 @@ I went down the rabbit hole this summer and built several frameworks for using A
 
 The first was a personal assistant running on my laptop in Claude Code. I asked it little questions and had it check my email, and it signed everything as Orange.
 
-[![obot v2, May to June: OpenClaw running on a laptop with custom config files and a few Agent.md. It got its own machine, its own account and a job. Hacker Orange: ugh. so many config files. can't we just build something?](/assets/img/rpharma-2026-keynote/slide-30.jpg)](https://jwildfire.github.io/keynote/keynote.html#30)
+[![obot v2, May to June: OpenClaw running on a laptop with custom config files and a few Agent.md. It got its own machine, its own account and a job. What worked: real work, by text. Hacker Orange: ugh. so many config files. can't we just build something?](/assets/img/rpharma-2026-keynote/slide-30.jpg)](https://jwildfire.github.io/keynote/keynote.html#30)
 
 When I found out about this talk, I gave obot a real job. I wiped an old laptop and installed [OpenClaw](https://jwildfire.github.io/2026/06/12/setting-up-obot-openclaw.html), an agent that runs around the clock and that you can talk to from anywhere. I'd text it on Telegram, and it would go do the work on GitHub. That part was mind-bending.
 
 The rest was config files. I spent most of a month setting it up instead of building.
 
-[![obot v2, what I built: SafetyGraphics, inside an OpenRBQM workflow. The workflow (gsm.safety v0.1.0) and what it rendered, 15 May. What worked: real work, by text.](/assets/img/rpharma-2026-keynote/slide-31.jpg)](https://jwildfire.github.io/keynote/keynote.html#31)
+[![obot v2, what I built: SafetyGraphics, inside an OpenRBQM workflow. The workflow (gsm.safety v0.1.0) and what it rendered, 15 May.](/assets/img/rpharma-2026-keynote/slide-31.jpg)](https://jwildfire.github.io/keynote/keynote.html#31)
 
 It did get one thing working: the old SafetyGraphics charts, running inside our new OpenRBQM framework. A good first step. But it couldn't get much done without me, and I wasn't climbing the ladder at all. I was in the weeds getting the thing configured, and I'd probably have been faster by hand.
 
