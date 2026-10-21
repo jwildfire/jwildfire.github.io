@@ -228,7 +228,7 @@ const MODES = [
   k => k.rnd,                                       // free-for-all
   k => Math.min(0.95, Math.abs(k.xn - (ORDER.length - 1) / ORDER.length / 2) * 1.8),// ripple out from the middle
 ];
-let mode = 0, beatIdx = -1;
+let mode = 0, beatIdx = -1, winding = false;   // winding: the dance is over, no new hops, land the ones in the air
 const BASE_H = 7;                       // art pixels; a little under the party's 8 to 13
 const SLOT_W = 30, SLOT_H = 40;         // each cat's box: thumbs and tail included, room for the drop's big hop
 
@@ -261,7 +261,7 @@ class Cat {
       this.rising = tau < this.jv0 / this.jg;
       if (!this.rising && y <= 0) { this.air = false; this.y = 0; this.landT = t; this.schedule(t); }
       else this.y = Math.max(0, y);
-    } else if (t >= this.launchT) {
+    } else if (t >= this.launchT && !winding) {
       const T = this.airT, h = this.peakH;
       this.air = true; this.rising = true;
       this.jt0 = this.launchT; this.jy0 = 0; this.jv0 = 4 * h / T; this.jg = 8 * h / (T * T);
@@ -336,6 +336,7 @@ let danceUntil = 0, running = false;
 function dance(sec) {
   if (CALM) return;
   danceUntil = Math.max(danceUntil, performance.now() + sec * 1000);
+  winding = false;
   if (!running) { running = true; requestAnimationFrame(ms => { last = ms; requestAnimationFrame(loop); }); }
 }
 if (IDLE) {
@@ -344,7 +345,12 @@ if (IDLE) {
   window.addEventListener('message', e => { if (e.data && e.data.type === 'dance') dance(Math.min(4, Math.max(1, +e.data.seconds || 2.5))); });
 }
 function loop(ms) {
-  if (IDLE && ms > danceUntil) { running = false; render(tNow, true); return; }
+  // When the time is up, no cat starts a new hop, and the dance stops only once every cat is back
+  // on the ground (Jeremy, 2026-10-21: "always have the oranges land on the ground when they stop").
+  if (IDLE && ms > danceUntil) {
+    winding = true;
+    if (!cats.some(k => k.air)) { running = false; render(tNow, true); return; }
+  }
   let dt = (ms - last) / 1000;
   last = ms;
   if (!(dt > 0)) dt = 0;
