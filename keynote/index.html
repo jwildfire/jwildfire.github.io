@@ -93,9 +93,18 @@
     .card .links { font-family: var(--mono); font-size: 0.78rem; display: flex; gap: 1.4rem; }
     .card .links a { text-decoration: none; }
     .feed-note { font-family: var(--mono); font-size: 0.74rem; color: var(--faint); margin-top: 2rem; }
+    /* The diary opens on the latest entry, the talk; "Show all" opens the rest (Jeremy, 2026-10-21). */
+    details.older > summary { list-style: none; cursor: pointer; display: inline-block; font-family: var(--mono); font-size: 0.82rem; color: var(--accent-deep); border: 1px solid var(--rule); border-radius: 999px; padding: 0.5rem 1.1rem; margin: 0.2rem 0 1.2rem; background: var(--card); }
+    details.older > summary::-webkit-details-marker { display: none; }
+    details.older > summary:hover { border-color: var(--accent); }
+    details.older > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    details.older .less, details.older[open] .more { display: none; }
+    details.older[open] .less { display: inline; }
+    details.older[open] > summary { margin-bottom: 1.4rem; }
 
     /* Packages (mock-up, 2026-10-21): what the talk built, then where it started. Compact
        cards in a grid above the diary. */
+    #packages { margin-top: 3.5rem; }
     .section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; border-bottom: 1px solid var(--rule); padding-bottom: 1rem; margin-bottom: 1.4rem; }
     .section-head h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.7rem, 3vw, 2.2rem); margin: 0; }
     .section-head .count { font-family: var(--mono); font-size: 0.76rem; color: var(--faint); }
@@ -135,8 +144,8 @@
         <nav class="side-nav" aria-label="Talk resources">
           <a href="/keynote/keynote.html">Slides <span class="arr">→</span></a>
           <a href="https://jwildfire.github.io/safety.viz/demo/">Demo: safety.viz <span class="arr">↗</span></a>
-          <a href="#packages">Packages <span class="arr">→</span></a>
           <a href="#diary">Developer diary <span class="arr">→</span></a>
+          <a href="#packages">Packages <span class="arr">→</span></a>
           <a href="/">Blog home <span class="arr">→</span></a>
         </nav>
         <a class="side-cta" href="/2026/10/21/rpharma-2026-keynote-annotated.html">Read the keynote, annotated →</a>
@@ -145,6 +154,87 @@
     </aside>
 
     <main class="feed" id="content">
+      <div class="feed-head" id="diary">
+        <h2>Developer diary</h2>
+        <span class="count">10 entries</span>
+      </div>
+
+      <article class="card">
+        <p class="date">October 21, 2026 · Part 10</p>
+        <h3><a href="/2026/10/21/rpharma-2026-keynote-annotated.html">What Can We Actually Do With AI Agents Right Now? The Keynote, Annotated</a></h3>
+        <p class="excerpt">My R/Pharma 2026 keynote, slide by slide: Orange the cat, ten years of open-source clinical trial tools, AI in the pipeline at work, and a summer of experiments at the AI frontier.</p>
+        <p class="links"><a href="/2026/10/21/rpharma-2026-keynote-annotated.html">Read entry →</a><a href="/keynote/keynote.html">Slides →</a></p>
+      </article>
+
+      <details class="older">
+        <summary><span class="more">Show all 10 entries</span><span class="less">Show only the latest</span></summary>
+
+      <article class="card">
+        <p class="date">September 6, 2026 · Part 9</p>
+        <h3><a href="/2026/09/06/not-a-capabilities-problem.html">It's Not a Capabilities Problem Anymore</a></h3>
+        <p class="excerpt">The models are capable. What stands between agentic AI and clinical development is execution: pipelines that are not ready for the volume of code agents produce — and the same agents are the best tool we have for fixing that.</p>
+        <p class="links"><a href="/2026/09/06/not-a-capabilities-problem.html">Read entry →</a></p>
+      </article>
+
+      <article class="card">
+        <p class="date">August 20, 2026 · Part 8</p>
+        <h3><a href="/2026/08/20/obot-v4-second-interview.html">A Second Interview with Obot</a></h3>
+        <p class="excerpt">Two months on from the first interview: thirteen renderers, a local-first app, an agent that became a small organisation, and a week spent finding out how it was quietly wrong.</p>
+        <p class="links"><a href="/2026/08/20/obot-v4-second-interview.html">Read entry →</a></p>
+      </article>
+
+      <article class="card">
+        <p class="date">July 17, 2026 · Part 7</p>
+        <h3><a href="/2026/07/17/papers-prompts-prototypes.html">Papers → Prompts → Prototypes</a></h3>
+        <p class="excerpt">I asked safetyGraphics' original clinical lead what he'd change, and two of his ideas turned into working, tested prototypes the same night.</p>
+        <p class="links"><a href="/2026/07/17/papers-prompts-prototypes.html">Read entry →</a></p>
+      </article>
+
+      <article class="card">
+        <p class="date">July 13, 2026 · Part 6</p>
+        <h3><a href="/2026/07/13/obot-v3-billion-tokens.html">Obot v3: How I Used a Billion Tokens in a Weekend</a></h3>
+        <p class="excerpt">The dream: hand an agent a goal and come back to useful progress. Obot v2 tried to get there with heartbeats, agent roles, and a control plane. Obot v3 threw most of that out — and kept the parts that were actually load-bearing.</p>
+        <p class="links"><a href="/2026/07/13/obot-v3-billion-tokens.html">Read entry →</a></p>
+      </article>
+
+      <article class="card">
+        <p class="date">July 12, 2026 · Part 5</p>
+        <h3><a href="/2026/07/12/introducing-safety-viz.html">Introducing safety.viz</a></h3>
+        <p class="excerpt">safety.viz v1.0 modernizes 7 interactive safetyGraphics renderers. The first renderer took a few weeks; the next six took a weekend.</p>
+        <p class="links"><a href="/2026/07/12/introducing-safety-viz.html">Read entry →</a></p>
+      </article>
+
+      <article class="card">
+        <p class="date">July 2, 2026 · Part 4</p>
+        <h3><a href="/2026/07/02/safetygraphics-heart-gsm.html">safetyGraphics ❤️ gsm</a></h3>
+        <p class="excerpt">The plan for safetyGraphics v2: keep what worked, modernize toward GxP by borrowing from gsm, and try to bridge clinical trial monitoring and reporting.</p>
+        <p class="links"><a href="/2026/07/02/safetygraphics-heart-gsm.html">Read entry →</a></p>
+      </article>
+
+      <article class="card">
+        <p class="date">June 16, 2026 · Part 3</p>
+        <h3><a href="/2026/06/16/reintroducing-safetygraphics.html">Re-Introducing safetyGraphics</a></h3>
+        <p class="excerpt">Why do the acknowledgements always come at the end? Before trying to modernize safetyGraphics with AI, a look back at the projects and people that led to it.</p>
+        <p class="links"><a href="/2026/06/16/reintroducing-safetygraphics.html">Read entry →</a></p>
+      </article>
+
+      <article class="card">
+        <p class="date">June 12, 2026 · Part 2</p>
+        <h3><a href="/2026/06/12/setting-up-obot-openclaw.html">Introducing Obot</a></h3>
+        <p class="excerpt">Meet Obot: an OpenClaw coding agent set up on a clean-room laptop to work on neglected open-source projects — interviewed over Telegram about its job, its workflow, and the weird experience of texting with a coding agent.</p>
+        <p class="links"><a href="/2026/06/12/setting-up-obot-openclaw.html">Read entry →</a></p>
+      </article>
+
+      <article class="card">
+        <p class="date">June 10, 2026 · Part 1</p>
+        <h3><a href="/2026/06/10/rpharma-keynote-developer-diary.html">What Can We Actually Do With AI Agents Right Now?</a></h3>
+        <p class="excerpt">Kicking off the series: the abstract I submitted, the messier reality two months later, how our team's "AI in the loop" practice works today — and why autonomous agents are the open question worth chasing before October.</p>
+        <p class="links"><a href="/2026/06/10/rpharma-keynote-developer-diary.html">Read entry →</a></p>
+      </article>
+      </details>
+
+      <p class="feed-note">Working in public — every entry carries its own AI collaboration note.</p>
+
       <section id="packages" aria-labelledby="packages-h">
         <div class="section-head">
           <h2 id="packages-h">Packages</h2>
@@ -215,83 +305,6 @@
         </div>
         <p class="pkg-note">Everything built for the talk is exploratory: none of it is qualified for use on a trial.</p>
       </section>
-
-      <div class="feed-head" id="diary">
-        <h2>Developer diary</h2>
-        <span class="count">10 entries</span>
-      </div>
-
-      <article class="card">
-        <p class="date">October 21, 2026 · Part 10</p>
-        <h3><a href="/2026/10/21/rpharma-2026-keynote-annotated.html">What Can We Actually Do With AI Agents Right Now? The Keynote, Annotated</a></h3>
-        <p class="excerpt">My R/Pharma 2026 keynote, slide by slide: Orange the cat, ten years of open-source clinical trial tools, AI in the pipeline at work, and a summer of experiments at the AI frontier.</p>
-        <p class="links"><a href="/2026/10/21/rpharma-2026-keynote-annotated.html">Read entry →</a><a href="/keynote/keynote.html">Slides →</a></p>
-      </article>
-
-      <article class="card">
-        <p class="date">September 6, 2026 · Part 9</p>
-        <h3><a href="/2026/09/06/not-a-capabilities-problem.html">It's Not a Capabilities Problem Anymore</a></h3>
-        <p class="excerpt">The models are capable. What stands between agentic AI and clinical development is execution: pipelines that are not ready for the volume of code agents produce — and the same agents are the best tool we have for fixing that.</p>
-        <p class="links"><a href="/2026/09/06/not-a-capabilities-problem.html">Read entry →</a></p>
-      </article>
-
-      <article class="card">
-        <p class="date">August 20, 2026 · Part 8</p>
-        <h3><a href="/2026/08/20/obot-v4-second-interview.html">A Second Interview with Obot</a></h3>
-        <p class="excerpt">Two months on from the first interview: thirteen renderers, a local-first app, an agent that became a small organisation, and a week spent finding out how it was quietly wrong.</p>
-        <p class="links"><a href="/2026/08/20/obot-v4-second-interview.html">Read entry →</a></p>
-      </article>
-
-      <article class="card">
-        <p class="date">July 17, 2026 · Part 7</p>
-        <h3><a href="/2026/07/17/papers-prompts-prototypes.html">Papers → Prompts → Prototypes</a></h3>
-        <p class="excerpt">I asked safetyGraphics' original clinical lead what he'd change, and two of his ideas turned into working, tested prototypes the same night.</p>
-        <p class="links"><a href="/2026/07/17/papers-prompts-prototypes.html">Read entry →</a></p>
-      </article>
-
-      <article class="card">
-        <p class="date">July 13, 2026 · Part 6</p>
-        <h3><a href="/2026/07/13/obot-v3-billion-tokens.html">Obot v3: How I Used a Billion Tokens in a Weekend</a></h3>
-        <p class="excerpt">The dream: hand an agent a goal and come back to useful progress. Obot v2 tried to get there with heartbeats, agent roles, and a control plane. Obot v3 threw most of that out — and kept the parts that were actually load-bearing.</p>
-        <p class="links"><a href="/2026/07/13/obot-v3-billion-tokens.html">Read entry →</a></p>
-      </article>
-
-      <article class="card">
-        <p class="date">July 12, 2026 · Part 5</p>
-        <h3><a href="/2026/07/12/introducing-safety-viz.html">Introducing safety.viz</a></h3>
-        <p class="excerpt">safety.viz v1.0 modernizes 7 interactive safetyGraphics renderers. The first renderer took a few weeks; the next six took a weekend.</p>
-        <p class="links"><a href="/2026/07/12/introducing-safety-viz.html">Read entry →</a></p>
-      </article>
-
-      <article class="card">
-        <p class="date">July 2, 2026 · Part 4</p>
-        <h3><a href="/2026/07/02/safetygraphics-heart-gsm.html">safetyGraphics ❤️ gsm</a></h3>
-        <p class="excerpt">The plan for safetyGraphics v2: keep what worked, modernize toward GxP by borrowing from gsm, and try to bridge clinical trial monitoring and reporting.</p>
-        <p class="links"><a href="/2026/07/02/safetygraphics-heart-gsm.html">Read entry →</a></p>
-      </article>
-
-      <article class="card">
-        <p class="date">June 16, 2026 · Part 3</p>
-        <h3><a href="/2026/06/16/reintroducing-safetygraphics.html">Re-Introducing safetyGraphics</a></h3>
-        <p class="excerpt">Why do the acknowledgements always come at the end? Before trying to modernize safetyGraphics with AI, a look back at the projects and people that led to it.</p>
-        <p class="links"><a href="/2026/06/16/reintroducing-safetygraphics.html">Read entry →</a></p>
-      </article>
-
-      <article class="card">
-        <p class="date">June 12, 2026 · Part 2</p>
-        <h3><a href="/2026/06/12/setting-up-obot-openclaw.html">Introducing Obot</a></h3>
-        <p class="excerpt">Meet Obot: an OpenClaw coding agent set up on a clean-room laptop to work on neglected open-source projects — interviewed over Telegram about its job, its workflow, and the weird experience of texting with a coding agent.</p>
-        <p class="links"><a href="/2026/06/12/setting-up-obot-openclaw.html">Read entry →</a></p>
-      </article>
-
-      <article class="card">
-        <p class="date">June 10, 2026 · Part 1</p>
-        <h3><a href="/2026/06/10/rpharma-keynote-developer-diary.html">What Can We Actually Do With AI Agents Right Now?</a></h3>
-        <p class="excerpt">Kicking off the series: the abstract I submitted, the messier reality two months later, how our team's "AI in the loop" practice works today — and why autonomous agents are the open question worth chasing before October.</p>
-        <p class="links"><a href="/2026/06/10/rpharma-keynote-developer-diary.html">Read entry →</a></p>
-      </article>
-
-      <p class="feed-note">Working in public — every entry carries its own AI collaboration note.</p>
     </main>
   </div>
 </body>
