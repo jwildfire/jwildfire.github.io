@@ -10,7 +10,7 @@
   <meta name="robots" content="noindex" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&family=Reenie+Beanie&display=swap" rel="stylesheet" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,4 90,27 90,73 50,96 10,73 10,27' fill='%2300afa9'/%3E%3C/svg%3E" />
   <style>
     /* ------------------------------------------------------------------
@@ -552,7 +552,8 @@
     .s-version { justify-content: center; background: var(--rail); padding-right: 640px; }
     .s-version .vhex { position: absolute; right: 150px; top: 50%; width: 380px; height: 437px; margin-top: -200px; }
     .s-version h2 { font-size: 104px; margin: 0 0 28px; }
-    .s-version p:not(.kicker) { color: var(--soft); font-size: 34px; }
+    /* Callout lines (.q, .a) keep the callout's own type (2026-10-21, Jeremy: "css off. match other callouts"). */
+    .s-version p:not(.kicker, .q, .a) { color: var(--soft); font-size: 34px; }
     .s-version p.chg { color: var(--ink); margin: 14px 0 0; }
     .s-version p.chg b { display: block; font-family: var(--mono); font-weight: 500; font-size: 19px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--hue); margin-bottom: 6px; }
     /* "What is it?" bubble on a version title slide (2026-10-12): the set-up in one line, in a
@@ -830,6 +831,22 @@
     .s-start li span { font-size: 27px; line-height: 1.3; color: var(--soft); }
     .s-start li .ask { margin: 0; padding: 12px 24px 14px calc(24px + 1.2em); text-indent: -1.2em; background: #14181d; border-radius: 16px; font-family: var(--mono); font-size: 22px; line-height: 1.4; color: #f3f4f1; }
     .s-start li .ask::before { content: "› "; color: var(--hue); }
+    /* Or do something fun (2026-10-21): the three games from /projects/ and Hacker Orange
+       dancing in the fourth cell, a 2x2 grid. */
+    /* Slide 40 (2026-10-21): the public hub's address, top right, level with the kicker. */
+    .s-plan .toplink { position: absolute; top: 118px; right: 140px; font-family: var(--mono); font-size: 22px; color: var(--ink); text-decoration: underline; text-decoration-color: var(--hue); text-decoration-thickness: 3px; text-underline-offset: 6px; }
+    .s-fun h2 { margin-bottom: 6px; }
+    .s-fun .sub { margin: 0 0 20px; font-size: 28px; color: var(--soft); max-width: none; }
+    .s-fun .games { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 219px 219px; gap: 22px 28px; }
+    .s-fun .game { position: relative; display: grid; grid-template-columns: auto 1fr; align-items: center; min-height: 0; border: 2px solid var(--rule); border-radius: 16px; overflow: hidden; background: var(--panel); box-shadow: 0 8px 22px rgba(31, 35, 40, 0.08); color: inherit; text-decoration: none; }
+    .s-fun .game img { height: 215px; width: 344px; object-fit: cover; display: block; border-right: 2px solid var(--rule); }
+    .s-fun .game span { display: block; padding: 0 22px; font-size: 21px; line-height: 1.3; color: var(--soft); }
+    .s-fun .game span b { display: block; margin-bottom: 8px; font-family: var(--serif); font-weight: 400; font-size: 34px; line-height: 1.05; color: var(--ink); }
+    .s-fun .dance { position: relative; display: flex; flex-direction: column; min-height: 0; }
+    .s-fun .dance iframe { flex: 1; min-height: 0; width: 100%; border: 0; background: transparent; }
+    .s-fun .dance iframe[hidden] { display: block; visibility: hidden; }
+    .s-fun .dance .all { position: absolute; bottom: -40px; right: 0; font-family: var(--mono); font-size: 20px; color: var(--ink); text-decoration: underline; text-decoration-color: var(--hue); text-decoration-thickness: 3px; text-underline-offset: 6px; }
+    body.overview .s-fun iframe { pointer-events: none; }
     .s-answers h2 { margin-bottom: 30px; max-width: 1040px; }
     .s-answers ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 24px; }
     .s-answers li { background: #fbf1e0; border: 3px solid var(--spec-1); border-radius: 22px; padding: 14px 28px 16px; margin: 0; }
@@ -990,6 +1007,17 @@
     .s-demo .cap .qrlink span b { display: block; font-weight: 500; font-size: 22px; color: var(--ink); text-decoration: underline; text-decoration-color: var(--hue); text-decoration-thickness: 3px; text-underline-offset: 6px; }
     .s-demo .qrlink svg { display: block; width: 128px; height: 128px; border-radius: 8px; }
     .s-demo .cap a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--hue); text-decoration-thickness: 3px; text-underline-offset: 6px; }
+    /* Slide 43 bigger (2026-10-21, Jeremy: "Can we make the demo larger on 43. QR in the top
+       right maybe?"): narrower margins, the QR code top right beside the heading, the address
+       in the caption line, and the slide number at the bottom right after it. */
+    .s-demobig { padding: 30px 56px 30px; }
+    .s-demobig h2 { font-size: 50px; margin-bottom: 14px; max-width: 1150px; }
+    .s-demobig a.qrlink { position: absolute; top: 30px; right: 56px; display: flex; align-items: center; gap: 16px; text-decoration: none; }
+    .s-demobig .qrlink span { font-family: var(--mono); font-size: 18px; line-height: 1.35; color: var(--soft); text-align: right; }
+    .s-demobig .qrlink svg { display: block; width: 124px; height: 124px; border-radius: 8px; }
+    .s-demobig .cap { align-items: baseline; margin-top: 10px; padding-right: 130px; }
+    .s-demobig .cap a.url { font-size: 22px; white-space: nowrap; }
+    .s-demobig .num { top: auto; bottom: 34px; right: 56px; font-size: 18px; }
     /* A quote slide that returns later with terms under it (slide 3 called back at the start of beat 3). */
     /* The question again near the end (slide 52, 2026-10-14): four Oranges answer under it,
        one per press. Each keeps its own callout colours from earlier in the deck. */
@@ -1079,7 +1107,10 @@
     .s-gap .gapchart .wedge { fill: var(--hue); opacity: 0.12; }
     .s-gap .gapchart .ln { fill: none; stroke-width: 5; stroke-linecap: round; }
     .s-gap .gapchart .ln.front { stroke: var(--spec-4); }
-    .s-gap .gapchart .ln.clin { stroke: var(--spec-1); stroke-dasharray: 14 10; }
+    /* Solid since 2026-10-21 (Jeremy: "make the orange line solid for this year on all slides.
+       only dashed lines should be the projections on 51"); was stroke-dasharray: 14 10. The
+       projections keep their own dots (.ln.clin.next, below). */
+    .s-gap .gapchart .ln.clin { stroke: var(--spec-1); }
     .s-gap .gapchart .dot { stroke: var(--bg); stroke-width: 3; }
     .s-gap .gapchart .dot.front { fill: var(--spec-4); }
     .s-gap .gapchart .dot.clin { fill: var(--spec-1); }
@@ -1122,6 +1153,8 @@
        and fades, trials fast is drawn, with the paradigm-change bar. Three: both lines run on to
        the top of the slide, the Some day? bar and Hacker Orange. */
     .s-gap3 h2 { margin-bottom: 18px; }
+    /* 2026-10-21: the drug-time bars came off (Jeremy says them aloud), so the lines chart sits lower. */
+    .s-gap3 .g3 { margin-top: 60px; }
     .s-gap3 .g3 { width: 100%; height: auto; display: block; overflow: visible; }
     .s-gap3 .g3 text { font-family: var(--sans); }
     .s-gap3 .g3 .ghost .ln { opacity: 0.16; stroke-dasharray: 3 9; }
@@ -1149,7 +1182,7 @@
        appeared at once. A back press resets at once (.stepped-back, set by the deck script). */
     .s-gap3 { --e: cubic-bezier(0.45, 0, 0.2, 1); --fd: 0.4s; }
     .s-gap3 .st1, .s-gap3 .b1 { --go: 0s; --dr: 1.6s; }
-    .s-gap3 .st2, .s-gap3 .b2 { --go: 0.6s; --dr: 1.6s; }
+    .s-gap3 .st2, .s-gap3 .b2 { --go: 0.4s; --dr: 1.6s; }
     .s-gap3 .st3, .s-gap3 .b3, .s-gap3 .goodat.hold3 { --go: 0.4s; --dr: 1.9s; }
     .s-gap3 .g3 .step, .s-gap3 .g3 .step.on { transform: none; transition: none; }
     .s-gap3 .g3 .ln.pick.draw, .s-gap3 .g3 .strike { stroke-dasharray: 1; stroke-dashoffset: 1; }
@@ -1167,7 +1200,12 @@
     .s-gap3:has(.st3.on) .goodat.hold3 { opacity: 1; transform: none; transition: opacity 300ms ease calc(var(--go) + var(--dr)), transform 300ms ease calc(var(--go) + var(--dr)); }
     /* Press two leaves first: the strike draws, then the slow line, its dot and label, and its row fade back as trials fast starts. */
     .s-gap3:has(.st2.on) .g3 .strike { stroke-dashoffset: 0; transition: stroke-dashoffset 0.6s var(--e); }
-    .s-gap3:has(.st2.on) .g3 .step .slowln { opacity: 0.18; transition: opacity 0.6s ease 0.6s; }
+    .s-gap3:has(.st2.on) .g3 .step .slowlab { opacity: 0; transition: opacity 0.4s ease; }
+    /* 2026-10-21 (Jeremy: "2nd click should shift the orange line upward, not draw a new line.
+       there are also dots that briefly appear in 2nd and 3rd click that should be removed"):
+       press two bends the slow trials line up into the fast one (a CSS d transition) instead of
+       drawing a second line, and the end-of-line dots are gone. */
+    .s-gap3:has(.st2.on) .g3 .ln.morph { d: path("M560,228.6 C601.7,225.2 643.3,221 685,215.7 C726.7,210.4 768.3,203.9 810,195.6 C851.7,187.3 893.3,177.2 935,164.3 C976.7,151.3 1018.3,135.6 1060,115.5"); transition: d 1.6s var(--e) 0.4s; }
     .s-gap3:has(.st2.on) .g3 .b1 { opacity: 0.45; transition: opacity 0.6s ease 0.6s; }
     /* Press three leaves first: the Fast labels and end dots go before the lines run on. */
     .s-gap3:has(.st3.on) .g3 .step :is(.fastlab, .endpt) { opacity: 0; transition: opacity 0.4s ease; }
@@ -1176,7 +1214,8 @@
     body:is(.overview, .reveal-all) .s-gap3 .g3 .ln.pick.draw, body:is(.overview, .reveal-all) .s-gap3 .g3 .strike { stroke-dashoffset: 0; }
     body:is(.overview, .reveal-all) .s-gap3 .g3 .step :is(circle, text, polygon), body:is(.overview, .reveal-all) .s-gap3 .g3 .hide :is(text, .covid) { opacity: 1; }
     body:is(.overview, .reveal-all) .s-gap3 .g3 .hide rect { transform: none; }
-    body:is(.overview, .reveal-all) .s-gap3 .g3 .step .slowln { opacity: 0.18; }
+    body:is(.overview, .reveal-all) .s-gap3 .g3 .step .slowlab { opacity: 0; }
+    body:is(.overview, .reveal-all) .s-gap3 .g3 .ln.morph { d: path("M560,228.6 C601.7,225.2 643.3,221 685,215.7 C726.7,210.4 768.3,203.9 810,195.6 C851.7,187.3 893.3,177.2 935,164.3 C976.7,151.3 1018.3,135.6 1060,115.5"); }
     body:is(.overview, .reveal-all) .s-gap3 .g3 .b1 { opacity: 0.45; }
     body:is(.overview, .reveal-all) .s-gap3 .g3 .step :is(.fastlab, .endpt) { opacity: 0; }
     body:is(.overview, .reveal-all) .s-gap3 .goodat.hold3 { opacity: 1; transform: none; }
@@ -1211,6 +1250,15 @@
     .goodat.hack { bottom: 60px; gap: 20px; }
     .goodat.hack .bub { background: #14181d; border-color: #3fbf5f; padding: 16px 28px 18px; }
     .goodat.hack .bub::after { background: #14181d; border-color: #3fbf5f; }
+    /* The question, with a word written in (2026-10-21, Jeremy: "insert the question with an
+       'at work' written above the question with an > to insert"): slide 20 carries the question
+       above his quote with "at work" written in, slide 26 the question with "frontier". .ins is
+       a proofreader's caret, pointing down into the gap between two words (Jeremy: "use downward
+       facing carets"), and stands in for the space (Jeremy: "no need for an added space"); its <b>, in Reenie Beanie (Jeremy: "a scribbly hand written font"), is the word written above the line. */
+    .s-quote .ask { margin: 70px 0 34px; padding-left: 66px; font-family: var(--serif); font-size: 54px; line-height: 1.15; color: var(--soft); }
+    .ins { position: relative; display: inline-block; width: 0.22em; height: 0.6em; }
+    .ins::before { content: ""; position: absolute; left: 50%; bottom: 0.66em; width: 0.22em; height: 0.22em; border-right: 0.055em solid var(--hue); border-bottom: 0.055em solid var(--hue); transform: translateX(-50%) scaleY(1.5) rotate(45deg); }
+    .ins b { position: absolute; left: 50%; bottom: 1.05em; transform: translateX(-50%) rotate(-4deg); white-space: nowrap; font-family: "Reenie Beanie", cursive; font-weight: 400; font-size: 0.95em; line-height: 1; color: var(--hue); }
     .goodat.hack .who { width: 150px; height: 173px; }
     .goodat.hack .who::after { background-image: url(assets/hex/orange-hacker.png); }
     .goodat.hack .a { font-family: var(--mono); font-size: 40px; color: #8cf5a4; }
@@ -1388,13 +1436,11 @@
       <p class="kicker">The question</p>
       <blockquote>What can we actually do with AI agents right now?</blockquote>
       <i class="step pk pk1"></i><i class="step pk pk2"></i><i class="step pk pk3"></i>
-      <svg class="fork" viewBox="0 0 1320 380" role="img" aria-label="The talk's sections as a path: Orange, SafetyGraphics and OpenRBQM in a line, 2016 to 2025; a road marker, Opus 4.5 and GPT-5.1 in November 2025; then the path forks, the day job down to AI in the Clinical Trial Pipeline and spare time up to Experiments on the AI Frontier; the lanes meet again at What we learned.">
+      <svg class="fork" viewBox="108 0 1320 380" role="img" aria-label="The talk's sections as a path: SafetyGraphics and OpenRBQM in a line, 2016 to 2025; a road marker, Opus 4.5 and GPT-5.1 in November 2025; then the path forks, the day job down to AI in the Clinical Trial Pipeline and spare time up to Experiments on the AI Frontier; the lanes meet again at What we learned.">
         <g class="fk fk1">
-          <path class="trunk" d="M40,190 H420"/>
-          <polygon data-sec="0" style="fill: var(--spec-1)" points="40,172 55.6,181 55.6,199 40,208 24.4,199 24.4,181"/>
+          <path class="trunk" d="M230,190 H420"/>
           <polygon data-sec="1" style="fill: var(--spec-1)" points="230,172 245.6,181 245.6,199 230,208 214.4,199 214.4,181"/>
           <polygon data-sec="2" style="fill: var(--spec-3)" points="420,172 435.6,181 435.6,199 420,208 404.4,199 404.4,181"/>
-          <text class="n" x="22" y="246">Orange</text>
           <text class="n" x="230" y="246" text-anchor="middle">SafetyGraphics</text><text class="w" x="230" y="274" text-anchor="middle">2016–2021</text>
           <text class="n" x="420" y="246" text-anchor="middle">OpenRBQM</text><text class="w" x="420" y="274" text-anchor="middle">2021–2025</text>
         </g>
@@ -1522,7 +1568,7 @@
 
     <section class="slide s-graphic" data-hue="1">
       <p class="kicker">ASA–DIA Safety Working Group</p>
-      <h2>SafetyGraphics, and the people who built it</h2>
+      <h2 style="font-size: 66px">Open Source Safety. Interactive Reports. Shiny Modules.</h2>
       <div class="gfx">
         <img src="assets/hex/safetyGraphics.png" alt="The SafetyGraphics hex sticker: a heart with a pulse line through it" />
         <div class="sxs">
@@ -1581,8 +1627,8 @@
     </section>
 
     <section class="slide s-demo" data-hue="3">
-      <p class="kicker">OpenRBQM · Good Statistical Monitoring</p>
-      <h2>Monitoring a trial, as software</h2>
+      <p class="kicker">OpenRBQM PHUSE Working Group</p>
+      <h2>Open Source Monitoring. Interactive Reports. Flexible Data Pipelines.</h2>
       <figure>
         <div class="frame"><video data-demo data-rate="2.75" muted loop playsinline preload="none" poster="assets/gsm-kri-report-demo-poster.png" src="assets/gsm-kri-report-demo.mp4" aria-label="Screen recording of an OpenRBQM site report on example data: a table of sites by key risk indicator with red and amber flags, then the charts for one indicator"></video></div>
         <div class="cap">
@@ -1632,7 +1678,7 @@
         <a class="pk" href="https://gilead-public.github.io/gsm.qtl/" target="_blank" rel="noopener" style="--c: var(--spec-3)"><div class="hx"><span>qtl</span></div><div class="t"><b>gsm.qtl</b><i>Limits</i></div><p class="d">Quality tolerance limits, and their reports</p></a>
         <a class="pk" href="https://impala-consortium.github.io/gsm.simaerep/" target="_blank" rel="noopener" style="--c: var(--spec-4)"><div class="hx"><span>simaerep</span></div><div class="t"><b>gsm.simaerep</b><i>From IMPALA</i></div><p class="d">Finds sites that under-report adverse events</p></a>
         <a class="pk" href="https://gilead-public.github.io/workr/" target="_blank" rel="noopener" style="--c: var(--spec-5)"><div class="hx"><span>workr</span></div><div class="t"><b>workr</b><i>Workflows</i></div><p class="d">Runs every step from a YAML workflow</p></a>
-        <a class="pk" href="https://gilead-public.github.io/gsm.datasim/" target="_blank" rel="noopener" style="--c: var(--spec-6)"><div class="hx"><span>datasim</span></div><div class="t"><b>gsm.datasim</b><i>Test data</i></div><p class="d">Simulates trial data to test against</p></a>
+        <a class="pk" href="https://gilead-public.github.io/gsm.viz/" target="_blank" rel="noopener" style="--c: var(--spec-6)"><div class="hx"><span>viz</span></div><div class="t"><b>gsm.viz</b><i>Graphics</i></div><p class="d">Interactive charts in JavaScript, for the reports</p></a>
         <a class="pk" href="https://gilead-public.github.io/qcthat/" target="_blank" rel="noopener" style="--c: var(--spec-3)"><img class="hx" src="assets/hex/qcthat.png" alt="" /><div class="t"><b>qcthat</b><i>Quality</i></div><p class="d">Quality control for clinical trial packages</p></a>
       </div>
     </section>
@@ -1690,6 +1736,7 @@
 
     <section class="slide s-quote" data-hue="3">
       <p class="kicker">AI in the pipeline</p>
+      <p class="ask">What can we actually do with AI agents<span class="ins"><b>at work</b></span>right now?</p>
       <blockquote>We use AI heavily, but it's not autonomous. Humans own the process and all deliverables.</blockquote>
       <cite>— <a href="https://jwildfire.github.io/2026/06/10/rpharma-keynote-developer-diary.html" target="_blank" rel="noopener">developer diary #1, 10 June 2026</a></cite>
       <div class="goodat"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Writing code!</p><p class="when">as of Q4 2025</p></div><div class="who"><i>👍</i></div></div>
@@ -1830,7 +1877,7 @@
 
     <section class="slide s-quote" data-hue="4">
       <p class="kicker">Enter Hacker Orange</p>
-      <blockquote>What can we actually do with AI agents right now?</blockquote>
+      <blockquote>What can we actually do with<span class="ins"><b>frontier</b></span>AI agents right now?</blockquote>
       <div class="says"><div class="who" role="img" aria-label="Orange in a black hoodie at a laptop, green code falling behind him"></div><div class="bub"><p class="a">Only one way to find out.</p></div></div>
       <div class="goodat insp"><div class="bub"><p class="a">Oh jeez. I'll check in later.</p></div><div class="who"></div></div>
     </section>
@@ -1902,6 +1949,7 @@
       <div class="whatis"><b>What is it?</b><p>OpenClaw running on a laptop with custom config files and a few Agent.md</p></div>
       <p class="chg"><b>What changed</b>It got its own machine, its own account and a job.</p>
       <div class="goodat hack sm" style="right: 360px; bottom: 70px"><div class="bub"><p class="a two" style="font-size: 26px">ugh. so many config files.<br>can't we just build something?</p></div><div class="who"></div></div>
+      <div class="goodat" style="top: 56px; bottom: auto; right: 350px"><div class="bub"><p class="q">What worked</p><p class="a">Real work, by text</p></div><div class="who"><i>👍</i></div></div>
     </section>
 
     <section class="slide s-image" data-hue="4">
@@ -1933,7 +1981,6 @@ steps:
           <figcaption>What it rendered · 15 May</figcaption>
         </figure>
       </div>
-      <div class="goodat"><div class="bub"><p class="q">What worked</p><p class="a">Real work, by text</p></div><div class="who"><i>👍</i></div></div>
     </section>
 
     <!-- 3 · obot v3 -->
@@ -2156,8 +2203,9 @@ steps:
     </section>
 
     <section class="slide s-tree s-plan" data-hue="4">
-      <p class="kicker pkg" style="--pkg: url(assets/hex/obot-v5.png)">obot v5 · the plan</p>
-      <h2>Every goal becomes requirements, then tasks</h2>
+      <p class="kicker pkg" style="--pkg: url(assets/hex/obot-v5.png)">obot v5 · the roadmap</p>
+      <h2>Objectives → Requirements → Tasks</h2>
+      <a class="toplink" href="https://jwildfire.github.io/obot.roadmap/" target="_blank" rel="noopener">jwildfire.github.io/obot.roadmap</a>
       <!-- roadmap-tree:plan-timeline:start -->
       <div class="plan" data-t0="2026-10-02T10:00:00.000Z" data-t1="2026-10-10T00:00:00.000Z">
         <i class="step ps ps1"></i><i class="step ps ps2"></i><i class="step ps ps3"></i>
@@ -2234,8 +2282,8 @@ steps:
       <p class="lbl">Clinical Trial Tools</p>
       <div class="tiles t3">
         <div class="tile"><p class="n">20</p><h3>Interactive charts</h3><p>14 for safety, 6 for biomarkers</p></div>
-        <div class="tile"><p class="n">3</p><h3>Apps</h3><p>The safety.viz demo, the gsm.bio app, open.csr</p></div>
         <div class="tile"><p class="n">7</p><h3>Clinical guides</h3><p>About 19,000 words on how to read a chart</p></div>
+        <div class="tile"><p class="n">3</p><h3>Apps</h3><p>The safety.viz demo, the gsm.bio app, open.csr</p></div>
       </div>
       <p class="lbl tech">Technical</p>
       <div class="tiles t4 tech">
@@ -2249,14 +2297,15 @@ steps:
     <!-- 3 · what we built, in numbers. Jeremy, 2026-10-13: "a 'What we built slide' at the end
          of the summer experiment section that summarizes what we made ... Put this just after
          the demo slide." All wording is draft; every figure is sourced in the notes. -->
-    <section class="slide s-demo" data-hue="4">
+    <section class="slide s-demo s-demobig" data-hue="4">
       <p class="kicker">The payoff · what I built</p>
-      <h2>The safety.viz demo: your own files, nothing uploaded</h2>
+      <h2>The safety.viz demo: safetyGraphics ❤️ OpenRBQM</h2>
+      <a class="qrlink" href="https://jwildfire.github.io/safety.viz/demo/" target="_blank" rel="noopener"><span>Try it<br>yourself</span><svg viewBox="0 0 37 37" role="img" aria-label="QR code for jwildfire.github.io/safety.viz/demo" shape-rendering="crispEdges"><rect width="37" height="37" fill="#fff"/><path d="M2 2h7v1h-7zM10 2h1v1h-1zM12 2h5v1h-5zM18 2h2v1h-2zM24 2h3v1h-3zM29 2h2v1h-2zM2 3h1v1h-1zM8 3h1v1h-1zM12 3h7v1h-7zM20 3h1v1h-1zM24 3h1v1h-1zM28 3h7v1h-7zM2 4h1v1h-1zM4 4h3v1h-3zM8 4h1v1h-1zM13 4h1v1h-1zM16 4h1v1h-1zM18 4h1v1h-1zM22 4h2v1h-2zM26 4h1v1h-1zM29 4h3v1h-3zM33 4h2v1h-2zM2 5h1v1h-1zM4 5h3v1h-3zM8 5h1v1h-1zM10 5h2v1h-2zM13 5h1v1h-1zM16 5h1v1h-1zM22 5h1v1h-1zM27 5h1v1h-1zM29 5h1v1h-1zM32 5h1v1h-1zM34 5h1v1h-1zM2 6h1v1h-1zM4 6h3v1h-3zM8 6h1v1h-1zM10 6h2v1h-2zM13 6h3v1h-3zM19 6h5v1h-5zM25 6h6v1h-6zM33 6h2v1h-2zM2 7h1v1h-1zM8 7h1v1h-1zM10 7h5v1h-5zM18 7h1v1h-1zM21 7h1v1h-1zM25 7h2v1h-2zM30 7h3v1h-3zM2 8h7v1h-7zM10 8h4v1h-4zM15 8h3v1h-3zM20 8h2v1h-2zM23 8h4v1h-4zM28 8h1v1h-1zM30 8h1v1h-1zM32 8h1v1h-1zM10 9h3v1h-3zM15 9h1v1h-1zM17 9h2v1h-2zM20 9h1v1h-1zM26 9h1v1h-1zM30 9h1v1h-1zM32 9h2v1h-2zM2 10h2v1h-2zM5 10h4v1h-4zM11 10h4v1h-4zM17 10h2v1h-2zM20 10h3v1h-3zM26 10h5v1h-5zM2 11h1v1h-1zM6 11h1v1h-1zM9 11h2v1h-2zM13 11h1v1h-1zM15 11h1v1h-1zM18 11h3v1h-3zM24 11h2v1h-2zM28 11h1v1h-1zM32 11h1v1h-1zM2 12h1v1h-1zM8 12h5v1h-5zM16 12h3v1h-3zM20 12h1v1h-1zM25 12h1v1h-1zM31 12h1v1h-1zM33 12h2v1h-2zM2 13h2v1h-2zM5 13h3v1h-3zM14 13h3v1h-3zM18 13h1v1h-1zM20 13h1v1h-1zM22 13h1v1h-1zM24 13h2v1h-2zM29 13h3v1h-3zM2 14h1v1h-1zM4 14h3v1h-3zM8 14h1v1h-1zM11 14h1v1h-1zM15 14h1v1h-1zM21 14h3v1h-3zM25 14h2v1h-2zM31 14h1v1h-1zM2 15h2v1h-2zM6 15h2v1h-2zM9 15h4v1h-4zM15 15h1v1h-1zM17 15h4v1h-4zM23 15h1v1h-1zM26 15h3v1h-3zM30 15h3v1h-3zM34 15h1v1h-1zM2 16h1v1h-1zM5 16h2v1h-2zM8 16h1v1h-1zM12 16h3v1h-3zM17 16h1v1h-1zM21 16h1v1h-1zM25 16h1v1h-1zM28 16h2v1h-2zM31 16h2v1h-2zM34 16h1v1h-1zM2 17h1v1h-1zM7 17h1v1h-1zM9 17h1v1h-1zM11 17h2v1h-2zM14 17h5v1h-5zM20 17h4v1h-4zM28 17h1v1h-1zM30 17h1v1h-1zM32 17h3v1h-3zM2 18h5v1h-5zM8 18h3v1h-3zM12 18h4v1h-4zM21 18h2v1h-2zM24 18h1v1h-1zM26 18h6v1h-6zM3 19h1v1h-1zM10 19h2v1h-2zM14 19h4v1h-4zM21 19h1v1h-1zM25 19h1v1h-1zM27 19h1v1h-1zM32 19h1v1h-1zM34 19h1v1h-1zM2 20h1v1h-1zM4 20h1v1h-1zM6 20h4v1h-4zM11 20h3v1h-3zM16 20h1v1h-1zM18 20h1v1h-1zM23 20h2v1h-2zM28 20h2v1h-2zM31 20h2v1h-2zM9 21h2v1h-2zM18 21h1v1h-1zM21 21h1v1h-1zM23 21h5v1h-5zM2 22h1v1h-1zM4 22h3v1h-3zM8 22h2v1h-2zM14 22h3v1h-3zM18 22h3v1h-3zM22 22h3v1h-3zM26 22h1v1h-1zM28 22h2v1h-2zM34 22h1v1h-1zM2 23h1v1h-1zM4 23h1v1h-1zM7 23h1v1h-1zM10 23h1v1h-1zM16 23h2v1h-2zM19 23h1v1h-1zM25 23h1v1h-1zM27 23h3v1h-3zM32 23h1v1h-1zM2 24h2v1h-2zM5 24h1v1h-1zM7 24h2v1h-2zM10 24h1v1h-1zM12 24h2v1h-2zM16 24h5v1h-5zM23 24h1v1h-1zM25 24h3v1h-3zM30 24h5v1h-5zM4 25h2v1h-2zM7 25h1v1h-1zM9 25h1v1h-1zM11 25h1v1h-1zM13 25h1v1h-1zM16 25h2v1h-2zM21 25h1v1h-1zM24 25h2v1h-2zM30 25h4v1h-4zM2 26h1v1h-1zM5 26h6v1h-6zM12 26h2v1h-2zM16 26h2v1h-2zM19 26h1v1h-1zM21 26h2v1h-2zM25 26h3v1h-3zM30 26h1v1h-1zM32 26h3v1h-3zM11 27h1v1h-1zM15 27h1v1h-1zM20 27h3v1h-3zM25 27h1v1h-1zM2 28h7v1h-7zM10 28h1v1h-1zM12 28h1v1h-1zM14 28h1v1h-1zM16 28h1v1h-1zM18 28h1v1h-1zM20 28h1v1h-1zM22 28h1v1h-1zM24 28h1v1h-1zM26 28h1v1h-1zM28 28h7v1h-7zM2 29h1v1h-1zM8 29h1v1h-1zM13 29h2v1h-2zM19 29h2v1h-2zM22 29h2v1h-2zM25 29h1v1h-1zM28 29h1v1h-1zM34 29h1v1h-1zM2 30h1v1h-1zM4 30h3v1h-3zM8 30h1v1h-1zM10 30h2v1h-2zM16 30h2v1h-2zM20 30h1v1h-1zM22 30h2v1h-2zM25 30h2v1h-2zM28 30h1v1h-1zM30 30h3v1h-3zM34 30h1v1h-1zM2 31h1v1h-1zM4 31h3v1h-3zM8 31h1v1h-1zM12 31h2v1h-2zM26 31h1v1h-1zM28 31h1v1h-1zM30 31h3v1h-3zM34 31h1v1h-1zM2 32h1v1h-1zM4 32h3v1h-3zM8 32h1v1h-1zM10 32h2v1h-2zM14 32h1v1h-1zM18 32h5v1h-5zM24 32h1v1h-1zM28 32h1v1h-1zM30 32h3v1h-3zM34 32h1v1h-1zM2 33h1v1h-1zM8 33h1v1h-1zM10 33h1v1h-1zM12 33h1v1h-1zM18 33h2v1h-2zM21 33h4v1h-4zM26 33h1v1h-1zM28 33h1v1h-1zM34 33h1v1h-1zM2 34h7v1h-7zM10 34h1v1h-1zM13 34h1v1h-1zM16 34h1v1h-1zM20 34h1v1h-1zM24 34h1v1h-1zM28 34h7v1h-7z" fill="#1f2328"/></svg></a>
       <figure>
         <div class="frame"><video data-demo muted loop playsinline preload="none" poster="assets/safety-viz-demo-poster.png" src="assets/safety-viz-demo.mp4" aria-label="Screen recording of the safety.viz demo app, with Orange's notes popping up: four study files are dropped in, the app says which RBQM metrics it cannot run and why, labels its guessed lab columns, opens the hepatic explorer on one participant, runs OpenRBQM's metrics with R in the browser and shows site 705 flagged for adverse events, then opens the bio.viz biomarker charts, draws the correlation matrix and clicks one cell through to its scatter plot"></video></div>
         <div class="cap">
           <p>The live app · Orange's notes added for the talk</p>
-          <a class="qrlink" href="https://jwildfire.github.io/safety.viz/demo/" target="_blank" rel="noopener"><span>Try it yourself<b>jwildfire.github.io/safety.viz/demo</b></span><svg viewBox="0 0 37 37" role="img" aria-label="QR code for jwildfire.github.io/safety.viz/demo" shape-rendering="crispEdges"><rect width="37" height="37" fill="#fff"/><path d="M2 2h7v1h-7zM10 2h1v1h-1zM12 2h5v1h-5zM18 2h2v1h-2zM24 2h3v1h-3zM29 2h2v1h-2zM2 3h1v1h-1zM8 3h1v1h-1zM12 3h7v1h-7zM20 3h1v1h-1zM24 3h1v1h-1zM28 3h7v1h-7zM2 4h1v1h-1zM4 4h3v1h-3zM8 4h1v1h-1zM13 4h1v1h-1zM16 4h1v1h-1zM18 4h1v1h-1zM22 4h2v1h-2zM26 4h1v1h-1zM29 4h3v1h-3zM33 4h2v1h-2zM2 5h1v1h-1zM4 5h3v1h-3zM8 5h1v1h-1zM10 5h2v1h-2zM13 5h1v1h-1zM16 5h1v1h-1zM22 5h1v1h-1zM27 5h1v1h-1zM29 5h1v1h-1zM32 5h1v1h-1zM34 5h1v1h-1zM2 6h1v1h-1zM4 6h3v1h-3zM8 6h1v1h-1zM10 6h2v1h-2zM13 6h3v1h-3zM19 6h5v1h-5zM25 6h6v1h-6zM33 6h2v1h-2zM2 7h1v1h-1zM8 7h1v1h-1zM10 7h5v1h-5zM18 7h1v1h-1zM21 7h1v1h-1zM25 7h2v1h-2zM30 7h3v1h-3zM2 8h7v1h-7zM10 8h4v1h-4zM15 8h3v1h-3zM20 8h2v1h-2zM23 8h4v1h-4zM28 8h1v1h-1zM30 8h1v1h-1zM32 8h1v1h-1zM10 9h3v1h-3zM15 9h1v1h-1zM17 9h2v1h-2zM20 9h1v1h-1zM26 9h1v1h-1zM30 9h1v1h-1zM32 9h2v1h-2zM2 10h2v1h-2zM5 10h4v1h-4zM11 10h4v1h-4zM17 10h2v1h-2zM20 10h3v1h-3zM26 10h5v1h-5zM2 11h1v1h-1zM6 11h1v1h-1zM9 11h2v1h-2zM13 11h1v1h-1zM15 11h1v1h-1zM18 11h3v1h-3zM24 11h2v1h-2zM28 11h1v1h-1zM32 11h1v1h-1zM2 12h1v1h-1zM8 12h5v1h-5zM16 12h3v1h-3zM20 12h1v1h-1zM25 12h1v1h-1zM31 12h1v1h-1zM33 12h2v1h-2zM2 13h2v1h-2zM5 13h3v1h-3zM14 13h3v1h-3zM18 13h1v1h-1zM20 13h1v1h-1zM22 13h1v1h-1zM24 13h2v1h-2zM29 13h3v1h-3zM2 14h1v1h-1zM4 14h3v1h-3zM8 14h1v1h-1zM11 14h1v1h-1zM15 14h1v1h-1zM21 14h3v1h-3zM25 14h2v1h-2zM31 14h1v1h-1zM2 15h2v1h-2zM6 15h2v1h-2zM9 15h4v1h-4zM15 15h1v1h-1zM17 15h4v1h-4zM23 15h1v1h-1zM26 15h3v1h-3zM30 15h3v1h-3zM34 15h1v1h-1zM2 16h1v1h-1zM5 16h2v1h-2zM8 16h1v1h-1zM12 16h3v1h-3zM17 16h1v1h-1zM21 16h1v1h-1zM25 16h1v1h-1zM28 16h2v1h-2zM31 16h2v1h-2zM34 16h1v1h-1zM2 17h1v1h-1zM7 17h1v1h-1zM9 17h1v1h-1zM11 17h2v1h-2zM14 17h5v1h-5zM20 17h4v1h-4zM28 17h1v1h-1zM30 17h1v1h-1zM32 17h3v1h-3zM2 18h5v1h-5zM8 18h3v1h-3zM12 18h4v1h-4zM21 18h2v1h-2zM24 18h1v1h-1zM26 18h6v1h-6zM3 19h1v1h-1zM10 19h2v1h-2zM14 19h4v1h-4zM21 19h1v1h-1zM25 19h1v1h-1zM27 19h1v1h-1zM32 19h1v1h-1zM34 19h1v1h-1zM2 20h1v1h-1zM4 20h1v1h-1zM6 20h4v1h-4zM11 20h3v1h-3zM16 20h1v1h-1zM18 20h1v1h-1zM23 20h2v1h-2zM28 20h2v1h-2zM31 20h2v1h-2zM9 21h2v1h-2zM18 21h1v1h-1zM21 21h1v1h-1zM23 21h5v1h-5zM2 22h1v1h-1zM4 22h3v1h-3zM8 22h2v1h-2zM14 22h3v1h-3zM18 22h3v1h-3zM22 22h3v1h-3zM26 22h1v1h-1zM28 22h2v1h-2zM34 22h1v1h-1zM2 23h1v1h-1zM4 23h1v1h-1zM7 23h1v1h-1zM10 23h1v1h-1zM16 23h2v1h-2zM19 23h1v1h-1zM25 23h1v1h-1zM27 23h3v1h-3zM32 23h1v1h-1zM2 24h2v1h-2zM5 24h1v1h-1zM7 24h2v1h-2zM10 24h1v1h-1zM12 24h2v1h-2zM16 24h5v1h-5zM23 24h1v1h-1zM25 24h3v1h-3zM30 24h5v1h-5zM4 25h2v1h-2zM7 25h1v1h-1zM9 25h1v1h-1zM11 25h1v1h-1zM13 25h1v1h-1zM16 25h2v1h-2zM21 25h1v1h-1zM24 25h2v1h-2zM30 25h4v1h-4zM2 26h1v1h-1zM5 26h6v1h-6zM12 26h2v1h-2zM16 26h2v1h-2zM19 26h1v1h-1zM21 26h2v1h-2zM25 26h3v1h-3zM30 26h1v1h-1zM32 26h3v1h-3zM11 27h1v1h-1zM15 27h1v1h-1zM20 27h3v1h-3zM25 27h1v1h-1zM2 28h7v1h-7zM10 28h1v1h-1zM12 28h1v1h-1zM14 28h1v1h-1zM16 28h1v1h-1zM18 28h1v1h-1zM20 28h1v1h-1zM22 28h1v1h-1zM24 28h1v1h-1zM26 28h1v1h-1zM28 28h7v1h-7zM2 29h1v1h-1zM8 29h1v1h-1zM13 29h2v1h-2zM19 29h2v1h-2zM22 29h2v1h-2zM25 29h1v1h-1zM28 29h1v1h-1zM34 29h1v1h-1zM2 30h1v1h-1zM4 30h3v1h-3zM8 30h1v1h-1zM10 30h2v1h-2zM16 30h2v1h-2zM20 30h1v1h-1zM22 30h2v1h-2zM25 30h2v1h-2zM28 30h1v1h-1zM30 30h3v1h-3zM34 30h1v1h-1zM2 31h1v1h-1zM4 31h3v1h-3zM8 31h1v1h-1zM12 31h2v1h-2zM26 31h1v1h-1zM28 31h1v1h-1zM30 31h3v1h-3zM34 31h1v1h-1zM2 32h1v1h-1zM4 32h3v1h-3zM8 32h1v1h-1zM10 32h2v1h-2zM14 32h1v1h-1zM18 32h5v1h-5zM24 32h1v1h-1zM28 32h1v1h-1zM30 32h3v1h-3zM34 32h1v1h-1zM2 33h1v1h-1zM8 33h1v1h-1zM10 33h1v1h-1zM12 33h1v1h-1zM18 33h2v1h-2zM21 33h4v1h-4zM26 33h1v1h-1zM28 33h1v1h-1zM34 33h1v1h-1zM2 34h7v1h-7zM10 34h1v1h-1zM13 34h1v1h-1zM16 34h1v1h-1zM20 34h1v1h-1zM24 34h1v1h-1zM28 34h7v1h-7z" fill="#1f2328"/></svg></a>
+          <a class="url" href="https://jwildfire.github.io/safety.viz/demo/" target="_blank" rel="noopener">jwildfire.github.io/safety.viz/demo</a>
         </div>
       </figure>
     </section>
@@ -2580,17 +2629,17 @@ steps:
     </section>
 
     <section class="slide s-split s-gap s-gap3" data-hue="6">
-      <p class="kicker">What's next: my best guess</p>
-      <h2>Closing the gap means more medicines faster!</h2>
-      <svg class="gapchart g3" viewBox="0 0 1320 548" role="img" aria-label="Illustration, not data. Top: frontier capabilities and clinical trial tools from a year ago to a year from now. Bottom: time to develop one drug. Today, multiple years and more than 1 billion dollars per drug. Next year, slow: a real but marginal improvement, still years. Next year, fast: a paradigm change. Some day? Months, maybe weeks.">
+      <p class="kicker">What's next</p>
+      <h2>More Medicines Faster</h2>
+      <svg class="gapchart g3" viewBox="0 0 1320 290" role="img" aria-label="Illustration, not data. Top: frontier capabilities and clinical trial tools from a year ago to a year from now. Today the tools trail the frontier; a year from now both may run fast, and some day both climb steeply.">
         <defs><pattern id="g3-hatch" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="12" height="12" fill="#fbf1e0"/><line x1="0" y1="0" x2="0" y2="12" stroke="#c78a3b" stroke-width="5"/></pattern><pattern id="g3-hatchb" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="12" height="12" fill="#e6f1fb"/><line x1="0" y1="0" x2="0" y2="12" stroke="#519fdd" stroke-width="5"/></pattern></defs>
         <text class="cap" x="1060" y="10" text-anchor="end">Illustration, not data</text>
         <g class="key"><path class="ln front" d="M60,24 L120,24"/><text class="lab" x="134" y="32">Frontier capabilities</text><path class="ln clin" d="M60,64 L120,64"/><text class="lab" x="134" y="72">Clinical trial tools</text></g>
         <line class="base" x1="60" x2="1060" y1="251.8" y2="251.8"/>
         <line class="today" x1="560" x2="560" y1="37.2" y2="251.8"/>
-        <path class="wedge" d="M60,237.3 C300,235.6 460,224.0 560,193.8 L560,228.6 C450,235.6 300,240.2 60,241.4 Z"/>
-        <path class="ln front" d="M60,237.3 C300,235.6 460,224.0 560,193.8"/>
-        <path class="ln clin" d="M60,241.4 C300,240.2 450,235.6 560,228.6"/>
+        <path class="wedge" d="M60,234.5 C115.6,232.2 171.1,229.4 226.7,225.9 C282.2,222.4 337.8,218.2 393.3,213 C448.9,207.8 504.4,201.6 560,193.8 L560,228.6 C504.4,230.7 448.9,232.5 393.3,234 C337.8,235.6 282.2,237 226.7,238.2 C171.1,239.4 115.6,240.5 60,241.4 Z"/>
+        <path class="ln front" d="M60,234.5 C115.6,232.2 171.1,229.4 226.7,225.9 C282.2,222.4 337.8,218.2 393.3,213 C448.9,207.8 504.4,201.6 560,193.8"/>
+        <path class="ln clin" d="M60,241.4 C115.6,240.5 171.1,239.4 226.7,238.2 C282.2,237 337.8,235.6 393.3,234 C448.9,232.5 504.4,230.7 560,228.6"/>
         <g class="ghost">
           <path class="ln front next" d="M560,193.8 L1060,77.8"/>
           <path class="ln front next" d="M560,193.8 C640,169.4 820,112.6 930,14.0"/>
@@ -2604,59 +2653,25 @@ steps:
         <text class="ax" x="560" y="275.8" text-anchor="middle">Today</text>
         <text class="ax" x="1060" y="275.8" text-anchor="end">A year from now</text>
         <g class="step st1">
-          <path class="ln front pick draw" pathLength="1" d="M560,193.8 C680,159.0 940,106.8 1060,37.2"/>
-          <circle class="dot front endpt" cx="1060" cy="37.2" r="6"/><text class="guess pick fastlab" x="1076" y="43.2">Fast</text>
-          <path class="ln clin pick draw slowln" pathLength="1" d="M560,228.6 C720,222.8 900,218.2 1060,215.8"/>
-          <circle class="dot clin slowln" cx="1060" cy="215.8" r="6"/><text class="guess pick slowln" x="1076" y="221.8">Slow</text>
+          <path class="ln front pick draw" pathLength="1" d="M560,193.8 C601.7,188 643.3,181 685,172.5 C726.7,163.9 768.3,153.7 810,140.9 C851.7,128.1 893.3,112.7 935,93.2 C976.7,73.7 1018.3,50.2 1060,20"/>
+          <text class="guess pick fastlab" x="1076" y="26">Fast</text>
+          <path class="ln clin pick draw morph" pathLength="1" d="M560,228.6 C601.7,227 643.3,225.3 685,223.4 C726.7,221.6 768.3,219.5 810,217.1 C851.7,214.8 893.3,212.3 935,209.5 C976.7,206.6 1018.3,203.5 1060,200"/>
+          <text class="guess pick slowlab" x="1076" y="206">Slow</text>
         </g>
         <g class="step st2">
-          <path class="ln clin pick draw" pathLength="1" d="M560,228.6 C760,211.2 940,159.0 1060,115.5"/>
-          <circle class="dot clin endpt" cx="1060" cy="115.5" r="6"/><text class="guess pick fastlab" x="1076" y="121.5">Fast</text>
+          <text class="guess pick fastlab" x="1076" y="121.5">Fast</text>
         </g>
 
         <g class="step st3">
-          <path class="ln front pick draw proj" pathLength="1" d="M1060,37.2 C1120,2.4 1155,-110 1175,-225"/>
-          <path class="ln clin pick draw proj" pathLength="1" d="M1060,115.5 C1120,93.8 1215,-40 1255,-225"/>
-          <polygon class="ahead front" points="1177.7,-240.8 1184.9,-223.3 1165.1,-226.7"/>
-          <polygon class="ahead clin" points="1258.4,-240.6 1264.8,-222.9 1245.2,-227.1"/>
-          <text class="guess pick far" x="1282" y="-128">Some day?</text>
+          <path class="ln front pick draw proj" pathLength="1" d="M1060,20 C1078.3,6.7 1096.7,-7.9 1115,-24.1 C1133.3,-40.2 1151.7,-58.1 1170,-77.9 C1188.3,-97.7 1206.7,-119.6 1225,-143.9 C1243.3,-168.3 1261.7,-195.2 1280,-225.2"/>
+          <path class="ln clin pick draw proj" pathLength="1" d="M1060,115.5 C1089.5,101.3 1119,84.8 1148.4,65.4 C1177.9,45.9 1207.4,23.4 1236.9,-3.2 C1266.3,-29.8 1295.8,-60.5 1325.3,-96.9 C1354.8,-133.4 1384.2,-175.4 1413.7,-225.2"/>
+          <polygon class="ahead front" points="1288.3,-238.9 1288.5,-220 1271.5,-230.4"/>
+          <polygon class="ahead clin" points="1421.9,-239 1422.3,-220.1 1405.1,-230.3"/>
+          <text class="guess pick far" x="1236" y="-205" text-anchor="end">Some day?</text>
         </g>
 
-        <text class="bh" x="0" y="302">Time to develop one drug</text>
-        <text class="rs src" x="1310" y="302" text-anchor="end">Sources: <a href="https://go.bio.org/rs/490-EHZ-999/images/ClinicalDevelopmentSuccessRates2011_2020.pdf" target="_blank" rel="noopener">BIO 2021</a> · <a href="https://jamanetwork.com/journals/jama/fullarticle/2762311" target="_blank" rel="noopener">Wouters 2020</a> · <a href="https://doi.org/10.1016/j.jhealeco.2016.01.012" target="_blank" rel="noopener">DiMasi 2016</a></text>
-        <g class="row">
-          <text class="rl" x="0" y="344">Today</text>
-          <rect x="300" y="324" width="609" height="28" rx="6" fill="#c78a3b"/>
-          <rect x="909" y="324" width="261" height="28" rx="6" fill="#c78a3b" opacity="0.4"/>
-          <text class="rv" x="316" y="345" fill="#fff">Multiple years and &gt;$1 billion per drug</text>
-          <text class="rs" x="1184" y="336">90% of candidates fail</text>
-          <text class="rs" x="1184" y="357"><a href="https://go.bio.org/rs/490-EHZ-999/images/ClinicalDevelopmentSuccessRates2011_2020.pdf" target="_blank" rel="noopener">BIO 2021</a>: 7.9% reach approval</text>
-        </g>
-        <g class="row hide b1">
-          <text class="rl" x="0" y="392">Next year, slow</text>
-          <rect x="300" y="372" width="696" height="28" rx="6" fill="url(#g3-hatch)" stroke="#c78a3b" stroke-width="3"/>
-          <text class="rv dk sm" x="1010" y="383">Real marginal improvement,</text>
-          <text class="rv dk sm" x="1010" y="404">but still years</text>
-          <path class="strike draw2" pathLength="1" d="M0,386 L1296,386"/>
-        </g>
-        <g class="row hide b2">
-          <text class="rl" x="0" y="440">Next year, fast</text>
-          <rect x="300" y="420" width="406" height="28" rx="6" fill="url(#g3-hatchb)" stroke="#519fdd" stroke-width="3"/>
-          <text class="rv dk" x="720" y="441">Paradigm change, soon</text>
-        </g>
-        <g class="row hide b3">
-          <text class="rl" x="0" y="488">Some day?</text>
-          <rect x="300" y="468" width="29.0" height="28" rx="6" fill="url(#g3-hatchb)" stroke="#519fdd" stroke-width="3"/>
-          <line class="covid" x1="343.5" x2="343.5" y1="462" y2="502"/>
-          <text class="rv dk" x="361.5" y="483">Months, maybe weeks</text>
-          <text class="rs" x="361.5" y="504"><a href="https://www.cbsnews.com/news/artificial-intelligence-google-deepmind-ceo-demis-hassabis-60-minutes-transcript/" target="_blank" rel="noopener">Hassabis</a> · the COVID mRNA vaccines took 9 months (<a href="https://www.darioamodei.com/essay/machines-of-loving-grace" target="_blank" rel="noopener">Amodei</a>)</text>
-        </g>
-        <g class="ruler">
-          <line x1="300" x2="1170" y1="522" y2="522"/>
-          <line x1="300" x2="300" y1="516" y2="528"/><text x="300" y="546" text-anchor="middle">0</text><line x1="590" x2="590" y1="516" y2="528"/><text x="590" y="546" text-anchor="middle">5</text><line x1="880" x2="880" y1="516" y2="528"/><text x="880" y="546" text-anchor="middle">10</text><line x1="1170" x2="1170" y1="516" y2="528"/><text x="1170" y="546" text-anchor="middle">15 years</text>
-        </g>
       </svg>
-      <div class="goodat hack sm now hold3" style="left: 170px; right: auto; bottom: auto; top: 345px"><div class="bub"><p class="a">Time to close the gap</p></div><div class="who"></div></div>
+      <div class="goodat hack sm now hold3" style="left: 200px; right: auto; bottom: auto; top: 655px"><div class="bub"><p class="a">Time to close the gap</p></div><div class="who"></div></div>
     </section>
 
 
@@ -2671,6 +2686,18 @@ steps:
         <li><i>5</i><b>Ask questions!</b><p class="ask">Explain how you did X</p></li>
       </ol>
       <div class="goodat" style="top: 64px; bottom: auto"><div class="bub"><p class="q">What are agents good at now?</p><p class="a">Teaching me things!</p></div><div class="who"><i>👍</i></div></div>
+    </section>
+
+    <section class="slide s-fun" data-hue="6">
+      <p class="kicker">Closing the gap</p>
+      <h2>Or do something fun!</h2>
+      <p class="sub">I make games with my kids, using AI. Here are our favorites.</p>
+      <div class="games">
+        <a class="game" href="https://jwildfire.github.io/angry-dudes/" target="_blank" rel="noopener"><img src="../assets/img/games/angry-dudes.jpg" alt="Angry Dudes: a Roman legionary at the slingshot faces a Greek fort with Archimedes' Claw on the wall" /><span><b>Angry Dudes</b>A slingshot siege through history: 10 armies, 37 real battles</span></a>
+        <a class="game" href="https://jwildfire.github.io/magic-friends/" target="_blank" rel="noopener"><img src="../assets/img/games/magic-friends.jpg" alt="Magic Friends title screen: a mermaid in the sea and a unicorn on a cloud under a sunrise" /><span><b>Magic Friends, Up We Go!</b>A climbing game for little kids: 60 levels to bring back the sunrise</span></a>
+        <a class="game" href="https://jwildfire.github.io/timedout/" target="_blank" rel="noopener"><img src="../assets/img/games/timedout.jpg" alt="Timed Out title screen: an hourglass and a choice of Easy, Medium or Hard" /><span><b>Timed Out</b>Put events from Wikipedia in order on a timeline</span></a>
+        <div class="dance"><iframe data-src="hacker-dance.html" title="Hacker Orange, the pixel-art cat from the party, dancing" hidden></iframe><a class="all" href="https://jwildfire.github.io/projects/#games" target="_blank" rel="noopener">jwildfire.github.io/projects</a></div>
+      </div>
     </section>
 
 
