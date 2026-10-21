@@ -112,7 +112,7 @@ And this scales really quickly. Once you're in the habit of putting issue number
 
 That brings us to about a year ago, when the AI models got really good. We'd been watching them and using code assistants since ChatGPT took off, but last November we crossed a threshold: coding agents could write code well enough that you weren't going back to correct them all the time. That's when they earned my trust.
 
-[![AI in the pipeline: We use AI heavily, but it's not autonomous. Humans own the process and all deliverables. What are agents good at now? Writing code! As of Q4 2025.](/assets/img/rpharma-2026-keynote/slide-20.jpg)](https://jwildfire.github.io/keynote/keynote.html#20)
+[![AI in the pipeline: What can we actually do with AI agents, at work, right now? ("at work" written in by hand.) We use AI heavily, but it's not autonomous. Humans own the process and all deliverables. What are agents good at now? Writing code! As of Q4 2025.](/assets/img/rpharma-2026-keynote/slide-20.jpg)](https://jwildfire.github.io/keynote/keynote.html#20)
 
 In January I told my team it was time to start experimenting. By Q2, after three months of experiments, we'd adopted coding agents in our day-to-day work and started setting our workflows and best practices. In Q3 we've been building that out.
 
@@ -150,7 +150,7 @@ But what's next?
 
 As I've worked on making this better in the day job, I've been watching videos and listening to podcasts from people much further up that ladder. The AI frontier feels very different from what I do at work. So when I was asked to give this talk, I wanted to find out: what can we actually do with AI agents right now?
 
-[![Enter Hacker Orange: What can we actually do with AI agents right now? Only one way to find out. Inspector Orange: Oh jeez. I'll check in later.](/assets/img/rpharma-2026-keynote/slide-26.jpg)](https://jwildfire.github.io/keynote/keynote.html#26)
+[![Enter Hacker Orange: What can we actually do with frontier AI agents right now? ("frontier" written in by hand.) Only one way to find out. Inspector Orange: Oh jeez. I'll check in later.](/assets/img/rpharma-2026-keynote/slide-26.jpg)](https://jwildfire.github.io/keynote/keynote.html#26)
 
 Here's Hacker Orange. There's only one way to find out: go try it. I decided to play around on some of my old open-source work. We're intentionally very careful with the work we do on actual studies, but I think the models' capabilities are way past that now.
 
@@ -244,7 +244,7 @@ Then Opus 5.5 came out, the best model I've worked with. I think we're in the mi
 
 I gave it the biomarker goal and an 800-word brief. Over one weekend: 22 messages from me, 52 agents, 40 of them reviewers, 3.9 billion tokens, and six releases. A full biomarker suite in JavaScript and R, with R running in the browser. I steered; it did the work.
 
-[![What we built, May to October 2026: 20 interactive charts, 3 apps, 7 clinical guides; 599 pull requests, 43 releases, 345,000 lines of source, 5,500 tests.](/assets/img/rpharma-2026-keynote/slide-42.jpg)](https://jwildfire.github.io/keynote/keynote.html#42)
+[![What we built, May to October 2026: 20 interactive charts, 7 clinical guides, 3 apps; 599 pull requests, 43 releases, 345,000 lines of source, 5,500 tests.](/assets/img/rpharma-2026-keynote/slide-42.jpg)](https://jwildfire.github.io/keynote/keynote.html#42)
 
 From May to October, Obot and I built 20 interactive charts, 3 apps and 7 clinical guides. Some new, some from papers, some from the old SafetyGraphics work. About 600 pull requests. This was nights and weekends, maybe 8 hours a week (I didn't keep track), alongside my day job. One person, in their spare time, with a $200 a month plan.
 
@@ -306,7 +306,7 @@ I really believe we're at the beginning of this trend, not the end. Nobody can t
 
 We're a highly regulated industry, for good reason, and we tend to focus on the risks. But I agree with Dario Amodei in [Machines of Loving Grace](https://www.darioamodei.com/essay/machines-of-loving-grace): most people are underestimating how radical the upside of AI could be, just as they're underestimating the risks. (We've started to wrestle with the risks a little more in recent months.)
 
-[![What's next, my best guess: Closing the gap means more medicines faster! Illustration, not data. Time to develop one drug: today, multiple years and more than $1 billion per drug, and 90% of candidates fail; next year, slow, a real but marginal improvement; next year, fast, a paradigm change; some day? Months, maybe weeks.](/assets/img/rpharma-2026-keynote/slide-53.jpg)](https://jwildfire.github.io/keynote/keynote.html#53)
+[![What's next: Closing the gap means more medicines faster! Illustration, not data: frontier capabilities and clinical trial tools from a year ago to a year from now, the tools' slow guess bending up to fast, then both lines climbing off the top of the chart. Some day? Hacker Orange: Time to close the gap.](/assets/img/rpharma-2026-keynote/slide-53.jpg)](https://jwildfire.github.io/keynote/keynote.html#53)
 
 The gap is measured in medicines. A drug today takes multiple years and more than a billion dollars ([Wouters 2020](https://jamanetwork.com/journals/jama/fullarticle/2762311), [DiMasi 2016](https://doi.org/10.1016/j.jhealeco.2016.01.012)), and [about nine in ten candidates fail](https://go.bio.org/rs/490-EHZ-999/images/ClinicalDevelopmentSuccessRates2011_2020.pdf). The COVID-19 mRNA vaccines took about nine months. With AI, that could be the new normal, and some day maybe faster than that.
 
@@ -327,9 +327,11 @@ My advice: try it out on something that's yours, and get a sense of where the fr
 
 5. Then ask it a million questions. They're amazing at explaining things, but you have to ask. I've learned more in the last year than at any time since grad school.
 
-Or make a web app. I make games for my kids all the time now; it spits out fully formed games in hours, and they go play them.
+[![Or do something fun! I make games with my kids, using AI. Here are our favorites: Angry Dudes, a slingshot siege through history; Magic Friends, Up We Go!, a climbing game for little kids; and Timed Out, put events from Wikipedia in order on a timeline. Hacker, Inspector and thumbs-up Orange dance in the corner.](/assets/img/rpharma-2026-keynote/slide-55.jpg)](https://jwildfire.github.io/keynote/keynote.html#55)
 
-[![Mixed feelings: Coding feels completely different than it did a year ago. It's kind of fun, but I'm certainly not working less. But, what's next? Four Oranges: More medicines, faster! And no more powerpoint! / Data Centers. Rogue Agents. / So. Much. Change. / 100 years of innovation! Trials on a chip! Robots folding my clothes!](/assets/img/rpharma-2026-keynote/slide-55.jpg)](https://jwildfire.github.io/keynote/keynote.html#55)
+Or make a web app. I make games for my kids all the time now; it spits out fully formed games in hours, and they go play them. Our favorites are [Angry Dudes](https://jwildfire.github.io/angry-dudes/), [Magic Friends, Up We Go!](https://jwildfire.github.io/magic-friends/) and [Timed Out](https://jwildfire.github.io/timedout/), all on my [projects page](https://jwildfire.github.io/projects/#games).
+
+[![Mixed feelings: Coding feels completely different than it did a year ago. It's kind of fun, but I'm certainly not working less. But, what's next? Four Oranges: More medicines, faster! And no more powerpoint! / Data Centers. Rogue Agents. / So. Much. Change. / 100 years of innovation! Trials on a chip! Robots folding my clothes!](/assets/img/rpharma-2026-keynote/slide-56.jpg)](https://jwildfire.github.io/keynote/keynote.html#56)
 
 To be totally honest, I have mixed feelings about all of this. Coding feels completely different than it did a year ago, and so does my job. It's kind of fun, but I'm certainly not working less, and it hasn't been less stressful.
 
@@ -337,11 +339,11 @@ So what's next? Each Orange has a different opinion. Thumbs-up Orange says more 
 
 We live in interesting times.
 
-[![Acknowledgements: Thanks to my amazing co-workers, patient bosses, very patient family and all of my open source collaborators!](/assets/img/rpharma-2026-keynote/slide-56.jpg)](https://jwildfire.github.io/keynote/keynote.html#56)
+[![Acknowledgements: Thanks to my amazing co-workers, patient bosses, very patient family and all of my open source collaborators!](/assets/img/rpharma-2026-keynote/slide-57.jpg)](https://jwildfire.github.io/keynote/keynote.html#57)
 
 Thanks to my incredible co-workers, my very patient bosses, my extremely patient family, and everyone I've worked with on open-source projects. I hope we get to work together more in the coming years.
 
-[![Thank you! A pixel-art party of Oranges.](/assets/img/rpharma-2026-keynote/slide-57.jpg)](https://jwildfire.github.io/keynote/keynote.html#57)
+[![Thank you! A pixel-art party of Oranges.](/assets/img/rpharma-2026-keynote/slide-58.jpg)](https://jwildfire.github.io/keynote/keynote.html#58)
 
 And here's our [Orange party](https://jwildfire.github.io/keynote/party.html) (click for confetti). It's a fork of Simon Willison's Kākāpō Party, and credit to Simon, my favorite AI blogger: I've borrowed a bunch of his ideas, this post's format included. Thank you all for your time.[^ai]
 
