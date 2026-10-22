@@ -27,3 +27,33 @@
   blurb: >-
     Put events from Wikipedia in order on a timeline. Three wrong guesses and you're
     timed out. Pick a difficulty or a topic, or play endless mode.
+
+- name: "Trampoline Battle"
+  url: "https://jwildfire.github.io/trampoline-battle/"
+  source: "https://github.com/jwildfire/trampoline-battle"
+  thumb: "/assets/img/games/trampoline-battle.jpg"
+  alt: "Trampoline Battle: red and blue stick-figure fighters brawl on a backyard trampoline"
+  blurb: >-
+    A two-player ragdoll brawl on a trampoline. Drop fighters in, punch and slam,
+    and throw in cows, chickens, bombs and a boxing kangaroo to knock the other
+    team off. Six levels, including one on the moon.
+
+- name: "Stretcher Bearer"
+  url: "https://jwildfire.github.io/stretcher-bearer/"
+  source: "https://github.com/jwildfire/stretcher-bearer"
+  thumb: "/assets/img/games/stretcher-bearer.jpg"
+  alt: "Stretcher Bearer title screen: an army message form over a map of the trenches"
+  blurb: >-
+    A WWI medic game. Run through the trenches and no man's land to bring the
+    wounded back to your aid tent, with a jeep and an assistant to help, over
+    15 days from 1914 to the Armistice.
+
+- name: "Princess Lady Drive"
+  url: "https://jwildfire.github.io/princess-lady-drive/"
+  source: "https://github.com/jwildfire/princess-lady-drive"
+  thumb: "/assets/img/games/princess-lady-drive.jpg"
+  alt: "Princess Lady Drive: a pink car drives past an ice cream shop and a castle"
+  blurb: >-
+    A drive-around game designed by a 4-year-old. Queen Rosie drives a pink car
+    around town and walks into shops where everything is free, then heads off to
+    Beach City and Snow City.
