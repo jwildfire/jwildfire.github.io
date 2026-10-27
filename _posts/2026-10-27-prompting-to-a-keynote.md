@@ -3,9 +3,8 @@ title: "Prompting to a Keynote"
 author: "Jeremy Wildfire"
 excerpt: "The prompts behind my R/Pharma 2026 keynote deck, word for word: from the first brief to a dance party of orange cats."
 tags: RPharma AI ClaudeCode Keynote
+date: "2026-10-27"
 ---
-
-<!-- DRAFT (Claude, 2026-10-21). Every block quote is Jeremy's prompt, copied word for word from the Claude Code session logs, typos included. The sentences around them are Claude's placeholders: rewrite them in your own voice. Add a `date:` and move to _posts/ when it's time to publish. -->
 
 *A friend asked how I built the slides for my [R/Pharma 2026 keynote](https://jwildfire.github.io/2026/10/21/rpharma-2026-keynote-annotated.html). The short answer is one prompt at a time. Here are the ones that mattered.*
 
@@ -114,8 +113,6 @@ That night they both got invited to [the party](https://jwildfire.github.io/keyn
 
 ## Most prompts were small
 
-<!-- DRAFT: Claude's suggested angle for the close. Keep, cut or rewrite. -->
-
 Those are the big ones. Most prompts were a sentence reacting to the last build:
 
 > use a tiny hex from the "forcats" package as the bullet on this slide (we'll try to work in some package hexes for fun throughout)
@@ -124,8 +121,6 @@ Those are the big ones. Most prompts were a sentence reacting to the last build:
 
 > We're really overdoing it with the italicized orange works. Probably want to remove almost all of them.
 
-<!-- TODO (Jeremy): your takeaway for someone building their own deck this way. -->
-
 ---
 
-*AI collaboration note: I built the deck with Claude Code. For this post, Claude collected my prompts from the session logs and drafted the text around them. I rewrote it before publishing. The prompts are copied as I typed them, typos and all.*
+*AI collaboration note: I built the deck with Claude Code. For this post, Claude collected my prompts from the session logs, drafted the text around them and added the images and captions. I reviewed and approved it before publishing. The prompts are copied as I typed them, typos and all.*
