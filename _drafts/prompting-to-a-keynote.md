@@ -43,7 +43,7 @@ The question running through the talk was "What can we actually do with AI agent
 
 > i want the "orange what is it good at comments" to pop up as a 2nd click on the slides. I talk through the main content and then tie it back to the overall theme at the end.
 
-[![The first renderer took a few weeks; the next six took a weekend. Orange's thumbs-up callout says what worked: porting old code.](/assets/img/rpharma-2026-keynote/slide-33.jpg)](https://jwildfire.github.io/keynote/keynote.html#33)
+[![The first renderer took a few weeks; the next six took a weekend. Orange's thumbs-up callout says what worked: porting old code.](/assets/img/prompting-to-a-keynote/slide-33.jpg)](https://jwildfire.github.io/keynote/keynote.html#33)
 
 ## Fixing the middle
 
