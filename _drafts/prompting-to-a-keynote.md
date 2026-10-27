@@ -19,6 +19,8 @@ A cloud session set up an empty deck in the blog's "rainbow hex" theme. On 1 Oct
 
 The rest of the brief described the files: where I drop outlines and dictation, and a digest of the nine [developer diary](https://jwildfire.github.io/keynote/) posts to pull facts from.
 
+[![The title slide: What can we actually do with AI agents right now? Jeremy Wildfire, 21 October 2026, with the rainbow hex logo.](/assets/img/rpharma-2026-keynote/slide-01.jpg)](https://jwildfire.github.io/keynote/keynote.html#1)
+
 ## Orange becomes the hook
 
 Fifteen minutes later, the talk got its hook:
@@ -31,6 +33,8 @@ Then, a few minutes apart:
 
 > Add one more slide showing him "working" maybe the pic of him sleeping on my laptop. "But a somewhat inconsistent co-worker"
 
+[![Introducing Orange, 2008–2022. He was a very good cat. Orange in a blue hat, with a disclaimer callout from Orange's hex.](/assets/img/rpharma-2026-keynote/slide-02.jpg)](https://jwildfire.github.io/keynote/keynote.html#2)
+
 ## Orange's callouts
 
 The question running through the talk was "What can we actually do with AI agents right now?" Orange got to answer it:
@@ -39,11 +43,15 @@ The question running through the talk was "What can we actually do with AI agent
 
 > i want the "orange what is it good at comments" to pop up as a 2nd click on the slides. I talk through the main content and then tie it back to the overall theme at the end.
 
+[![The first renderer took a few weeks; the next six took a weekend. Orange's thumbs-up callout says what worked: porting old code.](/assets/img/rpharma-2026-keynote/slide-33.jpg)](https://jwildfire.github.io/keynote/keynote.html#33)
+
 ## Fixing the middle
 
 By 5 October the middle of the talk had the right content in the wrong shape:
 
 > I think the content mostly there, but the narrative (and the slide structure) is a total mess. Let's add more structure. Frame it as a journey. 5 versions of obot created during a summer or experiments. Name the Obot Versions explicitly (v1 = OpenClaw, v5=Opus 5.5, etc) Maybe a funny robot cat hex for each one? … From now on start saving any discarded slides in a reserves section in the deck. Just add a note about when it was demoted from the main deck.
+
+[![A summer down the AI rabbit hole, with obot: Orange, then a robot-cat hex for each version, v1 to v5.](/assets/img/rpharma-2026-keynote/slide-28.jpg)](https://jwildfire.github.io/keynote/keynote.html#28)
 
 That last sentence became a standing rule. Nothing got deleted from the deck; cut slides went to a Reserves section at the back with the date they left.
 
@@ -57,15 +65,28 @@ It was. Twenty minutes later:
 
 > love it. push to jwildfire.github.io/keynote/party.html. If the user hits "s" Let's have a kokobo pop out from the bottom corner and say "Thanks, Simon!"
 
+[![The Orange Party: rows of pixel-art Oranges in party hats dancing on a rooftop, and a kākāpō in the corner saying Thanks, Simon!](/assets/img/prompting-to-a-keynote/party-thanks-simon.jpg)](https://jwildfire.github.io/keynote/party.html)
+
 ## More Oranges
 
 Orange picked up a couple of costumes along the way. Inspector Orange covers the quality questions:
 
 > I want to work in a few "Quality Check-in"  slides. I'll make a new "inspector orange hex" to support. Basically want to add a little structure around the various quality discussions. Propose where those beats land and which slides get converted to the new format.
 
-Hacker Orange showed up the same day. That night they both got invited to [the party](https://jwildfire.github.io/keynote/party.html):
+[![Quality scales across the full package ecosystem: 76 qualified releases across 9 packages, and Inspector Orange with a magnifying glass saying Now that's evidence.](/assets/img/rpharma-2026-keynote/slide-18.jpg)](https://jwildfire.github.io/keynote/keynote.html#18)
+
+Hacker Orange showed up the same day.
+
+<p style="display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap">
+  <img src="/keynote/assets/hex/orange-inspector.png" alt="The Inspector Orange hex: Orange with a magnifying glass and a clipboard." width="150" loading="lazy">
+  <img src="/keynote/assets/hex/orange-hacker.png" alt="The Hacker Orange hex: Orange in a hoodie at a laptop, in front of green code rain." width="150" loading="lazy">
+</p>
+
+That night they both got invited to [the party](https://jwildfire.github.io/keynote/party.html):
 
 > update https://jwildfire.github.io/keynote/party.html to include the new oranges added to the deck. hacker orange, inspector orange. any other fun callouts from the deck are great. let me know your plan and i'll approve.
+
+[![The Orange Party again, with Inspector Orange in the corner asking What evidence do you have?](/assets/img/prompting-to-a-keynote/party-inspector.jpg)](https://jwildfire.github.io/keynote/party.html)
 
 ## Most prompts were small
 
