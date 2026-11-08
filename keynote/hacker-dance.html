@@ -34,6 +34,11 @@
     image-rendering: pixelated;
   }
 </style>
+<script>
+  // Match the embedding page's colour scheme (the keynote page has a dark theme), so the
+  // browser keeps this frame transparent; a mismatch paints it an opaque white or black.
+  try { var f = window.frameElement; if (f) document.documentElement.style.colorScheme = getComputedStyle(f).colorScheme; } catch (e) {}
+</script>
 </head>
 <body>
 <div id="stage">

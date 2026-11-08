@@ -1,8 +1,12 @@
 /* ---------------------------------------------------------------------------
    Site theme for jwildfire.github.io
-   All-light: paper #fafaf8 · graphite ink #1f2328 · plum links #6c3270
+   Light: paper #fafaf8 · graphite ink #1f2328 · plum links #6c3270
+   Dark:  graphite #14161a · paper ink #e7e9ec · orchid links #d6a5d9
    A seven-hue muted spectrum (oklch 0.68 / 0.12) marks the months of the
-   writing list, and a thin hex strip carries it through dividers.
+   writing list, and a thin hex strip carries it through dividers. The spectrum
+   is the same in both themes.
+   Dark follows the system setting; the moon/sun button (js/theme-toggle.js)
+   overrides it, stored as data-theme on <html> (set early in head.html).
    Instrument Serif (headings) · Instrument Sans (body) · IBM Plex Mono (meta)
    Loaded after minima's main.css; overrides by cascade order.
    The R/Pharma keynote page (/keynote/) shares the base but keeps its orange.
@@ -23,6 +27,15 @@
   --kn-code-bg: #f3f4f1;
   --kn-event: #f97316;         /* orange, reserved for the R/Pharma keynote */
   --kn-event-deep: #c2410c;
+  --kn-frame: #d9dcd7;         /* border round near-white slide images */
+  --kn-shadow: rgba(31, 35, 40, 0.12);
+  --kn-shadow-tip: rgba(31, 35, 40, 0.14);
+  --kn-accent-line: rgba(108, 50, 112, 0.45);
+  --kn-on-accent: #ffffff;
+  --kn-img-filter: none;       /* dark theme dims bright images a little */
+  --tt-moon: block;            /* theme toggle: show the moon in light, the sun in dark */
+  --tt-sun: none;
+  color-scheme: light;
 
   /* Spectrum: equal lightness and chroma, hue steps of ~50 degrees. */
   --spec-0: #d87972;
@@ -46,6 +59,59 @@
   --kn-sans: "Instrument Sans", system-ui, sans-serif;
   --kn-serif: "Instrument Serif", Georgia, serif;
   --kn-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+/* Dark theme: the same tokens, night values. Twice, because the system setting
+   applies unless the reader picked light, and an explicit pick of dark always does. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --kn-bg: #14161a;
+    --kn-rail-bg: #1a1d22;
+    --kn-ink: #e7e9ec;
+    --kn-soft: #a9b1bb;
+    --kn-faint: #737c87;
+    --kn-softer: #8f98a3;
+    --kn-accent: #d6a5d9;        /* orchid: the plum, lifted to read on graphite */
+    --kn-accent-deep: #edcbef;
+    --kn-accent-soft: rgba(214, 165, 217, 0.14);
+    --kn-card: #1d2026;
+    --kn-rule: #2e333a;
+    --kn-code-bg: #1a1d22;
+    --kn-event-deep: #fb923c;
+    --kn-frame: #343a42;
+    --kn-shadow: rgba(0, 0, 0, 0.45);
+    --kn-shadow-tip: rgba(0, 0, 0, 0.5);
+    --kn-accent-line: rgba(214, 165, 217, 0.45);
+    --kn-on-accent: #14161a;
+    --kn-img-filter: brightness(0.88);
+    --tt-moon: none;
+    --tt-sun: block;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --kn-bg: #14161a;
+  --kn-rail-bg: #1a1d22;
+  --kn-ink: #e7e9ec;
+  --kn-soft: #a9b1bb;
+  --kn-faint: #737c87;
+  --kn-softer: #8f98a3;
+  --kn-accent: #d6a5d9;        /* orchid: the plum, lifted to read on graphite */
+  --kn-accent-deep: #edcbef;
+  --kn-accent-soft: rgba(214, 165, 217, 0.14);
+  --kn-card: #1d2026;
+  --kn-rule: #2e333a;
+  --kn-code-bg: #1a1d22;
+  --kn-event-deep: #fb923c;
+  --kn-frame: #343a42;
+  --kn-shadow: rgba(0, 0, 0, 0.45);
+  --kn-shadow-tip: rgba(0, 0, 0, 0.5);
+  --kn-accent-line: rgba(214, 165, 217, 0.45);
+  --kn-on-accent: #14161a;
+  --kn-img-filter: brightness(0.88);
+  --tt-moon: none;
+  --tt-sun: block;
+  color-scheme: dark;
 }
 
 /* Base ----------------------------------------------------------------------*/
@@ -148,10 +214,10 @@ hr {
 .post-content { color: var(--kn-ink); }
 .post-content h2, .post-content h3 { margin-top: 2rem; }
 /* Keynote slides are near-white on the near-white page: a light frame sets them off. */
-.post-content img[src*="/assets/img/rpharma-2026-keynote/"] { display: block; border: 1px solid #d9dcd7; border-radius: 6px; }
+.post-content img[src*="/assets/img/rpharma-2026-keynote/"] { display: block; border: 1px solid var(--kn-frame); border-radius: 6px; }
 /* The animations behind those slides (GIFs and screen recordings), each under its slide. */
 .post-content figure.kn-anim { margin: 0 0 1.5em; }
-.post-content figure.kn-anim img, .post-content figure.kn-anim video { display: block; max-width: 100%; height: auto; margin: 0 auto; border: 1px solid #d9dcd7; border-radius: 6px; }
+.post-content figure.kn-anim img, .post-content figure.kn-anim video { display: block; max-width: 100%; height: auto; margin: 0 auto; border: 1px solid var(--kn-frame); border-radius: 6px; }
 .post-content figure.kn-anim video { width: 100%; }
 .post-content figure.kn-anim figcaption { margin-top: 0.4em; font-size: 0.85em; color: var(--kn-soft); text-align: center; }
 
@@ -169,6 +235,15 @@ pre, code {
 }
 code { font-family: var(--kn-mono); font-size: 0.86em; }
 .hljs, pre code { background: var(--kn-code-bg) !important; }
+
+/* Tables: minima's are hard-coded light grey. */
+table { color: var(--kn-ink); border-color: var(--kn-rule); }
+table tr:nth-child(even) { background-color: var(--kn-rail-bg); }
+table th { background-color: var(--kn-code-bg); }
+table th, table td { border-color: var(--kn-rule); }
+
+/* Images: a touch dimmer at night so near-white slides don't glare. */
+.post-content img, .post-content video, .card-thumb img { filter: var(--kn-img-filter); }
 
 /* Collapsible sections (e.g. abstract details) ------------------------------------*/
 
@@ -216,7 +291,7 @@ a.footnote:hover { color: var(--kn-accent-deep); }
   color: var(--kn-ink);
   border: 1px solid var(--kn-rule);
   border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(31, 35, 40, 0.14);
+  box-shadow: 0 10px 30px var(--kn-shadow-tip);
   padding: 0.7rem 0.9rem;
   font-family: var(--kn-sans);
   font-size: 0.86rem;
@@ -283,7 +358,7 @@ a.footnote:hover { color: var(--kn-accent-deep); }
 .keynote-banner:hover {
   text-decoration: none;
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(31, 35, 40, 0.12);
+  box-shadow: 0 12px 30px var(--kn-shadow);
 }
 .keynote-banner-kicker {
   display: block;
@@ -484,7 +559,7 @@ a.footnote:hover { color: var(--kn-accent-deep); }
   text-decoration: none;
   transition: box-shadow 140ms ease, transform 140ms ease;
 }
-.wf-keynote:hover { text-decoration: none; transform: translateY(-2px); box-shadow: 0 12px 30px rgba(31, 35, 40, 0.12); }
+.wf-keynote:hover { text-decoration: none; transform: translateY(-2px); box-shadow: 0 12px 30px var(--kn-shadow); }
 .wf-keynote-kicker {
   display: block;
   font-family: var(--kn-mono);
@@ -737,11 +812,11 @@ a.footnote:hover { color: var(--kn-accent-deep); }
 
 .site-nav .cv-link, .site-nav .cv-link:visited {
   color: var(--kn-accent);
-  border: 1px solid rgba(108, 50, 112, 0.45);
+  border: 1px solid var(--kn-accent-line);
   border-radius: 7px;
   padding: 0.2rem 0.6rem;
 }
-.site-nav .cv-link:hover { background: var(--kn-accent); color: #fff; text-decoration: none; }
+.site-nav .cv-link:hover { background: var(--kn-accent); color: var(--kn-on-accent); text-decoration: none; }
 
 /* Projects page (/projects/): project cards, then the Games section ---------------*/
 
@@ -805,3 +880,40 @@ a.footnote:hover { color: var(--kn-accent-deep); }
 .qh-perma, .qh-perma:visited { position: absolute; top: 0.95rem; right: 0; font-family: var(--kn-mono); font-size: 0.8rem; color: var(--kn-faint); text-decoration: none; }
 .qh-perma:hover { color: var(--kn-accent); }
 .qh-item-head { padding-right: 1.2rem; }
+
+/* Theme toggle (js/theme-toggle.js): a moon in light, a sun in dark ------------------*/
+
+.theme-toggle {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 1px solid var(--kn-rule);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--kn-soft);
+  cursor: pointer;
+  vertical-align: middle;
+  transition: color 120ms ease, border-color 120ms ease;
+}
+.theme-toggle:hover { color: var(--kn-accent); border-color: var(--kn-accent); }
+.theme-toggle svg { width: 1rem; height: 1rem; }
+.theme-toggle .tt-moon { display: var(--tt-moon); }
+.theme-toggle .tt-sun { display: var(--tt-sun); }
+.site-nav .theme-toggle { margin-left: 0.4rem; }
+.wf-rail .theme-toggle { position: absolute; top: clamp(1.4rem, 2.6vw, 2.4rem); right: clamp(1.2rem, 2.6vw, 2.4rem); }
+@media screen and (max-width: 900px) { .wf-rail { position: relative; } }
+@media screen and (max-width: 600px) { .site-nav .theme-toggle { margin: 0.3rem 0 0.6rem 10px; } }
+
+/* highlight.js tokens at night (github.css is a light theme) */
+:root[data-theme="dark"] .hljs { color: var(--kn-ink); }
+:root[data-theme="dark"] .hljs-comment, :root[data-theme="dark"] .hljs-quote { color: #8b949e; }
+:root[data-theme="dark"] .hljs-keyword, :root[data-theme="dark"] .hljs-selector-tag, :root[data-theme="dark"] .hljs-type { color: #ff7b72; }
+:root[data-theme="dark"] .hljs-string, :root[data-theme="dark"] .hljs-regexp, :root[data-theme="dark"] .hljs-addition { color: #a5d6ff; }
+:root[data-theme="dark"] .hljs-number, :root[data-theme="dark"] .hljs-literal, :root[data-theme="dark"] .hljs-built_in, :root[data-theme="dark"] .hljs-attr { color: #79c0ff; }
+:root[data-theme="dark"] .hljs-title, :root[data-theme="dark"] .hljs-section, :root[data-theme="dark"] .hljs-function { color: #d2a8ff; }
+:root[data-theme="dark"] .hljs-variable, :root[data-theme="dark"] .hljs-template-variable, :root[data-theme="dark"] .hljs-name, :root[data-theme="dark"] .hljs-tag { color: #7ee787; }
+:root[data-theme="dark"] .hljs-deletion { color: #ffa198; }
