@@ -800,6 +800,43 @@ a.footnote:hover { color: var(--kn-accent-deep); }
   .wf-month { scroll-margin-top: 1rem; }
 }
 
+/* Phones: the first news entry shows on load. The rail shrinks to wordmark, name,
+   tagline and one scrolling row of nav chips (contact links live in the page footer);
+   the section head, keynote card and month chips each take a single line. */
+@media screen and (max-width: 600px) {
+  .wf-rail { padding: 1rem 16px 0.9rem; gap: 0; }
+  .wf-wordmark, .wf-wordmark:visited { font-size: 2rem; margin-bottom: 0.3rem; padding-right: 3rem; }
+  .wf-name { font-size: 0.68rem; margin-bottom: 0.25rem; }
+  .wf-pitch { font-size: 0.9rem; line-height: 1.4; margin-bottom: 0.75rem; }
+  .wf-rail .theme-toggle { top: 1.05rem; right: 16px; }
+  .wf-contact { display: none; }
+
+  /* One row of chips that scrolls sideways; News is dropped, the page is already News. */
+  .wf-nav { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 -16px; padding: 0 16px; gap: 0.35rem; }
+  .wf-nav::-webkit-scrollbar { display: none; }
+  .wf-nav a[href="#news"] { display: none; }
+  .wf-nav a, .wf-nav a:visited { flex: none; white-space: nowrap; font-size: 0.76rem; padding: 0.25rem 0.7rem; }
+
+  .wf-main { padding: 1.1rem 16px 2rem; }
+  .wf-sechead { flex-wrap: nowrap; gap: 0.6rem; margin-bottom: 1rem; padding-bottom: 0.6rem; }
+  .wf-count { display: none; }
+  .wf-toggle { order: 0; flex-basis: auto; margin-left: auto; gap: 0.25rem; }
+  .wf-tog { font-size: 0.64rem; padding: 0.32rem 0.55rem 0.32rem 0.45rem; }
+  .wf-tog .wf-ico { margin-right: 0.35em; }
+
+  .wf-keynote { padding: 0.7rem 0.95rem; margin-bottom: 1rem; border-radius: 10px; }
+  .wf-keynote-kicker { font-size: 0.62rem; margin-bottom: 0.2rem; }
+  .wf-keynote-headline { font-size: 1.1rem; margin-bottom: 0; }
+  .wf-keynote-cta { display: none; }
+
+  .wf-months { margin: 0 -16px 1rem; }
+  .wf-months-head { display: none; }
+  .wf-months ul { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding: 0 16px; gap: 0.35rem; }
+  .wf-months ul::-webkit-scrollbar { display: none; }
+  .wf-months li { flex: none; }
+  .wf-months a, .wf-months a:visited { white-space: nowrap; font-size: 0.74rem; padding: 0.15rem 0.6rem; }
+}
+
 /* Shared footer on posts and interior pages (_includes/footer.html) ------------------*/
 
 .site-footer .footer-strap { font-family: var(--kn-serif); font-size: 1.5rem; color: var(--kn-ink); margin: 0 0 0.8rem; }
