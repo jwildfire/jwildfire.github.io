@@ -18,6 +18,18 @@
 # safety.viz ------------------------------------------------------------------
 
 - package: safety.viz
+  version: v1.12.0
+  date: 2026-11-11
+  blurb: "A release about time"
+  links:
+    - label: Notes
+      url: https://github.com/jwildfire/safety.viz/releases/tag/v1.12.0
+    - label: Demo
+      url: https://jwildfire.github.io/safety.viz/
+    - label: Walkthrough
+      url: https://jwildfire.github.io/obot.roadmap/reports/sv-v1.12.0-demo/
+
+- package: safety.viz
   version: v1.11.3
   date: 2026-11-09
   blurb: "A patch to the Safety Histogram: its axes are titled, and clicking a bar lists each record's visit"
