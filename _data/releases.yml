@@ -256,6 +256,18 @@
 # gsm.safety ------------------------------------------------------------------
 
 - package: gsm.safety
+  version: v1.2.0
+  date: 2026-11-13
+  blurb: "gsm.safety v1.2.0 brings the widgets up to safety.viz v1.12.0 and rebuilds the safety census on qualified…"
+  links:
+    - label: Notes
+      url: https://github.com/jwildfire/gsm.safety/releases/tag/v1.2.0
+    - label: Demo
+      url: https://jwildfire.github.io/gsm.safety/
+    - label: Walkthrough
+      url: https://jwildfire.github.io/obot.roadmap/reports/gsm-safety-v1.2.0-demo/
+
+- package: gsm.safety
   version: v1.1.0
   date: 2026-08-17
   blurb: "Metrics phase: Hy's Law, QTcF prolongation and serious/related AEs scored per participant"
